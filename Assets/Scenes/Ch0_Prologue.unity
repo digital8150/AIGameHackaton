@@ -15342,6 +15342,14 @@ MonoBehaviour:
   overhang: 0.25
   yOffset: 0
   minRun: 1
+  sideSprite: {fileID: 21300000, guid: 4486d73d9c98b55499b176d9532be51c, type: 3}
+  sideMaterial: {fileID: 2100000, guid: 347c38392a16c0443bfa485e95d7baf5, type: 2}
+  sideSortingOrder: 4
+  sideTopInset: 0.3
+  ceilingSprite: {fileID: 21300000, guid: ca900433eb2adf04fab40153d81fd133, type: 3}
+  ceilingMaterial: {fileID: 2100000, guid: 1b0c0becf7768414292afbb5ecfd579b, type: 2}
+  ceilingSortingOrder: 4
+  skipBoundsFaces: 1
 --- !u!4 &1644391643 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 772186662231005520, guid: b7395cacce73a02449e8cfcba43184da, type: 3}

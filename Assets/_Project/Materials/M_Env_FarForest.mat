@@ -35,10 +35,11 @@ Material:
     m_Floats:
     - _AlphaEdges: 0
     - _Blur: 0
-    - _DarkAlpha: 1
+    - _DarkAlpha: 0.3
     - _Depth: 0.05
     - _EdgeBoost: 1
     - _Glint: 0
+    - _InkThreshold: 0.16
     - _LightAlpha: 1
     - _LightReceive: 0.92
     - _SelfLit: 0

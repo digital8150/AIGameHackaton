@@ -57,6 +57,16 @@ no humans, -3::1girl, 1boy, human::, game asset, paper cutout prop, horizontal c
 {{long straight horizontal strip of mossy grass turf edge}}, short dense grass and moss growing along a straight top line, tiny pale flowers, a thin band of soil and dangling roots below the turf, uniform height along the whole width, intricate pen cross-hatching, sepia and dark plum tones with muted sage moss,
 A long, straight, uniform paper-cutout strip of grassy turf and moss that sits on top of 2D platformer ground, running across the full width of the image, drawn in a vintage kamishibai paper-theater style with dense pen hatching, isolated on a solid black background.
 
+### 2-D. 절벽 옆면 (Cliff Side Edge — 9:21 세로, 세로 반복용)
+no humans, -3::1girl, 1boy, human::, game asset, paper cutout prop, vertical composition, {{black background, simple background}}, -3::floating island, sky, tree, frame, horizontal::,
+{{long straight vertical strip of rough cliff edge}}, jagged rock rim along the right side, small moss tufts and tiny ferns poking out sideways, thin roots trailing down, uniform width along the whole height, intricate pen cross-hatching, sepia and dark plum tones,
+A long, straight, uniform paper-cutout strip of rocky cliff edge running from the top to the bottom of the image, for the side faces of 2D platformer ground, drawn in a vintage kamishibai paper-theater style with dense pen hatching, isolated on a solid black background.
+
+### 2-E. 천장 아랫면 뿌리 (Ceiling Underside Roots — 21:9 와이드, 가로 반복용)
+no humans, -3::1girl, 1boy, human::, game asset, paper cutout prop, horizontal composition, {{black background, simple background}}, -3::grass on top, flowers, sky, floating island, frame::,
+{{long straight horizontal strip of earth underside}}, a thin straight band of dark soil along the top edge with many tangled roots and small vines hanging down at different lengths, uniform along the whole width, intricate pen cross-hatching, sepia and dark plum tones,
+A long, straight, uniform paper-cutout strip of hanging roots under an earth ceiling, for the underside of 2D platformer ground, drawn in a vintage kamishibai paper-theater style with dense pen hatching, isolated on a solid black background.
+
 ---
 
 ## 3. HUD 감각 메달리온 프레임 (Sense Medallion Rings — 1:1 정방형 권장)

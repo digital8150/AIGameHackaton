@@ -27,21 +27,28 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _WorldTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
     - _AlphaEdges: 1
     - _Blur: 1.2
-    - _DarkAlpha: 1
+    - _DarkAlpha: 0.55
     - _Depth: 0
     - _EdgeBoost: 1
     - _Glint: 0
+    - _InkThreshold: 0.16
     - _LightAlpha: 1
+    - _LightReceive: 1
     - _SelfLit: 0
     - _Shade: 0.55
     - _Warmth: 1
     - _WindAmp: 0.06
     - _WindAnchor: 0
     - _WindSpeed: 1.3
+    - _WorldTile: 0
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EchoTint: {r: 0.82, g: 0.92, b: 1, a: 1}

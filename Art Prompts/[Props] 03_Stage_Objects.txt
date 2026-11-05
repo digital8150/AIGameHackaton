@@ -23,10 +23,10 @@ no humans, -3::1girl, 1boy, human::, game asset, paper cutout prop, {{black back
 ornate hanging fairytale iron lantern, antique glass cage lamp, intricate wrought-iron frame, warm glowing core,
 A single antique fairytale signal lantern prop viewed straight-on, drawn in a sketchy pen-hatched storybook illustration style, isolated on a solid black background.
 
-### 2-B. 바닥 작동 레버 (Mechanical Floor Lever)
-no humans, -3::1girl, 1boy, human::, game asset, paper cutout prop, {{black background, simple background}},
-antique brass and wood floor lever switch, mechanical gear base, ornate handle tilted to one side, fairytale clockwork mechanism,
-A single 2D platformer floor lever switch prop on a small geared stone base, drawn with detailed pencil hatching in a dark fairytale paper-theater style, isolated on a solid black background.
+### 2-B. 바닥 작동 레버 (Mechanical Floor Lever — 1:1)
+no humans, -3::1girl, 1boy, human::, game asset, paper cutout prop, {{black background, simple background}}, {{flat side view}}, {{profile view}}, -3::isometric, three-quarter view, top-down view, perspective, square base seen from above::,
+antique brass and wood floor lever switch, low half-round geared stone base seen exactly from the side, long straight handle with a round wooden knob tilted to the left, fairytale clockwork mechanism,
+A single 2D platformer floor lever switch drawn completely flat in side profile like a paper-theater cutout, the base as a flat half-disc on the ground line and the handle leaning left, detailed pencil hatching in a dark fairytale style, isolated on a solid black background.
 
 ---
 
@@ -34,6 +34,11 @@ A single 2D platformer floor lever switch prop on a small geared stone base, dra
 no humans, -3::1girl, 1boy, human::, game asset, paper cutout platform tile, horizontal rectangular composition, {{black background, simple background}},
 {{translucent crystalline stone platform}}, floating ancient resonant slate slab, carved soundwave runes, delicate etched cracks, pale ice-blue and vintage ivory mineral texture,
 A horizontal floating stone-and-crystal platform slab for a 2D side-scroller, drawn in a vintage storybook pen-hatching style, isolated on a solid black background.
+
+### 3-B. 울림돌 단면 텍스처 (Echo Stone Fill Texture — 1:1 정방형, 반복용)
+no humans, -3::1girl, 1boy, human::, {{full frame texture}}, {{seamless pattern}}, flat orthographic view, -3::horizon, sky, frame, border, single object, perspective::,
+{{translucent crystalline slate}}, layered pale ice-blue and vintage ivory mineral, faint carved soundwave runes and concentric ripple lines, delicate etched cracks, even density across the whole image, intricate pen cross-hatching,
+A flat, evenly filled storybook texture of resonant crystal stone covering the entire image edge to edge, for tiling inside 2D platformer blocks, drawn in a vintage kamishibai paper-theater style with fine pen hatching.
 
 ---
 

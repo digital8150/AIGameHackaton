@@ -39,6 +39,7 @@ Material:
     - _Depth: 0
     - _EdgeBoost: 1.6
     - _Glint: 0
+    - _InkThreshold: 0.5
     - _LightAlpha: 0
     - _LightReceive: 1
     - _SelfLit: 0

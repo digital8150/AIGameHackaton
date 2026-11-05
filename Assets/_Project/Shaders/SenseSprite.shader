@@ -20,6 +20,7 @@ Shader "DuskTwilight/SenseSprite"
         _SelfLit ("Self Outline (actors)", Range(0,1)) = 0
         _EchoTint ("Echo Tint", Color) = (0.82,0.92,1,1)
         _AlphaEdges ("Use Alpha Edges", Range(0,1)) = 0
+        _InkThreshold ("Ink Threshold (darker than this = contour; illustrations ~0.18, Kenney 0.5)", Range(0,1)) = 0.5
 
         [Header(2.5D layer (environment art))]
         _WindAmp ("Wind Sway (world units)", Range(0,1)) = 0
@@ -97,6 +98,7 @@ Shader "DuskTwilight/SenseSprite"
                 float4 _ShadeColor;
                 float _WorldTile;
                 float _LightReceive;
+                float _InkThreshold;
             CBUFFER_END
 
             struct Attributes { float4 positionOS : POSITION; float4 color : COLOR; float2 uv : TEXCOORD0; };
@@ -194,9 +196,9 @@ Shader "DuskTwilight/SenseSprite"
                 float reveal = echo.x;
                 float front = echo.y;
                 // Kenney art has dark outlines: invert them into bright contour lines
-                float contour = saturate((0.5 - luma) * 3.0);
-                // illustrated fill is dark overall: only its darkest ink lines (roots, stone rims) become contours
-                if (_WorldTile > 0) contour = saturate((0.22 - luma) * 4.0);
+                // dark ink becomes a bright contour line. Pixel art only has dark outlines (0.5 works);
+                // hatched illustrations are dark all over, so they use a low threshold: only the heaviest ink lights up
+                float contour = saturate((_InkThreshold - luma) * 1.5 / max(_InkThreshold, 0.05)); // = old (0.5 - luma) * 3 at 0.5
                 if (_AlphaEdges > 0.5) contour = max(contour, AlphaEdge(i.uv));
                 float texture_ = luma * 0.32 * saturate(_EdgeBoost);
                 float lit = reveal * 0.85 + front * 1.4;
