@@ -164,7 +164,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 8d935886e8fff704c8db917e3af890ed, type: 2}
+  - {fileID: 2100000, guid: 0470abb7a130d4748aa6a50140d39121, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -187,7 +187,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 4
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 1441482181, guid: bc661025bc712884e8cc2a37536a32c1, type: 3}
+  m_Sprite: {fileID: -1177585983, guid: 99d5a08995e8a23489aef5bcffb511a6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -212,8 +212,8 @@ MonoBehaviour:
   wired: 0
   gate: {fileID: 0}
   sr: {fileID: 8465396134338246712}
-  upSprite: {fileID: 1441482181, guid: bc661025bc712884e8cc2a37536a32c1, type: 3}
-  downSprite: {fileID: 265049587, guid: bc661025bc712884e8cc2a37536a32c1, type: 3}
+  upSprite: {fileID: -1177585983, guid: 99d5a08995e8a23489aef5bcffb511a6, type: 3}
+  downSprite: {fileID: -1333986139, guid: 99d5a08995e8a23489aef5bcffb511a6, type: 3}
   prompt: {fileID: 6258752596001638488}
   promptColor: {r: 1, g: 0.95, b: 0.85, a: 1}
   pullShowTime: 0.5

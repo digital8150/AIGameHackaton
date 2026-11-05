@@ -88,7 +88,8 @@
 |---|---|---|
 | 환경 일러스트 (원경·중경·전경) | NovelAI V5 생성, 프롬프트 `Art Prompts/` 03·04·05 (`Tools/gen_env_nai.py`) | 프로젝트 소유 |
 | 타일, 소품, 배경 | Kenney *Pixel Platformer* 1.2 | CC0 |
-| 장치, 신호등, 기둥 | Kenney *Pixel Platformer Industrial Expansion* | CC0 |
+| 기믹 소품 (문·톱니·등불·레버·체크포인트·재회의 등불·제단) | NovelAI V5 생성, `Art Prompts/` 03 → `Assets/_Project/Art/Props` | 프로젝트 소유 |
+| 장치, 신호등, 기둥 (구) | Kenney *Pixel Platformer Industrial Expansion* | CC0 |
 | 효과음 | Kenney *Impact Sounds* | CC0 |
 | 한글 UI 폰트 | Galmuri11 (quiple) | SIL OFL 1.1 |
 | 왕자·공주 스프라이트 | 이 프로젝트 오리지널 (Kenney 팔레트·외곽선 규칙에 맞춰 생성, `Tools/gen_characters.py`) | 프로젝트 소유 |
