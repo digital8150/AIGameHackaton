@@ -130,3 +130,33 @@ A single old stone pressure plate that opens a gate when weighed down, drawn in 
 no humans, -3::1girl, 1boy, human::, game asset, paper cutout prop, vertical composition, {{black background, simple background}}, -3::text, letters, wall, castle::,
 {{narrow tall iron portcullis gate of vertical bars with pointed tips}}, cross bars and rivets, a small sun emblem in the middle, rusted dark iron, seen straight from the front, intricate pen cross-hatching, sepia and dark iron tones,
 A single narrow iron bar gate that rises when a pressure plate is weighed down, drawn in a vintage kamishibai paper-theater style with dense pen hatching, isolated on a solid black background.
+
+### 9-G. 떠 있는 금색 돌 (Floating Gold Stone — 2:1, 4단계 '무거워져')
+no humans, -3::1girl, 1boy, human::, game asset, paper cutout prop, horizontal composition, {{black background, simple background}}, -3::text, letters, chains, rope::,
+{{wide flat rectangular block of rough stone veined and banded with shining gold}}, flat top and flat bottom, chiselled square edges, small gold sun rune on its face, faint magical golden shimmer, intricate pen cross-hatching, sepia, grey stone and warm gold tones,
+A single heavy golden stone block that floats until it is told to become heavy, seen straight from the side, drawn in a vintage kamishibai paper-theater style with dense pen hatching, isolated on a solid black background.
+
+### 9-H. 가시 바닥 (Floor Spikes — 21:9, 가로로 반복)
+no humans, -3::1girl, 1boy, human::, game asset, paper cutout prop, horizontal composition, {{black background, simple background}}, -3::text, letters, blood, skull::,
+{{a low row of sharp rusted iron spikes standing upright on a thin iron strip}}, even identical spikes repeating from end to end, dark red rust on the tips, seen straight from the side, intricate pen cross-hatching, sepia, dark iron and dull red tones,
+A single strip of cruel floor spikes in a dark cave, drawn in a vintage kamishibai paper-theater style with dense pen hatching, isolated on a solid black background.
+
+### 9-I. 달 표지판 (Moon Picture Signpost — 2:3 세로, 공주에게만 보이는 그림)
+no humans, -3::1girl, 1boy, human::, game asset, paper cutout prop, vertical composition, {{black background, simple background}}, -3::text, letters, words, arrow::,
+{{small square wooden signboard on a single wooden post with a crescent moon picture painted on it}}, the crescent drawn in pale gold, weathered planks, iron nails, seen straight from the front, intricate pen cross-hatching, sepia and pale gold tones,
+A single old signpost showing only a crescent moon picture, drawn in a vintage kamishibai paper-theater style with dense pen hatching, isolated on a solid black background.
+
+### 9-J. 해 그림 (Sun Emblem — 1:1)
+no humans, -3::1girl, 1boy, human::, game asset, paper cutout prop, square composition, {{black background, simple background}}, -3::text, letters, face, disc, round frame, medallion::,
+{{a small round sun emblem with a few bold triangular rays painted in pale gold}}, flat symbol, seen straight from the front, intricate pen cross-hatching, sepia and pale gold tones,
+A single sun symbol, drawn in a vintage kamishibai paper-theater style with dense pen hatching, isolated on a solid black background.
+
+### 9-K. 달 그림 (Crescent Moon Emblem — 1:1)
+no humans, -3::1girl, 1boy, human::, game asset, paper cutout prop, square composition, {{black background, simple background}}, -3::text, letters, face, stars::,
+{{a small crescent moon emblem painted in pale gold}}, flat symbol, seen straight from the front, intricate pen cross-hatching, sepia and pale gold tones,
+A single crescent moon symbol, drawn in a vintage kamishibai paper-theater style with dense pen hatching, isolated on a solid black background.
+
+### 9-L. 별 그림 (Star Emblem — 1:1)
+no humans, -3::1girl, 1boy, human::, game asset, paper cutout prop, square composition, {{black background, simple background}}, -3::text, letters, face, moon, circle, disc, round frame, medallion::,
+{{a single large five-pointed star shape painted in pale gold filling the frame}}, flat symbol, just the star outline and nothing around it, seen straight from the front, intricate pen cross-hatching, sepia and pale gold tones,
+A single five-pointed star symbol, drawn in a vintage kamishibai paper-theater style with dense pen hatching, isolated on a solid black background.

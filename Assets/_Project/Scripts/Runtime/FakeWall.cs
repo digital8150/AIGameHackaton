@@ -30,6 +30,10 @@ namespace DuskTwilight
         [Tooltip("Caption when a wall is found (what it looks like when you cannot hear it)")]
         public string foundCaption = "";
 
+        [Header("Linked")]
+        [Tooltip("World rectangles (x, y = bottom-left, w, h). Finding any piece inside an area finds every piece in it (e.g. sun/moon/star ceilings vanish together).")]
+        public Rect[] linkedAreas = new Rect[0];
+
         class Part { public List<Vector3> centres = new List<Vector3>(); public List<Vector3Int> cells = new List<Vector3Int>(); public GameObject go; public bool open; }
         readonly List<Part> parts = new List<Part>();
         Tilemap map;
@@ -105,9 +109,20 @@ namespace DuskTwilight
             }
         }
 
+        bool InArea(Part p, Rect r)
+        {
+            foreach (var c in p.centres) if (r.Contains((Vector2)c)) return true;
+            return false;
+        }
+
         IEnumerator Open(Part p, float delay)
         {
             p.open = true;
+            if (linkedAreas != null)
+                foreach (var r in linkedAreas)
+                    if (InArea(p, r))
+                        foreach (var o in parts)
+                            if (!o.open && InArea(o, r)) StartCoroutine(Open(o, delay));
             yield return new WaitForSeconds(delay);
             if (p.go) Destroy(p.go);
             if (vanishWhenFound && map)
@@ -123,6 +138,8 @@ namespace DuskTwilight
 #if UNITY_EDITOR
         void OnDrawGizmos()
         {
+            Gizmos.color = new Color(1f, 0.8f, 0.3f, 0.6f);
+            if (linkedAreas != null) foreach (var r in linkedAreas) Gizmos.DrawWireCube(r.center, r.size);
             if (!Application.isPlaying) return;
             Gizmos.color = new Color(1f, 0.6f, 0.3f, 0.5f);
             foreach (var p in parts)

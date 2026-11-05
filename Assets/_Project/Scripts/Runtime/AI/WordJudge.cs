@@ -47,6 +47,7 @@ namespace DuskTwilight
             if (!llm) return;
             await llm.ChooseAsync(System, Shots, "단어: 의자", Answers, 30f);
             await llm.ChooseAsync(StretchSystem, StretchShots, "말: 더 커져라", StretchAnswers, 30f);
+            await llm.ChooseAsync(HeavySystem, HeavyShots, "말: 묵직해져라", HeavyAnswers, 30f);
         }
 
         public static async Task<Result> JudgeWeightAsync(string spoken, WordLexicon lexicon)
@@ -125,6 +126,42 @@ namespace DuskTwilight
                     if (a.Value.probability < MinConfidence) k = StretchKind.None;
                     var r = new StretchResult { stretch = k, confidence = a.Value.probability, source = "AI" };
                     stretchCache[w] = r;
+                    return r;
+                }
+            }
+            return new StretchResult { source = "폴백" };
+        }
+
+        // ------------------------------------------------------------------ 무거워져 (a floating gold stone)
+        const string HeavySystem =
+            "너는 동화 속 공중에 떠 있는 마법의 금색 돌이다. 왕자가 너에게 한 말을 듣고, 무거워지라거나 떨어지라거나 내려오라는 뜻이면 '무겁게', " +
+            "그 밖의 말이면 '관계없음'이라고만 답한다. 말투나 어미가 장난스러워도(예: 무거워져랏, 떨어지라구) 뜻으로 판단한다.";
+
+        static readonly (string, string)[] HeavyShots =
+        {
+            ("말: 무거워져", "무겁게"), ("말: 안녕", "관계없음"), ("말: 쿵 하고 떨어져라", "무겁게"),
+            ("말: 배고파", "관계없음"), ("말: 아래로 내려와", "무겁게"), ("말: 길어져", "관계없음"),
+        };
+        static readonly string[] HeavyAnswers = { "무겁게", "관계없음" };
+        static readonly Dictionary<string, StretchResult> heavyCache = new Dictionary<string, StretchResult>();
+        static readonly string[] HeavyPieces = { "무거", "무겁", "묵직", "떨어", "내려", "가라앉", "추락", "아래로", "쿵" };
+
+        /// <summary>Heavy → <see cref="StretchKind.Short"/> (the stone drops), otherwise None.</summary>
+        public static async Task<StretchResult> JudgeHeavyAsync(string spoken)
+        {
+            string w = WordTarget.Clean(spoken);
+            if (w.Length == 0) return new StretchResult { source = "폴백" };
+            foreach (var p in HeavyPieces) if (w.Contains(p)) return new StretchResult { stretch = StretchKind.Short, confidence = 1f, source = "단어" };
+            if (heavyCache.TryGetValue(w, out var hit)) { hit.source = "캐시"; return hit; }
+            var llm = LocalLLM.I;
+            if (llm && llm.Ready)
+            {
+                var a = await llm.ChooseAsync(HeavySystem, HeavyShots, "말: " + spoken.Trim(), HeavyAnswers, TimeoutSeconds);
+                if (a.HasValue)
+                {
+                    var k = a.Value.answer == "무겁게" && a.Value.probability >= MinConfidence ? StretchKind.Short : StretchKind.None;
+                    var r = new StretchResult { stretch = k, confidence = a.Value.probability, source = "AI" };
+                    heavyCache[w] = r;
                     return r;
                 }
             }
