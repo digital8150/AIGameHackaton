@@ -44,6 +44,11 @@ namespace DuskTwilight
         [Tooltip("How far below the stone a fake tile still hides it (m)")]
         public float hideDepth = 3f;
 
+        [Header("Floating look")]
+        [Tooltip("While it floats the picture bobs gently (the collider stays put) so it reads as floating, not stuck")]
+        public float bobHeight = 0.18f;
+        public float bobSpeed = 1.6f;
+
         [Header("Speech")]
         [Tooltip("The prince is heard up to this far from the stone's nearest point (기획 8m)")]
         public float hearDistance = 8f;
@@ -108,6 +113,11 @@ namespace DuskTwilight
         protected override void Update()
         {
             base.Update();
+            if (body)
+            {
+                float bob = !Fallen && !dropping ? Mathf.Sin(Time.time * bobSpeed + home.x) * bobHeight : 0f;
+                body.transform.localPosition = new Vector3(0f, size.y * 0.5f + bob, 0f);
+            }
             if (Hidden && !FakeAbove())
             {
                 SetHidden(false);
