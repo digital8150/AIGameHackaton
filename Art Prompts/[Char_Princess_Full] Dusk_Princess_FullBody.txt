@@ -1,5 +1,5 @@
 1girl, solo, dragon girl, demon girl, {{full body, full-length portrait}}, standing, straight-on, looking at viewer, symmetrical composition, {{black background, simple background}},
-1.6::tall slender proportions, long legs, mature elegant figure, small head::, -2::chibi, childlike proportions, short stature, big head, maid headdress, frilled headband::,
+1.6::tall slender proportions, long legs, mature elegant figure, small head::, -2::chibi, doll proportions, short stature, big head, maid headdress, frilled headband::,
 2.2::small short oni horns on forehead, tiny conical pointed black horns::, -3::large horns, crescent horns, wrap-around horns, long horns, thick curved horns, cyan horns::,
 -3::weapon, polearm, halberd, spear, staff, sword, holding object::, empty hands, arms relaxed at sides,
 creamy platinum silver-white hair, medium-short hair, {{fluffy outward-curled sidelocks framing cheeks, flipped hair ends}}, blunt bangs,

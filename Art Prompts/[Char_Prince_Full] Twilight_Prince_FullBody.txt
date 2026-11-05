@@ -1,5 +1,5 @@
 1boy, solo, bishounen, slender fragile prince, {{full body, full-length portrait}}, standing, straight-on, symmetrical composition, {{black background, simple background}},
-1.6::tall slender proportions, long legs, mature figure, small head::, -2::chibi, childlike proportions, short stature, big head, doll proportions::,
+1.6::tall slender proportions, long legs, mature figure, small head::, -2::chibi, doll proportions, short stature, big head::,
 2.2::bandaged eyes, white cloth bandage wrapped around eyes, blindfold::, -3::visible eyes, open eyes, pupils, irises, glasses, horns::,
 -3::weapon, polearm, halberd, spear, staff, cane, sword, holding object::, empty hands, arms relaxed at sides,
 soft pale champagne-blonde hair, medium-short fluffy slightly wavy hair, soft bangs falling over eye bandages,
