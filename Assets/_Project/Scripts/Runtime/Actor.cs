@@ -46,6 +46,9 @@ namespace DuskTwilight
         [Min(1)] public float landFps = 36f;
         [Tooltip("The sheets are drawn facing left")]
         public bool sheetFacesLeft;
+        [Tooltip("Pushing / pulling a box (or straining against one that won't move)")]
+        public Sprite[] pushFrames;
+        [Min(1)] public float pushFps = 24f;
 
         [Header("Footsteps")]
         public AudioClip[] footsteps;
@@ -56,6 +59,19 @@ namespace DuskTwilight
         public bool Grounded { get; private set; }
         public int Facing { get; private set; } = 1;
         public Vector2 Velocity => rb ? rb.linearVelocity : Vector2.zero;
+        /// <summary>Run speed multiplier, set each frame by whatever slows the leader (a heavy box).</summary>
+        public float SpeedScale { get; set; } = 1f;
+        /// <summary>Set by a box every frame the leader is pushing against it.</summary>
+        public void MarkPushing() => pushUntil = Time.time + 0.12f;
+        public bool Pushing => Time.time < pushUntil;
+        float pushUntil = -9f;
+        /// <summary>The input direction the leader is holding (-1, 0, 1).</summary>
+        public int InputDir { get; private set; }
+        /// <summary>Automated tests: walk this way instead of reading the stick (NaN = off).</summary>
+        public float TestMove { get; set; } = float.NaN;
+        /// <summary>Automated tests: hold Interact.</summary>
+        public bool TestInteract { get; set; }
+        public bool InteractHeld => TestInteract || (GameInput.I != null && GameInput.I.Interact.IsPressed());
 
         Rigidbody2D rb;
         CapsuleCollider2D col;
@@ -114,10 +130,12 @@ namespace DuskTwilight
             Grounded = CheckGround();
             if (Grounded) lastGrounded = Time.time;
 
-            float input = (GameInput.I != null && !GameFlow.InputLocked) ? GameInput.I.Move.ReadValue<float>() : 0f;
+            float input = !float.IsNaN(TestMove) ? TestMove : (GameInput.I != null && !GameFlow.InputLocked) ? GameInput.I.Move.ReadValue<float>() : 0f;
             if (Mathf.Abs(input) < 0.2f) input = 0;
+            InputDir = input > 0 ? 1 : input < 0 ? -1 : 0;
             var v = rb.linearVelocity;
-            float target = input * runSpeed;
+            float target = input * runSpeed * SpeedScale;
+            SpeedScale = 1f;   // boxes set it again every FixedUpdate they are being moved
             float a = Grounded ? accel : airAccel;
             v.x = Mathf.MoveTowards(v.x, target, a * Time.fixedDeltaTime);
             if (input != 0) Facing = input > 0 ? 1 : -1;
@@ -231,6 +249,10 @@ namespace DuskTwilight
                         float t = Mathf.Clamp01(-vy / Mathf.Max(0.1f, jumpVelocity));
                         s = Pick(jumpFrames, Mathf.RoundToInt(Mathf.Lerp(jumpFall.x, jumpFall.y, t)));
                     }
+                }
+                else if (Pushing && pushFrames != null && pushFrames.Length > 0)
+                {
+                    s = Pick(pushFrames, (int)(animTime * pushFps) % pushFrames.Length);
                 }
                 else if (Mathf.Abs(vx) > 0.6f)
                 {

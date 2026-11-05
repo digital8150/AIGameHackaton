@@ -22,6 +22,8 @@ namespace DuskTwilight
         public string panelQuestion = "무엇을 부를까?";
         [Tooltip("Only the princess can speak in light. In the prince's sense the target ignores words.")]
         public bool requirePrincess = true;
+        [Tooltip("Only the prince speaks to it (the princess cannot hear her own words). Overrides requirePrincess.")]
+        public bool requirePrince;
 
         [Header("Light letters")]
         [Tooltip("One light letter: TextMesh + SenseText, Glow child, inactive Plank child shown when it hardens.")]
@@ -74,7 +76,22 @@ namespace DuskTwilight
 
         protected Vector3 ReachCenter => transform.position + (Vector3)reachOffset;
 
-        bool CanSpeakNow => !requirePrincess || SenseController.I == null || !SenseController.I.IsDark;
+        bool CanSpeakNow => SenseController.I == null
+            || (requirePrince ? SenseController.I.IsDark : (!requirePrincess || !SenseController.I.IsDark));
+
+        /// <summary>
+        /// How close the leader is for this target to hear them (smaller wins), or a negative number when out of reach.
+        /// Default: inside the reach box. Override for objects heard from further away (the gold objects: 8 m).
+        /// </summary>
+        protected virtual float ReachScore(Vector3 leader)
+        {
+            var c = ReachCenter;
+            return Mathf.Abs(leader.x - c.x) < reach && Mathf.Abs(leader.y - c.y) < reachHeight ? Mathf.Abs(leader.x - c.x) : -1f;
+        }
+
+        static int bestFrame = -1;
+        static float bestScore;
+        static WordTarget bestTarget;
 
         protected virtual void Update()
         {
@@ -82,8 +99,11 @@ namespace DuskTwilight
             if (!duo) return;
             var p = duo.Leader.transform.position;
             var c = ReachCenter;
-            bool near = !Solved && Mathf.Abs(p.x - c.x) < reach && Mathf.Abs(p.y - c.y) < reachHeight;
-            if (near) Nearest = this; else if (Nearest == this) Nearest = null;
+            if (Time.frameCount != bestFrame) { bestFrame = Time.frameCount; bestScore = float.MaxValue; bestTarget = null; }
+            float score = Solved ? -1f : ReachScore(p);
+            if (score >= 0 && score < bestScore) { bestScore = score; bestTarget = this; Nearest = this; }
+            else if (Nearest == this && bestTarget != this) Nearest = bestTarget;
+            bool near = Nearest == this && score >= 0;
             if (prompt) prompt.color = new Color(1, 0.95f, 0.85f, near && !open && CanSpeakNow ? 1 : 0);
 
             if (open) { PanelInput(); return; }

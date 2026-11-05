@@ -97,3 +97,36 @@ A single wide fairytale bell gantry frame seen straight from the side, like a br
 no humans, -3::1girl, 1boy, human::, game asset, paper cutout prop, horizontal composition, {{black background, simple background}}, -3::wood, wooden plank, stone, text, letters::,
 {{long thin floating platform made of solid warm golden light}}, softly glowing rounded edges, faint pen hatching shimmering inside like layered paper, tiny light motes drifting off the top, translucent gold and pale peach,
 A single slim floating bar of golden light used as a magical platform in a 2D side-scroller, wide and flat, drawn in a vintage kamishibai paper-theater style with delicate pen hatching, isolated on a solid black background.
+
+---
+
+## 9. 새 1~3단계 소품 (공주의 힘, 왕자의 말)
+### 9-A. 금색 다리 판 (Gold Stretch Bridge — 21:9, 가로로 반복해 길이를 바꾼다)
+no humans, -3::1girl, 1boy, human::, game asset, paper cutout prop, horizontal composition, {{black background, simple background}}, -3::text, letters, railing, rope::,
+{{long flat wooden bridge plank clad in warm burnished gold leaf}}, simple straight beam seen from the side, engraved sun and vine filigree along its edge, small rivets, the same pattern repeating evenly from end to end, faint golden shimmer, intricate pen cross-hatching, sepia and warm gold tones,
+A single long golden bridge beam that can magically stretch, seen straight from the side, drawn in a vintage kamishibai paper-theater style with dense pen hatching, isolated on a solid black background.
+
+### 9-B. 금색 기둥 (Gold Stretch Pillar — 9:21, 세로로 반복해 높이를 바꾼다)
+no humans, -3::1girl, 1boy, human::, game asset, paper cutout prop, vertical composition, {{black background, simple background}}, -3::text, letters, statue, capital, base::,
+{{tall square pillar clad in warm burnished gold}}, flat top you can stand on, engraved spiral vine and sun filigree repeating evenly from top to bottom, small rivets on the edges, faint golden shimmer, intricate pen cross-hatching, sepia and warm gold tones,
+A single tall golden pillar that can magically grow or shrink, seen straight from the side, drawn in a vintage kamishibai paper-theater style with dense pen hatching, isolated on a solid black background.
+
+### 9-C. 금색 통나무 (Gold-Banded Log — 21:9, 가로로 반복)
+no humans, -3::1girl, 1boy, human::, game asset, paper cutout prop, horizontal composition, {{black background, simple background}}, -3::text, letters, leaves, branches::,
+{{long straight tree log lying on its side wrapped with shining gold bands}}, rough bark with gold leaf glinting in the cracks, gold rings repeating evenly along its length, flat ends, intricate pen cross-hatching, sepia, brown and warm gold tones,
+A single long log bound in magical gold bands, seen straight from the side, drawn in a vintage kamishibai paper-theater style with dense pen hatching, isolated on a solid black background.
+
+### 9-D. 무거운 나무 상자 (Heavy Wooden Crate — 1:1)
+no humans, -3::1girl, 1boy, human::, game asset, paper cutout prop, square composition, {{black background, simple background}}, -3::text, letters, lid open, contents::,
+{{sturdy square wooden crate with iron corner brackets}}, thick planks, heavy rivets, worn edges, a small crescent and sun branded on the side, seen straight from the front, intricate pen cross-hatching, sepia and dark plum tones,
+A single heavy wooden crate that only a strong princess can push, seen straight from the front, drawn in a vintage kamishibai paper-theater style with dense pen hatching, isolated on a solid black background.
+
+### 9-E. 압력판 (Pressure Plate — 21:9, 얇은 판)
+no humans, -3::1girl, 1boy, human::, game asset, paper cutout prop, horizontal composition, {{black background, simple background}}, -3::text, letters::,
+{{flat low stone pressure plate set into the ground}}, a thin carved slab with a sun-and-moon rune in the middle, bronze rim, slightly raised, seen straight from the side and a little from above, intricate pen cross-hatching, sepia and weathered stone tones,
+A single old stone pressure plate that opens a gate when weighed down, drawn in a vintage kamishibai paper-theater style with dense pen hatching, isolated on a solid black background.
+
+### 9-F. 철문 (Iron Bar Gate — 9:21, 좁고 높은 창살문)
+no humans, -3::1girl, 1boy, human::, game asset, paper cutout prop, vertical composition, {{black background, simple background}}, -3::text, letters, wall, castle::,
+{{narrow tall iron portcullis gate of vertical bars with pointed tips}}, cross bars and rivets, a small sun emblem in the middle, rusted dark iron, seen straight from the front, intricate pen cross-hatching, sepia and dark iron tones,
+A single narrow iron bar gate that rises when a pressure plate is weighed down, drawn in a vintage kamishibai paper-theater style with dense pen hatching, isolated on a solid black background.

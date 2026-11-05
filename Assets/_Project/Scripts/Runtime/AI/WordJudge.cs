@@ -8,6 +8,8 @@ namespace DuskTwilight
     /// language model (<see cref="LocalLLM"/>). Anything that can't be judged is None (the letters scatter).
     /// Tested offline: Kanana 1.5 2.1B, 51/54 words right, ~45 ms each (Tools/ai_bench).
     /// </summary>
+    public enum StretchKind { None, Long, Short }
+
     public static class WordJudge
     {
         public struct Result
@@ -42,7 +44,9 @@ namespace DuskTwilight
         public static async Task PrimeAsync()
         {
             var llm = LocalLLM.I;
-            if (llm) await llm.ChooseAsync(System, Shots, "단어: 의자", Answers, 30f);
+            if (!llm) return;
+            await llm.ChooseAsync(System, Shots, "단어: 의자", Answers, 30f);
+            await llm.ChooseAsync(StretchSystem, StretchShots, "말: 더 커져라", StretchAnswers, 30f);
         }
 
         public static async Task<Result> JudgeWeightAsync(string spoken, WordLexicon lexicon)
@@ -74,6 +78,57 @@ namespace DuskTwilight
                 }
             }
             return new Result { source = "폴백" };
+        }
+    
+
+        // ------------------------------------------------------------------ 말로 길이 바꾸기 (gold objects)
+        public struct StretchResult
+        {
+            public StretchKind stretch;
+            public float confidence;
+            public string source;
+        }
+
+        const string StretchSystem =
+            "너는 동화 속 마법의 금색 물체다. 왕자가 너에게 한 말을 듣고, 길어지라는 뜻이면 '길게', 짧아지라는 뜻이면 '짧게', " +
+            "그 밖의 말이면 '관계없음'이라고만 답한다. 말투나 어미가 장난스러워도(예: 길어져랏, 늘어나라구) 뜻으로 판단한다. " +
+            "커져라·높아져라·자라라는 '길게', 작아져라·낮아져라·줄어라는 '짧게'다.";
+
+        static readonly (string, string)[] StretchShots =
+        {
+            ("말: 길어져", "길게"), ("말: 짧아져", "짧게"), ("말: 안녕", "관계없음"),
+            ("말: 쭉쭉 늘어나라", "길게"), ("말: 조그맣게 줄어들어", "짧게"), ("말: 배고파", "관계없음"),
+        };
+        static readonly string[] StretchAnswers = { "길게", "짧게", "관계없음" };
+        static readonly Dictionary<string, StretchResult> stretchCache = new Dictionary<string, StretchResult>();
+
+        // obvious word pieces: no need to ask the model (instant, works without it)
+        static readonly string[] LongPieces = { "길어", "길게", "길쭉", "늘어", "늘려", "늘이", "길다", "쭉", "커져", "크게", "높아", "높게", "자라", "키워" };
+        static readonly string[] ShortPieces = { "짧아", "짧게", "줄어", "줄여", "작아", "작게", "낮아", "낮게", "쪼그", "오므" };
+
+        public static async Task<StretchResult> JudgeStretchAsync(string spoken)
+        {
+            string w = WordTarget.Clean(spoken);
+            if (w.Length == 0) return new StretchResult { source = "폴백" };
+            bool l = false, s = false;
+            foreach (var p in LongPieces) if (w.Contains(p)) l = true;
+            foreach (var p in ShortPieces) if (w.Contains(p)) s = true;
+            if (l != s) return new StretchResult { stretch = l ? StretchKind.Long : StretchKind.Short, confidence = 1f, source = "단어" };
+            if (stretchCache.TryGetValue(w, out var hit)) { hit.source = "캐시"; return hit; }
+            var llm = LocalLLM.I;
+            if (llm && llm.Ready)
+            {
+                var a = await llm.ChooseAsync(StretchSystem, StretchShots, "말: " + spoken.Trim(), StretchAnswers, TimeoutSeconds);
+                if (a.HasValue)
+                {
+                    var k = a.Value.answer == "길게" ? StretchKind.Long : a.Value.answer == "짧게" ? StretchKind.Short : StretchKind.None;
+                    if (a.Value.probability < MinConfidence) k = StretchKind.None;
+                    var r = new StretchResult { stretch = k, confidence = a.Value.probability, source = "AI" };
+                    stretchCache[w] = r;
+                    return r;
+                }
+            }
+            return new StretchResult { source = "폴백" };
         }
     }
 }

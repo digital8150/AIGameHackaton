@@ -13,6 +13,14 @@ namespace DuskTwilight
     [RequireComponent(typeof(Tilemap))]
     public class FakeWall : MonoBehaviour
     {
+        [Header("Found by")]
+        [Tooltip("The prince walking within revealDistance of it sees through it (새 1~3단계: 3m)")]
+        public bool revealByProximity = true;
+        public float revealDistance = 3f;
+        [Tooltip("An echo (or a bell) reaching it")]
+        public bool openOnEcho = true;
+        [Tooltip("Once found the wall is gone for everyone (the princess and boxes pass too)")]
+        public bool vanishWhenFound = true;
         [Tooltip("Share of the echo's radius that counts as reaching the wall (same as switches and bells)")]
         [Range(0.3f, 1f)] public float reachShare = 0.85f;
         [Tooltip("Bells reveal fake walls too")]
@@ -22,7 +30,7 @@ namespace DuskTwilight
         [Tooltip("Caption when a wall is found (what it looks like when you cannot hear it)")]
         public string foundCaption = "";
 
-        class Part { public List<Vector3> centres = new List<Vector3>(); public GameObject go; public bool open; }
+        class Part { public List<Vector3> centres = new List<Vector3>(); public List<Vector3Int> cells = new List<Vector3Int>(); public GameObject go; public bool open; }
         readonly List<Part> parts = new List<Part>();
         Tilemap map;
 
@@ -41,6 +49,7 @@ namespace DuskTwilight
                 {
                     var cell = q.Dequeue();
                     part.centres.Add(map.GetCellCenterWorld(cell));
+                    part.cells.Add(cell);
                     foreach (var d in new[] { Vector3Int.left, Vector3Int.right, Vector3Int.up, Vector3Int.down })
                         if (map.HasTile(cell + d) && seen.Add(cell + d)) q.Enqueue(cell + d);
                 }
@@ -64,8 +73,23 @@ namespace DuskTwilight
         void OnEnable() { EchoCaller.Called += OnCall; EchoResonator.Rang += OnBell; }
         void OnDisable() { EchoCaller.Called -= OnCall; EchoResonator.Rang -= OnBell; }
 
-        void OnCall(Vector2 from, float strength) => Hear(from, strength);
-        void OnBell(Vector2 from, float strength, EchoResonator bell) { if (answersBells) Hear(from, strength); }
+        void OnCall(Vector2 from, float strength) { if (openOnEcho) Hear(from, strength); }
+        void OnBell(Vector2 from, float strength, EchoResonator bell) { if (openOnEcho && answersBells) Hear(from, strength); }
+
+        void Update()
+        {
+            if (!revealByProximity) return;
+            var duo = DuoController.I;
+            if (!duo || duo.Leader != duo.prince) return;
+            Vector2 p = (Vector2)duo.Leader.transform.position + Vector2.up * 0.5f;
+            foreach (var part in parts)
+            {
+                if (part.open) continue;
+                foreach (var c in part.centres)
+                    if (Mathf.Abs(c.x - p.x) - 0.5f <= revealDistance && Mathf.Abs(c.y - p.y) - 0.5f <= revealDistance)
+                    { StartCoroutine(Open(part, 0f)); break; }
+            }
+        }
 
         void Hear(Vector2 from, float strength)
         {
@@ -86,6 +110,11 @@ namespace DuskTwilight
             p.open = true;
             yield return new WaitForSeconds(delay);
             if (p.go) Destroy(p.go);
+            if (vanishWhenFound && map)
+            {
+                foreach (var c in p.cells) map.SetTile(c, null);
+                foreach (var lip in GetComponents<GroundLip>()) lip.Rebuild();
+            }
             if (foundEcho > 0 && p.centres.Count > 0) SenseController.I?.EmitEcho(p.centres[p.centres.Count / 2], foundEcho);
             if (!string.IsNullOrEmpty(foundCaption)) GameEvents.Caption?.Invoke(foundCaption);
             GameEvents.PuzzleAttempt?.Invoke("fake-wall", true);
