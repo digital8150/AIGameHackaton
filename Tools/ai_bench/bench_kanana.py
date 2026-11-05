@@ -17,14 +17,22 @@ SYSTEM = ("너는 동화 속 퍼즐의 심판이다. 플레이어가 말한 단�
 GRAMMAR = 'root ::= "무거움" | "가벼움" | "보통"'
 
 
+# a few worked examples (none of them are in the test list) so the model uses all three answers
+SHOTS = [("새털", "가벼움"), ("돌덩이", "무거움"), ("숟가락", "보통"), ("공기", "가벼움"), ("트럭", "무거움"), ("모자", "보통")]
+
+
 def ask(word):
-    body = {"messages": [{"role": "system", "content": SYSTEM}, {"role": "user", "content": f"단어: {word}"}],
+    msgs = [{"role": "system", "content": SYSTEM}]
+    for w, a in SHOTS:
+        msgs += [{"role": "user", "content": f"단어: {w}"}, {"role": "assistant", "content": a}]
+    msgs.append({"role": "user", "content": f"단어: {word}"})
+    body = {"messages": msgs,
             "max_tokens": 6, "temperature": 0, "grammar": GRAMMAR, "logprobs": True, "top_logprobs": 3}
     req = urllib.request.Request(URL, data=json.dumps(body).encode(), headers={"Content-Type": "application/json"})
     t0 = time.perf_counter()
     d = json.load(urllib.request.urlopen(req, timeout=30))
     dt = time.perf_counter() - t0
-    text = d["choices"][0]["message"]["content"].strip()
+    text = d["choices"][0]["message"]["content"].replace("<|eot_id|>", "").strip()
     conf = None
     try:
         import math
