@@ -58,3 +58,17 @@ A single fairytale fern bush seen from the side for the front parallax layer of 
 no humans, -3::1girl, 1boy, human::, game asset, paper cutout prop, {{black background, simple background}},
 {{sparse cluster of wildflowers on long thin stems}}, small pale blossoms, slender leaves, intricate pen cross-hatching, sepia tones with faded ivory and dusty rose petals,
 A few delicate fairytale wildflowers on long stems for the front parallax layer of a 2D side-scroller, drawn in a vintage kamishibai paper-theater style with sketchy pen hatching, isolated on a solid black background.
+
+---
+
+## 8. 무성한 수풀 띠 (Dense Foreground Thicket — 21:9 와이드 권장)
+no humans, -3::1girl, 1boy, human::, game asset, paper cutout prop, horizontal composition, {{black background, simple background}}, -3::sparse, isolated plants, single fern, gaps, wooden board, plank, base::,
+{{dense lush overgrown thicket}}, {{thick wall of layered foliage filling the whole lower part of the image}}, tangled bushes, broad leaves, fern fronds, tall grass and brambles packed tightly together, irregular leafy top silhouette, solid mass at the bottom edge, intricate pen cross-hatching, deep sepia and dark plum tones with a few pale ivory leaf highlights,
+A wide continuous band of densely packed paper-cutout undergrowth, bushes and ferns overlapping in several layers, for the bottom front parallax layer of a 2D side-scroller, drawn in a vintage kamishibai paper-theater style with dense pen hatching, isolated on a solid black background.
+
+---
+
+## 9. 덤불 덩어리 (Lush Bush Clump — 3:2 가로 권장)
+no humans, -3::1girl, 1boy, human::, game asset, paper cutout prop, {{black background, simple background}}, -3::sparse, single stem, potted plant::,
+{{large lush rounded bush clump}}, many overlapping layers of leaves, ferns and grass spilling out at the sides, a few small pale flowers, full and heavy foliage mass, intricate pen cross-hatching, deep sepia and dark plum tones,
+A single big overgrown fairytale shrub, wide and full, for the front parallax layer of a 2D side-scroller, drawn in a vintage kamishibai paper-theater style with dense pen hatching, isolated on a solid black background.

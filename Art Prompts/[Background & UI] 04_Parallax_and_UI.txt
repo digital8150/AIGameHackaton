@@ -30,6 +30,11 @@ no humans, -3::1girl, 1boy, human::, game asset, paper cutout prop, vertical com
 {{tall rectangular rock cliff column}}, flat grassy top edge with tiny pale flowers, sheer vertical rock face with cracks, tangled roots draping down, intricate pen cross-hatching, sepia and dark plum tones,
 A tall rocky cliff column seen straight from the side with a flat top and straight vertical walls running to the bottom edge, for the middle parallax layer of a 2D side-scroller, drawn in a vintage kamishibai paper-theater style with dense pen hatching, isolated on a solid black background.
 
+### 1-F. 중경: 숲 밑동 덤불 띠 (Midground Undergrowth Band — 21:9 와이드 권장)
+no humans, -3::1girl, 1boy, human::, wide shot, horizontal composition, {{black background, simple background}}, -3::sky, hills, sparse, gaps, frame, border, rectangular panel::,
+{{dense band of forest undergrowth}}, thick bushes, shrubs, ferns and tree bases packed tightly along the whole width, irregular leafy top edge, solid dark mass reaching the bottom edge, intricate pen cross-hatching, sepia and dark plum tones, slightly faded by evening haze,
+A wide continuous strip of dense fairytale forest undergrowth for a 2D parallax middle layer, filling the space below the trees, drawn in a vintage kamishibai paper-theater style with dense pen hatching, isolated on a solid black background.
+
 ---
 
 ## 2. 지형 타일셋 시트 / 플랫폼 블록 (Ground Platform Block — 3:2 가로 권장)
