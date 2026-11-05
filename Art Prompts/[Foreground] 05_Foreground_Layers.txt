@@ -121,3 +121,8 @@ A thick wild rose bramble with thorns for the front parallax layer of a 2D side-
 no humans, -3::1girl, 1boy, human::, game asset, paper cutout prop, {{black background, simple background}}, vertical composition, -3::text, letters, emblem text, people::,
 {{tattered cloth banner hanging from an iron rod}}, frayed torn bottom edge, faded sun and crescent moon emblem, gentle folds, intricate pen cross-hatching, deep sepia and dark plum tones, faded gold and dusky violet cloth,
 A single tattered fairytale banner hanging from the top for the front parallax layer of a 2D side-scroller, drawn in a vintage kamishibai paper-theater style with dense pen hatching, isolated on a solid black background.
+
+## 17. 늘어진 뿌리와 녹슨 사슬 (Hanging Roots & Rusted Chains — 21:9 가로, 4단계 동굴 천장)
+no humans, -3::1girl, 1boy, human::, game asset, paper cutout prop, {{black background, simple background}}, horizontal composition, -3::sky, leaves, flowers, ground::,
+{{tangled tree roots and a few rusted iron chains hanging down from a cave ceiling}}, solid along the top edge, strands of different lengths dangling into empty space, dripping water beads, intricate pen cross-hatching, sepia and dark plum tones, cool slate,
+A wide strip of hanging cave-ceiling roots and chains for the foreground layer of a 2D side-scroller, drawn in a vintage kamishibai paper-theater style with dense pen hatching, isolated on a solid black background.
