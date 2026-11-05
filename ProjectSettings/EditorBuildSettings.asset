@@ -6,8 +6,14 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
-    guid: 8c9cfa26abfee488c85f1582747f6a02
+    path: Assets/Scenes/Ch0_Prologue.unity
+    guid: 5677366e637be234884981f77311f411
+  - enabled: 1
+    path: Assets/Scenes/Ch1_PrinceInDark.unity
+    guid: 45c7652ffb4261946b76be7258d2146f
+  - enabled: 1
+    path: Assets/Scenes/Ch2_PrincessInLight.unity
+    guid: 31b621fad7f39c441bce4c289c82459b
   - enabled: 1
     path: Assets/Scenes/InGame.unity
     guid: d18e3c97ce3d7014e87212bab4c47d1e
