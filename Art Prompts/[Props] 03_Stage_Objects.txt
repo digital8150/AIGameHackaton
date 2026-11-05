@@ -160,3 +160,8 @@ A single crescent moon symbol, drawn in a vintage kamishibai paper-theater style
 no humans, -3::1girl, 1boy, human::, game asset, paper cutout prop, square composition, {{black background, simple background}}, -3::text, letters, face, moon, circle, disc, round frame, medallion::,
 {{a single large five-pointed star shape painted in pale gold filling the frame}}, flat symbol, just the star outline and nothing around it, seen straight from the front, intricate pen cross-hatching, sepia and pale gold tones,
 A single five-pointed star symbol, drawn in a vintage kamishibai paper-theater style with dense pen hatching, isolated on a solid black background.
+
+### 9-M. 숨은 발판 (Hidden Plank — 21:9, 왕자에게만 보이는 낡은 나무 발판, 가로 반복)
+no humans, -3::1girl, 1boy, human::, game asset, paper cutout prop, horizontal composition, {{black background, simple background}}, -3::text, letters, glass, crystal, metal frame, neon, glow outline, sci-fi::,
+{{a single long thin weathered wooden plank seen from the side}}, old grey wood grain, a few iron nails, frayed rope wrapped at both ends, tiny moss tufts, faint ghostly pale ink wash as if half drawn, the same plank texture from end to end, intricate pen cross-hatching, sepia, pale grey and faded silver tones,
+A single long thin old wooden plank that only the blind prince can sense, drawn half-faded like a ghostly pencil sketch in a vintage kamishibai paper-theater style, isolated on a solid black background.
