@@ -30,8 +30,8 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _BurnAmount: 0.11
-    - _BurnHoleOpacity: 0.76
+    - _BurnAmount: 0.04
+    - _BurnHoleOpacity: 0.5
     - _BurnPatchBias: 0.5
     - _BurnPatchScale: 0.06
     - _BurnScale: 0.1
@@ -58,7 +58,7 @@ Material:
     - _StencilWriteMask: 255
     m_Colors:
     - _BottomColor: {r: 0.62, g: 0.55, b: 0.45, a: 1}
-    - _BurnHoleColor: {r: 0.754717, g: 0.22732303, b: 0.116292715, a: 1}
+    - _BurnHoleColor: {r: 0.36, g: 0.17, b: 0.09, a: 1}
     - _CharColor: {r: 0.91194963, g: 0.30047107, b: 0.12331377, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmberColor: {r: 1, g: 0.5165508, b: 0.20440245, a: 1}

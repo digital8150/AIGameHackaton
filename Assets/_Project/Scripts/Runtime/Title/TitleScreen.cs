@@ -29,6 +29,16 @@ namespace DuskTwilight
         [Tooltip("Pixels the menu rises while fading in.")]
         public float menuRise = 24f;
 
+        [Header("Stage select")]
+        [Tooltip("Menu button that opens the stage list (단계 선택)")]
+        public Button stageSelectButton;
+        [Tooltip("The stage list shown in place of the menu")]
+        public CanvasGroup stageMenu;
+        [Tooltip("Stage buttons, in order; each loads the scene of the same index in stageScenes")]
+        public Button[] stageButtons;
+        public string[] stageScenes = { "Stage1_FirstTwilight", "Stage2_SunsetLake", "Stage3_EchoCave", "Stage4_TwilightGate", "Stage5_TwilightBridge" };
+        public Button stageBackButton;
+
         [Header("Scene change")]
         [Tooltip("Shared black cover (Prefabs/UI/SceneTransition): fade to black → load → hold → fade in.")]
         public SceneTransition transition;
@@ -69,6 +79,15 @@ namespace DuskTwilight
             if (settingsButton) settingsButton.onClick.AddListener(OpenSettings);
             if (quitButton) quitButton.onClick.AddListener(Quit);
             if (settings) settings.Closed += () => SetMenuInteractable(true);
+            if (stageSelectButton) stageSelectButton.onClick.AddListener(() => ShowStages(true));
+            if (stageBackButton) stageBackButton.onClick.AddListener(() => ShowStages(false));
+            if (stageButtons != null)
+                for (int i = 0; i < stageButtons.Length; i++)
+                {
+                    int k = i;
+                    if (stageButtons[i]) stageButtons[i].onClick.AddListener(() => StartAt(k < stageScenes.Length ? stageScenes[k] : firstScene));
+                }
+            SetStages(false);
 
             menuRt = menu ? (RectTransform)menu.transform : null;
             if (menuRt) menuPos = menuRt.anchoredPosition;
@@ -126,6 +145,11 @@ namespace DuskTwilight
 
         void Update()
         {
+            if (stagesOpen && !leaving)
+            {
+                var k2 = UnityEngine.InputSystem.Keyboard.current; var p2 = UnityEngine.InputSystem.Gamepad.current;
+                if ((k2 != null && k2.escapeKey.wasPressedThisFrame) || (p2 != null && p2.buttonEast.wasPressedThisFrame)) ShowStages(false);
+            }
             if (introDone || !skippable) return;
             var kb = UnityEngine.InputSystem.Keyboard.current;
             var mouse = UnityEngine.InputSystem.Mouse.current;
@@ -150,6 +174,37 @@ namespace DuskTwilight
             menu.blocksRaycasts = on && !leaving;
         }
 
+        bool stagesOpen;
+
+        void SetStages(bool on)
+        {
+            stagesOpen = on;
+            if (!stageMenu) return;
+            stageMenu.alpha = on ? 1f : 0f;
+            stageMenu.interactable = on && !leaving;
+            stageMenu.blocksRaycasts = on && !leaving;
+        }
+
+        /// <summary>단계 선택: the stage list takes the menu's place (and back).</summary>
+        void ShowStages(bool on)
+        {
+            if (leaving || !stageMenu) return;
+            SetStages(on);
+            if (menu) { menu.alpha = on ? 0f : 1f; }
+            SetMenuInteractable(!on);
+            var select = on ? (stageButtons != null && stageButtons.Length > 0 ? stageButtons[0] : stageBackButton) : stageSelectButton;
+            if (select && EventSystem.current) EventSystem.current.SetSelectedGameObject(select.gameObject);
+        }
+
+        void StartAt(string scene)
+        {
+            if (leaving) return;
+            leaving = true;
+            SetMenuInteractable(false);
+            if (stageMenu) { stageMenu.interactable = false; stageMenu.blocksRaycasts = false; }
+            StartCoroutine(Leave(scene));
+        }
+
         void OpenSettings()
         {
             if (leaving || !settings) return;
@@ -162,19 +217,20 @@ namespace DuskTwilight
             if (leaving) return;
             leaving = true;
             SetMenuInteractable(false);
-            StartCoroutine(Leave());
+            StartCoroutine(Leave(firstScene));
         }
 
-        IEnumerator Leave()
+        IEnumerator Leave(string scene)
         {
             if (music) StartCoroutine(FadeMusic(0f, startFadeTime));
-            SceneTransition.Load(firstScene, transition);
+            SceneTransition.Load(scene, transition);
+            var shown = stageMenu && stageMenu.alpha > 0.5f ? stageMenu : menu;   // fade whichever list is up
             for (float k = 0f; k < 1f; k += Time.unscaledDeltaTime / startFadeTime)
             {
-                if (menu) menu.alpha = 1f - k;
+                if (shown) shown.alpha = 1f - k;
                 yield return null;
             }
-            if (menu) menu.alpha = 0f;
+            if (shown) shown.alpha = 0f;
         }
 
         IEnumerator FadeMusic(float to, float time)
