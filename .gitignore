@@ -45,3 +45,7 @@ NAI_API_KEY
 
 # NAI raw generations (curate into Assets/_Project/Art/Env)
 Tools/_nai_out/
+
+# Title art working sources (PSD 131MB > GitHub 100MB limit; not needed at runtime)
+Assets/_Project/Art/Title/*.psd
+Assets/_Project/Art/Title/*.psd.meta
