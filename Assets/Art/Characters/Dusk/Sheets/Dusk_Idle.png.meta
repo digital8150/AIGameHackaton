@@ -1,0 +1,907 @@
+fileFormatVersion: 2
+guid: b2efe553edd9eda408b3fd955ac88e2f
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 2341650813226969076
+    second: Dusk_Idle_0
+  - first:
+      213: 4465839789383728905
+    second: Dusk_Idle_1
+  - first:
+      213: 4447851869713530423
+    second: Dusk_Idle_2
+  - first:
+      213: 5235577631845671038
+    second: Dusk_Idle_3
+  - first:
+      213: -5776367232713813626
+    second: Dusk_Idle_4
+  - first:
+      213: 7483443978938158678
+    second: Dusk_Idle_5
+  - first:
+      213: -9050785446367415779
+    second: Dusk_Idle_6
+  - first:
+      213: 6863992117696012400
+    second: Dusk_Idle_7
+  - first:
+      213: 378710883619365964
+    second: Dusk_Idle_8
+  - first:
+      213: 8516314748012182982
+    second: Dusk_Idle_9
+  - first:
+      213: 4288547531185436591
+    second: Dusk_Idle_10
+  - first:
+      213: 5223716837953571494
+    second: Dusk_Idle_11
+  - first:
+      213: -4165630152703376246
+    second: Dusk_Idle_12
+  - first:
+      213: -4964772938005902800
+    second: Dusk_Idle_13
+  - first:
+      213: -8909180014941462785
+    second: Dusk_Idle_14
+  - first:
+      213: -9000714471716814110
+    second: Dusk_Idle_15
+  - first:
+      213: 1476208064061476132
+    second: Dusk_Idle_16
+  - first:
+      213: 3425416865955298496
+    second: Dusk_Idle_17
+  - first:
+      213: -9009704225815278631
+    second: Dusk_Idle_18
+  - first:
+      213: 8290950541798955919
+    second: Dusk_Idle_19
+  - first:
+      213: -1748704486733519911
+    second: Dusk_Idle_20
+  - first:
+      213: 6711884834309605059
+    second: Dusk_Idle_21
+  - first:
+      213: 8637483375650177249
+    second: Dusk_Idle_22
+  - first:
+      213: -8900175774972553323
+    second: Dusk_Idle_23
+  - first:
+      213: -2931052273516539644
+    second: Dusk_Idle_24
+  - first:
+      213: 9120980315794227844
+    second: Dusk_Idle_25
+  - first:
+      213: 7371954228689077559
+    second: Dusk_Idle_26
+  - first:
+      213: 1790693827365711530
+    second: Dusk_Idle_27
+  - first:
+      213: 7605337244656570770
+    second: Dusk_Idle_28
+  - first:
+      213: 7020513214911394911
+    second: Dusk_Idle_29
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Dusk_Idle_00
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1143
+        width: 286
+        height: 286
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a10235634487fa4a8beb624cb79f243
+      internalID: 31214481
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dusk_Idle_01
+      rect:
+        serializedVersion: 2
+        x: 286
+        y: 1143
+        width: 285
+        height: 286
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 373cdf40e78ded248a5e5cfb6c5d676e
+      internalID: -502667681
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dusk_Idle_02
+      rect:
+        serializedVersion: 2
+        x: 571
+        y: 1143
+        width: 286
+        height: 286
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 78f6554640fc5014bac824a9df89e77c
+      internalID: -221634971
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dusk_Idle_03
+      rect:
+        serializedVersion: 2
+        x: 857
+        y: 1143
+        width: 286
+        height: 286
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3184af73a68158842bfcdd7ad68be1a7
+      internalID: 1808936482
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dusk_Idle_04
+      rect:
+        serializedVersion: 2
+        x: 1143
+        y: 1143
+        width: 286
+        height: 286
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 19c553493ba76964ea7dbc6899563054
+      internalID: 1882565697
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dusk_Idle_05
+      rect:
+        serializedVersion: 2
+        x: 1429
+        y: 1143
+        width: 285
+        height: 286
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db34dc462751eb94cbd48ceeedf66125
+      internalID: 1639814249
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dusk_Idle_06
+      rect:
+        serializedVersion: 2
+        x: 1714
+        y: 1143
+        width: 286
+        height: 286
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e99ff158372e4e34b95ca55063a27e2f
+      internalID: 1339455700
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dusk_Idle_07
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 857
+        width: 286
+        height: 286
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 482a8a1ef64e4d346aa2d6292c10e94b
+      internalID: -132214105
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dusk_Idle_08
+      rect:
+        serializedVersion: 2
+        x: 286
+        y: 857
+        width: 285
+        height: 286
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa1a259fcefc9e0488cb8ca5d396259a
+      internalID: -1426597
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dusk_Idle_09
+      rect:
+        serializedVersion: 2
+        x: 571
+        y: 857
+        width: 286
+        height: 286
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3221dfb013613424e9597a83ab7e0894
+      internalID: -628201894
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dusk_Idle_10
+      rect:
+        serializedVersion: 2
+        x: 857
+        y: 857
+        width: 286
+        height: 286
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac10081a217ea8043a932acae442e3d3
+      internalID: 4288547531185436591
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dusk_Idle_11
+      rect:
+        serializedVersion: 2
+        x: 1143
+        y: 857
+        width: 286
+        height: 286
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1caa670ea866a2c458d92bf63c142e60
+      internalID: 5223716837953571494
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dusk_Idle_12
+      rect:
+        serializedVersion: 2
+        x: 1429
+        y: 857
+        width: 285
+        height: 286
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: afa46fdeac1fbc643b81c90b1d2e3039
+      internalID: -4165630152703376246
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dusk_Idle_13
+      rect:
+        serializedVersion: 2
+        x: 1714
+        y: 857
+        width: 286
+        height: 286
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d22d02b256642274dbfd168223355135
+      internalID: -4964772938005902800
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dusk_Idle_14
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 572
+        width: 286
+        height: 285
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c878c3adb4d1e6c4c83b2241e06da168
+      internalID: -8909180014941462785
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dusk_Idle_15
+      rect:
+        serializedVersion: 2
+        x: 286
+        y: 572
+        width: 285
+        height: 285
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb6676e9bb0004e47ba54b23374b9f07
+      internalID: -9000714471716814110
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dusk_Idle_16
+      rect:
+        serializedVersion: 2
+        x: 571
+        y: 572
+        width: 286
+        height: 285
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 58b2de7376961ce4bbdba140a097672a
+      internalID: 1476208064061476132
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dusk_Idle_17
+      rect:
+        serializedVersion: 2
+        x: 857
+        y: 572
+        width: 286
+        height: 285
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d66c1449154b8bb4c87660814009628b
+      internalID: 3425416865955298496
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dusk_Idle_18
+      rect:
+        serializedVersion: 2
+        x: 1143
+        y: 572
+        width: 286
+        height: 285
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4005c7e91eb77364799d115180509e87
+      internalID: -9009704225815278631
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dusk_Idle_19
+      rect:
+        serializedVersion: 2
+        x: 1429
+        y: 572
+        width: 285
+        height: 285
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 73b6110ad86d97c46af484dd0dfa11fa
+      internalID: 8290950541798955919
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dusk_Idle_20
+      rect:
+        serializedVersion: 2
+        x: 1714
+        y: 572
+        width: 286
+        height: 285
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0206b38bf6a5487419b3215c7046002f
+      internalID: -1748704486733519911
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dusk_Idle_21
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 286
+        width: 286
+        height: 286
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa8aa47a75918304bbe7764a0fe40953
+      internalID: 6711884834309605059
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dusk_Idle_22
+      rect:
+        serializedVersion: 2
+        x: 286
+        y: 286
+        width: 285
+        height: 286
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 911296584636f6643bf83c9285c52bee
+      internalID: 8637483375650177249
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dusk_Idle_23
+      rect:
+        serializedVersion: 2
+        x: 571
+        y: 286
+        width: 286
+        height: 286
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ae986c5da42812459a19685cafe84ad
+      internalID: -8900175774972553323
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dusk_Idle_24
+      rect:
+        serializedVersion: 2
+        x: 857
+        y: 286
+        width: 286
+        height: 286
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d649f63cb0b84104f8ba7bd3d41fb8ae
+      internalID: -2931052273516539644
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dusk_Idle_25
+      rect:
+        serializedVersion: 2
+        x: 1143
+        y: 286
+        width: 286
+        height: 286
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 50f083d7287ae054e9ab5a663d0428aa
+      internalID: 9120980315794227844
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dusk_Idle_26
+      rect:
+        serializedVersion: 2
+        x: 1429
+        y: 286
+        width: 285
+        height: 286
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 49f62b05e3bd91c46b8c136db10e310c
+      internalID: 7371954228689077559
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dusk_Idle_27
+      rect:
+        serializedVersion: 2
+        x: 1714
+        y: 286
+        width: 286
+        height: 286
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5650d0300b7e35646ae866fcc85ba096
+      internalID: 1790693827365711530
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dusk_Idle_28
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 286
+        height: 286
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f27a3676f6ec91345855360dcda68083
+      internalID: 7605337244656570770
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dusk_Idle_29
+      rect:
+        serializedVersion: 2
+        x: 286
+        y: 0
+        width: 285
+        height: 286
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a4f9f7901a9ee1d4da6cef90b2eafe69
+      internalID: 7020513214911394911
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: a86cda48883ea9e4ba58a34a745b9429
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Dusk_Idle_0: 2341650813226969076
+      Dusk_Idle_00: 31214481
+      Dusk_Idle_01: -502667681
+      Dusk_Idle_02: -221634971
+      Dusk_Idle_03: 1808936482
+      Dusk_Idle_04: 1882565697
+      Dusk_Idle_05: 1639814249
+      Dusk_Idle_06: 1339455700
+      Dusk_Idle_07: -132214105
+      Dusk_Idle_08: -1426597
+      Dusk_Idle_09: -628201894
+      Dusk_Idle_1: 4465839789383728905
+      Dusk_Idle_10: 4288547531185436591
+      Dusk_Idle_11: 5223716837953571494
+      Dusk_Idle_12: -4165630152703376246
+      Dusk_Idle_13: -4964772938005902800
+      Dusk_Idle_14: -8909180014941462785
+      Dusk_Idle_15: -9000714471716814110
+      Dusk_Idle_16: 1476208064061476132
+      Dusk_Idle_17: 3425416865955298496
+      Dusk_Idle_18: -9009704225815278631
+      Dusk_Idle_19: 8290950541798955919
+      Dusk_Idle_2: 4447851869713530423
+      Dusk_Idle_20: -1748704486733519911
+      Dusk_Idle_21: 6711884834309605059
+      Dusk_Idle_22: 8637483375650177249
+      Dusk_Idle_23: -8900175774972553323
+      Dusk_Idle_24: -2931052273516539644
+      Dusk_Idle_25: 9120980315794227844
+      Dusk_Idle_26: 7371954228689077559
+      Dusk_Idle_27: 1790693827365711530
+      Dusk_Idle_28: 7605337244656570770
+      Dusk_Idle_29: 7020513214911394911
+      Dusk_Idle_3: 5235577631845671038
+      Dusk_Idle_4: -5776367232713813626
+      Dusk_Idle_5: 7483443978938158678
+      Dusk_Idle_6: -9050785446367415779
+      Dusk_Idle_7: 6863992117696012400
+      Dusk_Idle_8: 378710883619365964
+      Dusk_Idle_9: 8516314748012182982
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

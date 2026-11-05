@@ -1,0 +1,855 @@
+fileFormatVersion: 2
+guid: e00031d877f0d4640a81575bdfacb7e4
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 360917313451376526
+    second: Dusk_Jump_0
+  - first:
+      213: 8250396471749269231
+    second: Dusk_Jump_1
+  - first:
+      213: 8255713302630137873
+    second: Dusk_Jump_2
+  - first:
+      213: 7588030528801337753
+    second: Dusk_Jump_3
+  - first:
+      213: -1067647268414235682
+    second: Dusk_Jump_4
+  - first:
+      213: 3251114400737923327
+    second: Dusk_Jump_5
+  - first:
+      213: -6050315109884381465
+    second: Dusk_Jump_6
+  - first:
+      213: 873392517731002901
+    second: Dusk_Jump_7
+  - first:
+      213: -8931679593643540852
+    second: Dusk_Jump_8
+  - first:
+      213: 6341365615339675531
+    second: Dusk_Jump_9
+  - first:
+      213: 2201699629157471384
+    second: Dusk_Jump_10
+  - first:
+      213: -8136726408171016792
+    second: Dusk_Jump_11
+  - first:
+      213: 7031418165685489983
+    second: Dusk_Jump_12
+  - first:
+      213: 4430696806172689537
+    second: Dusk_Jump_13
+  - first:
+      213: -7837029574204624426
+    second: Dusk_Jump_14
+  - first:
+      213: -2739238481380646295
+    second: Dusk_Jump_15
+  - first:
+      213: 7840817543513618787
+    second: Dusk_Jump_16
+  - first:
+      213: -6145174264429052137
+    second: Dusk_Jump_17
+  - first:
+      213: 1845037910293254846
+    second: Dusk_Jump_18
+  - first:
+      213: -2350050601977180403
+    second: Dusk_Jump_19
+  - first:
+      213: 7819359450065117622
+    second: Dusk_Jump_20
+  - first:
+      213: 3444205551990301097
+    second: Dusk_Jump_21
+  - first:
+      213: -4690988940385956507
+    second: Dusk_Jump_22
+  - first:
+      213: -8406711391456163022
+    second: Dusk_Jump_23
+  - first:
+      213: -2697229557578336170
+    second: Dusk_Jump_24
+  - first:
+      213: 2513386318425139955
+    second: Dusk_Jump_25
+  - first:
+      213: -7227922192055370304
+    second: Dusk_Jump_26
+  - first:
+      213: 2442420136311697729
+    second: Dusk_Jump_27
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Dusk_Jump_00
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 857
+        width: 286
+        height: 286
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e6ee8289061583f48a0314b58cd051d3
+      internalID: 581869590
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dusk_Jump_01
+      rect:
+        serializedVersion: 2
+        x: 286
+        y: 857
+        width: 285
+        height: 286
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea28d933e927a5647a7f3d20a887c7be
+      internalID: -1476584759
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dusk_Jump_02
+      rect:
+        serializedVersion: 2
+        x: 571
+        y: 857
+        width: 286
+        height: 286
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 509162b93ea439d4093776d8ee5c436b
+      internalID: -792740916
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dusk_Jump_03
+      rect:
+        serializedVersion: 2
+        x: 857
+        y: 857
+        width: 286
+        height: 286
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 43e75bba7327c9a45a98a96eea12d609
+      internalID: 1021404292
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dusk_Jump_04
+      rect:
+        serializedVersion: 2
+        x: 1143
+        y: 857
+        width: 286
+        height: 286
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a097b97c8724da848bc28cdb1752acde
+      internalID: 1746271731
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dusk_Jump_05
+      rect:
+        serializedVersion: 2
+        x: 1429
+        y: 857
+        width: 285
+        height: 286
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 900469b4c4f925f4087ecc7b3cfc7c05
+      internalID: 461484130
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dusk_Jump_06
+      rect:
+        serializedVersion: 2
+        x: 1714
+        y: 857
+        width: 286
+        height: 286
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 76dae10bb20401649a8c87f5cb2ba823
+      internalID: -2050926695
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dusk_Jump_07
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 571
+        width: 286
+        height: 286
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b6afdf9109c24b44a003d1b44aff220
+      internalID: -1121731020
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dusk_Jump_08
+      rect:
+        serializedVersion: 2
+        x: 286
+        y: 571
+        width: 285
+        height: 286
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1bc1a84d61a1c5a4ab45389c64d7c924
+      internalID: 209875351
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dusk_Jump_09
+      rect:
+        serializedVersion: 2
+        x: 571
+        y: 571
+        width: 286
+        height: 286
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f1d1ce5e84d9b3e48854f30ec432ce94
+      internalID: 709717351
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dusk_Jump_10
+      rect:
+        serializedVersion: 2
+        x: 857
+        y: 571
+        width: 286
+        height: 286
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b0a724b58794c8a4aa1c3a5ed5f074ab
+      internalID: 2201699629157471384
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dusk_Jump_11
+      rect:
+        serializedVersion: 2
+        x: 1143
+        y: 571
+        width: 286
+        height: 286
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b662662d8788cd44ac39138976aa91f
+      internalID: -8136726408171016792
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dusk_Jump_12
+      rect:
+        serializedVersion: 2
+        x: 1429
+        y: 571
+        width: 285
+        height: 286
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 169861bdb24944c479b241b28c965ace
+      internalID: 7031418165685489983
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dusk_Jump_13
+      rect:
+        serializedVersion: 2
+        x: 1714
+        y: 571
+        width: 286
+        height: 286
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 143b62d0edd5afa479f1d06dcd089e1b
+      internalID: 4430696806172689537
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dusk_Jump_14
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 286
+        width: 286
+        height: 285
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6aaed8e2dfa9e5340a475c2ccc894578
+      internalID: -7837029574204624426
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dusk_Jump_15
+      rect:
+        serializedVersion: 2
+        x: 286
+        y: 286
+        width: 285
+        height: 285
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8dab8bb891632e249afd20e14dbf2d34
+      internalID: -2739238481380646295
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dusk_Jump_16
+      rect:
+        serializedVersion: 2
+        x: 571
+        y: 286
+        width: 286
+        height: 285
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 532966c3ead8e3a43ae986626f264c74
+      internalID: 7840817543513618787
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dusk_Jump_17
+      rect:
+        serializedVersion: 2
+        x: 857
+        y: 286
+        width: 286
+        height: 285
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ee8874463ae5c4489cc420be52358de
+      internalID: -6145174264429052137
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dusk_Jump_18
+      rect:
+        serializedVersion: 2
+        x: 1143
+        y: 286
+        width: 286
+        height: 285
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6da30f25cbc1b774fb35cfc200cbcb31
+      internalID: 1845037910293254846
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dusk_Jump_19
+      rect:
+        serializedVersion: 2
+        x: 1429
+        y: 286
+        width: 285
+        height: 285
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7e7fc86cdf099404797489a402dca896
+      internalID: -2350050601977180403
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dusk_Jump_20
+      rect:
+        serializedVersion: 2
+        x: 1714
+        y: 286
+        width: 286
+        height: 285
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 042d36e21d062914bbd802d258025bda
+      internalID: 7819359450065117622
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dusk_Jump_21
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 286
+        height: 286
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e472f80dacf9e0144b740245b1c4b7d9
+      internalID: 3444205551990301097
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dusk_Jump_22
+      rect:
+        serializedVersion: 2
+        x: 286
+        y: 0
+        width: 285
+        height: 286
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed289f666ec9cdc42ae73bc9c278e1c8
+      internalID: -4690988940385956507
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dusk_Jump_23
+      rect:
+        serializedVersion: 2
+        x: 571
+        y: 0
+        width: 286
+        height: 286
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 11a2195b56880594089a6b7bb144bd51
+      internalID: -8406711391456163022
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dusk_Jump_24
+      rect:
+        serializedVersion: 2
+        x: 857
+        y: 0
+        width: 286
+        height: 286
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 94a6fecaf8a5f9643a940e1439ed13b4
+      internalID: -2697229557578336170
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dusk_Jump_25
+      rect:
+        serializedVersion: 2
+        x: 1143
+        y: 0
+        width: 286
+        height: 286
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0257e184ee11d5d479ec318814c8c830
+      internalID: 2513386318425139955
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dusk_Jump_26
+      rect:
+        serializedVersion: 2
+        x: 1429
+        y: 0
+        width: 285
+        height: 286
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a283638b9e6c7247b9d05f6fecd29f8
+      internalID: -7227922192055370304
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dusk_Jump_27
+      rect:
+        serializedVersion: 2
+        x: 1714
+        y: 0
+        width: 286
+        height: 286
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e947eb4c2c370444baf60032ce8a1231
+      internalID: 2442420136311697729
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: e27ce0072375fc04b82222655e94be3e
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Dusk_Jump_0: 360917313451376526
+      Dusk_Jump_00: 581869590
+      Dusk_Jump_01: -1476584759
+      Dusk_Jump_02: -792740916
+      Dusk_Jump_03: 1021404292
+      Dusk_Jump_04: 1746271731
+      Dusk_Jump_05: 461484130
+      Dusk_Jump_06: -2050926695
+      Dusk_Jump_07: -1121731020
+      Dusk_Jump_08: 209875351
+      Dusk_Jump_09: 709717351
+      Dusk_Jump_1: 8250396471749269231
+      Dusk_Jump_10: 2201699629157471384
+      Dusk_Jump_11: -8136726408171016792
+      Dusk_Jump_12: 7031418165685489983
+      Dusk_Jump_13: 4430696806172689537
+      Dusk_Jump_14: -7837029574204624426
+      Dusk_Jump_15: -2739238481380646295
+      Dusk_Jump_16: 7840817543513618787
+      Dusk_Jump_17: -6145174264429052137
+      Dusk_Jump_18: 1845037910293254846
+      Dusk_Jump_19: -2350050601977180403
+      Dusk_Jump_2: 8255713302630137873
+      Dusk_Jump_20: 7819359450065117622
+      Dusk_Jump_21: 3444205551990301097
+      Dusk_Jump_22: -4690988940385956507
+      Dusk_Jump_23: -8406711391456163022
+      Dusk_Jump_24: -2697229557578336170
+      Dusk_Jump_25: 2513386318425139955
+      Dusk_Jump_26: -7227922192055370304
+      Dusk_Jump_27: 2442420136311697729
+      Dusk_Jump_3: 7588030528801337753
+      Dusk_Jump_4: -1067647268414235682
+      Dusk_Jump_5: 3251114400737923327
+      Dusk_Jump_6: -6050315109884381465
+      Dusk_Jump_7: 873392517731002901
+      Dusk_Jump_8: -8931679593643540852
+      Dusk_Jump_9: 6341365615339675531
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

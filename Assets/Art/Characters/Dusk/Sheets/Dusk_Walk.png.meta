@@ -1,0 +1,1193 @@
+fileFormatVersion: 2
+guid: 13121a726e38c45409a384a7df310fa1
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -7012867650141193279
+    second: Dusk_Walk_0
+  - first:
+      213: -5883231747477096913
+    second: Dusk_Walk_1
+  - first:
+      213: -8447331383655007987
+    second: Dusk_Walk_2
+  - first:
+      213: 6553372580939659001
+    second: Dusk_Walk_3
+  - first:
+      213: -6222599136161115180
+    second: Dusk_Walk_4
+  - first:
+      213: 6034376897995813733
+    second: Dusk_Walk_5
+  - first:
+      213: -8376006191640652882
+    second: Dusk_Walk_6
+  - first:
+      213: 1473619018771585373
+    second: Dusk_Walk_7
+  - first:
+      213: 3894170486668205417
+    second: Dusk_Walk_8
+  - first:
+      213: -7048494131472722935
+    second: Dusk_Walk_9
+  - first:
+      213: 7280962943993712257
+    second: Dusk_Walk_10
+  - first:
+      213: 7362944453402126664
+    second: Dusk_Walk_11
+  - first:
+      213: 6143814107954128970
+    second: Dusk_Walk_12
+  - first:
+      213: -3115881856047009381
+    second: Dusk_Walk_13
+  - first:
+      213: -6799484165082467195
+    second: Dusk_Walk_14
+  - first:
+      213: 393184851829872570
+    second: Dusk_Walk_15
+  - first:
+      213: 1405755794541645715
+    second: Dusk_Walk_16
+  - first:
+      213: 3556057738746581136
+    second: Dusk_Walk_17
+  - first:
+      213: -784759602119053924
+    second: Dusk_Walk_18
+  - first:
+      213: 3360321883807105017
+    second: Dusk_Walk_19
+  - first:
+      213: -5635533350514995574
+    second: Dusk_Walk_20
+  - first:
+      213: -7875745136994541053
+    second: Dusk_Walk_21
+  - first:
+      213: 5726012121636031795
+    second: Dusk_Walk_22
+  - first:
+      213: 5027081753777065910
+    second: Dusk_Walk_23
+  - first:
+      213: 3186975015710103347
+    second: Dusk_Walk_24
+  - first:
+      213: 6768523520952659446
+    second: Dusk_Walk_25
+  - first:
+      213: -5165483238122426555
+    second: Dusk_Walk_26
+  - first:
+      213: -3330349884974836000
+    second: Dusk_Walk_27
+  - first:
+      213: 2741689917008858487
+    second: Dusk_Walk_28
+  - first:
+      213: 7604120432424011331
+    second: Dusk_Walk_29
+  - first:
+      213: 131422493399755369
+    second: Dusk_Walk_30
+  - first:
+      213: 7112638381798175529
+    second: Dusk_Walk_31
+  - first:
+      213: -4013869446127915637
+    second: Dusk_Walk_32
+  - first:
+      213: -2182954966028608563
+    second: Dusk_Walk_33
+  - first:
+      213: -3161452995908814632
+    second: Dusk_Walk_34
+  - first:
+      213: 6875525201710061120
+    second: Dusk_Walk_35
+  - first:
+      213: 1562821737910721148
+    second: Dusk_Walk_36
+  - first:
+      213: -2372859812930084739
+    second: Dusk_Walk_37
+  - first:
+      213: -4316196981243776817
+    second: Dusk_Walk_38
+  - first:
+      213: 8710947602771498689
+    second: Dusk_Walk_39
+  - first:
+      213: 7780842389465526350
+    second: Dusk_Walk_40
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Dusk_Walk_00
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1428
+        width: 286
+        height: 286
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ba4afdd9b0b12d44b277acdbcb19e20
+      internalID: 636934887
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dusk_Walk_01
+      rect:
+        serializedVersion: 2
+        x: 286
+        y: 1428
+        width: 285
+        height: 286
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 39bf1fd4e3f90714095101286cf094b7
+      internalID: 1115501991
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dusk_Walk_02
+      rect:
+        serializedVersion: 2
+        x: 571
+        y: 1428
+        width: 286
+        height: 286
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a65aee43d5f7a7e4399adac4ed22f414
+      internalID: 1462141310
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dusk_Walk_03
+      rect:
+        serializedVersion: 2
+        x: 857
+        y: 1428
+        width: 286
+        height: 286
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc479c2f360ec894894d5699325e4141
+      internalID: 1483075319
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dusk_Walk_04
+      rect:
+        serializedVersion: 2
+        x: 1143
+        y: 1428
+        width: 286
+        height: 286
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc5b6b43b81797f4cbff082070fc47bc
+      internalID: -524148925
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dusk_Walk_05
+      rect:
+        serializedVersion: 2
+        x: 1429
+        y: 1428
+        width: 285
+        height: 286
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c1c5c34a7d24d154fbf7156734b46897
+      internalID: 635930371
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dusk_Walk_06
+      rect:
+        serializedVersion: 2
+        x: 1714
+        y: 1428
+        width: 286
+        height: 286
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4dfc76d7502ffba4996c36abf2e98253
+      internalID: 691714283
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dusk_Walk_07
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1143
+        width: 286
+        height: 285
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce53b1dbb60986e49a983a24ad7dd1fe
+      internalID: 1616021824
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dusk_Walk_08
+      rect:
+        serializedVersion: 2
+        x: 286
+        y: 1143
+        width: 285
+        height: 285
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e5680f2d2d05574f8b74f5824f16acc
+      internalID: 1355208022
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dusk_Walk_09
+      rect:
+        serializedVersion: 2
+        x: 571
+        y: 1143
+        width: 286
+        height: 285
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b5b4f67c8090f94c8d641ee0c34e529
+      internalID: -1573070336
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dusk_Walk_10
+      rect:
+        serializedVersion: 2
+        x: 857
+        y: 1143
+        width: 286
+        height: 285
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 83f01ff6cafa990418624fda6da1b218
+      internalID: 7280962943993712257
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dusk_Walk_11
+      rect:
+        serializedVersion: 2
+        x: 1143
+        y: 1143
+        width: 286
+        height: 285
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 401fdd3e8ff28b743944222b61768087
+      internalID: 7362944453402126664
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dusk_Walk_12
+      rect:
+        serializedVersion: 2
+        x: 1429
+        y: 1143
+        width: 285
+        height: 285
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 89245e1091b6c7f4bafa688196aa8797
+      internalID: 6143814107954128970
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dusk_Walk_13
+      rect:
+        serializedVersion: 2
+        x: 1714
+        y: 1143
+        width: 286
+        height: 285
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4266676ef9e3f5e4b84ccf6325a28501
+      internalID: -3115881856047009381
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dusk_Walk_14
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 857
+        width: 286
+        height: 286
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3d71e0699644a8248acaee90575a36ea
+      internalID: -6799484165082467195
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dusk_Walk_15
+      rect:
+        serializedVersion: 2
+        x: 286
+        y: 857
+        width: 285
+        height: 286
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e9526bf21553eb848b7b6ce22a02dd13
+      internalID: 393184851829872570
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dusk_Walk_16
+      rect:
+        serializedVersion: 2
+        x: 571
+        y: 857
+        width: 286
+        height: 286
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b597be151743e5d49982a1ef8e14af34
+      internalID: 1405755794541645715
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dusk_Walk_17
+      rect:
+        serializedVersion: 2
+        x: 857
+        y: 857
+        width: 286
+        height: 286
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a683cb6317d0cd042a773de553933e48
+      internalID: 3556057738746581136
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dusk_Walk_18
+      rect:
+        serializedVersion: 2
+        x: 1143
+        y: 857
+        width: 286
+        height: 286
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e29b8f3f25453684fbd07025142b3ec4
+      internalID: -784759602119053924
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dusk_Walk_19
+      rect:
+        serializedVersion: 2
+        x: 1429
+        y: 857
+        width: 285
+        height: 286
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5daa0fc92610d5143a3b048e63223c9f
+      internalID: 3360321883807105017
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dusk_Walk_20
+      rect:
+        serializedVersion: 2
+        x: 1714
+        y: 857
+        width: 286
+        height: 286
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 90fd4ea76d062f947917e255d5bba226
+      internalID: -5635533350514995574
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dusk_Walk_21
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 571
+        width: 286
+        height: 286
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 38eb4e6a1393be644906fe7dcfdc9f82
+      internalID: -7875745136994541053
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dusk_Walk_22
+      rect:
+        serializedVersion: 2
+        x: 286
+        y: 571
+        width: 285
+        height: 286
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6de9086d52a90d447a96fd1ff41ac43b
+      internalID: 5726012121636031795
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dusk_Walk_23
+      rect:
+        serializedVersion: 2
+        x: 571
+        y: 571
+        width: 286
+        height: 286
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 654ae019e2f4e4a4fbff075333d78b8e
+      internalID: 5027081753777065910
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dusk_Walk_24
+      rect:
+        serializedVersion: 2
+        x: 857
+        y: 571
+        width: 286
+        height: 286
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 83d38464aa32e764a9c6811b2230146e
+      internalID: 3186975015710103347
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dusk_Walk_25
+      rect:
+        serializedVersion: 2
+        x: 1143
+        y: 571
+        width: 286
+        height: 286
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5622d292d9de6184d8f076ff4dbecce3
+      internalID: 6768523520952659446
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dusk_Walk_26
+      rect:
+        serializedVersion: 2
+        x: 1429
+        y: 571
+        width: 285
+        height: 286
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 254b63048e36da84c8af73d64a826543
+      internalID: -5165483238122426555
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dusk_Walk_27
+      rect:
+        serializedVersion: 2
+        x: 1714
+        y: 571
+        width: 286
+        height: 286
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae6a5ce5deb8c8c46975337f82822e54
+      internalID: -3330349884974836000
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dusk_Walk_28
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 286
+        width: 286
+        height: 285
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f14330ddf6686684383ecf1c983ca1c7
+      internalID: 2741689917008858487
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dusk_Walk_29
+      rect:
+        serializedVersion: 2
+        x: 286
+        y: 286
+        width: 285
+        height: 285
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c7be5aee4545d5940af66f9ee506f960
+      internalID: 7604120432424011331
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dusk_Walk_30
+      rect:
+        serializedVersion: 2
+        x: 571
+        y: 286
+        width: 286
+        height: 285
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a34dcf23b5ef00488fab04b7fe03fb3
+      internalID: 131422493399755369
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dusk_Walk_31
+      rect:
+        serializedVersion: 2
+        x: 857
+        y: 286
+        width: 286
+        height: 285
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 083feebe8e362c949b2e44e6d37e4592
+      internalID: 7112638381798175529
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dusk_Walk_32
+      rect:
+        serializedVersion: 2
+        x: 1143
+        y: 286
+        width: 286
+        height: 285
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b94864b5c41e8404abba0c297aa19335
+      internalID: -4013869446127915637
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dusk_Walk_33
+      rect:
+        serializedVersion: 2
+        x: 1429
+        y: 286
+        width: 285
+        height: 285
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd2616a4d206c0c48887c8f20644f609
+      internalID: -2182954966028608563
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dusk_Walk_34
+      rect:
+        serializedVersion: 2
+        x: 1714
+        y: 286
+        width: 286
+        height: 285
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f9644046d89863048884da74e70e7f3a
+      internalID: -3161452995908814632
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dusk_Walk_35
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 286
+        height: 286
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ccd4b8f95a7d6014785d5c37db40969d
+      internalID: 6875525201710061120
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dusk_Walk_36
+      rect:
+        serializedVersion: 2
+        x: 286
+        y: 0
+        width: 285
+        height: 286
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 49a81ba9060445242be324d4f097765e
+      internalID: 1562821737910721148
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dusk_Walk_37
+      rect:
+        serializedVersion: 2
+        x: 571
+        y: 0
+        width: 286
+        height: 286
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c6caf83d1d2bd2a4e8c3d56864d11f1c
+      internalID: -2372859812930084739
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dusk_Walk_38
+      rect:
+        serializedVersion: 2
+        x: 857
+        y: 0
+        width: 286
+        height: 286
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a74c500a214efe44aac878d061b2d31f
+      internalID: -4316196981243776817
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dusk_Walk_39
+      rect:
+        serializedVersion: 2
+        x: 1143
+        y: 0
+        width: 286
+        height: 286
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 93df5108bae10d846973217c4e229daa
+      internalID: 8710947602771498689
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dusk_Walk_40
+      rect:
+        serializedVersion: 2
+        x: 1429
+        y: 0
+        width: 285
+        height: 286
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e99c118fa9d344f4ba0a4e26d5db9cf4
+      internalID: 7780842389465526350
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: ced2139bf4ac2474fbc21f2367fc279c
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Dusk_Walk_0: -7012867650141193279
+      Dusk_Walk_00: 636934887
+      Dusk_Walk_01: 1115501991
+      Dusk_Walk_02: 1462141310
+      Dusk_Walk_03: 1483075319
+      Dusk_Walk_04: -524148925
+      Dusk_Walk_05: 635930371
+      Dusk_Walk_06: 691714283
+      Dusk_Walk_07: 1616021824
+      Dusk_Walk_08: 1355208022
+      Dusk_Walk_09: -1573070336
+      Dusk_Walk_1: -5883231747477096913
+      Dusk_Walk_10: 7280962943993712257
+      Dusk_Walk_11: 7362944453402126664
+      Dusk_Walk_12: 6143814107954128970
+      Dusk_Walk_13: -3115881856047009381
+      Dusk_Walk_14: -6799484165082467195
+      Dusk_Walk_15: 393184851829872570
+      Dusk_Walk_16: 1405755794541645715
+      Dusk_Walk_17: 3556057738746581136
+      Dusk_Walk_18: -784759602119053924
+      Dusk_Walk_19: 3360321883807105017
+      Dusk_Walk_2: -8447331383655007987
+      Dusk_Walk_20: -5635533350514995574
+      Dusk_Walk_21: -7875745136994541053
+      Dusk_Walk_22: 5726012121636031795
+      Dusk_Walk_23: 5027081753777065910
+      Dusk_Walk_24: 3186975015710103347
+      Dusk_Walk_25: 6768523520952659446
+      Dusk_Walk_26: -5165483238122426555
+      Dusk_Walk_27: -3330349884974836000
+      Dusk_Walk_28: 2741689917008858487
+      Dusk_Walk_29: 7604120432424011331
+      Dusk_Walk_3: 6553372580939659001
+      Dusk_Walk_30: 131422493399755369
+      Dusk_Walk_31: 7112638381798175529
+      Dusk_Walk_32: -4013869446127915637
+      Dusk_Walk_33: -2182954966028608563
+      Dusk_Walk_34: -3161452995908814632
+      Dusk_Walk_35: 6875525201710061120
+      Dusk_Walk_36: 1562821737910721148
+      Dusk_Walk_37: -2372859812930084739
+      Dusk_Walk_38: -4316196981243776817
+      Dusk_Walk_39: 8710947602771498689
+      Dusk_Walk_4: -6222599136161115180
+      Dusk_Walk_40: 7780842389465526350
+      Dusk_Walk_5: 6034376897995813733
+      Dusk_Walk_6: -8376006191640652882
+      Dusk_Walk_7: 1473619018771585373
+      Dusk_Walk_8: 3894170486668205417
+      Dusk_Walk_9: -7048494131472722935
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
