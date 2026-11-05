@@ -91,6 +91,8 @@ namespace DuskTwilight
 
         /// <summary>0 = clear (prince hears), 1 = fully muffled (princess is deaf).</summary>
         public float Muffle { get; private set; }
+        /// <summary>Forces the muffle amount (0 clear … 1 muffled) — e.g. the epilogue clearing the music as colour returns. Negative = off.</summary>
+        public static float MuffleOverride = -1f;
         public AudioClip Current => decks[active].src ? decks[active].src.clip : null;
 
         class Deck
@@ -259,6 +261,7 @@ namespace DuskTwilight
             var sc = SenseController.I;
             if (sc)
                 target = 1f - (followWipe && sc.Listener ? sc.SenseAt(sc.Listener.position) : (sc.IsDark ? 1f : 0f));
+            if (MuffleOverride >= 0f) target = MuffleOverride;
             Muffle = Mathf.MoveTowards(Muffle, Mathf.Clamp01(target), Time.unscaledDeltaTime / muffleEase);
             float b = Mathf.SmoothStep(0f, 1f, Muffle);
 

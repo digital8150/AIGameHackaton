@@ -91,7 +91,9 @@ Shader "DuskTwilight/UI/PageTurn"
                 l = saturate((l - 0.04) * 1.25);
                 float grain = Fbm(p * float2(30, 160)) - 0.5;
                 float3 sep = lerp(_InkDark.rgb, _InkLight.rgb, saturate(pow(l, 1.15) + grain * 0.08));
-                sep = lerp(sep, saturate(sep * (pic / max(l, 0.05))), _KeepColor * 0.5);
+                sep = lerp(sep, saturate(sep * (pic / max(l, 0.05))), saturate(_KeepColor) * 0.5);
+                // past 0.5 the picture's own colour comes all the way back (epilogue), still on warm old paper
+                sep = lerp(sep, saturate(pic * lerp(float3(1, 1, 1), _InkLight.rgb / 0.8, 0.25)), saturate((_KeepColor - 0.5) * 2));
                 sep = Age(sep, uv, aspect);
                 // spine: soft shadow both sides of the middle and a dark crease
                 float g = abs(uv.x - 0.5) * aspect;
