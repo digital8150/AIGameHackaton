@@ -29,12 +29,20 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
+    - _BurnAmount: 0
+    - _BurnPatchBias: 0.7
+    - _BurnPatchScale: 0.018
+    - _BurnScale: 0.07
+    - _CharWidth: 0.06
     - _ColorMask: 15
-    - _Hatch: 0.18
+    - _EmberSpeed: 0.8
+    - _EmberWidth: 0.018
+    - _Hatch: 0
     - _Reveal: 1
     - _RevealSoft: 0.18
+    - _ScorchWidth: 0.16
     - _ShinePeriod: 8
-    - _ShineStrength: 0.8
+    - _ShineStrength: 0.3
     - _ShineWidth: 0.08
     - _Stencil: 0
     - _StencilComp: 8
@@ -42,11 +50,14 @@ Material:
     - _StencilReadMask: 255
     - _StencilWriteMask: 255
     m_Colors:
-    - _BottomColor: {r: 0.46, g: 0.28, b: 0.18, a: 1}
+    - _BottomColor: {r: 0.62, g: 0.55, b: 0.45, a: 1}
+    - _CharColor: {r: 0.12999997, g: 0.079999976, b: 0.059999965, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _MidColor: {r: 0.86, g: 0.64, b: 0.36, a: 1}
+    - _EmberColor: {r: 1, g: 0.5, b: 0.17999998, a: 1}
+    - _MidColor: {r: 0.83, g: 0.77, b: 0.65, a: 1}
     - _Rect: {r: -500, g: 500, b: -60, a: 60}
+    - _ScorchColor: {r: 0.5, g: 0.32999998, b: 0.19999996, a: 1}
     - _ShineColor: {r: 1, g: 1, b: 0.92, a: 1}
-    - _TopColor: {r: 0.98, g: 0.9, b: 0.72, a: 1}
+    - _TopColor: {r: 0.93, g: 0.88, b: 0.77, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1

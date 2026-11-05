@@ -1,0 +1,72 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: M_Title_LogoBurn
+  m_Shader: {fileID: 4800000, guid: f2d113efee55eee488ea47258947cb6b, type: 3}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
+  m_ValidKeywords: []
+  m_InvalidKeywords:
+  - _REVEALBURN_ON
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_LockedProperties: 
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - _BurnAmount: 0.11
+    - _BurnHoleOpacity: 0.76
+    - _BurnPatchBias: 0.5
+    - _BurnPatchScale: 0.06
+    - _BurnScale: 0.1
+    - _CharWidth: 0.09
+    - _ColorMask: 15
+    - _EmberBoost: 2.2
+    - _EmberMin: 0.75
+    - _EmberSpeed: 1.4
+    - _EmberWidth: 0.06
+    - _Hatch: 0
+    - _Reveal: 1
+    - _RevealBurn: 1
+    - _RevealBurnWidth: 0.09
+    - _RevealNoiseScale: 0.02
+    - _RevealSoft: 0.18
+    - _ScorchWidth: 0.14
+    - _ShinePeriod: 8
+    - _ShineStrength: 0.7
+    - _ShineWidth: 0.144
+    - _Stencil: 0
+    - _StencilComp: 8
+    - _StencilOp: 0
+    - _StencilReadMask: 255
+    - _StencilWriteMask: 255
+    m_Colors:
+    - _BottomColor: {r: 0.62, g: 0.55, b: 0.45, a: 1}
+    - _BurnHoleColor: {r: 0.754717, g: 0.22732303, b: 0.116292715, a: 1}
+    - _CharColor: {r: 0.91194963, g: 0.30047107, b: 0.12331377, a: 1}
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _EmberColor: {r: 1, g: 0.5165508, b: 0.20440245, a: 1}
+    - _MidColor: {r: 0.83, g: 0.77, b: 0.65, a: 1}
+    - _Rect: {r: -500, g: 500, b: -60, a: 60}
+    - _RevealBurnColor: {r: 1, g: 0.54999995, b: 0.19999996, a: 1}
+    - _ScorchColor: {r: 0.9308176, g: 0.47991034, b: 0.17269881, a: 1}
+    - _ShineColor: {r: 1, g: 1, b: 0.92, a: 1}
+    - _TopColor: {r: 0.93, g: 0.88, b: 0.77, a: 1}
+  m_BuildTextureStacks: []
+  m_AllowLocking: 1
