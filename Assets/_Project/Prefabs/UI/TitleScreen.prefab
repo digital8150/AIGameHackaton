@@ -192,10 +192,10 @@ MonoBehaviour:
   m_Texture: {fileID: 2800000, guid: ef7729a9e6fe856478c98b42e70ca6a3, type: 3}
   m_UVRect:
     serializedVersion: 2
-    x: 0.00033156498
-    y: 0.90040207
-    width: 0.06598143
-    height: 0.09923246
+    x: 0.0003058104
+    y: 0.9094514
+    width: 0.0762997
+    height: 0.09021811
 --- !u!114 &7590825552035921471
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -215,6 +215,7 @@ MonoBehaviour:
   fps: 24
   startFrame: 0
   pingPong: 0
+  ownFrameMaterial: 0
 --- !u!1 &598114682499098997
 GameObject:
   m_ObjectHideFlags: 0
@@ -320,7 +321,6 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 3890408856774026892}
   - {fileID: 6049674328609567388}
   - {fileID: 7236105993995734065}
   - {fileID: 211591063374838934}
@@ -813,10 +813,10 @@ MonoBehaviour:
   m_Texture: {fileID: 2800000, guid: a3c28dbe3f479704dad28107289fa7a7, type: 3}
   m_UVRect:
     serializedVersion: 2
-    x: 0.00029342723
-    y: 0.9169922
-    width: 0.082746476
-    height: 0.08268229
+    x: 0.00033156498
+    y: 0.90040207
+    width: 0.06598143
+    height: 0.09923246
 --- !u!114 &7234142407884111902
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -836,6 +836,7 @@ MonoBehaviour:
   fps: 24
   startFrame: 0
   pingPong: 0
+  ownFrameMaterial: 0
 --- !u!1 &3253182281703838915
 GameObject:
   m_ObjectHideFlags: 0
@@ -1144,7 +1145,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Text
   m_Material: {fileID: 0}
-  m_Color: {r: 0.2, g: 0.13, b: 0.08, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1152,8 +1153,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: c59c71d24207fd74cbcf00877fa6de66, type: 3}
-    m_FontSize: 38
+    m_Font: {fileID: 12800000, guid: afcac79d4e7b8e5419b6063b878e794d, type: 3}
+    m_FontSize: 30
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 10
@@ -1172,7 +1173,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4163620795476346196}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cfabb0440166ab443bba8876756fdfa9, type: 3}
   m_Name: 
@@ -1384,115 +1385,6 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   fadeCanvasGroup: 0
---- !u!1 &5180236421868298908
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 3890408856774026892}
-  - component: {fileID: 7717808825904718081}
-  - component: {fileID: 5861837611277457953}
-  - component: {fileID: 3841317808596357488}
-  - component: {fileID: 4644846219593036731}
-  m_Layer: 0
-  m_Name: Note
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &3890408856774026892
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5180236421868298908}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1978317529661401796}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 5}
-  m_SizeDelta: {x: 20, y: 102}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!222 &7717808825904718081
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5180236421868298908}
-  m_CullTransparentMesh: 1
---- !u!114 &5861837611277457953
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5180236421868298908}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
-  m_Material: {fileID: 2100000, guid: ea30726ad64ca2544b328f5b849d0adc, type: 2}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 0
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 0}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
---- !u!114 &3841317808596357488
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5180236421868298908}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 306cc8c2b49d7114eaa3623786fc2126, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.LayoutElement
-  m_IgnoreLayout: 1
-  m_MinWidth: -1
-  m_MinHeight: -1
-  m_PreferredWidth: -1
-  m_PreferredHeight: -1
-  m_FlexibleWidth: -1
-  m_FlexibleHeight: -1
-  m_LayoutPriority: 1
---- !u!114 &4644846219593036731
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5180236421868298908}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8d15d4f0d6cf2f54599c7f11c25e3871, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::DuskTwilight.UIShaderSize
 --- !u!1 &5320911053185174365
 GameObject:
   m_ObjectHideFlags: 0
@@ -1966,7 +1858,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Text
   m_Material: {fileID: 0}
-  m_Color: {r: 0.2, g: 0.13, b: 0.08, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1974,8 +1866,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: c59c71d24207fd74cbcf00877fa6de66, type: 3}
-    m_FontSize: 38
+    m_Font: {fileID: 12800000, guid: afcac79d4e7b8e5419b6063b878e794d, type: 3}
+    m_FontSize: 30
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 10
@@ -1994,7 +1886,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5773294192724744305}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cfabb0440166ab443bba8876756fdfa9, type: 3}
   m_Name: 
@@ -2159,7 +2051,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
-  m_Material: {fileID: 2100000, guid: 2f97638acc782354dac510e2ecc209c5, type: 2}
+  m_Material: {fileID: 2100000, guid: e9a1370a553612c4ab8e5e26b492ce7e, type: 2}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
@@ -2267,9 +2159,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DuskTwilight.TitleButton
   plate: {fileID: 1540093865282670021}
   label: {fileID: 5329202076913174311}
-  labelIdle: {r: 0.2, g: 0.13, b: 0.08, a: 1}
-  labelHover: {r: 0.46, g: 0.13, b: 0.08, a: 1}
-  hoverScale: 1.04
+  labelIdle: {r: 0.86, g: 0.8, b: 0.72, a: 0.9}
+  labelHover: {r: 1, g: 0.93, b: 0.78, a: 1}
+  hoverScale: 1.05
   ease: 10
   shineTime: 0.55
   sfx: {fileID: 1443631805849708651}
@@ -2465,7 +2357,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
-  m_Material: {fileID: 2100000, guid: 2f97638acc782354dac510e2ecc209c5, type: 2}
+  m_Material: {fileID: 2100000, guid: e9a1370a553612c4ab8e5e26b492ce7e, type: 2}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
@@ -2573,9 +2465,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DuskTwilight.TitleButton
   plate: {fileID: 6986975723987039742}
   label: {fileID: 9051974310196957732}
-  labelIdle: {r: 0.2, g: 0.13, b: 0.08, a: 1}
-  labelHover: {r: 0.46, g: 0.13, b: 0.08, a: 1}
-  hoverScale: 1.04
+  labelIdle: {r: 0.86, g: 0.8, b: 0.72, a: 0.9}
+  labelHover: {r: 1, g: 0.93, b: 0.78, a: 1}
+  hoverScale: 1.05
   ease: 10
   shineTime: 0.55
   sfx: {fileID: 1443631805849708651}
@@ -2640,7 +2532,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Text
   m_Material: {fileID: 0}
-  m_Color: {r: 0.2, g: 0.13, b: 0.08, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -2648,8 +2540,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: c59c71d24207fd74cbcf00877fa6de66, type: 3}
-    m_FontSize: 38
+    m_Font: {fileID: 12800000, guid: afcac79d4e7b8e5419b6063b878e794d, type: 3}
+    m_FontSize: 30
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 10
@@ -2668,7 +2560,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7119546820871915070}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cfabb0440166ab443bba8876756fdfa9, type: 3}
   m_Name: 
@@ -2867,7 +2759,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
-  m_Material: {fileID: 2100000, guid: 2f97638acc782354dac510e2ecc209c5, type: 2}
+  m_Material: {fileID: 2100000, guid: e9a1370a553612c4ab8e5e26b492ce7e, type: 2}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
@@ -2975,9 +2867,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DuskTwilight.TitleButton
   plate: {fileID: 6726542603889039938}
   label: {fileID: 7748197776786463819}
-  labelIdle: {r: 0.2, g: 0.13, b: 0.08, a: 1}
-  labelHover: {r: 0.46, g: 0.13, b: 0.08, a: 1}
-  hoverScale: 1.04
+  labelIdle: {r: 0.86, g: 0.8, b: 0.72, a: 0.9}
+  labelHover: {r: 1, g: 0.93, b: 0.78, a: 1}
+  hoverScale: 1.05
   ease: 10
   shineTime: 0.55
   sfx: {fileID: 1443631805849708651}
@@ -2993,7 +2885,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 455812287110960997, guid: 4b4aabe80daf4a94d999248b73ab7963, type: 3}
       propertyPath: m_FontData.m_MaxSize
-      value: 58
+      value: 76
       objectReference: {fileID: 0}
     - target: {fileID: 3466026447943356973, guid: 4b4aabe80daf4a94d999248b73ab7963, type: 3}
       propertyPath: m_Name
