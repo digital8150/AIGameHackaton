@@ -2,7 +2,11 @@ using UnityEngine;
 
 namespace DuskTwilight
 {
-    /// <summary>Smooth follow with look-ahead, level bounds and a small kick/shake. Pixel snapping is left to PixelPerfectCamera.</summary>
+    /// <summary>
+    /// Smooth follow with look-ahead, level bounds and a small kick/shake. Inside a <see cref="CameraZone"/> it eases
+    /// to that zone's zoom and offset (e.g. pulled back and looking up on a climb). Pixel snapping is left to
+    /// PixelPerfectCamera (off in this project).
+    /// </summary>
     public class CameraRig : MonoBehaviour
     {
         public static CameraRig I { get; private set; }
@@ -10,26 +14,61 @@ namespace DuskTwilight
         public Vector2 offset = new Vector2(0, 3.2f);
         public float lookAhead = 2.2f;
         public float smoothTime = 0.18f;
+        [Tooltip("Camera centre bounds at the base zoom (they shrink automatically when a zone zooms out)")]
         public float minX = 7f, maxX = 100f, minY = 3.5f, maxY = 12f;
+
+        [Header("Zones")]
+        [Tooltip("How fast zoom and zone offset ease (per second)")]
+        public float zoneEase = 1.2f;
 
         Vector3 vel;
         float shake;
         float aheadX;
+        Camera cam;
+        float baseSize, size;
+        Vector2 zoneOffset;
+        float riseUp;
 
-        void Awake() { I = this; }
+        void Awake()
+        {
+            I = this;
+            cam = GetComponent<Camera>();
+            baseSize = size = cam ? cam.orthographicSize : 7.5f;
+        }
 
         Vector3 Target()
         {
             var leader = DuoController.I ? DuoController.I.Leader : null;
             if (!leader) return transform.position;
             aheadX = Mathf.Lerp(aheadX, leader.Facing * lookAhead, Time.deltaTime * 2.2f);
-            Vector2 p = (Vector2)leader.transform.position + offset + new Vector2(aheadX, 0);
-            p.x = Mathf.Clamp(p.x, minX, maxX);
-            p.y = Mathf.Clamp(p.y, minY, maxY);
+            Vector2 p = (Vector2)leader.transform.position + offset + zoneOffset + new Vector2(aheadX, riseUp);
+            // a wider view must stay inside the level just the same
+            float dy = size - baseSize, dx = dy * (cam ? cam.aspect : 1.78f);
+            p.x = Mathf.Clamp(p.x, minX + dx, Mathf.Max(minX + dx, maxX - dx));
+            p.y = Mathf.Clamp(p.y, minY + dy, Mathf.Max(minY + dy, maxY - dy));
             return new Vector3(p.x, p.y, transform.position.z);
         }
 
-        public void Snap() { aheadX = 0; basePos = Target(); transform.position = basePos; vel = Vector3.zero; init = true; }
+        void UpdateZone(bool instant)
+        {
+            var leader = DuoController.I ? DuoController.I.Leader : null;
+            var zone = leader ? CameraZone.At(leader.transform.position) : null;
+            float targetSize = zone ? zone.orthoSize : baseSize;
+            Vector2 targetOffset = zone ? zone.extraOffset : Vector2.zero;
+            float rising = 0f;
+            if (zone && leader)
+            {
+                var rb = leader.GetComponent<Rigidbody2D>();
+                if (rb && rb.linearVelocity.y > 1f) rising = zone.riseLookUp;
+            }
+            float k = instant ? 1f : 1f - Mathf.Exp(-zoneEase * Time.deltaTime);
+            size = Mathf.Lerp(size, targetSize, k);
+            zoneOffset = Vector2.Lerp(zoneOffset, targetOffset, k);
+            riseUp = Mathf.Lerp(riseUp, rising, instant ? 1f : 1f - Mathf.Exp(-zoneEase * 0.6f * Time.deltaTime));
+            if (cam) cam.orthographicSize = size;
+        }
+
+        public void Snap() { UpdateZone(true); aheadX = 0; basePos = Target(); transform.position = basePos; vel = Vector3.zero; init = true; }
 
         public void Kick(float amount) { shake = Mathf.Max(shake, amount); }
 
@@ -39,6 +78,7 @@ namespace DuskTwilight
         void LateUpdate()
         {
             if (!init) { basePos = transform.position; init = true; }
+            UpdateZone(false);
             basePos = Vector3.SmoothDamp(basePos, Target(), ref vel, smoothTime);
             shake = Mathf.MoveTowards(shake, 0, Time.deltaTime * 1.2f);
             var jitter = shake > 0 ? new Vector3(Random.Range(-1f, 1f), Random.Range(-1f, 1f), 0) * shake * 0.5f : Vector3.zero;

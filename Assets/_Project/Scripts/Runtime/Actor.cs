@@ -80,6 +80,8 @@ namespace DuskTwilight
         public float TestMove { get; set; } = float.NaN;
         /// <summary>Automated tests: hold Interact.</summary>
         public bool TestInteract { get; set; }
+        /// <summary>Automated tests: hold jump (full-height jumps with <see cref="RequestJump"/>).</summary>
+        public bool TestJumpHeld { get; set; }
         public bool InteractHeld => TestInteract || (GameInput.I != null && GameInput.I.Interact.IsPressed());
 
         Rigidbody2D rb;
@@ -127,9 +129,9 @@ namespace DuskTwilight
             if (IsLeader && GameInput.I != null && !GameFlow.InputLocked)
             {
                 if (GameInput.I.Jump.WasPressedThisFrame()) lastJumpPressed = Time.time;
-                jumpHeld = GameInput.I.Jump.IsPressed();
+                jumpHeld = GameInput.I.Jump.IsPressed() || TestJumpHeld;
             }
-            else jumpHeld = false;
+            else jumpHeld = IsLeader && TestJumpHeld;
             Animate();
         }
 
