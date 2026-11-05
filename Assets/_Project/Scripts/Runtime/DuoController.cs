@@ -62,6 +62,7 @@ namespace DuskTwilight
         void Start()
         {
             SetLeader(Leader, instant: true);
+            ResetTrail();
         }
 
         void SetLeader(Actor a, bool instant = false)
@@ -69,7 +70,6 @@ namespace DuskTwilight
             Leader = a;
             Follower.SetLeader(false);
             Leader.SetLeader(true);
-            ResetTrail();
             if (SenseController.I)
             {
                 SenseController.I.Listener = Leader.transform;
@@ -81,6 +81,8 @@ namespace DuskTwilight
         /// Swap who leads. The controlled position is deterministic: the new leader takes the old leader's exact
         /// spot and momentum, the old leader steps into the follower's spot, and the trade is only shown as a
         /// short visual cross-over. A follower standing over a gap can never turn a switch into a fall.
+        /// The trail, cursor and smoothing state are kept: the two spots are unchanged, so the path between them
+        /// is still valid and nothing about the pair's motion changes except who is who.
         /// </summary>
         public void Switch()
         {
@@ -89,14 +91,16 @@ namespace DuskTwilight
             SwitchCount++;
             var oldLeader = Leader;
             var newLeader = Follower;
+            // rendered positions (for the visual cross-over) vs. physics truth (for the teleports):
+            // the interpolated transform lags the body by up to one fixed step
             Vector2 leadPos = oldLeader.transform.position, followPos = newLeader.transform.position;
+            Vector2 leadBody = oldLeader.BodyPosition, followBody = newLeader.BodyPosition;
             var v = oldLeader.Velocity;
-            int facing = oldLeader.Facing;
 
-            newLeader.Teleport(leadPos);
-            oldLeader.Teleport(followPos);
+            newLeader.Teleport(leadBody);
+            oldLeader.Teleport(followBody);
+            newLeader.TradeMotionWith(oldLeader);
             SetLeader(newLeader);
-            newLeader.Face(facing);
             // hand over momentum so the swap never feels like a stop
             newLeader.GetComponent<Rigidbody2D>().linearVelocity = v;
             newLeader.SwapVisualFrom(followPos, swapVisualTime, swapHop);

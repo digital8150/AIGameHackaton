@@ -113,6 +113,31 @@ namespace DuskTwilight
             sr.sortingOrder = lead ? 21 : 20;
         }
 
+        /// <summary>Where the body really is (physics), not the interpolated rendering position.</summary>
+        public Vector2 BodyPosition => rb ? rb.position : (Vector2)transform.position;
+
+        /// <summary>
+        /// The two trade bodies on a switch, so each takes over what the other was doing. lastGrounded in particular
+        /// must travel with the body: otherwise Tab-spamming grants an air jump (a leader who was just grounded
+        /// gets swapped back in mid-air within coyote time).
+        /// </summary>
+        public void TradeMotionWith(Actor o)
+        {
+            (Grounded, o.Grounded) = (o.Grounded, Grounded);
+            (Facing, o.Facing) = (o.Facing, Facing);
+            (lastGrounded, o.lastGrounded) = (o.lastGrounded, lastGrounded);
+            (lastJumpPressed, o.lastJumpPressed) = (o.lastJumpPressed, lastJumpPressed);
+            (jumpHeld, o.jumpHeld) = (o.jumpHeld, jumpHeld);
+            (stepTimer, o.stepTimer) = (o.stepTimer, stepTimer);
+            (followVel, o.followVel) = (o.followVel, followVel);
+            (followSpeed, o.followSpeed) = (o.followSpeed, followSpeed);
+            (followVy, o.followVy) = (o.followVy, followVy);
+            (followWalking, o.followWalking) = (o.followWalking, followWalking);
+            (wasAirborne, o.wasAirborne) = (o.wasAirborne, wasAirborne);
+            (airStart, o.airStart) = (o.airStart, airStart);
+            (landTime, o.landTime) = (o.landTime, landTime);
+        }
+
         public void Teleport(Vector2 p)
         {
             rb.position = p;
