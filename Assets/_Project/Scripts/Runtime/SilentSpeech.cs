@@ -4,7 +4,7 @@ namespace DuskTwilight
 {
     /// <summary>
     /// The princess cannot speak: when she leads and the voice key (V) is held, a speech bubble over her head shows only
-    /// "·· ·" — she tries, nothing comes out. Fires <see cref="GameEvents.SilentCall"/> + a "……" caption once per press.
+    /// "·· ·" — she tries, nothing comes out. Fires <see cref="GameEvents.SilentCall"/> once per press; no caption.
     /// The prince is unaffected (the recording itself lives in VoiceInput).
     /// </summary>
     [RequireComponent(typeof(Actor))]
@@ -28,8 +28,6 @@ namespace DuskTwilight
         public string[] frames = { "·", "··", "···", "……" };
         [Tooltip("Seconds per frame.")]
         public float frameTime = 0.28f;
-        [Tooltip("Caption shown once per press (what a silence looks like).")]
-        public string caption = "……";
 
         [Header("Motion")]
         public float popTime = 0.16f;
@@ -43,7 +41,7 @@ namespace DuskTwilight
         [Tooltip("Seconds the bubble lingers after release before fading.")]
         public float lingerTime = 0.35f;
         public float fadeTime = 0.3f;
-        [Tooltip("Minimum seconds between SilentCall/caption triggers, so tapping V does not spam.")]
+        [Tooltip("Minimum seconds between SilentCall triggers, so tapping V does not spam.")]
         public float pressCooldown = 0.9f;
         [Tooltip("Seconds the bubble stays up when she reaches for nothing (E with nothing in reach), before lingering and fading.")]
         public float popHoldTime = 0.6f;
@@ -90,7 +88,6 @@ namespace DuskTwilight
             {
                 lastFire = Time.time;
                 GameEvents.SilentCall?.Invoke();
-                GameEvents.Caption?.Invoke(caption);
             }
             wasPressed = pressed;
             if (held && !wasHeld) holdStart = Time.time;
