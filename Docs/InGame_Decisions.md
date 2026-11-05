@@ -72,7 +72,8 @@
 - **전환 연출**: 조작 캐릭터 위치에서 원형 파면이 0.65초 동안 화면을 덮으며 세계가 뒤집힌다. 파면 테두리는 흰-금 빛.
 - **공주 모드(빛)**: 황혼 금색 그레이딩, 위쪽 림 라이트, 하단 장밋빛 그림자, 해·구름·안개가 흐르는 하늘(`DuskTwilight/Sky`). 소리는 `DuskTwilight/SoundGlyph` 진동선으로 보인다.
 - **왕자 모드(어둠)**: 남색-검정. 텍스처의 어두운 외곽선을 흰 선으로 반전해 "윤곽만" 남기고, 반향 파면이 지나간 곳만 잠깐 드러난다. 소리 나는 장치는 주기적으로 스스로 파동을 낸다.
-- 후처리: Bloom + Vignette (URP Volume).
+- 후처리: Bloom(임계 0.95) + Vignette 0.42 (URP Volume).
+- **조명 (공주 감각 전용)**: SenseSprite가 URP 2D Light 텍스처를 받는다(`_LightReceive`, 원경·중경은 0.9). `Chapter/Lighting`(전역 앰비언트 0.3, 보랏빛) + `Chapter/MainCamera`의 Focus Light(플레이 영역만 밝게) + 캐릭터 Glow + 체크포인트·재회의 문 Lamp Light + `Environment/LightShaft`(가산, 볼류메트릭 빛줄기). 가장자리는 어둡고 플레이 띠만 밝게. 왕자 감각은 조명과 무관(반향만).
 - **2.5D 레이어 (B안: 일러스트)**: 원경(하늘·언덕, factor 0.92) → 중경(숲 줄·고목·아치·절벽, 0.15~0.6, 땅 뒤) → 플레이 층(0) → 전경(음수 factor, 캐릭터 앞, sortingOrder 40+). `Parallax` + `Prefabs/Environment/Env_*`. 화면 위/아래 가장자리에 붙는 전경(덩굴·풀 띠·근접 나무)은 yFactor 0.85로 카메라 높이를 따라가 점프 시 윗/아랫변이 드러나지 않게 한다.
 - 전경의 바람 흔들림·깊이 흐림·실루엣 음영은 그림이 아니라 `SenseSprite`의 `_WindAmp`/`_Blur`/`_Shade`로 준다 (그림은 선명한 정지 한 장).
 - 일러스트 해상도 유지를 위해 Pixel Perfect Camera는 끈다 (Orthographic size 7.5 유지).

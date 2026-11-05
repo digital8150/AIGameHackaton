@@ -32,6 +32,9 @@ Shader "DuskTwilight/SenseSprite"
         [Header(World texture (illustrated tilemap fill))]
         [NoScaleOffset] _WorldTex ("World Texture (Repeat wrap)", 2D) = "white" {}
         _WorldTile ("World Tile Size (units, 0 = off)", Range(0,32)) = 0
+
+        [Header(2D Lights (light sense only))]
+        _LightReceive ("Receive 2D Lights", Range(0,1)) = 1
     }
 
     SubShader
@@ -49,6 +52,37 @@ Shader "DuskTwilight/SenseSprite"
             #pragma fragment frag
             #include "Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl"
             #include "DuskSense.hlsl"
+            #include_with_pragmas "Packages/com.unity.render-pipelines.universal/Shaders/2D/Include/ShapeLightShared.hlsl"
+            #include "Packages/com.unity.render-pipelines.universal/Shaders/2D/Include/LightingUtility.hlsl"
+            #include "Packages/com.unity.render-pipelines.universal/Shaders/2D/Include/ShapeLightVariables.hlsl"
+
+            // URP 2D light textures (Light2D components) — same math as Sprite-Lit-Default, without mask/normal maps.
+            // With no Light2D in the scene no USE_SHAPE_LIGHT_TYPE_* is on and colour passes through unchanged.
+            half3 DT_Apply2DLights(half3 col, float2 screenUV)
+            {
+            #if USE_SHAPE_LIGHT_TYPE_0 || USE_SHAPE_LIGHT_TYPE_1 || USE_SHAPE_LIGHT_TYPE_2 || USE_SHAPE_LIGHT_TYPE_3
+                half4 modulate = 0, additive = 0;
+                #if USE_SHAPE_LIGHT_TYPE_0
+                    half4 l0 = SAMPLE_TEXTURE2D(_ShapeLightTexture0, sampler_ShapeLightTexture0, screenUV);
+                    modulate += l0 * _ShapeLightBlendFactors0.x; additive += l0 * _ShapeLightBlendFactors0.y;
+                #endif
+                #if USE_SHAPE_LIGHT_TYPE_1
+                    half4 l1 = SAMPLE_TEXTURE2D(_ShapeLightTexture1, sampler_ShapeLightTexture1, screenUV);
+                    modulate += l1 * _ShapeLightBlendFactors1.x; additive += l1 * _ShapeLightBlendFactors1.y;
+                #endif
+                #if USE_SHAPE_LIGHT_TYPE_2
+                    half4 l2 = SAMPLE_TEXTURE2D(_ShapeLightTexture2, sampler_ShapeLightTexture2, screenUV);
+                    modulate += l2 * _ShapeLightBlendFactors2.x; additive += l2 * _ShapeLightBlendFactors2.y;
+                #endif
+                #if USE_SHAPE_LIGHT_TYPE_3
+                    half4 l3 = SAMPLE_TEXTURE2D(_ShapeLightTexture3, sampler_ShapeLightTexture3, screenUV);
+                    modulate += l3 * _ShapeLightBlendFactors3.x; additive += l3 * _ShapeLightBlendFactors3.y;
+                #endif
+                return max(0, _HDREmulationScale * (col * modulate.rgb + additive.rgb));
+            #else
+                return col;
+            #endif
+            }
 
             TEXTURE2D(_MainTex); SAMPLER(sampler_MainTex);
             TEXTURE2D(_WorldTex); SAMPLER(sampler_WorldTex);
@@ -62,6 +96,7 @@ Shader "DuskTwilight/SenseSprite"
                 float _WindAmp, _WindSpeed, _WindAnchor, _Blur, _Shade;
                 float4 _ShadeColor;
                 float _WorldTile;
+                float _LightReceive;
             CBUFFER_END
 
             struct Attributes { float4 positionOS : POSITION; float4 color : COLOR; float2 uv : TEXCOORD0; };
@@ -142,6 +177,8 @@ Shader "DuskTwilight/SenseSprite"
                 lightCol = lerp(lightCol, lightCol * float3(0.78, 0.66, 0.92), low * 0.45 * _Warmth);
                 // atmospheric depth
                 lightCol = lerp(lightCol, _DT_HazeColor.rgb, _Depth);
+                // scene lighting (Light2D): global ambient + lamps/shafts. Far layers can take less of it.
+                lightCol = lerp(lightCol, DT_Apply2DLights(lightCol, suv), _LightReceive);
                 // glass glint: echo stones are invisible to the eye — only a rare stray pixel of
                 // sunlight catches on them (never the silhouette), so the princess cannot read the path
                 float glint = 0;
