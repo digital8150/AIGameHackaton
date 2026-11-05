@@ -46,7 +46,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DuskTwilight.PopMark
   target: {fileID: 0}
-  offset: {x: 0.5, y: 2.85, z: 0}
+  offset: {x: 0.5, y: 3.3, z: 0}
   life: 2.2
   popTime: 0.18
   bob: 0.08
