@@ -342,7 +342,7 @@ MonoBehaviour:
   hearDistance: 8
   fallCaption: "\uCFF5"
   noneCaption: "\u2026\u2026"
-  landClip: {fileID: 0}
+  landClip: {fileID: 8300000, guid: d914f015aa5c88b40af72da17e754593, type: 3}
 --- !u!1 &1921747955418220924
 GameObject:
   m_ObjectHideFlags: 0
