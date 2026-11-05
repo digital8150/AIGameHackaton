@@ -2311,7 +2311,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: R
+  m_Text: E
 --- !u!114 &2765465094380355697
 MonoBehaviour:
   m_ObjectHideFlags: 0

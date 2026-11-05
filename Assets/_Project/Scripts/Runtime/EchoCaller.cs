@@ -58,7 +58,7 @@ namespace DuskTwilight
 
         AudioSource sfx;
         float last = -9, pressTime, micStart = -1, micPeak;
-        bool charging;
+        bool charging, tapMayInteract;
         int chargeStep;
 
         void Awake()
@@ -76,10 +76,19 @@ namespace DuskTwilight
 
             bool testPressed = TestHoldEcho && !testHeld;
             testHeld = TestHoldEcho;
-            if (input.Echo.WasPressedThisFrame() || testPressed)
+            // a press that closed a word panel is not a call
+            if ((input.Echo.WasPressedThisFrame() && !input.LockedLastFrame) || testPressed)
             {
-                if (duo.Leader.sense != Sense.Dark) { GameEvents.Caption?.Invoke("……"); GameEvents.SilentCall?.Invoke(); }   // she cannot hear her own call
-                else if (Time.time - last >= cooldown) { charging = true; pressTime = Time.time; chargeStep = 0; }
+                if (duo.Leader.sense != Sense.Dark)
+                {
+                    // she cannot hear her own call; E beside a box or a lever is her hands, not her voice
+                    if (!InteractInReach && !PushBox.IsBesideAny(duo.Leader)) { GameEvents.Caption?.Invoke("……"); GameEvents.SilentCall?.Invoke(); }
+                }
+                else if (Time.time - last >= cooldown)
+                {
+                    charging = true; pressTime = Time.time; chargeStep = 0;
+                    tapMayInteract = input.Interact.IsPressed() && InteractInReach;
+                }
             }
             if (charging)
             {
@@ -92,11 +101,20 @@ namespace DuskTwilight
                 }
                 if (duo.Leader.sense != Sense.Dark) charging = false;
                 else if (step == 2) { charging = false; Call(EchoSize.Large); }
-                else if (!input.Echo.IsPressed() && !TestHoldEcho) { charging = false; Call(step == 1 ? EchoSize.Medium : EchoSize.Small); }
+                else if (!input.Echo.IsPressed() && !TestHoldEcho)
+                {
+                    charging = false;
+                    // a short press near a lever or word target was for them (GameInput.InteractNow)
+                    if (!tapMayInteract || held >= input.interactTapSeconds) Call(step == 1 ? EchoSize.Medium : EchoSize.Small);
+                }
             }
 
             MicTick();
         }
+
+        /// <summary>Something the leader's E would act on right now.</summary>
+        static bool InteractInReach => (Lever.Nearest && !Lever.Nearest.gate.Open)
+                                    || (WordTarget.Nearest && WordTarget.Nearest.Listening);
 
         Vector2 CallPoint => (Vector2)DuoController.I.Leader.transform.position + Vector2.up * 0.6f;
 

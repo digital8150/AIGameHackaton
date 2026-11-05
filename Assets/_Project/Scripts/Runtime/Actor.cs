@@ -153,7 +153,8 @@ namespace DuskTwilight
         {
             if (IsLeader && GameInput.I != null && !GameFlow.InputLocked)
             {
-                if (GameInput.I.Jump.WasPressedThisFrame()) lastJumpPressed = Time.time;
+                // a press that answered a word panel belongs to the panel, whichever script ran first this frame
+                if (GameInput.I.Jump.WasPressedThisFrame() && !GameInput.I.LockedLastFrame) lastJumpPressed = Time.time;
                 jumpHeld = GameInput.I.Jump.IsPressed() || TestJumpHeld;
             }
             else jumpHeld = IsLeader && TestJumpHeld;

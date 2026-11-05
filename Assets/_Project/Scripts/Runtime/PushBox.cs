@@ -127,6 +127,14 @@ namespace DuskTwilight
             }
         }
 
+        /// <summary>Is the actor standing against any box? (E is grabbing there, not a call.)</summary>
+        public static bool IsBesideAny(Actor a)
+        {
+            foreach (var box in FindObjectsByType<PushBox>(FindObjectsSortMode.None))
+                if (box.Side(a) != 0) return true;
+            return false;
+        }
+
         /// <summary>Which side of the box the actor is standing against (0 = neither).</summary>
         int Side(Actor a)
         {

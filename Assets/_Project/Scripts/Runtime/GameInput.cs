@@ -18,6 +18,41 @@ namespace DuskTwilight
         public InputAction DebugOverlay { get; private set; }
         public InputAction DirectorToggle { get; private set; }
 
+        [Tooltip("The prince's E is both echo and interact: near something to interact with, a press shorter than this interacts and a longer one is an echo.")]
+        public float interactTapSeconds = 0.25f;
+
+        /// <summary>Input was locked (word panel, fade) last frame, so a press now belongs to whatever just closed.</summary>
+        public bool LockedLastFrame { get; private set; }
+
+        float interactPressedAt;
+        bool interactPressCounts;
+
+        /// <summary>
+        /// "Interact now" for levers and word targets. The princess acts on the press. The prince acts when a short
+        /// press ends, because the same key held down is his echo.
+        /// </summary>
+        public bool InteractNow
+        {
+            get
+            {
+                var duo = DuoController.I;
+                bool prince = duo && duo.Leader && duo.Leader.sense == Sense.Dark;
+                if (!prince) return Interact.WasPressedThisFrame();
+                return Interact.WasReleasedThisFrame() && interactPressCounts && Time.time - interactPressedAt < interactTapSeconds;
+            }
+        }
+
+        void Update()
+        {
+            if (Interact.WasPressedThisFrame())
+            {
+                interactPressedAt = Time.time;
+                interactPressCounts = !LockedLastFrame;
+            }
+        }
+
+        void LateUpdate() => LockedLastFrame = GameFlow.InputLocked;
+
         void Awake()
         {
             I = this;
@@ -29,7 +64,7 @@ namespace DuskTwilight
 
             Jump = Button("Jump", "<Keyboard>/space", "<Keyboard>/w", "<Keyboard>/upArrow", "<Gamepad>/buttonSouth");
             Switch = Button("Switch", "<Keyboard>/tab", "<Keyboard>/q", "<Gamepad>/buttonNorth");
-            Echo = Button("Echo", "<Keyboard>/r", "<Gamepad>/buttonWest");
+            Echo = Button("Echo", "<Keyboard>/e", "<Gamepad>/buttonWest");
             MicHold = Button("MicHold", "<Keyboard>/v", "<Gamepad>/leftShoulder");
             Interact = Button("Interact", "<Keyboard>/e", "<Gamepad>/buttonEast");
             Restart = Button("Restart", "<Keyboard>/backspace", "<Gamepad>/select");

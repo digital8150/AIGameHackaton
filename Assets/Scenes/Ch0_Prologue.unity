@@ -2292,7 +2292,7 @@ MonoBehaviour:
     objectives:
     - text: "\uC655\uC790\uB85C \uC18C\uB9AC\uCCD0 \uBD80\uB974\uAE30"
       keys:
-      - R
+      - E
       goal: 4
       markerId: 
       target: 1

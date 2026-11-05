@@ -138,7 +138,7 @@ namespace DuskTwilight
 
         void Update()
         {
-            if (GameInput.I && !GameFlow.InputLocked && !switchLocked && GameInput.I.Switch.WasPressedThisFrame()) Switch();
+            if (GameInput.I && !GameFlow.InputLocked && !GameInput.I.LockedLastFrame && !switchLocked && GameInput.I.Switch.WasPressedThisFrame()) Switch();
         }
 
         void FixedUpdate()

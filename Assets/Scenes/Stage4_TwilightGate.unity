@@ -2857,7 +2857,7 @@ MonoBehaviour:
     objectives:
     - text: "\uBCBD \uB108\uBA38\uB85C"
       keys:
-      - R
+      - E
       goal: 5
       markerId: r2
       target: 1

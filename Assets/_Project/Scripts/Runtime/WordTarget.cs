@@ -76,6 +76,9 @@ namespace DuskTwilight
 
         protected Vector3 ReachCenter => transform.position + (Vector3)reachOffset;
 
+        /// <summary>The current sense can talk to this target, so E here opens its choices.</summary>
+        public bool Listening => CanSpeakNow;
+
         bool CanSpeakNow => SenseController.I == null
             || (requirePrince ? SenseController.I.IsDark : (!requirePrincess || !SenseController.I.IsDark));
 
@@ -107,7 +110,7 @@ namespace DuskTwilight
             if (prompt) prompt.color = new Color(1, 0.95f, 0.85f, near && !open && CanSpeakNow ? 1 : 0);
 
             if (open) { PanelInput(); return; }
-            if (near && CanSpeakNow && !GameFlow.InputLocked && GameInput.I.Interact.WasPressedThisFrame()) Open();
+            if (near && CanSpeakNow && !GameFlow.InputLocked && GameInput.I.InteractNow) Open();
         }
 
         protected virtual void OnDisable() { if (Nearest == this) Nearest = null; }

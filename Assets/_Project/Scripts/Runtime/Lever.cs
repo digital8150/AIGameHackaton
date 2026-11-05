@@ -51,7 +51,7 @@ namespace DuskTwilight
             bool near = Mathf.Abs(p.x - transform.position.x) < reach.x && Mathf.Abs(p.y - transform.position.y) < reach.y;
             if (near) Nearest = this; else if (Nearest == this) Nearest = null;
             if (prompt) { var c = promptColor; c.a = near && !gate.Open ? 1 : 0; prompt.color = c; }
-            if (near && !GameFlow.InputLocked && GameInput.I.Interact.WasPressedThisFrame()) Trigger();
+            if (near && !GameFlow.InputLocked && GameInput.I.InteractNow) Trigger();
             if (sr) sr.sprite = (Time.time < downUntil || (gate.Open && wired)) ? downSprite : upSprite;
         }
 
