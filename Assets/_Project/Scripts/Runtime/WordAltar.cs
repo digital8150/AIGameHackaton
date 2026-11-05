@@ -24,8 +24,10 @@ namespace DuskTwilight
         public Transform[] slots;          // where each letter settles (left → right)
         public Vector2 letterSize = new Vector2(1.9f, 0.6f);
         public Font letterFont;
-        public Color letterColor = new Color(1f, 0.88f, 0.55f);
+        public Color letterColor = new Color(0.36f, 0.12f, 0.24f);   // dark glyph carved into a halo of light
         public Material glowMaterial;
+        public Sprite plankSprite;                                    // the letter hardens into a plank of light
+        public Material plankMaterial;
 
         [Header("Interaction")]
         public float reach = 1.4f;
@@ -127,7 +129,7 @@ namespace DuskTwilight
                     var g = GameObject.CreatePrimitive(PrimitiveType.Quad);
                     Destroy(g.GetComponent<Collider>());
                     g.transform.SetParent(go.transform, false);
-                    g.transform.localScale = Vector3.one * 2.4f;
+                    g.transform.localScale = Vector3.one * 1.7f;
                     var gr = g.GetComponent<MeshRenderer>();
                     gr.sharedMaterial = glowMaterial;
                     gr.sortingOrder = 24;
@@ -150,6 +152,17 @@ namespace DuskTwilight
             }
             letter.transform.position = target;
             if (!solid) yield break;
+            if (plankSprite)
+            {
+                var p = new GameObject("Plank");
+                p.transform.SetParent(letter.transform, false);
+                p.transform.localPosition = new Vector3(0, -0.25f, 0);
+                p.transform.localScale = new Vector3(letterSize.x / 2f, 1f, 1f);
+                var psr = p.AddComponent<SpriteRenderer>();
+                psr.sprite = plankSprite;
+                psr.sharedMaterial = plankMaterial;
+                psr.sortingOrder = 23;
+            }
             var col = letter.AddComponent<BoxCollider2D>();
             col.size = letterSize;
             col.offset = new Vector2(0, -0.25f);
