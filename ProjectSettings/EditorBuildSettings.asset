@@ -12,6 +12,12 @@ EditorBuildSettings:
     path: Assets/Scenes/Stage2_SunsetLake.unity
     guid: cf98b1433af0d88458e9582c1afa667a
   - enabled: 1
+    path: Assets/Scenes/Stage3_EchoCave.unity
+    guid: ed44880d1f7fe2540b6e03ce13823a84
+  - enabled: 1
+    path: Assets/Scenes/Stage4_TwilightGate.unity
+    guid: 30e60110038875d4b84b077fbdf944e9
+  - enabled: 1
     path: Assets/Scenes/Ch0_Prologue.unity
     guid: 5677366e637be234884981f77311f411
   - enabled: 1
