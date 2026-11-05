@@ -31,7 +31,7 @@ Unity 6000.3 · URP 2D Renderer · Input System only · 기획서: Claude Docs "
 - 화면은 게임이다: 조작법·시스템 설명·개발 정보를 UI에 노출하지 않는다. 설명은 개발자에게 채팅으로 전달.
 - 허용되는 화면 요소: 감각 메달리온(초상), 전환 시 이름 카드, 챕터 타이틀, 의성어 자막(소리를 못 듣는 공주 감각용), 황혼의 목소리 속삭임(디렉터 힌트), 작은 보조 칩(디렉터가 조정한 내용 — 기획서상 알림 필수), 레버의 `E` 프롬프트, 클리어 카드.
 - 개발용 오버레이는 F1(기본 꺼짐), 디렉터 끄기는 F2.
-- Galmuri에 없는 기호(☾ ✦ 등)는 쓰지 않는다. 사용 가능: ♪ ♫ ☀ ◆ … — ♥ ★
+- 인게임 UI 폰트는 `Assets/fonts/온글잎 류류체.ttf`, 없는 글리프는 Galmuri11로 폴백(폰트 임포터 fallback). 둘 다 없는 기호(☾ ✦ 등)는 쓰지 않는다. 사용 가능: ♪ ♫ ☀ ◆ … — ♥ ★ ⇄
 
 ## 규칙
 - **씬에 놓인 프리팹 인스턴스의 값을 eval로 바꿀 때는 `SerializedObject`(또는 `PrefabUtility.RecordPrefabInstancePropertyModifications`)로 바꾼다.** 필드를 직접 대입하면 오버라이드로 기록되지 않아 저장 시 사라진다(Systems·MainCamera 등 기존 인스턴스에서 실제로 발생).
