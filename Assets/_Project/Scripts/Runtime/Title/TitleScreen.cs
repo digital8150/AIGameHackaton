@@ -29,10 +29,9 @@ namespace DuskTwilight
         [Tooltip("Pixels the menu rises while fading in.")]
         public float menuRise = 24f;
 
-        [Header("Fade")]
-        [Tooltip("Full-screen image used for the fade to the first stage.")]
-        public Graphic fader;
-        public Color fadeColor = new Color(1f, 0.86f, 0.62f, 1f);
+        [Header("Scene change")]
+        [Tooltip("Shared black cover (Prefabs/UI/SceneTransition): fade to black → load → hold → fade in.")]
+        public SceneTransition transition;
 
         [Header("Timing (seconds)")]
         [Range(0f, 5f)] public float backdropTime = 2.4f;
@@ -43,7 +42,8 @@ namespace DuskTwilight
         [Range(0f, 5f)] public float logoDelay = 1.8f;
         [Range(0f, 5f)] public float menuDelay = 3.6f;
         [Range(0.1f, 3f)] public float menuTime = 0.9f;
-        [Range(0.1f, 5f)] public float startFadeTime = 1.4f;
+        [Tooltip("Menu fade-out / music fade-out when 게임 시작 is pressed.")]
+        [Range(0.1f, 5f)] public float startFadeTime = 0.8f;
         [Tooltip("Any key / click during the intro skips to the finished screen.")]
         public bool skippable = true;
 
@@ -72,7 +72,6 @@ namespace DuskTwilight
 
             menuRt = menu ? (RectTransform)menu.transform : null;
             if (menuRt) menuPos = menuRt.anchoredPosition;
-            if (fader) { fader.color = new Color(fadeColor.r, fadeColor.g, fadeColor.b, 0f); fader.raycastTarget = false; }
 
             intro = StartCoroutine(Intro());
         }
@@ -168,20 +167,14 @@ namespace DuskTwilight
 
         IEnumerator Leave()
         {
-            var op = SceneManager.LoadSceneAsync(firstScene);
-            if (op != null) op.allowSceneActivation = false;
             if (music) StartCoroutine(FadeMusic(0f, startFadeTime));
-            if (fader) fader.raycastTarget = true;
+            SceneTransition.Load(firstScene, transition);
             for (float k = 0f; k < 1f; k += Time.unscaledDeltaTime / startFadeTime)
             {
-                float e = k * k;
-                if (fader) fader.color = new Color(fadeColor.r, fadeColor.g, fadeColor.b, e);
-                if (menu) menu.alpha = 1f - Mathf.Clamp01(k * 2f);
+                if (menu) menu.alpha = 1f - k;
                 yield return null;
             }
-            if (fader) fader.color = fadeColor;
-            if (op == null) { Debug.LogError($"[Title] Scene '{firstScene}' is not in the build settings."); leaving = false; yield break; }
-            op.allowSceneActivation = true;
+            if (menu) menu.alpha = 0f;
         }
 
         IEnumerator FadeMusic(float to, float time)

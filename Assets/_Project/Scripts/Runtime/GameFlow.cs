@@ -39,6 +39,8 @@ namespace DuskTwilight
         public string chapterLine = "어둠 속의 왕자, 빛 속의 공주";
         [Tooltip("Scene loaded after the clear card. Empty = this is the last chapter.")]
         public string nextScene = "";
+        [Tooltip("Shared black cover for the scene change (Prefabs/UI/SceneTransition).")]
+        public SceneTransition transition;
         public string clearTitle = "황혼에서 만나다";
         public string clearLine = "서로의 감각으로, 문을 열었다";
 
@@ -158,9 +160,7 @@ namespace DuskTwilight
             HUD.I?.ShowContinue(!string.IsNullOrEmpty(nextScene));
             if (string.IsNullOrEmpty(nextScene)) yield break;
             while (!(GameInput.I.Jump.WasPressedThisFrame() || GameInput.I.Interact.WasPressedThisFrame())) yield return null;
-            HUD.I?.Fade(0f, 1f, 0.8f);
-            yield return new WaitForSeconds(0.9f);
-            SceneManager.LoadScene(nextScene);
+            SceneTransition.Load(nextScene, transition);
         }
 
 #if UNITY_EDITOR

@@ -74,8 +74,11 @@ Shader "DuskTwilight/UI/TitleLogo"
                 float shine = exp(-(s * s) / (_ShineWidth * _ShineWidth)) * _ShineStrength * (phase < 0.4);
                 col += _ShineColor.rgb * shine;
 
-                // ink reveal left to right
-                float rev = smoothstep(r.x - _RevealSoft, r.x, _Reveal * (1.0 + _RevealSoft));
+                // ink reveal left to right: the soft front starts fully left of the rect (nothing shown at 0)
+                // and ends fully right of it (everything shown at 1)
+                float front = lerp(-_RevealSoft, 1.0 + _RevealSoft, _Reveal);
+                float rev = 1.0 - smoothstep(front - _RevealSoft, front, r.x);
+                rev *= step(0.0001, _Reveal);
 
                 fixed4 c = fixed4(col, a * rev) * _Color * i.color;
                 return TitleFinish(c, i);

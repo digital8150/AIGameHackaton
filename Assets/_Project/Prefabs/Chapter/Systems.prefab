@@ -99,8 +99,12 @@ MonoBehaviour:
   chapterName: "\uD669\uD63C"
   chapterLine: "\uC5B4\uB460 \uC18D\uC758 \uC655\uC790, \uBE5B \uC18D\uC758 \uACF5\uC8FC"
   nextScene: 
+  transition: {fileID: 5300202581695442275, guid: 15a1bc6fd7255944483bf8b2102e3e9e, type: 3}
   clearTitle: "\uD669\uD63C\uC5D0\uC11C \uB9CC\uB098\uB2E4"
   clearLine: "\uC11C\uB85C\uC758 \uAC10\uAC01\uC73C\uB85C, \uBB38\uC744 \uC5F4\uC5C8\uB2E4"
+  twilightEnding: 0
+  endingMix: 0.5
+  endingBlendTime: 3
   startPoint: {fileID: 0}
   killY: -3
   introFade: 2
@@ -124,8 +128,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DuskTwilight.EchoCaller
   callClip: {fileID: 8300000, guid: d7fe2ea4ab7ba7f4b9414cbb8cd3ac1b, type: 3}
   cooldown: 0.9
+  smallRadius: 5
+  mediumRadius: 10
+  largeRadius: 15
+  mediumHold: 0.25
+  largeHold: 0.7
+  chargePulse: 0.12
   micThreshold: 0.02
-  micInterval: 0.22
+  micMediumScale: 3
+  micLargeScale: 7
+  micWindow: 0.2
 --- !u!114 &5211872291915775132
 MonoBehaviour:
   m_ObjectHideFlags: 0

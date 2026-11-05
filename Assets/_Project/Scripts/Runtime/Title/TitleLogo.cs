@@ -33,6 +33,7 @@ namespace DuskTwilight
                 mats[i] = new Material(lines[i].material);
                 lines[i].material = mats[i];
             }
+            Push(0f); // hidden from the very first rendered frame
         }
 
         public void Hide()
