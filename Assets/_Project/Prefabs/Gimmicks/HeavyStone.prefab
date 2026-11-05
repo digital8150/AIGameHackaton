@@ -354,6 +354,7 @@ GameObject:
   - component: {fileID: 8342807719824177951}
   - component: {fileID: 592089730889936042}
   - component: {fileID: 7749067239912317108}
+  - component: {fileID: 5643437958055290508}
   m_Layer: 0
   m_Name: Float Motes
   m_TagString: Untagged
@@ -5179,6 +5180,19 @@ ParticleSystemRenderer:
   m_MeshWeighting1: 1
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
+--- !u!114 &5643437958055290508
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1921747955418220924}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86f103b626736944091f3dde02ab4f97, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DuskTwilight.LightSenseOnly
+  fadeTime: 0.8
 --- !u!1 &5292273636112285042
 GameObject:
   m_ObjectHideFlags: 0
@@ -5452,6 +5466,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5373885579930920899}
   - component: {fileID: 1851433834247004766}
+  - component: {fileID: 5234490038450327489}
   m_Layer: 0
   m_Name: Float Glow
   m_TagString: Untagged
@@ -5533,6 +5548,19 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!114 &5234490038450327489
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8332418724684453134}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86f103b626736944091f3dde02ab4f97, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DuskTwilight.LightSenseOnly
+  fadeTime: 0.8
 --- !u!1 &9117892554002690204
 GameObject:
   m_ObjectHideFlags: 0
