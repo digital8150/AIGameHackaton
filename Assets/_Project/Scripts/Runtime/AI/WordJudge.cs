@@ -92,7 +92,7 @@ namespace DuskTwilight
         const string StretchSystem =
             "너는 동화 속 마법의 금색 물체다. 왕자가 너에게 한 말을 듣고, 길어지라는 뜻이면 '길게', 짧아지라는 뜻이면 '짧게', " +
             "그 밖의 말이면 '관계없음'이라고만 답한다. 말투나 어미가 장난스러워도(예: 길어져랏, 늘어나라구) 뜻으로 판단한다. " +
-            "커져라·높아져라·자라라는 '길게', 작아져라·낮아져라·줄어라는 '짧게'다.";
+            "커져라·높아져라·자라라·올라가라·솟아라는 '길게', 작아져라·낮아져라·줄어라·내려가라는 '짧게'다.";
 
         static readonly (string, string)[] StretchShots =
         {
@@ -103,8 +103,8 @@ namespace DuskTwilight
         static readonly Dictionary<string, StretchResult> stretchCache = new Dictionary<string, StretchResult>();
 
         // obvious word pieces: no need to ask the model (instant, works without it)
-        static readonly string[] LongPieces = { "길어", "길게", "길쭉", "늘어", "늘려", "늘이", "길다", "쭉", "커져", "크게", "높아", "높게", "자라", "키워" };
-        static readonly string[] ShortPieces = { "짧아", "짧게", "줄어", "줄여", "작아", "작게", "낮아", "낮게", "쪼그", "오므" };
+        static readonly string[] LongPieces = { "길어", "길게", "길쭉", "늘어", "늘려", "늘이", "길다", "쭉", "커져", "커라", "크게", "높아", "높게", "높이", "자라", "키워", "올라", "올려", "솟아", "위로" };
+        static readonly string[] ShortPieces = { "짧아", "짧게", "줄어", "줄여", "작아", "작게", "낮아", "낮게", "낮춰", "쪼그", "오므", "내려", "아래로" };
 
         public static async Task<StretchResult> JudgeStretchAsync(string spoken)
         {

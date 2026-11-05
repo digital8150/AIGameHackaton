@@ -27,10 +27,19 @@ namespace DuskTwilight
         [Tooltip("Below this y the box goes back to where it started")]
         public float respawnBelowY = -2f;
         public string respawnCaption = "";
+        [Tooltip("Dust and pebbles where it tipped over the edge (Prefabs/FX/BoxFallDust)")]
+        public GameObject fallFx;
+        [Tooltip("A small puff where it reappears")]
+        public GameObject respawnFx;
+        [Tooltip("Dropping this far below where it last rested counts as falling into a pit")]
+        public float fallDrop = 1.2f;
+        public string fallCaption = "우르르";
 
         Rigidbody2D rb;
         BoxCollider2D col;
         Vector3 home;
+        Vector2 lastRest;
+        bool falling;
         AudioSource sfx;
         public AudioClip scrapeClip;
 
@@ -46,6 +55,7 @@ namespace DuskTwilight
             col = GetComponent<BoxCollider2D>();
             home = transform.position;
             stretch = GetComponent<StretchObject>();
+            lastRest = home;
             rb.bodyType = RigidbodyType2D.Dynamic;
             rb.constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezeRotation;
             rb.interpolation = RigidbodyInterpolation2D.Interpolate;
@@ -99,7 +109,21 @@ namespace DuskTwilight
                 if (Moving && !sfx.isPlaying) { sfx.clip = scrapeClip; sfx.Play(); }
                 else if (!Moving && sfx.isPlaying) sfx.Stop();
             }
-            if (transform.position.y < respawnBelowY) ResetState();
+            // resting: remember where; dropped well below it: it went over an edge
+            if (Mathf.Abs(rb.linearVelocity.y) < 0.05f) { lastRest = col.bounds.center; lastRest.y = col.bounds.min.y; falling = false; }
+            else if (!falling && transform.position.y < lastRest.y - fallDrop)
+            {
+                falling = true;
+                if (fallFx) Destroy(Instantiate(fallFx, new Vector3(col.bounds.center.x, lastRest.y, 0f), Quaternion.identity), 4f);
+                if (!string.IsNullOrEmpty(fallCaption)) GameEvents.Caption?.Invoke(fallCaption);
+                SenseController.I?.EmitEcho(new Vector2(col.bounds.center.x, lastRest.y), 0.6f);
+                CameraRig.I?.Kick(0.15f);
+            }
+            if (transform.position.y < respawnBelowY)
+            {
+                ResetState();
+                if (respawnFx) Destroy(Instantiate(respawnFx, home + Vector3.up * 0.3f, Quaternion.identity), 3f);
+            }
         }
 
         /// <summary>Which side of the box the actor is standing against (0 = neither).</summary>
@@ -133,6 +157,8 @@ namespace DuskTwilight
             rb.linearVelocity = Vector2.zero;
             rb.position = home;
             transform.position = home;
+            lastRest = home;
+            falling = false;
             if (!string.IsNullOrEmpty(respawnCaption)) GameEvents.Caption?.Invoke(respawnCaption);
         }
 
