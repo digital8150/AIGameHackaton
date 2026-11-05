@@ -4,8 +4,9 @@ namespace DuskTwilight
 {
     /// <summary>
     /// A hidden plank catches the prince's echo: when the wave arrives, a slanted glint wipes across it once, away
-    /// from where the sound came from, so the player sees at once that something is there. Answers called echoes and
-    /// bells, not footsteps. The look (bands, slant, seconds, colour) is on the material, SenseSprite's Echo glint.
+    /// from where the sound came from, and its outline stays lit for a moment, so the player sees at once that
+    /// something is there. Answers called echoes and bells, not footsteps. The look (bands, slant, seconds, outline,
+    /// colours) is on the material, SenseSprite's Echo glint.
     /// </summary>
     public class HiddenPlank : MonoBehaviour
     {
@@ -13,6 +14,9 @@ namespace DuskTwilight
         static readonly int DirId = Shader.PropertyToID("_GlintDir");
         static readonly int BoundsId = Shader.PropertyToID("_GlintBounds");
         static readonly int SecondsId = Shader.PropertyToID("_GlintSeconds");
+        static readonly int OutlineId = Shader.PropertyToID("_GlintOutline");
+        static readonly int OutlineSecondsId = Shader.PropertyToID("_GlintOutlineSeconds");
+        static readonly int OutlineFadeId = Shader.PropertyToID("_GlintOutlineFade");
 
         [Tooltip("Blank = the sprite under this object.")]
         public SpriteRenderer visual;
@@ -20,7 +24,7 @@ namespace DuskTwilight
         public bool waitForWave = true;
 
         MaterialPropertyBlock block;
-        float startAt = -1f, progress = -1f, dir = 1f;
+        float startAt = -1f, elapsed = -1f, dir = 1f;
 
         void Awake()
         {
@@ -55,26 +59,35 @@ namespace DuskTwilight
             startAt = Time.time + (waitForWave ? distance / Mathf.Max(sense.echoSpeed, 0.01f) : 0f);
         }
 
+        float MaterialFloat(int id, float fallback)
+        {
+            var m = visual.sharedMaterial;
+            return m && m.HasFloat(id) ? m.GetFloat(id) : fallback;
+        }
+
         void Update()
         {
-            if (startAt >= 0f && Time.time >= startAt) { startAt = -1f; progress = 0f; }
-            if (progress < 0f || !visual) return;
+            if (startAt >= 0f && Time.time >= startAt) { startAt = -1f; elapsed = 0f; }
+            if (elapsed < 0f || !visual) return;
 
-            float seconds = visual.sharedMaterial && visual.sharedMaterial.HasFloat(SecondsId) ? visual.sharedMaterial.GetFloat(SecondsId) : 0.4f;
-            progress += Time.deltaTime / Mathf.Max(seconds, 0.01f);
-            if (progress >= 1f) { Clear(); return; }
+            elapsed += Time.deltaTime;
+            float sweep = elapsed / Mathf.Max(MaterialFloat(SecondsId, 0.4f), 0.01f);
+            float hold = MaterialFloat(OutlineSecondsId, 1.25f);
+            float fade = Mathf.Max(MaterialFloat(OutlineFadeId, 0.5f), 0.01f);
+            if (sweep >= 1f && elapsed >= hold) { Clear(); return; }
 
             Bounds b = visual.bounds;
             visual.GetPropertyBlock(block);
-            block.SetFloat(ProgressId, Mathf.Max(progress, 0.0001f));
+            block.SetFloat(ProgressId, sweep < 1f ? Mathf.Max(sweep, 0.0001f) : 0f);
             block.SetFloat(DirId, dir);
             block.SetVector(BoundsId, new Vector4(b.min.x, b.max.x, b.center.y, b.extents.y));
+            block.SetFloat(OutlineId, Mathf.Clamp01((hold - elapsed) / fade));
             visual.SetPropertyBlock(block);
         }
 
         void Clear()
         {
-            progress = -1f;
+            elapsed = -1f;
             startAt = -1f;
             if (visual) visual.SetPropertyBlock(null);   // back on the SRP batcher
         }

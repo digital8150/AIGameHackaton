@@ -47,6 +47,11 @@ Shader "DuskTwilight/SenseSprite"
         _GlintSlant ("Glint Slant (degrees from upright)", Range(-70,70)) = 28
         _GlintSoftness ("Glint Edge Softness (m)", Range(0.001,0.1)) = 0.012
         _GlintSeconds ("Glint Sweep Seconds", Range(0.05,2)) = 0.4
+        [HDR] _GlintOutlineColor ("Outline Colour", Color) = (0.86,0.95,1.15,1)
+        _GlintOutlineWidth ("Outline Width (m)", Range(0.005,0.2)) = 0.045
+        _GlintOutlineSeconds ("Outline Seconds", Range(0,10)) = 1.25
+        _GlintOutlineFade ("Outline Fade-out Seconds", Range(0.01,3)) = 0.5
+        [HideInInspector] _GlintOutline ("Outline Strength (script)", Range(0,1)) = 0
         [HideInInspector] _GlintProgress ("Glint Progress (script)", Range(0,1)) = 0
         [HideInInspector] _GlintDir ("Glint Direction (script)", Float) = 1
         [HideInInspector] _GlintBounds ("Glint Bounds: xMin xMax yCentre halfHeight (script)", Vector) = (0,0,0,0)
@@ -117,6 +122,8 @@ Shader "DuskTwilight/SenseSprite"
                 float _DarkEchoOnly;
                 float4 _GlintColor, _GlintBounds;
                 float _GlintWidth, _GlintThinWidth, _GlintGap, _GlintSlant, _GlintSoftness, _GlintSeconds, _GlintProgress, _GlintDir;
+                float4 _GlintOutlineColor;
+                float _GlintOutlineWidth, _GlintOutlineSeconds, _GlintOutlineFade, _GlintOutline;
             CBUFFER_END
 
             struct Attributes { float4 positionOS : POSITION; float4 color : COLOR; float2 uv : TEXCOORD0; };
@@ -241,6 +248,24 @@ Shader "DuskTwilight/SenseSprite"
                 // switch wavefront rim — the signature "world flips" moment
                 float rim = DT_SwitchRim(wp);
                 col += DT_RIM_GOLD * rim * 1.8 * tex.a;
+
+                // after an echo the plank's outline stays for a moment: the sprite's alpha edge, plus its bounds for
+                // art that fills the whole rect. Width is in metres, so short and long planks match.
+                if (_GlintOutline > 0.0)
+                {
+                    float2 uvPerMetre = (abs(ddx(i.uv)) + abs(ddy(i.uv))) / max(abs(ddx(i.positionWS.xy)) + abs(ddy(i.positionWS.xy)), 1e-5);
+                    float2 step_ = uvPerMetre * _GlintOutlineWidth;
+                    float around = SAMPLE_TEXTURE2D(_MainTex, sampler_MainTex, i.uv + float2(step_.x, 0)).a
+                                 * SAMPLE_TEXTURE2D(_MainTex, sampler_MainTex, i.uv - float2(step_.x, 0)).a
+                                 * SAMPLE_TEXTURE2D(_MainTex, sampler_MainTex, i.uv + float2(0, step_.y)).a
+                                 * SAMPLE_TEXTURE2D(_MainTex, sampler_MainTex, i.uv - float2(0, step_.y)).a;
+                    float toEdge = min(min(i.positionWS.x - _GlintBounds.x, _GlintBounds.y - i.positionWS.x), _GlintBounds.w - abs(i.positionWS.y - _GlintBounds.z));
+                    float edgeBand = smoothstep(_GlintOutlineWidth + 0.006, _GlintOutlineWidth - 0.006, toEdge);
+                    float outline = max(1.0 - around, edgeBand) * tex.a * prince * _GlintOutlineColor.a * _GlintOutline;
+                    float litA = max(a, outline);
+                    col = (col * a + _GlintOutlineColor.rgb * outline) / max(litA, 0.001);
+                    a = litA;
+                }
 
                 // echo glint: a wide and a thin slanted band wipe across once, like light on cleaned glass.
                 // In metres so a long plank gets the same bands as a short one; only the sprite's own shape shows it.

@@ -27,7 +27,7 @@ Unity 6000.3 · URP 2D Renderer · Input System only · 기획서: Claude Docs "
 - `Assets/_Project/Scripts/Runtime/Tutorial` — 단계별 튜토리얼(Section/Director/Signals/View/Veil/Marker), `AI` — Whisper 음성(`VoiceInput`/`VoiceCommands`)과 Jev(`JevClient`/`JevDirectorBrain`/`VoiceIntent`)
 - Whisper 모델 `Assets/StreamingAssets/Whisper/ggml-small.bin`(GPU/Vulkan, 짧은 말 ~0.15초; base는 예비)은 git 밖. 프롬프트에는 씬의 `WordTarget.ListenWords()`(금색 물체·돌의 명령어 포함)가 들어가고, 잘못 들린 말은 `WordJudge.NearPiece`(자모 1개 차이, 무음 ㅇ·ㅐ/ㅔ·ㅆ/ㅅ 접기)로 보정 — `Tools/download_assets.bat`. Jev 키는 환경변수 `TYPESAFE_API_KEY` (없으면 규칙/키워드 폴백).
 - `Assets/_Project/Shaders` — `DuskSense.hlsl`(공통 감각 모델) + `SenseSprite`/`Sky`/`SoundGlyph`/`Glow`
-- 메아리 연출: 쿨타임 링 `EchoCooldownRing`(TwilightPrince 자식, 셰이더 `FX/EchoCooldownRing`, 쿨타임·차징(금색)·준비 완료 플레어), 차징 볼록렌즈 `EchoChargeLens`(Systems, 셰이더 `FX/EchoLens`, Renderer2D의 Echo Lens 풀스크린 패스를 필요할 때만 켬). 숨은 발판 반짝임 `HiddenPlank` + `SenseSprite`의 Echo glint 값(월드 좌표 띠 2개, `_GlintSeconds`), 일부러 부른 메아리·종소리에만 파동이 닿을 때 반응.
+- 메아리 연출: 쿨타임 링 `EchoCooldownRing`(TwilightPrince 자식, 셰이더 `FX/EchoCooldownRing`, 쿨타임·차징(금색)·준비 완료 플레어), 차징 볼록렌즈 `EchoChargeLens`(Systems, 셰이더 `FX/EchoLens`, Renderer2D의 Echo Lens 풀스크린 패스를 필요할 때만 켬). 숨은 발판 반짝임 `HiddenPlank` + `SenseSprite`의 Echo glint 값(월드 좌표 띠 2개 `_GlintSeconds`, 외곽선 `_GlintOutlineSeconds` 1.25초), 일부러 부른 메아리·종소리에만 파동이 닿을 때 반응.
 - HUD 감각 문장: `Chapter/HUD`의 Sense Emblems(`SenseEmblems`: 공전 전환, 위치·크기는 Main Slot/Partner Slot) + `SenseEmblem`(초상 + 프레임, 반짝임 주기). 셰이더 `Shaders/HUD/`(EmblemWave·EmblemRipple·EmblemPortrait), 머티리얼 `Materials/HUD/M_Emblem_*`. 파형·물결 수치는 머티리얼에서 조절.
 - `Assets/_Project/Scripts/Runtime` — 네임스페이스 `DuskTwilight`
 - `Assets/_Project/Art`, `Audio`, `Fonts` — CC0(Kenney)·OFL(Galmuri) 에셋, 라이선스는 `ThirdPartyLicenses/`
