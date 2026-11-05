@@ -5218,6 +5218,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.x
       value: 9.899994
       objectReference: {fileID: 0}
+    - target: {fileID: 408809033977404461, guid: 4cd6813ad6f1fc74ba54646d34577ca3, type: 3}
+      propertyPath: stepHold
+      value: 3.2
+      objectReference: {fileID: 0}
     - target: {fileID: 4857456328990030985, guid: 4cd6813ad6f1fc74ba54646d34577ca3, type: 3}
       propertyPath: m_LocalPosition.x
       value: 155.5
@@ -24324,6 +24328,10 @@ PrefabInstance:
       value: 4.8999996
       objectReference: {fileID: 0}
     - target: {fileID: 408809033977404461, guid: 4cd6813ad6f1fc74ba54646d34577ca3, type: 3}
+      propertyPath: stepHold
+      value: 3.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 408809033977404461, guid: 4cd6813ad6f1fc74ba54646d34577ca3, type: 3}
       propertyPath: topFirst
       value: 1
       objectReference: {fileID: 0}
@@ -27916,11 +27924,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2215762782162427331, guid: 1ae7f8cf7abefe644947aff334266777, type: 3}
       propertyPath: onTime
-      value: 3
+      value: 3.8
       objectReference: {fileID: 0}
     - target: {fileID: 2215762782162427331, guid: 1ae7f8cf7abefe644947aff334266777, type: 3}
       propertyPath: period
-      value: 4.2
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 2215762782162427331, guid: 1ae7f8cf7abefe644947aff334266777, type: 3}
       propertyPath: warnTime

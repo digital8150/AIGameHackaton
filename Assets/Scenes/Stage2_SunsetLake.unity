@@ -338,6 +338,14 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 252870815310164318, guid: bfef911f7876ab649b8ba45bc8f85b62, type: 3}
+      propertyPath: blinkOn
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 252870815310164318, guid: bfef911f7876ab649b8ba45bc8f85b62, type: 3}
+      propertyPath: blinkPeriod
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 252870815310164318, guid: bfef911f7876ab649b8ba45bc8f85b62, type: 3}
       propertyPath: letterSize.x
       value: 2.4
       objectReference: {fileID: 0}
@@ -2718,6 +2726,14 @@ PrefabInstance:
     - target: {fileID: 252870815310164318, guid: bfef911f7876ab649b8ba45bc8f85b62, type: 3}
       propertyPath: bubble
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 252870815310164318, guid: bfef911f7876ab649b8ba45bc8f85b62, type: 3}
+      propertyPath: blinkOn
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 252870815310164318, guid: bfef911f7876ab649b8ba45bc8f85b62, type: 3}
+      propertyPath: blinkPeriod
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 252870815310164318, guid: bfef911f7876ab649b8ba45bc8f85b62, type: 3}
       propertyPath: letterSize.x

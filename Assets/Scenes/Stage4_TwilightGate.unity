@@ -5719,11 +5719,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2215762782162427331, guid: 1ae7f8cf7abefe644947aff334266777, type: 3}
       propertyPath: onTime
-      value: 3
+      value: 3.8
       objectReference: {fileID: 0}
     - target: {fileID: 2215762782162427331, guid: 1ae7f8cf7abefe644947aff334266777, type: 3}
       propertyPath: period
-      value: 4.2
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 2215762782162427331, guid: 1ae7f8cf7abefe644947aff334266777, type: 3}
       propertyPath: warnTime
