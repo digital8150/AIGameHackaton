@@ -44,8 +44,10 @@ namespace DuskTwilight
                     foreach (var d in new[] { Vector3Int.left, Vector3Int.right, Vector3Int.up, Vector3Int.down })
                         if (map.HasTile(cell + d) && seen.Add(cell + d)) q.Enqueue(cell + d);
                 }
-                // not a child of the tilemap: GroundLip rebuilds (and clears) the tilemap's children
-                part.go = new GameObject($"{name} — solid until found") { hideFlags = HideFlags.DontSave, layer = gameObject.layer };
+                // not a child of the tilemap: GroundLip rebuilds (and clears) the tilemap's children.
+                // A plain scene object (no DontSave) so it goes away with the scene / when play mode ends.
+                part.go = new GameObject($"{name} — solid until found") { layer = gameObject.layer };
+                UnityEngine.SceneManagement.SceneManager.MoveGameObjectToScene(part.go, gameObject.scene);
                 var size = map.cellSize;
                 foreach (var w in part.centres)
                 {
@@ -56,6 +58,8 @@ namespace DuskTwilight
                 parts.Add(part);
             }
         }
+
+        void OnDestroy() { foreach (var p in parts) if (p.go) Destroy(p.go); }
 
         void OnEnable() { EchoCaller.Called += OnCall; EchoResonator.Rang += OnBell; }
         void OnDisable() { EchoCaller.Called -= OnCall; EchoResonator.Rang -= OnBell; }
