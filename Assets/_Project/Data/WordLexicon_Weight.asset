@@ -1,0 +1,148 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6babe6b641e9b2428de56700b28b6ec, type: 3}
+  m_Name: WordLexicon_Weight
+  m_EditorClassIdentifier: Assembly-CSharp::DuskTwilight.WordLexicon
+  entries:
+  - word: "\uAE43\uD138"
+    weight: 1
+  - word: "\uAD6C\uB984"
+    weight: 1
+  - word: "\uD48D\uC120"
+    weight: 1
+  - word: "\uB098\uBE44"
+    weight: 1
+  - word: "\uBE44\uB217\uBC29\uC6B8"
+    weight: 1
+  - word: "\uBE44\uB204\uBC29\uC6B8"
+    weight: 1
+  - word: "\uC5F0\uAE30"
+    weight: 1
+  - word: "\uBBFC\uB4E4\uB808"
+    weight: 1
+  - word: "\uAF43\uC78E"
+    weight: 1
+  - word: "\uB208\uC1A1\uC774"
+    weight: 1
+  - word: "\uC19C"
+    weight: 1
+  - word: "\uC19C\uC0AC\uD0D5"
+    weight: 1
+  - word: "\uAC70\uD488"
+    weight: 1
+  - word: "\uBA3C\uC9C0"
+    weight: 1
+  - word: "\uBC14\uB78C"
+    weight: 1
+  - word: "\uC548\uAC1C"
+    weight: 1
+  - word: "\uC885\uC774"
+    weight: 1
+  - word: "\uC0C8"
+    weight: 1
+  - word: "\uBC18\uB527\uBD88"
+    weight: 1
+  - word: "\uB0A0\uAC1C"
+    weight: 1
+  - word: "\uC5F0"
+    weight: 1
+  - word: "\uC758\uC790"
+    weight: 2
+  - word: "\uCC45"
+    weight: 2
+  - word: "\uC0AC\uACFC"
+    weight: 2
+  - word: "\uC6B0\uC0B0"
+    weight: 2
+  - word: "\uC0C1\uC790"
+    weight: 2
+  - word: "\uCEF5"
+    weight: 2
+  - word: "\uC2E0\uBC1C"
+    weight: 2
+  - word: "\uAC00\uBC29"
+    weight: 2
+  - word: "\uBE75"
+    weight: 2
+  - word: "\uACE0\uC591\uC774"
+    weight: 2
+  - word: "\uC2DC\uACC4"
+    weight: 2
+  - word: "\uBAA8\uC790"
+    weight: 2
+  - word: "\uBC14\uC704"
+    weight: 3
+  - word: "\uB3CC"
+    weight: 3
+  - word: "\uB2FB"
+    weight: 3
+  - word: "\uC1E0"
+    weight: 3
+  - word: "\uC1F3\uB369\uC774"
+    weight: 3
+  - word: "\uC0B0"
+    weight: 3
+  - word: "\uCF54\uB07C\uB9AC"
+    weight: 3
+  - word: "\uC885"
+    weight: 3
+  - word: "\uACF0"
+    weight: 3
+  - word: "\uBCBD\uB3CC"
+    weight: 3
+  - word: "\uB0A9"
+    weight: 3
+  - word: "\uCCA0"
+    weight: 3
+  - word: "\uB300\uD3EC"
+    weight: 3
+  - word: "\uACE0\uB798"
+    weight: 3
+  - word: "\uD53C\uC544\uB178"
+    weight: 3
+  - word: "\uAE30\uCC28"
+    weight: 3
+  - word: "\uD0F1\uD06C"
+    weight: 3
+  - word: "\uAE08\uAD34"
+    weight: 3
+  - word: "\uC131\uBCBD"
+    weight: 3
+  - word: "\uBB34\uC1E0"
+    weight: 3
+  notThings:
+  - "\uC548\uB155"
+  - "\uC548\uB155\uD558\uC138\uC694"
+  - "\uACE0\uB9C8\uC6CC"
+  - "\uACE0\uB9D9\uC2B5\uB2C8\uB2E4"
+  - "\uAC10\uC0AC\uD569\uB2C8\uB2E4"
+  - "\uBBF8\uC548"
+  - "\uBBF8\uC548\uD574"
+  - "\uB124"
+  - "\uC751"
+  - "\uC5B4"
+  - "\uC74C"
+  - "\uC544"
+  - "\uC544\uB2C8"
+  - "\uC544\uB2C8\uC694"
+  - "\uC608"
+  - "\uBB50"
+  - "\uC65C"
+  - "\uC88B\uC544"
+  - "\uC2EB\uC5B4"
+  - "\uC7A0\uAE50"
+  - "\uC5EC\uAE30"
+  - "\uC800\uAE30"
+  - "\uBC14\uAFD4"
+  - "\uC810\uD504"
+  - "\uD78C\uD2B8"
+  - "\uC5F4\uC5B4"

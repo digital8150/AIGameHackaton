@@ -128,8 +128,14 @@ namespace DuskTwilight
         {
             var words = new System.Collections.Generic.List<string>();
             void Add(string[] ws) { if (ws != null) foreach (var w in ws) if (!string.IsNullOrEmpty(w) && !words.Contains(w)) words.Add(w); }
-            if (WordTarget.Nearest) Add(WordTarget.Nearest.choices);
-            foreach (var t in FindObjectsByType<WordTarget>(FindObjectsSortMode.None)) Add(t.choices);
+            void AddTarget(WordTarget t)
+            {
+                if (!t) return;
+                Add(t.choices);
+                if (t is WordFloatPlank fp) Add(new System.Collections.Generic.List<string>(fp.PromptWords()).ToArray());
+            }
+            AddTarget(WordTarget.Nearest);
+            foreach (var t in FindObjectsByType<WordTarget>(FindObjectsSortMode.None)) AddTarget(t);
             Add(commandWords.Split(new[] { ',', ' ' }, StringSplitOptions.RemoveEmptyEntries));
             return string.Join(", ", words) + ".";
         }

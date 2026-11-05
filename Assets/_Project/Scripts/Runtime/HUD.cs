@@ -109,6 +109,7 @@ namespace DuskTwilight
             sb.AppendLine($"[DEV] director {(dir && dir.Enabled ? "on" : "off")} (F2) · Jev {(JevClient.HasKey ? JevClient.LastStatus : "no key → rules")}");
             var vc = VoiceInput.I ? VoiceInput.I.GetComponent<VoiceCommands>() : null;
             if (vc && vc.LastDebug.Length > 0) sb.AppendLine("voice " + vc.LastDebug);
+            sb.AppendLine($"[DEV] local AI {(LocalLLM.I ? LocalLLM.I.Status : "off")}{(WordFloatPlank.LastJudge.Length > 0 ? " · " + WordFloatPlank.LastJudge : "")}");
             if (SenseController.I) sb.AppendLine($"sense {(SenseController.I.IsDark ? "dark/prince" : "light/princess")} · echo x{SenseController.I.DirectorBoost:0.00}");
             if (flow && DuoController.I) sb.AppendLine($"zone {flow.CurrentZone} · falls {flow.Deaths} · switches {DuoController.I.SwitchCount}");
             if (dir) foreach (var l in dir.Log) sb.AppendLine("<color=#ffe08a>" + l + "</color>");

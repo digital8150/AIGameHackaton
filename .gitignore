@@ -50,3 +50,5 @@ Tools/_nai_out/
 Assets/_Project/Art/Title/*.psd
 Assets/_Project/Art/Title/*.psd.meta
 Tools/_models/
+/Assets/StreamingAssets/LLM/
+/Assets/StreamingAssets/LLM.meta

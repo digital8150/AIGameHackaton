@@ -10,7 +10,7 @@ import json, os, sys, time, urllib.request
 
 URL = "http://127.0.0.1:8091/v1/chat/completions"
 HERE = os.path.dirname(os.path.abspath(__file__))
-LABELS = {"무거움": "heavy", "가벼움": "light", "보통": "mid"}
+LABELS = {"무거움": "heavy", "가벼움": "light", "보통": "mid", "모름": "none"}
 SYSTEM = ("너는 동화 속 퍼즐의 심판이다. 플레이어가 말한 단어가 가리키는 것의 무게를 판정한다. "
           "무거운 것이면 '무거움', 가벼운 것이면 '가벼움', 무겁지도 가볍지도 않거나 애매하면 '보통'이라고만 답한다. "
           "추상적인 말은 그 말이 주는 느낌으로 판정한다.")

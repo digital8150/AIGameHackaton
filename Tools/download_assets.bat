@@ -11,6 +11,14 @@ set "FAILED=0"
 
 call :fetch "https://huggingface.co/ggerganov/whisper.cpp/resolve/main/ggml-base.bin" "Assets\StreamingAssets\Whisper\ggml-base.bin" 147951465
 
+rem Local word judge (2단계 말 무게 발판): llama.cpp server (Vulkan) + Kanana 1.5 2.1B Instruct (Apache-2.0), Q4_K_M
+call :fetch "https://huggingface.co/DevQuasar/kakaocorp.kanana-1.5-2.1b-instruct-2505-GGUF/resolve/main/kakaocorp.kanana-1.5-2.1b-instruct-2505.Q4_K_M.gguf" "Assets\StreamingAssets\LLM\kanana-2.1b-Q4_K_M.gguf" 1522796768
+call :fetch "https://github.com/ggml-org/llama.cpp/releases/download/b12128/llama-b12128-bin-win-vulkan-x64.zip" "Assets\StreamingAssets\LLM\llama.zip" 37684327
+if exist "Assets\StreamingAssets\LLM\llama.zip" if not exist "Assets\StreamingAssets\LLM\llama-server.exe" (
+    echo [unzip] llama.cpp
+    tar -xf "Assets\StreamingAssets\LLM\llama.zip" -C "Assets\StreamingAssets\LLM"
+)
+
 echo.
 if "%FAILED%"=="0" (echo Done.) else (echo Some downloads FAILED.)
 exit /b %FAILED%
