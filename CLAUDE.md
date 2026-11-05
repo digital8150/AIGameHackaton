@@ -12,7 +12,8 @@ Unity 6000.3 · URP 2D Renderer · Input System only · 기획서: Claude Docs "
 - 런타임 코드(`Assets/_Project/Scripts/Runtime`)와 셰이더(`Assets/_Project/Shaders`)는 파일로 작성한다. MonoBehaviour는 파일당 하나, 파일명 = 클래스명.
 
 ## 구조
-- 챕터 씬 (빌드 순서): `Ch0_Prologue`(서장 튜토리얼) → `Ch1_PrinceInDark` → `Ch2_PrincessInLight` → `InGame`(제3장 황혼). 다음 장은 `GameFlow.nextScene`.
+- 스테이지 씬 (빌드 순서, 기획: Notion "스테이지 기획 _ Pyorang"): `Stage1_FirstTwilight`(1단계 첫 황혼, 방 6) → `Stage2_SunsetLake`(2단계 노을이 잠긴 호수, 방 4). 다음 장은 `GameFlow.nextScene`. 구 프로토타입 `Ch0_Prologue`·`Ch1_PrinceInDark`·`Ch2_PrincessInLight`·`InGame`은 빌드 뒤쪽에 남겨 둠.
+- 말 퍼즐: `WordTarget`(공통: 선택 창·음성·빛 글자) ← `WordAltar`(정답 → 다리/문, 프리팹 WordAltar·WordDoor), `WordFillBridge`(아무 말 → 칸 채우기, 누적/교체·깜빡이). 위험 지대 `Hazard`(Lake 프리팹). 가짜 벽 = 충돌 없는 `Fake Walls` 타일맵(M_FakeWall*).
 - `Assets/_Project/Scripts/Runtime/Tutorial` — 단계별 튜토리얼(Section/Director/Signals/View/Veil/Marker), `AI` — Whisper 음성(`VoiceInput`/`VoiceCommands`)과 Jev(`JevClient`/`JevDirectorBrain`/`VoiceIntent`)
 - Whisper 모델 `Assets/StreamingAssets/Whisper/ggml-base.bin`은 git 밖 — `Tools/download_assets.bat`. Jev 키는 환경변수 `TYPESAFE_API_KEY` (없으면 규칙/키워드 폴백).
 - `Assets/_Project/Shaders` — `DuskSense.hlsl`(공통 감각 모델) + `SenseSprite`/`Sky`/`SoundGlyph`/`Glow`

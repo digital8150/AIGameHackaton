@@ -6,6 +6,12 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/Stage1_FirstTwilight.unity
+    guid: 0794dab08f4c4b949b8bb8118486fe82
+  - enabled: 1
+    path: Assets/Scenes/Stage2_SunsetLake.unity
+    guid: cf98b1433af0d88458e9582c1afa667a
+  - enabled: 1
     path: Assets/Scenes/Ch0_Prologue.unity
     guid: 5677366e637be234884981f77311f411
   - enabled: 1
