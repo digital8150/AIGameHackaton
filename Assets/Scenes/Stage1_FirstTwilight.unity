@@ -17415,7 +17415,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5041494166128261712, guid: e6e12cb6ebabc1a488e8b102cf36652d, type: 3}
       propertyPath: nextScene
-      value: Stage2_SunsetLake
+      value: Interlude_1to2
       objectReference: {fileID: 0}
     - target: {fileID: 5041494166128261712, guid: e6e12cb6ebabc1a488e8b102cf36652d, type: 3}
       propertyPath: clearTitle

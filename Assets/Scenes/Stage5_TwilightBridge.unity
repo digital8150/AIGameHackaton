@@ -31893,7 +31893,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5041494166128261712, guid: e6e12cb6ebabc1a488e8b102cf36652d, type: 3}
       propertyPath: chapterName
-      value: "\uD669\uD63C\uC758 \uC21C\uC11C"
+      value: "\uC6B0\uB9AC\uAC00 \uD568\uAED8 \uC624\uB974\uB294 \uD669\uD63C"
       objectReference: {fileID: 0}
     - target: {fileID: 5041494166128261712, guid: e6e12cb6ebabc1a488e8b102cf36652d, type: 3}
       propertyPath: chapterLabel

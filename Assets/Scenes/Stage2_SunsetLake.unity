@@ -17901,11 +17901,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5041494166128261712, guid: e6e12cb6ebabc1a488e8b102cf36652d, type: 3}
       propertyPath: nextScene
-      value: Stage3_EchoCave
+      value: Interlude_2to3
       objectReference: {fileID: 0}
     - target: {fileID: 5041494166128261712, guid: e6e12cb6ebabc1a488e8b102cf36652d, type: 3}
       propertyPath: clearTitle
-      value: "\uB9D0\uD558\uBA74 \uBCC0\uD55C\uB2E4"
+      value: "\uB124 \uB9D0\uC774 \uBE5B\uC774 \uB420 \uB54C"
       objectReference: {fileID: 0}
     - target: {fileID: 5041494166128261712, guid: e6e12cb6ebabc1a488e8b102cf36652d, type: 3}
       propertyPath: startPoint
@@ -17917,7 +17917,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5041494166128261712, guid: e6e12cb6ebabc1a488e8b102cf36652d, type: 3}
       propertyPath: chapterName
-      value: "\uB9D0\uD558\uBA74 \uBCC0\uD55C\uB2E4"
+      value: "\uB124 \uB9D0\uC774 \uBE5B\uC774 \uB420 \uB54C"
       objectReference: {fileID: 0}
     - target: {fileID: 5041494166128261712, guid: e6e12cb6ebabc1a488e8b102cf36652d, type: 3}
       propertyPath: chapterLabel

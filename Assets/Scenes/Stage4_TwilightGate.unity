@@ -18605,11 +18605,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5041494166128261712, guid: e6e12cb6ebabc1a488e8b102cf36652d, type: 3}
       propertyPath: nextScene
-      value: Stage5_TwilightBridge
+      value: Interlude_4to5
       objectReference: {fileID: 0}
     - target: {fileID: 5041494166128261712, guid: e6e12cb6ebabc1a488e8b102cf36652d, type: 3}
       propertyPath: clearTitle
-      value: "3\uCE35 \uAC00\uC9DC \uBCBD \uB3D9\uAD74"
+      value: "\uBCF4\uC774\uC9C0 \uC54A\uB294 \uBB38\uC744 \uB450\uB4DC\uB9AC\uBA70"
       objectReference: {fileID: 0}
     - target: {fileID: 5041494166128261712, guid: e6e12cb6ebabc1a488e8b102cf36652d, type: 3}
       propertyPath: startPoint
@@ -18621,7 +18621,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5041494166128261712, guid: e6e12cb6ebabc1a488e8b102cf36652d, type: 3}
       propertyPath: chapterName
-      value: "3\uCE35 \uAC00\uC9DC \uBCBD \uB3D9\uAD74"
+      value: "\uBCF4\uC774\uC9C0 \uC54A\uB294 \uBB38\uC744 \uB450\uB4DC\uB9AC\uBA70"
       objectReference: {fileID: 0}
     - target: {fileID: 5041494166128261712, guid: e6e12cb6ebabc1a488e8b102cf36652d, type: 3}
       propertyPath: chapterLabel
