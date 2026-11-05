@@ -20735,6 +20735,10 @@ PrefabInstance:
       propertyPath: signals
       value: 
       objectReference: {fileID: 761507168}
+    - target: {fileID: 6342141575058375699, guid: 68b0972bee0620b4bba0d145d6b3de0c, type: 3}
+      propertyPath: markerId
+      value: r2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
