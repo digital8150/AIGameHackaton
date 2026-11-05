@@ -77,6 +77,7 @@ namespace DuskTwilight
             Leader.Teleport(p);
             Follower.Teleport(p + Vector2.left * followGap * Leader.Facing);
             trail.Clear();
+            groundY = p.y;
         }
 
         void Update()
@@ -106,6 +107,7 @@ namespace DuskTwilight
             if (idx > 1) trail.RemoveRange(0, idx - 1);
             if (trail.Count > 600) trail.RemoveRange(0, trail.Count - 600);
 
+            if (Leader.Grounded) groundY = leaderPos.y;
             Follower.FollowTo(Settle(target, leaderPos), Leader.Facing, Time.fixedDeltaTime);
         }
 
@@ -113,6 +115,18 @@ namespace DuskTwilight
         /// Keeps the follower beside the leader with feet on the ground. Without this, a jump in place
         /// leaves breadcrumbs straight above the leader's head and the follower ends up standing on them.
         /// </summary>
+        float groundY = float.NegativeInfinity;
+
+        // never from inside a wall / ledge: a ray that starts in a collider would "hit" at its own origin
+        RaycastHit2D Down(Vector2 from)
+        {
+            bool q = Physics2D.queriesStartInColliders;
+            Physics2D.queriesStartInColliders = false;
+            var hit = Physics2D.Raycast(from, Vector2.down, 3f, Leader.groundMask);
+            Physics2D.queriesStartInColliders = q;
+            return hit;
+        }
+
         Vector2 Settle(Vector2 target, Vector2 leaderPos)
         {
             Vector2 self = Follower.transform.position;
@@ -121,14 +135,16 @@ namespace DuskTwilight
             {
                 float side = Mathf.Abs(self.x - leaderPos.x) > 0.05f ? Mathf.Sign(self.x - leaderPos.x) : -Leader.Facing;
                 target.x = leaderPos.x + side * followGap;
-                target.y = Mathf.Max(target.y, leaderPos.y);
+                // beside a leader who jumps in place: look for ground from where the leader stands, not from the
+                // top of the jump (otherwise a ledge or one-way platform beside them lifts the follower onto it)
+                target.y = float.IsNegativeInfinity(groundY) ? Mathf.Max(target.y, leaderPos.y) : groundY;
             }
             // 2) feet on solid ground (actors are excluded from the mask, so the leader is never ground)
-            var hit = Physics2D.Raycast(new Vector2(target.x, target.y + 0.6f), Vector2.down, 3f, Leader.groundMask);
+            var hit = Down(new Vector2(target.x, target.y + 0.6f));
             if (hit.collider) return new Vector2(target.x, hit.point.y);
             // 3) nothing below: mid-jump over a gap is fine; standing still over a pit is not
             if (!Leader.Grounded) return target;
-            var under = Physics2D.Raycast(self + Vector2.up * 0.6f, Vector2.down, 3f, Leader.groundMask);
+            var under = Down(self + Vector2.up * 0.6f);
             return under.collider ? new Vector2(self.x, under.point.y) : target;
         }
     }

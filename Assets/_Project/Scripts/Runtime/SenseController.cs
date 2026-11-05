@@ -41,6 +41,8 @@ namespace DuskTwilight
         public float echoRadiusPerStrength = 10f;
         public float echoLifetime = 2.6f;
         public float listenerAura = 2.4f;
+        [Tooltip("Centre of the prince's own aura relative to his feet (the listener's pivot)")]
+        public Vector2 listenerOffset = new Vector2(0f, 0.9f);
 
         [Header("Light sense")]
         public Vector2 sunViewport = new Vector2(0.74f, 0.36f);
@@ -206,7 +208,7 @@ namespace DuskTwilight
             Shader.SetGlobalFloat(IdNow, Time.time);
             Shader.SetGlobalVectorArray(IdEcho, echoes);
             Shader.SetGlobalVector(IdEchoParams, new Vector4(echoSpeed, echoRadiusPerStrength, echoLifetime, DirectorBoost));
-            Vector2 l = Listener ? (Vector2)Listener.position : Vector2.zero;
+            Vector2 l = Listener ? (Vector2)Listener.position + listenerOffset : Vector2.zero;
             Shader.SetGlobalVector(IdListener, new Vector4(l.x, l.y, listenerAura, 0));
             Shader.SetGlobalVector(IdSun, new Vector4(sunViewport.x, sunViewport.y, sunStrength, 0));
             Shader.SetGlobalColor(IdHaze, haze);

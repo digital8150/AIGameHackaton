@@ -2929,6 +2929,7 @@ GameObject:
   - component: {fileID: 708194321}
   - component: {fileID: 708194320}
   - component: {fileID: 708194319}
+  - component: {fileID: 708194322}
   m_Layer: 0
   m_Name: Fake Walls
   m_TagString: Untagged
@@ -3195,6 +3196,22 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!114 &708194322
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 708194317}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d4e92dec435adb408e534f51bc434be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DuskTwilight.FakeWall
+  reachShare: 0.85
+  answersBells: 1
+  foundEcho: 0.35
+  foundCaption: 
 --- !u!1 &732738667
 GameObject:
   m_ObjectHideFlags: 0
