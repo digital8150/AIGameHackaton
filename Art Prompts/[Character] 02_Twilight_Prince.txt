@@ -1,0 +1,37 @@
+# [Character 02] 박명의 왕자 (Twilight Prince) — NAI V5 프롬프트 모음
+# 사용법: 아래 개별 프롬프트 뒤에 [Base Prompts].txt 내용을 이어 붙여 생성하세요.
+# 설정: 빛의 왕국 출신, 눈이 보이지 않아 항상 눈을 감고 있지만 '소리(반향)'로 세상을 느끼는 소년. 창백한 금발, 작은 금관/태양 헤일로, 백색·하늘색 튜닉과 망토.
+
+---
+
+## 1-A. 초상화 / 메달리온 아이콘 (Bust Portrait — 샘플 이미지와 페어 매칭 버전)
+1boy, solo, portrait, bust, straight-on, symmetrical composition, {{black background, simple background}},
+2.0::closed eyes, gently closed eyelids, serene expression::, -3::open eyes, pupils, irises, half-closed eyes::,
+short messy pale blonde hair, soft golden hair with fine pencil hatching,
+{{intricate geometric brass sun halo behind head}}, small antique gold crown,
+dark high-collar inner shirt, ivory and muted sky-blue fairytale tunic with gold trim, antique silver compass pendant, heavy textured cream wool cloak draped over shoulders,
+A storybook paper-theater portrait of the blind Twilight Prince with his eyes peacefully closed, listening intently to the faint echoes of the dark world. Detailed pen cross-hatching and vintage fairytale etching style matching the Dusk Princess portrait, isolated on a solid pitch-black background.
+
+---
+
+## 2-A. 인게임 전신 스프라이트 — 기본 서기 (Full Body Sprite: Idle)
+1boy, solo, {{full body}}, game sprite, paper cutout style, standing, {{facing right, side view, 3/4 profile}}, {{black background, simple background}}, no shadow on ground,
+2.0::closed eyes, serene face::, -3::open eyes::, pale blonde hair, {{intricate geometric gold sun halo behind head}}, small gold crown,
+ivory and muted sky-blue fairytale tunic, gold sash belt, textured cream and slate-blue cloak, dark slate trousers, brown leather boots,
+A full-body 2D side-scrolling platformer character sprite of the blind Twilight Prince standing calmly facing right with his eyes closed, head to toe fully visible inside the frame with clean cutout edges on a solid black background.
+
+---
+
+## 2-B. 인게임 전신 스프라이트 — 달리기 (Full Body Sprite: Run)
+1boy, solo, {{full body}}, game sprite, paper cutout style, {{running, dynamic stride}}, {{facing right, side view}}, {{black background, simple background}},
+2.0::closed eyes::, -3::open eyes::, pale blonde hair, geometric gold sun halo behind head, small gold crown,
+ivory and muted sky-blue tunic, gold belt, fluttering sky-blue cloak behind back, dark trousers, brown leather boots,
+A full-body 2D side-scrolling platformer sprite of the blind Twilight Prince running forward facing right with his cloak streaming behind him, head to toe fully visible on a solid black background.
+
+---
+
+## 2-C. 인게임 전신 스프라이트 — 점프 & 낙하 (Full Body Sprite: Jump / Fall)
+1boy, solo, {{full body}}, game sprite, paper cutout style, {{jumping in mid-air, floating}}, {{facing right, side view}}, {{black background, simple background}},
+2.0::closed eyes::, -3::open eyes::, pale blonde hair, geometric gold sun halo behind head, small gold crown,
+ivory and muted sky-blue tunic, billowing sky-blue cloak, dark trousers, brown leather boots,
+A full-body 2D side-scrolling platformer sprite of the blind Twilight Prince leaping through the air facing right with his cloak billowing upward, head to toe fully visible on a solid black background.

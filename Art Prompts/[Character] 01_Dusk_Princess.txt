@@ -1,0 +1,47 @@
+# [Character 01] 황혼의 공주 (Dusk Princess) — NAI V5 프롬프트 모음
+# 사용법: 아래 개별 프롬프트 뒤에 [Base Prompts].txt 내용을 이어 붙여 생성하세요.
+# 설정: 어둠의 왕국 출신, 소리를 듣지 못하지만 '빛'을 볼 수 있는 소녀. 크고 선명한 보랏빛 눈동자, 초승달/기하학적 헤일로 장식.
+
+---
+
+## 1-A. 초상화 / 메달리온 아이콘 (Bust Portrait — 샘플 이미지 스타일 고정)
+1girl, solo, portrait, bust, looking at viewer, straight-on, symmetrical composition, {{black background, simple background}},
+1.3::wide open eyes, big round purple eyes, detailed irises, thick eyelashes::, 0.8::red lower eyelids, subtle blush::, expressionless, calm melancholic expression,
+dark violet-black medium hair, {hime cut}, long sidelocks, purple patterned headband,
+{{intricate geometric bronze halo behind head}}, crescent moon motif,
+black turtleneck innerwear, cream white sailor collar with gold stripes, purple ribbon neckerchief, {gold coin lock pendant}, oversized beige cable-knit cardigan draped over shoulders,
+A storybook paper-theater portrait of the Dusk Princess staring straight ahead with large, luminous violet eyes that perceive all light in the twilight world. Intricate cross-hatching and pen etching lines on her knitted cape and ribbons, isolated cleanly on a solid pitch-black background.
+
+---
+
+## 1-B.초상화 (동화 원작 복장 버전 — 벨 드레스 & 은빛 초승달 티아라)
+1girl, solo, portrait, bust, looking at viewer, straight-on, symmetrical composition, {{black background, simple background}},
+1.3::wide open eyes, big round violet eyes, luminous pupils, thick eyelashes::, gentle melancholic expression, closed mouth,
+long flowing dark violet hair, blunt bangs, long sidelocks,
+{{ornate silver crescent moon tiara}}, antique filigree crown,
+plum and dark purple fairytale bell dress, silver embroidery, antique lace collar, velvet capelet with silver clasp,
+A dark fairytale storybook portrait of the Dusk Princess who cannot hear a sound, gazing forward with wide, light-filled violet eyes. Rich pencil hatching and vintage paper theater illustration texture, isolated on a solid black background.
+
+---
+
+## 2-A. 인게임 전신 스프라이트 — 기본 서기 (Full Body Sprite: Idle)
+1girl, solo, {{full body}}, game sprite, paper cutout style, standing, {{facing right, side view, 3/4 profile}}, {{black background, simple background}}, no shadow on ground,
+1.2::wide open purple eyes::, dark violet hair, geometric bronze halo behind head, purple headband,
+white sailor collar with gold trim, purple neckerchief, black turtleneck, oversized beige knitted cape, pleated dark skirt, calf-high antique boots,
+A full-body 2D side-scrolling platformer character sprite of the Dusk Princess standing in a calm idle pose facing right, head to toe fully visible inside the frame with clean cutout edges on a solid black background.
+
+---
+
+## 2-B. 인게임 전신 스프라이트 — 달리기 (Full Body Sprite: Run)
+1girl, solo, {{full body}}, game sprite, paper cutout style, {{running, dynamic walking pose}}, {{facing right, side view}}, {{black background, simple background}},
+1.2::wide open purple eyes::, flowing dark violet hair, geometric bronze halo behind head, purple headband,
+white sailor collar with gold trim, fluttering purple neckerchief, oversized beige knitted cape flowing back, pleated dark skirt, antique boots,
+A full-body 2D side-scrolling platformer sprite of the Dusk Princess running forward facing right, her cape and hair fluttering gently behind her, head to toe fully visible on a solid black background.
+
+---
+
+## 2-C. 인게임 전신 스프라이트 — 점프 & 낙하 (Full Body Sprite: Jump / Fall)
+1girl, solo, {{full body}}, game sprite, paper cutout style, {{jumping in mid-air, knees slightly bent, floating}}, {{facing right, side view}}, {{black background, simple background}},
+1.2::wide open purple eyes::, floating dark violet hair, geometric bronze halo behind head,
+white sailor collar, fluttering purple neckerchief, oversized beige knitted cape billowing upward, pleated dark skirt, antique boots,
+A full-body 2D side-scrolling platformer sprite of the Dusk Princess leaping gracefully in mid-air facing right, her cape and skirt billowing softly, head to toe fully visible on a solid black background.

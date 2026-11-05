@@ -1,0 +1,56 @@
+# [Props 03] 스테이지 기믹 & 오브젝트 (Paper Cutout Props) — NAI V5 프롬프트 모음
+# 사용법: 아래 개별 프롬프트 뒤에 [Base Prompts].txt 내용을 이어 붙여 생성하세요.
+# 주의: 모든 오브젝트 프롬프트는 맨 앞에 `no humans`가 들어가며, 인물이 섞이지 않도록 네거티브나 메인에 `-3::1girl, 1boy, human, character::`를 포함했습니다.
+
+---
+
+## 1. 황혼의 문 & 태엽 톱니바퀴 (Twilight Gate & Clockwork Gear)
+### 1-A. 고풍스러운 황혼의 철문 (Gate)
+no humans, -3::1girl, 1boy, human::, game asset, paper cutout prop, {{black background, simple background}},
+ornate tall gothic fairytale iron gate, ancient stone arch frame, intricate clockwork engravings, sun and moon relief carvings, weathered bronze and dark stone texture,
+A tall vertical fairytale iron and stone gate prop for a 2D platformer, drawn in a vintage kamishibai paper-theater style with dense pen cross-hatching, isolated on a solid black background.
+
+### 1-B. 숨겨진 황동 톱니바퀴 (Hidden Brass Gear)
+no humans, -3::1girl, 1boy, human::, game asset, paper cutout prop, symmetrical circular object, {{black background, simple background}},
+{{ornate antique brass clockwork gear}}, steampunk fairytale cogwheel, intricate filigree spokes, engraved rings, weathered gold and bronze patina,
+A single circular antique brass clockwork gear prop viewed straight-on, drawn with intricate pen hatching and storybook etching details, isolated cleanly on a solid black background.
+
+---
+
+## 2. 신호 등불 & 작동 레버 (Signal Lantern & Lever Switch)
+### 2-A. 신호 등불 (Signal Lantern — 적색/금색 점등용)
+no humans, -3::1girl, 1boy, human::, game asset, paper cutout prop, {{black background, simple background}},
+ornate hanging fairytale iron lantern, antique glass cage lamp, intricate wrought-iron frame, warm glowing core,
+A single antique fairytale signal lantern prop viewed straight-on, drawn in a sketchy pen-hatched storybook illustration style, isolated on a solid black background.
+
+### 2-B. 바닥 작동 레버 (Mechanical Floor Lever)
+no humans, -3::1girl, 1boy, human::, game asset, paper cutout prop, {{black background, simple background}},
+antique brass and wood floor lever switch, mechanical gear base, ornate handle tilted to one side, fairytale clockwork mechanism,
+A single 2D platformer floor lever switch prop on a small geared stone base, drawn with detailed pencil hatching in a dark fairytale paper-theater style, isolated on a solid black background.
+
+---
+
+## 3. 울림돌 발판 (Echo Stone / Glass Platform)
+no humans, -3::1girl, 1boy, human::, game asset, paper cutout platform tile, horizontal rectangular composition, {{black background, simple background}},
+{{translucent crystalline stone platform}}, floating ancient resonant slate slab, carved soundwave runes, delicate etched cracks, pale ice-blue and vintage ivory mineral texture,
+A horizontal floating stone-and-crystal platform slab for a 2D side-scroller, drawn in a vintage storybook pen-hatching style, isolated on a solid black background.
+
+---
+
+## 4. 빛의 글자 제단 (Word Altar)
+no humans, -3::1girl, 1boy, human::, game asset, paper cutout prop, {{black background, simple background}},
+ancient fairytale stone shrine altar, carved sun and star tablet, weathered stone pedestal with intricate pen hatching, mystical engraved book stand,
+A symmetrical ancient stone altar prop for a 2D platformer, drawn in a dark fairytale kamishibai illustration style with rich cross-hatching, isolated on a solid black background.
+
+---
+
+## 5. 체크포인트 가로등 & 재회의 등불 (Checkpoint Post & Reunion Goal Lantern)
+### 5-A. 체크포인트 작은 가로등 (Checkpoint Post)
+no humans, -3::1girl, 1boy, human::, game asset, paper cutout prop, {{black background, simple background}},
+slender wrought-iron fairytale signpost lantern, small crescent bell lamp hanging from a curved post, weathered stone base,
+A single antique wrought-iron checkpoint lamp post for a 2D side-scroller, drawn with detailed pen hatching on a solid black background.
+
+### 5-B. 재회의 큰 등불 (Reunion Goal Shrine)
+no humans, -3::1girl, 1boy, human::, game asset, paper cutout prop, {{black background, simple background}},
+{{grand ornate twilight sanctuary lantern}}, intertwined sun and crescent moon monument, warm golden beacon inside a tall filigree iron and stone arch,
+A grand ceremonial twilight lantern monument where the Prince and Princess reunite, drawn in a rich storybook paper-theater style with intricate pen cross-hatching, isolated on a solid black background.

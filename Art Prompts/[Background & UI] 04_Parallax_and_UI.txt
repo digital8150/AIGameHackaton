@@ -1,0 +1,36 @@
+# [Background & UI 04] 배경 레이어 & UI 메달리온 — NAI V5 프롬프트 모음
+# 사용법: 아래 개별 프롬프트 뒤에 [Base Prompts].txt 내용을 이어 붙여 생성하세요.
+# 주의: 배경/UI 역시 인물이 나오지 않도록 `no humans, -3::1girl, 1boy, human::`가 앞에 배치되어 있습니다.
+
+---
+
+## 1. 패럴랙스 배경 레이어 (Parallax Backgrounds — 16:9 와이드 해상도 권장)
+### 1-A. 원경: 황혼의 하늘과 고성 실루엣 (Distant Twilight Sky & Hills)
+no humans, -3::1girl, 1boy, human::, wide shot, scenery, landscape, horizontal composition,
+{{layered paper theater backdrop, kamishibai stage scenery}}, rolling twilight hills, distant fairytale clockwork castle silhouette on the horizon, warm dusk amber and deep violet sky, drifting paper clouds,
+A wide 2D side-scrolling background illustration of twilight hills and a distant fairytale silhouette, crafted like layered cut paper with heavy pencil hatching and vintage storybook texture.
+
+### 1-B. 중경: 종이연극 고목 숲 레이어 (Midground Cutout Forest Layer)
+no humans, -3::1girl, 1boy, human::, wide shot, scenery, {{black background, simple background}},
+{{layered paper cutout forest}}, twisted fairytale trees, ancient stone ruins and hanging vines, intricate pen cross-hatching on tree bark, sepia and dark plum tones,
+A horizontal row of fairytale paper-cutout trees and stone arches for a 2D parallax background layer, isolated on a solid black background for easy alpha extraction.
+
+---
+
+## 2. 지형 타일셋 시트 / 플랫폼 블록 (Ground Platform Block)
+no humans, -3::1girl, 1boy, human::, game asset, square tile block, {{black background, simple background}},
+fairytale cobblestone and overgrown moss ground block, ancient carved stone bricks, flat walkable top edge, detailed pen cross-hatching,
+A single modular square 2D platformer ground block made of ancient storybook cobblestones and roots, viewed straight-on from the side, isolated on a solid black background.
+
+---
+
+## 3. HUD 감각 메달리온 프레임 (Sense Medallion Rings — 1:1 정방형 권장)
+### 3-A. 공주(빛) 메달리온 — 태양의 금빛 고리 (Light Sense: Sun Ring)
+no humans, -3::1girl, 1boy, human::, game ui icon, circular frame, symmetrical, {{black background, simple background}},
+{{ornate antique gold sun medallion ring}}, hollow circular portrait frame, engraved sunbeams and astrolabe markings, vintage brass filigree,
+A circular antique gold sun medallion frame with an empty dark center for a character portrait, drawn in a detailed pen-hatched fairytale illustration style on a solid black background.
+
+### 3-B. 왕자(소리) 메달리온 — 달과 메아리의 은빛 고리 (Dark Sense: Moon Ring)
+no humans, -3::1girl, 1boy, human::, game ui icon, circular frame, symmetrical, {{black background, simple background}},
+{{ornate antique silver crescent moon medallion ring}}, hollow circular portrait frame, engraved soundwave ripples and starry filigree, weathered silver and pale blue patina,
+A circular antique silver moon medallion frame with an empty dark center for a character portrait, drawn in a detailed pen-hatched fairytale illustration style on a solid black background.
