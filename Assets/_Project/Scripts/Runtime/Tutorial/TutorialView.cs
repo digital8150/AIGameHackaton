@@ -16,7 +16,7 @@ namespace DuskTwilight
 
         [Header("Layout (the panel itself lives in the Tutorial Panel prefab)")]
         [Tooltip("Panel X when hidden (off-screen left) and shown.")]
-        public Vector2 slideX = new Vector2(-400f, 20f);
+        public Vector2 slideX = new Vector2(-490f, 30f);
         public float padding = 14f;
         public float rowHeight = 34f;
         [Tooltip("Gap between key chips.")]
