@@ -39,6 +39,21 @@ namespace DuskTwilight
         public Button close;
         [Range(0.05f, 1f)] public float fadeTime = 0.25f;
 
+        [Header("Paper motion")]
+        [Tooltip("Where the page starts from (px, relative to its resting place) when it opens.")]
+        public Vector2 openOffset = new Vector2(0f, -60f);
+        [Tooltip("Tilt (deg) while sliding in.")]
+        [Range(-15f, 15f)] public float openTilt = -4f;
+        [Tooltip("Tilt (deg) the page settles at — a slightly crooked sheet on the desk.")]
+        [Range(-5f, 5f)] public float restTilt = -0.6f;
+        [Range(0.8f, 1f)] public float openScale = 0.97f;
+
+        [Header("Sound")]
+        public AudioSource pageSfx;
+        [Tooltip("Paper rustle on open/close.")]
+        public AudioClip pageClip;
+        [Range(0f, 1f)] public float pageVolume = 0.6f;
+
         public bool IsOpen { get; private set; }
         public event System.Action Closed;
 
@@ -49,10 +64,12 @@ namespace DuskTwilight
         float openK;
         float level;
         GameObject returnSelection;
+        Vector2 restPos;
 
         void Awake()
         {
             if (!group) group = GetComponent<CanvasGroup>();
+            if (window) restPos = window.anchoredPosition;
             Bind(master, masterValue, () => GameSettings.MasterVolume, v => GameSettings.MasterVolume = v);
             Bind(music, musicValue, () => GameSettings.MusicVolume, v => GameSettings.MusicVolume = v);
             Bind(sfx, sfxValue, () => GameSettings.SfxVolume, v => GameSettings.SfxVolume = v);
@@ -139,6 +156,7 @@ namespace DuskTwilight
             IsOpen = true;
             group.blocksRaycasts = group.interactable = true;
             if (master && EventSystem.current) EventSystem.current.SetSelectedGameObject(master.gameObject);
+            PlayPage();
             StartMic();
         }
 
@@ -148,6 +166,7 @@ namespace DuskTwilight
             IsOpen = false;
             group.blocksRaycasts = group.interactable = false;
             StopMic();
+            PlayPage();
             if (returnSelection && EventSystem.current) EventSystem.current.SetSelectedGameObject(returnSelection);
             Closed?.Invoke();
         }
@@ -175,7 +194,17 @@ namespace DuskTwilight
         {
             float e = k * k * (3f - 2f * k);
             group.alpha = e;
-            if (window) window.localScale = Vector3.one * Mathf.Lerp(0.96f, 1f, e);
+            if (!window) return;
+            // ease-out-back so the sheet lands with a tiny overshoot
+            float b = 1f + 2.2f * Mathf.Pow(k - 1f, 3f) + 1.2f * Mathf.Pow(k - 1f, 2f);
+            window.anchoredPosition = restPos + openOffset * (1f - b);
+            window.localRotation = Quaternion.Euler(0f, 0f, Mathf.LerpUnclamped(openTilt, restTilt, b));
+            window.localScale = Vector3.one * Mathf.Lerp(openScale, 1f, e);
+        }
+
+        void PlayPage()
+        {
+            if (pageSfx && pageClip && isActiveAndEnabled) pageSfx.PlayOneShot(pageClip, pageVolume);
         }
 
         void StartMic()

@@ -7,11 +7,13 @@ Unity 6000.3 · URP 2D Renderer · Input System only · 기획서: Claude Docs "
   - 씬 생성/저장: `unity command create scene --path ...`, `unity command save scene`
   - 컴파일 확인: `unity command recompile` → `unity command recompile_status`, 에러는 `unity command get console --level error`
   - 확인: `unity command get_hierarchy`, `unity command game_view --output-path ...`, `unity command start`/`stop`
+  - 에디터가 백그라운드라 플레이/게임뷰 캡처가 멈춘 듯하면 `powershell -ExecutionPolicy Bypass -File Tools/unity_focus.ps1`로 에디터를 앞으로 가져온다 (사용자 포커스를 뺏으므로 필요할 때만).
 - **지양:** 에디터용 임시 스크립트, 에디터 메뉴/Builder 류 스크립트(`Assets/**/Editor/*Builder*.cs` 등), `.unity`/`.prefab`/`.asset` YAML 직접 편집.
   - 반복 작업도 Builder 스크립트로 만들지 말고, eval 스니펫을 단계별로 실행하며 결과를 확인한다.
 - 런타임 코드(`Assets/_Project/Scripts/Runtime`)와 셰이더(`Assets/_Project/Shaders`)는 파일로 작성한다. MonoBehaviour는 파일당 하나, 파일명 = 클래스명.
 
 ## 구조
+- 종이(동화책·메모장) UI 테마: 셰이더 `Shaders/Title/`의 `TitlePaper`(종이 시트: 줄·여백선·스프링·테이프·찢긴 윗변), `TitleInk`(손그림 선/상자/밀랍 봉인/체크/화살표), `TitleInkButton`(호버 시 잉크 밑줄), `TitlePageFrame`(화면 전체 종이 결·그을린 가장자리), 머티리얼 `M_Paper_*`/`M_Ink_*`. 설정 창은 `Prefabs/UI/SettingsPanel`(타이틀·ESC 메뉴가 공유), 인게임 ESC 메뉴는 `Prefabs/UI/PauseMenu`(`PauseMenu`: 시간 정지·월드 사운드 일시정지·`GameFlow.ModalOpen`) — `Chapter/HUD`에 중첩되어 모든 스테이지에 들어간다. 글씨는 온글잎 류류체.
 - 타이틀: `Title` 씬(빌드 0) = `Prefabs/UI/TitleScreen` 인스턴스. 연출 셰이더 `Shaders/Title/`(Backdrop·Portrait·Logo·Button·Panel·Gem·Embers, 머티리얼 `Materials/Title/M_Title_*`, 제목의 탄 종이 효과는 `M_Title_LogoBurn`의 Burn amount), 스크립트 `Scripts/Runtime/Title/`(TitleScreen·TitleLayer·TitleLogo·TitleButton·SettingsPanel·UIShaderSize·TitleSpriteSheet — 캐릭터는 `Art/Title/Title_*_Idle.png` 시트를 RawImage uvRect로 재생, 셰이더에 `_FrameRect` 전달). 아트는 픽셀이 아닌 NAI 일러스트 — 어둡고 muted한 세피아 동화 톤(밝은 표정·고채도 금지), 프롬프트 `Art Prompts/[Title] 06_Title_Screen.txt`. 설정값은 `GameSettings`(PlayerPrefs), 볼륨은 `Audio/DuskMixer`(Master/Music/SFX 노출 파라미터) + `AudioRouter`(Systems 프리팹에도 있음, 그룹 없는 AudioSource를 SFX로 라우팅). 폰트: 로고 Cinzel Decorative, 한글 Gowun Batang (OFL).
 - 씬 전환은 반드시 `SceneTransition.Load(scene, prefab)` (`Prefabs/UI/SceneTransition`: 암전 → 비동기 로드 → 대기 → 암전 해제, DontDestroyOnLoad). `SceneManager.LoadScene` 직접 호출 금지 — 스터터링이 보인다.
 - 프롤로그 컷신: `Prologue_Storybook`(타이틀 다음) = `Prefabs/UI/Storybook` 인스턴스(`StorybookCutscene`, 페이지 그림 `Art/Story/Story_NN.png` + 문구). 그림은 `Art Prompts/[Story] 07_Storybook.txt`(단색 세피아 연필, 인물은 Char_Full/Bust 외형), 화면에선 `M_PageTurn` 해진 책 효과. 마지막 장이 `PageTurn`으로 넘어가며 1단계 시작. 스테이지 사이 전환도 `PageTurn`.
