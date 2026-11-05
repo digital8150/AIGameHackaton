@@ -57,7 +57,7 @@ namespace DuskTwilight
             group = GetComponent<CanvasGroup>();
             if (revealGraphic && revealGraphic.material)
             {
-                mat = new Material(revealGraphic.material);
+                mat = new Material(revealGraphic.material) { name = revealGraphic.material.name + " (Instance)" };
                 revealGraphic.material = mat;
             }
         }

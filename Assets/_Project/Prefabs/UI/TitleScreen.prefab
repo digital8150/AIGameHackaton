@@ -2114,8 +2114,9 @@ GameObject:
   m_Component:
   - component: {fileID: 5712710767039687422}
   - component: {fileID: 5770250954879562742}
-  - component: {fileID: 3224839928841540968}
   - component: {fileID: 2313085030019077794}
+  - component: {fileID: 7257676490580171370}
+  - component: {fileID: 8767248925017930793}
   m_Layer: 0
   m_Name: Prince
   m_TagString: Untagged
@@ -2132,15 +2133,15 @@ RectTransform:
   m_GameObject: {fileID: 2473303043927747412}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: -1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8396125158497443818}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -400, y: -430}
-  m_SizeDelta: {x: 787, y: 1150}
+  m_AnchoredPosition: {x: -340, y: -430}
+  m_SizeDelta: {x: 1057.8799, y: 1157.5199}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!222 &5770250954879562742
 CanvasRenderer:
@@ -2150,36 +2151,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2473303043927747412}
   m_CullTransparentMesh: 1
---- !u!114 &3224839928841540968
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2473303043927747412}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
-  m_Material: {fileID: 2100000, guid: 432cac2c0b2cca04c90c0d9443c07f62, type: 2}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 0
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 097f74c9834ffba4e9a814de728739d3, type: 3}
-  m_Type: 0
-  m_PreserveAspect: 1
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
 --- !u!114 &2313085030019077794
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2200,7 +2171,7 @@ MonoBehaviour:
   phase: 1.7
   introScale: 1
   introOffset: {x: 60, y: -20}
-  revealGraphic: {fileID: 3224839928841540968}
+  revealGraphic: {fileID: 7257676490580171370}
   revealProperty: _Reveal
   revealCurve:
     serializedVersion: 2
@@ -2227,6 +2198,52 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   fadeCanvasGroup: 0
+--- !u!114 &7257676490580171370
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2473303043927747412}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1344c3c82d62a2a41a3576d8abb8e3ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.RawImage
+  m_Material: {fileID: 2100000, guid: 432cac2c0b2cca04c90c0d9443c07f62, type: 2}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 0
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Texture: {fileID: 2800000, guid: ef7729a9e6fe856478c98b42e70ca6a3, type: 3}
+  m_UVRect:
+    serializedVersion: 2
+    x: 0.0003058104
+    y: 0.9094514
+    width: 0.0762997
+    height: 0.09021811
+--- !u!114 &8767248925017930793
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2473303043927747412}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46b7112193e74374bb559ec28e470698, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DuskTwilight.TitleSpriteSheet
+  columns: 13
+  frameCount: 143
+  frameSize: {x: 499, y: 546}
+  gutter: 2
+  fps: 24
+  startFrame: 0
+  pingPong: 0
 --- !u!1 &2493988514611296050
 GameObject:
   m_ObjectHideFlags: 0
@@ -2662,8 +2679,9 @@ GameObject:
   m_Component:
   - component: {fileID: 216756145694095549}
   - component: {fileID: 2654962064382730658}
-  - component: {fileID: 4624827198852745277}
   - component: {fileID: 1846389087124567351}
+  - component: {fileID: 7773886864702259074}
+  - component: {fileID: 7234142407884111902}
   m_Layer: 0
   m_Name: Princess
   m_TagString: Untagged
@@ -2688,7 +2706,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 400, y: -430}
-  m_SizeDelta: {x: 787, y: 1150}
+  m_SizeDelta: {x: 843.75995, y: 1151.1599}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!222 &2654962064382730658
 CanvasRenderer:
@@ -2698,36 +2716,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3111063840142772263}
   m_CullTransparentMesh: 1
---- !u!114 &4624827198852745277
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3111063840142772263}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
-  m_Material: {fileID: 2100000, guid: ab86adf525e935244a8ba285400408af, type: 2}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 0
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: a2f0670d1a4677742a906771a5d38f9c, type: 3}
-  m_Type: 0
-  m_PreserveAspect: 1
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
 --- !u!114 &1846389087124567351
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2748,7 +2736,7 @@ MonoBehaviour:
   phase: 0
   introScale: 1
   introOffset: {x: -60, y: -20}
-  revealGraphic: {fileID: 4624827198852745277}
+  revealGraphic: {fileID: 7773886864702259074}
   revealProperty: _Reveal
   revealCurve:
     serializedVersion: 2
@@ -2775,6 +2763,52 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   fadeCanvasGroup: 0
+--- !u!114 &7773886864702259074
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3111063840142772263}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1344c3c82d62a2a41a3576d8abb8e3ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.RawImage
+  m_Material: {fileID: 2100000, guid: ab86adf525e935244a8ba285400408af, type: 2}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 0
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Texture: {fileID: 2800000, guid: a3c28dbe3f479704dad28107289fa7a7, type: 3}
+  m_UVRect:
+    serializedVersion: 2
+    x: 0.00033156498
+    y: 0.90040207
+    width: 0.06598143
+    height: 0.09923246
+--- !u!114 &7234142407884111902
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3111063840142772263}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46b7112193e74374bb559ec28e470698, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DuskTwilight.TitleSpriteSheet
+  columns: 15
+  frameCount: 144
+  frameSize: {x: 398, y: 543}
+  gutter: 2
+  fps: 24
+  startFrame: 0
+  pingPong: 0
 --- !u!1 &3123172868950473527
 GameObject:
   m_ObjectHideFlags: 0
@@ -7960,7 +7994,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: -5238658368043262494, guid: 696c3b2e2beb39e4a8d56e5cb8cc7640, type: 2}
   m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 8300000, guid: f55dd1d71bacc6546a277d85c3fac361, type: 3}
+  m_Resource: {fileID: 8300000, guid: 46b219a11129b8645a7062effd26d283, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1

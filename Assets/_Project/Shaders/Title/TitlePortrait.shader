@@ -5,6 +5,7 @@ Shader "DuskTwilight/UI/TitlePortrait"
     Properties
     {
         [PerRendererData] _MainTex ("Cutout", 2D) = "white" {}
+        _FrameRect ("Frame rect (uv)", Vector) = (0, 0, 1, 1)
         _Color ("Tint", Color) = (1,1,1,1)
 
         [Header(Rim light)]
@@ -66,14 +67,21 @@ Shader "DuskTwilight/UI/TitlePortrait"
             float _FadeBottom, _FadeLeft, _FadeRight, _Shade;
             fixed4 _SepiaColor, _ShadowTint;
             float _Desaturate, _Sepia, _LowKey, _LowKeyTop;
+            float4 _FrameRect;
 
-            float A(float2 uv) { return tex2D(_MainTex, uv).a; }
+            // alpha at a frame-local uv, clamped to the frame: no bleed from neighbouring frames, and the
+            // frame's cut edges (cape cropped at the border) don't light up as silhouette
+            float A(float2 fuv)
+            {
+                return tex2D(_MainTex, _FrameRect.xy + saturate(fuv) * _FrameRect.zw).a;
+            }
 
             fixed4 frag(TitleV2F i) : SV_Target
             {
                 float t = _Time.y;
-                float2 uv = i.uv;
-                fixed4 c = (tex2D(_MainTex, uv) + _TextureSampleAdd) * _Color;
+                // uv = position inside the current frame (0..1), so effects don't depend on the sheet layout
+                float2 uv = (i.uv - _FrameRect.xy) / max(_FrameRect.zw, 1e-5);
+                fixed4 c = (tex2D(_MainTex, i.uv) + _TextureSampleAdd) * _Color;
 
                 // rim: this pixel is opaque, but stepping toward the light leaves the silhouette
                 float2 dir = normalize(_RimDir.xy + 1e-5);

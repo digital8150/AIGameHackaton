@@ -39,8 +39,8 @@ Material:
     - _LowKeyTop: 0.55
     - _NoiseScale: 7
     - _Reveal: 1
-    - _RimStrength: 1.3
-    - _RimWidth: 0.012
+    - _RimStrength: 0.9
+    - _RimWidth: 0.008
     - _Sepia: 0.2
     - _Shade: 0.12
     - _Shimmer: 0.5
@@ -52,8 +52,9 @@ Material:
     m_Colors:
     - _BurnColor: {r: 1, g: 0.54999995, b: 0.19999996, a: 1}
     - _Color: {r: 0.92, g: 0.84, b: 0.72, a: 1}
+    - _FrameRect: {r: 0.0003058104, g: 0.9094514, b: 0.0762997, a: 0.09021811}
     - _RimColor: {r: 1, g: 0.7, b: 0.4, a: 1}
-    - _RimDir: {r: 0.7, g: 0.6, b: 0, a: 0}
+    - _RimDir: {r: -0.7, g: 0.6, b: 0, a: 0}
     - _SepiaColor: {r: 0.66, g: 0.52, b: 0.4, a: 1}
     - _ShadowTint: {r: 0.12, g: 0.08, b: 0.1, a: 1}
   m_BuildTextureStacks: []
