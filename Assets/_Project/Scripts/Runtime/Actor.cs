@@ -25,9 +25,27 @@ namespace DuskTwilight
         public float maxFall = 18f;
         public LayerMask groundMask = ~0;
 
-        [Header("Animation")]
+        [Header("Animation (simple 8-frame set — used when no sheets are assigned)")]
         public Sprite[] frames;             // 0-1 idle, 2-5 run, 6 jump, 7 fall
         public float runFps = 10f;
+
+        [Header("Animation (sprite sheets — override the 8-frame set)")]
+        public Sprite[] idleFrames;
+        public Sprite[] walkFrames;
+        [Tooltip("Whole jump sheet: crouch → rise → apex/fall → land")]
+        public Sprite[] jumpFrames;
+        [Min(1)] public float idleFps = 14f;
+        [Tooltip("Walk fps at full run speed (scales down with speed)")]
+        [Min(1)] public float walkFps = 32f;
+        [Tooltip("Jump sheet frames shown while rising (first..last); picked by vertical speed")]
+        public Vector2Int jumpRise = new Vector2Int(4, 13);
+        [Tooltip("Jump sheet frames shown from the apex while falling")]
+        public Vector2Int jumpFall = new Vector2Int(14, 20);
+        [Tooltip("Jump sheet frames played once on touchdown (skipped while walking)")]
+        public Vector2Int jumpLand = new Vector2Int(21, 27);
+        [Min(1)] public float landFps = 36f;
+        [Tooltip("The sheets are drawn facing left")]
+        public bool sheetFacesLeft;
 
         [Header("Footsteps")]
         public AudioClip[] footsteps;
@@ -158,13 +176,80 @@ namespace DuskTwilight
         float followSpeed, followVy;
 
         // ---------------- animation -----------------------------------------------------------
+        bool wasAirborne;
+        float landTime = -9f;
+
+        static Sprite Pick(Sprite[] set, int i) => set[Mathf.Clamp(i, 0, set.Length - 1)];
+
+        // SRP Batcher: sprites with different textures must not share one custom material (wrong texture is drawn).
+        // Each sheet texture gets its own runtime copy of the actor material.
+        readonly System.Collections.Generic.Dictionary<Texture, Material> sheetMats = new System.Collections.Generic.Dictionary<Texture, Material>();
+        Material baseMat;
+
+        void SetSheetSprite(Sprite s)
+        {
+            if (sr.sprite == s) return;
+            if (!baseMat) baseMat = sr.sharedMaterial;
+            if (baseMat && !sheetMats.TryGetValue(s.texture, out var m))
+            {
+                m = new Material(baseMat) { name = baseMat.name + " (" + s.texture.name + ")" };
+                sheetMats[s.texture] = m;
+            }
+            if (baseMat) sr.sharedMaterial = sheetMats[s.texture];
+            sr.sprite = s;
+        }
+
+        void OnDestroy()
+        {
+            foreach (var m in sheetMats.Values) if (m) Destroy(m);
+        }
+
         void Animate()
         {
-            if (frames == null || frames.Length < 8) return;
             float vx = IsLeader ? rb.linearVelocity.x : followSpeed;
             float vy = IsLeader ? rb.linearVelocity.y : followVy;
             bool ground = IsLeader ? Grounded : Mathf.Abs(vy) < 0.5f;
             animTime += Time.deltaTime;
+
+            bool sheets = idleFrames != null && idleFrames.Length > 0 && walkFrames != null && walkFrames.Length > 0
+                          && jumpFrames != null && jumpFrames.Length > 0;
+            if (sheets)
+            {
+                if (!ground) wasAirborne = true;
+                else if (wasAirborne) { wasAirborne = false; landTime = Time.time; }
+
+                Sprite s;
+                if (!ground)
+                {
+                    if (vy > 0f)
+                    {
+                        float t = Mathf.Clamp01(1f - vy / Mathf.Max(0.1f, jumpVelocity));
+                        s = Pick(jumpFrames, Mathf.RoundToInt(Mathf.Lerp(jumpRise.x, jumpRise.y, t)));
+                    }
+                    else
+                    {
+                        float t = Mathf.Clamp01(-vy / Mathf.Max(0.1f, jumpVelocity));
+                        s = Pick(jumpFrames, Mathf.RoundToInt(Mathf.Lerp(jumpFall.x, jumpFall.y, t)));
+                    }
+                }
+                else if (Mathf.Abs(vx) > 0.6f)
+                {
+                    float speed01 = Mathf.Clamp01(Mathf.Abs(vx) / Mathf.Max(0.1f, runSpeed));
+                    s = Pick(walkFrames, (int)(animTime * walkFps * Mathf.Lerp(0.5f, 1f, speed01)) % walkFrames.Length);
+                }
+                else
+                {
+                    int land = (int)((Time.time - landTime) * landFps);
+                    s = land <= jumpLand.y - jumpLand.x
+                        ? Pick(jumpFrames, jumpLand.x + land)
+                        : Pick(idleFrames, (int)(animTime * idleFps) % idleFrames.Length);
+                }
+                SetSheetSprite(s);
+                sr.flipX = sheetFacesLeft ? Facing > 0 : Facing < 0;
+                return;
+            }
+
+            if (frames == null || frames.Length < 8) return;
             int f;
             if (!ground) f = vy > 0.5f ? 6 : 7;
             else if (Mathf.Abs(vx) > 0.6f) f = 2 + (int)(animTime * runFps) % 4;
