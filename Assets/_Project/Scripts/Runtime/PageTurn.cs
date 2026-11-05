@@ -27,6 +27,8 @@ namespace DuskTwilight
         [Range(0f, 2f)] public float holdBefore = 0.35f;
         [Range(0, 30)] public int settleFrames = 6;
         [Range(0.3f, 4f)] public float turnTime = 1.6f;
+        [Tooltip("The last frame fades into a worn storybook page (sepia, frayed edges, spine) before it turns. 0 = no worn look")]
+        [Range(0f, 3f)] public float ageTime = 0.8f;
 
         [Header("Curl")]
         [Tooltip("Angle of the fold (deg). 0 = straight vertical fold moving right → left")]
@@ -41,6 +43,7 @@ namespace DuskTwilight
         static readonly int IdProgress = Shader.PropertyToID("_Progress");
         static readonly int IdAngle = Shader.PropertyToID("_Angle");
         static readonly int IdRadius = Shader.PropertyToID("_Radius");
+        static readonly int IdAge = Shader.PropertyToID("_Age");
 
         bool busy;
         Material mat;
@@ -92,8 +95,10 @@ namespace DuskTwilight
             mat.SetFloat(IdProgress, 0f);
             mat.SetFloat(IdAngle, angle);
             mat.SetFloat(IdRadius, curlRadius);
+            mat.SetFloat(IdAge, 0f);
             canvas.enabled = true;
             Arriving = true;
+            float ageStart = Time.unscaledTime;
 
             // 2. load the next stage behind the page
             var op = SceneManager.LoadSceneAsync(scene);
@@ -103,7 +108,14 @@ namespace DuskTwilight
                 canvas.enabled = false; Arriving = false; busy = false; Destroy(tex);
                 yield break;
             }
-            while (!op.isDone) yield return null;
+            // the stage becomes a page of an old picture book while the next one loads behind it
+            while (!op.isDone || Time.unscaledTime - ageStart < ageTime)
+            {
+                float k = ageTime > 0 ? Mathf.Clamp01((Time.unscaledTime - ageStart) / ageTime) : 0f;
+                mat.SetFloat(IdAge, ageTime > 0 ? k * k * (3f - 2f * k) : 0f);
+                yield return null;
+            }
+            mat.SetFloat(IdAge, ageTime > 0 ? 1f : 0f);
             for (int i = 0; i < settleFrames; i++) yield return null;
             float until = Time.unscaledTime + holdBefore;
             while (Time.unscaledTime < until) yield return null;

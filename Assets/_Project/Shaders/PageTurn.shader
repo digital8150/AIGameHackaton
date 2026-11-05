@@ -14,6 +14,13 @@ Shader "DuskTwilight/UI/PageTurn"
         _PaperInk ("Paper fibres / hatching", Color) = (0.55, 0.42, 0.28, 1)
         _ShowThrough ("Picture showing through the paper", Range(0, 0.5)) = 0.12
         _Shadow ("Shadow strength", Range(0, 1)) = 0.55
+        [Header(Worn storybook page)]
+        _Age ("Worn-book look (animated 0 → 1 before the turn)", Range(0, 1)) = 0
+        _InkDark ("Sepia ink (shadows)", Color) = (0.17, 0.11, 0.07, 1)
+        _InkLight ("Old paper (highlights)", Color) = (0.86, 0.76, 0.58, 1)
+        _KeepColor ("Original colour kept under the sepia", Range(0, 1)) = 0.18
+        _Wear ("Burnt / frayed edges and stains", Range(0, 1)) = 0.7
+        _Gutter ("Spine shadow down the middle", Range(0, 1)) = 0.6
     }
     SubShader
     {
@@ -34,7 +41,8 @@ Shader "DuskTwilight/UI/PageTurn"
 
             sampler2D _MainTex;
             float _Progress, _Angle, _Radius, _ShowThrough, _Shadow;
-            float4 _PaperColor, _PaperInk;
+            float4 _PaperColor, _PaperInk, _InkDark, _InkLight;
+            float _Age, _KeepColor, _Wear, _Gutter;
 
             v2f vert (appdata v)
             {
@@ -53,6 +61,46 @@ Shader "DuskTwilight/UI/PageTurn"
                 return lerp(lerp(Hash(i), Hash(i + float2(1, 0)), u.x), lerp(Hash(i + float2(0, 1)), Hash(i + float2(1, 1)), u.x), u.y);
             }
 
+            float Fbm(float2 p) { return Noise(p) * 0.5 + Noise(p * 2.03) * 0.3 + Noise(p * 4.1) * 0.2; }
+
+            // aged, stained paper and frayed, darkened edges — shared by both sides of the page
+            float3 Age(float3 col, float2 uv, float aspect)
+            {
+                float2 p = uv * float2(aspect, 1);
+                // blotchy stains and foxing
+                float stain = smoothstep(0.55, 0.85, Fbm(p * 3.0 + 7.3));
+                float fox = smoothstep(0.93, 1.0, Noise(p * 38.0)) * Noise(p * 5.0);
+                col *= 1 - _Wear * (0.16 * stain + 0.35 * fox);
+                // edges: vignette eroded by noise so the border looks frayed and burnt
+                float2 e = min(uv, 1 - uv) * float2(aspect, 1);
+                float edge = min(e.x, e.y) + (Fbm(p * 9.0) - 0.5) * 0.05;
+                float burn = 1 - smoothstep(0.0, 0.16, edge);
+                col = lerp(col, _InkDark.rgb * 0.8, _Wear * burn * 0.85);
+                col *= 1 - _Wear * 0.25 * (1 - smoothstep(0.0, 0.45, edge));   // broad vignette
+                // fine scratches across the page
+                float scr = smoothstep(0.985, 1.0, Noise(float2(p.x * 1.5 + p.y * 0.4, p.y * 400.0)));
+                col = lerp(col, _InkLight.rgb * 1.08, _Wear * scr * 0.35);
+                return col;
+            }
+
+            // the captured stage turned into a picture-book page: sepia ink on old paper, spine in the middle
+            float3 Worn(float3 pic, float2 uv, float aspect)
+            {
+                float2 p = uv * float2(aspect, 1);
+                float l = dot(pic, float3(0.3, 0.59, 0.11));
+                l = saturate((l - 0.04) * 1.25);
+                float grain = Fbm(p * float2(30, 160)) - 0.5;
+                float3 sep = lerp(_InkDark.rgb, _InkLight.rgb, saturate(pow(l, 1.15) + grain * 0.08));
+                sep = lerp(sep, saturate(sep * (pic / max(l, 0.05))), _KeepColor * 0.5);
+                sep = Age(sep, uv, aspect);
+                // spine: soft shadow both sides of the middle and a dark crease
+                float g = abs(uv.x - 0.5) * aspect;
+                sep *= 1 - _Gutter * (0.45 * exp(-g * 26.0) + 0.5 * exp(-g * 400.0));
+                return lerp(pic, sep, _Age);
+            }
+
+            float3 Front(float2 uv, float aspect) { return Worn(tex2D(_MainTex, uv).rgb, uv, aspect); }
+
             // back of the page: warm paper, long fibres and a little cross-hatching, the picture faintly through it
             float3 Paper(float2 uv, float aspect)
             {
@@ -63,7 +111,8 @@ Shader "DuskTwilight/UI/PageTurn"
                 col = lerp(col, _PaperInk.rgb, hatch * 0.18);
                 float3 pic = tex2D(_MainTex, float2(1 - uv.x, uv.y)).rgb;   // seen from behind: mirrored
                 float l = dot(pic, float3(0.3, 0.59, 0.11));
-                return lerp(col, col * (0.55 + 0.6 * l), _ShowThrough);
+                col = lerp(col, col * (0.55 + 0.6 * l), _ShowThrough);
+                return lerp(col, Age(col * 0.94, uv, aspect), _Age);
             }
 
             bool Inside(float2 uv) { return all(uv >= 0) && all(uv <= 1); }
@@ -109,7 +158,7 @@ Shader "DuskTwilight/UI/PageTurn"
                     float2 uv0 = (q + (arc - d) * n) / float2(aspect, 1);
                     if (Inside(uv0))
                     {
-                        float3 pic = tex2D(_MainTex, uv0).rgb;
+                        float3 pic = Front(uv0, aspect);
                         float c = sqrt(saturate(1 - (d / R) * (d / R)));
                         return float4(pic * lerp(0.45, 1.0, c), 1);
                     }
@@ -117,7 +166,7 @@ Shader "DuskTwilight/UI/PageTurn"
                 // 3) the page still lying flat (front)
                 if (d < 0)
                 {
-                    float3 pic = tex2D(_MainTex, i.uv).rgb;
+                    float3 pic = Front(i.uv, aspect);
                     // shadow of the curl falling on the flat page just before the fold
                     float sh = _Shadow * 0.5 * smoothstep(-R * 1.2, 0, d);
                     return float4(pic * (1 - sh), 1);
