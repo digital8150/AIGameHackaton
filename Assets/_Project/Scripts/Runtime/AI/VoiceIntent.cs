@@ -26,9 +26,9 @@ namespace DuskTwilight
             ["hint"] = Intent.Hint, ["puzzle_word"] = Intent.PuzzleWord, ["unrelated"] = Intent.Unrelated
         };
 
-        public static async Task<IntentResult> JudgeAsync(string transcript, string[] altarWords)
+        public static async Task<IntentResult> JudgeAsync(string transcript, string[] altarWords, bool useJev = true)
         {
-            var jev = await AskJev(transcript, altarWords);
+            var jev = useJev ? await AskJev(transcript, altarWords) : null;
             return jev ?? Keywords(transcript, altarWords);
         }
 

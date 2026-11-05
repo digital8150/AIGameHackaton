@@ -18,6 +18,9 @@ namespace DuskTwilight
 
         public string LastDebug { get; private set; } = "";
 
+        [Tooltip("Ask Jev which command / word a transcript meant. Off = Whisper (scene-word prompt) + keyword / jamo matching only — instant, no network.")]
+        public bool useJev = false;
+
         void Start() { GetComponent<VoiceInput>().Transcribed += OnTranscribed; }
 
         async void OnTranscribed(string text)
@@ -39,7 +42,7 @@ namespace DuskTwilight
                     return;
                 }
             }
-            var r = await VoiceIntent.JudgeAsync(text, altar ? altar.choices : null);
+            var r = await VoiceIntent.JudgeAsync(text, altar ? altar.choices : null, useJev);
             if (!this || !DuoController.I) return;
             LastDebug = $"\"{text}\" → {r.intent}{(r.word != null ? " " + r.word : "")} ({r.confidence:P0}, {r.source}) · {VoiceInput.I.LastLatency:0.00}s";
             if (r.intent == Intent.Unrelated) return;
