@@ -153,6 +153,7 @@ namespace DuskTwilight
             var col = letter.AddComponent<BoxCollider2D>();
             col.size = letterSize;
             col.offset = new Vector2(0, plankOffsetY);
+            col.usedByEffector = letter.GetComponent<PlatformEffector2D>() != null;   // one-way: jump up through it
             SenseController.I?.EmitEcho(target, 0.35f);
         }
 
