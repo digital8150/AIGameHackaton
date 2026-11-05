@@ -48,6 +48,7 @@ namespace DuskTwilight
         Tilemap map;
         readonly List<GameObject> strips = new List<GameObject>();
         readonly List<(Vector3 from, Vector3 to, Color c)> gizmoRuns = new List<(Vector3, Vector3, Color)>();
+        readonly HashSet<Vector3Int> filled = new HashSet<Vector3Int>();
         bool dirty;
 
         void OnEnable()
@@ -67,7 +68,10 @@ namespace DuskTwilight
 
         void OnTilesChanged(Tilemap changed, Tilemap.SyncTile[] tiles)
         {
-            if (changed == map) dirty = true;
+            if (changed != map || dirty) return;
+            // only tiles appearing or disappearing move the strips (a colour fade, e.g. FakeWall vanishing, does not)
+            foreach (var t in tiles)
+                if ((t.tile != null) != filled.Contains(t.position)) { dirty = true; return; }
         }
 
         void Update()
@@ -86,6 +90,8 @@ namespace DuskTwilight
             if (!map) return;
             map.CompressBounds();
             var b = map.cellBounds;
+            filled.Clear();
+            foreach (var c in b.allPositionsWithin) if (map.HasTile(c)) filled.Add(c);
 
             // horizontal faces: top (turf) and bottom (ceiling roots)
             for (int y = b.yMin; y < b.yMax; y++)

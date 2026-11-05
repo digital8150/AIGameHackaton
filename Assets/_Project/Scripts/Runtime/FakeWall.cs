@@ -23,6 +23,17 @@ namespace DuskTwilight
         public bool vanishWhenFound = true;
         [Tooltip("Seconds a found wall stays drawn before it vanishes (it can already be walked through), so the prince sees what he found")]
         [Min(0f)] public float vanishDelay = 1.2f;
+        [Header("Vanishing")]
+        [Tooltip("Seconds each tile takes to fade out")]
+        [Min(0.05f)] public float fadeTime = 1.8f;
+        [Tooltip("Seconds per metre: the fade spreads outward from where the echo touched the wall, like a ripple")]
+        [Min(0f)] public float fadeSpread = 0.18f;
+        [Tooltip("Pale glow a tile takes on while it fades (alpha = strength)")]
+        public Color fadeGlow = new Color(1f, 0.92f, 0.7f, 0.55f);
+        [Tooltip("Flicker while fading (0 = a plain fade)")]
+        [Range(0f, 1f)] public float fadeShimmer = 0.3f;
+        public float shimmerSpeed = 9f;
+
         [Tooltip("Share of the echo's radius that counts as reaching the wall (same as switches and bells)")]
         [Range(0.3f, 1f)] public float reachShare = 0.85f;
         [Tooltip("Bells reveal fake walls too")]
@@ -146,7 +157,7 @@ namespace DuskTwilight
                 if (part.open) continue;
                 foreach (var c in part.centres)
                     if (Mathf.Abs(c.x - p.x) - 0.5f <= revealDistance && Mathf.Abs(c.y - p.y) - 0.5f <= revealDistance)
-                    { StartCoroutine(Open(part, 0f)); break; }
+                    { StartCoroutine(Open(part, 0f, p)); break; }
             }
         }
 
@@ -160,7 +171,7 @@ namespace DuskTwilight
                 if (p.open) continue;
                 float best = float.MaxValue;
                 foreach (var c in p.centres) best = Mathf.Min(best, Vector2.Distance(from, c));
-                if (best <= r) StartCoroutine(Open(p, best / Mathf.Max(0.1f, sc.echoSpeed)));
+                if (best <= r) StartCoroutine(Open(p, best / Mathf.Max(0.1f, sc.echoSpeed), from));
             }
         }
 
@@ -170,14 +181,14 @@ namespace DuskTwilight
             return false;
         }
 
-        IEnumerator Open(Part p, float delay)
+        IEnumerator Open(Part p, float delay, Vector2 origin)
         {
             p.open = true;
             if (linkedAreas != null)
                 foreach (var r in linkedAreas)
                     if (InArea(p, r))
                         foreach (var o in parts)
-                            if (!o.open && InArea(o, r)) StartCoroutine(Open(o, delay));
+                            if (!o.open && InArea(o, r)) StartCoroutine(Open(o, delay, origin));
             yield return new WaitForSeconds(delay);
             if (p.go) Destroy(p.go);
             if (foundEcho > 0 && p.centres.Count > 0) SenseController.I?.EmitEcho(p.centres[p.centres.Count / 2], foundEcho);
@@ -187,8 +198,57 @@ namespace DuskTwilight
             {
                 // passable from here on; the found echo draws the wall for the prince before the tiles go
                 if (vanishDelay > 0f) yield return new WaitForSeconds(vanishDelay);
+                yield return Fade(p, origin);
                 foreach (var c in p.cells) map.SetTile(c, null);
                 foreach (var lip in GetComponents<GroundLip>()) lip.Rebuild();
+            }
+        }
+
+        readonly List<SpriteRenderer> strips = new List<SpriteRenderer>();
+
+        /// <summary>Tiles (and the GroundLip strips on them) dissolve one by one, rippling out from where the echo touched.</summary>
+        IEnumerator Fade(Part p, Vector2 origin)
+        {
+            int n = p.cells.Count;
+            var start = new float[n];
+            var cols = new Color[n];
+            float near = float.MaxValue, end = 0f;
+            for (int i = 0; i < n; i++) near = Mathf.Min(near, Vector2.Distance(origin, p.centres[i]));
+            for (int i = 0; i < n; i++)
+            {
+                start[i] = (Vector2.Distance(origin, p.centres[i]) - near) * fadeSpread;
+                end = Mathf.Max(end, start[i] + fadeTime);
+                map.SetTileFlags(p.cells[i], TileFlags.None);
+            }
+            for (float t = 0f; ; t += Time.deltaTime)
+            {
+                bool done = t >= end;
+                for (int i = 0; i < n; i++)
+                {
+                    float u = done ? 1f : Mathf.Clamp01((t - start[i]) / fadeTime);
+                    float bump = Mathf.Sin(u * Mathf.PI);   // 0 → 1 → 0 over the fade
+                    float a = 1f - Mathf.SmoothStep(0f, 1f, u);
+                    a *= 1f - fadeShimmer * bump * (0.5f + 0.5f * Mathf.Sin(t * shimmerSpeed + i * 1.7f));
+                    var c = Color.Lerp(Color.white, fadeGlow, bump * fadeGlow.a);
+                    c.a = a;
+                    cols[i] = c;
+                    map.SetColor(p.cells[i], c);
+                }
+                // strips are rebuilt by GroundLip at any time, so look them up each frame
+                GetComponentsInChildren(strips);
+                foreach (var sr in strips)
+                {
+                    Vector2 sc = sr.bounds.center;
+                    int best = -1; float bd = 1.2f;
+                    for (int i = 0; i < n; i++)
+                    {
+                        float d = Vector2.Distance(sc, p.centres[i]);
+                        if (d < bd) { bd = d; best = i; }
+                    }
+                    if (best >= 0) sr.color = cols[best];
+                }
+                if (done) yield break;
+                yield return null;
             }
         }
 
