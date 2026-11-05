@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1532837372739358481}
   - component: {fileID: 3534649523181140515}
   - component: {fileID: 3067458730639697202}
+  - component: {fileID: 3430599936609850017}
   m_Layer: 0
   m_Name: Fireflies
   m_TagString: Untagged
@@ -4868,3 +4869,16 @@ ParticleSystemRenderer:
   m_MeshWeighting1: 1
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
+--- !u!114 &3430599936609850017
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4456639521531605177}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86f103b626736944091f3dde02ab4f97, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DuskTwilight.LightSenseOnly
+  fadeTime: 0.8
