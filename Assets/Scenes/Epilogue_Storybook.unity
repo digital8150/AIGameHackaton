@@ -453,7 +453,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 719843348653090854, guid: ad957e694b3c69d4ca318bcb2e5e494e, type: 3}
       propertyPath: pages.Array.size
-      value: 7
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 719843348653090854, guid: ad957e694b3c69d4ca318bcb2e5e494e, type: 3}
       propertyPath: musicClearsWithColour
@@ -462,42 +462,45 @@ PrefabInstance:
     - target: {fileID: 719843348653090854, guid: ad957e694b3c69d4ca318bcb2e5e494e, type: 3}
       propertyPath: pages.Array.data[0].text
       value: "\uD669\uD63C\uC758 \uC232 \uAC00\uC7A5 \uAE4A\uC740 \uACF3\uC5D0\uC11C,\n\uB450
-        \uC0AC\uB78C\uC740 \uB9C8\uCE68\uB0B4 \uC0D8\uC5D0 \uB2FF\uC558\uC2B5\uB2C8\uB2E4."
+        \uC0AC\uB78C\uC740 \uB9C8\uCE68\uB0B4 \uD669\uD63C\uC758 \uB9C8\uB140\uB97C
+        \uB9CC\uB0AC\uC2B5\uB2C8\uB2E4."
       objectReference: {fileID: 0}
     - target: {fileID: 719843348653090854, guid: ad957e694b3c69d4ca318bcb2e5e494e, type: 3}
       propertyPath: pages.Array.data[1].text
-      value: "\uC0D8\uBB3C\uC740 \uB2E8 \uD55C \uBAA8\uAE08. \uD55C \uC0AC\uB78C\uC758
-        \uB208\uC774\uB098, \uD55C \uC0AC\uB78C\uC758 \uADC0\uB97C \uACE0\uCE60 \uB9CC\uD07C\uC774\uC5C8\uC2B5\uB2C8\uB2E4.\n\uC655\uC790\uB294
-        \uB9DD\uC124\uC784 \uC5C6\uC774 \uADF8 \uC794\uC744 \uACF5\uC8FC\uC5D0\uAC8C
-        \uB0B4\uBC00\uC5C8\uC2B5\uB2C8\uB2E4."
+      value: "\uB9C8\uB140\uB294 \uC560\uC11D\uD558\uB2E4\uB294 \uB4EF \uB9D0\uD588\uC2B5\uB2C8\uB2E4.\n\uC9C0\uB098\uCCD0
+        \uC628 \uAC00\uC7A5 \uC5B4\uB450\uC6B4 \uC232\uC740, \uAE38 \uC783\uC740
+        \uC774\uB4E4\uC744 \uC7A1\uC544\uBA39\uAE30 \uC704\uD55C \uAC83\uC774\uC5C8\uB2E4\uACE0."
       objectReference: {fileID: 0}
     - target: {fileID: 719843348653090854, guid: ad957e694b3c69d4ca318bcb2e5e494e, type: 3}
       propertyPath: pages.Array.data[2].text
-      value: "\uACF5\uC8FC\uB294 \uC794\uC744 \uD55C\uCC38 \uB0B4\uB824\uB2E4\uBCF4\uB2E4\uAC00\u2026
-        \uC0D8\uC5D0 \uB3C4\uB85C \uBD80\uC5B4 \uBC84\uB838\uC2B5\uB2C8\uB2E4.\n\uC774\uC81C
-        \uC640\uC11C \uB2EC\uB77C\uC9C8 \uAC83\uC740 \uC5C6\uC5C8\uC73C\uB2C8\uAE4C\uC694."
+      value: "\uADF8\uB9AC\uACE0\u2026 \uADF8\uB7F0 \uD615\uD3B8 \uC88B\uC740 \uC0D8\uBB3C\uC774\n\uC774
+        \uC138\uC0C1\uC5D0 \uC788\uC744 \uB9AC\uAC00 \uC5C6\uB2E4\uACE0."
       objectReference: {fileID: 0}
     - target: {fileID: 719843348653090854, guid: ad957e694b3c69d4ca318bcb2e5e494e, type: 3}
       propertyPath: pages.Array.data[3].text
-      value: "\uC228\uC740 \uAE38\uC740 \uC655\uC790\uAC00 \uCC3E\uC544\uB0B4\uACE0,
-        \uBB34\uAC70\uC6B4 \uAC83\uC740 \uACF5\uC8FC\uAC00 \uC62E\uACBC\uC2B5\uB2C8\uB2E4.\n\uB450
-        \uC0AC\uB78C\uC740 \uC774\uBBF8, \uC11C\uB85C\uC758 \uB208\uACFC \uADC0\uC600\uC2B5\uB2C8\uB2E4."
+      value: "\uB9C8\uB140\uB294 \uC501\uC4F8\uD574\uD588\uC9C0\uB9CC, \uB450 \uC0AC\uB78C\uC740
+        \uC624\uD788\uB824 \uC6C3\uC5C8\uC2B5\uB2C8\uB2E4.\n\uC11C\uB85C\uC758 \uB9C8\uC74C\uC740,
+        \uC774\uBBF8 \uD1B5\uD588\uC73C\uB2C8\uAE4C\uC694."
       objectReference: {fileID: 0}
     - target: {fileID: 719843348653090854, guid: ad957e694b3c69d4ca318bcb2e5e494e, type: 3}
       propertyPath: pages.Array.data[4].text
-      value: "\uADF8\uB0A0 \uACF5\uC8FC\uB294 \uCC98\uC74C\uC73C\uB85C \uC18C\uB9AC
-        \uB0B4\uC5B4 \uC6C3\uC5C8\uC2B5\uB2C8\uB2E4.\n\uC790\uAE30 \uADC0\uC5D0\uB294
-        \uB4E4\uB9AC\uC9C0 \uC54A\uC558\uC9C0\uB9CC, \uC655\uC790\uB294 \uADF8 \uC18C\uB9AC\uB97C
-        \uC624\uB798\uB3C4\uB85D \uAE30\uC5B5\uD588\uC2B5\uB2C8\uB2E4."
+      value: "\uB4E4\uB9AC\uC9C0 \uC54A\uC544\uB3C4 \uB4E4\uB9AC\uACE0, \uBCF4\uC774\uC9C0
+        \uC54A\uC544\uB3C4 \uBCF4\uC774\uB294 \uAC83\uC774 \uC788\uC5C8\uC2B5\uB2C8\uB2E4.\n\uC228\uC740
+        \uAE38\uC740 \uC655\uC790\uAC00 \uCC3E\uACE0, \uBB34\uAC70\uC6B4 \uAC83\uC740
+        \uACF5\uC8FC\uAC00 \uC62E\uACA8 \uC628 \uADF8 \uAE38\uCC98\uB7FC."
       objectReference: {fileID: 0}
     - target: {fileID: 719843348653090854, guid: ad957e694b3c69d4ca318bcb2e5e494e, type: 3}
       propertyPath: pages.Array.data[5].text
-      value: "\uB450 \uC0AC\uB78C\uC740 \uC190\uC744 \uC7A1\uACE0 \uD669\uD63C \uC18D\uC73C\uB85C
-        \uAC78\uC5B4\uAC14\uC2B5\uB2C8\uB2E4.\n\uAC00\uC7A5 \uC5B4\uB450\uC6B4 \uC0C8\uBCBD\uACFC
-        \uAC00\uC7A5 \uB208\uBD80\uC2E0 \uBC24 \uC0AC\uC774, \uADF8 \uC5B4\uB518\uAC00\uB85C."
+      value: "\uB450 \uC0AC\uB78C\uC740 \uC190\uC744 \uC7A1\uACE0,\n\uD669\uD63C\uC758
+        \uC232 \uB108\uBA38\uB85C \uAC78\uC5B4\uAC14\uC2B5\uB2C8\uB2E4."
       objectReference: {fileID: 0}
     - target: {fileID: 719843348653090854, guid: ad957e694b3c69d4ca318bcb2e5e494e, type: 3}
       propertyPath: pages.Array.data[6].text
+      value: "\uADF8 \uB4B7\uBAA8\uC2B5\uC744 \uBC14\uB77C\uBCF4\uBA70,\n\uD669\uD63C\uC758
+        \uB9C8\uB140\uB294 \uC529 \uC6C3\uC5C8\uC2B5\uB2C8\uB2E4."
+      objectReference: {fileID: 0}
+    - target: {fileID: 719843348653090854, guid: ad957e694b3c69d4ca318bcb2e5e494e, type: 3}
+      propertyPath: pages.Array.data[7].text
       value: "<size=88>\uB05D</size>"
       objectReference: {fileID: 0}
     - target: {fileID: 719843348653090854, guid: ad957e694b3c69d4ca318bcb2e5e494e, type: 3}
@@ -506,26 +509,30 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 719843348653090854, guid: ad957e694b3c69d4ca318bcb2e5e494e, type: 3}
       propertyPath: pages.Array.data[1].colour
-      value: 0.25
+      value: 0.22
       objectReference: {fileID: 0}
     - target: {fileID: 719843348653090854, guid: ad957e694b3c69d4ca318bcb2e5e494e, type: 3}
       propertyPath: pages.Array.data[2].colour
-      value: 0.42
+      value: 0.35
       objectReference: {fileID: 0}
     - target: {fileID: 719843348653090854, guid: ad957e694b3c69d4ca318bcb2e5e494e, type: 3}
       propertyPath: pages.Array.data[3].colour
-      value: 0.6
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 719843348653090854, guid: ad957e694b3c69d4ca318bcb2e5e494e, type: 3}
       propertyPath: pages.Array.data[4].colour
-      value: 0.8
+      value: 0.68
       objectReference: {fileID: 0}
     - target: {fileID: 719843348653090854, guid: ad957e694b3c69d4ca318bcb2e5e494e, type: 3}
       propertyPath: pages.Array.data[5].colour
-      value: 1
+      value: 0.85
       objectReference: {fileID: 0}
     - target: {fileID: 719843348653090854, guid: ad957e694b3c69d4ca318bcb2e5e494e, type: 3}
       propertyPath: pages.Array.data[6].colour
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 719843348653090854, guid: ad957e694b3c69d4ca318bcb2e5e494e, type: 3}
+      propertyPath: pages.Array.data[7].colour
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 719843348653090854, guid: ad957e694b3c69d4ca318bcb2e5e494e, type: 3}
@@ -557,15 +564,31 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2800000, guid: df6dbe3db4da7ac4c9ddf0e89d964e7d, type: 3}
     - target: {fileID: 719843348653090854, guid: ad957e694b3c69d4ca318bcb2e5e494e, type: 3}
-      propertyPath: pages.Array.data[1].captionLow
+      propertyPath: pages.Array.data[7].picture
+      value: 
+      objectReference: {fileID: 2800000, guid: c31cce1eb3255af4d99f70b286cfa675, type: 3}
+    - target: {fileID: 719843348653090854, guid: ad957e694b3c69d4ca318bcb2e5e494e, type: 3}
+      propertyPath: pages.Array.data[0].captionLow
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 719843348653090854, guid: ad957e694b3c69d4ca318bcb2e5e494e, type: 3}
+      propertyPath: pages.Array.data[1].captionLow
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 719843348653090854, guid: ad957e694b3c69d4ca318bcb2e5e494e, type: 3}
       propertyPath: pages.Array.data[2].captionLow
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 719843348653090854, guid: ad957e694b3c69d4ca318bcb2e5e494e, type: 3}
+      propertyPath: pages.Array.data[3].captionLow
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 719843348653090854, guid: ad957e694b3c69d4ca318bcb2e5e494e, type: 3}
       propertyPath: pages.Array.data[4].captionLow
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 719843348653090854, guid: ad957e694b3c69d4ca318bcb2e5e494e, type: 3}
+      propertyPath: pages.Array.data[6].captionLow
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 777688313496894866, guid: ad957e694b3c69d4ca318bcb2e5e494e, type: 3}
