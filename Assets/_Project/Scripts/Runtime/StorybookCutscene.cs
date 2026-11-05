@@ -34,6 +34,8 @@ namespace DuskTwilight
         public CanvasGroup nextHint;
         [Tooltip("Black cover for the first fade-in")]
         public CanvasGroup cover;
+        [Tooltip("'건너뛰기' button (also Esc / Start)")]
+        public Button skipButton;
 
         [Header("Timing (seconds)")]
         public float fadeIn = 1.4f;
@@ -85,6 +87,15 @@ namespace DuskTwilight
             if (nextHint) nextHint.alpha = 0f;
             if (cover) cover.alpha = 1f;
             if (music) { musicVolume = music.volume; music.volume = 0f; }
+            if (skipButton) skipButton.onClick.AddListener(Skip);
+        }
+
+        /// <summary>Jump straight to the next scene (button, Esc / Start).</summary>
+        public void Skip()
+        {
+            if (leaving) return;
+            StopAllCoroutines();
+            Leave();
         }
 
         void Start() => StartCoroutine(Run());
@@ -137,10 +148,7 @@ namespace DuskTwilight
             if (leaving) return;
             var kb = Keyboard.current; var pad = Gamepad.current;
             if ((kb != null && kb.escapeKey.wasPressedThisFrame) || (pad != null && pad.startButton.wasPressedThisFrame))
-            {
-                StopAllCoroutines();
-                Leave();
-            }
+                Skip();
         }
 
         bool requested;
@@ -161,6 +169,7 @@ namespace DuskTwilight
             if (leaving) return;
             leaving = true;
             over.enabled = false;
+            if (skipButton) skipButton.gameObject.SetActive(false);
             if (nextHint) nextHint.alpha = 0f;
             if (music) StartCoroutine(Fade(v => music.volume = v, music.volume, 0f, 1.2f));
             // the book is already worn: the last page turns straight into the first stage
