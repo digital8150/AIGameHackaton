@@ -1,0 +1,1271 @@
+fileFormatVersion: 2
+guid: fd95a8ddbd191c34a83fd739a2571338
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 3100939229986324975
+    second: Twilight_Walk_0
+  - first:
+      213: -3056195978061556276
+    second: Twilight_Walk_1
+  - first:
+      213: 8087796172781183156
+    second: Twilight_Walk_2
+  - first:
+      213: -7552963435796040757
+    second: Twilight_Walk_3
+  - first:
+      213: -4364782442355825591
+    second: Twilight_Walk_4
+  - first:
+      213: -3066076798401305837
+    second: Twilight_Walk_5
+  - first:
+      213: -8912266302845507112
+    second: Twilight_Walk_6
+  - first:
+      213: 1353346573252926179
+    second: Twilight_Walk_7
+  - first:
+      213: -6869044743355538652
+    second: Twilight_Walk_8
+  - first:
+      213: -731402468680995556
+    second: Twilight_Walk_9
+  - first:
+      213: -8126524787035420431
+    second: Twilight_Walk_10
+  - first:
+      213: 474410807198460126
+    second: Twilight_Walk_11
+  - first:
+      213: -2759651730973756186
+    second: Twilight_Walk_12
+  - first:
+      213: -5837882871361392712
+    second: Twilight_Walk_13
+  - first:
+      213: -2700388492999908426
+    second: Twilight_Walk_14
+  - first:
+      213: -3758167072282482835
+    second: Twilight_Walk_15
+  - first:
+      213: -4663805781144481843
+    second: Twilight_Walk_16
+  - first:
+      213: 4312233359952487675
+    second: Twilight_Walk_17
+  - first:
+      213: 3142655892017225601
+    second: Twilight_Walk_18
+  - first:
+      213: -8877850148169440058
+    second: Twilight_Walk_19
+  - first:
+      213: 7363475342279200465
+    second: Twilight_Walk_20
+  - first:
+      213: 8719320917990770578
+    second: Twilight_Walk_21
+  - first:
+      213: -2141705694207262626
+    second: Twilight_Walk_22
+  - first:
+      213: -9142991531152920602
+    second: Twilight_Walk_23
+  - first:
+      213: 7558215243711585112
+    second: Twilight_Walk_24
+  - first:
+      213: 8233516989731920202
+    second: Twilight_Walk_25
+  - first:
+      213: 4245236716428196133
+    second: Twilight_Walk_26
+  - first:
+      213: 3121088520365731988
+    second: Twilight_Walk_27
+  - first:
+      213: 3557317731558835306
+    second: Twilight_Walk_28
+  - first:
+      213: 7050016977236123518
+    second: Twilight_Walk_29
+  - first:
+      213: -6766778392572473977
+    second: Twilight_Walk_30
+  - first:
+      213: -8204194435118109833
+    second: Twilight_Walk_31
+  - first:
+      213: -8848135163979694348
+    second: Twilight_Walk_32
+  - first:
+      213: -4989179854218581783
+    second: Twilight_Walk_33
+  - first:
+      213: 980048057176909809
+    second: Twilight_Walk_34
+  - first:
+      213: -4372054266677502081
+    second: Twilight_Walk_35
+  - first:
+      213: 4475392102635554010
+    second: Twilight_Walk_36
+  - first:
+      213: -5157450603748584543
+    second: Twilight_Walk_37
+  - first:
+      213: -8742404548633691367
+    second: Twilight_Walk_38
+  - first:
+      213: 1817890899053744197
+    second: Twilight_Walk_39
+  - first:
+      213: 7405651033046170863
+    second: Twilight_Walk_40
+  - first:
+      213: -7158914334458818789
+    second: Twilight_Walk_41
+  - first:
+      213: -5541551475768508222
+    second: Twilight_Walk_42
+  - first:
+      213: 8966856182818827730
+    second: Twilight_Walk_43
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Twilight_Walk_00
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1715
+        width: 285
+        height: 285
+      alignment: 9
+      pivot: {x: 0.5, y: 0.14736842}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd74de8f82603354783e43af8e8e7f67
+      internalID: -131064524
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Twilight_Walk_01
+      rect:
+        serializedVersion: 2
+        x: 286
+        y: 1715
+        width: 285
+        height: 285
+      alignment: 9
+      pivot: {x: 0.5, y: 0.14736842}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ffb417ea3a700a4fb360400ae6998da
+      internalID: 1743014825
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Twilight_Walk_02
+      rect:
+        serializedVersion: 2
+        x: 571
+        y: 1715
+        width: 285
+        height: 285
+      alignment: 9
+      pivot: {x: 0.5, y: 0.14736842}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 075066449cf26f94a92e2e31b68d4dba
+      internalID: 1827347416
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Twilight_Walk_03
+      rect:
+        serializedVersion: 2
+        x: 857
+        y: 1715
+        width: 285
+        height: 285
+      alignment: 9
+      pivot: {x: 0.5, y: 0.14736842}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7030740b3e9c5874a881d623e6958524
+      internalID: 1778132036
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Twilight_Walk_04
+      rect:
+        serializedVersion: 2
+        x: 1143
+        y: 1715
+        width: 285
+        height: 285
+      alignment: 9
+      pivot: {x: 0.5, y: 0.14736842}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e7198fb45e4e52449efd6aa1d330ae1
+      internalID: 1780460449
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Twilight_Walk_05
+      rect:
+        serializedVersion: 2
+        x: 1429
+        y: 1715
+        width: 285
+        height: 285
+      alignment: 9
+      pivot: {x: 0.5, y: 0.14736842}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bbc8b6b137d2af649ba5d2adb2c1e601
+      internalID: -1172518198
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Twilight_Walk_06
+      rect:
+        serializedVersion: 2
+        x: 1714
+        y: 1715
+        width: 285
+        height: 285
+      alignment: 9
+      pivot: {x: 0.5, y: 0.14736842}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 90b0cf42a944c174389a329a0df41708
+      internalID: -1514279184
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Twilight_Walk_07
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1429
+        width: 285
+        height: 285
+      alignment: 9
+      pivot: {x: 0.5, y: 0.14736842}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f424c472eb085164187a7e0135af7773
+      internalID: 125705323
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Twilight_Walk_08
+      rect:
+        serializedVersion: 2
+        x: 286
+        y: 1429
+        width: 285
+        height: 285
+      alignment: 9
+      pivot: {x: 0.5, y: 0.14736842}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c40e6b2116210684882afd7b4a346713
+      internalID: -592471687
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Twilight_Walk_09
+      rect:
+        serializedVersion: 2
+        x: 571
+        y: 1429
+        width: 285
+        height: 285
+      alignment: 9
+      pivot: {x: 0.5, y: 0.14736842}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f3ed276ca7a4b7498777194d5d1f1dd
+      internalID: -1200702060
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Twilight_Walk_10
+      rect:
+        serializedVersion: 2
+        x: 857
+        y: 1429
+        width: 285
+        height: 285
+      alignment: 9
+      pivot: {x: 0.5, y: 0.14736842}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 890f1cae60b91fc4f86524795e4ed3af
+      internalID: -8126524787035420431
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Twilight_Walk_11
+      rect:
+        serializedVersion: 2
+        x: 1143
+        y: 1429
+        width: 285
+        height: 285
+      alignment: 9
+      pivot: {x: 0.5, y: 0.14736842}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ad8b718d0764cb43b80227790a57b0e
+      internalID: 474410807198460126
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Twilight_Walk_12
+      rect:
+        serializedVersion: 2
+        x: 1429
+        y: 1429
+        width: 285
+        height: 285
+      alignment: 9
+      pivot: {x: 0.5, y: 0.14736842}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a33d3d3b9049701488b5c048aacff449
+      internalID: -2759651730973756186
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Twilight_Walk_13
+      rect:
+        serializedVersion: 2
+        x: 1714
+        y: 1429
+        width: 285
+        height: 285
+      alignment: 9
+      pivot: {x: 0.5, y: 0.14736842}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d95a2e2a49008ed41a34cf965295f149
+      internalID: -5837882871361392712
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Twilight_Walk_14
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1144
+        width: 285
+        height: 285
+      alignment: 9
+      pivot: {x: 0.5, y: 0.14736842}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f78e9d1371303e04b95fdf0abecacd59
+      internalID: -2700388492999908426
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Twilight_Walk_15
+      rect:
+        serializedVersion: 2
+        x: 286
+        y: 1144
+        width: 285
+        height: 285
+      alignment: 9
+      pivot: {x: 0.5, y: 0.14736842}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ebc6bdfa8185d8e458a8e28e41b6787b
+      internalID: -3758167072282482835
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Twilight_Walk_16
+      rect:
+        serializedVersion: 2
+        x: 571
+        y: 1144
+        width: 285
+        height: 285
+      alignment: 9
+      pivot: {x: 0.5, y: 0.14736842}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 713b58bb507b0454fbc189f7b1dbbcdc
+      internalID: -4663805781144481843
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Twilight_Walk_17
+      rect:
+        serializedVersion: 2
+        x: 857
+        y: 1144
+        width: 285
+        height: 285
+      alignment: 9
+      pivot: {x: 0.5, y: 0.14736842}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e6648b9c8d3639947876532e0c7f82e4
+      internalID: 4312233359952487675
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Twilight_Walk_18
+      rect:
+        serializedVersion: 2
+        x: 1143
+        y: 1144
+        width: 285
+        height: 285
+      alignment: 9
+      pivot: {x: 0.5, y: 0.14736842}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b2f236fe2114e794792f0857a4ee65e8
+      internalID: 3142655892017225601
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Twilight_Walk_19
+      rect:
+        serializedVersion: 2
+        x: 1429
+        y: 1144
+        width: 285
+        height: 285
+      alignment: 9
+      pivot: {x: 0.5, y: 0.14736842}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c6ae2855166588a479a1f973ecbf4140
+      internalID: -8877850148169440058
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Twilight_Walk_20
+      rect:
+        serializedVersion: 2
+        x: 1714
+        y: 1144
+        width: 285
+        height: 285
+      alignment: 9
+      pivot: {x: 0.5, y: 0.14736842}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 772eb599bd5d24f479b7d8b7f749286f
+      internalID: 7363475342279200465
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Twilight_Walk_21
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 858
+        width: 285
+        height: 285
+      alignment: 9
+      pivot: {x: 0.5, y: 0.14736842}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 14dd6564014b1ff488310cf9586166e0
+      internalID: 8719320917990770578
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Twilight_Walk_22
+      rect:
+        serializedVersion: 2
+        x: 286
+        y: 858
+        width: 285
+        height: 285
+      alignment: 9
+      pivot: {x: 0.5, y: 0.14736842}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 206bb5fdca1753444bc4b2eee8b3789c
+      internalID: -2141705694207262626
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Twilight_Walk_23
+      rect:
+        serializedVersion: 2
+        x: 571
+        y: 858
+        width: 285
+        height: 285
+      alignment: 9
+      pivot: {x: 0.5, y: 0.14736842}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ab58a6c8d8d7614faa96b4a6a20d320
+      internalID: -9142991531152920602
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Twilight_Walk_24
+      rect:
+        serializedVersion: 2
+        x: 857
+        y: 858
+        width: 285
+        height: 285
+      alignment: 9
+      pivot: {x: 0.5, y: 0.14736842}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 632b3dd3d52380049947d5046647a302
+      internalID: 7558215243711585112
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Twilight_Walk_25
+      rect:
+        serializedVersion: 2
+        x: 1143
+        y: 858
+        width: 285
+        height: 285
+      alignment: 9
+      pivot: {x: 0.5, y: 0.14736842}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5c706221596916349b4b8c7f2e43c76e
+      internalID: 8233516989731920202
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Twilight_Walk_26
+      rect:
+        serializedVersion: 2
+        x: 1429
+        y: 858
+        width: 285
+        height: 285
+      alignment: 9
+      pivot: {x: 0.5, y: 0.14736842}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0609c3297da918e45be2753813bbe4b6
+      internalID: 4245236716428196133
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Twilight_Walk_27
+      rect:
+        serializedVersion: 2
+        x: 1714
+        y: 858
+        width: 285
+        height: 285
+      alignment: 9
+      pivot: {x: 0.5, y: 0.14736842}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f9eb6773f4822384498f048409515cfd
+      internalID: 3121088520365731988
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Twilight_Walk_28
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 572
+        width: 285
+        height: 285
+      alignment: 9
+      pivot: {x: 0.5, y: 0.14736842}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd424d1963589e64b85562d0d0028fd8
+      internalID: 3557317731558835306
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Twilight_Walk_29
+      rect:
+        serializedVersion: 2
+        x: 286
+        y: 572
+        width: 285
+        height: 285
+      alignment: 9
+      pivot: {x: 0.5, y: 0.14736842}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0116e1c94fc7bcd4fb4a657317c69dd5
+      internalID: 7050016977236123518
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Twilight_Walk_30
+      rect:
+        serializedVersion: 2
+        x: 571
+        y: 572
+        width: 285
+        height: 285
+      alignment: 9
+      pivot: {x: 0.5, y: 0.14736842}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1bca28f9b8493f3438a32cd75da12431
+      internalID: -6766778392572473977
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Twilight_Walk_31
+      rect:
+        serializedVersion: 2
+        x: 857
+        y: 572
+        width: 285
+        height: 285
+      alignment: 9
+      pivot: {x: 0.5, y: 0.14736842}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4ccc8e5ffe9a06f4ea9cf7faea6a246d
+      internalID: -8204194435118109833
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Twilight_Walk_32
+      rect:
+        serializedVersion: 2
+        x: 1143
+        y: 572
+        width: 285
+        height: 285
+      alignment: 9
+      pivot: {x: 0.5, y: 0.14736842}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b43163a0e6c085944968b011f11cb076
+      internalID: -8848135163979694348
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Twilight_Walk_33
+      rect:
+        serializedVersion: 2
+        x: 1429
+        y: 572
+        width: 285
+        height: 285
+      alignment: 9
+      pivot: {x: 0.5, y: 0.14736842}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 616b159c929cec24696fb1ea98a1156e
+      internalID: -4989179854218581783
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Twilight_Walk_34
+      rect:
+        serializedVersion: 2
+        x: 1714
+        y: 572
+        width: 285
+        height: 285
+      alignment: 9
+      pivot: {x: 0.5, y: 0.14736842}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f0997a8c9cd7f9418122a3282613346
+      internalID: 980048057176909809
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Twilight_Walk_35
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 286
+        width: 285
+        height: 285
+      alignment: 9
+      pivot: {x: 0.5, y: 0.14736842}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 371a760504b7c944a9dc87235be4f9de
+      internalID: -4372054266677502081
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Twilight_Walk_36
+      rect:
+        serializedVersion: 2
+        x: 286
+        y: 286
+        width: 285
+        height: 285
+      alignment: 9
+      pivot: {x: 0.5, y: 0.14736842}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 699ed0acece37584d9d4de8aab107e32
+      internalID: 4475392102635554010
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Twilight_Walk_37
+      rect:
+        serializedVersion: 2
+        x: 571
+        y: 286
+        width: 285
+        height: 285
+      alignment: 9
+      pivot: {x: 0.5, y: 0.14736842}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 406fb87887d24074b9795397dfd0bbf6
+      internalID: -5157450603748584543
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Twilight_Walk_38
+      rect:
+        serializedVersion: 2
+        x: 857
+        y: 286
+        width: 285
+        height: 285
+      alignment: 9
+      pivot: {x: 0.5, y: 0.14736842}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c78ebc2391cc3134d92eac999418b87b
+      internalID: -8742404548633691367
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Twilight_Walk_39
+      rect:
+        serializedVersion: 2
+        x: 1143
+        y: 286
+        width: 285
+        height: 285
+      alignment: 9
+      pivot: {x: 0.5, y: 0.14736842}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f80cd59cc4ce104ca590004dc10d2f5
+      internalID: 1817890899053744197
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Twilight_Walk_40
+      rect:
+        serializedVersion: 2
+        x: 1429
+        y: 286
+        width: 285
+        height: 285
+      alignment: 9
+      pivot: {x: 0.5, y: 0.14736842}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 520ab22d69bdf924b82e16534527d166
+      internalID: 7405651033046170863
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Twilight_Walk_41
+      rect:
+        serializedVersion: 2
+        x: 1714
+        y: 286
+        width: 285
+        height: 285
+      alignment: 9
+      pivot: {x: 0.5, y: 0.14736842}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 23343ac9d1b472d48964bf149cfd0d9f
+      internalID: -7158914334458818789
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Twilight_Walk_42
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1
+        width: 285
+        height: 285
+      alignment: 9
+      pivot: {x: 0.5, y: 0.14736842}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 481f41a5bd8b2df45b18ed4c2e5cecf7
+      internalID: -5541551475768508222
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Twilight_Walk_43
+      rect:
+        serializedVersion: 2
+        x: 286
+        y: 1
+        width: 285
+        height: 285
+      alignment: 9
+      pivot: {x: 0.5, y: 0.14736842}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a0efa57320fccf43bce12f16f7d0672
+      internalID: 8966856182818827730
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 44ba1dd5a6cf9f84c9d1d1beb2df13d2
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Twilight_Walk_0: 3100939229986324975
+      Twilight_Walk_00: -131064524
+      Twilight_Walk_01: 1743014825
+      Twilight_Walk_02: 1827347416
+      Twilight_Walk_03: 1778132036
+      Twilight_Walk_04: 1780460449
+      Twilight_Walk_05: -1172518198
+      Twilight_Walk_06: -1514279184
+      Twilight_Walk_07: 125705323
+      Twilight_Walk_08: -592471687
+      Twilight_Walk_09: -1200702060
+      Twilight_Walk_1: -3056195978061556276
+      Twilight_Walk_10: -8126524787035420431
+      Twilight_Walk_11: 474410807198460126
+      Twilight_Walk_12: -2759651730973756186
+      Twilight_Walk_13: -5837882871361392712
+      Twilight_Walk_14: -2700388492999908426
+      Twilight_Walk_15: -3758167072282482835
+      Twilight_Walk_16: -4663805781144481843
+      Twilight_Walk_17: 4312233359952487675
+      Twilight_Walk_18: 3142655892017225601
+      Twilight_Walk_19: -8877850148169440058
+      Twilight_Walk_2: 8087796172781183156
+      Twilight_Walk_20: 7363475342279200465
+      Twilight_Walk_21: 8719320917990770578
+      Twilight_Walk_22: -2141705694207262626
+      Twilight_Walk_23: -9142991531152920602
+      Twilight_Walk_24: 7558215243711585112
+      Twilight_Walk_25: 8233516989731920202
+      Twilight_Walk_26: 4245236716428196133
+      Twilight_Walk_27: 3121088520365731988
+      Twilight_Walk_28: 3557317731558835306
+      Twilight_Walk_29: 7050016977236123518
+      Twilight_Walk_3: -7552963435796040757
+      Twilight_Walk_30: -6766778392572473977
+      Twilight_Walk_31: -8204194435118109833
+      Twilight_Walk_32: -8848135163979694348
+      Twilight_Walk_33: -4989179854218581783
+      Twilight_Walk_34: 980048057176909809
+      Twilight_Walk_35: -4372054266677502081
+      Twilight_Walk_36: 4475392102635554010
+      Twilight_Walk_37: -5157450603748584543
+      Twilight_Walk_38: -8742404548633691367
+      Twilight_Walk_39: 1817890899053744197
+      Twilight_Walk_4: -4364782442355825591
+      Twilight_Walk_40: 7405651033046170863
+      Twilight_Walk_41: -7158914334458818789
+      Twilight_Walk_42: -5541551475768508222
+      Twilight_Walk_43: 8966856182818827730
+      Twilight_Walk_5: -3066076798401305837
+      Twilight_Walk_6: -8912266302845507112
+      Twilight_Walk_7: 1353346573252926179
+      Twilight_Walk_8: -6869044743355538652
+      Twilight_Walk_9: -731402468680995556
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

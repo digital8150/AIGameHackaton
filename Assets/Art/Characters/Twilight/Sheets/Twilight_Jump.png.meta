@@ -1,0 +1,1401 @@
+fileFormatVersion: 2
+guid: 75a03260ff77a8a4ea2071a30688e723
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 2969256793255629603
+    second: Twilight_Jump_0
+  - first:
+      213: -5569640884818755422
+    second: Twilight_Jump_1
+  - first:
+      213: -7691824876232748875
+    second: Twilight_Jump_2
+  - first:
+      213: 9207159803287297746
+    second: Twilight_Jump_3
+  - first:
+      213: 4248548165277714735
+    second: Twilight_Jump_4
+  - first:
+      213: -8945078392890612449
+    second: Twilight_Jump_5
+  - first:
+      213: 7828195129579746161
+    second: Twilight_Jump_6
+  - first:
+      213: -5255253530226717359
+    second: Twilight_Jump_7
+  - first:
+      213: 9161689274833960234
+    second: Twilight_Jump_8
+  - first:
+      213: 3102720286975839163
+    second: Twilight_Jump_9
+  - first:
+      213: -4211656002175232141
+    second: Twilight_Jump_10
+  - first:
+      213: -6767748052123009696
+    second: Twilight_Jump_11
+  - first:
+      213: -2930844477891844099
+    second: Twilight_Jump_12
+  - first:
+      213: -8218052051801087273
+    second: Twilight_Jump_13
+  - first:
+      213: -1068877700641907820
+    second: Twilight_Jump_14
+  - first:
+      213: 2197105884390546162
+    second: Twilight_Jump_15
+  - first:
+      213: -4683202576595894262
+    second: Twilight_Jump_16
+  - first:
+      213: -6214274979381100082
+    second: Twilight_Jump_17
+  - first:
+      213: -549321817023890490
+    second: Twilight_Jump_18
+  - first:
+      213: -1810999632330191895
+    second: Twilight_Jump_19
+  - first:
+      213: -3852729148414310231
+    second: Twilight_Jump_20
+  - first:
+      213: -3315803411271690365
+    second: Twilight_Jump_21
+  - first:
+      213: 5789965874420181202
+    second: Twilight_Jump_22
+  - first:
+      213: 7286968439079549023
+    second: Twilight_Jump_23
+  - first:
+      213: 6968111269099632503
+    second: Twilight_Jump_24
+  - first:
+      213: -1537816092358112208
+    second: Twilight_Jump_25
+  - first:
+      213: 7584470448353146744
+    second: Twilight_Jump_26
+  - first:
+      213: 7801973464189639249
+    second: Twilight_Jump_27
+  - first:
+      213: -8283848414495614298
+    second: Twilight_Jump_28
+  - first:
+      213: -6419848527757352563
+    second: Twilight_Jump_29
+  - first:
+      213: -8179980226015636949
+    second: Twilight_Jump_30
+  - first:
+      213: -4396489130479871128
+    second: Twilight_Jump_31
+  - first:
+      213: -704312116446585398
+    second: Twilight_Jump_32
+  - first:
+      213: -1718991799851252555
+    second: Twilight_Jump_33
+  - first:
+      213: 250315329277248019
+    second: Twilight_Jump_34
+  - first:
+      213: -7517759519686852191
+    second: Twilight_Jump_35
+  - first:
+      213: 4633768949927494578
+    second: Twilight_Jump_36
+  - first:
+      213: -8202799673721399886
+    second: Twilight_Jump_37
+  - first:
+      213: 1482393090857128141
+    second: Twilight_Jump_38
+  - first:
+      213: 2211216227631309383
+    second: Twilight_Jump_39
+  - first:
+      213: -2194979670052637145
+    second: Twilight_Jump_40
+  - first:
+      213: -4170063116936567961
+    second: Twilight_Jump_41
+  - first:
+      213: -7494818538004881543
+    second: Twilight_Jump_42
+  - first:
+      213: 1611647032530244987
+    second: Twilight_Jump_43
+  - first:
+      213: 7277699360156760403
+    second: Twilight_Jump_44
+  - first:
+      213: 69878314102162782
+    second: Twilight_Jump_45
+  - first:
+      213: -3902377785122387753
+    second: Twilight_Jump_46
+  - first:
+      213: -4908330128617822308
+    second: Twilight_Jump_47
+  - first:
+      213: -6896057520421450131
+    second: Twilight_Jump_48
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Twilight_Jump_00
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1715
+        width: 285
+        height: 285
+      alignment: 9
+      pivot: {x: 0.5, y: 0.15438597}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5736603232fb56143908abca64b8a2e1
+      internalID: -577206365
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Twilight_Jump_01
+      rect:
+        serializedVersion: 2
+        x: 286
+        y: 1715
+        width: 285
+        height: 285
+      alignment: 9
+      pivot: {x: 0.5, y: 0.15438597}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f2116b794618b2b48b8d2cb98c4c6f37
+      internalID: 1020984783
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Twilight_Jump_02
+      rect:
+        serializedVersion: 2
+        x: 571
+        y: 1715
+        width: 285
+        height: 285
+      alignment: 9
+      pivot: {x: 0.5, y: 0.15438597}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e521e6cb23ba47449a2cfbd05ccfca9
+      internalID: 134812888
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Twilight_Jump_03
+      rect:
+        serializedVersion: 2
+        x: 857
+        y: 1715
+        width: 285
+        height: 285
+      alignment: 9
+      pivot: {x: 0.5, y: 0.15438597}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 45146f58621dcab47b0705040b6323e7
+      internalID: 88749785
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Twilight_Jump_04
+      rect:
+        serializedVersion: 2
+        x: 1143
+        y: 1715
+        width: 285
+        height: 285
+      alignment: 9
+      pivot: {x: 0.5, y: 0.15438597}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 58508427a51cfdc40ad2d0dbbb42c55f
+      internalID: -193500600
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Twilight_Jump_05
+      rect:
+        serializedVersion: 2
+        x: 1429
+        y: 1715
+        width: 285
+        height: 285
+      alignment: 9
+      pivot: {x: 0.5, y: 0.15438597}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2406b7884666f5c43a2718a4ee225d5e
+      internalID: -1985693009
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Twilight_Jump_06
+      rect:
+        serializedVersion: 2
+        x: 1714
+        y: 1715
+        width: 285
+        height: 285
+      alignment: 9
+      pivot: {x: 0.5, y: 0.15438597}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d0291affc5b623348b81ba6b0e4ebc50
+      internalID: -811329195
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Twilight_Jump_07
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1429
+        width: 285
+        height: 285
+      alignment: 9
+      pivot: {x: 0.5, y: 0.15438597}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9384eb446d31b5647a0c3519f68e28a6
+      internalID: -1665610209
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Twilight_Jump_08
+      rect:
+        serializedVersion: 2
+        x: 286
+        y: 1429
+        width: 285
+        height: 285
+      alignment: 9
+      pivot: {x: 0.5, y: 0.15438597}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 18ec364ce16fc5d44895f0d2292b0dec
+      internalID: -1859234235
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Twilight_Jump_09
+      rect:
+        serializedVersion: 2
+        x: 571
+        y: 1429
+        width: 285
+        height: 285
+      alignment: 9
+      pivot: {x: 0.5, y: 0.15438597}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 69c9d9c633ae44749afd0383f7bc8649
+      internalID: -449040609
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Twilight_Jump_10
+      rect:
+        serializedVersion: 2
+        x: 857
+        y: 1429
+        width: 285
+        height: 285
+      alignment: 9
+      pivot: {x: 0.5, y: 0.15438597}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b3c88d26e4f22fc48b3defe10d936129
+      internalID: -4211656002175232141
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Twilight_Jump_11
+      rect:
+        serializedVersion: 2
+        x: 1143
+        y: 1429
+        width: 285
+        height: 285
+      alignment: 9
+      pivot: {x: 0.5, y: 0.15438597}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aec458685b9f2f5478b66d8cd42a1c60
+      internalID: -6767748052123009696
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Twilight_Jump_12
+      rect:
+        serializedVersion: 2
+        x: 1429
+        y: 1429
+        width: 285
+        height: 285
+      alignment: 9
+      pivot: {x: 0.5, y: 0.15438597}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e5c5a1c911f070f4f87bc49cec387d2d
+      internalID: -2930844477891844099
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Twilight_Jump_13
+      rect:
+        serializedVersion: 2
+        x: 1714
+        y: 1429
+        width: 285
+        height: 285
+      alignment: 9
+      pivot: {x: 0.5, y: 0.15438597}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 50eda7126de026042bfee40c1ebf0c9b
+      internalID: -8218052051801087273
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Twilight_Jump_14
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1144
+        width: 285
+        height: 285
+      alignment: 9
+      pivot: {x: 0.5, y: 0.15438597}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4595f79d8aa062243a23a9d89657ba80
+      internalID: -1068877700641907820
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Twilight_Jump_15
+      rect:
+        serializedVersion: 2
+        x: 286
+        y: 1144
+        width: 285
+        height: 285
+      alignment: 9
+      pivot: {x: 0.5, y: 0.15438597}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e305a271618d31488239ef5223dcccb
+      internalID: 2197105884390546162
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Twilight_Jump_16
+      rect:
+        serializedVersion: 2
+        x: 571
+        y: 1144
+        width: 285
+        height: 285
+      alignment: 9
+      pivot: {x: 0.5, y: 0.15438597}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 51f71d039ff3fa44798b23f34c61cc36
+      internalID: -4683202576595894262
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Twilight_Jump_17
+      rect:
+        serializedVersion: 2
+        x: 857
+        y: 1144
+        width: 285
+        height: 285
+      alignment: 9
+      pivot: {x: 0.5, y: 0.15438597}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 55996f8e01ae0214bb9773aaed638ea9
+      internalID: -6214274979381100082
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Twilight_Jump_18
+      rect:
+        serializedVersion: 2
+        x: 1143
+        y: 1144
+        width: 285
+        height: 285
+      alignment: 9
+      pivot: {x: 0.5, y: 0.15438597}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 936057259ebfaa54ebe8aa29f15a37c5
+      internalID: -549321817023890490
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Twilight_Jump_19
+      rect:
+        serializedVersion: 2
+        x: 1429
+        y: 1144
+        width: 285
+        height: 285
+      alignment: 9
+      pivot: {x: 0.5, y: 0.15438597}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 387d421a1cabe4b4da52fc3c323f3a1a
+      internalID: -1810999632330191895
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Twilight_Jump_20
+      rect:
+        serializedVersion: 2
+        x: 1714
+        y: 1144
+        width: 285
+        height: 285
+      alignment: 9
+      pivot: {x: 0.5, y: 0.15438597}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d6988bc173b64dc4ebbb31694ae2b223
+      internalID: -3852729148414310231
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Twilight_Jump_21
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 858
+        width: 285
+        height: 285
+      alignment: 9
+      pivot: {x: 0.5, y: 0.15438597}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f8df488a6379864abd55cd2dba592d4
+      internalID: -3315803411271690365
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Twilight_Jump_22
+      rect:
+        serializedVersion: 2
+        x: 286
+        y: 858
+        width: 285
+        height: 285
+      alignment: 9
+      pivot: {x: 0.5, y: 0.15438597}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 46e2c01341756824cbb28b7d7ae0f90e
+      internalID: 5789965874420181202
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Twilight_Jump_23
+      rect:
+        serializedVersion: 2
+        x: 571
+        y: 858
+        width: 285
+        height: 285
+      alignment: 9
+      pivot: {x: 0.5, y: 0.15438597}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e61de9ca919fcb84c981f7c14608dd98
+      internalID: 7286968439079549023
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Twilight_Jump_24
+      rect:
+        serializedVersion: 2
+        x: 857
+        y: 858
+        width: 285
+        height: 285
+      alignment: 9
+      pivot: {x: 0.5, y: 0.15438597}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f1e2f042791b9f2429d491fe8faa9f28
+      internalID: 6968111269099632503
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Twilight_Jump_25
+      rect:
+        serializedVersion: 2
+        x: 1143
+        y: 858
+        width: 285
+        height: 285
+      alignment: 9
+      pivot: {x: 0.5, y: 0.15438597}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 882fbeb13d0988141bd67a32a54caac7
+      internalID: -1537816092358112208
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Twilight_Jump_26
+      rect:
+        serializedVersion: 2
+        x: 1429
+        y: 858
+        width: 285
+        height: 285
+      alignment: 9
+      pivot: {x: 0.5, y: 0.15438597}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c49234f4f39fc74ba6751d8fee4727c
+      internalID: 7584470448353146744
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Twilight_Jump_27
+      rect:
+        serializedVersion: 2
+        x: 1714
+        y: 858
+        width: 285
+        height: 285
+      alignment: 9
+      pivot: {x: 0.5, y: 0.15438597}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e15444ef9038f2d47aafad254ca9350a
+      internalID: 7801973464189639249
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Twilight_Jump_28
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 572
+        width: 285
+        height: 285
+      alignment: 9
+      pivot: {x: 0.5, y: 0.15438597}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f901a47c38e69c94b9b16edb0499b9fc
+      internalID: -8283848414495614298
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Twilight_Jump_29
+      rect:
+        serializedVersion: 2
+        x: 286
+        y: 572
+        width: 285
+        height: 285
+      alignment: 9
+      pivot: {x: 0.5, y: 0.15438597}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 994b6cc7cc85ce84894657abadd5db5b
+      internalID: -6419848527757352563
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Twilight_Jump_30
+      rect:
+        serializedVersion: 2
+        x: 571
+        y: 572
+        width: 285
+        height: 285
+      alignment: 9
+      pivot: {x: 0.5, y: 0.15438597}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 41ca9868ecd80ac49830ba4f5118cf4a
+      internalID: -8179980226015636949
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Twilight_Jump_31
+      rect:
+        serializedVersion: 2
+        x: 857
+        y: 572
+        width: 285
+        height: 285
+      alignment: 9
+      pivot: {x: 0.5, y: 0.15438597}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d6b256f4a3c76354b86fdc303a24321f
+      internalID: -4396489130479871128
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Twilight_Jump_32
+      rect:
+        serializedVersion: 2
+        x: 1143
+        y: 572
+        width: 285
+        height: 285
+      alignment: 9
+      pivot: {x: 0.5, y: 0.15438597}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 12b01431c822d2f488e923ca16d9ac47
+      internalID: -704312116446585398
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Twilight_Jump_33
+      rect:
+        serializedVersion: 2
+        x: 1429
+        y: 572
+        width: 285
+        height: 285
+      alignment: 9
+      pivot: {x: 0.5, y: 0.15438597}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b4b14b1f2656c244d8ec3636185e2ff4
+      internalID: -1718991799851252555
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Twilight_Jump_34
+      rect:
+        serializedVersion: 2
+        x: 1714
+        y: 572
+        width: 285
+        height: 285
+      alignment: 9
+      pivot: {x: 0.5, y: 0.15438597}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df01b646d0a4d6f41b181553fa546ae7
+      internalID: 250315329277248019
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Twilight_Jump_35
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 286
+        width: 285
+        height: 285
+      alignment: 9
+      pivot: {x: 0.5, y: 0.15438597}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 55cb12142d3e26243aa9afd776db70fe
+      internalID: -7517759519686852191
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Twilight_Jump_36
+      rect:
+        serializedVersion: 2
+        x: 286
+        y: 286
+        width: 285
+        height: 285
+      alignment: 9
+      pivot: {x: 0.5, y: 0.15438597}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7374300729a9f9640a430804544e21a5
+      internalID: 4633768949927494578
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Twilight_Jump_37
+      rect:
+        serializedVersion: 2
+        x: 571
+        y: 286
+        width: 285
+        height: 285
+      alignment: 9
+      pivot: {x: 0.5, y: 0.15438597}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a3b12a8e47951294c80ad2467a2e2ae9
+      internalID: -8202799673721399886
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Twilight_Jump_38
+      rect:
+        serializedVersion: 2
+        x: 857
+        y: 286
+        width: 285
+        height: 285
+      alignment: 9
+      pivot: {x: 0.5, y: 0.15438597}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c250788d225269f429badce5493aa861
+      internalID: 1482393090857128141
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Twilight_Jump_39
+      rect:
+        serializedVersion: 2
+        x: 1143
+        y: 286
+        width: 285
+        height: 285
+      alignment: 9
+      pivot: {x: 0.5, y: 0.15438597}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: abbcd090e01c0d942bcd019484e03250
+      internalID: 2211216227631309383
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Twilight_Jump_40
+      rect:
+        serializedVersion: 2
+        x: 1429
+        y: 286
+        width: 285
+        height: 285
+      alignment: 9
+      pivot: {x: 0.5, y: 0.15438597}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b8aec868b84fe846ae4507130ad63d6
+      internalID: -2194979670052637145
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Twilight_Jump_41
+      rect:
+        serializedVersion: 2
+        x: 1714
+        y: 286
+        width: 285
+        height: 285
+      alignment: 9
+      pivot: {x: 0.5, y: 0.15438597}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 09897659f94bff144a77707da6bb616f
+      internalID: -4170063116936567961
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Twilight_Jump_42
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1
+        width: 285
+        height: 285
+      alignment: 9
+      pivot: {x: 0.5, y: 0.15438597}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 898983afbe7bc1242a0676f3504f83ba
+      internalID: -7494818538004881543
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Twilight_Jump_43
+      rect:
+        serializedVersion: 2
+        x: 286
+        y: 1
+        width: 285
+        height: 285
+      alignment: 9
+      pivot: {x: 0.5, y: 0.15438597}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5dffb9b159e28df4f8b5e08b1eeacd7a
+      internalID: 1611647032530244987
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Twilight_Jump_44
+      rect:
+        serializedVersion: 2
+        x: 571
+        y: 1
+        width: 285
+        height: 285
+      alignment: 9
+      pivot: {x: 0.5, y: 0.15438597}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 129a33a712024314f8bb08ecb03f5935
+      internalID: 7277699360156760403
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Twilight_Jump_45
+      rect:
+        serializedVersion: 2
+        x: 857
+        y: 1
+        width: 285
+        height: 285
+      alignment: 9
+      pivot: {x: 0.5, y: 0.15438597}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c0ede375221f1c4387f7d18e74814bd
+      internalID: 69878314102162782
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Twilight_Jump_46
+      rect:
+        serializedVersion: 2
+        x: 1143
+        y: 1
+        width: 285
+        height: 285
+      alignment: 9
+      pivot: {x: 0.5, y: 0.15438597}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d2ae34465010d44386a91917618771d
+      internalID: -3902377785122387753
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Twilight_Jump_47
+      rect:
+        serializedVersion: 2
+        x: 1429
+        y: 1
+        width: 285
+        height: 285
+      alignment: 9
+      pivot: {x: 0.5, y: 0.15438597}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a768a0933f2b014429cc9ec22a7261a0
+      internalID: -4908330128617822308
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Twilight_Jump_48
+      rect:
+        serializedVersion: 2
+        x: 1714
+        y: 1
+        width: 285
+        height: 285
+      alignment: 9
+      pivot: {x: 0.5, y: 0.15438597}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 349958ea7fa63c0409c5b96f4f1458a2
+      internalID: -6896057520421450131
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5574f6418cd04c04c9719bbb90ae215f
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Twilight_Jump_0: 2969256793255629603
+      Twilight_Jump_00: -577206365
+      Twilight_Jump_01: 1020984783
+      Twilight_Jump_02: 134812888
+      Twilight_Jump_03: 88749785
+      Twilight_Jump_04: -193500600
+      Twilight_Jump_05: -1985693009
+      Twilight_Jump_06: -811329195
+      Twilight_Jump_07: -1665610209
+      Twilight_Jump_08: -1859234235
+      Twilight_Jump_09: -449040609
+      Twilight_Jump_1: -5569640884818755422
+      Twilight_Jump_10: -4211656002175232141
+      Twilight_Jump_11: -6767748052123009696
+      Twilight_Jump_12: -2930844477891844099
+      Twilight_Jump_13: -8218052051801087273
+      Twilight_Jump_14: -1068877700641907820
+      Twilight_Jump_15: 2197105884390546162
+      Twilight_Jump_16: -4683202576595894262
+      Twilight_Jump_17: -6214274979381100082
+      Twilight_Jump_18: -549321817023890490
+      Twilight_Jump_19: -1810999632330191895
+      Twilight_Jump_2: -7691824876232748875
+      Twilight_Jump_20: -3852729148414310231
+      Twilight_Jump_21: -3315803411271690365
+      Twilight_Jump_22: 5789965874420181202
+      Twilight_Jump_23: 7286968439079549023
+      Twilight_Jump_24: 6968111269099632503
+      Twilight_Jump_25: -1537816092358112208
+      Twilight_Jump_26: 7584470448353146744
+      Twilight_Jump_27: 7801973464189639249
+      Twilight_Jump_28: -8283848414495614298
+      Twilight_Jump_29: -6419848527757352563
+      Twilight_Jump_3: 9207159803287297746
+      Twilight_Jump_30: -8179980226015636949
+      Twilight_Jump_31: -4396489130479871128
+      Twilight_Jump_32: -704312116446585398
+      Twilight_Jump_33: -1718991799851252555
+      Twilight_Jump_34: 250315329277248019
+      Twilight_Jump_35: -7517759519686852191
+      Twilight_Jump_36: 4633768949927494578
+      Twilight_Jump_37: -8202799673721399886
+      Twilight_Jump_38: 1482393090857128141
+      Twilight_Jump_39: 2211216227631309383
+      Twilight_Jump_4: 4248548165277714735
+      Twilight_Jump_40: -2194979670052637145
+      Twilight_Jump_41: -4170063116936567961
+      Twilight_Jump_42: -7494818538004881543
+      Twilight_Jump_43: 1611647032530244987
+      Twilight_Jump_44: 7277699360156760403
+      Twilight_Jump_45: 69878314102162782
+      Twilight_Jump_46: -3902377785122387753
+      Twilight_Jump_47: -4908330128617822308
+      Twilight_Jump_48: -6896057520421450131
+      Twilight_Jump_5: -8945078392890612449
+      Twilight_Jump_6: 7828195129579746161
+      Twilight_Jump_7: -5255253530226717359
+      Twilight_Jump_8: 9161689274833960234
+      Twilight_Jump_9: 3102720286975839163
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

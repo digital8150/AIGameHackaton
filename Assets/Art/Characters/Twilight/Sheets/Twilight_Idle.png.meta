@@ -1,0 +1,959 @@
+fileFormatVersion: 2
+guid: 804aeb512f308a74cae07268de5f5bb9
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -1448964531893815993
+    second: Twilight_Idle_0
+  - first:
+      213: 4048106588442669244
+    second: Twilight_Idle_1
+  - first:
+      213: 8860356482542996674
+    second: Twilight_Idle_2
+  - first:
+      213: 7716537828484030375
+    second: Twilight_Idle_3
+  - first:
+      213: -4445095067014681857
+    second: Twilight_Idle_4
+  - first:
+      213: 1219967197092744518
+    second: Twilight_Idle_5
+  - first:
+      213: 7270160213837579136
+    second: Twilight_Idle_6
+  - first:
+      213: -2733428763875955363
+    second: Twilight_Idle_7
+  - first:
+      213: 2436028086360993620
+    second: Twilight_Idle_8
+  - first:
+      213: 2460846390008004640
+    second: Twilight_Idle_9
+  - first:
+      213: -5236089827046086418
+    second: Twilight_Idle_10
+  - first:
+      213: 3316033700300567196
+    second: Twilight_Idle_11
+  - first:
+      213: -1818165759691026679
+    second: Twilight_Idle_12
+  - first:
+      213: -8265866620220783793
+    second: Twilight_Idle_13
+  - first:
+      213: -958663309667100559
+    second: Twilight_Idle_14
+  - first:
+      213: 2252238840558160317
+    second: Twilight_Idle_15
+  - first:
+      213: -2741817230596415263
+    second: Twilight_Idle_16
+  - first:
+      213: 5338814231537518856
+    second: Twilight_Idle_17
+  - first:
+      213: -3732483077790669046
+    second: Twilight_Idle_18
+  - first:
+      213: 3624440910039482241
+    second: Twilight_Idle_19
+  - first:
+      213: -6546688008583534799
+    second: Twilight_Idle_20
+  - first:
+      213: -6892714478629724484
+    second: Twilight_Idle_21
+  - first:
+      213: -7190782941295206351
+    second: Twilight_Idle_22
+  - first:
+      213: -9059969722171781294
+    second: Twilight_Idle_23
+  - first:
+      213: -267202504015077644
+    second: Twilight_Idle_24
+  - first:
+      213: 2785916696469418703
+    second: Twilight_Idle_25
+  - first:
+      213: 7502748095432408338
+    second: Twilight_Idle_26
+  - first:
+      213: 7328509052862715976
+    second: Twilight_Idle_27
+  - first:
+      213: -4522887125803879569
+    second: Twilight_Idle_28
+  - first:
+      213: -7343736182046986356
+    second: Twilight_Idle_29
+  - first:
+      213: -6110349032834424536
+    second: Twilight_Idle_30
+  - first:
+      213: 3383172261419478374
+    second: Twilight_Idle_31
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Twilight_Idle_00
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1144
+        width: 285
+        height: 285
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1368421}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3725172b04865784ba48e9ce3b148ce6
+      internalID: 730867379
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Twilight_Idle_01
+      rect:
+        serializedVersion: 2
+        x: 286
+        y: 1144
+        width: 285
+        height: 285
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1368421}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b0bddca06ef27c4999c0b2354b7653d
+      internalID: -852794502
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Twilight_Idle_02
+      rect:
+        serializedVersion: 2
+        x: 571
+        y: 1144
+        width: 285
+        height: 285
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1368421}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ecc2f41fa2653374cb8b9f1c6146cd95
+      internalID: 2086854598
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Twilight_Idle_03
+      rect:
+        serializedVersion: 2
+        x: 857
+        y: 1144
+        width: 285
+        height: 285
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1368421}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3d74f2e9a5b50984883000a3d258ac54
+      internalID: -1662946272
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Twilight_Idle_04
+      rect:
+        serializedVersion: 2
+        x: 1143
+        y: 1144
+        width: 285
+        height: 285
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1368421}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1329eea95457e5b4c9d88725c7ab1689
+      internalID: -1413708408
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Twilight_Idle_05
+      rect:
+        serializedVersion: 2
+        x: 1429
+        y: 1144
+        width: 285
+        height: 285
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1368421}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b38cbe874872f14188eec7dd68f8012
+      internalID: -1134356432
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Twilight_Idle_06
+      rect:
+        serializedVersion: 2
+        x: 1714
+        y: 1144
+        width: 285
+        height: 285
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1368421}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca6c7d88522972344800e234663d4a15
+      internalID: 215424299
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Twilight_Idle_07
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 858
+        width: 285
+        height: 285
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1368421}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 15ba399257c23a54e82e815dc439d9ea
+      internalID: 658226882
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Twilight_Idle_08
+      rect:
+        serializedVersion: 2
+        x: 286
+        y: 858
+        width: 285
+        height: 285
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1368421}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 740b7a77bbbee2043a84813753ecc310
+      internalID: -1978632686
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Twilight_Idle_09
+      rect:
+        serializedVersion: 2
+        x: 571
+        y: 858
+        width: 285
+        height: 285
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1368421}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a2d826a5aaa691c4b935d980a8b3c175
+      internalID: 248972509
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Twilight_Idle_10
+      rect:
+        serializedVersion: 2
+        x: 857
+        y: 858
+        width: 285
+        height: 285
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1368421}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 89ec36e28b89ebd498935280d9cce008
+      internalID: -5236089827046086418
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Twilight_Idle_11
+      rect:
+        serializedVersion: 2
+        x: 1143
+        y: 858
+        width: 285
+        height: 285
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1368421}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3150ec3a8cce9964fb63e0cdeb29fbb8
+      internalID: 3316033700300567196
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Twilight_Idle_12
+      rect:
+        serializedVersion: 2
+        x: 1429
+        y: 858
+        width: 285
+        height: 285
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1368421}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a9341d18ff103084ca619d3445d78cd7
+      internalID: -1818165759691026679
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Twilight_Idle_13
+      rect:
+        serializedVersion: 2
+        x: 1714
+        y: 858
+        width: 285
+        height: 285
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1368421}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 058f302c40eb2074581935260ebf1d19
+      internalID: -8265866620220783793
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Twilight_Idle_14
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 572
+        width: 285
+        height: 285
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1368421}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3eaf6b6a8b38b44459a1dfe6babdcbaa
+      internalID: -958663309667100559
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Twilight_Idle_15
+      rect:
+        serializedVersion: 2
+        x: 286
+        y: 572
+        width: 285
+        height: 285
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1368421}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a222cb0a69293594e89f1c75c67ce76b
+      internalID: 2252238840558160317
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Twilight_Idle_16
+      rect:
+        serializedVersion: 2
+        x: 571
+        y: 572
+        width: 285
+        height: 285
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1368421}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d4bc39186dec0a34eb1806d294ad1a56
+      internalID: -2741817230596415263
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Twilight_Idle_17
+      rect:
+        serializedVersion: 2
+        x: 857
+        y: 572
+        width: 285
+        height: 285
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1368421}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de4fa3faa8642ec4bb78e97c330ae2d4
+      internalID: 5338814231537518856
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Twilight_Idle_18
+      rect:
+        serializedVersion: 2
+        x: 1143
+        y: 572
+        width: 285
+        height: 285
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1368421}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a0c3f9dd9fdb6d349a1c0aa53ff7f575
+      internalID: -3732483077790669046
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Twilight_Idle_19
+      rect:
+        serializedVersion: 2
+        x: 1429
+        y: 572
+        width: 285
+        height: 285
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1368421}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b933ef9385cf8164b97d1989009827ab
+      internalID: 3624440910039482241
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Twilight_Idle_20
+      rect:
+        serializedVersion: 2
+        x: 1714
+        y: 572
+        width: 285
+        height: 285
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1368421}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d1cc701dde03cf49a1de918786ba233
+      internalID: -6546688008583534799
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Twilight_Idle_21
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 287
+        width: 285
+        height: 285
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1368421}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 90c657973cb3e5344ad73bcb1027b01c
+      internalID: -6892714478629724484
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Twilight_Idle_22
+      rect:
+        serializedVersion: 2
+        x: 286
+        y: 287
+        width: 285
+        height: 285
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1368421}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd2b624bb87f83449b187d3af257eaee
+      internalID: -7190782941295206351
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Twilight_Idle_23
+      rect:
+        serializedVersion: 2
+        x: 571
+        y: 287
+        width: 285
+        height: 285
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1368421}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dbee1aeab5abe0946af17e62238ccdae
+      internalID: -9059969722171781294
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Twilight_Idle_24
+      rect:
+        serializedVersion: 2
+        x: 857
+        y: 287
+        width: 285
+        height: 285
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1368421}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d891fa89e0bd0241835d7c49acd20ba
+      internalID: -267202504015077644
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Twilight_Idle_25
+      rect:
+        serializedVersion: 2
+        x: 1143
+        y: 287
+        width: 285
+        height: 285
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1368421}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e0d856b0bcbb42e4d921acd076211105
+      internalID: 2785916696469418703
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Twilight_Idle_26
+      rect:
+        serializedVersion: 2
+        x: 1429
+        y: 287
+        width: 285
+        height: 285
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1368421}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a0656173b2523d4d80a0ef3c1bbc4b4
+      internalID: 7502748095432408338
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Twilight_Idle_27
+      rect:
+        serializedVersion: 2
+        x: 1714
+        y: 287
+        width: 285
+        height: 285
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1368421}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 560f7b5493cab6f4a916efe66ddbdd06
+      internalID: 7328509052862715976
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Twilight_Idle_28
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1
+        width: 285
+        height: 285
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1368421}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d9d8d969a4400854f973250b337cbe7d
+      internalID: -4522887125803879569
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Twilight_Idle_29
+      rect:
+        serializedVersion: 2
+        x: 286
+        y: 1
+        width: 285
+        height: 285
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1368421}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1966bedd1ce4f974daf298e309f61f44
+      internalID: -7343736182046986356
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Twilight_Idle_30
+      rect:
+        serializedVersion: 2
+        x: 571
+        y: 1
+        width: 285
+        height: 285
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1368421}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0aef7b50b17640e42a0d570de660cce2
+      internalID: -6110349032834424536
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Twilight_Idle_31
+      rect:
+        serializedVersion: 2
+        x: 857
+        y: 1
+        width: 285
+        height: 285
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1368421}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 866763b262cd68d4e83c4548c26df1b0
+      internalID: 3383172261419478374
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: ad3ace0be152f4c4e99af95c3636d2c4
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Twilight_Idle_0: -1448964531893815993
+      Twilight_Idle_00: 730867379
+      Twilight_Idle_01: -852794502
+      Twilight_Idle_02: 2086854598
+      Twilight_Idle_03: -1662946272
+      Twilight_Idle_04: -1413708408
+      Twilight_Idle_05: -1134356432
+      Twilight_Idle_06: 215424299
+      Twilight_Idle_07: 658226882
+      Twilight_Idle_08: -1978632686
+      Twilight_Idle_09: 248972509
+      Twilight_Idle_1: 4048106588442669244
+      Twilight_Idle_10: -5236089827046086418
+      Twilight_Idle_11: 3316033700300567196
+      Twilight_Idle_12: -1818165759691026679
+      Twilight_Idle_13: -8265866620220783793
+      Twilight_Idle_14: -958663309667100559
+      Twilight_Idle_15: 2252238840558160317
+      Twilight_Idle_16: -2741817230596415263
+      Twilight_Idle_17: 5338814231537518856
+      Twilight_Idle_18: -3732483077790669046
+      Twilight_Idle_19: 3624440910039482241
+      Twilight_Idle_2: 8860356482542996674
+      Twilight_Idle_20: -6546688008583534799
+      Twilight_Idle_21: -6892714478629724484
+      Twilight_Idle_22: -7190782941295206351
+      Twilight_Idle_23: -9059969722171781294
+      Twilight_Idle_24: -267202504015077644
+      Twilight_Idle_25: 2785916696469418703
+      Twilight_Idle_26: 7502748095432408338
+      Twilight_Idle_27: 7328509052862715976
+      Twilight_Idle_28: -4522887125803879569
+      Twilight_Idle_29: -7343736182046986356
+      Twilight_Idle_3: 7716537828484030375
+      Twilight_Idle_30: -6110349032834424536
+      Twilight_Idle_31: 3383172261419478374
+      Twilight_Idle_4: -4445095067014681857
+      Twilight_Idle_5: 1219967197092744518
+      Twilight_Idle_6: 7270160213837579136
+      Twilight_Idle_7: -2733428763875955363
+      Twilight_Idle_8: 2436028086360993620
+      Twilight_Idle_9: 2460846390008004640
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
