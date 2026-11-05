@@ -213,7 +213,7 @@ PrefabInstance:
     - target: {fileID: 2718509646157779260, guid: 3733f0a021c195b419ec5dffe09a2984, type: 3}
       propertyPath: sceneTrack
       value: 
-      objectReference: {fileID: 8300000, guid: 61c3b8364aaf7a446af8fa2eb27b439b, type: 3}
+      objectReference: {fileID: 8300000, guid: c52d16ab256550d4686f99031b872126, type: 3}
     - target: {fileID: 2718509646157779260, guid: 3733f0a021c195b419ec5dffe09a2984, type: 3}
       propertyPath: transitionTime
       value: 4
