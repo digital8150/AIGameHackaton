@@ -36,13 +36,13 @@ Material:
     - _HoleR: 7
     - _HoleY: 22
     - _Holes: 0
-    - _MarginX: 46
+    - _MarginX: 50
     - _Pad: 30
     - _Rings: 1
-    - _RuleBottom: 30
-    - _RuleSpacing: 56
-    - _RuleTop: 60
-    - _Seed: 7.3
+    - _RuleBottom: 40
+    - _RuleSpacing: 72
+    - _RuleTop: 104
+    - _Seed: 5.7
     - _Shadow: 0.6
     - _ShadowBlur: 14
     - _Stain: 0.5
@@ -52,7 +52,7 @@ Material:
     - _StencilReadMask: 255
     - _StencilWriteMask: 255
     - _Tape: 1
-    - _TapeAngle: -4
+    - _TapeAngle: 3
     - _TornTop: 9
     m_Colors:
     - _AgedColor: {r: 0.5, g: 0.35999998, b: 0.21999997, a: 1}
@@ -64,6 +64,6 @@ Material:
     - _ShadowOffset: {r: 6, g: -10, b: 0, a: 0}
     - _Size: {r: 900, g: 720, b: 0, a: 0}
     - _TapeColor: {r: 0.86, g: 0.8, b: 0.6399999, a: 0.55}
-    - _TapeRect: {r: 0, g: 2, b: 120, a: 30}
+    - _TapeRect: {r: -20, g: 2, b: 130, a: 30}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
