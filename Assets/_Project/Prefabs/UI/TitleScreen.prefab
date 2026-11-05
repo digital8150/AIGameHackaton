@@ -556,146 +556,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!1 &2473303043927747412
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 5712710767039687422}
-  - component: {fileID: 5770250954879562742}
-  - component: {fileID: 2313085030019077794}
-  - component: {fileID: 7257676490580171370}
-  - component: {fileID: 8767248925017930793}
-  m_Layer: 0
-  m_Name: Prince
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &5712710767039687422
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2473303043927747412}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 8396125158497443818}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 0}
-  m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: 271.67996, y: -430}
-  m_SizeDelta: {x: 1057.8799, y: 1157.5199}
-  m_Pivot: {x: 1, y: 0}
---- !u!222 &5770250954879562742
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2473303043927747412}
-  m_CullTransparentMesh: 1
---- !u!114 &2313085030019077794
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2473303043927747412}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bcaeff66ab2770546b755d26840f245f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::DuskTwilight.TitleLayer
-  parallax: {x: 26, y: 10}
-  parallaxEase: 3
-  sway: {x: 2, y: 6}
-  swaySpeed: 0.18
-  breatheScale: 0.004
-  phase: 1.7
-  introScale: 1
-  introOffset: {x: 60, y: -20}
-  revealGraphic: {fileID: 7257676490580171370}
-  revealProperty: _Reveal
-  revealCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    - serializedVersion: 3
-      time: 1
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  fadeCanvasGroup: 0
---- !u!114 &7257676490580171370
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2473303043927747412}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1344c3c82d62a2a41a3576d8abb8e3ea, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.RawImage
-  m_Material: {fileID: 2100000, guid: 432cac2c0b2cca04c90c0d9443c07f62, type: 2}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 0
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Texture: {fileID: 2800000, guid: ef7729a9e6fe856478c98b42e70ca6a3, type: 3}
-  m_UVRect:
-    serializedVersion: 2
-    x: 0.0003058104
-    y: 0.9094514
-    width: 0.0762997
-    height: 0.09021811
---- !u!114 &8767248925017930793
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2473303043927747412}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 46b7112193e74374bb559ec28e470698, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::DuskTwilight.TitleSpriteSheet
-  columns: 13
-  frameCount: 143
-  frameSize: {x: 499, y: 546}
-  gutter: 2
-  fps: 24
-  startFrame: 0
-  pingPong: 0
 --- !u!1 &3111063840142772263
 GameObject:
   m_ObjectHideFlags: 0
@@ -710,7 +570,7 @@ GameObject:
   - component: {fileID: 7773886864702259074}
   - component: {fileID: 7234142407884111902}
   m_Layer: 0
-  m_Name: Princess
+  m_Name: Duo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -730,11 +590,11 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 8396125158497443818}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: -30, y: -430}
-  m_SizeDelta: {x: 843.75995, y: 1151.1599}
-  m_Pivot: {x: 0, y: 0}
+  m_AnchorMin: {x: 1, y: 0}
+  m_AnchorMax: {x: 1, y: 0}
+  m_AnchoredPosition: {x: 60, y: -330}
+  m_SizeDelta: {x: 1110.2362, y: 1000}
+  m_Pivot: {x: 1, y: 0}
 --- !u!222 &2654962064382730658
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -802,7 +662,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1344c3c82d62a2a41a3576d8abb8e3ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.RawImage
-  m_Material: {fileID: 2100000, guid: ab86adf525e935244a8ba285400408af, type: 2}
+  m_Material: {fileID: 2100000, guid: ba39ac86422109844b6ead73c7782416, type: 2}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
@@ -810,13 +670,13 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 2800000, guid: a3c28dbe3f479704dad28107289fa7a7, type: 3}
+  m_Texture: {fileID: 2800000, guid: 0313c530b3378f946a746ae0d990ebcc, type: 3}
   m_UVRect:
     serializedVersion: 2
-    x: 0.00033156498
-    y: 0.90040207
-    width: 0.06598143
-    height: 0.09923246
+    x: 0.00029342723
+    y: 0.9169922
+    width: 0.082746476
+    height: 0.08268229
 --- !u!114 &7234142407884111902
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -829,9 +689,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46b7112193e74374bb559ec28e470698, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DuskTwilight.TitleSpriteSheet
-  columns: 15
-  frameCount: 144
-  frameSize: {x: 398, y: 543}
+  columns: 12
+  frameCount: 133
+  frameSize: {x: 564, y: 508}
   gutter: 2
   fps: 24
   startFrame: 0
@@ -872,7 +732,6 @@ RectTransform:
   - {fileID: 5247148854307604988}
   - {fileID: 8212807129065594524}
   - {fileID: 216756145694095549}
-  - {fileID: 5712710767039687422}
   - {fileID: 6770381639025911935}
   - {fileID: 1086992855442815992}
   - {fileID: 2095806011756536971}
@@ -967,6 +826,13 @@ MonoBehaviour:
   musicParam: MusicVolume
   sfxParam: SfxVolume
   sweepInterval: 0.5
+  sameClipMinGap: 0.06
+  sameClipMaxStack: 3
+  stackAttenuation: 0.7
+  stackWindow: 0.4
+  masterLimiter: 1
+  limiterCeilingDb: -1.5
+  limiterReleaseMs: 150
 --- !u!114 &5207330527299134886
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -981,8 +847,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DuskTwilight.TitleScreen
   backdrop: {fileID: 2578621244812906537}
   embers: {fileID: 2359697447796476918}
-  princess: {fileID: 1846389087124567351}
-  prince: {fileID: 2313085030019077794}
+  duo: {fileID: 1846389087124567351}
   logo: {fileID: 5166561991063012261}
   menu: {fileID: 9106406644865214865}
   startButton: {fileID: 4314926463876878483}
@@ -994,7 +859,6 @@ MonoBehaviour:
   backdropTime: 2.4
   portraitDelay: 0.8
   portraitTime: 2.2
-  portraitStagger: 0.35
   logoDelay: 1.8
   menuDelay: 3.6
   menuTime: 0.9

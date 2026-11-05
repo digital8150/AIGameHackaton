@@ -1,0 +1,3575 @@
+fileFormatVersion: 2
+guid: 0313c530b3378f946a746ae0d990ebcc
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -6593620213294126576
+    second: Title_Duo_Idle_0
+  - first:
+      213: -5320456013240797260
+    second: Title_Duo_Idle_1
+  - first:
+      213: -5153125063932834739
+    second: Title_Duo_Idle_2
+  - first:
+      213: 838510484185570053
+    second: Title_Duo_Idle_3
+  - first:
+      213: -5325871240768308422
+    second: Title_Duo_Idle_4
+  - first:
+      213: -7696323604955680715
+    second: Title_Duo_Idle_5
+  - first:
+      213: 7855572657586689486
+    second: Title_Duo_Idle_6
+  - first:
+      213: 4033597305441366741
+    second: Title_Duo_Idle_7
+  - first:
+      213: -5768173621237383768
+    second: Title_Duo_Idle_8
+  - first:
+      213: -2595307870218865652
+    second: Title_Duo_Idle_9
+  - first:
+      213: 7450372891444776332
+    second: Title_Duo_Idle_10
+  - first:
+      213: -9223183629604703598
+    second: Title_Duo_Idle_11
+  - first:
+      213: -2939544893377076580
+    second: Title_Duo_Idle_12
+  - first:
+      213: -998663488324379692
+    second: Title_Duo_Idle_13
+  - first:
+      213: 6226258866019943890
+    second: Title_Duo_Idle_14
+  - first:
+      213: 1610568017803741728
+    second: Title_Duo_Idle_15
+  - first:
+      213: 4788789336879788393
+    second: Title_Duo_Idle_16
+  - first:
+      213: -1710264647780531315
+    second: Title_Duo_Idle_17
+  - first:
+      213: -1137225763986547674
+    second: Title_Duo_Idle_18
+  - first:
+      213: 4067906236754752172
+    second: Title_Duo_Idle_19
+  - first:
+      213: -5524805115510634335
+    second: Title_Duo_Idle_20
+  - first:
+      213: -7619415325523269779
+    second: Title_Duo_Idle_21
+  - first:
+      213: -5986122145154236573
+    second: Title_Duo_Idle_22
+  - first:
+      213: -8280273619375951013
+    second: Title_Duo_Idle_23
+  - first:
+      213: 78964359922292557
+    second: Title_Duo_Idle_24
+  - first:
+      213: 2516863542030181434
+    second: Title_Duo_Idle_25
+  - first:
+      213: 8553826131145175284
+    second: Title_Duo_Idle_26
+  - first:
+      213: -1229950056247790566
+    second: Title_Duo_Idle_27
+  - first:
+      213: -6095272847379565134
+    second: Title_Duo_Idle_28
+  - first:
+      213: 2459116342638233140
+    second: Title_Duo_Idle_29
+  - first:
+      213: 2312492812704014654
+    second: Title_Duo_Idle_30
+  - first:
+      213: -7962773545636648981
+    second: Title_Duo_Idle_31
+  - first:
+      213: 3605745473938022404
+    second: Title_Duo_Idle_32
+  - first:
+      213: -914993871540917786
+    second: Title_Duo_Idle_33
+  - first:
+      213: 4989083263760410280
+    second: Title_Duo_Idle_34
+  - first:
+      213: -8197244776821383110
+    second: Title_Duo_Idle_35
+  - first:
+      213: -5956185913690024485
+    second: Title_Duo_Idle_36
+  - first:
+      213: 8758480610607357473
+    second: Title_Duo_Idle_37
+  - first:
+      213: -5642048226409649703
+    second: Title_Duo_Idle_38
+  - first:
+      213: -3763051524350021834
+    second: Title_Duo_Idle_39
+  - first:
+      213: -3622931520954064180
+    second: Title_Duo_Idle_40
+  - first:
+      213: -4676081421997891396
+    second: Title_Duo_Idle_41
+  - first:
+      213: 7078251027543325115
+    second: Title_Duo_Idle_42
+  - first:
+      213: 7999068001854661389
+    second: Title_Duo_Idle_43
+  - first:
+      213: 5327705166199888931
+    second: Title_Duo_Idle_44
+  - first:
+      213: -5400645054465301743
+    second: Title_Duo_Idle_45
+  - first:
+      213: 3049220497032186595
+    second: Title_Duo_Idle_46
+  - first:
+      213: 3800678939070004492
+    second: Title_Duo_Idle_47
+  - first:
+      213: -1085230223798794828
+    second: Title_Duo_Idle_48
+  - first:
+      213: 2554645899589964692
+    second: Title_Duo_Idle_49
+  - first:
+      213: 6837591700166962005
+    second: Title_Duo_Idle_50
+  - first:
+      213: -6964337046046307937
+    second: Title_Duo_Idle_51
+  - first:
+      213: 8440011303548819528
+    second: Title_Duo_Idle_52
+  - first:
+      213: 1740016746359821802
+    second: Title_Duo_Idle_53
+  - first:
+      213: -5456176744932138809
+    second: Title_Duo_Idle_54
+  - first:
+      213: -8476313422513742495
+    second: Title_Duo_Idle_55
+  - first:
+      213: -1354673839893342005
+    second: Title_Duo_Idle_56
+  - first:
+      213: -942610175740443669
+    second: Title_Duo_Idle_57
+  - first:
+      213: 690106719521294587
+    second: Title_Duo_Idle_58
+  - first:
+      213: -2993641193424588487
+    second: Title_Duo_Idle_59
+  - first:
+      213: 5367964278596227879
+    second: Title_Duo_Idle_60
+  - first:
+      213: -2010387187304079675
+    second: Title_Duo_Idle_61
+  - first:
+      213: -4509752137063491885
+    second: Title_Duo_Idle_62
+  - first:
+      213: -5138765753970736061
+    second: Title_Duo_Idle_63
+  - first:
+      213: 4510981337864692337
+    second: Title_Duo_Idle_64
+  - first:
+      213: -2994950282034255405
+    second: Title_Duo_Idle_65
+  - first:
+      213: -207894261413545357
+    second: Title_Duo_Idle_66
+  - first:
+      213: 5067820298854853579
+    second: Title_Duo_Idle_67
+  - first:
+      213: -1300932398076848050
+    second: Title_Duo_Idle_68
+  - first:
+      213: 6590529492663912638
+    second: Title_Duo_Idle_69
+  - first:
+      213: -3141724489991546292
+    second: Title_Duo_Idle_70
+  - first:
+      213: -5366486683407291355
+    second: Title_Duo_Idle_71
+  - first:
+      213: 5212387475612595593
+    second: Title_Duo_Idle_72
+  - first:
+      213: 2448048288584309880
+    second: Title_Duo_Idle_73
+  - first:
+      213: 8519618986813197181
+    second: Title_Duo_Idle_74
+  - first:
+      213: 7214849060585328524
+    second: Title_Duo_Idle_75
+  - first:
+      213: 6933031594105874073
+    second: Title_Duo_Idle_76
+  - first:
+      213: -6842712638333375264
+    second: Title_Duo_Idle_77
+  - first:
+      213: -8917039546728946429
+    second: Title_Duo_Idle_78
+  - first:
+      213: 7783814433767676791
+    second: Title_Duo_Idle_79
+  - first:
+      213: -4317967326078911750
+    second: Title_Duo_Idle_80
+  - first:
+      213: -9021733326660554653
+    second: Title_Duo_Idle_81
+  - first:
+      213: -2006561485919790314
+    second: Title_Duo_Idle_82
+  - first:
+      213: -8036572118972921659
+    second: Title_Duo_Idle_83
+  - first:
+      213: 7693845639239134735
+    second: Title_Duo_Idle_84
+  - first:
+      213: -40879196024427572
+    second: Title_Duo_Idle_85
+  - first:
+      213: -3001864122346161822
+    second: Title_Duo_Idle_86
+  - first:
+      213: 2311338795621095227
+    second: Title_Duo_Idle_87
+  - first:
+      213: 7939871446273292018
+    second: Title_Duo_Idle_88
+  - first:
+      213: -5014283612888287939
+    second: Title_Duo_Idle_89
+  - first:
+      213: 2459622500007198273
+    second: Title_Duo_Idle_90
+  - first:
+      213: 5737410071210509710
+    second: Title_Duo_Idle_91
+  - first:
+      213: 7975140741249248592
+    second: Title_Duo_Idle_92
+  - first:
+      213: 5594131345884328349
+    second: Title_Duo_Idle_93
+  - first:
+      213: -7490712574533836612
+    second: Title_Duo_Idle_94
+  - first:
+      213: -1034591094223274879
+    second: Title_Duo_Idle_95
+  - first:
+      213: -1898878215093732296
+    second: Title_Duo_Idle_96
+  - first:
+      213: 8426538164814212566
+    second: Title_Duo_Idle_97
+  - first:
+      213: -428039184237882583
+    second: Title_Duo_Idle_98
+  - first:
+      213: 9112791060943623498
+    second: Title_Duo_Idle_99
+  - first:
+      213: -3819493725567479706
+    second: Title_Duo_Idle_100
+  - first:
+      213: 6846240080751953828
+    second: Title_Duo_Idle_101
+  - first:
+      213: 6405877985601421933
+    second: Title_Duo_Idle_102
+  - first:
+      213: 6077645311097183245
+    second: Title_Duo_Idle_103
+  - first:
+      213: -1665785462716399066
+    second: Title_Duo_Idle_104
+  - first:
+      213: -7387348169350164478
+    second: Title_Duo_Idle_105
+  - first:
+      213: 2133995196207442151
+    second: Title_Duo_Idle_106
+  - first:
+      213: -8836267274965039531
+    second: Title_Duo_Idle_107
+  - first:
+      213: -7488875620352546447
+    second: Title_Duo_Idle_108
+  - first:
+      213: -2175868865970554104
+    second: Title_Duo_Idle_109
+  - first:
+      213: -2606339188851728142
+    second: Title_Duo_Idle_110
+  - first:
+      213: 6299756099454913140
+    second: Title_Duo_Idle_111
+  - first:
+      213: -775451330121483488
+    second: Title_Duo_Idle_112
+  - first:
+      213: -7716844541468580677
+    second: Title_Duo_Idle_113
+  - first:
+      213: 853867709250419229
+    second: Title_Duo_Idle_114
+  - first:
+      213: -8103559043274716361
+    second: Title_Duo_Idle_115
+  - first:
+      213: 5736822607736570325
+    second: Title_Duo_Idle_116
+  - first:
+      213: 6397714114132813985
+    second: Title_Duo_Idle_117
+  - first:
+      213: -8145036677599264104
+    second: Title_Duo_Idle_118
+  - first:
+      213: -6699587745479778654
+    second: Title_Duo_Idle_119
+  - first:
+      213: -12835434726374225
+    second: Title_Duo_Idle_120
+  - first:
+      213: 8443092506418848276
+    second: Title_Duo_Idle_121
+  - first:
+      213: -1425801721022434434
+    second: Title_Duo_Idle_122
+  - first:
+      213: 6885946267769996528
+    second: Title_Duo_Idle_123
+  - first:
+      213: 266341915342842283
+    second: Title_Duo_Idle_124
+  - first:
+      213: 8293064839960753793
+    second: Title_Duo_Idle_125
+  - first:
+      213: 3813585027024612940
+    second: Title_Duo_Idle_126
+  - first:
+      213: 5080605762887564403
+    second: Title_Duo_Idle_127
+  - first:
+      213: -6198605202331192822
+    second: Title_Duo_Idle_128
+  - first:
+      213: 1499352255298907347
+    second: Title_Duo_Idle_129
+  - first:
+      213: -7076654141958458972
+    second: Title_Duo_Idle_130
+  - first:
+      213: 3821949059504223146
+    second: Title_Duo_Idle_131
+  - first:
+      213: 1448225224896114622
+    second: Title_Duo_Idle_132
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 0
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Title_Duo_Idle_0
+      rect:
+        serializedVersion: 2
+        x: 117
+        y: 5636
+        width: 365
+        height: 498
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 01aa4cab951ce74a0800000000000000
+      internalID: -6593620213294126576
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Title_Duo_Idle_1
+      rect:
+        serializedVersion: 2
+        x: 685
+        y: 5636
+        width: 365
+        height: 498
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4b7f0b7e171f926b0800000000000000
+      internalID: -5320456013240797260
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Title_Duo_Idle_2
+      rect:
+        serializedVersion: 2
+        x: 1253
+        y: 5636
+        width: 366
+        height: 498
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d4c0f198e0c6c78b0800000000000000
+      internalID: -5153125063932834739
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Title_Duo_Idle_3
+      rect:
+        serializedVersion: 2
+        x: 1819
+        y: 5636
+        width: 368
+        height: 499
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 50b525eb7dcf2ab00800000000000000
+      internalID: 838510484185570053
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Title_Duo_Idle_4
+      rect:
+        serializedVersion: 2
+        x: 2387
+        y: 5636
+        width: 368
+        height: 499
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a3b398ef254b616b0800000000000000
+      internalID: -5325871240768308422
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Title_Duo_Idle_5
+      rect:
+        serializedVersion: 2
+        x: 2953
+        y: 5636
+        width: 371
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 530b92a457a213590800000000000000
+      internalID: -7696323604955680715
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Title_Duo_Idle_6
+      rect:
+        serializedVersion: 2
+        x: 3521
+        y: 5636
+        width: 371
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ec5d9b226b9940d60800000000000000
+      internalID: 7855572657586689486
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Title_Duo_Idle_7
+      rect:
+        serializedVersion: 2
+        x: 4085
+        y: 5636
+        width: 375
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5d23ecdd0673af730800000000000000
+      internalID: 4033597305441366741
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Title_Duo_Idle_8
+      rect:
+        serializedVersion: 2
+        x: 4654
+        y: 5636
+        width: 375
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8adfd5f07a453ffa0800000000000000
+      internalID: -5768173621237383768
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Title_Duo_Idle_9
+      rect:
+        serializedVersion: 2
+        x: 5218
+        y: 5636
+        width: 380
+        height: 501
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c0434d81e3d9bfbd0800000000000000
+      internalID: -2595307870218865652
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Title_Duo_Idle_10
+      rect:
+        serializedVersion: 2
+        x: 5786
+        y: 5636
+        width: 380
+        height: 502
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c8d04c6cbaa056760800000000000000
+      internalID: 7450372891444776332
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Title_Duo_Idle_11
+      rect:
+        serializedVersion: 2
+        x: 6349
+        y: 5636
+        width: 386
+        height: 502
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 292b63bfa5ba00080800000000000000
+      internalID: -9223183629604703598
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Title_Duo_Idle_12
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 5124
+        width: 386
+        height: 502
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c9222fc6e73a437d0800000000000000
+      internalID: -2939544893377076580
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Title_Duo_Idle_13
+      rect:
+        serializedVersion: 2
+        x: 663
+        y: 5124
+        width: 393
+        height: 503
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4dbd54839d80422f0800000000000000
+      internalID: -998663488324379692
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Title_Duo_Idle_14
+      rect:
+        serializedVersion: 2
+        x: 1230
+        y: 5124
+        width: 394
+        height: 503
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2d5ceb4537d186650800000000000000
+      internalID: 6226258866019943890
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Title_Duo_Idle_15
+      rect:
+        serializedVersion: 2
+        x: 1793
+        y: 5124
+        width: 400
+        height: 503
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 02a0ccb3413e95610800000000000000
+      internalID: 1610568017803741728
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Title_Duo_Idle_16
+      rect:
+        serializedVersion: 2
+        x: 2362
+        y: 5124
+        width: 399
+        height: 503
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 961f5e0a782357240800000000000000
+      internalID: 4788789336879788393
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Title_Duo_Idle_17
+      rect:
+        serializedVersion: 2
+        x: 2925
+        y: 5124
+        width: 405
+        height: 503
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d83022d3d5be348e0800000000000000
+      internalID: -1710264647780531315
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Title_Duo_Idle_18
+      rect:
+        serializedVersion: 2
+        x: 3493
+        y: 5124
+        width: 405
+        height: 503
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 62cd8246133c730f0800000000000000
+      internalID: -1137225763986547674
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Title_Duo_Idle_19
+      rect:
+        serializedVersion: 2
+        x: 4058
+        y: 5124
+        width: 409
+        height: 503
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ca2fc5d6b2b147830800000000000000
+      internalID: 4067906236754752172
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Title_Duo_Idle_20
+      rect:
+        serializedVersion: 2
+        x: 4626
+        y: 5124
+        width: 409
+        height: 503
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1a84ab4e403f353b0800000000000000
+      internalID: -5524805115510634335
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Title_Duo_Idle_21
+      rect:
+        serializedVersion: 2
+        x: 5192
+        y: 5124
+        width: 412
+        height: 503
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d67a40e7126624690800000000000000
+      internalID: -7619415325523269779
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Title_Duo_Idle_22
+      rect:
+        serializedVersion: 2
+        x: 5760
+        y: 5124
+        width: 411
+        height: 503
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 36f7bf3ff950deca0800000000000000
+      internalID: -5986122145154236573
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Title_Duo_Idle_23
+      rect:
+        serializedVersion: 2
+        x: 6326
+        y: 5124
+        width: 414
+        height: 503
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b53fe02930f861d80800000000000000
+      internalID: -8280273619375951013
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Title_Duo_Idle_24
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 4612
+        width: 413
+        height: 504
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d47951fbaa9881100800000000000000
+      internalID: 78964359922292557
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Title_Duo_Idle_25
+      rect:
+        serializedVersion: 2
+        x: 647
+        y: 4612
+        width: 416
+        height: 502
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a3427da7e02bde220800000000000000
+      internalID: 2516863542030181434
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Title_Duo_Idle_26
+      rect:
+        serializedVersion: 2
+        x: 1215
+        y: 4612
+        width: 416
+        height: 502
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4f0bc51db8b45b670800000000000000
+      internalID: 8553826131145175284
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Title_Duo_Idle_27
+      rect:
+        serializedVersion: 2
+        x: 1786
+        y: 4612
+        width: 415
+        height: 502
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a14f0edb0f65eeee0800000000000000
+      internalID: -1229950056247790566
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Title_Duo_Idle_28
+      rect:
+        serializedVersion: 2
+        x: 2353
+        y: 4612
+        width: 415
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2b57bd2b3ad396ba0800000000000000
+      internalID: -6095272847379565134
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Title_Duo_Idle_29
+      rect:
+        serializedVersion: 2
+        x: 2924
+        y: 4612
+        width: 415
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4364f40e849802220800000000000000
+      internalID: 2459116342638233140
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Title_Duo_Idle_30
+      rect:
+        serializedVersion: 2
+        x: 3491
+        y: 4612
+        width: 416
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e31edd606ff971020800000000000000
+      internalID: 2312492812704014654
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Title_Duo_Idle_31
+      rect:
+        serializedVersion: 2
+        x: 4061
+        y: 4611
+        width: 416
+        height: 501
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: be7237916ab8e7190800000000000000
+      internalID: -7962773545636648981
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Title_Duo_Idle_32
+      rect:
+        serializedVersion: 2
+        x: 4630
+        y: 4612
+        width: 415
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4006c8c876e2a0230800000000000000
+      internalID: 3605745473938022404
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Title_Duo_Idle_33
+      rect:
+        serializedVersion: 2
+        x: 5196
+        y: 4612
+        width: 420
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6e9e423fbe94d43f0800000000000000
+      internalID: -914993871540917786
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Title_Duo_Idle_34
+      rect:
+        serializedVersion: 2
+        x: 5765
+        y: 4612
+        width: 419
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8a6294b8bc8cc3540800000000000000
+      internalID: 4989083263760410280
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Title_Duo_Idle_35
+      rect:
+        serializedVersion: 2
+        x: 6331
+        y: 4611
+        width: 424
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a30a2ac6e498d3e80800000000000000
+      internalID: -8197244776821383110
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Title_Duo_Idle_36
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 4099
+        width: 425
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bd5125ef770675da0800000000000000
+      internalID: -5956185913690024485
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Title_Duo_Idle_37
+      rect:
+        serializedVersion: 2
+        x: 645
+        y: 4099
+        width: 434
+        height: 501
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 12ed56ff5bf5c8970800000000000000
+      internalID: 8758480610607357473
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Title_Duo_Idle_38
+      rect:
+        serializedVersion: 2
+        x: 1213
+        y: 4099
+        width: 435
+        height: 501
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9d9ea3be70b63b1b0800000000000000
+      internalID: -5642048226409649703
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Title_Duo_Idle_39
+      rect:
+        serializedVersion: 2
+        x: 1776
+        y: 4099
+        width: 442
+        height: 501
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 63fef9b7394f6cbc0800000000000000
+      internalID: -3763051524350021834
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Title_Duo_Idle_40
+      rect:
+        serializedVersion: 2
+        x: 2337
+        y: 4100
+        width: 453
+        height: 501
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cc2a7ff0af2c8bdc0800000000000000
+      internalID: -3622931520954064180
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Title_Duo_Idle_41
+      rect:
+        serializedVersion: 2
+        x: 2900
+        y: 4100
+        width: 463
+        height: 501
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cb0230db8b83b1fb0800000000000000
+      internalID: -4676081421997891396
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Title_Duo_Idle_42
+      rect:
+        serializedVersion: 2
+        x: 3468
+        y: 4100
+        width: 463
+        height: 501
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bb973cfaecffa3260800000000000000
+      internalID: 7078251027543325115
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Title_Duo_Idle_43
+      rect:
+        serializedVersion: 2
+        x: 4027
+        y: 4100
+        width: 478
+        height: 501
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d03adb087f5620f60800000000000000
+      internalID: 7999068001854661389
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Title_Duo_Idle_44
+      rect:
+        serializedVersion: 2
+        x: 4596
+        y: 4100
+        width: 477
+        height: 501
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 32c9b5b0f9fcfe940800000000000000
+      internalID: 5327705166199888931
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Title_Duo_Idle_45
+      rect:
+        serializedVersion: 2
+        x: 5154
+        y: 4100
+        width: 495
+        height: 501
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 11320a2dfed0d05b0800000000000000
+      internalID: -5400645054465301743
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Title_Duo_Idle_46
+      rect:
+        serializedVersion: 2
+        x: 5722
+        y: 4099
+        width: 495
+        height: 502
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3ea8177f2e1015a20800000000000000
+      internalID: 3049220497032186595
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Title_Duo_Idle_47
+      rect:
+        serializedVersion: 2
+        x: 6280
+        y: 4100
+        width: 511
+        height: 501
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c0d7394bb59beb430800000000000000
+      internalID: 3800678939070004492
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Title_Duo_Idle_48
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 3588
+        width: 511
+        height: 501
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4b584fa7cdc70f0f0800000000000000
+      internalID: -1085230223798794828
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Title_Duo_Idle_49
+      rect:
+        serializedVersion: 2
+        x: 590
+        y: 3588
+        width: 529
+        height: 501
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 493d7fb19ece37320800000000000000
+      internalID: 2554645899589964692
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Title_Duo_Idle_50
+      rect:
+        serializedVersion: 2
+        x: 1159
+        y: 3588
+        width: 528
+        height: 501
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 55b6c979c6104ee50800000000000000
+      internalID: 6837591700166962005
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Title_Duo_Idle_51
+      rect:
+        serializedVersion: 2
+        x: 1718
+        y: 3587
+        width: 538
+        height: 502
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f990152fa54b95f90800000000000000
+      internalID: -6964337046046307937
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Title_Duo_Idle_52
+      rect:
+        serializedVersion: 2
+        x: 2286
+        y: 3587
+        width: 538
+        height: 503
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8481f404091f02570800000000000000
+      internalID: 8440011303548819528
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Title_Duo_Idle_53
+      rect:
+        serializedVersion: 2
+        x: 2848
+        y: 3588
+        width: 542
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ae512060308c52810800000000000000
+      internalID: 1740016746359821802
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Title_Duo_Idle_54
+      rect:
+        serializedVersion: 2
+        x: 3416
+        y: 3587
+        width: 542
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7c0a2969824c744b0800000000000000
+      internalID: -5456176744932138809
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Title_Duo_Idle_55
+      rect:
+        serializedVersion: 2
+        x: 3979
+        y: 3587
+        width: 542
+        height: 501
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 16d51360ad51e5a80800000000000000
+      internalID: -8476313422513742495
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Title_Duo_Idle_56
+      rect:
+        serializedVersion: 2
+        x: 4550
+        y: 3588
+        width: 530
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bc894aae15b333de0800000000000000
+      internalID: -1354673839893342005
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Title_Duo_Idle_57
+      rect:
+        serializedVersion: 2
+        x: 5119
+        y: 3587
+        width: 525
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: be382511a0d2be2f0800000000000000
+      internalID: -942610175740443669
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Title_Duo_Idle_58
+      rect:
+        serializedVersion: 2
+        x: 5690
+        y: 3588
+        width: 503
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bf84d22b760c39900800000000000000
+      internalID: 690106719521294587
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Title_Duo_Idle_59
+      rect:
+        serializedVersion: 2
+        x: 6257
+        y: 3588
+        width: 505
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 93173f012337476d0800000000000000
+      internalID: -2993641193424588487
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Title_Duo_Idle_60
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 3076
+        width: 484
+        height: 501
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 723d6b81217de7a40800000000000000
+      internalID: 5367964278596227879
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Title_Duo_Idle_61
+      rect:
+        serializedVersion: 2
+        x: 581
+        y: 3076
+        width: 485
+        height: 501
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5ce5ebf218ba914e0800000000000000
+      internalID: -2010387187304079675
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Title_Duo_Idle_62
+      rect:
+        serializedVersion: 2
+        x: 1157
+        y: 3076
+        width: 472
+        height: 502
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3d6954533542a61c0800000000000000
+      internalID: -4509752137063491885
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Title_Duo_Idle_63
+      rect:
+        serializedVersion: 2
+        x: 1724
+        y: 3075
+        width: 473
+        height: 503
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 344c1aae5cf6fa8b0800000000000000
+      internalID: -5138765753970736061
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Title_Duo_Idle_64
+      rect:
+        serializedVersion: 2
+        x: 2298
+        y: 3076
+        width: 467
+        height: 504
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 17267d760a93a9e30800000000000000
+      internalID: 4510981337864692337
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Title_Duo_Idle_65
+      rect:
+        serializedVersion: 2
+        x: 2866
+        y: 3076
+        width: 468
+        height: 503
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3d9646f169ccf66d0800000000000000
+      internalID: -2994950282034255405
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Title_Duo_Idle_66
+      rect:
+        serializedVersion: 2
+        x: 3434
+        y: 3076
+        width: 473
+        height: 503
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 37a7a9d45496d1df0800000000000000
+      internalID: -207894261413545357
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Title_Duo_Idle_67
+      rect:
+        serializedVersion: 2
+        x: 4002
+        y: 3075
+        width: 473
+        height: 505
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bcbe1ca16b3845640800000000000000
+      internalID: 5067820298854853579
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Title_Duo_Idle_68
+      rect:
+        serializedVersion: 2
+        x: 4565
+        y: 3076
+        width: 490
+        height: 504
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e4815d760e822fde0800000000000000
+      internalID: -1300932398076848050
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Title_Duo_Idle_69
+      rect:
+        serializedVersion: 2
+        x: 5133
+        y: 3076
+        width: 491
+        height: 504
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eb8c7fbc7a3467b50800000000000000
+      internalID: 6590529492663912638
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Title_Duo_Idle_70
+      rect:
+        serializedVersion: 2
+        x: 5694
+        y: 3076
+        width: 508
+        height: 504
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c4a98efc83a5664d0800000000000000
+      internalID: -3141724489991546292
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Title_Duo_Idle_71
+      rect:
+        serializedVersion: 2
+        x: 6262
+        y: 3076
+        width: 508
+        height: 504
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 52ce4a75bc86685b0800000000000000
+      internalID: -5366486683407291355
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Title_Duo_Idle_72
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 2564
+        width: 532
+        height: 503
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 985759beace165840800000000000000
+      internalID: 5212387475612595593
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Title_Duo_Idle_73
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 2564
+        width: 531
+        height: 503
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 87c121ab2f639f120800000000000000
+      internalID: 2448048288584309880
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Title_Duo_Idle_74
+      rect:
+        serializedVersion: 2
+        x: 1142
+        y: 2564
+        width: 548
+        height: 504
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d7b8ca26454cb3670800000000000000
+      internalID: 8519618986813197181
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Title_Duo_Idle_75
+      rect:
+        serializedVersion: 2
+        x: 1709
+        y: 2563
+        width: 548
+        height: 505
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c8fcf34aefa402460800000000000000
+      internalID: 7214849060585328524
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Title_Duo_Idle_76
+      rect:
+        serializedVersion: 2
+        x: 2279
+        y: 2564
+        width: 554
+        height: 504
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 996ad378083173060800000000000000
+      internalID: 6933031594105874073
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Title_Duo_Idle_77
+      rect:
+        serializedVersion: 2
+        x: 2847
+        y: 2563
+        width: 554
+        height: 505
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0ec20141c1dc901a0800000000000000
+      internalID: -6842712638333375264
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Title_Duo_Idle_78
+      rect:
+        serializedVersion: 2
+        x: 3421
+        y: 2564
+        width: 552
+        height: 504
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3056c19d6cf404480800000000000000
+      internalID: -8917039546728946429
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Title_Duo_Idle_79
+      rect:
+        serializedVersion: 2
+        x: 3988
+        y: 2563
+        width: 553
+        height: 505
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 77bd742bcf9a50c60800000000000000
+      internalID: 7783814433767676791
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Title_Duo_Idle_80
+      rect:
+        serializedVersion: 2
+        x: 4564
+        y: 2564
+        width: 541
+        height: 503
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: afab251389f7314c0800000000000000
+      internalID: -4317967326078911750
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Title_Duo_Idle_81
+      rect:
+        serializedVersion: 2
+        x: 5138
+        y: 2564
+        width: 531
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 360381ea65d5cc280800000000000000
+      internalID: -9021733326660554653
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Title_Duo_Idle_82
+      rect:
+        serializedVersion: 2
+        x: 5706
+        y: 2564
+        width: 531
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 61b55c3b5f24724e0800000000000000
+      internalID: -2006561485919790314
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Title_Duo_Idle_83
+      rect:
+        serializedVersion: 2
+        x: 6283
+        y: 2564
+        width: 517
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5c88fc4cc3c587090800000000000000
+      internalID: -8036572118972921659
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Title_Duo_Idle_84
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 2052
+        width: 501
+        height: 499
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f0e698b58d706ca60800000000000000
+      internalID: 7693845639239134735
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Title_Duo_Idle_85
+      rect:
+        serializedVersion: 2
+        x: 610
+        y: 2052
+        width: 502
+        height: 498
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ccba24a7694ce6ff0800000000000000
+      internalID: -40879196024427572
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Title_Duo_Idle_86
+      rect:
+        serializedVersion: 2
+        x: 1189
+        y: 2052
+        width: 480
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 269319b3c7c3756d0800000000000000
+      internalID: -3001864122346161822
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Title_Duo_Idle_87
+      rect:
+        serializedVersion: 2
+        x: 1765
+        y: 2051
+        width: 459
+        height: 501
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b37139c7366831020800000000000000
+      internalID: 2311338795621095227
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Title_Duo_Idle_88
+      rect:
+        serializedVersion: 2
+        x: 2333
+        y: 2052
+        width: 459
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2f6f26d5307103e60800000000000000
+      internalID: 7939871446273292018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Title_Duo_Idle_89
+      rect:
+        serializedVersion: 2
+        x: 2909
+        y: 2052
+        width: 438
+        height: 498
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d353bb2fe9fa96ab0800000000000000
+      internalID: -5014283612888287939
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Title_Duo_Idle_90
+      rect:
+        serializedVersion: 2
+        x: 3487
+        y: 2052
+        width: 413
+        height: 499
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 14ebc72d1a5522220800000000000000
+      internalID: 2459622500007198273
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Title_Duo_Idle_91
+      rect:
+        serializedVersion: 2
+        x: 4059
+        y: 2052
+        width: 398
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e854049cf006f9f40800000000000000
+      internalID: 5737410071210509710
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Title_Duo_Idle_92
+      rect:
+        serializedVersion: 2
+        x: 4628
+        y: 2052
+        width: 396
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 05d28e300446dae60800000000000000
+      internalID: 7975140741249248592
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Title_Duo_Idle_93
+      rect:
+        serializedVersion: 2
+        x: 5194
+        y: 2052
+        width: 389
+        height: 501
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d913052f1d852ad40800000000000000
+      internalID: 5594131345884328349
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Title_Duo_Idle_94
+      rect:
+        serializedVersion: 2
+        x: 5762
+        y: 2052
+        width: 389
+        height: 501
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cb0eb58d994ab0890800000000000000
+      internalID: -7490712574533836612
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Title_Duo_Idle_95
+      rect:
+        serializedVersion: 2
+        x: 6320
+        y: 2052
+        width: 395
+        height: 502
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 18cf90d91e464a1f0800000000000000
+      internalID: -1034591094223274879
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Title_Duo_Idle_96
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 1540
+        width: 395
+        height: 502
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 83c3c95f254d5a5e0800000000000000
+      internalID: -1898878215093732296
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Title_Duo_Idle_97
+      rect:
+        serializedVersion: 2
+        x: 628
+        y: 1540
+        width: 414
+        height: 502
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6dde500b0d311f470800000000000000
+      internalID: 8426538164814212566
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Title_Duo_Idle_98
+      rect:
+        serializedVersion: 2
+        x: 1196
+        y: 1540
+        width: 414
+        height: 502
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9239d8931ac4f0af0800000000000000
+      internalID: -428039184237882583
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Title_Duo_Idle_99
+      rect:
+        serializedVersion: 2
+        x: 1750
+        y: 1540
+        width: 440
+        height: 503
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a4556e33033277e70800000000000000
+      internalID: 9112791060943623498
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Title_Duo_Idle_100
+      rect:
+        serializedVersion: 2
+        x: 2317
+        y: 1540
+        width: 441
+        height: 504
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 66097b171be6efac0800000000000000
+      internalID: -3819493725567479706
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Title_Duo_Idle_101
+      rect:
+        serializedVersion: 2
+        x: 2873
+        y: 1539
+        width: 467
+        height: 504
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4a7034c941bb20f50800000000000000
+      internalID: 6846240080751953828
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Title_Duo_Idle_102
+      rect:
+        serializedVersion: 2
+        x: 3441
+        y: 1540
+        width: 467
+        height: 503
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d62844e861046e850800000000000000
+      internalID: 6405877985601421933
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Title_Duo_Idle_103
+      rect:
+        serializedVersion: 2
+        x: 3998
+        y: 1540
+        width: 493
+        height: 504
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d0c14cea532285450800000000000000
+      internalID: 6077645311097183245
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Title_Duo_Idle_104
+      rect:
+        serializedVersion: 2
+        x: 4565
+        y: 1540
+        width: 494
+        height: 504
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 62287c682f0f1e8e0800000000000000
+      internalID: -1665785462716399066
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Title_Duo_Idle_105
+      rect:
+        serializedVersion: 2
+        x: 5123
+        y: 1540
+        width: 523
+        height: 504
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 20050c5dafdda7990800000000000000
+      internalID: -7387348169350164478
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Title_Duo_Idle_106
+      rect:
+        serializedVersion: 2
+        x: 5691
+        y: 1540
+        width: 523
+        height: 504
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7e8a55613597d9d10800000000000000
+      internalID: 2133995196207442151
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Title_Duo_Idle_107
+      rect:
+        serializedVersion: 2
+        x: 6253
+        y: 1540
+        width: 547
+        height: 505
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 556cc4fdab54f5580800000000000000
+      internalID: -8836267274965039531
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Title_Duo_Idle_108
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 1028
+        width: 546
+        height: 504
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 179adc11d4b221890800000000000000
+      internalID: -7488875620352546447
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Title_Duo_Idle_109
+      rect:
+        serializedVersion: 2
+        x: 572
+        y: 1027
+        width: 558
+        height: 505
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 80b3efd6bc2cdc1e0800000000000000
+      internalID: -2175868865970554104
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Title_Duo_Idle_110
+      rect:
+        serializedVersion: 2
+        x: 1144
+        y: 1028
+        width: 553
+        height: 504
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2f02054115c64dbd0800000000000000
+      internalID: -2606339188851728142
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Title_Duo_Idle_111
+      rect:
+        serializedVersion: 2
+        x: 1712
+        y: 1028
+        width: 553
+        height: 504
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 47a4c9f7bca3d6750800000000000000
+      internalID: 6299756099454913140
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Title_Duo_Idle_112
+      rect:
+        serializedVersion: 2
+        x: 2285
+        y: 1027
+        width: 545
+        height: 505
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 02b318faf1b0d35f0800000000000000
+      internalID: -775451330121483488
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Title_Duo_Idle_113
+      rect:
+        serializedVersion: 2
+        x: 2854
+        y: 1028
+        width: 542
+        height: 502
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bb46ade66c248e490800000000000000
+      internalID: -7716844541468580677
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Title_Duo_Idle_114
+      rect:
+        serializedVersion: 2
+        x: 3430
+        y: 1028
+        width: 526
+        height: 504
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d1a3c07582c89db00800000000000000
+      internalID: 853867709250419229
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Title_Duo_Idle_115
+      rect:
+        serializedVersion: 2
+        x: 3998
+        y: 1028
+        width: 526
+        height: 502
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 73bc4311cff5a8f80800000000000000
+      internalID: -8103559043274716361
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Title_Duo_Idle_116
+      rect:
+        serializedVersion: 2
+        x: 4574
+        y: 1028
+        width: 509
+        height: 504
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5d1819944c94d9f40800000000000000
+      internalID: 5736822607736570325
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Title_Duo_Idle_117
+      rect:
+        serializedVersion: 2
+        x: 5142
+        y: 1028
+        width: 509
+        height: 502
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1a8a36b171f39c850800000000000000
+      internalID: 6397714114132813985
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Title_Duo_Idle_118
+      rect:
+        serializedVersion: 2
+        x: 5719
+        y: 1028
+        width: 489
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8920b25cb4407fe80800000000000000
+      internalID: -8145036677599264104
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Title_Duo_Idle_119
+      rect:
+        serializedVersion: 2
+        x: 6287
+        y: 1028
+        width: 489
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2ae1e1101784603a0800000000000000
+      internalID: -6699587745479778654
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Title_Duo_Idle_120
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 516
+        width: 471
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fa4c8987d3662dff0800000000000000
+      internalID: -12835434726374225
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Title_Duo_Idle_121
+      rect:
+        serializedVersion: 2
+        x: 615
+        y: 516
+        width: 470
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 412abd2b6e3eb2570800000000000000
+      internalID: 8443092506418848276
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Title_Duo_Idle_122
+      rect:
+        serializedVersion: 2
+        x: 1192
+        y: 516
+        width: 451
+        height: 499
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e73315293e8863ce0800000000000000
+      internalID: -1425801721022434434
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Title_Duo_Idle_123
+      rect:
+        serializedVersion: 2
+        x: 1760
+        y: 516
+        width: 450
+        height: 499
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0f48bd0b5abcf8f50800000000000000
+      internalID: 6885946267769996528
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Title_Duo_Idle_124
+      rect:
+        serializedVersion: 2
+        x: 2337
+        y: 516
+        width: 434
+        height: 499
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ba9aec49f8c32b300800000000000000
+      internalID: 266341915342842283
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Title_Duo_Idle_125
+      rect:
+        serializedVersion: 2
+        x: 2904
+        y: 516
+        width: 435
+        height: 499
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 186742d8882e61370800000000000000
+      internalID: 8293064839960753793
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Title_Duo_Idle_126
+      rect:
+        serializedVersion: 2
+        x: 3482
+        y: 516
+        width: 418
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c4eec8870639ce430800000000000000
+      internalID: 3813585027024612940
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Title_Duo_Idle_127
+      rect:
+        serializedVersion: 2
+        x: 4051
+        y: 516
+        width: 417
+        height: 498
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 37c37bce500f18640800000000000000
+      internalID: 5080605762887564403
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Title_Duo_Idle_128
+      rect:
+        serializedVersion: 2
+        x: 4629
+        y: 516
+        width: 403
+        height: 498
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a02392cf8612af9a0800000000000000
+      internalID: -6198605202331192822
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Title_Duo_Idle_129
+      rect:
+        serializedVersion: 2
+        x: 5197
+        y: 516
+        width: 403
+        height: 498
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3dca54aaee4cec410800000000000000
+      internalID: 1499352255298907347
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Title_Duo_Idle_130
+      rect:
+        serializedVersion: 2
+        x: 5778
+        y: 516
+        width: 388
+        height: 498
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4a1f4463d8caacd90800000000000000
+      internalID: -7076654141958458972
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Title_Duo_Idle_131
+      rect:
+        serializedVersion: 2
+        x: 6345
+        y: 516
+        width: 388
+        height: 498
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aa333698b6a4a0530800000000000000
+      internalID: 3821949059504223146
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Title_Duo_Idle_132
+      rect:
+        serializedVersion: 2
+        x: 109
+        y: 4
+        width: 374
+        height: 498
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ebf61b44b21291410800000000000000
+      internalID: 1448225224896114622
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Title_Duo_Idle_0: -6593620213294126576
+      Title_Duo_Idle_1: -5320456013240797260
+      Title_Duo_Idle_10: 7450372891444776332
+      Title_Duo_Idle_100: -3819493725567479706
+      Title_Duo_Idle_101: 6846240080751953828
+      Title_Duo_Idle_102: 6405877985601421933
+      Title_Duo_Idle_103: 6077645311097183245
+      Title_Duo_Idle_104: -1665785462716399066
+      Title_Duo_Idle_105: -7387348169350164478
+      Title_Duo_Idle_106: 2133995196207442151
+      Title_Duo_Idle_107: -8836267274965039531
+      Title_Duo_Idle_108: -7488875620352546447
+      Title_Duo_Idle_109: -2175868865970554104
+      Title_Duo_Idle_11: -9223183629604703598
+      Title_Duo_Idle_110: -2606339188851728142
+      Title_Duo_Idle_111: 6299756099454913140
+      Title_Duo_Idle_112: -775451330121483488
+      Title_Duo_Idle_113: -7716844541468580677
+      Title_Duo_Idle_114: 853867709250419229
+      Title_Duo_Idle_115: -8103559043274716361
+      Title_Duo_Idle_116: 5736822607736570325
+      Title_Duo_Idle_117: 6397714114132813985
+      Title_Duo_Idle_118: -8145036677599264104
+      Title_Duo_Idle_119: -6699587745479778654
+      Title_Duo_Idle_12: -2939544893377076580
+      Title_Duo_Idle_120: -12835434726374225
+      Title_Duo_Idle_121: 8443092506418848276
+      Title_Duo_Idle_122: -1425801721022434434
+      Title_Duo_Idle_123: 6885946267769996528
+      Title_Duo_Idle_124: 266341915342842283
+      Title_Duo_Idle_125: 8293064839960753793
+      Title_Duo_Idle_126: 3813585027024612940
+      Title_Duo_Idle_127: 5080605762887564403
+      Title_Duo_Idle_128: -6198605202331192822
+      Title_Duo_Idle_129: 1499352255298907347
+      Title_Duo_Idle_13: -998663488324379692
+      Title_Duo_Idle_130: -7076654141958458972
+      Title_Duo_Idle_131: 3821949059504223146
+      Title_Duo_Idle_132: 1448225224896114622
+      Title_Duo_Idle_14: 6226258866019943890
+      Title_Duo_Idle_15: 1610568017803741728
+      Title_Duo_Idle_16: 4788789336879788393
+      Title_Duo_Idle_17: -1710264647780531315
+      Title_Duo_Idle_18: -1137225763986547674
+      Title_Duo_Idle_19: 4067906236754752172
+      Title_Duo_Idle_2: -5153125063932834739
+      Title_Duo_Idle_20: -5524805115510634335
+      Title_Duo_Idle_21: -7619415325523269779
+      Title_Duo_Idle_22: -5986122145154236573
+      Title_Duo_Idle_23: -8280273619375951013
+      Title_Duo_Idle_24: 78964359922292557
+      Title_Duo_Idle_25: 2516863542030181434
+      Title_Duo_Idle_26: 8553826131145175284
+      Title_Duo_Idle_27: -1229950056247790566
+      Title_Duo_Idle_28: -6095272847379565134
+      Title_Duo_Idle_29: 2459116342638233140
+      Title_Duo_Idle_3: 838510484185570053
+      Title_Duo_Idle_30: 2312492812704014654
+      Title_Duo_Idle_31: -7962773545636648981
+      Title_Duo_Idle_32: 3605745473938022404
+      Title_Duo_Idle_33: -914993871540917786
+      Title_Duo_Idle_34: 4989083263760410280
+      Title_Duo_Idle_35: -8197244776821383110
+      Title_Duo_Idle_36: -5956185913690024485
+      Title_Duo_Idle_37: 8758480610607357473
+      Title_Duo_Idle_38: -5642048226409649703
+      Title_Duo_Idle_39: -3763051524350021834
+      Title_Duo_Idle_4: -5325871240768308422
+      Title_Duo_Idle_40: -3622931520954064180
+      Title_Duo_Idle_41: -4676081421997891396
+      Title_Duo_Idle_42: 7078251027543325115
+      Title_Duo_Idle_43: 7999068001854661389
+      Title_Duo_Idle_44: 5327705166199888931
+      Title_Duo_Idle_45: -5400645054465301743
+      Title_Duo_Idle_46: 3049220497032186595
+      Title_Duo_Idle_47: 3800678939070004492
+      Title_Duo_Idle_48: -1085230223798794828
+      Title_Duo_Idle_49: 2554645899589964692
+      Title_Duo_Idle_5: -7696323604955680715
+      Title_Duo_Idle_50: 6837591700166962005
+      Title_Duo_Idle_51: -6964337046046307937
+      Title_Duo_Idle_52: 8440011303548819528
+      Title_Duo_Idle_53: 1740016746359821802
+      Title_Duo_Idle_54: -5456176744932138809
+      Title_Duo_Idle_55: -8476313422513742495
+      Title_Duo_Idle_56: -1354673839893342005
+      Title_Duo_Idle_57: -942610175740443669
+      Title_Duo_Idle_58: 690106719521294587
+      Title_Duo_Idle_59: -2993641193424588487
+      Title_Duo_Idle_6: 7855572657586689486
+      Title_Duo_Idle_60: 5367964278596227879
+      Title_Duo_Idle_61: -2010387187304079675
+      Title_Duo_Idle_62: -4509752137063491885
+      Title_Duo_Idle_63: -5138765753970736061
+      Title_Duo_Idle_64: 4510981337864692337
+      Title_Duo_Idle_65: -2994950282034255405
+      Title_Duo_Idle_66: -207894261413545357
+      Title_Duo_Idle_67: 5067820298854853579
+      Title_Duo_Idle_68: -1300932398076848050
+      Title_Duo_Idle_69: 6590529492663912638
+      Title_Duo_Idle_7: 4033597305441366741
+      Title_Duo_Idle_70: -3141724489991546292
+      Title_Duo_Idle_71: -5366486683407291355
+      Title_Duo_Idle_72: 5212387475612595593
+      Title_Duo_Idle_73: 2448048288584309880
+      Title_Duo_Idle_74: 8519618986813197181
+      Title_Duo_Idle_75: 7214849060585328524
+      Title_Duo_Idle_76: 6933031594105874073
+      Title_Duo_Idle_77: -6842712638333375264
+      Title_Duo_Idle_78: -8917039546728946429
+      Title_Duo_Idle_79: 7783814433767676791
+      Title_Duo_Idle_8: -5768173621237383768
+      Title_Duo_Idle_80: -4317967326078911750
+      Title_Duo_Idle_81: -9021733326660554653
+      Title_Duo_Idle_82: -2006561485919790314
+      Title_Duo_Idle_83: -8036572118972921659
+      Title_Duo_Idle_84: 7693845639239134735
+      Title_Duo_Idle_85: -40879196024427572
+      Title_Duo_Idle_86: -3001864122346161822
+      Title_Duo_Idle_87: 2311338795621095227
+      Title_Duo_Idle_88: 7939871446273292018
+      Title_Duo_Idle_89: -5014283612888287939
+      Title_Duo_Idle_9: -2595307870218865652
+      Title_Duo_Idle_90: 2459622500007198273
+      Title_Duo_Idle_91: 5737410071210509710
+      Title_Duo_Idle_92: 7975140741249248592
+      Title_Duo_Idle_93: 5594131345884328349
+      Title_Duo_Idle_94: -7490712574533836612
+      Title_Duo_Idle_95: -1034591094223274879
+      Title_Duo_Idle_96: -1898878215093732296
+      Title_Duo_Idle_97: 8426538164814212566
+      Title_Duo_Idle_98: -428039184237882583
+      Title_Duo_Idle_99: 9112791060943623498
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,6 +1,7 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.Serialization;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
@@ -16,8 +17,8 @@ namespace DuskTwilight
         [Header("Layers")]
         public TitleLayer backdrop;
         public TitleLayer embers;
-        public TitleLayer princess;
-        public TitleLayer prince;
+        [Tooltip("The prince and princess back to back (one sprite-sheet loop).")]
+        [FormerlySerializedAs("princess")] public TitleLayer duo;
         public TitleLogo logo;
 
         [Header("Menu")]
@@ -37,8 +38,6 @@ namespace DuskTwilight
         [Range(0f, 5f)] public float backdropTime = 2.4f;
         [Range(0f, 5f)] public float portraitDelay = 0.8f;
         [Range(0.1f, 5f)] public float portraitTime = 2.2f;
-        [Tooltip("Gap between the princess and the prince appearing.")]
-        [Range(0f, 2f)] public float portraitStagger = 0.35f;
         [Range(0f, 5f)] public float logoDelay = 1.8f;
         [Range(0f, 5f)] public float menuDelay = 3.6f;
         [Range(0.1f, 3f)] public float menuTime = 0.9f;
@@ -86,8 +85,7 @@ namespace DuskTwilight
 
             if (backdrop) backdrop.Reveal(backdropTime);
             if (embers) embers.Reveal(backdropTime * 1.5f, backdropTime * 0.5f);
-            if (princess) princess.Reveal(portraitTime, portraitDelay);
-            if (prince) prince.Reveal(portraitTime, portraitDelay + portraitStagger);
+            if (duo) duo.Reveal(portraitTime, portraitDelay);
 
             float t = 0f;
             bool logoStarted = false;
@@ -105,7 +103,7 @@ namespace DuskTwilight
             FinishIntro();
         }
 
-        TitleLayer[] Layers => new[] { backdrop, embers, princess, prince };
+        TitleLayer[] Layers => new[] { backdrop, embers, duo };
 
         void FinishIntro()
         {
