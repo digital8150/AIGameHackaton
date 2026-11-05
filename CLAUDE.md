@@ -35,7 +35,6 @@ Unity 6000.3 · URP 2D Renderer · Input System only · 기획서: Claude Docs "
 - Git Bash에서 `unity command`에 `/경로` 인자를 넘길 땐 `MSYS_NO_PATHCONV=1`.
 - 타일맵을 eval로 다시 칠한 뒤에는 `TilemapCollider2D`를 껐다 켜고 `CompositeCollider2D.GenerateGeometry()` — 안 하면 이전(복사 원본) 충돌 형태가 남는다. 플레이 모드에서 레이캐스트로 확인.
 - 튜토리얼 문구는 플레이어용 조작·이야기만. F1/F2·디렉터 같은 개발 기능은 가르치지 않는다.
-- PPU 18, Point 필터, 무압축. 셰이더의 월드 좌표 효과는 1/18 그리드로 스냅.
 - 공주(빛) 감각에서는 소리가 없다 — 소리 정보는 반드시 시각(진동선/자막)으로도 제공.
 
 ## Git (필수)
