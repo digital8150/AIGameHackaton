@@ -111,7 +111,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.14, y: 1.14, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 772186662231005520}
@@ -544,7 +544,7 @@ MonoBehaviour:
   jumpFall: {x: 18, y: 27}
   jumpLand: {x: 28, y: 40}
   landFps: 36
-  sheetFacesLeft: 1
+  sheetFacesLeft: 0
   footsteps:
   - {fileID: 8300000, guid: f624db947ee3402429e4ceba8e8938b5, type: 3}
   - {fileID: 8300000, guid: 2abf0dee6b1ec97439c6b95715434c16, type: 3}
