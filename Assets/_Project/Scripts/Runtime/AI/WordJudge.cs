@@ -111,6 +111,7 @@ namespace DuskTwilight
         {
             string w = WordTarget.Clean(spoken);
             if (w.Length == 0) return new StretchResult { source = "폴백" };
+            if (LooksHeavy(spoken)) return new StretchResult { stretch = StretchKind.None, confidence = 1f, source = "단어" };
             bool l = false, s = false;
             foreach (var p in LongPieces) if (w.Contains(p)) l = true;
             foreach (var p in ShortPieces) if (w.Contains(p)) s = true;
@@ -145,6 +146,26 @@ namespace DuskTwilight
         static readonly string[] HeavyAnswers = { "무겁게", "관계없음" };
         static readonly Dictionary<string, StretchResult> heavyCache = new Dictionary<string, StretchResult>();
         static readonly string[] HeavyPieces = { "무거", "무겁", "묵직", "떨어", "내려", "가라앉", "추락", "아래로", "쿵" };
+
+        static readonly string[] HeavyOnlyPieces = { "무거", "무겁", "묵직", "떨어", "가라앉", "추락", "쿵", "내려와", "내려오" };
+
+        /// <summary>Clearly about weight / falling (not length).</summary>
+        public static bool LooksHeavy(string spoken)
+        {
+            string w = WordTarget.Clean(spoken);
+            foreach (var p in HeavyOnlyPieces) if (w.Contains(p)) return true;
+            return false;
+        }
+
+        /// <summary>Clearly about length (and not about weight).</summary>
+        public static bool LooksStretch(string spoken)
+        {
+            if (LooksHeavy(spoken)) return false;
+            string w = WordTarget.Clean(spoken);
+            foreach (var p in LongPieces) if (w.Contains(p)) return true;
+            foreach (var p in ShortPieces) if (p != "내려" && p != "아래로" && w.Contains(p)) return true;
+            return false;
+        }
 
         /// <summary>Heavy → <see cref="StretchKind.Short"/> (the stone drops), otherwise None.</summary>
         public static async Task<StretchResult> JudgeHeavyAsync(string spoken)

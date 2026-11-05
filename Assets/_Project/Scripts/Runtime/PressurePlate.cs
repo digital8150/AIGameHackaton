@@ -63,7 +63,7 @@ namespace DuskTwilight
         bool BoxOn()
         {
             var hits = Physics2D.OverlapBoxAll((Vector2)transform.position + Vector2.up * 0.3f, new Vector2(width * 0.9f, 0.4f), 0f);
-            foreach (var h in hits) if (h && h.GetComponentInParent<PushBox>()) return true;
+            foreach (var h in hits) if (h && (h.GetComponentInParent<PushBox>() || h.GetComponentInParent<HeavyStone>())) return true;
             return false;
         }
 

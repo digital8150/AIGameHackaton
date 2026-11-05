@@ -119,8 +119,24 @@ namespace DuskTwilight
             text = Clean(text);
             if (text.Length == 0) return;
             if (speakClip) sfx.PlayLimited(speakClip, 0.6f);
+            // the words go to the nearest thing they mean something to ("무거워져" passes a bridge by for the stone)
+            if (!Understands(text) && DuoController.I)
+            {
+                var p = DuoController.I.Leader.transform.position;
+                WordTarget best = null; float bestD = float.MaxValue;
+                foreach (var t in FindObjectsByType<WordTarget>(FindObjectsSortMode.None))
+                {
+                    if (t == this || t.Solved || !t.CanSpeakNow || !t.Understands(text)) continue;
+                    float d = t.ReachScore(p);
+                    if (d >= 0 && d < bestD) { bestD = d; best = t; }
+                }
+                if (best) { best.OnSpoken(text); return; }
+            }
             OnSpoken(text);
         }
+
+        /// <summary>False when the words are clearly meant for another kind of object (then the nearest one that understands gets them).</summary>
+        protected virtual bool Understands(string text) => true;
 
         protected abstract void OnSpoken(string text);
 

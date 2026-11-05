@@ -129,6 +129,8 @@ namespace DuskTwilight
             return d <= hearDistance ? d : -1f;
         }
 
+        protected override bool Understands(string text) => !WordJudge.LooksStretch(text);
+
         protected override void OnSpoken(string text)
         {
             if (judging || Fallen || Hidden) return;

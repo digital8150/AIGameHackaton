@@ -59,6 +59,8 @@ namespace DuskTwilight
             return d <= hearDistance ? d : -1f;
         }
 
+        protected override bool Understands(string text) => !WordJudge.LooksHeavy(text);
+
         protected override void OnSpoken(string text)
         {
             if (judging) return;

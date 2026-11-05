@@ -10,6 +10,8 @@ namespace DuskTwilight
         public Renderer glow;
         [Tooltip("How close (X) the grounded leader must come to light it.")]
         public float reach = 0.8f;
+        [Tooltip("How close (Y) — another floor of a tall stage doesn't count.")]
+        public float reachHeight = 1.5f;
         [Tooltip("Respawn point, relative to the post.")]
         public Vector2 respawnOffset = new Vector2(0, 0.1f);
         public float echoStrength = 0.8f;
@@ -19,7 +21,8 @@ namespace DuskTwilight
         {
             var duo = DuoController.I;
             if (!duo || lit) return;
-            if (Mathf.Abs(duo.Leader.transform.position.x - transform.position.x) < reach && duo.Leader.Grounded)
+            var lp = duo.Leader.transform.position;
+            if (Mathf.Abs(lp.x - transform.position.x) < reach && Mathf.Abs(lp.y - transform.position.y) < reachHeight && duo.Leader.Grounded)
             {
                 lit = true;
                 GameFlow.I.SetCheckpoint((Vector2)transform.position + respawnOffset, zone);
