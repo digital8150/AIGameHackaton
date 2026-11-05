@@ -72,3 +72,52 @@ A wide continuous band of densely packed paper-cutout undergrowth, bushes and fe
 no humans, -3::1girl, 1boy, human::, game asset, paper cutout prop, {{black background, simple background}}, -3::sparse, single stem, potted plant::,
 {{large lush rounded bush clump}}, many overlapping layers of leaves, ferns and grass spilling out at the sides, a few small pale flowers, full and heavy foliage mass, intricate pen cross-hatching, deep sepia and dark plum tones,
 A single big overgrown fairytale shrub, wide and full, for the front parallax layer of a 2D side-scroller, drawn in a vintage kamishibai paper-theater style with dense pen hatching, isolated on a solid black background.
+
+---
+
+## 10. 갈대·부들 덤불 (Reeds & Cattails — 3:2 가로, 2단계 호수)
+no humans, -3::1girl, 1boy, human::, game asset, paper cutout prop, {{black background, simple background}}, -3::sparse, single stem, pot::,
+{{thick clump of lake reeds and cattails}}, tall stems leaning in the wind, brown cattail heads, feathery reed plumes, broad blades, intricate pen cross-hatching, deep sepia and dark plum tones, rose-gold light on the tips,
+A full clump of lakeside reeds and cattails for the front parallax layer of a 2D side-scroller, drawn in a vintage kamishibai paper-theater style with dense pen hatching, isolated on a solid black background.
+
+---
+
+## 11. 늘어진 버들가지 (Willow Strands — 21:9 가로, 2단계 호수)
+no humans, -3::1girl, 1boy, human::, game asset, paper cutout prop, {{black background, simple background}}, horizontal composition, -3::trunk, ground, sky::,
+{{curtain of long thin willow strands hanging from the top edge}}, slender drooping twigs with narrow leaves, uneven lengths, swaying, intricate pen cross-hatching, deep sepia and dark plum tones, a few amber leaves,
+A curtain of weeping willow strands hanging down from the top edge for the front parallax layer of a 2D side-scroller, drawn in a vintage kamishibai paper-theater style with dense pen hatching, isolated on a solid black background.
+
+---
+
+## 12. 늘어진 종유석 (Hanging Stalactites — 21:9 가로, 3단계 동굴)
+no humans, -3::1girl, 1boy, human::, game asset, paper cutout prop, {{black background, simple background}}, horizontal composition, -3::sky, trees, plants::,
+{{row of stalactites hanging from a rocky ceiling along the top edge}}, pointed mineral icicles of different lengths, wet glints, a solid rock band at the very top, intricate pen cross-hatching, deep sepia and dark plum tones, cool slate and violet,
+A row of cave stalactites hanging down from the top edge for the front parallax layer of a 2D side-scroller, drawn in a vintage kamishibai paper-theater style with dense pen hatching, isolated on a solid black background.
+
+---
+
+## 13. 빛나는 수정 무리 (Glowing Crystal Cluster — 3:2 가로, 3단계 동굴)
+no humans, -3::1girl, 1boy, human::, game asset, paper cutout prop, {{black background, simple background}}, -3::jewelry, ring, plants::,
+{{cluster of large pale crystals growing from dark rock}}, hexagonal shards of different sizes, faint inner violet and ice-blue glow, soft light on the rock, intricate pen cross-hatching, deep sepia and dark plum tones, cool slate,
+A cluster of glowing cave crystals on a dark rock base for the front parallax layer of a 2D side-scroller, drawn in a vintage kamishibai paper-theater style with dense pen hatching, isolated on a solid black background.
+
+---
+
+## 14. 동굴 버섯 덤불 (Cave Mushrooms & Moss — 3:2 가로, 3단계 동굴)
+no humans, -3::1girl, 1boy, human::, game asset, paper cutout prop, {{black background, simple background}}, -3::forest, sky, person::,
+{{clump of pale glowing cave mushrooms and moss}}, thin-stemmed mushrooms with soft lavender caps, tiny spores floating, damp moss and small ferns at the base, intricate pen cross-hatching, deep sepia and dark plum tones, faint violet glow,
+A clump of glowing cave mushrooms and moss for the front parallax layer of a 2D side-scroller, drawn in a vintage kamishibai paper-theater style with dense pen hatching, isolated on a solid black background.
+
+---
+
+## 15. 가시 장미 덤불 (Thorny Rose Bramble — 3:2 가로, 4단계 황혼의 문)
+no humans, -3::1girl, 1boy, human::, game asset, paper cutout prop, {{black background, simple background}}, -3::vase, bouquet, sky::,
+{{wild thorny rose bramble}}, twisting thorned stems, a few dusky rose blooms and buds, dark leaves, tangled and full, intricate pen cross-hatching, deep sepia and dark plum tones, deep rose accents,
+A thick wild rose bramble with thorns for the front parallax layer of a 2D side-scroller, drawn in a vintage kamishibai paper-theater style with dense pen hatching, isolated on a solid black background.
+
+---
+
+## 16. 해진 깃발 (Tattered Banner — 2:3 세로, 4단계 황혼의 문)
+no humans, -3::1girl, 1boy, human::, game asset, paper cutout prop, {{black background, simple background}}, vertical composition, -3::text, letters, emblem text, people::,
+{{tattered cloth banner hanging from an iron rod}}, frayed torn bottom edge, faded sun and crescent moon emblem, gentle folds, intricate pen cross-hatching, deep sepia and dark plum tones, faded gold and dusky violet cloth,
+A single tattered fairytale banner hanging from the top for the front parallax layer of a 2D side-scroller, drawn in a vintage kamishibai paper-theater style with dense pen hatching, isolated on a solid black background.

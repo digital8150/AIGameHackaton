@@ -25,6 +25,36 @@ no humans, -3::1girl, 1boy, human::, wide shot, scenery, horizontal composition,
 {{vast fairytale cave interior}}, {{layered paper theater backdrop, kamishibai stage scenery}}, hanging stalactites and stone columns receding into darkness, pale mineral glints, a faint violet glow from deep inside, dripping water lines, low contrast, dusty violet, deep plum and cool slate tones,
 A wide, dim 2D side-scrolling background of an echoing storybook cave, crafted like layered cut paper with heavy pencil hatching and vintage storybook texture, almost black at the edges with soft light only in the far center.
 
+### 1-J. 중경: 호숫가 버드나무 (Lakeside Willow — 2:3 세로)
+no humans, -3::1girl, 1boy, human::, game asset, paper cutout prop, {{black background, simple background}}, vertical composition, -2::forest, multiple trees::,
+{{single old weeping willow tree}}, long drooping branches like a curtain, leaning trunk with exposed roots on a small bank, sparse amber leaves catching sunset light, intricate pen cross-hatching, sepia and dark plum tones, rose-gold rim light,
+A single storybook weeping willow standing by a lake for the middle parallax layer of a 2D side-scroller, drawn in a vintage kamishibai paper-theater style with dense pen hatching, isolated on a solid black background.
+
+### 1-K. 중경: 갈대숲 띠 (Reed Bed Band — 21:9 가로)
+no humans, -3::1girl, 1boy, human::, game asset, paper cutout prop, {{black background, simple background}}, horizontal composition, -3::sky, water, frame, border::,
+{{dense band of tall lake reeds and cattails}}, feathery reed plumes of different heights, slender leaves, packed along the whole width, solid at the bottom edge, intricate pen cross-hatching, sepia and dark plum tones, warm sunset glow on the tips,
+A wide continuous strip of lakeside reeds for a 2D parallax middle layer, drawn in a vintage kamishibai paper-theater style with dense pen hatching, isolated on a solid black background.
+
+### 1-L. 중경: 종유석 기둥 (Cave Column — 2:3 세로)
+no humans, -3::1girl, 1boy, human::, game asset, paper cutout prop, {{black background, simple background}}, vertical composition, -3::sky, tree, building::,
+{{tall natural cave column where a stalactite meets a stalagmite}}, dripping mineral folds, narrow waist, wet glints, small crystals at the base, intricate pen cross-hatching, sepia and dark plum tones, cool slate and dusty violet,
+A single tall limestone cave column for the middle parallax layer of a 2D side-scroller, drawn in a vintage kamishibai paper-theater style with dense pen hatching, isolated on a solid black background.
+
+### 1-M. 중경: 동굴 바위 띠 (Cave Rock Band — 21:9 가로)
+no humans, -3::1girl, 1boy, human::, game asset, paper cutout prop, {{black background, simple background}}, horizontal composition, -3::sky, trees, grass, frame::,
+{{continuous band of cave rocks and stalagmites}}, jagged pointed silhouettes of different heights, boulders and mineral spires packed along the whole width, solid at the bottom edge, intricate pen cross-hatching, sepia and dark plum tones, cool slate and dusty violet,
+A wide continuous strip of cave floor rock formations for a 2D parallax middle layer, drawn in a vintage kamishibai paper-theater style with dense pen hatching, isolated on a solid black background.
+
+### 1-N. 중경: 무너진 성벽 띠 (Ruined Castle Wall Band — 21:9 가로)
+no humans, -3::1girl, 1boy, human::, game asset, paper cutout prop, {{black background, simple background}}, horizontal composition, -3::sky, people, frame::,
+{{long ruined fairytale castle wall}}, crumbling battlements, broken arched windows, ivy and small trees growing from the cracks, uneven top edge, solid at the bottom edge, intricate pen cross-hatching, sepia and dark plum tones, warm dusk rim light,
+A wide continuous strip of a ruined storybook castle wall for a 2D parallax middle layer, drawn in a vintage kamishibai paper-theater style with dense pen hatching, isolated on a solid black background.
+
+### 1-O. 중경: 부서진 기둥 (Broken Column — 2:3 세로)
+no humans, -3::1girl, 1boy, human::, game asset, paper cutout prop, {{black background, simple background}}, vertical composition, -3::sky, people, statue head::,
+{{single broken classical stone column}}, snapped top with fallen drum pieces at the base, carved sun and moon reliefs, creeping ivy with faded gold leaves, intricate pen cross-hatching, sepia and dark plum tones, weathered ivory stone,
+A single ruined stone column for the middle parallax layer of a 2D side-scroller, drawn in a vintage kamishibai paper-theater style with dense pen hatching, isolated on a solid black background.
+
 ### 1-B. 중경: 종이연극 고목 숲 레이어 (Midground Cutout Forest Layer — 21:9 와이드 권장)
 no humans, -3::1girl, 1boy, human::, wide shot, horizontal composition, {{black background, simple background}}, -3::frame, border, rectangular panel, framed picture, backdrop board::,
 {{row of separate paper cutout tree silhouettes}}, uneven twisted fairytale trees of different heights with gaps of empty space between them, a broken stone arch among the trunks, hanging vines, ragged irregular silhouette edges, intricate pen cross-hatching on tree bark, sepia and dark plum tones,

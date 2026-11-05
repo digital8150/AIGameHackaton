@@ -1,0 +1,1001 @@
+fileFormatVersion: 2
+guid: 2fad9291aefde5e4fbe73872a33972ba
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 172650836398910237
+    second: Env_FG_MushroomB_0
+  - first:
+      213: -4150312475916769460
+    second: Env_FG_MushroomB_1
+  - first:
+      213: -2068169186529126325
+    second: Env_FG_MushroomB_2
+  - first:
+      213: 596948073956616388
+    second: Env_FG_MushroomB_3
+  - first:
+      213: -6860327908185541326
+    second: Env_FG_MushroomB_4
+  - first:
+      213: 4261078832411198313
+    second: Env_FG_MushroomB_5
+  - first:
+      213: -5383723159826646816
+    second: Env_FG_MushroomB_6
+  - first:
+      213: 2873183896215453171
+    second: Env_FG_MushroomB_7
+  - first:
+      213: -4857790870245786947
+    second: Env_FG_MushroomB_8
+  - first:
+      213: -4140873416637072095
+    second: Env_FG_MushroomB_9
+  - first:
+      213: 4658641733972328615
+    second: Env_FG_MushroomB_10
+  - first:
+      213: 8709406707594313439
+    second: Env_FG_MushroomB_11
+  - first:
+      213: -6190520007088794186
+    second: Env_FG_MushroomB_12
+  - first:
+      213: -4075780923905624534
+    second: Env_FG_MushroomB_13
+  - first:
+      213: -3082901196674830749
+    second: Env_FG_MushroomB_14
+  - first:
+      213: 3332357519349142062
+    second: Env_FG_MushroomB_15
+  - first:
+      213: 4963249262656101529
+    second: Env_FG_MushroomB_16
+  - first:
+      213: 7332755949105478612
+    second: Env_FG_MushroomB_17
+  - first:
+      213: -3909569864363096315
+    second: Env_FG_MushroomB_18
+  - first:
+      213: -1502721387986984542
+    second: Env_FG_MushroomB_19
+  - first:
+      213: -8457162508983672858
+    second: Env_FG_MushroomB_20
+  - first:
+      213: -2687139931888006448
+    second: Env_FG_MushroomB_21
+  - first:
+      213: 3202583014920760894
+    second: Env_FG_MushroomB_22
+  - first:
+      213: 7846164570201268290
+    second: Env_FG_MushroomB_23
+  - first:
+      213: 7152356618517665662
+    second: Env_FG_MushroomB_24
+  - first:
+      213: 202610895951202321
+    second: Env_FG_MushroomB_25
+  - first:
+      213: -870650573407391596
+    second: Env_FG_MushroomB_26
+  - first:
+      213: -1997533777976459310
+    second: Env_FG_MushroomB_27
+  - first:
+      213: 5918613922477763016
+    second: Env_FG_MushroomB_28
+  - first:
+      213: -5355772844913885135
+    second: Env_FG_MushroomB_29
+  - first:
+      213: 2692100835679678724
+    second: Env_FG_MushroomB_30
+  - first:
+      213: 2448307041597011277
+    second: Env_FG_MushroomB_31
+  - first:
+      213: 2525147895792258347
+    second: Env_FG_MushroomB_32
+  - first:
+      213: 6440758965235829827
+    second: Env_FG_MushroomB_33
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 7
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Env_FG_MushroomB_0
+      rect:
+        serializedVersion: 2
+        x: 581
+        y: 809
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d1b2bbd5501656200800000000000000
+      internalID: 172650836398910237
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Env_FG_MushroomB_1
+      rect:
+        serializedVersion: 2
+        x: 520
+        y: 744
+        width: 35
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c47eb1edac02766c0800000000000000
+      internalID: -4150312475916769460
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Env_FG_MushroomB_2
+      rect:
+        serializedVersion: 2
+        x: 583
+        y: 788
+        width: 8
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b48d58d15136c43e0800000000000000
+      internalID: -2068169186529126325
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Env_FG_MushroomB_3
+      rect:
+        serializedVersion: 2
+        x: 553
+        y: 764
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4c8a9894c19c84800800000000000000
+      internalID: 596948073956616388
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Env_FG_MushroomB_4
+      rect:
+        serializedVersion: 2
+        x: 562
+        y: 710
+        width: 22
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 235f6e57d183bc0a0800000000000000
+      internalID: -6860327908185541326
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Env_FG_MushroomB_5
+      rect:
+        serializedVersion: 2
+        x: 584
+        y: 731
+        width: 15
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9634ec53f94622b30800000000000000
+      internalID: 4261078832411198313
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Env_FG_MushroomB_6
+      rect:
+        serializedVersion: 2
+        x: 399
+        y: 536
+        width: 34
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0e83d717f4c2945b0800000000000000
+      internalID: -5383723159826646816
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Env_FG_MushroomB_7
+      rect:
+        serializedVersion: 2
+        x: 446
+        y: 564
+        width: 8
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3fd7b44e7899fd720800000000000000
+      internalID: 2873183896215453171
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Env_FG_MushroomB_8
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 516
+        width: 7
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dba3dd1f0f8a59cb0800000000000000
+      internalID: -4857790870245786947
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Env_FG_MushroomB_9
+      rect:
+        serializedVersion: 2
+        x: 453
+        y: 538
+        width: 19
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 12d3d7d1199a886c0800000000000000
+      internalID: -4140873416637072095
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Env_FG_MushroomB_10
+      rect:
+        serializedVersion: 2
+        x: 455
+        y: 529
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7a00b3979f1d6a040800000000000000
+      internalID: 4658641733972328615
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Env_FG_MushroomB_11
+      rect:
+        serializedVersion: 2
+        x: 465
+        y: 562
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fde309291470ed870800000000000000
+      internalID: 8709406707594313439
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Env_FG_MushroomB_12
+      rect:
+        serializedVersion: 2
+        x: 482
+        y: 546
+        width: 10
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6b516823adad61aa0800000000000000
+      internalID: -6190520007088794186
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Env_FG_MushroomB_13
+      rect:
+        serializedVersion: 2
+        x: 498
+        y: 526
+        width: 162
+        height: 173
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a26ba4818daef67c0800000000000000
+      internalID: -4075780923905624534
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Env_FG_MushroomB_14
+      rect:
+        serializedVersion: 2
+        x: 569
+        y: 568
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 36ee19e02b55735d0800000000000000
+      internalID: -3082901196674830749
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Env_FG_MushroomB_15
+      rect:
+        serializedVersion: 2
+        x: 573
+        y: 559
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e22586d1289ee3e20800000000000000
+      internalID: 3332357519349142062
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Env_FG_MushroomB_16
+      rect:
+        serializedVersion: 2
+        x: 577
+        y: 585
+        width: 6
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 99c165078e001e440800000000000000
+      internalID: 4963249262656101529
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Env_FG_MushroomB_17
+      rect:
+        serializedVersion: 2
+        x: 582
+        y: 637
+        width: 9
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4db70136fae23c560800000000000000
+      internalID: 7332755949105478612
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Env_FG_MushroomB_18
+      rect:
+        serializedVersion: 2
+        x: 583
+        y: 651
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 507c0121cea6eb9c0800000000000000
+      internalID: -3909569864363096315
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Env_FG_MushroomB_19
+      rect:
+        serializedVersion: 2
+        x: 585
+        y: 597
+        width: 12
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2a167a00cd2452be0800000000000000
+      internalID: -1502721387986984542
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Env_FG_MushroomB_20
+      rect:
+        serializedVersion: 2
+        x: 586
+        y: 585
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6efd64c818f12aa80800000000000000
+      internalID: -8457162508983672858
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Env_FG_MushroomB_21
+      rect:
+        serializedVersion: 2
+        x: 586
+        y: 536
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0da4c02187c55bad0800000000000000
+      internalID: -2687139931888006448
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Env_FG_MushroomB_22
+      rect:
+        serializedVersion: 2
+        x: 592
+        y: 669
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e3e2d08b84cd17c20800000000000000
+      internalID: 3202583014920760894
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Env_FG_MushroomB_23
+      rect:
+        serializedVersion: 2
+        x: 629
+        y: 516
+        width: 16
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2402a181b1d23ec60800000000000000
+      internalID: 7846164570201268290
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Env_FG_MushroomB_24
+      rect:
+        serializedVersion: 2
+        x: 635
+        y: 529
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e77d8a12376424360800000000000000
+      internalID: 7152356618517665662
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Env_FG_MushroomB_25
+      rect:
+        serializedVersion: 2
+        x: 703
+        y: 515
+        width: 41
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1188bc05981dfc200800000000000000
+      internalID: 202610895951202321
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Env_FG_MushroomB_26
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 3
+        width: 1192
+        height: 516
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 490ff889ae3dae3f0800000000000000
+      internalID: -870650573407391596
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Env_FG_MushroomB_27
+      rect:
+        serializedVersion: 2
+        x: 457
+        y: 511
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2df7ed0cc955744e0800000000000000
+      internalID: -1997533777976459310
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Env_FG_MushroomB_28
+      rect:
+        serializedVersion: 2
+        x: 461
+        y: 506
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8c9e7fb1104232250800000000000000
+      internalID: 5918613922477763016
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Env_FG_MushroomB_29
+      rect:
+        serializedVersion: 2
+        x: 563
+        y: 507
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 130893149f87ca5b0800000000000000
+      internalID: -5355772844913885135
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Env_FG_MushroomB_30
+      rect:
+        serializedVersion: 2
+        x: 627
+        y: 505
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 401383a52734c5520800000000000000
+      internalID: 2692100835679678724
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Env_FG_MushroomB_31
+      rect:
+        serializedVersion: 2
+        x: 599
+        y: 495
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d453a7b58422af120800000000000000
+      internalID: 2448307041597011277
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Env_FG_MushroomB_32
+      rect:
+        serializedVersion: 2
+        x: 638
+        y: 502
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b2dc506e1a02b0320800000000000000
+      internalID: 2525147895792258347
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Env_FG_MushroomB_33
+      rect:
+        serializedVersion: 2
+        x: 738
+        y: 495
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 34c4bce772c226950800000000000000
+      internalID: 6440758965235829827
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Env_FG_MushroomB_0: 172650836398910237
+      Env_FG_MushroomB_1: -4150312475916769460
+      Env_FG_MushroomB_10: 4658641733972328615
+      Env_FG_MushroomB_11: 8709406707594313439
+      Env_FG_MushroomB_12: -6190520007088794186
+      Env_FG_MushroomB_13: -4075780923905624534
+      Env_FG_MushroomB_14: -3082901196674830749
+      Env_FG_MushroomB_15: 3332357519349142062
+      Env_FG_MushroomB_16: 4963249262656101529
+      Env_FG_MushroomB_17: 7332755949105478612
+      Env_FG_MushroomB_18: -3909569864363096315
+      Env_FG_MushroomB_19: -1502721387986984542
+      Env_FG_MushroomB_2: -2068169186529126325
+      Env_FG_MushroomB_20: -8457162508983672858
+      Env_FG_MushroomB_21: -2687139931888006448
+      Env_FG_MushroomB_22: 3202583014920760894
+      Env_FG_MushroomB_23: 7846164570201268290
+      Env_FG_MushroomB_24: 7152356618517665662
+      Env_FG_MushroomB_25: 202610895951202321
+      Env_FG_MushroomB_26: -870650573407391596
+      Env_FG_MushroomB_27: -1997533777976459310
+      Env_FG_MushroomB_28: 5918613922477763016
+      Env_FG_MushroomB_29: -5355772844913885135
+      Env_FG_MushroomB_3: 596948073956616388
+      Env_FG_MushroomB_30: 2692100835679678724
+      Env_FG_MushroomB_31: 2448307041597011277
+      Env_FG_MushroomB_32: 2525147895792258347
+      Env_FG_MushroomB_33: 6440758965235829827
+      Env_FG_MushroomB_4: -6860327908185541326
+      Env_FG_MushroomB_5: 4261078832411198313
+      Env_FG_MushroomB_6: -5383723159826646816
+      Env_FG_MushroomB_7: 2873183896215453171
+      Env_FG_MushroomB_8: -4857790870245786947
+      Env_FG_MushroomB_9: -4140873416637072095
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
