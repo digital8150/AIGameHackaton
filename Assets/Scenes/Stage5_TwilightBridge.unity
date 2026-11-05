@@ -33515,7 +33515,7 @@ PrefabInstance:
       objectReference: {fileID: 1849013020}
     - target: {fileID: 2983060130412751822, guid: 9348b47ccfbbab2429c18a559d48178c, type: 3}
       propertyPath: gateRise
-      value: 5.2
+      value: 2.2
       objectReference: {fileID: 0}
     - target: {fileID: 3047335965616213295, guid: 9348b47ccfbbab2429c18a559d48178c, type: 3}
       propertyPath: m_LocalPosition.x

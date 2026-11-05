@@ -135,6 +135,10 @@ PrefabInstance:
       propertyPath: gate
       value: 
       objectReference: {fileID: 1826892724}
+    - target: {fileID: 2983060130412751822, guid: 9348b47ccfbbab2429c18a559d48178c, type: 3}
+      propertyPath: gateRise
+      value: 2.2
+      objectReference: {fileID: 0}
     - target: {fileID: 3047335965616213295, guid: 9348b47ccfbbab2429c18a559d48178c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 21
@@ -19364,6 +19368,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 977030193}
     m_Modifications:
+    - target: {fileID: 630217309876445255, guid: 51dfaac6f6edaeb43bd817690af7c63d, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.68
+      objectReference: {fileID: 0}
     - target: {fileID: 630217309876445255, guid: 51dfaac6f6edaeb43bd817690af7c63d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 16.5
