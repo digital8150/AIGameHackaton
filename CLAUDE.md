@@ -12,7 +12,9 @@ Unity 6000.3 · URP 2D Renderer · Input System only · 기획서: Claude Docs "
 - 런타임 코드(`Assets/_Project/Scripts/Runtime`)와 셰이더(`Assets/_Project/Shaders`)는 파일로 작성한다. MonoBehaviour는 파일당 하나, 파일명 = 클래스명.
 
 ## 구조
-- `Assets/Scenes/InGame.unity` — 코어 플랫포머 씬 (황혼 스테이지 수직 슬라이스)
+- 챕터 씬 (빌드 순서): `Ch0_Prologue`(서장 튜토리얼) → `Ch1_PrinceInDark` → `Ch2_PrincessInLight` → `InGame`(제3장 황혼). 다음 장은 `GameFlow.nextScene`.
+- `Assets/_Project/Scripts/Runtime/Tutorial` — 단계별 튜토리얼(Section/Director/Signals/View/Veil/Marker), `AI` — Whisper 음성(`VoiceInput`/`VoiceCommands`)과 Jev(`JevClient`/`JevDirectorBrain`/`VoiceIntent`)
+- Whisper 모델 `Assets/StreamingAssets/Whisper/ggml-base.bin`은 git 밖 — `Tools/download_assets.bat`. Jev 키는 환경변수 `TYPESAFE_API_KEY` (없으면 규칙/키워드 폴백).
 - `Assets/_Project/Shaders` — `DuskSense.hlsl`(공통 감각 모델) + `SenseSprite`/`Sky`/`SoundGlyph`/`Glow`
 - `Assets/_Project/Scripts/Runtime` — 네임스페이스 `DuskTwilight`
 - `Assets/_Project/Art`, `Audio`, `Fonts` — CC0(Kenney)·OFL(Galmuri) 에셋, 라이선스는 `ThirdPartyLicenses/`
@@ -29,6 +31,8 @@ Unity 6000.3 · URP 2D Renderer · Input System only · 기획서: Claude Docs "
 - 모든 월드 스프라이트는 `DuskTwilight/SenseSprite` 계열 머티리얼을 쓴다 (같은 지오메트리, 렌더 패스만 다름).
 - **SpriteRenderer는 머티리얼 하나당 텍스처 하나.** SRP Batcher가 켜진 상태에서 서로 다른 텍스처의 스프라이트가 같은 커스텀 머티리얼을 공유하면 엉뚱한 텍스처로 그려진다 (예: `M_Actor_Prince`/`M_Actor_Princess`, `M_Prop_Px`/`M_Prop_Ind`로 분리). 타일맵은 영향 없음.
 - Git Bash에서 `unity command`에 `/경로` 인자를 넘길 땐 `MSYS_NO_PATHCONV=1`.
+- 타일맵을 eval로 다시 칠한 뒤에는 `TilemapCollider2D`를 껐다 켜고 `CompositeCollider2D.GenerateGeometry()` — 안 하면 이전(복사 원본) 충돌 형태가 남는다. 플레이 모드에서 레이캐스트로 확인.
+- 튜토리얼 문구는 플레이어용 조작·이야기만. F1/F2·디렉터 같은 개발 기능은 가르치지 않는다.
 - PPU 18, Point 필터, 무압축. 셰이더의 월드 좌표 효과는 1/18 그리드로 스냅.
 - 공주(빛) 감각에서는 소리가 없다 — 소리 정보는 반드시 시각(진동선/자막)으로도 제공.
 
