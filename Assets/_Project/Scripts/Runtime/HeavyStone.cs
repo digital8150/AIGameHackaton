@@ -64,6 +64,12 @@ namespace DuskTwilight
         public SpriteRenderer floatGlow;
         public float glowAlpha = 0.45f;
 
+        [Header("Echo reveal (prince)")]
+        [Tooltip("In the prince's dark the stone shows only where sound reaches; an echo that reaches it lights it up clearly for a while")]
+        public float revealLit = 1.2f;
+        public float revealHold = 1.6f;
+        public float revealFade = 0.8f;
+
         [Header("Speech")]
         [Tooltip("The prince is heard up to this far from the stone's nearest point (기획 8m)")]
         public float hearDistance = 8f;
@@ -129,9 +135,47 @@ namespace DuskTwilight
             if (body) body.enabled = !h;
         }
 
+        static readonly int SelfLitId = Shader.PropertyToID("_SelfLit");
+        MaterialPropertyBlock revealBlock;
+        float revealAt = -1f, revealStart = -99f;
+        bool revealing;
+
+        void OnEnable() { EchoCaller.Called += OnEcho; EchoResonator.Rang += OnBell; }
+        protected override void OnDisable() { base.OnDisable(); EchoCaller.Called -= OnEcho; EchoResonator.Rang -= OnBell; }
+        void OnBell(Vector2 at, float strength, EchoResonator bell) => OnEcho(at, strength);
+
+        /// <summary>An echo that reaches the stone lights it up when the wave arrives.</summary>
+        void OnEcho(Vector2 at, float strength)
+        {
+            var sense = SenseController.I;
+            if (!sense || !col || Hidden) return;
+            float d = Vector2.Distance(at, col.ClosestPoint(at));
+            if (d > strength * sense.echoRadiusPerStrength) return;
+            revealAt = Time.time + d / Mathf.Max(0.01f, sense.echoSpeed);
+        }
+
+        void UpdateReveal()
+        {
+            if (!body) return;
+            if (revealAt >= 0f && Time.time >= revealAt) { revealAt = -1f; revealStart = Time.time; }
+            float t = Time.time - revealStart;
+            float k = t < revealHold ? 1f : 1f - Mathf.Clamp01((t - revealHold) / Mathf.Max(0.01f, revealFade));
+            if (k <= 0f)
+            {
+                if (revealing) { revealing = false; body.SetPropertyBlock(null); }   // back on the SRP batcher
+                return;
+            }
+            if (revealBlock == null) revealBlock = new MaterialPropertyBlock();
+            revealing = true;
+            body.GetPropertyBlock(revealBlock);
+            revealBlock.SetFloat(SelfLitId, revealLit * Mathf.SmoothStep(0f, 1f, k));
+            body.SetPropertyBlock(revealBlock);
+        }
+
         protected override void Update()
         {
             base.Update();
+            UpdateReveal();
             bool floating = !Fallen && !dropping && !Hidden;
             if (body)
             {
