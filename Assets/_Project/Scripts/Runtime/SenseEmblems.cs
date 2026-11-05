@@ -44,13 +44,17 @@ namespace DuskTwilight
         float angle, targetAngle, angleVelocity;
         float popT = -1f;
         bool landing;
+        bool princeShown;   // who targetAngle puts on the main slot
+
+        // DuoController sets Leader in Awake, so this holds in any Start order; SenseController only catches up in DuoController.Start.
+        static bool PrinceLeads => DuoController.I && DuoController.I.Leader && DuoController.I.Leader.sense == Sense.Dark;
 
         void Start()
         {
             if (!princess || !prince || !mainSlot || !partnerSlot) { Debug.LogError("[SenseEmblems] elements are not assigned - use the HUD prefab.", this); enabled = false; return; }
             if (!echo) echo = FindAnyObjectByType<EchoCaller>();
-            bool dark = SenseController.I && SenseController.I.IsDark;
-            angle = targetAngle = dark ? Mathf.PI : 0f;
+            princeShown = PrinceLeads;
+            angle = targetAngle = princeShown ? Mathf.PI : 0f;
             GameEvents.Switched += OnSwitched;
             EchoCaller.Called += OnEchoCalled;
             Apply();
@@ -64,7 +68,6 @@ namespace DuskTwilight
 
         void OnSwitched(Sense s)
         {
-            targetAngle += Mathf.PI;
             landing = true;
             popT = -1f;
             princess.Flash();
@@ -76,8 +79,15 @@ namespace DuskTwilight
 
         void Update()
         {
+            // the leader is the only truth: the badges orbit whenever they disagree with it
+            if (DuoController.I && princeShown != PrinceLeads)
+            {
+                princeShown = !princeShown;
+                targetAngle += Mathf.PI;
+            }
+
             float dt = Time.unscaledDeltaTime;
-            angle = Mathf.SmoothDamp(angle, targetAngle, ref angleVelocity, orbitSmoothTime, Mathf.Infinity, dt);
+            angle =Mathf.SmoothDamp(angle, targetAngle, ref angleVelocity, orbitSmoothTime, Mathf.Infinity, dt);
             if (landing && Mathf.Abs(targetAngle - angle) < 0.12f)
             {
                 landing = false;
