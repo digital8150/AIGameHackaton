@@ -36,6 +36,7 @@ Material:
     - _AlphaEdges: 1
     - _Blur: 0
     - _DarkAlpha: 1
+    - _DarkEchoOnly: 1
     - _Depth: 0
     - _EdgeBoost: 2.2
     - _Glint: 0

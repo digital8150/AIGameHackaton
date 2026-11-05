@@ -18,6 +18,7 @@ Shader "DuskTwilight/SenseSprite"
         _DarkAlpha ("Dark Alpha", Range(0,1)) = 1
         _EdgeBoost ("Echo Edge Boost", Range(0,3)) = 1
         _SelfLit ("Self Outline (actors)", Range(0,1)) = 0
+        _DarkEchoOnly ("Dark: visible only where sound reaches (fake walls)", Range(0,1)) = 0
         _EchoTint ("Echo Tint", Color) = (0.82,0.92,1,1)
         _AlphaEdges ("Use Alpha Edges", Range(0,1)) = 0
         _EchoFill ("Echo Fill (shape shows faintly where sound passed)", Range(0,1)) = 0.6
@@ -101,6 +102,7 @@ Shader "DuskTwilight/SenseSprite"
                 float _LightReceive;
                 float _InkThreshold;
                 float _EchoFill;
+                float _DarkEchoOnly;
             CBUFFER_END
 
             struct Attributes { float4 positionOS : POSITION; float4 color : COLOR; float2 uv : TEXCOORD0; };
@@ -216,7 +218,7 @@ Shader "DuskTwilight/SenseSprite"
                 darkCol = lerp(darkCol, moon, _SelfLit);
                 float darkA = tex.a * _DarkAlpha;
                 // objects only sound can reveal: alpha follows the echo
-                if (_LightAlpha < 0.05)
+                if (_LightAlpha < 0.05 || _DarkEchoOnly > 0.5)
                     darkA = tex.a * _DarkAlpha * saturate(lit * 1.3 + _SelfLit);
 
                 float3 col = lerp(lightCol, darkCol, prince);

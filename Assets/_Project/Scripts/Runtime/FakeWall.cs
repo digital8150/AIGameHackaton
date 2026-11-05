@@ -21,6 +21,8 @@ namespace DuskTwilight
         public bool openOnEcho = true;
         [Tooltip("Once found the wall is gone for everyone (the princess and boxes pass too)")]
         public bool vanishWhenFound = true;
+        [Tooltip("Seconds a found wall stays drawn before it vanishes (it can already be walked through), so the prince sees what he found")]
+        [Min(0f)] public float vanishDelay = 1.2f;
         [Tooltip("Share of the echo's radius that counts as reaching the wall (same as switches and bells)")]
         [Range(0.3f, 1f)] public float reachShare = 0.85f;
         [Tooltip("Bells reveal fake walls too")]
@@ -138,14 +140,16 @@ namespace DuskTwilight
                             if (!o.open && InArea(o, r)) StartCoroutine(Open(o, delay));
             yield return new WaitForSeconds(delay);
             if (p.go) Destroy(p.go);
-            if (vanishWhenFound && map)
-            {
-                foreach (var c in p.cells) map.SetTile(c, null);
-                foreach (var lip in GetComponents<GroundLip>()) lip.Rebuild();
-            }
             if (foundEcho > 0 && p.centres.Count > 0) SenseController.I?.EmitEcho(p.centres[p.centres.Count / 2], foundEcho);
             if (!string.IsNullOrEmpty(foundCaption)) GameEvents.Caption?.Invoke(foundCaption);
             GameEvents.PuzzleAttempt?.Invoke("fake-wall", true);
+            if (vanishWhenFound && map)
+            {
+                // passable from here on; the found echo draws the wall for the prince before the tiles go
+                if (vanishDelay > 0f) yield return new WaitForSeconds(vanishDelay);
+                foreach (var c in p.cells) map.SetTile(c, null);
+                foreach (var lip in GetComponents<GroundLip>()) lip.Rebuild();
+            }
         }
 
 #if UNITY_EDITOR
