@@ -6669,7 +6669,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: afcac79d4e7b8e5419b6063b878e794d, type: 3}
+    m_Font: {fileID: 12800000, guid: c59c71d24207fd74cbcf00877fa6de66, type: 3}
     m_FontSize: 72
     m_FontStyle: 0
     m_BestFit: 0
@@ -6799,6 +6799,8 @@ MonoBehaviour:
   appearOffset: {x: 0, y: -50}
   appearScale: 0.86
   centreClosedBook: 1
+  leafFront: {fileID: 0}
+  leafBack: {fileID: 0}
 --- !u!1 &8753029381249729216
 GameObject:
   m_ObjectHideFlags: 0
