@@ -92,7 +92,7 @@ namespace DuskTwilight
         public void Pull(Lever lever)
         {
             if (Open) return;
-            if (leverClip) sfx.PlayOneShot(leverClip, 0.7f);
+            if (leverClip) sfx.PlayLimited(leverClip, 0.7f);
             if (Jammed) { GameEvents.Caption?.Invoke(jammedCaption); return; }
             Attempts++;
             bool ok = lever.wired && IsGo;
@@ -101,7 +101,7 @@ namespace DuskTwilight
             else
             {
                 jamUntil = Time.time + jamDuration;
-                if (jamClip) sfx.PlayOneShot(jamClip, 0.9f);
+                if (jamClip) sfx.PlayLimited(jamClip, 0.9f);
                 CameraRig.I?.Kick(0.18f);
                 SenseController.I?.EmitEcho(lever.transform.position, 0.5f);
                 GameEvents.Caption?.Invoke(lever.wired ? wrongTimingCaption : wrongLeverCaption);
@@ -132,7 +132,7 @@ namespace DuskTwilight
         {
             Open = true;
             if (gear) { gear.interval = gearOpening.x; gear.echoStrength = gearOpening.y; }
-            if (openClip) sfx.PlayOneShot(openClip, 1f);
+            if (openClip) sfx.PlayLimited(openClip, 1f);
             SenseController.I?.EmitEcho(gate.position, 1.6f);
             GameEvents.Caption?.Invoke(openCaption);
             CameraRig.I?.Kick(0.35f);

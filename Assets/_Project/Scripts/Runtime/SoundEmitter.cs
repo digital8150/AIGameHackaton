@@ -86,7 +86,7 @@ namespace DuskTwilight
 
         public void Emit()
         {
-            if (clips != null && clips.Length > 0) src.PlayOneShot(clips[Random.Range(0, clips.Length)], volume);
+            if (clips != null && clips.Length > 0) src.PlayLimited(clips[Random.Range(0, clips.Length)], volume);
             pulse = 1f;
             if (SenseController.I) SenseController.I.EmitEcho(transform.position, echoStrength * Loudness);
         }

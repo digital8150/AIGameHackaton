@@ -133,7 +133,7 @@ namespace DuskTwilight
                 overMat.SetFloat(IdProgress, 0f);
                 over.enabled = true;
                 under.texture = pages[i + 1].picture;
-                if (sfx && turnClip) sfx.PlayOneShot(turnClip, turnVolume);
+                if (sfx && turnClip) sfx.PlayLimited(turnClip, turnVolume);
                 for (float k = 0; k < 1f; k += Time.unscaledDeltaTime / turnTime)
                 {
                     overMat.SetFloat(IdProgress, k);

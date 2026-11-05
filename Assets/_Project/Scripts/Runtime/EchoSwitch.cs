@@ -73,7 +73,7 @@ namespace DuskTwilight
             if (On) yield break;
             On = true;
             Apply();
-            if (clickClip) sfx.PlayOneShot(clickClip, 0.7f);
+            if (clickClip) sfx.PlayLimited(clickClip, 0.7f);
             if (!string.IsNullOrEmpty(clickCaption)) GameEvents.Caption?.Invoke(clickCaption);
             if (clickEcho > 0) SenseController.I?.EmitEcho(Head, clickEcho);
             GameEvents.PuzzleAttempt?.Invoke("switch", true);

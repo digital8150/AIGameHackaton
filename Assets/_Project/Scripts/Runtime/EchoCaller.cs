@@ -116,7 +116,7 @@ namespace DuskTwilight
             CallCount++;
             LastSize = size;
             CallRadius(CallPoint, RadiusOf(size));
-            if (callClip) sfx.PlayOneShot(callClip, size == EchoSize.Large ? 1f : size == EchoSize.Medium ? 0.8f : 0.55f);
+            if (callClip) sfx.PlayLimited(callClip, size == EchoSize.Large ? 1f : size == EchoSize.Medium ? 0.8f : 0.55f);
             GameEvents.PuzzleAttempt?.Invoke("echo", true);
         }
 

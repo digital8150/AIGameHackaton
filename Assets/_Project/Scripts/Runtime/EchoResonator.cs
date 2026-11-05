@@ -66,7 +66,7 @@ namespace DuskTwilight
         IEnumerator Ring(float delay)
         {
             yield return new WaitForSeconds(delay);
-            if (ringClip) sfx.PlayOneShot(ringClip, 0.8f);
+            if (ringClip) sfx.PlayLimited(ringClip, 0.8f);
             if (!string.IsNullOrEmpty(caption)) GameEvents.Caption?.Invoke(caption);
             SenseController.I?.EmitEcho(Source, Strength);
             Rang?.Invoke(Source, Strength, this);

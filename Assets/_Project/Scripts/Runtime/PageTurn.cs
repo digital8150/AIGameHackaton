@@ -123,7 +123,7 @@ namespace DuskTwilight
             while (Time.unscaledTime < until) yield return null;
 
             // 3. turn
-            if (turnClip) sfx.PlayOneShot(turnClip, turnVolume);
+            if (turnClip) sfx.PlayLimited(turnClip, turnVolume);
             for (float k = 0; k < 1f; k += Time.unscaledDeltaTime / turnTime)
             {
                 mat.SetFloat(IdProgress, k);

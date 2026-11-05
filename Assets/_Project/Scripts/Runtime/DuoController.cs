@@ -67,7 +67,7 @@ namespace DuskTwilight
             var v = Leader.Velocity;
             SetLeader(newLeader);
             newLeader.GetComponent<Rigidbody2D>().linearVelocity = new Vector2(v.x, Mathf.Max(0, v.y) * 0.5f);
-            if (switchClip) sfx.PlayOneShot(switchClip, 0.6f);
+            if (switchClip) sfx.PlayLimited(switchClip, 0.6f);
             CameraRig.I?.Kick(0.12f);
             GameEvents.Switched?.Invoke(newLeader.sense);
         }

@@ -55,7 +55,7 @@ namespace DuskTwilight
 
         IEnumerator Fill(string text)
         {
-            if (bridgeClip) sfx.PlayOneShot(bridgeClip, 0.7f);
+            if (bridgeClip) sfx.PlayLimited(bridgeClip, 0.7f);
             var letters = Letters(text, ReachCenter);
             int next = 0;
             for (int i = 0; i < letters.Count; i++)

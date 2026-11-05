@@ -94,7 +94,7 @@ namespace DuskTwilight
             judging = false;
             if (r.weight == WordWeight.None)
             {
-                if (wrongClip) sfx.PlayOneShot(wrongClip, 0.7f);
+                if (wrongClip) sfx.PlayLimited(wrongClip, 0.7f);
                 GameEvents.Caption?.Invoke(noneCaption);
                 GameEvents.PuzzleAttempt?.Invoke("weight", false);
                 for (int i = 0; i < letters.Count; i++) StartCoroutine(Fall(letters[i], 0.1f * i));
@@ -142,7 +142,7 @@ namespace DuskTwilight
                 var p = l.transform.Find("Plank");
                 if (p) p.gameObject.SetActive(true);
             }
-            if (bridgeClip) sfx.PlayOneShot(bridgeClip, 0.7f);
+            if (bridgeClip) sfx.PlayLimited(bridgeClip, 0.7f);
             SenseController.I?.EmitEcho(slot.position, 0.4f);
             GameEvents.Caption?.Invoke(CaptionFor(weight));
             col.enabled = true;

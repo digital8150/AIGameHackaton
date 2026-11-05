@@ -50,7 +50,7 @@ namespace DuskTwilight
             else
             {
                 GameEvents.PuzzleAttempt?.Invoke("stair", false);
-                if (wrongClip) sfx.PlayOneShot(wrongClip, 0.8f);
+                if (wrongClip) sfx.PlayLimited(wrongClip, 0.8f);
                 var ls = Letters(text, ReachCenter);
                 for (int i = 0; i < ls.Count; i++) StartCoroutine(Fall(ls[i], 0.1f * i));
             }
@@ -71,7 +71,7 @@ namespace DuskTwilight
         void Play()
         {
             Clear();
-            if (bridgeClip) sfx.PlayOneShot(bridgeClip, 0.7f);
+            if (bridgeClip) sfx.PlayLimited(bridgeClip, 0.7f);
             var letters = Letters(word, ReachCenter);
             int n = Mathf.Min(letters.Count, steps.Length);
             for (int i = 0; i < letters.Count; i++)

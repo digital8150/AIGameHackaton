@@ -167,7 +167,7 @@ namespace DuskTwilight
 
         void Play()
         {
-            if (sfx && pageClip && isActiveAndEnabled) sfx.PlayOneShot(pageClip, pageVolume);
+            if (sfx && pageClip && isActiveAndEnabled) sfx.PlayLimited(pageClip, pageVolume);
         }
 
         void OnDisable()

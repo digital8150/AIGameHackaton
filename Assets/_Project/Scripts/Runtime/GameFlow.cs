@@ -114,7 +114,7 @@ namespace DuskTwilight
             if ((p - Checkpoint).sqrMagnitude < 0.01f) return;
             Checkpoint = p;
             CurrentZone = zone;
-            if (checkpointClip) sfx.PlayOneShot(checkpointClip, 0.5f);
+            if (checkpointClip) sfx.PlayLimited(checkpointClip, 0.5f);
         }
 
         void Update()
@@ -136,7 +136,7 @@ namespace DuskTwilight
             fadeLock = true;
             Deaths++;
             GameEvents.Died?.Invoke(CurrentZone);
-            if (fallClip) sfx.PlayOneShot(fallClip, 0.7f);
+            if (fallClip) sfx.PlayLimited(fallClip, 0.7f);
             CameraRig.I?.Kick(0.3f);
             HUD.I?.Fade(0f, 1f, respawnFadeOut);
             yield return new WaitForSeconds(respawnFadeOut + 0.05f);

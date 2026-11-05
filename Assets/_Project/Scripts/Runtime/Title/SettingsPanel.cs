@@ -222,7 +222,7 @@ namespace DuskTwilight
 
         void PlayPage()
         {
-            if (pageSfx && pageClip && isActiveAndEnabled) pageSfx.PlayOneShot(pageClip, pageVolume);
+            if (pageSfx && pageClip && isActiveAndEnabled) pageSfx.PlayLimited(pageClip, pageVolume);
         }
 
         void StartMic()

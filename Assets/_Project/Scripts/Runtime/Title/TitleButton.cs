@@ -84,7 +84,7 @@ namespace DuskTwilight
 
         void Play(AudioClip clip)
         {
-            if (sfx && clip && isActiveAndEnabled) sfx.PlayOneShot(clip);
+            if (sfx && clip && isActiveAndEnabled) sfx.PlayLimited(clip);
         }
 
         public void OnPointerEnter(PointerEventData e)

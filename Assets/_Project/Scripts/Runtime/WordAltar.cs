@@ -86,7 +86,7 @@ namespace DuskTwilight
         IEnumerator Solve(string word)
         {
             Solved = true;
-            if (bridgeClip) sfx.PlayOneShot(bridgeClip, 0.9f);
+            if (bridgeClip) sfx.PlayLimited(bridgeClip, 0.9f);
             StartCoroutine(Reveal());
             SenseController.I?.EmitEcho(transform.position, 1.2f);
             var letters = Letters(word, transform.position);
@@ -123,7 +123,7 @@ namespace DuskTwilight
 
         IEnumerator Crumble(string word)
         {
-            if (wrongClip) sfx.PlayOneShot(wrongClip, 0.8f);
+            if (wrongClip) sfx.PlayLimited(wrongClip, 0.8f);
             var letters = Letters(word, transform.position);
             for (int i = 0; i < letters.Count; i++) StartCoroutine(Fall(letters[i], 0.1f * i));
             bool scatter = scatterWords != null && System.Array.IndexOf(scatterWords, word) >= 0;

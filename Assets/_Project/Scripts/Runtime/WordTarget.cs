@@ -98,7 +98,7 @@ namespace DuskTwilight
             if (Solved || !CanSpeakNow) return;
             text = Clean(text);
             if (text.Length == 0) return;
-            if (speakClip) sfx.PlayOneShot(speakClip, 0.6f);
+            if (speakClip) sfx.PlayLimited(speakClip, 0.6f);
             OnSpoken(text);
         }
 

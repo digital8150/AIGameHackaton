@@ -153,7 +153,7 @@ namespace DuskTwilight
         void Step(float mul)
         {
             if (footsteps != null && footsteps.Length > 0 && audioSrc)
-                audioSrc.PlayOneShot(footsteps[Random.Range(0, footsteps.Length)], 0.55f * mul);
+                audioSrc.PlayLimited(footsteps[Random.Range(0, footsteps.Length)], 0.55f * mul);
             // only the prince's world is shaped by sound
             if (SenseController.I && SenseController.I.IsDark)
                 SenseController.I.EmitEcho((Vector2)transform.position + Vector2.up * 0.1f, stepEchoStrength * mul);

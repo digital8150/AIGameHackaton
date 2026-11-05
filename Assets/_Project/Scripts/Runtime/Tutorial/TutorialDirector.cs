@@ -52,7 +52,7 @@ namespace DuskTwilight
             if (section.opens != null) foreach (var v in section.opens) if (v) v.Open();
             if (section.allowSwitch && DuoController.I) DuoController.I.switchLocked = false;
             transitioning = false;
-            if (sectionClip && index > 0) sfx.PlayOneShot(sectionClip, 0.5f);
+            if (sectionClip && index > 0) sfx.PlayLimited(sectionClip, 0.5f);
             SectionStarted?.Invoke(index, sections.Length, section);
             for (int k = 0; k < progress.Length; k++)
                 ObjectiveChanged?.Invoke(k, 0, section.objectives[k].target, false);
@@ -71,7 +71,7 @@ namespace DuskTwilight
                 {
                     progress[k] = Mathf.Min(o.target, progress[k] + amount);
                     bool done = progress[k] >= o.target;
-                    if (done && tickClip) sfx.PlayOneShot(tickClip, 0.45f);
+                    if (done && tickClip) sfx.PlayLimited(tickClip, 0.45f);
                     ObjectiveChanged?.Invoke(k, progress[k], o.target, done);
                 }
                 if (progress[k] < o.target) allDone = false;
