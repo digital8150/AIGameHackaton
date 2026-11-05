@@ -47,10 +47,11 @@ Shader "DuskTwilight/Glow"
 
             half4 frag(Varyings i) : SV_Target
             {
-                float2 wp = DT_Snap(i.positionWS.xy);
+                float2 wp = i.positionWS.xy;
                 float d = saturate(length(wp - i.centerWS.xy) / i.radius);
-                float g = pow(1.0 - d, 2.0);
-                g = floor(g * _Steps + 0.5) / _Steps; // banded, pixel-art falloff
+                float g = pow(1.0 - d, 2.2);
+                // _Steps > 0 bands the falloff (old pixel-art look); 0 = smooth (illustrated)
+                if (_Steps > 0.5) g = floor(g * _Steps + 0.5) / _Steps;
                 float prince = DT_PrinceAmount(wp);
                 float vis = lerp(_LightAmount, _DarkAmount, prince);
                 return half4(_GlowColor.rgb * i.color.rgb, g * _Intensity * vis * i.color.a);

@@ -64,13 +64,19 @@ namespace DuskTwilight
                 if (inscription) inscription.gameObject.SetActive(false);
                 CameraRig.I?.Kick(0.2f);
                 SenseController.I?.EmitEcho(door.position, 1.4f);
+                // the door lifts and dissolves into light (no slab left hanging in the air)
+                var rends = door.GetComponentsInChildren<SpriteRenderer>();
+                var cols = door.GetComponentsInChildren<Collider2D>();
                 Vector3 a = door.localPosition, b = a + Vector3.up * doorRise;
                 for (float t = 0; t < 1; t += Time.deltaTime / Mathf.Max(0.05f, doorTime))
                 {
-                    door.localPosition = Vector3.Lerp(a, b, Mathf.SmoothStep(0, 1, t));
+                    float e = Mathf.SmoothStep(0, 1, t);
+                    door.localPosition = Vector3.Lerp(a, b, e);
+                    foreach (var r in rends) { var c = r.color; c.a = 1f - e; r.color = c; }
+                    if (t > 0.35f) foreach (var c in cols) c.enabled = false;
                     yield return null;
                 }
-                door.localPosition = b;
+                door.gameObject.SetActive(false);
             }
         }
 

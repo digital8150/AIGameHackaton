@@ -17,7 +17,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &7052887066036262417
 Transform:
   m_ObjectHideFlags: 0
@@ -249,4 +249,4 @@ MonoBehaviour:
   offAlpha: 0.14
   fadeInTime: 0.12
   sr: {fileID: 6689366650460853330}
-  glow: {fileID: 9045898802133370358}
+  glow: {fileID: 0}

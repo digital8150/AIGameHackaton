@@ -30,15 +30,10 @@ A single 2D platformer floor lever switch drawn completely flat in side profile 
 
 ---
 
-## 3. 울림돌 발판 (Echo Stone / Glass Platform)
-no humans, -3::1girl, 1boy, human::, game asset, paper cutout platform tile, horizontal rectangular composition, {{black background, simple background}},
-{{translucent crystalline stone platform}}, floating ancient resonant slate slab, carved soundwave runes, delicate etched cracks, pale ice-blue and vintage ivory mineral texture,
-A horizontal floating stone-and-crystal platform slab for a 2D side-scroller, drawn in a vintage storybook pen-hatching style, isolated on a solid black background.
-
-### 3-B. 울림돌 단면 텍스처 (Echo Stone Fill Texture — 1:1 정방형, 반복용)
-no humans, -3::1girl, 1boy, human::, {{full frame texture}}, {{seamless pattern}}, flat orthographic view, -3::horizon, sky, frame, border, single object, perspective::,
-{{translucent crystalline slate}}, layered pale ice-blue and vintage ivory mineral, faint carved soundwave runes and concentric ripple lines, delicate etched cracks, even density across the whole image, intricate pen cross-hatching,
-A flat, evenly filled storybook texture of resonant crystal stone covering the entire image edge to edge, for tiling inside 2D platformer blocks, drawn in a vintage kamishibai paper-theater style with fine pen hatching.
+## 3. 울림돌 발판 (Echo Stone Platform — 21:9 와이드, 정면 측면도)
+no humans, -3::1girl, 1boy, human::, game asset, paper cutout prop, horizontal composition, {{black background, simple background}}, {{flat side view}}, {{profile view}}, -3::isometric, three-quarter view, top-down view, perspective, visible top surface, square tile::,
+{{long thin floating slab of translucent crystalline stone seen exactly from the side}}, flat walkable top line, short crystal shards hanging under it, carved soundwave runes along the side face, delicate etched cracks, pale ice-blue and vintage ivory mineral,
+A single slim horizontal stone-and-crystal platform drawn completely flat like a paper-theater cutout, as wide as possible and only a little tall, for a 2D side-scroller, drawn in a vintage storybook pen-hatching style, isolated on a solid black background.
 
 ---
 
@@ -90,3 +85,10 @@ A single fairytale hanging bell prop seen from the side, drawn in a vintage kami
 no humans, -3::1girl, 1boy, human::, game asset, paper cutout prop, vertical composition, {{black background, simple background}}, -3::lantern flame, fire, text::,
 {{slender wrought-iron post topped with a round glass orb in a filigree cage}}, the orb clear and empty, small cog details at the base, thin straight pole, weathered iron and pale glass, intricate pen cross-hatching, sepia and dark plum tones,
 A single slim fairytale switch post with an empty glass orb on top, seen straight from the side, drawn in a vintage kamishibai paper-theater style, isolated on a solid black background.
+
+---
+
+## 8. 빛 발판 (Light Plank — 21:9 와이드, 공주에게만 보이는 발판·빛 글자 다리)
+no humans, -3::1girl, 1boy, human::, game asset, paper cutout prop, horizontal composition, {{black background, simple background}}, -3::wood, wooden plank, stone, text, letters::,
+{{long thin floating platform made of solid warm golden light}}, softly glowing rounded edges, faint pen hatching shimmering inside like layered paper, tiny light motes drifting off the top, translucent gold and pale peach,
+A single slim floating bar of golden light used as a magical platform in a 2D side-scroller, wide and flat, drawn in a vintage kamishibai paper-theater style with delicate pen hatching, isolated on a solid black background.

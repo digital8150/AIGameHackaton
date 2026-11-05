@@ -32,7 +32,7 @@ Material:
     - _DarkAmount: 0
     - _Intensity: 1
     - _LightAmount: 1
-    - _Steps: 5
+    - _Steps: 0
     m_Colors:
     - _GlowColor: {r: 1, g: 0.8, b: 0.39999998, a: 1}
   m_BuildTextureStacks: []

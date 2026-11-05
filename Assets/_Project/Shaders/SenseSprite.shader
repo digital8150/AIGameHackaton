@@ -20,6 +20,7 @@ Shader "DuskTwilight/SenseSprite"
         _SelfLit ("Self Outline (actors)", Range(0,1)) = 0
         _EchoTint ("Echo Tint", Color) = (0.82,0.92,1,1)
         _AlphaEdges ("Use Alpha Edges", Range(0,1)) = 0
+        _EchoFill ("Echo Fill (shape shows faintly where sound passed)", Range(0,1)) = 0.6
         _InkThreshold ("Ink Threshold (darker than this = contour; illustrations ~0.18, Kenney 0.5)", Range(0,1)) = 0.5
 
         [Header(2.5D layer (environment art))]
@@ -99,6 +100,7 @@ Shader "DuskTwilight/SenseSprite"
                 float _WorldTile;
                 float _LightReceive;
                 float _InkThreshold;
+                float _EchoFill;
             CBUFFER_END
 
             struct Attributes { float4 positionOS : POSITION; float4 color : COLOR; float2 uv : TEXCOORD0; };
@@ -206,6 +208,8 @@ Shader "DuskTwilight/SenseSprite"
                 lit = max(lit, DT_SwitchScratch(wp) * 1.1);
                 float3 darkCol = DT_NIGHT * (0.6 + 0.4 * luma);
                 darkCol += _EchoTint.rgb * (contour * _EdgeBoost * lit + texture_ * lit * 0.6);
+                // illustrated art has few pure-ink lines: let the whole shape show faintly where the sound passed
+                darkCol += _EchoTint.rgb * (0.14 + luma * 0.6) * saturate(lit * 1.5) * _EchoFill;
                 darkCol += _EchoTint.rgb * front * 0.10;
                 // actors stay recognisable: moonlit, desaturated self + bright outline
                 float3 moon = lerp(luma.xxx, tex.rgb, 0.35) * float3(0.42, 0.52, 0.85) + DT_ECHO_LINE * AlphaEdge(i.uv) * 0.9;
