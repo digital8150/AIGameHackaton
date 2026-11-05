@@ -1,0 +1,27 @@
+# [공주 시안 1] 밤의 고룡(古龍) 공주 (Dragon-Horned Dusk Princess)
+# 노션 기획서 반영: 짧고 실용적인 머리 + 찢어지고 기운 남색 후드 망토(노을빛 금색 안감) + 지팡이처럼 짚는 부러진 창 + 발목 방울 + 거칠고 능동적인 태도
+# 아래 블록을 통째로 복사해서 NAI V5 프롬프트 창에 바로 붙여넣으시면 됩니다 ([Base Prompts] 포함됨).
+
+====================================================================
+[1] 흉상 초상화 (Bust Portrait — 바로 복사해서 사용)
+====================================================================
+1girl, solo, monster girl, dragon girl, portrait, bust, straight-on, looking at viewer, {{black background, simple background}},
+1.6::curved dark obsidian dragon horns, asymmetrical horns, one chipped horn tip::,
+1.4::wide open eyes, big luminous violet and amber eyes, vertical slit pupils, thick eyelashes::, -2::half-closed eyes, sleepy eyes, sad expression::,
+fierce stoic expression, resilient gaze, subtle small scar near ear,
+short messy dark indigo hair, practical short bob cut,
+{{tattered patched deep indigo hooded cloak, hood down}}, {{warm sunset-gold inner cloak lining}}, weathered leather shoulder strap, holding a broken spear shaft upright like a walking staff,
+A dark fairytale paper-theater portrait of the exiled dragon-horned Dusk Princess. She has short practical dark indigo hair, dark curved dragon horns with one slightly chipped tip, and wide luminous eyes that perceive light. She wears a patched deep-blue cloak with a glowing sunset-gold inner lining and leans on a broken spear shaft, isolated on a solid pitch-black background,
+0.8::thick outlines::, 0.7::artist:sainker::, 0.75::artist:diyokama::, 0.45::artist:toriki::, 0.5::artist:inoue kiyoshirou::, 0.45::artist:fuzuki fuuro::, 0.5::artist:tizibade::, 0.55::artist:eteru::, 0.6::artist:loongm::, -1::flat color::, 1.3::kamishibai, paper theater style::, 1.2::storybook illustration, dark fairytale::, sketchy lineart, detailed pencil hatching, vintage sepia tone, year 2025, masterpiece, absurdres, very aesthetic, amazing quality, 0.4::low lightness::, 0.4::rich colors::, -1::multiple views::, -1::artist collaboration::, 0.1::location::, cinematic illustration, fantasy
+
+
+====================================================================
+[2] 인게임 전신 스탠딩 (Full Body Sprite: Idle — 바로 복사해서 사용)
+====================================================================
+1girl, solo, monster girl, dragon girl, {{full body}}, game sprite, paper cutout style, standing, {{facing right, 3/4 profile}}, {{black background, simple background}}, no shadow on ground,
+1.6::curved dark obsidian dragon horns, one chipped horn tip::,
+1.3::wide open luminous violet-amber eyes::, determined expression, short messy dark indigo hair,
+{{tattered patched deep indigo hooded cloak}}, {{warm sunset-gold inner cloak lining}}, dark tunic and fitted trousers, travel wraps on legs, {{small brass bell tied to ankle}},
+{{holding a broken spear shaft with no blade as a walking stick}},
+A full-body 2D side-scrolling platformer sprite of the dragon-horned Dusk Princess standing facing right, leaning actively on a snapped wooden spear shaft like a walking staff. Her patched indigo cloak reveals a warm sunset-gold lining, and a small brass bell is tied to her ankle, head to toe fully visible on a solid black background,
+0.8::thick outlines::, 0.7::artist:sainker::, 0.75::artist:diyokama::, 0.45::artist:toriki::, 0.5::artist:inoue kiyoshirou::, 0.45::artist:fuzuki fuuro::, 0.5::artist:tizibade::, 0.55::artist:eteru::, 0.6::artist:loongm::, -1::flat color::, 1.3::kamishibai, paper theater style::, 1.2::storybook illustration, dark fairytale::, sketchy lineart, detailed pencil hatching, vintage sepia tone, year 2025, masterpiece, absurdres, very aesthetic, amazing quality, 0.4::low lightness::, 0.4::rich colors::, -1::multiple views::, -1::artist collaboration::, 0.1::location::, cinematic illustration, fantasy
