@@ -80,6 +80,13 @@ namespace DuskTwilight
             groundY = p.y;
         }
 
+        /// <summary>Something solid landed where the follower stood: she steps to the leader's side and starts a fresh trail.</summary>
+        public void RegroupFollower()
+        {
+            Follower.Teleport((Vector2)Leader.transform.position);
+            trail.Clear();
+        }
+
         void Update()
         {
             if (GameInput.I && !GameFlow.InputLocked && !switchLocked && GameInput.I.Switch.WasPressedThisFrame()) Switch();

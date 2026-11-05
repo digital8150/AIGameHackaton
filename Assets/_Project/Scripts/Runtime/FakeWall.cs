@@ -74,8 +74,21 @@ namespace DuskTwilight
 
         void OnDestroy() { foreach (var p in parts) if (p.go) Destroy(p.go); }
 
-        void OnEnable() { EchoCaller.Called += OnCall; EchoResonator.Rang += OnBell; }
-        void OnDisable() { EchoCaller.Called -= OnCall; EchoResonator.Rang -= OnBell; }
+        static readonly List<FakeWall> all = new List<FakeWall>();
+
+        /// <summary>Is there a fake wall / ceiling tile (not yet found) at this world point?</summary>
+        public static bool SolidAt(Vector2 world)
+        {
+            foreach (var f in all)
+            {
+                var m = f.map ? f.map : f.GetComponent<Tilemap>();
+                if (m && m.HasTile(m.WorldToCell(world))) return true;
+            }
+            return false;
+        }
+
+        void OnEnable() { all.Add(this); EchoCaller.Called += OnCall; EchoResonator.Rang += OnBell; }
+        void OnDisable() { all.Remove(this); EchoCaller.Called -= OnCall; EchoResonator.Rang -= OnBell; }
 
         void OnCall(Vector2 from, float strength) { if (openOnEcho) Hear(from, strength); }
         void OnBell(Vector2 from, float strength, EchoResonator bell) { if (openOnEcho && answersBells) Hear(from, strength); }
