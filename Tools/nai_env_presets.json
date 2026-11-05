@@ -1,0 +1,47 @@
+{
+ "_style": "Mockup tone: delicate colored pencil + watercolor storybook, lavender mist, warm amber/gold dusk light, fine sepia linework. Each prompt is joined with 'transparent background' and Art Prompts/[Base Prompts].txt.",
+ "presets": {
+  "fg_grass": {
+   "note": "전경 바람 풀 (카메라 앞, 셰이더로 흔들기)",
+   "size": [1216, 832],
+   "prompt": "no humans, -3::1girl, 1boy, human, character::, game asset, isolated object, foreground layer, {{tall wild grass tuft}}, windswept grass blades bending to the right, dry golden and olive grass, small wildflowers, seed heads, soft watercolor, colored pencil texture, delicate sepia linework, warm amber dusk light, A wide clump of tall wild meadow grass blowing in a gentle wind, painted as an isolated storybook foreground cutout for a 2D side-scrolling game",
+   "negative": "ground, soil, sky, scenery, background, frame, border"
+  },
+  "fg_branch_silhouette": {
+   "note": "전경 어두운 잎가지 실루엣 (화면 모서리)",
+   "size": [1216, 832],
+   "prompt": "no humans, -3::1girl, 1boy, human, character::, game asset, isolated object, foreground layer, {{dark leafy branch silhouette}}, hanging twig with small leaves, deep plum and dark umber, soft edges, watercolor, A dark out-of-focus leafy branch reaching in from the side, painted as an isolated foreground silhouette cutout for a 2D side-scrolling game",
+   "negative": "sky, scenery, background, frame, border, tree trunk"
+  },
+  "fg_fern": {
+   "note": "전경 고사리 덤불",
+   "size": [1024, 1024],
+   "prompt": "no humans, -3::1girl, 1boy, human, character::, game asset, isolated object, foreground layer, {{fern bush}}, curling fern fronds, wild undergrowth, muted sage green and lavender shadows, soft watercolor, colored pencil, delicate sepia linework, A lush fern bush seen from the side, painted as an isolated storybook foreground cutout for a 2D side-scrolling game",
+   "negative": "ground, soil, pot, sky, scenery, background, frame, border"
+  },
+  "mid_tree": {
+   "note": "중경 고목 (가을 잎)",
+   "size": [832, 1216],
+   "prompt": "no humans, -3::1girl, 1boy, human, character::, game asset, isolated object, {{single ancient twisted tree}}, gnarled trunk and exposed roots, sparse amber and gold autumn leaves, lavender bark shadows, soft watercolor, colored pencil, delicate sepia linework, warm dusk rim light, A single old twisted fairytale tree with spreading branches, painted as an isolated storybook cutout for a 2D side-scrolling game",
+   "negative": "forest, multiple trees, sky, scenery, background, frame, border"
+  },
+  "cliff_ledge": {
+   "note": "절벽 발판 (뿌리·이끼·꽃, 평평한 윗면)",
+   "size": [1216, 832],
+   "prompt": "no humans, -3::1girl, 1boy, human, character::, game asset, isolated object, {{floating rocky cliff ledge}}, flat walkable top edge with moss and small white and pink flowers, tangled tree roots hanging down the rock face, warm sandstone and lavender shadows, soft watercolor, colored pencil, delicate sepia linework, A rocky cliff edge platform seen straight from the side, painted as an isolated storybook cutout for a 2D platformer",
+   "negative": "sky, scenery, background, water, frame, border"
+  },
+  "ruin_arch": {
+   "note": "원경/중경 돌 아치 (덩굴)",
+   "size": [832, 1216],
+   "prompt": "no humans, -3::1girl, 1boy, human, character::, game asset, isolated object, {{ancient stone archway ruin}}, crumbling stone blocks, climbing vines with golden leaves, pale ivory stone with lavender shadows, soft watercolor, colored pencil, delicate sepia linework, A lone ruined stone arch overgrown with vines, seen straight from the front, painted as an isolated storybook cutout for a 2D side-scrolling game",
+   "negative": "sky, scenery, background, ground, frame, border"
+  },
+  "bg_misty_forest": {
+   "note": "원경 안개 숲 (불투명 배경판)",
+   "transparent": false,
+   "size": [1472, 704],
+   "prompt": "no humans, -3::1girl, 1boy, human, character::, scenery, landscape, wide shot, horizontal composition, misty fairytale forest, tall pale trees fading into lavender fog, distant ravine, warm peach and amber dusk glow, soft watercolor, colored pencil, A wide soft background painting of a misty twilight forest for a 2D side-scrolling parallax layer, low detail and low contrast so foreground stands out"
+  }
+ }
+}
