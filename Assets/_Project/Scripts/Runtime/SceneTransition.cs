@@ -9,6 +9,7 @@ namespace DuskTwilight
     /// → hold a moment so the new scene's first-frame stutter happens behind the cover → fade back in.
     /// One instance survives scene loads; callers pass the prefab so it can be spawned on first use
     /// (e.g. when a stage is played directly from the editor).
+    /// The cover doubles as the loading screen: its children (loading bar, the back-to-back duo loop) fade with it.
     /// </summary>
     public class SceneTransition : MonoBehaviour
     {
@@ -27,7 +28,16 @@ namespace DuskTwilight
         [Range(0, 30)] public int settleFrames = 5;
         [Range(0.05f, 3f)] public float fadeIn = 0.9f;
 
+        [Header("Loading screen")]
+        [Tooltip("Bar fill under the cover (left-anchored; its right anchor tracks progress) — follows the async load, then tops off before the cover lifts.")]
+        public RectTransform progressFill;
+        [Tooltip("Fastest the bar may grow (fill per second), so short loads still read as a sweep.")]
+        [Range(0.2f, 10f)] public float progressSpeed = 1.6f;
+        [Tooltip("Easing toward the target (higher = snappier).")]
+        [Range(1f, 20f)] public float progressEase = 6f;
+
         bool busy;
+        float progressTarget, progressShown;
 
         /// <summary>The live instance, spawned from <paramref name="prefab"/> if there is none yet.</summary>
         public static SceneTransition Ensure(SceneTransition prefab)
@@ -75,19 +85,40 @@ namespace DuskTwilight
                 yield break;
             }
             op.allowSceneActivation = false;
+            SetProgress(0f, true);
 
             yield return Fade(cover.alpha, 1f, fadeOut);
 
-            while (op.progress < 0.9f) yield return null;
+            // async progress stops at 0.9 until activation; the rest of the bar is activation + settle
+            while (op.progress < 0.9f) { progressTarget = op.progress * 0.85f / 0.9f; yield return null; }
+            progressTarget = 0.85f;
             op.allowSceneActivation = true;
             while (!op.isDone) yield return null;
 
+            progressTarget = 0.95f;
             for (int i = 0; i < settleFrames; i++) yield return null;
+            progressTarget = 1f;
             float until = Time.unscaledTime + hold;
-            while (Time.unscaledTime < until) yield return null;
+            while (Time.unscaledTime < until || (progressFill && progressShown < 0.999f)) yield return null;
 
             yield return Fade(1f, 0f, fadeIn);
             busy = false;
+        }
+
+        void Update()
+        {
+            if (!progressFill || progressShown >= progressTarget) return;
+            float dt = Time.unscaledDeltaTime;
+            float eased = Mathf.Lerp(progressShown, progressTarget, 1f - Mathf.Exp(-progressEase * dt));
+            float next = Mathf.Max(eased, progressShown + 0.25f * dt);           // never crawl near the end
+            SetProgress(Mathf.Min(next, progressShown + progressSpeed * dt, progressTarget), false);
+        }
+
+        void SetProgress(float v, bool resetTarget)
+        {
+            if (resetTarget) progressTarget = v;
+            progressShown = v;
+            if (progressFill) progressFill.anchorMax = new Vector2(v, progressFill.anchorMax.y);
         }
 
         IEnumerator Fade(float from, float to, float time)
