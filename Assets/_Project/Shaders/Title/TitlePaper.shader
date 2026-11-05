@@ -33,6 +33,7 @@ Shader "DuskTwilight/UI/TitlePaper"
         _Stack ("Page block layers", Range(0, 6)) = 0
         _Cover ("Cover board margin (px, 0 = none)", Float) = 0
         _CoverColor ("Cover leather", Color) = (0.27, 0.12, 0.08, 1)
+        _HideLeft ("Hide the left half (book still opening)", Range(0, 1)) = 0
 
         [Header(Ruling)]
         _RuleColor ("Rule lines", Color) = (0.35, 0.40, 0.48, 0.32)
@@ -94,6 +95,7 @@ Shader "DuskTwilight/UI/TitlePaper"
             float _Shadow, _ShadowBlur;
             float _Tear, _Burn, _Border, _Corner, _Spread, _Gutter, _Stack, _Cover;
             fixed4 _BorderColor, _CoverColor;
+            float _HideLeft;
 
             float RBox(float2 p, float2 b, float r)
             {
@@ -307,6 +309,7 @@ Shader "DuskTwilight/UI/TitlePaper"
                 }
 
                 fixed4 o = fixed4(c.rgb, saturate(c.a)) * _Color * i.color;
+                o.a *= p.x < 0 ? 1.0 - _HideLeft : 1.0;
                 return TitleFinish(o, i);
             }
             ENDCG

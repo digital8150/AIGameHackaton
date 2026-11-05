@@ -29,7 +29,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _Border: 26
+    - _Border: 24
     - _Burn: 13
     - _ColorMask: 15
     - _Corner: 8
@@ -37,7 +37,8 @@ Material:
     - _EdgeAge: 60
     - _Fibre: 0.1
     - _Fray: 2.5
-    - _Gutter: 0.6
+    - _Gutter: 0.7
+    - _HideLeft: 0
     - _HoleR: 7
     - _HoleY: 22
     - _Holes: 0
@@ -50,7 +51,7 @@ Material:
     - _Seed: 5.7
     - _Shadow: 0.6
     - _ShadowBlur: 14
-    - _Spread: 0
+    - _Spread: 1
     - _Stack: 3
     - _Stain: 0.7
     - _Stencil: 0
