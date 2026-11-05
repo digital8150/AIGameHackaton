@@ -43,6 +43,8 @@ namespace DuskTwilight
         public StorybookBook book;
         [Range(0.3f, 3f)] public float bookOpenTime = 0.9f;
         [Range(0.2f, 3f)] public float bookCloseTime = 0.6f;
+        [Tooltip("Seconds for the page to turn between this menu and the settings pages (same book, needs the book's leaf faces and the same page size).")]
+        [Range(0.2f, 2f)] public float pageTurnTime = 0.7f;
 
         [Header("Sound")]
         public AudioSource sfx;
@@ -56,6 +58,8 @@ namespace DuskTwilight
         int closedFrame = -1;
         bool leaving;
         bool wasModal;   // another panel (word altar) closing on this same Esc must not open the menu
+        bool settingsInBook;
+        float turnK;     // 0 = menu pages, 1 = settings pages
 
         void Awake()
         {
@@ -70,6 +74,8 @@ namespace DuskTwilight
                 closedFrame = Time.frameCount;
                 SetButtons(true);
             };
+            settingsInBook = settings && settings.book && book && book.leafFront && book.leafBack;
+            if (settingsInBook) MoveSettingsIntoBook();
             if (sfx) sfx.ignoreListenerPause = true;
             // stages have no EventSystem of their own; the menu needs one for mouse / keyboard / pad navigation
             if (!FindAnyObjectByType<EventSystem>())
@@ -85,7 +91,7 @@ namespace DuskTwilight
             bool esc = (kb != null && kb.escapeKey.wasPressedThisFrame) || (pad != null && pad.startButton.wasPressedThisFrame);
             bool back = pad != null && pad.buttonEast.wasPressedThisFrame;
 
-            if (!leaving && Time.frameCount != closedFrame && !(settings && settings.IsOpen))
+            if (!leaving && Time.frameCount != closedFrame && !(settings && settings.IsOpen) && turnK <= 0f)
             {
                 if (IsOpen && (esc || back)) Close();
                 else if (!IsOpen && esc && !wasModal && CanOpen()) Open();
@@ -95,6 +101,7 @@ namespace DuskTwilight
             float time = book ? (IsOpen ? bookOpenTime : bookCloseTime) : fadeTime;
             openK = Mathf.MoveTowards(openK, IsOpen ? 1f : 0f, Time.unscaledDeltaTime / time);
             Apply(openK);
+            if (settingsInBook) ApplyTurn();
         }
 
         // not during fades (stage intro, respawn) or another modal panel
@@ -122,6 +129,7 @@ namespace DuskTwilight
             if (EventSystem.current) EventSystem.current.SetSelectedGameObject(null);
             Resume();
             if (settings && settings.IsOpen) settings.Close(false);
+            turnK = 0f;
             Play();
         }
 
@@ -135,9 +143,50 @@ namespace DuskTwilight
         void OpenSettings()
         {
             if (!settings) return;
-            SetButtons(false);
+            if (!settingsInBook) SetButtons(false);
             settings.Open(settingsButton ? settingsButton.gameObject : null);
         }
+
+        // back to front: what the leaf uncovers, the old left page it lands on, then each face with the content it carries
+        void MoveSettingsIntoBook()
+        {
+            settings.EmbedPagesIn(book.transform);
+            int i = 0;
+            settings.RightPage.transform.SetSiblingIndex(i++);
+            book.leftPage.transform.SetSiblingIndex(i++);
+            book.leafFront.transform.SetSiblingIndex(i++);
+            book.rightPage.transform.SetSiblingIndex(i++);
+            book.leafBack.transform.SetSiblingIndex(i++);
+            settings.LeftPage.transform.SetSiblingIndex(i);
+            ApplyTurn();
+        }
+
+        // The leaf is blank paper; page content sits on it, squeezed towards the spine (page pivots are on the spine).
+        void ApplyTurn()
+        {
+            turnK = Mathf.MoveTowards(turnK, settings.IsOpen ? 1f : 0f, Time.unscaledDeltaTime / pageTurnTime);
+            float angle = 180f * turnK * turnK * (3f - 2f * turnK);
+            float squeeze = Mathf.Abs(Mathf.Cos(angle * Mathf.Deg2Rad));
+            bool atMenu = turnK <= 0f, atSettings = turnK >= 1f;
+            book.SetLeaf(angle);
+
+            if (!atMenu)   // at rest the book's opening (Set) owns the menu pages' alpha
+            {
+                book.leftPage.alpha = atSettings ? 0f : 1f;
+                book.rightPage.alpha = angle < 90f ? 1f : 0f;
+            }
+            book.rightPage.transform.localScale = new Vector3(angle < 90f ? squeeze : 1f, 1f, 1f);
+            SetPageInput(book.leftPage, atMenu);
+            SetPageInput(book.rightPage, atMenu);
+
+            settings.RightPage.alpha = atMenu ? 0f : 1f;
+            settings.LeftPage.alpha = angle >= 90f ? 1f : 0f;
+            settings.LeftPage.transform.localScale = new Vector3(angle >= 90f ? squeeze : 1f, 1f, 1f);
+            SetPageInput(settings.RightPage, atSettings);
+            SetPageInput(settings.LeftPage, atSettings);
+        }
+
+        static void SetPageInput(CanvasGroup page, bool on) => page.blocksRaycasts = page.interactable = on;
 
         void ToTitle()
         {

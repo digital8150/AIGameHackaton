@@ -62,6 +62,10 @@ namespace DuskTwilight
 
         public bool IsOpen { get; private set; }
         public event System.Action Closed;
+        public CanvasGroup LeftPage => book ? book.leftPage : null;
+        public CanvasGroup RightPage => book ? book.rightPage : null;
+
+        bool embedded;
 
         readonly List<Vector2Int> resolutions = new List<Vector2Int>();
         readonly float[] window512 = new float[512];
@@ -155,12 +159,26 @@ namespace DuskTwilight
             });
         }
 
+        /// <summary>
+        /// The settings pages move into another open book of the same size (pause menu) and this panel's own book,
+        /// dim and open/close motion stay out of it; the host turns to the pages and handles their CanvasGroups.
+        /// </summary>
+        public void EmbedPagesIn(Transform hostBook)
+        {
+            embedded = true;
+            if (!group) group = GetComponent<CanvasGroup>();
+            group.alpha = 0f;
+            group.blocksRaycasts = group.interactable = false;
+            LeftPage.transform.SetParent(hostBook, false);
+            RightPage.transform.SetParent(hostBook, false);
+        }
+
         public void Open(GameObject returnTo)
         {
             if (IsOpen) return;
             returnSelection = returnTo;
             IsOpen = true;
-            group.blocksRaycasts = group.interactable = true;
+            if (!embedded) group.blocksRaycasts = group.interactable = true;
             if (master && EventSystem.current) EventSystem.current.SetSelectedGameObject(master.gameObject);
             PlayPage();
             StartMic();
@@ -203,6 +221,7 @@ namespace DuskTwilight
 
         void SetVisible(float k)
         {
+            if (embedded) return;
             if (book)
             {
                 float d = Mathf.Clamp01(k / 0.15f);

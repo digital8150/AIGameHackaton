@@ -38,6 +38,12 @@ namespace DuskTwilight
         [Tooltip("Closed book is centred on screen; the spread centres as it opens.")]
         public bool centreClosedBook = true;
 
+        [Header("Page turn (optional, see SetLeaf)")]
+        [Tooltip("Right-page face of a loose leaf, rect on the right half, pivot on the spine. Blank paper; the caller squeezes the page content over it.")]
+        public BookFlipGraphic leafFront;
+        [Tooltip("Left-page face of the same leaf (uvRect 0..0.5, mirrored).")]
+        public BookFlipGraphic leafBack;
+
         Vector2 restPos;
         Material paperMat, backMat;
         bool ready;
@@ -56,6 +62,24 @@ namespace DuskTwilight
                 backMat = new Material(coverBack.material) { name = coverBack.material.name + " (Cover Back)" };
                 backMat.SetFloat(HideLeftId, 0f);
                 coverBack.material = backMat;
+                if (leafFront) leafFront.material = backMat;
+                if (leafBack) leafBack.material = backMat;
+            }
+        }
+
+        /// <summary>A page of the open book turning: 0 = lying on the right, 180 = lying on the left (neither face drawn at rest).</summary>
+        public void SetLeaf(float angle)
+        {
+            Init();
+            if (leafFront)
+            {
+                leafFront.SetAngle(angle);
+                leafFront.enabled = angle > 0f && angle < 90f;
+            }
+            if (leafBack)
+            {
+                leafBack.SetAngle(angle);
+                leafBack.enabled = angle >= 90f && angle < 180f;
             }
         }
 

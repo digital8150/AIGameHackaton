@@ -30,10 +30,10 @@ Material:
     m_Ints: []
     m_Floats:
     - _ColorMask: 15
-    - _Cover: 12
-    - _FrameInset: 30
-    - _Medallion: 56
-    - _Pad: 34
+    - _Cover: 16
+    - _FrameInset: 40
+    - _Medallion: 80
+    - _Pad: 44
     - _Seed: 5
     - _Stencil: 0
     - _StencilComp: 8
