@@ -20,6 +20,11 @@ no humans, -3::1girl, 1boy, human::, wide shot, scenery, horizontal composition,
 {{still lake at sunset seen from the shore}}, {{layered paper theater backdrop, kamishibai stage scenery}}, the setting sun half sunk into the water, long golden reflection on the calm surface, distant dark tree lines and low hills on both sides, drifting paper clouds, warm amber, rose and dusty violet tones, low contrast,
 A wide, quiet 2D side-scrolling background of a sunset lake, crafted like layered cut paper with heavy pencil hatching and vintage storybook texture, darker toward the edges with the light gathered on the water.
 
+### 1-I. 원경: 메아리가 깨우는 동굴 (Echo Cave Backdrop — 2:1 고해상도, Anlas 사용)
+no humans, -3::1girl, 1boy, human::, wide shot, scenery, horizontal composition, -2::sky, sun, trees, building::,
+{{vast fairytale cave interior}}, {{layered paper theater backdrop, kamishibai stage scenery}}, hanging stalactites and stone columns receding into darkness, pale mineral glints, a faint violet glow from deep inside, dripping water lines, low contrast, dusty violet, deep plum and cool slate tones,
+A wide, dim 2D side-scrolling background of an echoing storybook cave, crafted like layered cut paper with heavy pencil hatching and vintage storybook texture, almost black at the edges with soft light only in the far center.
+
 ### 1-B. 중경: 종이연극 고목 숲 레이어 (Midground Cutout Forest Layer — 21:9 와이드 권장)
 no humans, -3::1girl, 1boy, human::, wide shot, horizontal composition, {{black background, simple background}}, -3::frame, border, rectangular panel, framed picture, backdrop board::,
 {{row of separate paper cutout tree silhouettes}}, uneven twisted fairytale trees of different heights with gaps of empty space between them, a broken stone arch among the trunks, hanging vines, ragged irregular silhouette edges, intricate pen cross-hatching on tree bark, sepia and dark plum tones,

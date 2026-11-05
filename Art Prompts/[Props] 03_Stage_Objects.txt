@@ -77,3 +77,16 @@ A single fairytale hanging sign too bright to read, its face lost in white-gold 
 no humans, -3::1girl, 1boy, human::, game asset, paper cutout prop, vertical composition, {{black background, simple background}}, -3::text, letters, open door, archway::,
 {{tall heavy closed wooden door slab}}, iron bands and rivets, a blank brass nameplate in the upper middle, weathered planks, sepia and dark plum tones, intricate pen cross-hatching,
 A single tall closed storybook door standing flat in side view, with a blank plate for a word, drawn in a vintage kamishibai paper-theater style, isolated on a solid black background.
+
+---
+
+## 7. 메아리 소품 (Echo Props — 스테이지 3)
+### 7-A. 매달린 종 (Hanging Bell — 2:3 세로 권장)
+no humans, -3::1girl, 1boy, human::, game asset, paper cutout prop, vertical composition, {{black background, simple background}},
+{{single antique bronze bell hanging from a short iron chain}}, flared rim, engraved sun and crescent bands, a small clapper visible inside, weathered patina, intricate pen cross-hatching, sepia and dark plum tones,
+A single fairytale hanging bell prop seen from the side, drawn in a vintage kamishibai paper-theater style with dense pen hatching, isolated on a solid black background.
+
+### 7-B. 메아리 스위치 (Echo Switch Post — 2:3 세로 권장)
+no humans, -3::1girl, 1boy, human::, game asset, paper cutout prop, vertical composition, {{black background, simple background}}, -3::lantern flame, fire, text::,
+{{slender wrought-iron post topped with a round glass orb in a filigree cage}}, the orb clear and empty, small cog details at the base, thin straight pole, weathered iron and pale glass, intricate pen cross-hatching, sepia and dark plum tones,
+A single slim fairytale switch post with an empty glass orb on top, seen straight from the side, drawn in a vintage kamishibai paper-theater style, isolated on a solid black background.
