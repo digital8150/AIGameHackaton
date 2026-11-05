@@ -7,6 +7,10 @@ The prompts are NOT stored here. They are read straight from "Art Prompts/":
 The only change made to a section prompt: "{{black background, simple background}}" /
 "on a solid black background" become a real transparent background (V5 alpha output).
 
+Character prompts (V4+ char_captions, so two people don't blend into one face): inside a section,
+  @char C3: <caption for one character> || <that character's negative>
+one line per character; the grid position (A-E left→right, 1-5 top→bottom, like the NAI UI) is optional.
+
 Size comes from an aspect hint in the section header (or its parent "##" header):
   16:9, 21:9, 3:2, 1:1, 2:3, 9:16, 9:21   (default 1:1; override with --size WxH)
 
@@ -32,6 +36,7 @@ MAX_FREE_PIXELS = 1024 * 1024        # Opus free-generation limit
 
 ASPECTS = {"21:9": (1472, 704), "16:9": (1344, 768), "3:2": (1216, 832), "1:1": (1024, 1024),
            "2:3": (832, 1216), "9:16": (768, 1344), "9:21": (704, 1472)}
+CHAR = re.compile(r"^@char\s*(?:([A-Ea-e])([1-5]))?\s*:\s*(.*)$")
 HEADER = re.compile(r"^(#{2,3})\s+(\d+(?:-[A-Za-z])?)\.\s*(.*)$")
 BLACK_TAG = re.compile(r"\{*\s*black background\s*,\s*simple background\s*\}*\s*,?\s*")
 BLACK_PHRASE = re.compile(r"(?:isolated\s+)?(?:cleanly\s+)?on a solid black background(?: for easy alpha extraction)?")
@@ -69,9 +74,16 @@ def load_sections():
                     size = aspect_of(h.group(3))
                     if h.group(1) == "##":
                         parent_size = size
-                    cur = {"title": h.group(3), "lines": [], "size": size or parent_size or ASPECTS["1:1"],
+                    cur = {"title": h.group(3), "lines": [], "chars": [], "size": size or parent_size or ASPECTS["1:1"],
                            "file": os.path.basename(path)}
                     sections[f"{num}:{h.group(2)}"] = cur
+                elif cur is not None and CHAR.match(line):
+                    c = CHAR.match(line)
+                    text, _, cneg = c.group(3).partition("||")
+                    pos = None
+                    if c.group(1):
+                        pos = {"x": 0.1 + 0.2 * "abcde".index(c.group(1).lower()), "y": 0.1 + 0.2 * (int(c.group(2)) - 1)}
+                    cur["chars"].append({"caption": text.strip().rstrip(","), "neg": cneg.strip().rstrip(","), "pos": pos})
                 elif cur is not None and line and not line.startswith("#") and not line.startswith("---"):
                     cur["lines"].append(line)
     out = {}
@@ -108,6 +120,14 @@ def build(section, size, seed, base, neg):
         "v4_negative_prompt": {"caption": {"base_caption": neg, "char_captions": []},
                                "legacy_uc": False},
     }
+    chars = section.get("chars") or []
+    if chars:
+        coords = any(c["pos"] for c in chars)
+        centre = lambda c: c["pos"] or {"x": 0.5, "y": 0.5}
+        params["v4_prompt"]["caption"]["char_captions"] = [{"char_caption": c["caption"], "centers": [centre(c)]} for c in chars]
+        params["v4_negative_prompt"]["caption"]["char_captions"] = [{"char_caption": c["neg"], "centers": [centre(c)]} for c in chars]
+        params["v4_prompt"]["use_coords"] = coords
+        params["characterPrompts"] = [{"prompt": c["caption"], "uc": c["neg"], "center": centre(c), "enabled": True} for c in chars]
     if transparent:
         # V5 web-client behaviour: the tag alone or these flags alone are not enough.
         params["straight_alpha"] = True

@@ -56,11 +56,11 @@ namespace DuskTwilight
         }
 
         /// <summary>Turn the page to <paramref name="scene"/>; false if there is no page prefab (caller falls back).</summary>
-        public static bool Load(string scene, PageTurn prefab)
+        public static bool Load(string scene, PageTurn prefab, bool ageFirst = true)
         {
             var t = Ensure(prefab);
             if (!t) return false;
-            t.Go(scene);
+            t.Go(scene, ageFirst);
             return true;
         }
 
@@ -79,14 +79,16 @@ namespace DuskTwilight
 
         void OnDestroy() { if (I == this) { I = null; Arriving = false; } }
 
-        public void Go(string scene)
+        /// <param name="ageFirst">Fade the frame into a worn page first (off when the screen already is one, e.g. the storybook).</param>
+        public void Go(string scene, bool ageFirst = true)
         {
             if (busy) return;
-            StartCoroutine(Run(scene));
+            StartCoroutine(Run(scene, ageFirst));
         }
 
-        IEnumerator Run(string scene)
+        IEnumerator Run(string scene, bool ageFirst)
         {
+            float ageTime = ageFirst ? this.ageTime : 0f;
             busy = true;
             // 1. capture the old stage's last frame (with its clear card) as the page
             yield return new WaitForEndOfFrame();
