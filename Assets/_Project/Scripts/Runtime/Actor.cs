@@ -189,24 +189,71 @@ namespace DuskTwilight
         }
 
         // ---------------- follower ------------------------------------------------------------
-        public void FollowTo(Vector2 target, int leaderFacing, float dt)
+        [Header("Follower")]
+        [Tooltip("How softly the follower closes on her path point (s). The path itself carries the jump arcs.")]
+        [Range(0.02f, 0.2f)] public float followSmooth = 0.05f;
+        [Tooltip("Walk cycle starts above this speed and stops below the lower one (no walk/idle flicker)")]
+        public Vector2 followWalkHysteresis = new Vector2(0.35f, 0.8f);
+
+        /// <param name="grounded">The path point is on the ground (the leader walked there), not mid-jump.</param>
+        public void FollowTo(Vector2 target, bool grounded, int leaderFacing, float dt)
         {
-            Vector2 p = transform.position;
-            Vector2 next = Vector2.SmoothDamp(p, target, ref followVel, 0.06f, 40f, dt);
-            float dx = next.x - p.x;
-            if (Mathf.Abs(dx) > 0.004f) Facing = dx > 0 ? 1 : -1;
-            else Facing = leaderFacing;
-            Grounded = Mathf.Abs(next.y - p.y) < 0.01f;
+            Vector2 p = rb.position;
+            Vector2 next = Vector2.SmoothDamp(p, target, ref followVel, followSmooth, 30f, dt);
+            float inv = 1f / Mathf.Max(dt, 1e-4f);
+            float vx = (next.x - p.x) * inv, vy = (next.y - p.y) * inv;
+            // low-pass so tiny path corrections don't read as steps
+            float k = 1f - Mathf.Exp(-dt * 18f);
+            followSpeed = Mathf.Lerp(followSpeed, vx, k);
+            followVy = Mathf.Lerp(followVy, vy, k);
+
+            float s = Mathf.Abs(followSpeed);
+            if (followWalking ? s < followWalkHysteresis.x : s > followWalkHysteresis.y) followWalking = !followWalking;
+            if (followWalking || Mathf.Abs(followSpeed) > 1.5f) Facing = followSpeed > 0 ? 1 : -1;
+            else if (s < 0.1f) Facing = leaderFacing;
+            // on the ground = following a walked stretch and already (almost) at its height
+            Grounded = grounded && Mathf.Abs(target.y - next.y) < 0.12f && Mathf.Abs(vy) < 6f;
             rb.MovePosition(next);
-            followSpeed = dx / Mathf.Max(dt, 1e-4f);
-            followVy = (next.y - p.y) / Mathf.Max(dt, 1e-4f);
         }
 
         float followSpeed, followVy;
+        bool followWalking;
+
+        public void Face(int dir) { if (dir != 0) Facing = dir > 0 ? 1 : -1; }
+
+        // ---------------- switch (visual only) ------------------------------------------------
+        Transform[] visuals; Vector3[] visualBase;
+        Vector2 swapFrom; float swapStart = -9f, swapDur, swapHop;
+
+        /// <summary>The body is already at its new spot; its picture slides over from <paramref name="worldFrom"/>.</summary>
+        public void SwapVisualFrom(Vector2 worldFrom, float duration, float hop)
+        {
+            if (visuals == null)
+            {
+                visuals = new Transform[transform.childCount];
+                visualBase = new Vector3[visuals.Length];
+                for (int i = 0; i < visuals.Length; i++) { visuals[i] = transform.GetChild(i); visualBase[i] = visuals[i].localPosition; }
+            }
+            swapFrom = worldFrom - (Vector2)transform.position;
+            swapStart = Time.time; swapDur = Mathf.Max(0.01f, duration); swapHop = hop;
+            ApplySwap();
+        }
+
+        void LateUpdate() { if (visuals != null) ApplySwap(); }
+
+        void ApplySwap()
+        {
+            float u = Mathf.Clamp01((Time.time - swapStart) / swapDur);
+            float e = 1f - (1f - u) * (1f - u) * (1f - u);          // ease-out
+            Vector2 off = swapFrom * (1f - e) + Vector2.up * (swapHop * 4f * u * (1f - u));
+            if (u >= 1f) off = Vector2.zero;
+            Vector3 local = transform.InverseTransformVector(off);
+            for (int i = 0; i < visuals.Length; i++) if (visuals[i]) visuals[i].localPosition = visualBase[i] + local;
+        }
 
         // ---------------- animation -----------------------------------------------------------
         bool wasAirborne;
-        float landTime = -9f;
+        float landTime = -9f, airStart = -9f;
 
         static Sprite Pick(Sprite[] set, int i) => set[Mathf.Clamp(i, 0, set.Length - 1)];
 
@@ -237,15 +284,17 @@ namespace DuskTwilight
         {
             float vx = IsLeader ? rb.linearVelocity.x : followSpeed;
             float vy = IsLeader ? rb.linearVelocity.y : followVy;
-            bool ground = IsLeader ? Grounded : Mathf.Abs(vy) < 0.5f;
+            bool ground = Grounded;
+            bool moving = IsLeader ? Mathf.Abs(vx) > 0.6f : followWalking;
             animTime += Time.deltaTime;
 
             bool sheets = idleFrames != null && idleFrames.Length > 0 && walkFrames != null && walkFrames.Length > 0
                           && jumpFrames != null && jumpFrames.Length > 0;
             if (sheets)
             {
-                if (!ground) wasAirborne = true;
-                else if (wasAirborne) { wasAirborne = false; landTime = Time.time; }
+                // only a real airtime earns a landing — a one-frame bump over a seam must not flash the land frames
+                if (!ground) { if (!wasAirborne) airStart = Time.time; wasAirborne = true; }
+                else if (wasAirborne) { wasAirborne = false; if (Time.time - airStart > 0.12f) landTime = Time.time; }
 
                 Sprite s;
                 if (!ground)
@@ -276,7 +325,7 @@ namespace DuskTwilight
                     pushPhase += Time.deltaTime * pushFps * Mathf.Lerp(0.35f, 1f, Mathf.Clamp01(Mathf.Abs(vx) / 3f));
                     s = Pick(pushFrames, (int)pushPhase % pushFrames.Length);
                 }
-                else if (Mathf.Abs(vx) > 0.6f)
+                else if (moving)
                 {
                     float speed01 = Mathf.Clamp01(Mathf.Abs(vx) / Mathf.Max(0.1f, runSpeed));
                     s = Pick(walkFrames, (int)(animTime * walkFps * Mathf.Lerp(0.5f, 1f, speed01)) % walkFrames.Length);
