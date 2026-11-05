@@ -3093,7 +3093,7 @@ MonoBehaviour:
   menuTime: 0.9
   startFadeTime: 1.4
   skippable: 1
-  firstScene: Stage1_FirstTwilight
+  firstScene: Prologue_Storybook
   music: {fileID: 5464394246138467244}
   musicFadeIn: 3
 --- !u!1 &3270728188508280708
