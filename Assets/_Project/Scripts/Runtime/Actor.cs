@@ -48,6 +48,10 @@ namespace DuskTwilight
         public bool sheetFacesLeft;
         [Tooltip("Pushing / pulling a box (or straining against one that won't move)")]
         public Sprite[] pushFrames;
+        [Tooltip("Pulling a box (walking backwards, hands toward the box). Empty = push frames.")]
+        public Sprite[] pullFrames;
+        [Tooltip("The pull sheet is drawn facing left (hands reaching left)")]
+        public bool pullSheetFacesLeft;
         [Tooltip("Push cycle fps while the box moves at full push speed (slower when straining)")]
         [Min(1)] public float pushFps = 20f;
 
@@ -64,6 +68,10 @@ namespace DuskTwilight
         public float SpeedScale { get; set; } = 1f;
         /// <summary>Set by a box every frame the leader is pushing against it.</summary>
         public void MarkPushing() => pushUntil = Time.time + 0.25f;
+        /// <summary>Pulling a box that is on <paramref name="boxDir"/> (-1 left, +1 right) of her.</summary>
+        public void MarkPulling(int boxDir) { pullUntil = Time.time + 0.25f; pullBoxDir = boxDir; }
+        public bool Pulling => Time.time < pullUntil;
+        float pullUntil = -9f; int pullBoxDir = 1;
         public bool Pushing => Time.time < pushUntil;
         float pushUntil = -9f, pushPhase;
         /// <summary>The input direction the leader is holding (-1, 0, 1).</summary>
@@ -250,6 +258,14 @@ namespace DuskTwilight
                         float t = Mathf.Clamp01(-vy / Mathf.Max(0.1f, jumpVelocity));
                         s = Pick(jumpFrames, Mathf.RoundToInt(Mathf.Lerp(jumpFall.x, jumpFall.y, t)));
                     }
+                }
+                else if (Pulling && pullFrames != null && pullFrames.Length > 0)
+                {
+                    pushPhase += Time.deltaTime * pushFps * Mathf.Lerp(0.35f, 1f, Mathf.Clamp01(Mathf.Abs(vx) / 3f));
+                    SetSheetSprite(Pick(pullFrames, (int)pushPhase % pullFrames.Length));
+                    // she faces the box while walking away from it
+                    sr.flipX = pullSheetFacesLeft ? pullBoxDir > 0 : pullBoxDir < 0;
+                    return;
                 }
                 else if (Pushing && pushFrames != null && pushFrames.Length > 0)
                 {

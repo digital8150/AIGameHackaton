@@ -80,6 +80,7 @@ namespace DuskTwilight
                     bool pulling = input == side && a.InteractHeld;
                     if (pushing || pulling)
                     {
+                        if (pulling) a.MarkPulling(-side);
                         a.MarkPushing();
                         if (a == duo.princess)
                         {
