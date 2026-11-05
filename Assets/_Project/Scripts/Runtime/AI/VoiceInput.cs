@@ -57,6 +57,16 @@ namespace DuskTwilight
             I = this;
             DontDestroyOnLoad(gameObject);
             whisper = GetComponent<WhisperManager>();
+            // the bigger model is fetched by Tools/download_assets.bat; a fresh clone without it falls back to base
+            if (whisper && !System.IO.File.Exists(System.IO.Path.Combine(Application.streamingAssetsPath, whisper.ModelPath)))
+            {
+                var fallback = "Whisper/ggml-base.bin";
+                if (System.IO.File.Exists(System.IO.Path.Combine(Application.streamingAssetsPath, fallback)))
+                {
+                    Debug.LogWarning($"[Voice] {whisper.ModelPath} missing (run Tools/download_assets.bat) — using {fallback}");
+                    whisper.ModelPath = fallback;
+                }
+            }
         }
 
         void Update()
