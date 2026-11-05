@@ -387,6 +387,10 @@ PrefabInstance:
       propertyPath: m_FontData.m_MaxSize
       value: 92
       objectReference: {fileID: 0}
+    - target: {fileID: 5207330527299134886, guid: 59f8e9ee680a35c4b9d45f98845cbfa7, type: 3}
+      propertyPath: firstScene
+      value: Prologue_Storybook
+      objectReference: {fileID: 0}
     - target: {fileID: 5682794986269642056, guid: 59f8e9ee680a35c4b9d45f98845cbfa7, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
