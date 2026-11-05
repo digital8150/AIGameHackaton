@@ -18600,8 +18600,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5041494166128261712, guid: e6e12cb6ebabc1a488e8b102cf36652d, type: 3}
       propertyPath: clearLine
-      value: "\uC655\uC790\uB294 \uAC00\uC9DC\uB97C \uBCF4\uACE0, \uACF5\uC8FC\uB294
-        \uADF8\uB9BC\uC744 \uBCF4\uC558\uB2E4"
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 5041494166128261712, guid: e6e12cb6ebabc1a488e8b102cf36652d, type: 3}
       propertyPath: nextScene
@@ -18617,7 +18616,7 @@ PrefabInstance:
       objectReference: {fileID: 1187765859}
     - target: {fileID: 5041494166128261712, guid: e6e12cb6ebabc1a488e8b102cf36652d, type: 3}
       propertyPath: chapterLine
-      value: "\uBCF4\uC774\uB294 \uAC83\uACFC \uC788\uB294 \uAC83\uC740 \uB2E4\uB974\uB2E4"
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 5041494166128261712, guid: e6e12cb6ebabc1a488e8b102cf36652d, type: 3}
       propertyPath: chapterName
