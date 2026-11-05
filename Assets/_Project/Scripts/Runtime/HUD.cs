@@ -29,8 +29,6 @@ namespace DuskTwilight
         public bool debugOverlay = false;
 
         [Header("Words")]
-        public string princeName = "트와일라잇 프린스";
-        public string princessName = "더스크 프린세스";
         public string continueNext = "▶  Space";
         public string continueEnd = "— 끝 —";
         [Tooltip("{0} minutes, {1} seconds, {2} switches, {3} falls")]
@@ -38,11 +36,9 @@ namespace DuskTwilight
 
         [Header("Colours set at runtime")]
         public Color princeColor = new Color(0.80f, 0.92f, 1f);
-        public Color princessColor = new Color(1f, 0.86f, 0.52f);
         public Color clearWashColor = new Color(1f, 0.72f, 0.45f, 0.35f);
 
         [Header("Timing")]
-        public PopTiming nameCardTiming = new PopTiming(6f, 1.2f, 2f);
         public PopTiming narrationTiming = new PopTiming(2.5f, 3.2f, 1.2f);
         public PopTiming captionTiming = new PopTiming(10f, 1.1f, 3f);
         public PopTiming noticeTiming = new PopTiming(5f, 2.8f, 1.5f);
@@ -51,17 +47,17 @@ namespace DuskTwilight
 
         [Header("Elements (inside HUD Canvas)")]
         public Image fade, clearWash;
-        public Text nameCard, micNote, narration, caption, notice, debug, titleSmall, titleBig, titleLine, clearTitle, clearLine, clearStats, clearContinue;
-        public CanvasGroup nameGroup, narrationGroup, captionGroup, noticeGroup, titleGroup, clearGroup, debugGroup;
+        public Text micNote, narration, caption, notice, debug, titleSmall, titleBig, titleLine, clearTitle, clearLine, clearStats, clearContinue;
+        public CanvasGroup narrationGroup, captionGroup, noticeGroup, titleGroup, clearGroup, debugGroup;
 
-        Coroutine nameCo, narrationCo, captionCo, noticeCo, fadeCo;
+        Coroutine narrationCo, captionCo, noticeCo, fadeCo;
 
         void Awake()
         {
             I = this;
             if (!fade) Debug.LogError("[HUD] elements are not assigned — use the HUD prefab.", this);
             fade.color = new Color(fade.color.r, fade.color.g, fade.color.b, 1f);
-            foreach (var g in new[] { nameGroup, narrationGroup, captionGroup, noticeGroup, titleGroup, clearGroup }) g.alpha = 0;
+            foreach (var g in new[] { narrationGroup, captionGroup, noticeGroup, titleGroup, clearGroup }) g.alpha = 0;
             clearContinue.text = "";
             var w = clearWashColor; w.a = 0; clearWash.color = w;
         }
@@ -72,7 +68,6 @@ namespace DuskTwilight
             GameEvents.Notice += ShowNotice;
             GameEvents.Caption += ShowCaption;
             GameEvents.Cleared += ShowClear;
-            GameEvents.Switched += OnSwitched;
         }
 
         // ------------------------------------------------------------------ runtime
@@ -90,15 +85,6 @@ namespace DuskTwilight
             micNote.text = micOn || thinking ? "♪" : "";
             micNote.rectTransform.localScale = Vector3.one * (1f + lvl * 0.6f);
             micNote.color = new Color(princeColor.r, princeColor.g, princeColor.b, 0.5f + lvl * 0.5f);
-        }
-
-        void OnSwitched(Sense s)
-        {
-            bool dark = s == Sense.Dark;
-            nameCard.text = dark ? princeName : princessName;
-            nameCard.color = dark ? princeColor : princessColor;
-            if (nameCo != null) StopCoroutine(nameCo);
-            nameCo = StartCoroutine(Pop(nameGroup, nameCardTiming));
         }
 
         string DebugText()
