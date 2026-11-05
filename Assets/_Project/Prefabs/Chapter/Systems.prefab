@@ -100,6 +100,7 @@ MonoBehaviour:
   chapterLine: "\uC5B4\uB460 \uC18D\uC758 \uC655\uC790, \uBE5B \uC18D\uC758 \uACF5\uC8FC"
   nextScene: 
   transition: {fileID: 5300202581695442275, guid: 15a1bc6fd7255944483bf8b2102e3e9e, type: 3}
+  pageTurn: {fileID: 4318691974606796085, guid: ab1e131e3af7fd7429c8cc8ddb5416bf, type: 3}
   clearTitle: "\uD669\uD63C\uC5D0\uC11C \uB9CC\uB098\uB2E4"
   clearLine: "\uC11C\uB85C\uC758 \uAC10\uAC01\uC73C\uB85C, \uBB38\uC744 \uC5F4\uC5C8\uB2E4"
   twilightEnding: 0

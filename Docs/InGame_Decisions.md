@@ -25,6 +25,7 @@
 - **함정 스위치**: `SwitchGate.forbidden`. 필요한 스위치가 다 켜져도 `settleTime`(0.7초) 동안 기다려, 같은 메아리가 더 멀리 있는 함정에 닿으면 전부 꺼진다.
 - **구간 리셋**: `StageSection`(x 범위) — 그 구간에 서면 시작점이 리스폰 지점이 되고, 떨어지면 구간 안의 `IResettable`(스위치·게이트·빈칸 다리·계단·종)이 처음 상태로. 열린 문·완성된 다리는 그대로 둔다.
 - **반대로 계단**: `WordStair` — 말한 단어의 글자가 계단 칸이 되어 차례로 켜졌다 꺼진다. `topFirst`면 위에서부터 켜져 오를 수 없고, "반대로"가 순서를 뒤집는다.
+- **스테이지 전환 = 그림책 넘김**: `PageTurn`(Prefabs/UI/PageTurn, 셰이더 `UI/PageTurn`) — 클리어 카드가 뜬 마지막 화면을 종이 한 장으로 찍어 덮고, 다음 스테이지를 그 뒤에서 로드한 뒤 모서리부터 말려 넘어간다(뒷면은 종이결 + 비치는 그림). 소리 `Audio/page_turn.wav`(로컬 생성). 프리팹이 비어 있으면 기존 암전(`SceneTransition`). 타이틀 → 1단계는 암전 그대로.
 - **엔딩**: `GameFlow.twilightEnding` — 클리어 시 화면을 두 감각의 중간(0.5)으로 섞고 클리어 카드가 타이틀 카드가 된다.
 
 ## 1-2. 음성 / AI
@@ -98,6 +99,7 @@
 | 기믹 소품 (문·톱니·등불·레버·체크포인트·재회의 등불·제단) | NovelAI V5 생성, `Art Prompts/` 03 → `Assets/_Project/Art/Props` | 프로젝트 소유 |
 | 장치, 신호등, 기둥 (구) | Kenney *Pixel Platformer Industrial Expansion* | CC0 |
 | 효과음 | Kenney *Impact Sounds* | CC0 |
-| 한글 UI 폰트 | Galmuri11 (quiple) | SIL OFL 1.1 |
+| 인게임 UI 폰트 | 온글잎 류류체 ((주)보이저엑스, 눈누) — `ThirdPartyLicenses/Ownglyph_Ryuryu_License.txt` | 온글잎 라이선스 (저작권 보이저엑스·손글씨 제공자, 사용 이미지는 온글잎 프로모션에 활용될 수 있음) |
+| 기호 폴백 폰트 | Galmuri11 (quiple) | SIL OFL 1.1 |
 | 왕자·공주 스프라이트 | 이 프로젝트 오리지널 (Kenney 팔레트·외곽선 규칙에 맞춰 생성, `Tools/gen_characters.py`) | 프로젝트 소유 |
 | 셰이더 | 이 프로젝트 오리지널 HLSL | 프로젝트 소유 |

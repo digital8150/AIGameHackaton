@@ -27,7 +27,7 @@ namespace DuskTwilight
     public class GameFlow : MonoBehaviour
     {
         public static GameFlow I { get; private set; }
-        public static bool InputLocked => fadeLock || ModalOpen;
+        public static bool InputLocked => fadeLock || ModalOpen || PageTurn.Busy;
         /// <summary>A modal panel (e.g. the word altar) is taking input.</summary>
         public static bool ModalOpen { get; set; }
         static bool fadeLock;
@@ -41,6 +41,8 @@ namespace DuskTwilight
         public string nextScene = "";
         [Tooltip("Shared black cover for the scene change (Prefabs/UI/SceneTransition).")]
         public SceneTransition transition;
+        [Tooltip("Stage → stage as a picture-book page turn (Prefabs/UI/PageTurn). Empty = the black cover above.")]
+        public PageTurn pageTurn;
         public string clearTitle = "황혼에서 만나다";
         public string clearLine = "서로의 감각으로, 문을 열었다";
 
@@ -98,7 +100,7 @@ namespace DuskTwilight
         IEnumerator Intro()
         {
             fadeLock = true;
-            HUD.I?.Fade(1f, 0f, introFade);
+            HUD.I?.Fade(PageTurn.Arriving ? 0f : 1f, 0f, introFade);   // arriving under a turning page: no fade from black
             HUD.I?.ShowTitle(chapterLabel, chapterName, chapterLine);
             yield return new WaitForSeconds(introInputLock);
             fadeLock = false;
@@ -160,7 +162,7 @@ namespace DuskTwilight
             HUD.I?.ShowContinue(!string.IsNullOrEmpty(nextScene));
             if (string.IsNullOrEmpty(nextScene)) yield break;
             while (!(GameInput.I.Jump.WasPressedThisFrame() || GameInput.I.Interact.WasPressedThisFrame())) yield return null;
-            SceneTransition.Load(nextScene, transition);
+            if (!PageTurn.Load(nextScene, pageTurn)) SceneTransition.Load(nextScene, transition);
         }
 
 #if UNITY_EDITOR
