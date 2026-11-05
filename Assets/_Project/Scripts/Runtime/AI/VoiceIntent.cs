@@ -103,7 +103,7 @@ namespace DuskTwilight
         }
 
         /// <summary>Splits Hangul syllables into lead/vowel/tail jamo so near-homophones compare closely.</summary>
-        static string Jamo(string s)
+        public static string Jamo(string s)
         {
             var sb = new System.Text.StringBuilder();
             foreach (char c in s)
@@ -116,7 +116,7 @@ namespace DuskTwilight
             return sb.ToString();
         }
 
-        static int Distance(string a, string b)
+        public static int Distance(string a, string b)
         {
             var d = new int[a.Length + 1, b.Length + 1];
             for (int i = 0; i <= a.Length; i++) d[i, 0] = i;

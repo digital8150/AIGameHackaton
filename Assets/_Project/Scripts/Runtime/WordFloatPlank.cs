@@ -52,6 +52,9 @@ namespace DuskTwilight
 
         bool Carved => !string.IsNullOrEmpty(carvedWord);
 
+        /// <summary>Any word can become a plank: speech goes straight here (not matched against the choices).</summary>
+        public override bool AcceptsAnyText => !Carved;
+
         void Start()
         {
             if (!slot) slot = transform;

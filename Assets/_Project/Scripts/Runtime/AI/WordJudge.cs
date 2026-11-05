@@ -35,6 +35,8 @@ namespace DuskTwilight
 
         public static float MinConfidence = 0.5f;
         public static float TimeoutSeconds = 4f;
+        /// <summary>Jamo difference allowed for a near-miss of a listed word (0.35 = 2 of 6 jamo).</summary>
+        public static float NearRatio = 0.35f;
 
         /// <summary>Ask once with the real instructions so the server has them cached (no result kept).</summary>
         public static async Task PrimeAsync()
@@ -51,6 +53,9 @@ namespace DuskTwilight
             {
                 var lw = lexicon.Find(w, out _);
                 if (lw != WordWeight.None) return new Result { weight = lw, confidence = 1f, source = "사전" };
+                // a near-miss of a listed word (speech recognition) counts as that word
+                var nw = lexicon.FindNear(w, NearRatio, out var near);
+                if (nw != WordWeight.None) return new Result { weight = nw, confidence = 0.8f, source = "사전≈" + near };
             }
             if (cache.TryGetValue(w, out var hit)) { hit.source = "캐시"; return hit; }
 

@@ -119,6 +119,16 @@ MonoBehaviour:
     weight: 3
   - word: "\uBB34\uC1E0"
     weight: 3
+  - word: "\uAC08\uB9E4\uAE30"
+    weight: 1
+  - word: "\uBE44\uB458\uAE30"
+    weight: 1
+  - word: "\uCC38\uC0C8"
+    weight: 1
+  - word: "\uB9DD\uCE58"
+    weight: 3
+  - word: "\uC1E0\uB9DD\uCE58"
+    weight: 3
   notThings:
   - "\uC548\uB155"
   - "\uC548\uB155\uD558\uC138\uC694"

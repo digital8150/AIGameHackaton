@@ -47,6 +47,26 @@ namespace DuskTwilight
             return best;
         }
 
+        /// <summary>
+        /// Speech recognition near-miss ("기탈" for 깃털, "알맥이" for 갈매기): the entry whose jamo are closest, if the
+        /// difference is at most <paramref name="maxRatio"/> of the entry's jamo. Entries of two or more letters only.
+        /// </summary>
+        public WordWeight FindNear(string cleaned, float maxRatio, out string matched)
+        {
+            matched = null;
+            var best = WordWeight.None;
+            string jw = VoiceIntent.Jamo(cleaned);
+            float bestR = float.MaxValue;
+            foreach (var e in entries)
+            {
+                if (string.IsNullOrEmpty(e.word) || e.word.Length < 2) continue;
+                string je = VoiceIntent.Jamo(e.word);
+                float r = VoiceIntent.Distance(jw, je) / (float)je.Length;
+                if (r <= maxRatio && r < bestR) { bestR = r; best = e.weight; matched = e.word; }
+            }
+            return best;
+        }
+
         public IEnumerable<string> Words { get { foreach (var e in entries) yield return e.word; } }
     }
 }
