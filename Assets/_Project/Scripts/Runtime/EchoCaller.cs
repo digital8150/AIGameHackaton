@@ -82,7 +82,11 @@ namespace DuskTwilight
                 if (duo.Leader.sense != Sense.Dark)
                 {
                     // she cannot hear her own call; E beside a box or a lever is her hands, not her voice
-                    if (!InteractInReach && !PushBox.IsBesideAny(duo.Leader)) { GameEvents.Caption?.Invoke("……"); GameEvents.SilentCall?.Invoke(); }
+                    if (!InteractInReach && !PushBox.IsBesideAny(duo.Leader))
+                    {
+                        var silent = duo.Leader.GetComponent<SilentSpeech>();
+                        if (silent) silent.Pop(); else GameEvents.SilentCall?.Invoke();
+                    }
                 }
                 else if (Time.time - last >= cooldown)
                 {

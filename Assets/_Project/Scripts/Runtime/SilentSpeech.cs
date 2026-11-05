@@ -45,13 +45,16 @@ namespace DuskTwilight
         public float fadeTime = 0.3f;
         [Tooltip("Minimum seconds between SilentCall/caption triggers, so tapping V does not spam.")]
         public float pressCooldown = 0.9f;
+        [Tooltip("Seconds the bubble stays up when she reaches for nothing (E with nothing in reach), before lingering and fading.")]
+        public float popHoldTime = 0.6f;
 
         Actor actor;
         float shown;          // 0..1 pop progress
         float releaseTime = -99f;
         float lastFire = -99f;
         float holdStart;
-        bool wasHeld;
+        float popUntil = -99f;
+        bool wasHeld, wasPressed;
 
         void Awake()
         {
@@ -66,20 +69,31 @@ namespace DuskTwilight
             }
         }
 
+        /// <summary>She reaches for nothing (E with nothing in reach): the same silent bubble, for a moment, no caption.</summary>
+        public void Pop()
+        {
+            if (Time.time < popUntil) return;
+            popUntil = Time.time + popHoldTime;
+            if (Time.time - lastFire >= pressCooldown)
+            {
+                lastFire = Time.time;
+                GameEvents.SilentCall?.Invoke();
+            }
+        }
+
         void Update()
         {
-            bool held = actor && actor.IsLeader && actor.sense != Sense.Dark && GameInput.I != null
-                        && GameInput.I.MicHold.IsPressed() && !GameFlow.InputLocked && !GameFlow.ModalOpen;
-            if (held && !wasHeld)
+            bool pressed = actor && actor.IsLeader && actor.sense != Sense.Dark && GameInput.I != null
+                           && GameInput.I.MicHold.IsPressed() && !GameFlow.InputLocked && !GameFlow.ModalOpen;
+            bool held = pressed || Time.time < popUntil;
+            if (pressed && !wasPressed && Time.time - lastFire >= pressCooldown)
             {
-                holdStart = Time.time;
-                if (Time.time - lastFire >= pressCooldown)
-                {
-                    lastFire = Time.time;
-                    GameEvents.SilentCall?.Invoke();
-                    GameEvents.Caption?.Invoke(caption);
-                }
+                lastFire = Time.time;
+                GameEvents.SilentCall?.Invoke();
+                GameEvents.Caption?.Invoke(caption);
             }
+            wasPressed = pressed;
+            if (held && !wasHeld) holdStart = Time.time;
             if (!held && wasHeld) releaseTime = Time.time;
             wasHeld = held;
 
