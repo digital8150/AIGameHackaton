@@ -5,7 +5,7 @@ using UnityEngine.UI;
 namespace DuskTwilight
 {
     /// <summary>
-    /// Player-facing HUD. Says as little as possible: who you are sensing through (a medallion),
+    /// Player-facing HUD. Says as little as possible: who you are sensing through (the emblems, see SenseEmblems),
     /// what the world sounds like when you cannot hear it (captions), and the twilight voice's
     /// occasional whisper. Developer information lives behind F1 only.
     /// Pixel UI is authored at 480x270 and drawn 2x on a 960x540 canvas.
@@ -24,8 +24,6 @@ namespace DuskTwilight
         }
 
         [Header("Sprites")]
-        public Sprite princeIcon, princessIcon;
-        public Sprite medallionLight, medallionDark;
         public EchoCaller echo;
         [Tooltip("Developer overlay (F1). Off for players.")]
         public bool debugOverlay = false;
@@ -41,7 +39,6 @@ namespace DuskTwilight
         [Header("Colours set at runtime")]
         public Color princeColor = new Color(0.80f, 0.92f, 1f);
         public Color princessColor = new Color(1f, 0.86f, 0.52f);
-        [Range(0, 1)] public float partnerAlpha = 0.75f;
         public Color clearWashColor = new Color(1f, 0.72f, 0.45f, 0.35f);
 
         [Header("Timing")]
@@ -50,20 +47,14 @@ namespace DuskTwilight
         public PopTiming captionTiming = new PopTiming(10f, 1.1f, 3f);
         public PopTiming noticeTiming = new PopTiming(5f, 2.8f, 1.5f);
         public PopTiming titleTiming = new PopTiming(1.2f, 2.2f, 0.8f);
-        [Tooltip("Medallion grows by this much when you switch.")]
-        public float switchPop = 0.18f;
         public float clearWashSeconds = 1.5f;
 
         [Header("Elements (inside HUD Canvas)")]
-        public RectTransform medallionRoot;
-        public RectTransform partnerRoot;
-        public Image medallion, portrait, partnerMedallion, partnerPortrait, fade, clearWash;
+        public Image fade, clearWash;
         public Text nameCard, micNote, narration, caption, notice, debug, titleSmall, titleBig, titleLine, clearTitle, clearLine, clearStats, clearContinue;
         public CanvasGroup nameGroup, narrationGroup, captionGroup, noticeGroup, titleGroup, clearGroup, debugGroup;
 
         Coroutine nameCo, narrationCo, captionCo, noticeCo, fadeCo;
-        bool lastDark;
-        float pop;
 
         void Awake()
         {
@@ -82,8 +73,6 @@ namespace DuskTwilight
             GameEvents.Caption += ShowCaption;
             GameEvents.Cleared += ShowClear;
             GameEvents.Switched += OnSwitched;
-            lastDark = SenseController.I && SenseController.I.IsDark;
-            RefreshMedallion(lastDark);
         }
 
         // ------------------------------------------------------------------ runtime
@@ -92,11 +81,6 @@ namespace DuskTwilight
             if (GameInput.I && GameInput.I.DebugOverlay.WasPressedThisFrame()) debugOverlay = !debugOverlay;
             debugGroup.alpha = debugOverlay ? 1 : 0;
             if (debugOverlay) debug.text = DebugText();
-
-            // medallion pop on switch
-            pop = Mathf.MoveTowards(pop, 0, Time.deltaTime * 4f);
-            float s = 1f + Mathf.Sin(pop * Mathf.PI) * switchPop;
-            medallionRoot.localScale = new Vector3(s, s, 1);
 
             // breathing mic note while the player is using their voice
             var voice = VoiceInput.I;
@@ -111,21 +95,10 @@ namespace DuskTwilight
         void OnSwitched(Sense s)
         {
             bool dark = s == Sense.Dark;
-            RefreshMedallion(dark);
-            pop = 1f;
             nameCard.text = dark ? princeName : princessName;
             nameCard.color = dark ? princeColor : princessColor;
             if (nameCo != null) StopCoroutine(nameCo);
             nameCo = StartCoroutine(Pop(nameGroup, nameCardTiming));
-        }
-
-        void RefreshMedallion(bool dark)
-        {
-            medallion.sprite = dark ? medallionDark : medallionLight;
-            portrait.sprite = dark ? princeIcon : princessIcon;
-            partnerMedallion.sprite = dark ? medallionLight : medallionDark;
-            partnerPortrait.sprite = dark ? princessIcon : princeIcon;
-            partnerMedallion.color = partnerPortrait.color = new Color(1, 1, 1, partnerAlpha);
         }
 
         string DebugText()
