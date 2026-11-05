@@ -19,6 +19,7 @@ Unity 6000.3 · URP 2D Renderer · Input System only · 기획서: Claude Docs "
 - `Assets/_Project/Scripts/Runtime/Tutorial` — 단계별 튜토리얼(Section/Director/Signals/View/Veil/Marker), `AI` — Whisper 음성(`VoiceInput`/`VoiceCommands`)과 Jev(`JevClient`/`JevDirectorBrain`/`VoiceIntent`)
 - Whisper 모델 `Assets/StreamingAssets/Whisper/ggml-base.bin`은 git 밖 — `Tools/download_assets.bat`. Jev 키는 환경변수 `TYPESAFE_API_KEY` (없으면 규칙/키워드 폴백).
 - `Assets/_Project/Shaders` — `DuskSense.hlsl`(공통 감각 모델) + `SenseSprite`/`Sky`/`SoundGlyph`/`Glow`
+- HUD 감각 문장: `Chapter/HUD`의 Sense Emblems(`SenseEmblems`: 공전 전환, 위치·크기는 Main Slot/Partner Slot) + `SenseEmblem`(초상 + 프레임, 반짝임 주기). 셰이더 `Shaders/HUD/`(EmblemWave·EmblemRipple·EmblemPortrait), 머티리얼 `Materials/HUD/M_Emblem_*`. 파형·물결 수치는 머티리얼에서 조절.
 - `Assets/_Project/Scripts/Runtime` — 네임스페이스 `DuskTwilight`
 - `Assets/_Project/Art`, `Audio`, `Fonts` — CC0(Kenney)·OFL(Galmuri) 에셋, 라이선스는 `ThirdPartyLicenses/`
 - `Tools/gen_env_nai.py` — NovelAI V5 에셋 생성기. 프롬프트는 `Art Prompts/`의 txt 섹션을 그대로 읽는다(예: `05:2`), 검은 배경은 투명 배경으로 치환. 토큰은 환경변수 `NAI_API_KEY`. 결과는 `Tools/_nai_out/`(git 밖)에서 골라 `Assets/_Project/Art/Env`로.
