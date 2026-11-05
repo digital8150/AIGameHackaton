@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 8993676377239678565}
   - component: {fileID: 5211872291915775132}
   - component: {fileID: 6751948868302185005}
+  - component: {fileID: 8401244983083841756}
   m_Layer: 0
   m_Name: Systems
   m_TagString: Untagged
@@ -53,6 +54,14 @@ MonoBehaviour:
   switchDuration: 0.65
   switchMaxRadius: 32
   switchSoftness: 0.6
+  edgeTear: 2.2
+  edgeTearScale: 0.32
+  rimWidth: 1.1
+  scratchBand: 4
+  hitStopScale: 0.3
+  hitStopTime: 0.14
+  zoomPunch: 0.07
+  zoomTime: 0.7
   echoSpeed: 11
   echoRadiusPerStrength: 7.5
   echoLifetime: 2.6
@@ -175,6 +184,24 @@ MonoBehaviour:
   switchClip: {fileID: 8300000, guid: 09e8521911030a140860ee40e9d3f51e, type: 3}
   startSense: 0
   switchLocked: 0
+--- !u!114 &8401244983083841756
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 481134584346713351}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d63085fd5c02c5438a4ef63146d1b8b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DuskTwilight.AudioRouter
+  mixer: {fileID: 24100000, guid: 696c3b2e2beb39e4a8d56e5cb8cc7640, type: 2}
+  sfxGroup: {fileID: -8397119068886790115, guid: 696c3b2e2beb39e4a8d56e5cb8cc7640, type: 2}
+  masterParam: MasterVolume
+  musicParam: MusicVolume
+  sfxParam: SfxVolume
+  sweepInterval: 0.5
 --- !u!1 &481621429305700278
 GameObject:
   m_ObjectHideFlags: 0

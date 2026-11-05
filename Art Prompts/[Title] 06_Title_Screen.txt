@@ -1,0 +1,35 @@
+# [Title 06] 타이틀 화면 — NAI V5 프롬프트 (뒤에 [Base Prompts].txt 결합)
+# 포트릿: 832x1216, transBG on, 28 steps (무료). 배경: 1920x1088, 28 steps (60 Anlas).
+# 분위기: 어둡고 muted한 세피아 동화 — 밝은 표정·채도는 피한다 (v1/v2는 너무 밝아 교체).
+
+## 1. 왕자 타이틀 포트릿 (seed 1788585783, Unity에서 좌우 반전)
+1boy, solo, bishounen, slender fragile prince, {{cowboy shot, from thighs up}}, {three-quarter view, body turned facing left}, head slightly lowered,
+-2::mature male, long face, sharp jaw::, soft youthful face, round soft face,
+2.2::bandaged eyes, white cloth bandage wrapped around eyes, blindfold::, -3::visible eyes, open eyes, pupils, irises, glasses, horns::,
+-3::weapon, polearm, spear, staff, cane, sword, holding object::, one hand raised gently forward with open palm as if reaching for someone,
+{{bright pale champagne-blonde hair, light golden blonde hair}}, medium-short fluffy messy wavy hair, soft bangs falling over eye bandages, -2::brown hair, dark blonde hair::,
+{{sorrowful melancholic expression, closed mouth, no smile, slightly downturned lips}}, -2::smile, grin, cheerful::,
+high-neck ivory lace frilled collar, {{weathered white and pale-gold royal doublet with intricate tarnished gold filigree}}, {{torn-off royal emblem stitch marks on chest}}, {{twin circular antique gold cloak clasps with delicate chains across chest}},
+{{faded ivory-white cloak billowing in the wind with glowing warm sunset-gold inner lining}}, {warm ember rim light on hair}, {{muted colors, desaturated palette, dim low-key lighting}},
+An anime-style dark fairytale portrait of a slender, fragile blind prince with white bandages wrapped around his eyes, shown from the thighs up turned slightly to the left. He has a soft youthful face, fluffy wavy bright pale-blonde hair and a quiet sorrowful expression, and raises one empty hand forward as if reaching for someone he cannot see. His ivory cloak with a glowing sunset-gold lining drifts in the wind,
+1.1::anime coloring, clean vibrant colors::, 0.8::thick outlines::,
+0.8::thick outlines::, 0.7::artist:sainker::, 0.75::artist:diyokama::, 0.45::artist:toriki::, 0.5::artist:inoue kiyoshirou::, 0.45::artist:fuzuki fuuro::, 0.5::artist:tizibade::, 0.55::artist:eteru::, 0.6::artist:loongm::, -1::flat color::, kamishibai, paper theater style, storybook illustration, dark fairytale, sketchy lineart, detailed pencil hatching, vintage sepia tone, year 2025, masterpiece, absurdres, very aesthetic, amazing quality, 0.4::low lightness::, 0.4::rich colors::, -1::multiple views::, -1::artist collaboration::, 0.1::location::, cinematic illustration, fantasy,
+
+## 2. 공주 타이틀 포트릿 (seed 2164094909)
+1girl, solo, dragon girl, demon girl, {{cowboy shot, from thighs up}}, {three-quarter view, body turned facing right}, looking down to the side, downcast eyes,
+-2::mature female, long face, narrow eyes, eyeliner, heavy makeup::, round soft face, youthful cute face,
+2.2::small short oni horns on forehead, tiny conical pointed black horns::, -3::large horns, crescent horns, wrap-around horns, long horns, thick curved horns, cyan horns::,
+-3::weapon, polearm, spear, staff, sword, holding object::, one hand pressed to her chest, the other hand extended to the side,
+creamy platinum silver-white hair, shoulder-length hair, {{fluffy outward-curled sidelocks framing cheeks, flipped hair ends}}, blunt bangs, hair swaying in the wind,
+1.4::big expressive anime eyes, big round eyes, half-lowered gaze, luminous violet-blue irises, thick eyelashes::, {{quiet melancholic expression, closed mouth, faint sad smile}}, -2::open mouth, grin, blush, cheerful, laughing::, calm sorrowful royal aura,
+high-neck black lace frilled collar, {{intricate filigree silver-and-violet metallic corset bodice}}, {{twin circular silver cloak clasps with double silver chains across chest}},
+{{long deep indigo-violet cloak billowing in the wind with glowing warm sunset-gold inner lining}}, layered black and dark-violet gothic skirt with silver ribbon trim, {cool violet rim light on hair}, {{muted colors, desaturated palette, dim low-key lighting}},
+An anime-style dark fairytale portrait of a silver-haired princess combining Chamber Dragonmaid and Lovely Labrynth, with a pair of small pointed black horns on her forehead and outward-curled silver hair, shown from the thighs up turned slightly to the right. She has a soft round face, big bright violet-blue eyes and a quiet, wistful and melancholic expression with her mouth closed, one empty hand on her chest, her deep indigo cloak with a glowing sunset-gold lining drifting in the wind,
+1.1::anime coloring, clean vibrant colors::, 0.8::thick outlines::,
+0.8::thick outlines::, 0.7::artist:sainker::, 0.75::artist:diyokama::, 0.45::artist:toriki::, 0.5::artist:inoue kiyoshirou::, 0.45::artist:fuzuki fuuro::, 0.5::artist:tizibade::, 0.55::artist:eteru::, 0.6::artist:loongm::, -1::flat color::, kamishibai, paper theater style, storybook illustration, dark fairytale, sketchy lineart, detailed pencil hatching, vintage sepia tone, year 2025, masterpiece, absurdres, very aesthetic, amazing quality, 0.4::low lightness::, 0.4::rich colors::, -1::multiple views::, -1::artist collaboration::, 0.1::location::, cinematic illustration, fantasy,
+
+## 3. 타이틀 배경 — 어두운 숲과 황혼의 문 (seed 578624566)
+no humans, -3::1girl, 1boy, human, character::, wide shot, scenery, horizontal composition, -2::text, logo, frame, border, bright sky, blue sky, vivid colors, god rays::,
+{{layered paper theater backdrop, kamishibai stage scenery}}, {{dark gloomy fairytale forest at dusk}}, rows of tall gnarled dark tree trunks and twisted branches framing both sides, thick overlapping silhouettes of brambles and ferns in the foreground, a small dim clearing in the center, a distant ruined stone twilight gate barely visible through the trees with a faint warm ember glow behind it, drifting mist, a few dim fireflies,
+{{low key lighting, very dark, deep shadows}}, {{muted desaturated sepia and umber tones}}, dusty dark violet shadows, smoky brown haze, faded old paper texture, heavy charcoal and pencil hatching,
+A dim, melancholic and quiet title-screen background of a dark storybook forest at twilight, crafted like layered cut paper with heavy pencil hatching and an aged sepia vintage storybook texture, almost black toward the edges and corners, only a faint soft glow deep in the center distance, empty calm space in the upper middle,

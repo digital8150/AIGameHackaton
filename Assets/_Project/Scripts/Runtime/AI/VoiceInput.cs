@@ -56,7 +56,7 @@ namespace DuskTwilight
 
         void Begin()
         {
-            device = Microphone.devices[0];
+            device = GameSettings.ResolveMicDevice();
             clip = Microphone.Start(device, false, Mathf.CeilToInt(maxSeconds) + 1, sampleRate);
             started = Time.time;
             Recording = true;

@@ -1,0 +1,86 @@
+// Title lettering (uGUI Text): gilded vertical gradient, engraved hatch texture, a light sweep that crosses
+// the letters now and then, and a left-to-right ink reveal. _Rect = text rect in local pixels (set by TitleLogo).
+Shader "DuskTwilight/UI/TitleLogo"
+{
+    Properties
+    {
+        [PerRendererData] _MainTex ("Font Texture", 2D) = "white" {}
+        _Color ("Tint", Color) = (1,1,1,1)
+        _TopColor ("Top", Color) = (1, 0.95, 0.8, 1)
+        _MidColor ("Middle", Color) = (0.98, 0.74, 0.38, 1)
+        _BottomColor ("Bottom", Color) = (0.62, 0.36, 0.22, 1)
+        _Hatch ("Engraved hatch", Range(0, 1)) = 0.18
+
+        [Header(Light sweep)]
+        _ShineColor ("Shine", Color) = (1, 1, 0.92, 1)
+        _ShineWidth ("Shine width (0..1 of rect)", Range(0.01, 0.5)) = 0.08
+        _ShinePeriod ("Shine period (s)", Float) = 6
+        _ShineStrength ("Shine strength", Range(0, 3)) = 1.2
+
+        [Header(Reveal)]
+        _Reveal ("Reveal", Range(0, 1)) = 1
+        _RevealSoft ("Reveal softness", Range(0.01, 0.5)) = 0.18
+        _Rect ("Rect (xMin, xMax, yMin, yMax)", Vector) = (-500, 500, -60, 60)
+
+        [HideInInspector] _StencilComp ("Stencil Comparison", Float) = 8
+        [HideInInspector] _Stencil ("Stencil ID", Float) = 0
+        [HideInInspector] _StencilOp ("Stencil Operation", Float) = 0
+        [HideInInspector] _StencilWriteMask ("Stencil Write Mask", Float) = 255
+        [HideInInspector] _StencilReadMask ("Stencil Read Mask", Float) = 255
+        [HideInInspector] _ColorMask ("Color Mask", Float) = 15
+    }
+
+    SubShader
+    {
+        Tags { "Queue"="Transparent" "IgnoreProjector"="True" "RenderType"="Transparent" "PreviewType"="Plane" }
+        Stencil { Ref [_Stencil] Comp [_StencilComp] Pass [_StencilOp] ReadMask [_StencilReadMask] WriteMask [_StencilWriteMask] }
+        Cull Off Lighting Off ZWrite Off ZTest [unity_GUIZTestMode]
+        Blend SrcAlpha OneMinusSrcAlpha
+        ColorMask [_ColorMask]
+
+        Pass
+        {
+            CGPROGRAM
+            #pragma vertex TitleVert
+            #pragma fragment frag
+            #pragma target 3.0
+            #pragma multi_compile_local _ UNITY_UI_CLIP_RECT
+            #pragma multi_compile_local _ UNITY_UI_ALPHACLIP
+            #include "TitleUI.cginc"
+
+            fixed4 _Color, _TopColor, _MidColor, _BottomColor, _ShineColor;
+            float4 _Rect;
+            float _Hatch, _ShineWidth, _ShinePeriod, _ShineStrength, _Reveal, _RevealSoft;
+
+            fixed4 frag(TitleV2F i) : SV_Target
+            {
+                float t = _Time.y;
+                float a = (tex2D(_MainTex, i.uv) + _TextureSampleAdd).a;
+
+                float2 r = float2((i.local.x - _Rect.x) / max(_Rect.y - _Rect.x, 1),
+                                  (i.local.y - _Rect.z) / max(_Rect.w - _Rect.z, 1));
+
+                // gilded gradient per line (local y), banded like leaf gold
+                float y = saturate(r.y);
+                fixed3 col = y > 0.5 ? lerp(_MidColor.rgb, _TopColor.rgb, (y - 0.5) * 2.0)
+                                     : lerp(_BottomColor.rgb, _MidColor.rgb, y * 2.0);
+                float hatch = sin((i.local.x + i.local.y) * 0.9) * 0.5 + 0.5;
+                col *= 1.0 - _Hatch * hatch * (1.0 - y);
+
+                // diagonal light sweep
+                float phase = frac(t / max(_ShinePeriod, 0.1));
+                float sx = lerp(-0.3, 1.3, saturate(phase * 2.5));
+                float s = r.x + (r.y - 0.5) * 0.25 - sx;
+                float shine = exp(-(s * s) / (_ShineWidth * _ShineWidth)) * _ShineStrength * (phase < 0.4);
+                col += _ShineColor.rgb * shine;
+
+                // ink reveal left to right
+                float rev = smoothstep(r.x - _RevealSoft, r.x, _Reveal * (1.0 + _RevealSoft));
+
+                fixed4 c = fixed4(col, a * rev) * _Color * i.color;
+                return TitleFinish(c, i);
+            }
+            ENDCG
+        }
+    }
+}
