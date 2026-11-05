@@ -96,5 +96,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DuskTwilight.VoiceCommands
   executeThreshold: 0.6
-  letterFont: {fileID: 12800000, guid: 848218904498e8e46a503a3978969526, type: 3}
+  letterFont: {fileID: 12800000, guid: c59c71d24207fd74cbcf00877fa6de66, type: 3}
   letterColor: {r: 1, g: 0.9, b: 0.62, a: 1}

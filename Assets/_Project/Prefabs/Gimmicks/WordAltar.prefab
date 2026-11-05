@@ -151,7 +151,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 848218904498e8e46a503a3978969526, type: 3}
+  - {fileID: 2100000, guid: c59c71d24207fd74cbcf00877fa6de66, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -193,7 +193,7 @@ TextMesh:
   m_FontSize: 48
   m_FontStyle: 0
   m_RichText: 1
-  m_Font: {fileID: 12800000, guid: 848218904498e8e46a503a3978969526, type: 3}
+  m_Font: {fileID: 12800000, guid: c59c71d24207fd74cbcf00877fa6de66, type: 3}
   m_Color:
     serializedVersion: 2
     rgba: 4282195804
@@ -279,8 +279,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 848218904498e8e46a503a3978969526, type: 3}
-    m_FontSize: 26
+    m_Font: {fileID: 12800000, guid: c59c71d24207fd74cbcf00877fa6de66, type: 3}
+    m_FontSize: 31
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 10
@@ -389,28 +389,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2082e97783d2f46448c1b4442487e234, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DuskTwilight.WordAltar
-  answer: "\uD574\uC9C8\uB158"
   choices:
   - "\uC0C8\uBCBD\uBE5B"
   - "\uD574\uC9C8\uB158"
   - "\uBCC4\uBB34\uB9AC"
   - "\uBB3C\uC548\uAC1C"
   panelQuestion: "\uBB34\uC5C7\uC744 \uBD80\uB97C\uAE4C?"
-  wrongCaption: "\u2026\u2026"
-  slots:
-  - {fileID: 7993372251233636715}
-  - {fileID: 7911395414848429421}
-  - {fileID: 3878301004221224789}
-  letterSize: {x: 2.6, y: 0.6}
+  requirePrincess: 1
   letterPrefab: {fileID: 2652366606978515226, guid: 4ac32e0810b1394429ee96a6910e75f1, type: 3}
   letterSpawn: {x: 1.1, y: 1.6}
   letterStagger: 0.18
   letterFlyTime: 0.6
+  letterSize: {x: 2.6, y: 0.6}
   plankOffsetY: -0.25
   reach: 1.4
   reachHeight: 1.6
+  reachOffset: {x: 0, y: 0}
   prompt: {fileID: 5738177183876698467}
-  inscription: {fileID: 2346377292812702542}
   canvas: {fileID: 6265695362981257110}
   panelRect: {fileID: 2324968222486366870}
   questionText: {fileID: 7077640782033086691}
@@ -421,6 +416,24 @@ MonoBehaviour:
   speakClip: {fileID: 8300000, guid: 09e8521911030a140860ee40e9d3f51e, type: 3}
   wrongClip: {fileID: 8300000, guid: df0d3eac1cbd1304db85c193150a68fe, type: 3}
   bridgeClip: {fileID: 8300000, guid: 08b40d02237a99640ad5745d3857dc00, type: 3}
+  answer: "\uD574\uC9C8\uB158"
+  wrongCaption: "\u2026\u2026"
+  inscription: {fileID: 2346377292812702542}
+  outcome: 0
+  slots:
+  - {fileID: 7993372251233636715}
+  - {fileID: 7911395414848429421}
+  - {fileID: 3878301004221224789}
+  door: {fileID: 0}
+  doorRise: 4.5
+  doorTime: 1.1
+  wrongSink: 0.08
+  wrongDoorCaption: "\uB35C\uCEF9"
+  scatterWords: []
+  reveal: []
+  revealRise: 1.5
+  revealTime: 0.9
+  revealStagger: 0.15
 --- !u!1 &4142629776721597687
 GameObject:
   m_ObjectHideFlags: 0
@@ -653,7 +666,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 9822a7cda4db35e4aa1ff76d275e57cd, type: 3}
+  - {fileID: 2100000, guid: c59c71d24207fd74cbcf00877fa6de66, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -695,7 +708,7 @@ TextMesh:
   m_FontSize: 44
   m_FontStyle: 0
   m_RichText: 1
-  m_Font: {fileID: 12800000, guid: 9822a7cda4db35e4aa1ff76d275e57cd, type: 3}
+  m_Font: {fileID: 12800000, guid: c59c71d24207fd74cbcf00877fa6de66, type: 3}
   m_Color:
     serializedVersion: 2
     rgba: 14283519
@@ -905,8 +918,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 9822a7cda4db35e4aa1ff76d275e57cd, type: 3}
-    m_FontSize: 20
+    m_Font: {fileID: 12800000, guid: c59c71d24207fd74cbcf00877fa6de66, type: 3}
+    m_FontSize: 24
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 10

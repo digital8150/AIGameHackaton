@@ -86,6 +86,11 @@ no humans, -3::1girl, 1boy, human::, game asset, paper cutout prop, vertical com
 {{slender wrought-iron post topped with a round glass orb in a filigree cage}}, the orb clear and empty, small cog details at the base, thin straight pole, weathered iron and pale glass, intricate pen cross-hatching, sepia and dark plum tones,
 A single slim fairytale switch post with an empty glass orb on top, seen straight from the side, drawn in a vintage kamishibai paper-theater style, isolated on a solid black background.
 
+### 7-C. 종 걸이 들보 (Bell Gantry — 21:9 와이드, 스테이지 5 공명하는 종: 종 3개를 거는 틀, 종은 따로 그린다)
+no humans, -3::1girl, 1boy, human::, game asset, paper cutout prop, horizontal composition, {{black background, simple background}}, -3::bell, bells, text, roof, building::,
+{{long horizontal dark timber crossbeam resting on two tall carved stone pillars at the far left and far right ends}}, three small empty iron hooks hanging under the beam spaced evenly, wide open empty space beneath the beam between the pillars, iron straps and bolts on the beam, ivy trailing from the pillar tops, weathered stone and dark wood, intricate pen cross-hatching, sepia and dark plum tones,
+A single wide fairytale bell gantry frame seen straight from the side, like a bridge-top bell rack with nothing hanging on it, drawn in a vintage kamishibai paper-theater style with dense pen hatching, isolated on a solid black background.
+
 ---
 
 ## 8. 빛 발판 (Light Plank — 21:9 와이드, 공주에게만 보이는 발판·빛 글자 다리)
