@@ -360,6 +360,7 @@ MonoBehaviour:
   - "\uBC18\uB300\uB85C"
   panelQuestion: "\uBB34\uC5C7\uC744 \uC678\uCE60\uAE4C?"
   requirePrincess: 1
+  requirePrince: 0
   letterPrefab: {fileID: 2652366606978515226, guid: 4ac32e0810b1394429ee96a6910e75f1, type: 3}
   letterSpawn: {x: 1.1, y: 1.6}
   letterStagger: 0.18
@@ -380,6 +381,11 @@ MonoBehaviour:
   speakClip: {fileID: 8300000, guid: 09e8521911030a140860ee40e9d3f51e, type: 3}
   wrongClip: {fileID: 8300000, guid: df0d3eac1cbd1304db85c193150a68fe, type: 3}
   bridgeClip: {fileID: 8300000, guid: 08b40d02237a99640ad5745d3857dc00, type: 3}
+  wordFx: {fileID: 2068918518108395578, guid: 49a23abd9da1bb34f85db02340b01c12, type: 3}
+  wordFxLife: 1.6
+  flashColor: {r: 1, g: 0.82, b: 0.38, a: 1}
+  flashTime: 0.7
+  flashStrength: 0.85
   steps:
   - {fileID: 6575403097614485176}
   - {fileID: 8323516116930538560}

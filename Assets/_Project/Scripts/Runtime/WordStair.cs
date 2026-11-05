@@ -45,6 +45,7 @@ namespace DuskTwilight
             else if (text == word)
             {
                 GameEvents.PuzzleAttempt?.Invoke("stair", true);
+                PlayWordFx(ReachCenter, new Vector2(2f, 2f));
                 Play();
             }
             else

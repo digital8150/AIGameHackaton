@@ -57,6 +57,7 @@ namespace DuskTwilight
         {
             if (bridgeClip) sfx.PlayLimited(bridgeClip, 0.7f);
             var letters = Letters(text, ReachCenter);
+            foreach (var s in slots) if (s) PlayWordFx(s.position, new Vector2(1.2f, 0.6f));
             int next = 0;
             for (int i = 0; i < letters.Count; i++)
             {

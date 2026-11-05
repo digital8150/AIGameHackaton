@@ -57,7 +57,57 @@ namespace DuskTwilight
         public string selectedFormat = "▶ {0}";
         public AudioClip speakClip, wrongClip, bridgeClip;
 
+        [Header("Word reaction (the moment the object accepts the spoken word)")]
+        [Tooltip("Burst of gold motes + soft ring (Prefabs/FX/WordReactFx). Unlit, so the prince sees it in the dark too. Empty = no burst.")]
+        public GameObject wordFx;
+        [Tooltip("Seconds before the spawned burst is destroyed")]
+        public float wordFxLife = 1.6f;
+        [Tooltip("Body flash colour (tints the SpriteRenderer; SenseSprite multiplies vertex colour)")]
+        public Color flashColor = new Color(1f, 0.82f, 0.38f, 1f);
+        [Tooltip("Flash length in seconds (up fast, down slow)")]
+        public float flashTime = 0.7f;
+        [Range(0f, 1f), Tooltip("How far the body colour goes toward the flash colour at the peak")]
+        public float flashStrength = 0.85f;
+
         public bool Solved { get; protected set; }
+
+        /// <summary>Gold burst sized to <paramref name="size"/> (m) at <paramref name="center"/>. Null-safe.</summary>
+        protected void PlayWordFx(Vector3 center, Vector2 size)
+        {
+            if (!wordFx) return;
+            var fx = Instantiate(wordFx, center, Quaternion.identity);
+            float big = Mathf.Max(size.x, size.y, 0.3f);
+            foreach (var ps in fx.GetComponentsInChildren<ParticleSystem>(true))
+            {
+                var sh = ps.shape;
+                if (sh.enabled && sh.shapeType == ParticleSystemShapeType.Box) sh.scale = new Vector3(Mathf.Max(size.x, 0.2f), Mathf.Max(size.y, 0.2f), 0.1f);
+                if (ps.name == "Ring")
+                {
+                    var m = ps.main;
+                    m.startSize = Mathf.Min(big * 1.3f, 6f);
+                }
+            }
+            Destroy(fx, wordFxLife);
+        }
+
+        /// <summary>Short bright gold pulse on the given renderers, then back to their own colour.</summary>
+        protected IEnumerator FlashBody(params SpriteRenderer[] rends)
+        {
+            if (rends == null || rends.Length == 0) yield break;
+            var from = new Color[rends.Length];
+            for (int i = 0; i < rends.Length; i++) from[i] = rends[i] ? rends[i].color : Color.white;
+            float dur = Mathf.Max(0.05f, flashTime);
+            for (float t = 0; t < 1f; t += Time.deltaTime / dur)
+            {
+                // quick rise to the peak at 20%, slow fall
+                float k = t < 0.2f ? t / 0.2f : 1f - (t - 0.2f) / 0.8f;
+                k = Mathf.SmoothStep(0, 1, k) * flashStrength;
+                for (int i = 0; i < rends.Length; i++)
+                    if (rends[i]) { var c = Color.Lerp(from[i], flashColor, k); c.a = from[i].a; rends[i].color = c; }
+                yield return null;
+            }
+            for (int i = 0; i < rends.Length; i++) if (rends[i]) rends[i].color = from[i];
+        }
         /// <summary>Raw speech is used as-is (no word matching): blank bridges take any words.</summary>
         public virtual bool AcceptsAnyText => false;
 

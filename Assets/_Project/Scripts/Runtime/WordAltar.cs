@@ -86,6 +86,7 @@ namespace DuskTwilight
         IEnumerator Solve(string word)
         {
             Solved = true;
+            PlayWordFx(outcome == Outcome.Door && door ? door.position : transform.position, new Vector2(2f, 2f));
             if (bridgeClip) sfx.PlayLimited(bridgeClip, 0.9f);
             StartCoroutine(Reveal());
             SenseController.I?.EmitEcho(transform.position, 1.2f);

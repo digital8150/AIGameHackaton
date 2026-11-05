@@ -106,6 +106,7 @@ namespace DuskTwilight
                 yield break;
             }
             GameEvents.PuzzleAttempt?.Invoke("weight", true);
+            PlayWordFx(slot.position, new Vector2(letters.Count * letterSpawn.x + 0.5f, 0.6f));
             ClearPlank();
             foreach (var l in letters) loose.Remove(l);
             yield return BuildFrom(letters, r.weight);

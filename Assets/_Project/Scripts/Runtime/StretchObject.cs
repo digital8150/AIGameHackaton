@@ -33,6 +33,8 @@ namespace DuskTwilight
         public string longCaption = "쭈욱";
         public string shortCaption = "쏙";
         public string noneCaption = "……";
+        [Tooltip("While the length changes, a small gold burst at the moving tip every this fraction of the change (0.1 = ten bursts)")]
+        [Range(0.05f, 0.5f)] public float tipSparkleEvery = 0.12f;
 
         /// <summary>Last judgement, for the F1 overlay.</summary>
         public static string LastJudge { get; private set; } = "";
@@ -91,17 +93,34 @@ namespace DuskTwilight
             yield return new WaitForSeconds(letterStagger * letters.Count + letterFlyTime * 0.8f);
             float target = r.stretch == StretchKind.Long ? longLength : shortLength;
             GameEvents.PuzzleAttempt?.Invoke("stretch", true);
-            if (Mathf.Approximately(target, Length)) yield break;
+            if (Mathf.Approximately(target, Length))
+            {
+                // heard, but nothing to change: a small pulse
+                PlayWordFx(into, new Vector2(Mathf.Min(1.5f, thickness + 1f), thickness));
+                yield break;
+            }
+            PlayWordFx(into, col ? (Vector2)col.bounds.size : new Vector2(Length, thickness));
+            if (body) StartCoroutine(FlashBody(body));
             GameEvents.Caption?.Invoke(r.stretch == StretchKind.Long ? longCaption : shortCaption);
             if (bridgeClip) sfx.PlayOneShot(bridgeClip, 0.8f);
             SenseController.I?.EmitEcho(into, 0.6f);
             float from = Length;
+            float nextSparkle = 0f;
             for (float t = 0; t < 1f; t += Time.deltaTime / Mathf.Max(0.05f, changeTime))
             {
                 SetLength(Mathf.Lerp(from, target, Mathf.SmoothStep(0, 1, t)));
+                if (t >= nextSparkle) { nextSparkle = t + tipSparkleEvery; PlayWordFx(TipPoint(), new Vector2(thickness, thickness)); }
                 yield return null;
             }
             SetLength(target);
+        }
+
+        /// <summary>The moving free end of the body.</summary>
+        Vector3 TipPoint()
+        {
+            Vector3 d = direction == Direction.Up ? Vector3.up : direction == Direction.Left ? Vector3.left : Vector3.right;
+            Vector3 centreLine = transform.position + (direction == Direction.Up ? Vector3.zero : Vector3.down * thickness * 0.5f);
+            return centreLine + d * Length;
         }
 
         void SetLength(float len)

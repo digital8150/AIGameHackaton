@@ -10,7 +10,7 @@ namespace DuskTwilight
     /// crushed. Once down it keeps resting on whatever holds it: if that goes away (a bridge told to shrink) it falls
     /// again. Optional (5단계): landing on spikes / in a pit sends it back home after a moment; a box on the plate
     /// below keeps it from falling (it only shakes); it can stay hidden inside a fake ceiling until the prince finds it.
-    /// The object's position is the bottom centre of the stone.
+    /// It starts with a short push (fallStartSpeed) and speeds up hard, then thumps the camera (CameraRig.Impact) and squashes. The object's position is the bottom centre of the stone.
     /// </summary>
     [RequireComponent(typeof(BoxCollider2D))]
     public class HeavyStone : WordTarget, IResettable
@@ -23,13 +23,23 @@ namespace DuskTwilight
         public Vector2 visualScale = new Vector2(1.08f, 1.15f);
 
         [Header("Fall")]
-        [Tooltip("Downward acceleration (m/s²). 28 ≈ 3.5m in half a second.")]
-        public float fallGravity = 28f;
+        [Tooltip("Speed it starts falling at (m/s) - a short beat of weight, not a slow float")]
+        public float fallStartSpeed = 7f;
+        [Tooltip("Downward acceleration (m/s²). 55 with a 7m/s start ≈ 4m in 0.28s.")]
+        public float fallGravity = 55f;
         [Tooltip("Furthest it can drop (m) when nothing is below")]
         public float maxDrop = 20f;
         [Tooltip("Dust where it lands (e.g. FX/BoxFallDust)")]
         public GameObject landFx;
-        public float landShake = 0.45f;
+        [Tooltip("Extra camera jitter on landing")]
+        public float landShake = 0.5f;
+        [Tooltip("Camera thump (m) for a fall of impactFullDrop or more; scales down to impactMinFraction of it at 1m")]
+        public float landImpact = 0.8f;
+        public float impactFullDrop = 4f;
+        [Range(0f, 1f)] public float impactMinFraction = 0.4f;
+        [Tooltip("Body squashes to this height factor on landing, then springs back")]
+        [Range(0.5f, 1f)] public float squashY = 0.85f;
+        public float squashTime = 0.15f;
 
         [Header("Coming back (5단계)")]
         [Tooltip("Landing on a hazard (spikes) or dropping maxDrop with nothing below sends it home after this many seconds. 0 = it stays wherever it lands (4단계: on the spikes).")]
@@ -70,6 +80,8 @@ namespace DuskTwilight
         bool judging, dropping;
         Vector3 home;
         Coroutine returning;
+        Vector3 bodyScale;
+        Color bodyColor = Color.white;
         readonly RaycastHit2D[] hits = new RaycastHit2D[16];
 
         protected override void Awake()
@@ -77,6 +89,7 @@ namespace DuskTwilight
             base.Awake();
             col = GetComponent<BoxCollider2D>();
             home = transform.position;
+            if (body) bodyColor = body.color;
             Apply();
         }
 
@@ -95,7 +108,8 @@ namespace DuskTwilight
                 // one picture of a stone, stretched to the block's size
                 body.drawMode = SpriteDrawMode.Simple;
                 var b = body.sprite ? body.sprite.bounds.size : Vector3.one;
-                body.transform.localScale = new Vector3(size.x / Mathf.Max(0.01f, b.x) * visualScale.x, size.y / Mathf.Max(0.01f, b.y) * visualScale.y, 1f);
+                bodyScale = new Vector3(size.x / Mathf.Max(0.01f, b.x) * visualScale.x, size.y / Mathf.Max(0.01f, b.y) * visualScale.y, 1f);
+                body.transform.localScale = bodyScale;
                 body.transform.localPosition = new Vector3(0f, size.y * 0.5f, 0f);
             }
         }
@@ -182,6 +196,8 @@ namespace DuskTwilight
             GameEvents.PuzzleAttempt?.Invoke("heavy", heavy);
             if (!heavy) { GameEvents.Caption?.Invoke(noneCaption); yield break; }
             yield return new WaitForSeconds(letterStagger * letters.Count + letterFlyTime * 0.8f);
+            PlayWordFx(col.bounds.center, size);                      // the word took hold
+            if (body) StartCoroutine(FlashBody(body));
             if (boxBlocks && BoxBelow()) { yield return Shake(); yield break; }
             Fallen = true;
             yield return Drop();
@@ -229,7 +245,8 @@ namespace DuskTwilight
             float drop = FreeDrop(out _);
             float startY = transform.position.y, targetY = startY - drop;
             SenseController.I?.EmitEcho(col.bounds.center, 0.4f);
-            float v = 0f, y = startY;
+            float v = fallStartSpeed, y = startY;
+            ShoveAside();
             while (y > targetY)
             {
                 v += fallGravity * Time.deltaTime;
@@ -248,10 +265,29 @@ namespace DuskTwilight
             GameEvents.Caption?.Invoke(fallCaption);
             if (landClip) sfx.PlayLimited(landClip, 0.9f);
             CameraRig.I?.Kick(landShake);
+            CameraRig.I?.Impact(landImpact * Mathf.Lerp(impactMinFraction, 1f, Mathf.InverseLerp(1f, impactFullDrop, drop)));
+            StartCoroutine(Squash());
             SenseController.I?.EmitEcho(bottom, 0.9f);
-            if (landFx) Destroy(Instantiate(landFx, bottom, Quaternion.identity), 4f);
+            if (landFx)
+            {
+                var fx = Instantiate(landFx, bottom, Quaternion.identity);
+                fx.transform.localScale = Vector3.one * Mathf.Max(0.5f, size.x / 3f);
+                Destroy(fx, 4f);
+            }
             dropping = false;
             if (returnAfter > 0f && (drop >= maxDrop - 0.01f || OnHazard())) returning = StartCoroutine(ReturnHome());
+        }
+
+        IEnumerator Squash()
+        {
+            if (!body) yield break;
+            for (float t = 0f; t < squashTime; t += Time.deltaTime)
+            {
+                float k = t / squashTime;
+                body.transform.localScale = new Vector3(bodyScale.x * Mathf.Lerp(1f + (1f - squashY) * 0.5f, 1f, k), bodyScale.y * Mathf.Lerp(squashY, 1f, k), bodyScale.z);
+                yield return null;
+            }
+            body.transform.localScale = bodyScale;
         }
 
         bool OnHazard()
@@ -274,6 +310,7 @@ namespace DuskTwilight
             StopAllCoroutines();
             judging = dropping = false;
             returning = null;
+            if (body) { body.transform.localScale = bodyScale; body.color = bodyColor; }   // a reset can cut the squash or the word flash short
             Fallen = false;
             transform.position = home;
             if (hiddenUntilFound) SetHidden(FakeAbove());
