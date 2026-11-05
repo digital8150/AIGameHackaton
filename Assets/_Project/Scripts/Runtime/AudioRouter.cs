@@ -22,6 +22,7 @@ namespace DuskTwilight
         [Range(0.1f, 5f)] public float sweepInterval = 0.5f;
 
         float nextSweep;
+        float appliedWorld = 1f;
 
         void OnEnable()
         {
@@ -45,6 +46,13 @@ namespace DuskTwilight
 
         void Update()
         {
+            // the princess's silent world: SFX follow the sense at the listener (music keeps playing)
+            float world = SenseController.I ? SenseController.I.WorldVolume : 1f;
+            if (mixer && !Mathf.Approximately(world, appliedWorld))
+            {
+                appliedWorld = world;
+                mixer.SetFloat(sfxParam, SfxDecibels());
+            }
             if (Time.unscaledTime < nextSweep) return;
             nextSweep = Time.unscaledTime + sweepInterval;
             Sweep();
@@ -55,8 +63,10 @@ namespace DuskTwilight
             if (!mixer) return;
             mixer.SetFloat(masterParam, GameSettings.ToDecibels(GameSettings.MasterVolume));
             mixer.SetFloat(musicParam, GameSettings.ToDecibels(GameSettings.MusicVolume));
-            mixer.SetFloat(sfxParam, GameSettings.ToDecibels(GameSettings.SfxVolume));
+            mixer.SetFloat(sfxParam, SfxDecibels());
         }
+
+        float SfxDecibels() => Mathf.Max(-80f, GameSettings.ToDecibels(GameSettings.SfxVolume) + GameSettings.ToDecibels(appliedWorld));
 
         void Sweep()
         {

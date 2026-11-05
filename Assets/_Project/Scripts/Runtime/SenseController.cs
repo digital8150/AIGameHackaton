@@ -56,6 +56,8 @@ namespace DuskTwilight
         public float SwitchProgress { get; private set; } = 1f;
         public float DirectorBoost { get; set; } = 1f;
         public Transform Listener { get; set; }
+        /// <summary>0-1 loudness of the world (SFX) at the listener; AudioRouter applies it to the SFX mixer group. Music is unaffected.</summary>
+        public float WorldVolume { get; private set; } = 1f;
 
         public event Action<Sense> ModeChanged;
         public event Action<Vector2, float> EchoEmitted;
@@ -81,6 +83,7 @@ namespace DuskTwilight
         void Awake()
         {
             I = this;
+            AudioListener.volume = 1f; // silence is per-group now (WorldVolume)
             from = to = (float)Current;
             for (int i = 0; i < MaxEchoes; i++) echoes[i] = new Vector4(0, 0, -999, 0);
             Push();
@@ -189,7 +192,7 @@ namespace DuskTwilight
             // The princess cannot hear: fade the whole mix with the sense at the listener.
             float darkHere = Listener ? SenseAt(Listener.position) : (float)Current;
             float target = Mathf.Lerp(lightSenseVolume, 1f, darkHere);
-            AudioListener.volume = Mathf.MoveTowards(AudioListener.volume, target, Time.deltaTime * audioFadeSpeed);
+            WorldVolume = Mathf.MoveTowards(WorldVolume, target, Time.deltaTime * audioFadeSpeed);
 
             Push();
         }
