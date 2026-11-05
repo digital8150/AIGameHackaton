@@ -259,7 +259,14 @@ namespace DuskTwilight
             {
                 visuals = new Transform[transform.childCount];
                 visualBase = new Vector3[visuals.Length];
-                for (int i = 0; i < visuals.Length; i++) { visuals[i] = transform.GetChild(i); visualBase[i] = visuals[i].localPosition; }
+                // the silent bubble places itself in world space every frame: it is not part of the sliding picture
+                var silent = GetComponent<SilentSpeech>();
+                for (int i = 0; i < visuals.Length; i++)
+                {
+                    var child = transform.GetChild(i);
+                    if (silent && child == silent.bubble) continue;
+                    visuals[i] = child; visualBase[i] = child.localPosition;
+                }
             }
             swapFrom = worldFrom - (Vector2)transform.position;
             swapStart = Time.time; swapDur = Mathf.Max(0.01f, duration); swapHop = hop;
