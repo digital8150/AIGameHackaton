@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4361315209248082183}
   - component: {fileID: 7795822764792523746}
   - component: {fileID: 3159900226523461966}
+  - component: {fileID: 660394189030432181}
   m_Layer: 0
   m_Name: HiddenPlank
   m_TagString: Untagged
@@ -99,6 +100,20 @@ PlatformEffector2D:
   m_UseSideFriction: 0
   m_UseSideBounce: 0
   m_SideArc: 1
+--- !u!114 &660394189030432181
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4755424043364140594}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40e2ee3f6035bb24ab584c8396eeca9b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DuskTwilight.HiddenPlank
+  visual: {fileID: 3756789351941447113}
+  waitForWave: 1
 --- !u!1 &8203752498983084812
 GameObject:
   m_ObjectHideFlags: 0

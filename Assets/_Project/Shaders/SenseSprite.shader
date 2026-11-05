@@ -38,6 +38,18 @@ Shader "DuskTwilight/SenseSprite"
 
         [Header(2D Lights (light sense only))]
         _LightReceive ("Receive 2D Lights", Range(0,1)) = 1
+
+        [Header(Echo glint (hidden planks, a wiped glass sweep))]
+        [HDR] _GlintColor ("Glint Colour", Color) = (1,1,1,1)
+        _GlintWidth ("Glint Wide Band (m)", Range(0.02,1.5)) = 0.34
+        _GlintThinWidth ("Glint Thin Band (m)", Range(0.01,0.6)) = 0.09
+        _GlintGap ("Glint Band Gap (m)", Range(0,0.8)) = 0.11
+        _GlintSlant ("Glint Slant (degrees from upright)", Range(-70,70)) = 28
+        _GlintSoftness ("Glint Edge Softness (m)", Range(0.001,0.1)) = 0.012
+        _GlintSeconds ("Glint Sweep Seconds", Range(0.05,2)) = 0.4
+        [HideInInspector] _GlintProgress ("Glint Progress (script)", Range(0,1)) = 0
+        [HideInInspector] _GlintDir ("Glint Direction (script)", Float) = 1
+        [HideInInspector] _GlintBounds ("Glint Bounds: xMin xMax yCentre halfHeight (script)", Vector) = (0,0,0,0)
     }
 
     SubShader
@@ -103,6 +115,8 @@ Shader "DuskTwilight/SenseSprite"
                 float _InkThreshold;
                 float _EchoFill;
                 float _DarkEchoOnly;
+                float4 _GlintColor, _GlintBounds;
+                float _GlintWidth, _GlintThinWidth, _GlintGap, _GlintSlant, _GlintSoftness, _GlintSeconds, _GlintProgress, _GlintDir;
             CBUFFER_END
 
             struct Attributes { float4 positionOS : POSITION; float4 color : COLOR; float2 uv : TEXCOORD0; };
@@ -227,6 +241,27 @@ Shader "DuskTwilight/SenseSprite"
                 // switch wavefront rim — the signature "world flips" moment
                 float rim = DT_SwitchRim(wp);
                 col += DT_RIM_GOLD * rim * 1.8 * tex.a;
+
+                // echo glint: a wide and a thin slanted band wipe across once, like light on cleaned glass.
+                // In metres so a long plank gets the same bands as a short one; only the sprite's own shape shows it.
+                if (_GlintProgress > 0.0 && _GlintProgress < 1.0)
+                {
+                    float slope = tan(radians(_GlintSlant));
+                    float slanted = i.positionWS.x - (i.positionWS.y - _GlintBounds.z) * slope;   // positive slant leans like "/"
+                    float halfWide = _GlintWidth * 0.5;
+                    float margin = halfWide + _GlintGap + _GlintThinWidth + abs(slope) * _GlintBounds.w + _GlintSoftness;
+                    float from = _GlintDir > 0 ? _GlintBounds.x - margin : _GlintBounds.y + margin;
+                    float to = _GlintDir > 0 ? _GlintBounds.y + margin : _GlintBounds.x - margin;
+                    float d = (slanted - lerp(from, to, _GlintProgress)) * _GlintDir;   // + = ahead of the wide band
+                    float wide = smoothstep(halfWide + _GlintSoftness, halfWide - _GlintSoftness, abs(d));
+                    float thinCentre = -(halfWide + _GlintGap + _GlintThinWidth * 0.5);
+                    float thin = smoothstep(_GlintThinWidth * 0.5 + _GlintSoftness, _GlintThinWidth * 0.5 - _GlintSoftness, abs(d - thinCentre));
+                    float sweep = max(wide, thin) * tex.a * prince * _GlintColor.a;
+                    // added light, even over a plank that is still invisible (a = 0)
+                    float lifted = max(a, sweep);
+                    col = (col * a + _GlintColor.rgb * sweep) / max(lifted, 0.001);
+                    a = lifted;
+                }
 
                 return half4(col, a);
             }

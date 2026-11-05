@@ -17,8 +17,11 @@ namespace DuskTwilight
         [Header("Layout (the panel itself lives in the Tutorial Panel prefab)")]
         [Tooltip("Panel X when hidden (off-screen left) and shown.")]
         public Vector2 slideX = new Vector2(-490f, 30f);
+        [Tooltip("Space under the last line. The side and top insets come from the elements' positions in the prefab.")]
         public float padding = 14f;
         public float rowHeight = 34f;
+        [Tooltip("Gap between the last objective and the tip.")]
+        public float tipGap = 8f;
         [Tooltip("Gap between key chips.")]
         public float keySpacing = 4f;
         public float slideInSeconds = 0.35f, slideOutSeconds = 0.3f, slideOutDelay = 0.55f;
@@ -90,9 +93,11 @@ namespace DuskTwilight
             tip.text = hasTip ? section.tip : "";
             if (hasTip)
             {
-                y -= 6;
-                Place(tip.rectTransform, new Vector2(padding, y), new Vector2(w - padding * 2, 20));
-                tip.rectTransform.sizeDelta = new Vector2(w - padding * 2, tip.preferredHeight);
+                y -= tipGap;
+                // lines up with the rows; the same inset on the far side
+                float inset = rowTemplate.anchoredPosition.x;
+                Place(tip.rectTransform, new Vector2(inset, y), new Vector2(w - inset * 2, 20));
+                tip.rectTransform.sizeDelta = new Vector2(w - inset * 2, tip.preferredHeight);
                 y -= tip.preferredHeight;
             }
             root.sizeDelta = new Vector2(w, -y + padding);

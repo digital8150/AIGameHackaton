@@ -42,6 +42,19 @@ namespace DuskTwilight
         public EchoSize LastSize { get; private set; }
         /// <summary>Seconds the echo key has been held (−1 when not charging).</summary>
         public float Charge => charging ? Time.time - pressTime : -1f;
+        /// <summary>0..1 of the way to a large echo (0 when not charging).</summary>
+        public float Charge01 => charging ? Mathf.Clamp01((Time.time - pressTime) / Mathf.Max(largeHold, 0.01f)) : 0f;
+        public bool Charging => charging;
+        /// <summary>0 right after an echo, 1 when the next one is ready.</summary>
+        public float CooldownProgress => cooldown > 0f ? Mathf.Clamp01((Time.time - last) / cooldown) : 1f;
+        /// <summary>The prince himself let the echo go, by key or voice (not footsteps, bells or the director).</summary>
+        public event System.Action<Vector2, EchoSize> Released;
+        /// <summary>Where the prince's echo starts; null when there is no leader yet.</summary>
+        public Vector2? CallPosition => DuoController.I && DuoController.I.Leader ? CallPoint : (Vector2?)null;
+
+        /// <summary>Automated tests: behaves as if the echo key is held (see Actor.TestMove).</summary>
+        public bool TestHoldEcho { get; set; }
+        bool testHeld;
 
         AudioSource sfx;
         float last = -9, pressTime, micStart = -1, micPeak;
@@ -61,7 +74,9 @@ namespace DuskTwilight
             if (input == null || duo == null) return;
             if (GameFlow.InputLocked) { charging = false; return; }
 
-            if (input.Echo.WasPressedThisFrame())
+            bool testPressed = TestHoldEcho && !testHeld;
+            testHeld = TestHoldEcho;
+            if (input.Echo.WasPressedThisFrame() || testPressed)
             {
                 if (duo.Leader.sense != Sense.Dark) { GameEvents.Caption?.Invoke("……"); GameEvents.SilentCall?.Invoke(); }   // she cannot hear her own call
                 else if (Time.time - last >= cooldown) { charging = true; pressTime = Time.time; chargeStep = 0; }
@@ -77,7 +92,7 @@ namespace DuskTwilight
                 }
                 if (duo.Leader.sense != Sense.Dark) charging = false;
                 else if (step == 2) { charging = false; Call(EchoSize.Large); }
-                else if (!input.Echo.IsPressed()) { charging = false; Call(step == 1 ? EchoSize.Medium : EchoSize.Small); }
+                else if (!input.Echo.IsPressed() && !TestHoldEcho) { charging = false; Call(step == 1 ? EchoSize.Medium : EchoSize.Small); }
             }
 
             MicTick();
@@ -116,6 +131,7 @@ namespace DuskTwilight
             CallCount++;
             LastSize = size;
             CallRadius(CallPoint, RadiusOf(size));
+            Released?.Invoke(CallPoint, size);
             if (callClip) sfx.PlayLimited(callClip, size == EchoSize.Large ? 1f : size == EchoSize.Medium ? 0.8f : 0.55f);
             GameEvents.PuzzleAttempt?.Invoke("echo", true);
         }

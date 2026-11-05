@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 5211872291915775132}
   - component: {fileID: 6751948868302185005}
   - component: {fileID: 8401244983083841756}
+  - component: {fileID: 2074475814916414578}
   m_Layer: 0
   m_Name: Systems
   m_TagString: Untagged
@@ -66,6 +67,7 @@ MonoBehaviour:
   echoRadiusPerStrength: 7.5
   echoLifetime: 2.6
   listenerAura: 2.4
+  listenerOffset: {x: 0, y: 0.9}
   sunViewport: {x: 0.74, y: 0.36}
   sunStrength: 1
   haze: {r: 0.98, g: 0.68, b: 0.58, a: 1}
@@ -193,8 +195,14 @@ MonoBehaviour:
   princess: {fileID: 0}
   followDelay: 0.26
   followGap: 0.85
+  followCatchSpeed: 9
+  followPathSmooth: 0.12
+  followStepAsideSmooth: 0.2
+  edgeMargin: 0.15
   switchCooldown: 0.35
   switchClip: {fileID: 8300000, guid: 09e8521911030a140860ee40e9d3f51e, type: 3}
+  swapVisualTime: 0.22
+  swapHop: 0.25
   startSense: 0
   switchLocked: 0
 --- !u!114 &8401244983083841756
@@ -215,6 +223,37 @@ MonoBehaviour:
   musicParam: MusicVolume
   sfxParam: SfxVolume
   sweepInterval: 0.5
+  sameClipMinGap: 0.06
+  sameClipMaxStack: 3
+  stackAttenuation: 0.7
+  stackWindow: 0.4
+  masterLimiter: 1
+  limiterCeilingDb: -1.5
+  limiterReleaseMs: 150
+--- !u!114 &2074475814916414578
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 481134584346713351}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa8959dfe09676449a50b8966b2531f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DuskTwilight.EchoChargeLens
+  lensFeature: {fileID: 785283555679276962, guid: 424799608f7334c24bf367e4bbfa7f9a, type: 2}
+  echo: {fileID: 8993676377239678565}
+  radius: {x: 1.2, y: 2.8}
+  chargeCurve: 1.3
+  followSeconds: 0.05
+  stepKick: 0.12
+  stepKickSeconds: 0.14
+  collapseSeconds: 0.1
+  shockSeconds: 0.42
+  shockReach: {x: 3, y: 5, z: 8}
+  shockAmount: {x: 0.35, y: 0.65, z: 1}
+  flipCentre: 0
 --- !u!1 &481621429305700278
 GameObject:
   m_ObjectHideFlags: 0
