@@ -10,17 +10,32 @@ no humans, -3::1girl, 1boy, human::, wide shot, scenery, landscape, horizontal c
 {{layered paper theater backdrop, kamishibai stage scenery}}, rolling twilight hills, distant fairytale clockwork castle silhouette on the horizon, warm dusk amber and deep violet sky, drifting paper clouds,
 A wide 2D side-scrolling background illustration of twilight hills and a distant fairytale silhouette, crafted like layered cut paper with heavy pencil hatching and vintage storybook texture.
 
-### 1-B. 중경: 종이연극 고목 숲 레이어 (Midground Cutout Forest Layer)
-no humans, -3::1girl, 1boy, human::, wide shot, scenery, {{black background, simple background}},
-{{layered paper cutout forest}}, twisted fairytale trees, ancient stone ruins and hanging vines, intricate pen cross-hatching on tree bark, sepia and dark plum tones,
-A horizontal row of fairytale paper-cutout trees and stone arches for a 2D parallax background layer, isolated on a solid black background for easy alpha extraction.
+### 1-B. 중경: 종이연극 고목 숲 레이어 (Midground Cutout Forest Layer — 21:9 와이드 권장)
+no humans, -3::1girl, 1boy, human::, wide shot, horizontal composition, {{black background, simple background}}, -3::frame, border, rectangular panel, framed picture, backdrop board::,
+{{row of separate paper cutout tree silhouettes}}, uneven twisted fairytale trees of different heights with gaps of empty space between them, a broken stone arch among the trunks, hanging vines, ragged irregular silhouette edges, intricate pen cross-hatching on tree bark, sepia and dark plum tones,
+A horizontal row of individual fairytale paper-cutout trees and stone ruins standing on an uneven line, with empty space showing between and above them, for a 2D parallax background layer, isolated on a solid black background for easy alpha extraction.
+
+### 1-C. 중경: 홀로 선 고목 (Lone Midground Tree — 2:3 세로 권장)
+no humans, -3::1girl, 1boy, human::, game asset, paper cutout prop, vertical composition, {{black background, simple background}}, -2::forest, multiple trees::,
+{{single ancient twisted fairytale tree}}, gnarled trunk, spreading crooked branches with sparse amber and faded gold leaves, exposed roots, intricate pen cross-hatching on tree bark, sepia and dark plum tones,
+A single old twisted storybook tree for the middle parallax layer of a 2D side-scroller, drawn in a vintage kamishibai paper-theater style with dense pen hatching, isolated on a solid black background.
+
+### 1-D. 중경: 무너진 돌 아치 (Ruined Stone Arch — 2:3 세로 권장)
+no humans, -3::1girl, 1boy, human::, game asset, paper cutout prop, vertical composition, {{black background, simple background}},
+{{lone ancient ruined stone archway}}, crumbling carved blocks, sun and moon relief on the keystone, climbing ivy with faded gold leaves, fallen stones at the base, intricate pen cross-hatching, weathered ivory stone with sepia and dark plum shading,
+A lone ruined fairytale stone arch seen straight from the front for the middle parallax layer of a 2D side-scroller, drawn in a vintage kamishibai paper-theater style with dense pen hatching, isolated on a solid black background.
+
+### 1-E. 중경: 절벽 바위 기둥 (Cliff Rock Pillar — 2:3 세로 권장)
+no humans, -3::1girl, 1boy, human::, game asset, paper cutout prop, vertical composition, {{black background, simple background}}, -3::floating island, pointed bottom, isometric, top-down::,
+{{tall rectangular rock cliff column}}, flat grassy top edge with tiny pale flowers, sheer vertical rock face with cracks, tangled roots draping down, intricate pen cross-hatching, sepia and dark plum tones,
+A tall rocky cliff column seen straight from the side with a flat top and straight vertical walls running to the bottom edge, for the middle parallax layer of a 2D side-scroller, drawn in a vintage kamishibai paper-theater style with dense pen hatching, isolated on a solid black background.
 
 ---
 
-## 2. 지형 타일셋 시트 / 플랫폼 블록 (Ground Platform Block)
-no humans, -3::1girl, 1boy, human::, game asset, square tile block, {{black background, simple background}},
-fairytale cobblestone and overgrown moss ground block, ancient carved stone bricks, flat walkable top edge, detailed pen cross-hatching,
-A single modular square 2D platformer ground block made of ancient storybook cobblestones and roots, viewed straight-on from the side, isolated on a solid black background.
+## 2. 지형 타일셋 시트 / 플랫폼 블록 (Ground Platform Block — 3:2 가로 권장)
+no humans, -3::1girl, 1boy, human::, game asset, {{black background, simple background}}, -3::isometric, cube, 3d box, top-down view, perspective::,
+{{flat side view}}, {{horizontal ground slab cross-section}}, fairytale cobblestone and overgrown moss ground, ancient carved stone bricks, flat walkable grassy top edge with tiny flowers, roots hanging from the underside, detailed pen cross-hatching, sepia and dark plum tones,
+A single wide rectangular 2D platformer ground slab made of ancient storybook cobblestones and roots, drawn completely flat as seen straight-on from the side with no top surface visible, isolated on a solid black background.
 
 ---
 

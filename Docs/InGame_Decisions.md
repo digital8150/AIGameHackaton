@@ -73,6 +73,9 @@
 - **공주 모드(빛)**: 황혼 금색 그레이딩, 위쪽 림 라이트, 하단 장밋빛 그림자, 해·구름·안개가 흐르는 하늘(`DuskTwilight/Sky`). 소리는 `DuskTwilight/SoundGlyph` 진동선으로 보인다.
 - **왕자 모드(어둠)**: 남색-검정. 텍스처의 어두운 외곽선을 흰 선으로 반전해 "윤곽만" 남기고, 반향 파면이 지나간 곳만 잠깐 드러난다. 소리 나는 장치는 주기적으로 스스로 파동을 낸다.
 - 후처리: Bloom + Vignette (URP Volume).
+- **2.5D 레이어 (B안: 일러스트)**: 원경(하늘·언덕, factor 0.92) → 중경(숲 줄·고목·아치·절벽, 0.15~0.6, 땅 뒤) → 플레이 층(0) → 전경(음수 factor, 캐릭터 앞, sortingOrder 40+). `Parallax` + `Prefabs/Environment/Env_*`. 화면 위/아래 가장자리에 붙는 전경(덩굴·풀 띠·근접 나무)은 yFactor 0.85로 카메라 높이를 따라가 점프 시 윗/아랫변이 드러나지 않게 한다.
+- 전경의 바람 흔들림·깊이 흐림·실루엣 음영은 그림이 아니라 `SenseSprite`의 `_WindAmp`/`_Blur`/`_Shade`로 준다 (그림은 선명한 정지 한 장).
+- 일러스트 해상도 유지를 위해 Pixel Perfect Camera는 끈다 (Orthographic size 7.5 유지).
 
 ## 6. 오디오
 - 왕자 모드: 발소리, 톱니, 물방울, 바람(런타임 생성 브라운 노이즈) — 풍부하게.
@@ -81,6 +84,7 @@
 ## 7. 에셋 출처
 | 에셋 | 출처 | 라이선스 |
 |---|---|---|
+| 환경 일러스트 (원경·중경·전경) | NovelAI V5 생성, 프롬프트 `Art Prompts/` 03·04·05 (`Tools/gen_env_nai.py`) | 프로젝트 소유 |
 | 타일, 소품, 배경 | Kenney *Pixel Platformer* 1.2 | CC0 |
 | 장치, 신호등, 기둥 | Kenney *Pixel Platformer Industrial Expansion* | CC0 |
 | 효과음 | Kenney *Impact Sounds* | CC0 |
