@@ -36,14 +36,27 @@ Material:
     - _AlphaEdges: 1
     - _Blur: 0
     - _DarkAlpha: 1
+    - _DarkEchoOnly: 1
     - _Depth: 0
     - _EchoFill: 0.6
     - _EdgeBoost: 1
     - _Glint: 0
+    - _GlintDir: 1
+    - _GlintGap: 0.11
+    - _GlintOutline: 0
+    - _GlintOutlineFade: 0.5
+    - _GlintOutlineSeconds: 1.25
+    - _GlintOutlineWidth: 0.045
+    - _GlintProgress: 0
+    - _GlintSeconds: 0.4
+    - _GlintSlant: 28
+    - _GlintSoftness: 0.012
+    - _GlintThinWidth: 0.09
+    - _GlintWidth: 0.34
     - _InkThreshold: 0.16
     - _LightAlpha: 1
     - _LightReceive: 1
-    - _SelfLit: 0.5
+    - _SelfLit: 0
     - _Shade: 0
     - _Warmth: 1
     - _WindAmp: 0
@@ -53,6 +66,9 @@ Material:
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EchoTint: {r: 0.82, g: 0.92, b: 1, a: 1}
+    - _GlintBounds: {r: 0, g: 0, b: 0, a: 0}
+    - _GlintColor: {r: 1, g: 1, b: 1, a: 1}
+    - _GlintOutlineColor: {r: 0.86, g: 0.95, b: 1.15, a: 1}
     - _ShadeColor: {r: 0.12999997, g: 0.079999976, b: 0.15999997, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
