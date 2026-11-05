@@ -19,6 +19,7 @@ Unity 6000.3 · URP 2D Renderer · Input System only · 기획서: Claude Docs "
 - `Assets/_Project/Scripts/Runtime` — 네임스페이스 `DuskTwilight`
 - `Assets/_Project/Art`, `Audio`, `Fonts` — CC0(Kenney)·OFL(Galmuri) 에셋, 라이선스는 `ThirdPartyLicenses/`
 - `Tools/gen_characters.py` — 왕자/공주 오리지널 픽셀 스프라이트 생성기 (에디터 밖 도구)
+- `Assets/_Project/Prefabs` — `Chapter/`(Systems·MainCamera·Sky·GlobalVolume·HUD·Voice·Backdrop·TwilightPrince·DuskPrincess: 모든 챕터 공용 리그), `Gimmicks/`(Lever·TwilightGate·SoundEmitter·Checkpoint·ReunionDoor·LightPlatform·WordAltar·DirectorZone), `Tutorial/`(TutorialVeil·TutorialMarker). 씬에 있는 것은 전부 이 프리팹의 인스턴스이고 챕터별 차이는 오버라이드다.
 - `Docs/InGame_Decisions.md` — 닫힌 결정 사항(범위·조작·비주얼·에셋). 결정을 바꾸면 여기부터 갱신.
 
 ## UI 원칙 (플레이어용)
@@ -28,6 +29,7 @@ Unity 6000.3 · URP 2D Renderer · Input System only · 기획서: Claude Docs "
 - Galmuri에 없는 기호(☾ ✦ 등)는 쓰지 않는다. 사용 가능: ♪ ♫ ☀ ◆ … — ♥ ★
 
 ## 규칙
+- **스테이지 구성 요소는 하드코딩하지 않는다.** 수치·문구·타이밍은 인스펙터 필드(`[Header]`/`[Tooltip]`/`[Range]`)로 노출하고, 범위·반경·연결은 `OnDrawGizmos`로 씬 뷰에 그린다. 새 기믹/배치는 `Prefabs/`의 프리팹 인스턴스로 놓는다 (씬 전용 수치는 오버라이드, 모든 챕터 공통 변경은 프리팹 자체에). 참조는 비워 두면 자동 연결되게(예: Lever→부모 TwilightGate, 디렉터→씬의 SoundEmitter/LightPlatform).
 - 모든 월드 스프라이트는 `DuskTwilight/SenseSprite` 계열 머티리얼을 쓴다 (같은 지오메트리, 렌더 패스만 다름).
 - **SpriteRenderer는 머티리얼 하나당 텍스처 하나.** SRP Batcher가 켜진 상태에서 서로 다른 텍스처의 스프라이트가 같은 커스텀 머티리얼을 공유하면 엉뚱한 텍스처로 그려진다 (예: `M_Actor_Prince`/`M_Actor_Princess`, `M_Prop_Px`/`M_Prop_Ind`로 분리). 타일맵은 영향 없음.
 - Git Bash에서 `unity command`에 `/경로` 인자를 넘길 땐 `MSYS_NO_PATHCONV=1`.

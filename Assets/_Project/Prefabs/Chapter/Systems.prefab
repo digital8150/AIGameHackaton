@@ -1,0 +1,320 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &481134584346713351
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3450758044086411762}
+  - component: {fileID: 1404046521303160722}
+  - component: {fileID: 8486052427250672835}
+  - component: {fileID: 5041494166128261712}
+  - component: {fileID: 8993676377239678565}
+  - component: {fileID: 5211872291915775132}
+  - component: {fileID: 6751948868302185005}
+  m_Layer: 0
+  m_Name: Systems
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3450758044086411762
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 481134584346713351}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 2442429071450005399}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1404046521303160722
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 481134584346713351}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54912f4cc54caf14fb9ef10a741f8d3e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DuskTwilight.SenseController
+  switchDuration: 0.65
+  switchMaxRadius: 32
+  switchSoftness: 0.6
+  echoSpeed: 11
+  echoRadiusPerStrength: 7.5
+  echoLifetime: 2.6
+  listenerAura: 2.4
+  sunViewport: {x: 0.74, y: 0.36}
+  sunStrength: 1
+  haze: {r: 0.98, g: 0.68, b: 0.58, a: 1}
+  lightSenseVolume: 0
+  audioFadeSpeed: 3
+--- !u!114 &8486052427250672835
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 481134584346713351}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43570fc53c4c2004db129fff35c86efa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DuskTwilight.GameInput
+--- !u!114 &5041494166128261712
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 481134584346713351}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de867143550a4e144811098f29f26d34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DuskTwilight.GameFlow
+  chapterLabel: "\uC81C3\uC7A5"
+  chapterName: "\uD669\uD63C"
+  chapterLine: "\uC5B4\uB460 \uC18D\uC758 \uC655\uC790, \uBE5B \uC18D\uC758 \uACF5\uC8FC"
+  nextScene: 
+  clearTitle: "\uD669\uD63C\uC5D0\uC11C \uB9CC\uB098\uB2E4"
+  clearLine: "\uC11C\uB85C\uC758 \uAC10\uAC01\uC73C\uB85C, \uBB38\uC744 \uC5F4\uC5C8\uB2E4"
+  startPoint: {fileID: 0}
+  killY: -3
+  introFade: 2
+  introInputLock: 0.8
+  respawnFadeOut: 0.35
+  respawnFadeIn: 0.45
+  clearHold: 2.5
+  fallClip: {fileID: 8300000, guid: df0d3eac1cbd1304db85c193150a68fe, type: 3}
+  checkpointClip: {fileID: 8300000, guid: 08b40d02237a99640ad5745d3857dc00, type: 3}
+--- !u!114 &8993676377239678565
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 481134584346713351}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe6e2f79e7cf30c4f9e4d3fc2dc1e3f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DuskTwilight.EchoCaller
+  callClip: {fileID: 8300000, guid: d7fe2ea4ab7ba7f4b9414cbb8cd3ac1b, type: 3}
+  cooldown: 0.45
+  micThreshold: 0.02
+  micInterval: 0.22
+--- !u!114 &5211872291915775132
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 481134584346713351}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4de840440b54c824e94a8775a2485124, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DuskTwilight.AccessibilityDirector
+  confidenceThreshold: 0.65
+  cooldown: 18
+  stuckSeconds: 30
+  gate: {fileID: 0}
+  emitters:
+  - {fileID: 0}
+  - {fileID: 0}
+  lightPlatforms: []
+  tuning:
+    echoBoost: {x: 1.35, y: 1.7}
+    emitterLoudness: {x: 1.4, y: 1.8}
+    lanternGlow: {x: 1.6, y: 2.2}
+    goTimeScale: {x: 1.5, y: 1.9}
+    plankOnRatio: {x: 0.75, y: 0.85}
+  lines:
+    soundHint: "\u2026\uC655\uC790\uB77C\uBA74, \uB4E4\uC744 \uC218 \uC788\uC744\uC9C0\uB3C4."
+    visualHint: "\u2026\uACF5\uC8FC\uB77C\uBA74, \uBCFC \uC218 \uC788\uC744\uC9C0\uB3C4."
+    timingHintGate: "\u2026\uAE08\uBE5B\uC774 \uBA38\uBB34\uB294 \uADF8 \uC21C\uAC04\uC5D0."
+    timingHintPlanks: "\u2026\uBE5B\uC774 \uC228\uC744 \uC26C\uB294 \uBC15\uC790\uC5D0."
+    noZoneHint: "\u2026\uB458\uC774 \uD568\uAED8\uB77C\uBA74, \uAE38\uC740 \uC788\uC5B4."
+    soundNotice: "\u266A \uC18C\uB9AC\uB97C \uB354 \uD06C\uAC8C"
+    visualNotice: "\u2600 \uBE5B\uC744 \uB354 \uBC1D\uAC8C"
+    timingNoticeGate: "\u25C6 \uAE08\uBE5B\uC744 \uB354 \uAE38\uAC8C"
+    timingNoticePlanks: "\u25C6 \uBE5B\uC744 \uB354 \uC624\uB798"
+    assistOn: "\uBCF4\uC870 \uCF1C\uC9D0"
+    assistOff: "\uBCF4\uC870 \uAEBC\uC9D0"
+--- !u!114 &6751948868302185005
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 481134584346713351}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56513b8e224640148bba0cfa14dc4696, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DuskTwilight.DuoController
+  prince: {fileID: 0}
+  princess: {fileID: 0}
+  followDelay: 0.26
+  followGap: 0.85
+  switchCooldown: 0.35
+  switchClip: {fileID: 8300000, guid: 09e8521911030a140860ee40e9d3f51e, type: 3}
+  startSense: 0
+  switchLocked: 0
+--- !u!1 &481621429305700278
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2442429071450005399}
+  - component: {fileID: 3894875525473189647}
+  - component: {fileID: 566866300658138990}
+  m_Layer: 0
+  m_Name: Ambient Wind
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2442429071450005399
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 481621429305700278}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3450758044086411762}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &3894875525473189647
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 481621429305700278}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!114 &566866300658138990
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 481621429305700278}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a436c2bb4fc38bf4fa95bf609cec95d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DuskTwilight.AmbientWind
+  volume: 0.16

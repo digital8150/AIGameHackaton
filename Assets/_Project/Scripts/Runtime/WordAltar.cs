@@ -134,7 +134,7 @@ namespace DuskTwilight
                     inst.name = "Light Letter " + word[i];
                     var itm = inst.GetComponentInChildren<TextMesh>();
                     if (itm) itm.text = word[i].ToString();
-                    if (!inst.GetComponent<SenseText>()) inst.AddComponent<SenseText>().SetBaseColor(itm ? itm.color : letterColor);
+                    if (itm && !itm.GetComponent<SenseText>()) itm.gameObject.AddComponent<SenseText>().SetBaseColor(itm.color);
                     list.Add(inst);
                     continue;
                 }

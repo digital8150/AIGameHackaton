@@ -176,8 +176,10 @@ namespace DuskTwilight
         {
             zones = FindObjectsByType<DirectorZone>(FindObjectsSortMode.None);
             if (!gate) gate = FindAnyObjectByType<TwilightGate>();
-            if (emitters == null || emitters.Length == 0) emitters = FindObjectsByType<SoundEmitter>(FindObjectsSortMode.None);
-            if (lightPlatforms == null || lightPlatforms.Length == 0) lightPlatforms = FindObjectsByType<LightPlatform>(FindObjectsSortMode.None);
+            emitters = System.Array.FindAll(emitters ?? new SoundEmitter[0], e => e);
+            if (emitters.Length == 0) emitters = FindObjectsByType<SoundEmitter>(FindObjectsSortMode.None);
+            lightPlatforms = System.Array.FindAll(lightPlatforms ?? new LightPlatform[0], p => p);
+            if (lightPlatforms.Length == 0) lightPlatforms = FindObjectsByType<LightPlatform>(FindObjectsSortMode.None);
             if (gate) baseGoTime = gate.goTime;
             baseOnTimes = System.Array.ConvertAll(lightPlatforms, p => p ? p.onTime : 0f);
             GameEvents.Died += z => { deaths++; Evaluate("death"); };
