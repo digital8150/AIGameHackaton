@@ -66,7 +66,7 @@ namespace DuskTwilight
 
         [Header("Deaf princess (Light sense) — muffled mix")]
         [Tooltip("Low-pass cutoff while in the princess's senses (Hz) — music as if through cotton / water.")]
-        [Range(200f, 22000f)] public float muffledCutoff = 650f;
+        [Range(200f, 22000f)] public float muffledCutoff = 320f;
         [Tooltip("Low-pass resonance (Q).")]
         [Range(1f, 4f)] public float muffledResonance = 1.3f;
         [Tooltip("Reverb send (0-1) — a distant, felt-not-heard room.")]

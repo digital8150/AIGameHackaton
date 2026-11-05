@@ -254,7 +254,7 @@ MonoBehaviour:
   tailEcho: 0.6
   tailDryCut: 0.9
   tailHold: 0.65
-  muffledCutoff: 650
+  muffledCutoff: 320
   muffledResonance: 1.3
   muffledReverb: 0.5
   muffledEcho: 0.12
