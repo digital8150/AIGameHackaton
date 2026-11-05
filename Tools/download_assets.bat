@@ -10,6 +10,7 @@ cd /d "%~dp0.."
 set "FAILED=0"
 
 call :fetch "https://huggingface.co/ggerganov/whisper.cpp/resolve/main/ggml-base.bin" "Assets\StreamingAssets\Whisper\ggml-base.bin" 147951465
+call :fetch "https://huggingface.co/ggerganov/whisper.cpp/resolve/main/ggml-small.bin" "Assets\StreamingAssets\Whisper\ggml-small.bin" 487601967
 
 rem Local word judge (2단계 말 무게 발판): llama.cpp server (Vulkan) + Kanana 1.5 2.1B Instruct (Apache-2.0), Q4_K_M
 call :fetch "https://huggingface.co/DevQuasar/kakaocorp.kanana-1.5-2.1b-instruct-2505-GGUF/resolve/main/kakaocorp.kanana-1.5-2.1b-instruct-2505.Q4_K_M.gguf" "Assets\StreamingAssets\LLM\kanana-2.1b-Q4_K_M.gguf" 1522796768

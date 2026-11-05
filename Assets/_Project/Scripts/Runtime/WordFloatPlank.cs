@@ -66,6 +66,7 @@ namespace DuskTwilight
         }
 
         /// <summary>Words worth priming the speech recogniser with: the choices plus the word list.</summary>
+        public override IEnumerable<string> ListenWords() => PromptWords();
         public IEnumerable<string> PromptWords()
         {
             if (choices != null) foreach (var c in choices) yield return c;

@@ -2644,6 +2644,9 @@ MonoBehaviour:
   answersBells: 1
   foundEcho: 0.35
   foundCaption: 
+  puzzledMark: {fileID: 1377464429623951507, guid: f8bff6a58c738c54e9cab282e1175f34, type: 3}
+  puzzledAfter: 0.35
+  puzzledCooldown: 4
   linkedAreas: []
 --- !u!1 &761507165
 GameObject:

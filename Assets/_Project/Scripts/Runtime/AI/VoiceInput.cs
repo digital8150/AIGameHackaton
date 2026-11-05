@@ -131,8 +131,7 @@ namespace DuskTwilight
             void AddTarget(WordTarget t)
             {
                 if (!t) return;
-                Add(t.choices);
-                if (t is WordFloatPlank fp) Add(new System.Collections.Generic.List<string>(fp.PromptWords()).ToArray());
+                Add(new System.Collections.Generic.List<string>(t.ListenWords()).ToArray());
             }
             AddTarget(WordTarget.Nearest);
             foreach (var t in FindObjectsByType<WordTarget>(FindObjectsSortMode.None)) AddTarget(t);

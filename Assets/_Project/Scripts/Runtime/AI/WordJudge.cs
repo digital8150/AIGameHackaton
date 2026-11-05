@@ -116,6 +116,11 @@ namespace DuskTwilight
             foreach (var p in LongPieces) if (w.Contains(p)) l = true;
             foreach (var p in ShortPieces) if (w.Contains(p)) s = true;
             if (l != s) return new StretchResult { stretch = l ? StretchKind.Long : StretchKind.Short, confidence = 1f, source = "단어" };
+            if (!l && !s)
+            {
+                bool nl = NearPiece(w, NearLong), ns = NearPiece(w, NearShort);
+                if (nl != ns) return new StretchResult { stretch = nl ? StretchKind.Long : StretchKind.Short, confidence = 0.9f, source = "비슷한 말" };
+            }
             if (stretchCache.TryGetValue(w, out var hit)) { hit.source = "캐시"; return hit; }
             var llm = LocalLLM.I;
             if (llm && llm.Ready)
@@ -147,6 +152,44 @@ namespace DuskTwilight
         static readonly Dictionary<string, StretchResult> heavyCache = new Dictionary<string, StretchResult>();
         static readonly string[] HeavyPieces = { "무거", "무겁", "묵직", "떨어", "내려", "가라앉", "추락", "아래로", "쿵" };
 
+        /// <summary>What the prince is likely to say to gold objects / stones (Whisper prompt).</summary>
+        public static readonly string[] StretchListenWords = { "길어져", "짧아져", "늘어나라", "줄어들어", "커져라", "작아져라", "올라가라", "내려가라" };
+        public static readonly string[] HeavyListenWords = { "무거워져", "떨어져", "내려와", "무겁게" };
+        // whole words a misheard utterance is compared against (long enough that a one-jamo slip is still unambiguous)
+        static readonly string[] NearLong = { "길어져", "늘어나", "늘어져", "길쭉해", "커져라", "올라가", "높아져" };
+        static readonly string[] NearShort = { "짧아져", "줄어들", "줄어져", "작아져", "내려가", "낮아져" };
+        static readonly string[] NearHeavy = { "무거워져", "무거워", "떨어져", "내려와", "무겁게" };
+
+        /// <summary>
+        /// A mispronounced / misheard piece (기러져 ≈ 길어져, 짤바져 ≈ 짧아져, 무거어져 ≈ 무거워져): compares jamo, so a sound that
+        /// Whisper spelled differently still counts. Only pieces of 2+ syllables, one jamo off at most.
+        /// </summary>
+        public static bool NearPiece(string w, string[] pieces)
+        {
+            string jw = Norm(VoiceIntent.Jamo(w));
+            foreach (var p in pieces)
+            {
+                string jp = Norm(VoiceIntent.Jamo(p));
+                if (jp.Length < 5) continue;
+                for (int len = jp.Length - 1; len <= jp.Length + 1; len++)
+                    for (int i = 0; i + len <= jw.Length; i++)
+                        if (VoiceIntent.Distance(jw.Substring(i, len), jp) <= 1) return true;
+            }
+            return false;
+        }
+
+        // silent ㅇ initial and ㅆ/ㅅ, ㅐ/ㅔ sound the same in speech: fold them before comparing
+        static string Norm(string j)
+        {
+            var sb = new System.Text.StringBuilder();
+            foreach (char c in j)
+            {
+                if (c == 'ᄋ') continue;                       // ㅇ lead (silent)
+                sb.Append(c == 'ᅢ' ? 'ᅦ' : c == 'ᄊ' ? 'ᄉ' : c);   // ㅐ→ㅔ, ㅆ→ㅅ
+            }
+            return sb.ToString();
+        }
+
         static readonly string[] HeavyOnlyPieces = { "무거", "무겁", "묵직", "떨어", "가라앉", "추락", "쿵", "내려와", "내려오" };
 
         /// <summary>Clearly about weight / falling (not length).</summary>
@@ -154,7 +197,7 @@ namespace DuskTwilight
         {
             string w = WordTarget.Clean(spoken);
             foreach (var p in HeavyOnlyPieces) if (w.Contains(p)) return true;
-            return false;
+            return NearPiece(w, NearHeavy);
         }
 
         /// <summary>Clearly about length (and not about weight).</summary>
@@ -173,6 +216,9 @@ namespace DuskTwilight
             string w = WordTarget.Clean(spoken);
             if (w.Length == 0) return new StretchResult { source = "폴백" };
             foreach (var p in HeavyPieces) if (w.Contains(p)) return new StretchResult { stretch = StretchKind.Short, confidence = 1f, source = "단어" };
+            if (NearPiece(w, NearHeavy)) return new StretchResult { stretch = StretchKind.Short, confidence = 0.9f, source = "비슷한 말" };
+            // clearly about length (작아져, 길어져라): not for the stone, whatever the model would say
+            if (LooksStretch(spoken)) return new StretchResult { stretch = StretchKind.None, confidence = 1f, source = "단어" };
             if (heavyCache.TryGetValue(w, out var hit)) { hit.source = "캐시"; return hit; }
             var llm = LocalLLM.I;
             if (llm && llm.Ready)

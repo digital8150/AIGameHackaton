@@ -453,7 +453,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 719843348653090854, guid: ad957e694b3c69d4ca318bcb2e5e494e, type: 3}
       propertyPath: pages.Array.size
-      value: 8
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 719843348653090854, guid: ad957e694b3c69d4ca318bcb2e5e494e, type: 3}
       propertyPath: musicClearsWithColour
@@ -504,6 +504,12 @@ PrefabInstance:
       value: "<size=88>\uB05D</size>"
       objectReference: {fileID: 0}
     - target: {fileID: 719843348653090854, guid: ad957e694b3c69d4ca318bcb2e5e494e, type: 3}
+      propertyPath: pages.Array.data[8].text
+      value: "<size=60>\uB9CC\uB4E0 \uC0AC\uB78C\uB4E4</size>\n<size=44>\uD300\uC7A5 
+        \uC774\uC2B9\uBE48 (Pyorang)\n\uD300\uC6D0  \uC81C\uC138\uD615 (digital8150)\n\uD300\uC6D0 
+        \uBC15\uC601\uC11C (SkylightStudio07)</size>"
+      objectReference: {fileID: 0}
+    - target: {fileID: 719843348653090854, guid: ad957e694b3c69d4ca318bcb2e5e494e, type: 3}
       propertyPath: pages.Array.data[0].colour
       value: 0.12
       objectReference: {fileID: 0}
@@ -536,6 +542,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 719843348653090854, guid: ad957e694b3c69d4ca318bcb2e5e494e, type: 3}
+      propertyPath: pages.Array.data[8].colour
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 719843348653090854, guid: ad957e694b3c69d4ca318bcb2e5e494e, type: 3}
       propertyPath: pages.Array.data[0].picture
       value: 
       objectReference: {fileID: 2800000, guid: c8714a5e55e7f094b89aff59044b5da9, type: 3}
@@ -565,6 +575,10 @@ PrefabInstance:
       objectReference: {fileID: 2800000, guid: df6dbe3db4da7ac4c9ddf0e89d964e7d, type: 3}
     - target: {fileID: 719843348653090854, guid: ad957e694b3c69d4ca318bcb2e5e494e, type: 3}
       propertyPath: pages.Array.data[7].picture
+      value: 
+      objectReference: {fileID: 2800000, guid: c31cce1eb3255af4d99f70b286cfa675, type: 3}
+    - target: {fileID: 719843348653090854, guid: ad957e694b3c69d4ca318bcb2e5e494e, type: 3}
+      propertyPath: pages.Array.data[8].picture
       value: 
       objectReference: {fileID: 2800000, guid: c31cce1eb3255af4d99f70b286cfa675, type: 3}
     - target: {fileID: 719843348653090854, guid: ad957e694b3c69d4ca318bcb2e5e494e, type: 3}

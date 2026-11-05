@@ -138,6 +138,9 @@ namespace DuskTwilight
         /// <summary>False when the words are clearly meant for another kind of object (then the nearest one that understands gets them).</summary>
         protected virtual bool Understands(string text) => true;
 
+        /// <summary>Words to prime the speech recogniser with while this target is in the scene.</summary>
+        public virtual System.Collections.Generic.IEnumerable<string> ListenWords() => choices ?? new string[0];
+
         protected abstract void OnSpoken(string text);
 
         /// <summary>Keep letters only (speech transcripts come with spaces and punctuation).</summary>

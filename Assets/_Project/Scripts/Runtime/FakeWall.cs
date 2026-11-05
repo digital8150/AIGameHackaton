@@ -32,6 +32,13 @@ namespace DuskTwilight
         [Tooltip("Caption when a wall is found (what it looks like when you cannot hear it)")]
         public string foundCaption = "";
 
+        [Header("Princess puzzled")]
+        [Tooltip("Shown over the princess when she walks into a wall the prince hasn't seen through yet (Prefabs/FX/QuestionMark)")]
+        public GameObject puzzledMark;
+        [Tooltip("Seconds she must push against it before the mark shows")]
+        public float puzzledAfter = 0.35f;
+        public float puzzledCooldown = 4f;
+
         [Header("Linked")]
         [Tooltip("World rectangles (x, y = bottom-left, w, h). Finding any piece inside an area finds every piece in it (e.g. sun/moon/star ceilings vanish together).")]
         public Rect[] linkedAreas = new Rect[0];
@@ -95,10 +102,43 @@ namespace DuskTwilight
         void OnCall(Vector2 from, float strength) { if (openOnEcho) Hear(from, strength); }
         void OnBell(Vector2 from, float strength, EchoResonator bell) { if (openOnEcho && answersBells) Hear(from, strength); }
 
+        float pushingWall, lastMark = -99f;
+
+        /// <summary>The princess walking into an unfound wall: after a moment a "?" pops over her head.</summary>
+        void CheckPuzzled(DuoController duo)
+        {
+            if (!puzzledMark) return;
+            var a = duo.Leader;
+            bool against = false;
+            if (a == duo.princess && a.InputDir != 0)
+            {
+                Vector2 p = (Vector2)a.transform.position + Vector2.up * 0.8f;
+                foreach (var part in parts)
+                {
+                    if (part.open) continue;
+                    foreach (var c in part.centres)
+                    {
+                        float dx = c.x - p.x;
+                        if (Mathf.Abs(c.y - p.y) < 1f && Mathf.Abs(dx) < 1.0f && Mathf.Sign(dx) == a.InputDir) { against = true; break; }
+                    }
+                    if (against) break;
+                }
+            }
+            pushingWall = against ? pushingWall + Time.deltaTime : 0f;
+            if (pushingWall >= puzzledAfter && Time.time - lastMark > puzzledCooldown)
+            {
+                lastMark = Time.time;
+                var m = Instantiate(puzzledMark, a.transform.position, Quaternion.identity);
+                var pm = m.GetComponent<PopMark>();
+                if (pm) pm.target = a.transform;
+            }
+        }
+
         void Update()
         {
-            if (!revealByProximity) return;
             var duo = DuoController.I;
+            if (duo) CheckPuzzled(duo);
+            if (!revealByProximity) return;
             if (!duo || duo.Leader != duo.prince) return;
             Vector2 p = (Vector2)duo.Leader.transform.position + Vector2.up * 0.5f;
             foreach (var part in parts)

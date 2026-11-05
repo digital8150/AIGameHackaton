@@ -60,6 +60,7 @@ namespace DuskTwilight
         }
 
         protected override bool Understands(string text) => !WordJudge.LooksHeavy(text);
+        public override System.Collections.Generic.IEnumerable<string> ListenWords() => WordJudge.StretchListenWords;
 
         protected override void OnSpoken(string text)
         {

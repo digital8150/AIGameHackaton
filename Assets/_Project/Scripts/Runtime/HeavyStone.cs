@@ -48,6 +48,11 @@ namespace DuskTwilight
         [Tooltip("While it floats the picture bobs gently (the collider stays put) so it reads as floating, not stuck")]
         public float bobHeight = 0.18f;
         public float bobSpeed = 1.6f;
+        [Tooltip("Golden motes drifting around it while it floats (stopped when it falls)")]
+        public ParticleSystem floatFx;
+        [Tooltip("Soft glow behind it while it floats (pulses)")]
+        public SpriteRenderer floatGlow;
+        public float glowAlpha = 0.45f;
 
         [Header("Speech")]
         [Tooltip("The prince is heard up to this far from the stone's nearest point (기획 8m)")]
@@ -113,10 +118,23 @@ namespace DuskTwilight
         protected override void Update()
         {
             base.Update();
+            bool floating = !Fallen && !dropping && !Hidden;
             if (body)
             {
-                float bob = !Fallen && !dropping ? Mathf.Sin(Time.time * bobSpeed + home.x) * bobHeight : 0f;
+                float bob = floating ? Mathf.Sin(Time.time * bobSpeed + home.x) * bobHeight : 0f;
                 body.transform.localPosition = new Vector3(0f, size.y * 0.5f + bob, 0f);
+            }
+            if (floatFx)
+            {
+                if (floating && !floatFx.isEmitting) floatFx.Play();
+                else if (!floating && floatFx.isEmitting) floatFx.Stop(true, ParticleSystemStopBehavior.StopEmitting);
+            }
+            if (floatGlow)
+            {
+                var c = floatGlow.color;
+                float target = floating ? glowAlpha * (0.75f + 0.25f * Mathf.Sin(Time.time * bobSpeed * 1.3f + home.x)) : 0f;
+                c.a = Mathf.MoveTowards(c.a, target, Time.deltaTime * 2f);
+                floatGlow.color = c;
             }
             if (Hidden && !FakeAbove())
             {
@@ -140,6 +158,7 @@ namespace DuskTwilight
         }
 
         protected override bool Understands(string text) => !WordJudge.LooksStretch(text);
+        public override System.Collections.Generic.IEnumerable<string> ListenWords() => WordJudge.HeavyListenWords;
 
         protected override void OnSpoken(string text)
         {
