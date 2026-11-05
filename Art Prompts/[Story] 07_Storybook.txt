@@ -1,0 +1,43 @@
+# [Story 07] 황혼의 그림책 — 타이틀 → 1단계 사이 프롤로그 컷신 (NAI V5, 뒤에 [Base Prompts].txt 결합)
+# 전 장면 16:9 (1344x768, 무료). 게임에서는 해진 그림책 셰이더(세피아·종이결·탄 가장자리·제본선)를 거쳐 보여 주므로
+# 생성은 지금 그림체(카미시바이·펜 해칭) 그대로, 글자는 그림에 넣지 않는다 (문구는 게임이 류류체로 얹음).
+# 인물 묘사는 아래 공통 문구를 그대로 쓴다 (실존 캐릭터 이름 금지):
+#   공주: small pointed black horns, platinum silver-white bob with blunt bangs and outward-curled sidelocks, violet-blue eyes, black lace high collar, silver-violet corset, deep indigo cloak with sunset-gold lining
+#   왕자: pale champagne-blonde fluffy hair, white cloth bandage over his eyes, ivory lace collar, white-and-gold tunic, long ivory cloak with sunset-gold lining
+# 공통: 화면 위쪽 1/4은 문구가 들어가도록 비워 둔다 (sky, mist, dark empty space).
+
+## 1. 표지 — 황혼의 그림책 (16:9)
+no humans, -3::text, letters, title, words::, scenery, wide shot, {{an old closed fairytale book lying in dusk light}}, a sun and a crescent moon embossed together on its worn leather cover, frayed corners, dried flowers and a ribbon bookmark, warm twilight glow from one side and deep violet shadow on the other, empty dark space above,
+A single ancient storybook with a sun and moon emblem resting in the half-light between day and night, drawn as a vintage picture-book frontispiece with dense pen hatching.
+
+## 2. 두 나라의 전쟁 (16:9)
+no humans, -3::text, letters::, scenery, wide shot, {{two kingdoms at war across a valley}}, on the left a radiant white-and-gold castle under a pale sun, on the right a jagged black castle under a crescent moon, rows of tiny banners and smoke from cannons meeting in the valley between them, cannon fire flashes, empty hazy sky in the upper part,
+A sweeping storybook panorama of a kingdom of light and a kingdom of darkness locked in a long war, drawn like an old fairytale engraving with pen cross-hatching.
+
+## 3. 쫓겨난 전장의 공주 (16:9)
+1girl, solo, wide shot, from side, {{a young horned princess walking away alone from a dark castle gate}}, small pointed black horns, platinum silver-white bob with blunt bangs and outward-curled sidelocks, black lace high collar, silver-violet corset, deep indigo cloak with sunset-gold lining dragging in the dust, one hand pressed to her ear, scorched battlefield and broken cannon behind her, closed iron gate, crows, empty dark sky above,
+A defiant but lonely war princess who lost her hearing to cannon fire, exiled and walking out of her kingdom's gate, told as a melancholic picture-book page.
+
+## 4. 탑에 갇힌 왕자 (16:9)
+1boy, solo, wide shot, {{a blind young prince sitting alone at the window of a tall forgotten stone tower}}, pale champagne-blonde fluffy hair, white cloth bandage over his eyes, ivory lace collar, white-and-gold tunic, long ivory cloak with sunset-gold lining, ivy creeping up the tower, a locked iron door, faint sunlight he cannot see falling on his face, distant bright castle on the horizon, empty sky above,
+A gentle prince blinded by an assassin's blade and locked away in a lonely tower during a fight over the throne, drawn as a quiet sorrowful storybook page.
+
+## 5. 무너지는 탑 (16:9)
+1boy, solo, wide shot, {{the old tower crumbling into rubble at dusk}}, a blind prince with a white bandage over his eyes and an ivory cloak stepping carefully out through the broken stones, one hand reaching forward to feel the way, pale champagne-blonde hair, falling dust and stones, a long winding road leading away into wild land, empty sky above,
+After many years the forgotten tower collapses and the blind prince walks out free and wanders with no destination, drawn as a dramatic old picture-book scene.
+
+## 6. 깊고 어두운 숲에서의 만남 (16:9)
+1girl, 1boy, wide shot, from side, {{deep dark forest of huge twisted trees}}, the horned princess with platinum silver-white bob and deep indigo cloak holding a short sword pointed at the blind prince, but her blade is lowering, the prince with a white bandage over his eyes and ivory cloak standing calmly unaware, roots and mist, thin beams of dusk light, empty dark canopy above,
+In the deepest forest the exiled princess meets the prince of the enemy kingdom and points her sword at him, then hesitates, thinking nothing would change anyway, told as a tense storybook page.
+
+## 7. 머리를 쓰다듬는 왕자 (16:9)
+1girl, 1boy, medium shot, from side, {{the blind prince gently patting the horned princess on the head}}, the princess looking up at him surprised and flustered with a small pout, small pointed black horns, platinum silver-white bob, deep indigo cloak, the prince smiling kindly with a white bandage over his eyes, pale champagne-blonde hair, ivory cloak, soft forest light around them, empty dark space above,
+The kind blind prince thanks the fierce princess for saving him and pats her head, while she cannot believe how naive he is, a warm and slightly funny picture-book moment.
+
+## 8. 황혼숲의 샘 이야기 (16:9)
+1boy, 1girl, wide shot, {{the prince pointing far ahead toward a distant glowing twilight forest}}, a tiny shining spring drawn like a vision in the distance between the trees, the prince with white eye bandage and ivory cloak speaking hopefully, the horned princess with platinum silver-white bob and indigo cloak watching his lips with crossed arms, path into the dusk, empty sky above,
+The prince tells of a spring in the twilight forest said to heal eyes and says he is on his way there, while the deaf princess reads his lips, drawn as a hopeful storybook page.
+
+## 9. 함께 떠나는 길 (16:9)
+1girl, 1boy, wide shot, from behind, {{two small figures walking side by side into a mysterious twilight forest}}, the prince in a long ivory cloak in front feeling his way, the horned princess in a deep indigo cloak following a step behind with a sigh, strange glowing stones, floating light planks and hidden traps along the path, sunset on one side and night on the other, empty sky above,
+The road to the twilight forest is full of mysterious traps, and the princess, unable to just watch, follows the blind prince, the closing page of the prologue in a vintage fairytale picture book.
