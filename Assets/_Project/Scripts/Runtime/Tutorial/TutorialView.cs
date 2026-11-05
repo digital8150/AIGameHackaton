@@ -6,8 +6,8 @@ using UnityEngine.UI;
 namespace DuskTwilight
 {
     /// <summary>
-    /// Section checklist for chapter 0, in the game's pixel style: slides in from the left under the
-    /// medallion, key chips before each objective, a diamond that fills when it is done.
+    /// Section checklist for chapter 0, in the game's pixel style: slides in from the right under the
+    /// top-right notice, key chips before each objective, a diamond that fills when it is done.
     /// </summary>
     public class TutorialView : MonoBehaviour
     {
@@ -15,8 +15,8 @@ namespace DuskTwilight
         public Sprite checkEmpty, checkDone;
 
         [Header("Layout (the panel itself lives in the Tutorial Panel prefab)")]
-        [Tooltip("Panel X when hidden (off-screen left) and shown.")]
-        public Vector2 slideX = new Vector2(-490f, 30f);
+        [Tooltip("Panel X (right-anchored, pivot right) when hidden (off-screen right) and shown.")]
+        public Vector2 slideX = new Vector2(530f, -12f);
         [Tooltip("Space under the last line. The side and top insets come from the elements' positions in the prefab.")]
         public float padding = 14f;
         public float rowHeight = 34f;
