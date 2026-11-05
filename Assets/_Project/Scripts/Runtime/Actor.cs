@@ -196,10 +196,11 @@ namespace DuskTwilight
         public Vector2 followWalkHysteresis = new Vector2(0.35f, 0.8f);
 
         /// <param name="grounded">The path point is on the ground (the leader walked there), not mid-jump.</param>
-        public void FollowTo(Vector2 target, bool grounded, int leaderFacing, float dt)
+        /// <param name="smooth">Smooth time override (a gentle glide when her target jumped, e.g. stepping aside); <=0 = followSmooth.</param>
+        public void FollowTo(Vector2 target, bool grounded, int leaderFacing, float dt, float smooth = -1f, float maxSpeed = 30f)
         {
             Vector2 p = rb.position;
-            Vector2 next = Vector2.SmoothDamp(p, target, ref followVel, followSmooth, 30f, dt);
+            Vector2 next = Vector2.SmoothDamp(p, target, ref followVel, smooth > 0 ? smooth : followSmooth, maxSpeed, dt);
             float inv = 1f / Mathf.Max(dt, 1e-4f);
             float vx = (next.x - p.x) * inv, vy = (next.y - p.y) * inv;
             // low-pass so tiny path corrections don't read as steps
@@ -253,7 +254,7 @@ namespace DuskTwilight
 
         // ---------------- animation -----------------------------------------------------------
         bool wasAirborne;
-        float landTime = -9f, airStart = -9f;
+        float landTime = -9f, airStart = -9f, walkPhase;
 
         static Sprite Pick(Sprite[] set, int i) => set[Mathf.Clamp(i, 0, set.Length - 1)];
 
@@ -328,7 +329,9 @@ namespace DuskTwilight
                 else if (moving)
                 {
                     float speed01 = Mathf.Clamp01(Mathf.Abs(vx) / Mathf.Max(0.1f, runSpeed));
-                    s = Pick(walkFrames, (int)(animTime * walkFps * Mathf.Lerp(0.5f, 1f, speed01)) % walkFrames.Length);
+                    // accumulate the phase: animTime * (changing rate) would skip many frames whenever the speed changes
+                    walkPhase += Time.deltaTime * walkFps * Mathf.Lerp(0.5f, 1f, speed01);
+                    s = Pick(walkFrames, (int)walkPhase % walkFrames.Length);
                 }
                 else
                 {

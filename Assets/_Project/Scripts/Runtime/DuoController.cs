@@ -18,6 +18,10 @@ namespace DuskTwilight
         public float followGap = 0.85f;
         [Tooltip("Fastest the follower moves along the path when catching up (m/s) — finishing a jump the leader already landed, closing the gap")]
         public float followCatchSpeed = 9f;
+        [Tooltip("How softly she starts / stops along the path (s)")]
+        [Range(0.02f, 0.4f)] public float followPathSmooth = 0.12f;
+        [Tooltip("How softly she steps aside for a leader who stopped on her spot, and steps back (s)")]
+        [Range(0.05f, 0.6f)] public float followStepAsideSmooth = 0.2f;
         [Tooltip("Looking for a spot beside the leader on a narrow ledge: keep this much floor past her feet")]
         [Range(0f, 0.4f)] public float edgeMargin = 0.15f;
         public float switchCooldown = 0.35f;
@@ -37,7 +41,8 @@ namespace DuskTwilight
         struct Crumb { public float t, len; public Vector2 p; public bool ground; }
         readonly List<Crumb> trail = new List<Crumb>();
         float cursor;          // follower's absolute path length along the trail
-        float lastWant;
+        float lastWant, cursorVel;
+        Vector2 sideOffset, sideOffsetVel;
         float lastSwitch = -9;
         AudioSource sfx;
 
@@ -123,7 +128,8 @@ namespace DuskTwilight
             trail.Clear();
             Vector2 f = Follower.transform.position;
             trail.Add(new Crumb { t = Time.time - followDelay, len = 0, p = f, ground = GroundBelow(f, 0.35f, out _) });
-            cursor = 0; lastWant = 0;
+            cursor = 0; lastWant = 0; cursorVel = 0;
+            sideOffset = Vector2.zero; sideOffsetVel = Vector2.zero;
         }
 
         void Update()
@@ -165,20 +171,75 @@ namespace DuskTwilight
                 want = Mathf.Max(want, land);
             }
 
-            // move along the path at a bounded speed (never backwards): jumps are replayed, not cut across
-            if (want > cursor) cursor = Mathf.Min(want, cursor + Mathf.Max(followCatchSpeed, pathRate * 1.1f) * Time.fixedDeltaTime);
+            // the leader is close on the same floor level (walking past her, jumping in place): freeze the cursor.
+            // The body target stays on the path, so she never detaches from it.
+            Vector2 body = Follower.transform.position;
+            bool sameLevel = !float.IsNegativeInfinity(groundY) && Mathf.Abs(groundY - body.y) < 0.6f;
+            bool closeBy = Mathf.Abs(body.x - leaderPos.x) < followGap;
+            bool hold = closeBy && sameLevel && Follower.Grounded;
+            if (hold) { want = cursor; pathRate = 0f; }
+
+            // ease along the path (never backwards, speed bounded): jumps are replayed, not cut across,
+            // and starting / stopping ramps instead of snapping
+            float maxRate = Mathf.Max(followCatchSpeed, pathRate * 1.1f);
+            // lead the goal by the smoothing lag (rate * smooth time) so a steady run does not trail the leader by extra metres
+            float goal = Mathf.Max(want + pathRate * followPathSmooth, cursor);
+            cursor = Mathf.SmoothDamp(cursor, goal, ref cursorVel, followPathSmooth, maxRate, Time.fixedDeltaTime);
+            if (cursorVel < 0) cursorVel = 0;
+            if (hold && Follower.Velocity.sqrMagnitude < 0.05f * 0.05f) cursorVel = 0;
             cursor = Mathf.Min(cursor, leaderLen);
 
-            Vector2 target = PointAt(cursor, leaderPos, leaderLen, out bool onGround);
-            bool caughtUp = cursor >= want - 0.02f;
-            target = Settle(target, leaderPos, ref onGround, caughtUp && leaderSettled);
+            // body target = path point + a smoothed offset (steps aside for a leader who stopped on her spot)
+            // aim ahead by the body's own smoothing lag so a steady run does not trail the path point
+            float aim = Mathf.Min(cursor + Mathf.Min(pathRate, Leader.Velocity.magnitude) * Follower.followSmooth, leaderLen);
+            Vector2 pathPoint = PointAt(aim, leaderPos, leaderLen, out bool onGround);
+            if (onGround && GroundBelow(pathPoint, 0.3f, out float gy)) pathPoint.y = gy;
+            Vector2 desiredOffset = Vector2.zero;
+            if (leaderSettled && cursor >= want - 0.05f && NeedsStepAside(pathPoint, leaderPos))
+            {
+                desiredOffset = FindSpotBeside(body, leaderPos) - pathPoint; onGround = true;
+            }
+            sideOffset = Vector2.SmoothDamp(sideOffset, desiredOffset, ref sideOffsetVel, followStepAsideSmooth, 12f, Time.fixedDeltaTime);
+            Vector2 target = pathPoint + sideOffset;
+
             Follower.FollowTo(target, onGround, Leader.Facing, Time.fixedDeltaTime);
+
+            TryShortcut(leaderPos, leaderLen);
 
             // drop crumbs she has already passed (keep the segment she is on)
             int keep = 0;
             while (keep + 1 < trail.Count && trail[keep + 1].len <= cursor) keep++;
             if (keep > 0) trail.RemoveRange(0, keep);
             if (trail.Count > 800) { trail.RemoveRange(0, trail.Count - 800); cursor = Mathf.Max(cursor, trail[0].len); }
+        }
+
+        /// <summary>
+        /// The leader turned back toward her on the same floor: the path to the turning point is a detour.
+        /// Restart the trail from where she stands, so she simply turns and follows instead of walking
+        /// out to the turn first (and gets passed through calmly instead of being thrown to the far side).
+        /// </summary>
+        void TryShortcut(Vector2 leaderPos, float leaderLen)
+        {
+            if (!Leader.Grounded || !Follower.Grounded) return;
+            Vector2 self = Follower.transform.position;
+            float straight = Vector2.Distance(self, leaderPos);
+            if (leaderLen - cursor < straight + 0.3f) return;
+            if (Mathf.Abs(self.y - leaderPos.y) > 0.3f) return;
+            // the floor must be continuous between them (never a shortcut over a pit)
+            int n = Mathf.CeilToInt(Mathf.Abs(leaderPos.x - self.x) / 0.25f);
+            for (int i = 1; i < n; i++)
+            {
+                Vector2 q = Vector2.Lerp(self, leaderPos, i / (float)n);
+                if (!GroundBelow(q, 0.35f, out float gy) || Mathf.Abs(gy - q.y) > 0.35f) return;
+            }
+            float v = cursorVel;
+            Vector2 keepOff = sideOffset, keepOffVel = sideOffsetVel;
+            ResetTrail();
+            sideOffset = keepOff; sideOffsetVel = keepOffVel;
+            trail.Add(new Crumb { t = Time.time - followDelay, len = straight, p = leaderPos, ground = true });
+            lastWant = straight - followGap;
+            // keep her pace only if the leader is still heading away from her
+            cursorVel = Mathf.Sign(Leader.Velocity.x) == Mathf.Sign(leaderPos.x - self.x) ? v : 0f;
         }
 
         Vector2 PointAt(float len, Vector2 leaderPos, float leaderLen, out bool ground)
@@ -223,39 +284,26 @@ namespace DuskTwilight
             return hit.collider;
         }
 
-        /// <summary>
-        /// Keeps the follower beside the leader with feet on the ground. Without this, a jump in place
-        /// leaves breadcrumbs straight above the leader's head and the follower ends up standing on them,
-        /// and a leader resting on a narrow ledge leaves the follower hanging in the air behind them.
-        /// </summary>
-        Vector2 Settle(Vector2 target, Vector2 leaderPos, ref bool onGround, bool restingBeside)
+        /// <summary>Her path point is unusable (no floor under it) or sits on the leader: she has to stand elsewhere.</summary>
+        bool NeedsStepAside(Vector2 pathPoint, Vector2 leaderPos)
         {
-            Vector2 self = Follower.transform.position;
-            // walked crumbs: pin feet to the ground under them (tiny offsets only — never lifted onto a ledge)
-            if (onGround && GroundBelow(target, 0.3f, out float gy)) target.y = gy;
+            if (!GroundBelow(pathPoint, 0.3f, out _)) return true;
+            return Mathf.Abs(pathPoint.x - leaderPos.x) < followGap * 0.5f;
+        }
 
-            bool besideLeader = Mathf.Abs(target.x - leaderPos.x) < followGap * 0.75f;
-            // a leader resting on ground with nothing under her spot (narrow pillar, ledge edge): find real ground beside them
-            bool hovering = restingBeside && !GroundBelow(target, 0.3f, out _);
-            if (!besideLeader && !hovering) return target;
-            if (!Leader.Grounded && !besideLeader) return target;   // mid-jump over a gap is fine
-
-            // never share the leader's column: hold the gap on the side we are already on, on the leader's ground
-            float side = Mathf.Abs(self.x - leaderPos.x) > 0.05f ? Mathf.Sign(self.x - leaderPos.x) : -Leader.Facing;
+        /// <summary>Never share the leader's column: the farthest spot with floor, on the side she is already on.</summary>
+        Vector2 FindSpotBeside(Vector2 body, Vector2 leaderPos)
+        {
+            float side = Mathf.Abs(body.x - leaderPos.x) > 0.05f ? Mathf.Sign(body.x - leaderPos.x) : -Leader.Facing;
             float baseY = float.IsNegativeInfinity(groundY) ? leaderPos.y : groundY;
-
-            // farthest spot (up to followGap) on that side with floor at about the leader's height;
-            // a narrow ledge simply puts her closer — right behind the leader if it has to
             for (float off = followGap; off > 0.01f; off -= 0.1f)
             {
                 float x = leaderPos.x + side * off;
                 var hit = Down(new Vector2(x, baseY + 0.6f), 1.2f);
                 // both feet on it: not balanced on the very edge
                 var outer = Down(new Vector2(x + side * edgeMargin, baseY + 0.6f), 1.2f);
-                if (hit.collider && outer.collider && Mathf.Abs(outer.point.y - hit.point.y) < 0.3f) { onGround = true; return new Vector2(x, hit.point.y); }
+                if (hit.collider && outer.collider && Mathf.Abs(outer.point.y - hit.point.y) < 0.3f) return new Vector2(x, hit.point.y);
             }
-            if (!Leader.Grounded) return target;   // jumping over nothing: keep to the path
-            onGround = true;
             return new Vector2(leaderPos.x, baseY);
         }
     }
