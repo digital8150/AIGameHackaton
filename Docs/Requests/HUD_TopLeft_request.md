@@ -38,6 +38,8 @@
   - 초상이 이 구멍 뒤에 깔립니다. 구멍이 A·B에서 같아야 서로 바꿔 끼울 수 있습니다.
 - 그림자·광채는 고리 바깥 2~4% 안쪽까지만 (잘리지 않게).
 
+> **C·D는 완료 (요청 불필요).** `Assets/Art/Characters/*/*_Upper_Portrait.png`에서 얼굴 중심으로 잘라 원형으로 씀.
+
 ### C. 공주 초상 — `portrait_princess.png`
 ### D. 왕자 초상 — `portrait_prince.png`
 - 512 × 512 px, PNG. 게임이 **원형으로 잘라** 고리 구멍 뒤에 놓습니다.
