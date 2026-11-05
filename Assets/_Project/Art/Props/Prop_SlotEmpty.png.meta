@@ -1,0 +1,585 @@
+fileFormatVersion: 2
+guid: 472f187b449fcf04c861c96f6f5e5efb
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -2578645862174859543
+    second: Prop_SlotEmpty_0
+  - first:
+      213: 4818941105889931607
+    second: Prop_SlotEmpty_1
+  - first:
+      213: -5125342862787141301
+    second: Prop_SlotEmpty_2
+  - first:
+      213: 5245143037895231606
+    second: Prop_SlotEmpty_3
+  - first:
+      213: 2080708378588832973
+    second: Prop_SlotEmpty_4
+  - first:
+      213: -4752710066773654361
+    second: Prop_SlotEmpty_5
+  - first:
+      213: 7798303075778990476
+    second: Prop_SlotEmpty_6
+  - first:
+      213: 663823675850463364
+    second: Prop_SlotEmpty_7
+  - first:
+      213: -1539434662293543853
+    second: Prop_SlotEmpty_8
+  - first:
+      213: 6050396788331993759
+    second: Prop_SlotEmpty_9
+  - first:
+      213: 6772780279108958331
+    second: Prop_SlotEmpty_10
+  - first:
+      213: 7750234917633069895
+    second: Prop_SlotEmpty_11
+  - first:
+      213: -9015385243531052019
+    second: Prop_SlotEmpty_12
+  - first:
+      213: -6412091877886216458
+    second: Prop_SlotEmpty_13
+  - first:
+      213: 7293602366678398009
+    second: Prop_SlotEmpty_14
+  - first:
+      213: 3727668452890955360
+    second: Prop_SlotEmpty_15
+  - first:
+      213: -7779194763685669771
+    second: Prop_SlotEmpty_16
+  - first:
+      213: 2780580182024859102
+    second: Prop_SlotEmpty_17
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 9
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Prop_SlotEmpty_0
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 31
+        width: 28
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9ee5987204fc63cd0800000000000000
+      internalID: -2578645862174859543
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Prop_SlotEmpty_1
+      rect:
+        serializedVersion: 2
+        x: 37
+        y: 56
+        width: 13
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 751f81a676150e240800000000000000
+      internalID: 4818941105889931607
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Prop_SlotEmpty_2
+      rect:
+        serializedVersion: 2
+        x: 57
+        y: 56
+        width: 13
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b412d7f42df1fd8b0800000000000000
+      internalID: -5125342862787141301
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Prop_SlotEmpty_3
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 56
+        width: 13
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 678cbd19dcd7ac840800000000000000
+      internalID: 5245143037895231606
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Prop_SlotEmpty_4
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 56
+        width: 13
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dc467fa0f3920ec10800000000000000
+      internalID: 2080708378588832973
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Prop_SlotEmpty_5
+      rect:
+        serializedVersion: 2
+        x: 118
+        y: 56
+        width: 14
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7a4888d006bfa0eb0800000000000000
+      internalID: -4752710066773654361
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Prop_SlotEmpty_6
+      rect:
+        serializedVersion: 2
+        x: 139
+        y: 56
+        width: 13
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c8194aa8453293c60800000000000000
+      internalID: 7798303075778990476
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Prop_SlotEmpty_7
+      rect:
+        serializedVersion: 2
+        x: 159
+        y: 56
+        width: 13
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4889f88bd10663900800000000000000
+      internalID: 663823675850463364
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Prop_SlotEmpty_8
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 31
+        width: 19
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 354e117b454d2aae0800000000000000
+      internalID: -1539434662293543853
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Prop_SlotEmpty_9
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 1
+        width: 27
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f9a51b692d357f350800000000000000
+      internalID: 6050396788331993759
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Prop_SlotEmpty_10
+      rect:
+        serializedVersion: 2
+        x: 37
+        y: 1
+        width: 13
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b787f06b7cfbdfd50800000000000000
+      internalID: 6772780279108958331
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Prop_SlotEmpty_11
+      rect:
+        serializedVersion: 2
+        x: 57
+        y: 1
+        width: 13
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7431957589d5e8b60800000000000000
+      internalID: 7750234917633069895
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Prop_SlotEmpty_12
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 1
+        width: 13
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d0c7806f2eae2e280800000000000000
+      internalID: -9015385243531052019
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Prop_SlotEmpty_13
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 1
+        width: 13
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6f6bc67e86ca307a0800000000000000
+      internalID: -6412091877886216458
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Prop_SlotEmpty_14
+      rect:
+        serializedVersion: 2
+        x: 118
+        y: 1
+        width: 14
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 93470d695b4183560800000000000000
+      internalID: 7293602366678398009
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Prop_SlotEmpty_15
+      rect:
+        serializedVersion: 2
+        x: 139
+        y: 1
+        width: 13
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 06ecef635b65bb330800000000000000
+      internalID: 3727668452890955360
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Prop_SlotEmpty_16
+      rect:
+        serializedVersion: 2
+        x: 159
+        y: 1
+        width: 13
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 574dfef049fba0490800000000000000
+      internalID: -7779194763685669771
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Prop_SlotEmpty_17
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 3
+        width: 17
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: edd251381fa969620800000000000000
+      internalID: 2780580182024859102
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Prop_SlotEmpty_0: -2578645862174859543
+      Prop_SlotEmpty_1: 4818941105889931607
+      Prop_SlotEmpty_10: 6772780279108958331
+      Prop_SlotEmpty_11: 7750234917633069895
+      Prop_SlotEmpty_12: -9015385243531052019
+      Prop_SlotEmpty_13: -6412091877886216458
+      Prop_SlotEmpty_14: 7293602366678398009
+      Prop_SlotEmpty_15: 3727668452890955360
+      Prop_SlotEmpty_16: -7779194763685669771
+      Prop_SlotEmpty_17: 2780580182024859102
+      Prop_SlotEmpty_2: -5125342862787141301
+      Prop_SlotEmpty_3: 5245143037895231606
+      Prop_SlotEmpty_4: 2080708378588832973
+      Prop_SlotEmpty_5: -4752710066773654361
+      Prop_SlotEmpty_6: 7798303075778990476
+      Prop_SlotEmpty_7: 663823675850463364
+      Prop_SlotEmpty_8: -1539434662293543853
+      Prop_SlotEmpty_9: 6050396788331993759
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

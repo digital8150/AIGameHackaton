@@ -26,7 +26,19 @@ namespace DuskTwilight
             if (!duo) return;
             ShowLetters(text, duo.Leader.transform.position + Vector3.up * 1.9f);
 
-            var altar = WordAltar.Nearest;
+            var altar = WordTarget.Nearest;
+            if (altar && altar.AcceptsAnyText)
+            {
+                // blank bridges take any words: only obvious commands are treated as commands
+                var k = VoiceIntent.Keywords(text, null);
+                bool command = k.confidence >= executeThreshold && (k.intent == Intent.Switch || k.intent == Intent.Hint || k.intent == Intent.Jump);
+                if (!command)
+                {
+                    LastDebug = $"\"{text}\" → 빈칸 채우기 · {VoiceInput.I.LastLatency:0.00}s";
+                    altar.Speak(text);
+                    return;
+                }
+            }
             var r = await VoiceIntent.JudgeAsync(text, altar ? altar.choices : null);
             if (!this || !DuoController.I) return;
             LastDebug = $"\"{text}\" → {r.intent}{(r.word != null ? " " + r.word : "")} ({r.confidence:P0}, {r.source}) · {VoiceInput.I.LastLatency:0.00}s";

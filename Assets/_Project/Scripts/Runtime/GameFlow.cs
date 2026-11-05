@@ -110,6 +110,12 @@ namespace DuskTwilight
                 StartCoroutine(Respawn());
         }
 
+        /// <summary>Hazards (water, thorns): fall back to the last checkpoint as if the leader dropped below killY.</summary>
+        public void Fall()
+        {
+            if (!respawning && !Cleared) StartCoroutine(Respawn());
+        }
+
         IEnumerator Respawn()
         {
             respawning = true;

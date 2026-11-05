@@ -59,3 +59,21 @@ A single antique wrought-iron checkpoint lamp post for a 2D side-scroller, drawn
 no humans, -3::1girl, 1boy, human::, game asset, paper cutout prop, {{black background, simple background}},
 {{grand ornate twilight sanctuary lantern}}, intertwined sun and crescent moon monument, warm golden beacon inside a tall filigree iron and stone arch,
 A grand ceremonial twilight lantern monument where the Prince and Princess reunite, drawn in a rich storybook paper-theater style with intricate pen cross-hatching, isolated on a solid black background.
+
+---
+
+## 6. 말 퍼즐 소품 (Word Puzzle Props — 스테이지 2)
+### 6-A. 말풍선 패 (Speech Bubble Plaque — 3:2 가로 권장)
+no humans, -3::1girl, 1boy, human::, game asset, paper cutout prop, {{black background, simple background}}, -3::text, letters, writing, words::,
+{{blank rounded speech bubble shaped wooden plaque}}, cream parchment face with a small pointed tail at the bottom, thin brass rim, hanging from two tiny chains, plain empty center, intricate pen cross-hatching on the rim only,
+A single blank storybook speech-bubble plaque prop with an empty face for writing, drawn in a vintage kamishibai paper-theater style, isolated on a solid black background.
+
+### 6-B. 눈부신 현판 (Glaring Hanging Sign — 3:2 가로 권장)
+no humans, -3::1girl, 1boy, human::, game asset, paper cutout prop, {{black background, simple background}}, -3::text, letters, writing::,
+{{hanging signboard blazing with blinding white-gold light}}, ornate brass frame hanging from a single rope, the face completely washed out by glare, light rays spilling around the edges, intricate pen cross-hatching on the frame,
+A single fairytale hanging sign too bright to read, its face lost in white-gold glare, drawn in a vintage kamishibai paper-theater style, isolated on a solid black background.
+
+### 6-C. 닫힌 문 (Closed Tall Door — 2:3 세로 권장)
+no humans, -3::1girl, 1boy, human::, game asset, paper cutout prop, vertical composition, {{black background, simple background}}, -3::text, letters, open door, archway::,
+{{tall heavy closed wooden door slab}}, iron bands and rivets, a blank brass nameplate in the upper middle, weathered planks, sepia and dark plum tones, intricate pen cross-hatching,
+A single tall closed storybook door standing flat in side view, with a blank plate for a word, drawn in a vintage kamishibai paper-theater style, isolated on a solid black background.

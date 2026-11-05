@@ -15,6 +15,11 @@ no humans, -3::1girl, 1boy, human::, wide shot, scenery, horizontal composition,
 {{deep fairytale forest interior at dusk}}, {{layered paper theater backdrop, kamishibai stage scenery}}, rows of tall dark tree trunks fading into thick mist, overlapping layers getting paler with distance, a faint warm glow far behind the trees, hanging moss and drooping branches at the top, dim ground mist at the bottom, low contrast, muted sepia, dusty violet and smoky umber tones,
 A wide, quiet and dim 2D side-scrolling background of a misty storybook forest, crafted like layered cut paper with heavy pencil hatching and vintage storybook texture, darker toward the edges, with soft light only deep in the center distance.
 
+### 1-H. 원경: 노을이 잠긴 호수 (Sunset Lake Backdrop — 2:1 고해상도, Anlas 사용)
+no humans, -3::1girl, 1boy, human::, wide shot, scenery, horizontal composition, -2::castle, city, boats, people::,
+{{still lake at sunset seen from the shore}}, {{layered paper theater backdrop, kamishibai stage scenery}}, the setting sun half sunk into the water, long golden reflection on the calm surface, distant dark tree lines and low hills on both sides, drifting paper clouds, warm amber, rose and dusty violet tones, low contrast,
+A wide, quiet 2D side-scrolling background of a sunset lake, crafted like layered cut paper with heavy pencil hatching and vintage storybook texture, darker toward the edges with the light gathered on the water.
+
 ### 1-B. 중경: 종이연극 고목 숲 레이어 (Midground Cutout Forest Layer — 21:9 와이드 권장)
 no humans, -3::1girl, 1boy, human::, wide shot, horizontal composition, {{black background, simple background}}, -3::frame, border, rectangular panel, framed picture, backdrop board::,
 {{row of separate paper cutout tree silhouettes}}, uneven twisted fairytale trees of different heights with gaps of empty space between them, a broken stone arch among the trunks, hanging vines, ragged irregular silhouette edges, intricate pen cross-hatching on tree bark, sepia and dark plum tones,
@@ -66,6 +71,11 @@ A long, straight, uniform paper-cutout strip of rocky cliff edge running from th
 no humans, -3::1girl, 1boy, human::, game asset, paper cutout prop, horizontal composition, {{black background, simple background}}, -3::grass on top, flowers, sky, floating island, frame::,
 {{long straight horizontal strip of earth underside}}, a thin straight band of dark soil along the top edge with many tangled roots and small vines hanging down at different lengths, uniform along the whole width, intricate pen cross-hatching, sepia and dark plum tones,
 A long, straight, uniform paper-cutout strip of hanging roots under an earth ceiling, for the underside of 2D platformer ground, drawn in a vintage kamishibai paper-theater style with dense pen hatching, isolated on a solid black background.
+
+### 2-F. 호수 수면 띠 (Lake Water Band — 21:9 와이드, 가로 반복용)
+no humans, -3::1girl, 1boy, human::, game asset, paper cutout prop, horizontal composition, {{black background, simple background}}, -3::sky, shore, trees, boat, frame::,
+{{long straight horizontal band of calm lake water}}, flat top waterline with small ripple highlights, deep rose-gold and violet water fading darker toward the bottom, faint horizontal reflection streaks, uniform along the whole width, intricate pen cross-hatching,
+A long, straight paper-cutout band of still sunset lake water for the water areas of a 2D platformer, drawn in a vintage kamishibai paper-theater style, isolated on a solid black background.
 
 ---
 
