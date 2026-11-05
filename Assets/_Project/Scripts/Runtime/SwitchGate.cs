@@ -9,7 +9,7 @@ namespace DuskTwilight
     /// If a forbidden switch comes on too (두 칸의 문: the echo reached too far) every switch turns off again.
     /// Indicator lamps on the door count the required switches that are on.
     /// </summary>
-    public class SwitchGate : MonoBehaviour
+    public class SwitchGate : MonoBehaviour, IResettable
     {
         [Header("Switches")]
         public EchoSwitch[] required;
@@ -18,6 +18,8 @@ namespace DuskTwilight
         [Tooltip("Pause before an overload resets everything (so the player sees what happened)")]
         public float resetDelay = 0.8f;
         public string overloadCaption = "철컹";
+        [Tooltip("Wait this long after the last required switch before opening, so a forbidden switch further out on the same echo still counts")]
+        public float settleTime = 0.7f;
 
         [Header("Opens")]
         [Tooltip("Rises out of the way (keeps its collider)")]
@@ -36,7 +38,7 @@ namespace DuskTwilight
         public Color indicatorOn = new Color(1f, 0.82f, 0.4f, 1f);
 
         public bool Open { get; private set; }
-        bool resetting;
+        bool resetting, settling;
 
         void Start()
         {
@@ -55,6 +57,17 @@ namespace DuskTwilight
             if (forbidden != null) foreach (var f in forbidden) if (f && f.On) overloaded = true;
             if (overloaded) { StartCoroutine(ResetAll()); return; }
             foreach (var r in required) if (r && !r.On) return;
+            if (!settling) StartCoroutine(Settle());
+        }
+
+        IEnumerator Settle()
+        {
+            settling = true;
+            yield return new WaitForSeconds(settleTime);
+            settling = false;
+            if (Open || resetting) yield break;
+            if (forbidden != null) foreach (var f in forbidden) if (f && f.On) yield break;   // overload is already resetting
+            foreach (var r in required) if (r && !r.On) yield break;
             StartCoroutine(DoOpen());
         }
 
@@ -87,6 +100,17 @@ namespace DuskTwilight
                 yield return null;
             }
             door.localPosition = b;
+        }
+
+        /// <summary>Falling in the section turns the switches off again (an opened gate stays open).</summary>
+        public void ResetState()
+        {
+            if (Open) return;
+            StopAllCoroutines();
+            resetting = settling = false;
+            foreach (var r in required) if (r) r.ResetState();
+            if (forbidden != null) foreach (var f in forbidden) if (f) f.ResetState();
+            Refresh();
         }
 
         void Refresh()

@@ -11,7 +11,7 @@ namespace DuskTwilight
     ///  - Rebuild: each word replaces the planks — "깜빡" makes 2, "깜빡깜빡" makes 4.
     /// Optionally the planks blink, and speaking here can wipe other bridges (the way back disappears).
     /// </summary>
-    public class WordFillBridge : WordTarget
+    public class WordFillBridge : WordTarget, IResettable
     {
         public enum FillMode { Accumulate, Rebuild }
 
@@ -95,6 +95,13 @@ namespace DuskTwilight
             bySlot.Clear();
             Solved = false;
             RefreshMarkers();
+        }
+
+        /// <summary>Falling in the section takes back an unfinished bridge (a finished one stays).</summary>
+        public void ResetState()
+        {
+            if (mode == FillMode.Accumulate && Solved) return;
+            ClearPlanks();
         }
 
         void RefreshMarkers()

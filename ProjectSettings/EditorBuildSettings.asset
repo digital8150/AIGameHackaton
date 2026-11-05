@@ -21,6 +21,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Stage4_TwilightGate.unity
     guid: 30e60110038875d4b84b077fbdf944e9
   - enabled: 1
+    path: Assets/Scenes/Stage5_TwilightBridge.unity
+    guid: c16a5995e4ec8dc4099ea445d5f60df6
+  - enabled: 1
     path: Assets/Scenes/Ch0_Prologue.unity
     guid: 5677366e637be234884981f77311f411
   - enabled: 1

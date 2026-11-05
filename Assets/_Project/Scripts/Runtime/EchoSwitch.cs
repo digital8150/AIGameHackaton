@@ -9,7 +9,7 @@ namespace DuskTwilight
     /// until a <see cref="SwitchGate"/> resets it. The lamp on top is visible to both senses; in the princess's sense
     /// the click shows as a caption.
     /// </summary>
-    public class EchoSwitch : MonoBehaviour
+    public class EchoSwitch : MonoBehaviour, IResettable
     {
         [Header("Hit")]
         [Tooltip("Share of the echo's radius that counts as a hit (the shader's reveal fades from 70%)")]
@@ -18,6 +18,10 @@ namespace DuskTwilight
         public float headRadius = 0.4f;
         [Tooltip("Where the head is, relative to this object")]
         public Vector2 headOffset = new Vector2(0, 1.6f);
+        [Tooltip("Turns on when the prince's call reaches it")]
+        public bool answersCalls = true;
+        [Tooltip("Turns on when a bell's sound reaches it (6m bell → 5.5m to the head)")]
+        public bool answersBells = true;
 
         [Header("Look")]
         public SpriteRenderer lamp;
@@ -43,22 +47,29 @@ namespace DuskTwilight
         }
 
         // only the prince's deliberate call counts (not footsteps, checkpoints or other switches' clicks)
-        void OnEnable() { EchoCaller.Called += OnEcho; }
-        void OnDisable() { EchoCaller.Called -= OnEcho; }
+        void OnEnable() { EchoCaller.Called += OnCall; EchoResonator.Rang += OnBell; }
+        void OnDisable() { EchoCaller.Called -= OnCall; EchoResonator.Rang -= OnBell; }
+
+        void OnCall(Vector2 from, float strength) { if (answersCalls) OnEcho(from, strength); }
+        void OnBell(Vector2 from, float strength, EchoResonator bell) { if (answersBells) OnEcho(from, strength); }
 
         void OnEcho(Vector2 from, float strength)
         {
-            if (On) return;
+            if (On || pending) return;
             var sc = SenseController.I;
             float r = strength * sc.echoRadiusPerStrength * sc.DirectorBoost * reachShare + headRadius;
             float d = Vector2.Distance(from, Head);
             if (d > r || d < 0.05f) return;   // its own click echo is ignored (d≈0)
+            pending = true;
             StartCoroutine(TurnOnAfter(d / Mathf.Max(0.1f, sc.echoSpeed)));
         }
+
+        bool pending;
 
         IEnumerator TurnOnAfter(float delay)
         {
             yield return new WaitForSeconds(delay);
+            pending = false;
             if (On) yield break;
             On = true;
             Apply();
@@ -78,6 +89,14 @@ namespace DuskTwilight
             Changed?.Invoke(this);
         }
 
+        public void ResetState()
+        {
+            StopAllCoroutines();
+            pending = false;
+            On = false;
+            Apply();
+        }
+
         void Apply()
         {
             if (lamp) lamp.color = On ? onColor : offColor;
@@ -88,6 +107,7 @@ namespace DuskTwilight
         {
             Gizmos.color = On ? new Color(1f, 0.8f, 0.3f) : new Color(0.7f, 0.6f, 1f);
             Gizmos.DrawWireSphere(Head, headRadius);
+            if (!answersCalls) { Gizmos.DrawLine(Head + new Vector2(-0.3f, 0.3f), Head + new Vector2(0.3f, -0.3f)); }
         }
     }
 }

@@ -103,6 +103,28 @@ namespace DuskTwilight
             ModeChanged?.Invoke(s);
         }
 
+        /// <summary>
+        /// Ending: both worlds at once. Eases the whole screen to a mix of the two senses (0 = light, 1 = dark)
+        /// with no wipe; the world stays there.
+        /// </summary>
+        public void BlendTo(float mix, float seconds)
+        {
+            StopAllCoroutines();
+            SwitchProgress = 1f;
+            StartCoroutine(Blend(mix, seconds));
+        }
+
+        System.Collections.IEnumerator Blend(float mix, float seconds)
+        {
+            float a = to;
+            for (float t = 0; t < 1; t += Time.unscaledDeltaTime / Mathf.Max(0.01f, seconds))
+            {
+                from = to = Mathf.Lerp(a, mix, Mathf.SmoothStep(0, 1, t));
+                yield return null;
+            }
+            from = to = mix;
+        }
+
         /// <summary>CPU mirror of DT_PrinceAmount (0 = light, 1 = dark) for scripts that fade UI/text.</summary>
         float baseOrtho;
 

@@ -42,6 +42,13 @@ namespace DuskTwilight
         public string clearTitle = "황혼에서 만나다";
         public string clearLine = "서로의 감각으로, 문을 열었다";
 
+        [Header("Ending")]
+        [Tooltip("Last stage: on clear the screen blends both worlds into twilight (the clear card is the title card).")]
+        public bool twilightEnding;
+        [Tooltip("0 = princess's light, 1 = prince's dark")]
+        [Range(0f, 1f)] public float endingMix = 0.5f;
+        public float endingBlendTime = 3f;
+
         [Header("Stage")]
         public Transform startPoint;
         [Tooltip("Falling below this world Y respawns at the last checkpoint (red line in the Scene view).")]
@@ -139,6 +146,7 @@ namespace DuskTwilight
             if (Cleared) return;
             Cleared = true;
             fadeLock = true;
+            if (twilightEnding) SenseController.I?.BlendTo(endingMix, endingBlendTime);
             GameEvents.Cleared?.Invoke();
             StartCoroutine(Continue());
         }

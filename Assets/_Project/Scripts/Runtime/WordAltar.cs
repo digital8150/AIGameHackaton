@@ -35,6 +35,46 @@ namespace DuskTwilight
         [Tooltip("Wrong word: the door shakes and sinks by this much (shuts tighter).")]
         public float wrongSink = 0.08f;
         public string wrongDoorCaption = "덜컹";
+        [Tooltip("Door mode: wrong words that only scatter (e.g. the reflection read as it looks) — the door doesn't rattle")]
+        public string[] scatterWords;
+
+        [Header("Also on solve")]
+        [Tooltip("Set active when solved, rising up from below (e.g. light planks over a lake). Inactive until then.")]
+        public GameObject[] reveal;
+        public float revealRise = 1.5f;
+        public float revealTime = 0.9f;
+        [Tooltip("Seconds between revealed objects")]
+        public float revealStagger = 0.15f;
+
+        void Start()
+        {
+            if (reveal != null) foreach (var g in reveal) if (g) g.SetActive(false);
+        }
+
+        IEnumerator Reveal()
+        {
+            if (reveal == null) yield break;
+            for (int i = 0; i < reveal.Length; i++)
+            {
+                if (!reveal[i]) continue;
+                StartCoroutine(Rise(reveal[i].transform));
+                yield return new WaitForSeconds(revealStagger);
+            }
+        }
+
+        IEnumerator Rise(Transform t)
+        {
+            Vector3 b = t.localPosition, a = b + Vector3.down * revealRise;
+            t.localPosition = a;
+            t.gameObject.SetActive(true);
+            SenseController.I?.EmitEcho(t.position, 0.3f);
+            for (float k = 0; k < 1; k += Time.deltaTime / Mathf.Max(0.05f, revealTime))
+            {
+                t.localPosition = Vector3.Lerp(a, b, Mathf.SmoothStep(0, 1, k));
+                yield return null;
+            }
+            t.localPosition = b;
+        }
 
         protected override void OnSpoken(string word)
         {
@@ -47,6 +87,7 @@ namespace DuskTwilight
         {
             Solved = true;
             if (bridgeClip) sfx.PlayOneShot(bridgeClip, 0.9f);
+            StartCoroutine(Reveal());
             SenseController.I?.EmitEcho(transform.position, 1.2f);
             var letters = Letters(word, transform.position);
             if (outcome == Outcome.Bridge && slots != null && slots.Length > 0)
@@ -85,7 +126,8 @@ namespace DuskTwilight
             if (wrongClip) sfx.PlayOneShot(wrongClip, 0.8f);
             var letters = Letters(word, transform.position);
             for (int i = 0; i < letters.Count; i++) StartCoroutine(Fall(letters[i], 0.1f * i));
-            if (outcome == Outcome.Door && door)
+            bool scatter = scatterWords != null && System.Array.IndexOf(scatterWords, word) >= 0;
+            if (outcome == Outcome.Door && door && !scatter)
             {
                 GameEvents.Caption?.Invoke(wrongDoorCaption);
                 CameraRig.I?.Kick(0.15f);
@@ -121,6 +163,8 @@ namespace DuskTwilight
                 Gizmos.DrawLine(transform.position, door.position);
                 Gizmos.DrawLine(door.position, door.position + Vector3.up * doorRise);
             }
+            if (reveal != null)
+                foreach (var g in reveal) if (g) Gizmos.DrawLine(transform.position, g.transform.position);
         }
 #endif
     }

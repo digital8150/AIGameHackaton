@@ -1,22 +1,29 @@
+using System;
 using System.Collections;
 using UnityEngine;
 
 namespace DuskTwilight
 {
     /// <summary>
-    /// 첫 종소리. A bell (or anything that rings) answers an echo that reaches it with its own echo from where it
-    /// hangs — sound carried further than the prince's voice. The princess sees it swing and a caption.
+    /// 종. A bell answers an echo that reaches it with its own fixed-size echo from where it hangs (기획: 종 반지름 6m).
+    /// Bells can also answer each other (연쇄 공명) and set off switches that listen to bells.
+    /// The princess sees it swing and a caption.
     /// </summary>
-    public class EchoResonator : MonoBehaviour
+    public class EchoResonator : MonoBehaviour, IResettable
     {
         [Header("Ring")]
-        [Tooltip("Strength of the echo it gives back (radius = strength × SenseController.echoRadiusPerStrength)")]
-        public float ringStrength = 0.7f;
+        [Tooltip("Visible radius of the bell's own echo, in metres (fixed — 기획 6m)")]
+        public float ringRadius = 6f;
         [Tooltip("Where the sound comes from, relative to this object (e.g. under the bell)")]
         public Vector2 soundOffset = new Vector2(0, -1.2f);
-        [Tooltip("Share of the incoming echo's radius that counts as reaching it")]
+        [Tooltip("Share of an incoming echo's radius that counts as reaching it (6m bell → 5.1m)")]
         [Range(0.3f, 1f)] public float reachShare = 0.85f;
-        public float cooldown = 1.2f;
+        [Tooltip("Rings when the prince's call reaches it")]
+        public bool answersCalls = true;
+        [Tooltip("Rings when another bell's sound reaches it (연쇄 공명)")]
+        public bool answersBells = true;
+        [Tooltip("Can't ring again for this long (also stops two bells ringing each other forever)")]
+        public float cooldown = 2f;
 
         [Header("Look")]
         [Tooltip("Swings when it rings (pivot at the rope)")]
@@ -25,9 +32,13 @@ namespace DuskTwilight
         public string caption = "댕—";
         public AudioClip ringClip;
 
+        /// <summary>A bell rang: where its sound starts and its strength.</summary>
+        public static event Action<Vector2, float, EchoResonator> Rang;
+
         AudioSource sfx;
         float lastRing = -99f;
-        Vector2 Source => (Vector2)transform.position + soundOffset;
+        public Vector2 Source => (Vector2)transform.position + soundOffset;
+        float Strength => EchoCaller.StrengthFor(ringRadius);
 
         void Awake()
         {
@@ -35,19 +46,21 @@ namespace DuskTwilight
             sfx.playOnAwake = false;
         }
 
-        // answers the prince's call only (its own ring and footsteps don't set it off)
-        void OnEnable() { EchoCaller.Called += OnEcho; }
-        void OnDisable() { EchoCaller.Called -= OnEcho; }
+        void OnEnable() { EchoCaller.Called += OnCall; Rang += OnBell; }
+        void OnDisable() { EchoCaller.Called -= OnCall; Rang -= OnBell; }
 
-        void OnEcho(Vector2 from, float strength)
+        void OnCall(Vector2 from, float strength) { if (answersCalls) Hear(from, strength); }
+        void OnBell(Vector2 from, float strength, EchoResonator bell) { if (answersBells && bell != this) Hear(from, strength); }
+
+        void Hear(Vector2 from, float strength)
         {
             float d = Vector2.Distance(from, transform.position);
-            if (d < 0.3f) return;   // our own ring
             var sc = SenseController.I;
             float r = strength * sc.echoRadiusPerStrength * sc.DirectorBoost * reachShare;
             if (d > r || Time.time - lastRing < cooldown) return;
-            lastRing = Time.time + d / Mathf.Max(0.1f, sc.echoSpeed);
-            StartCoroutine(Ring(d / Mathf.Max(0.1f, sc.echoSpeed)));
+            float delay = d / Mathf.Max(0.1f, sc.echoSpeed);
+            lastRing = Time.time + delay;
+            StartCoroutine(Ring(delay));
         }
 
         IEnumerator Ring(float delay)
@@ -55,7 +68,8 @@ namespace DuskTwilight
             yield return new WaitForSeconds(delay);
             if (ringClip) sfx.PlayOneShot(ringClip, 0.8f);
             if (!string.IsNullOrEmpty(caption)) GameEvents.Caption?.Invoke(caption);
-            SenseController.I?.EmitEcho(Source, ringStrength);
+            SenseController.I?.EmitEcho(Source, Strength);
+            Rang?.Invoke(Source, Strength, this);
             GameEvents.PuzzleAttempt?.Invoke("bell", true);
             if (!swing) yield break;
             for (float t = 0; t < 1.6f; t += Time.deltaTime)
@@ -66,12 +80,20 @@ namespace DuskTwilight
             swing.localRotation = Quaternion.identity;
         }
 
+        public void ResetState()
+        {
+            StopAllCoroutines();
+            lastRing = -99f;
+            if (swing) swing.localRotation = Quaternion.identity;
+        }
+
         void OnDrawGizmos()
         {
-            if (!Application.isPlaying && !SenseController.I) { Gizmos.color = new Color(0.7f, 0.6f, 1f, 0.6f); Gizmos.DrawWireSphere(Source, ringStrength * 10f * reachShare); return; }
-            var sc = SenseController.I;
+            // reach of its own sound: to other bells (inner), to switch heads (+ their head radius)
             Gizmos.color = new Color(0.7f, 0.6f, 1f, 0.6f);
-            Gizmos.DrawWireSphere(Source, ringStrength * (sc ? sc.echoRadiusPerStrength : 10f) * reachShare);
+            Gizmos.DrawWireSphere(Source, ringRadius * reachShare);
+            Gizmos.color = new Color(0.7f, 0.6f, 1f, 0.2f);
+            Gizmos.DrawWireSphere(Source, ringRadius);
         }
     }
 }
