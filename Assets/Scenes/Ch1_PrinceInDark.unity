@@ -1941,8 +1941,8 @@ MonoBehaviour:
   gravity: 3.4
   fallGravityMul: 1.55
   jumpCutMul: 0.45
-  coyoteTime: 0.1
-  jumpBuffer: 0.12
+  coyoteTime: 0.15
+  jumpBuffer: 0.15
   maxFall: 18
   groundMask:
     serializedVersion: 2
@@ -15954,8 +15954,8 @@ MonoBehaviour:
   gravity: 3.4
   fallGravityMul: 1.55
   jumpCutMul: 0.45
-  coyoteTime: 0.1
-  jumpBuffer: 0.12
+  coyoteTime: 0.15
+  jumpBuffer: 0.15
   maxFall: 18
   groundMask:
     serializedVersion: 2

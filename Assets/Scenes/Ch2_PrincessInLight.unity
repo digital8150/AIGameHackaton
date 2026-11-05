@@ -747,10 +747,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5dc054fe8aa2a7c4f9c1d0d98944be33, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DuskTwilight.LightPlatform
-  period: 2.6
-  onTime: 1.6
+  period: 3
+  onTime: 2.2
   phase: 0.5
-  warnTime: 0.4
+  warnTime: 0.45
   sr: {fileID: 359104187}
   glow: {fileID: 616760451}
 --- !u!61 &359104186
@@ -1412,10 +1412,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5dc054fe8aa2a7c4f9c1d0d98944be33, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DuskTwilight.LightPlatform
-  period: 2.6
-  onTime: 1.6
-  phase: 0.68
-  warnTime: 0.4
+  period: 3
+  onTime: 2.2
+  phase: 0.5333333
+  warnTime: 0.45
   sr: {fileID: 486414547}
   glow: {fileID: 1838587029}
 --- !u!61 &486414546
@@ -1922,10 +1922,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5dc054fe8aa2a7c4f9c1d0d98944be33, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DuskTwilight.LightPlatform
-  period: 2.6
-  onTime: 1.6
-  phase: 0.36
-  warnTime: 0.4
+  period: 3
+  onTime: 2.2
+  phase: 0.06666666
+  warnTime: 0.45
   sr: {fileID: 647688306}
   glow: {fileID: 1945458935}
 --- !u!61 &647688305
@@ -2261,10 +2261,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5dc054fe8aa2a7c4f9c1d0d98944be33, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DuskTwilight.LightPlatform
-  period: 2.6
-  onTime: 1.6
-  phase: 0.52
-  warnTime: 0.4
+  period: 3
+  onTime: 2.2
+  phase: 0.3
+  warnTime: 0.45
   sr: {fileID: 880629789}
   glow: {fileID: 448859954}
 --- !u!61 &880629788
@@ -2708,10 +2708,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5dc054fe8aa2a7c4f9c1d0d98944be33, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DuskTwilight.LightPlatform
-  period: 2.6
-  onTime: 1.6
-  phase: 0.3
-  warnTime: 0.4
+  period: 3
+  onTime: 2.2
+  phase: 0.26666668
+  warnTime: 0.45
   sr: {fileID: 991810813}
   glow: {fileID: 1341464640}
 --- !u!61 &991810812
@@ -2982,8 +2982,8 @@ MonoBehaviour:
   gravity: 3.4
   fallGravityMul: 1.55
   jumpCutMul: 0.45
-  coyoteTime: 0.1
-  jumpBuffer: 0.12
+  coyoteTime: 0.15
+  jumpBuffer: 0.15
   maxFall: 18
   groundMask:
     serializedVersion: 2
@@ -3842,10 +3842,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5dc054fe8aa2a7c4f9c1d0d98944be33, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DuskTwilight.LightPlatform
-  period: 2.6
-  onTime: 1.6
-  phase: 0.84000003
-  warnTime: 0.4
+  period: 3
+  onTime: 2.2
+  phase: 0.76666665
+  warnTime: 0.45
   sr: {fileID: 1345781936}
   glow: {fileID: 240401649}
 --- !u!61 &1345781935
@@ -4156,10 +4156,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5dc054fe8aa2a7c4f9c1d0d98944be33, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DuskTwilight.LightPlatform
-  period: 2.6
-  onTime: 1.6
-  phase: 0.9
-  warnTime: 0.4
+  period: 3
+  onTime: 2.2
+  phase: 0.8
+  warnTime: 0.45
   sr: {fileID: 1637003724}
   glow: {fileID: 2136727724}
 --- !u!61 &1637003723
@@ -12556,8 +12556,8 @@ MonoBehaviour:
   gravity: 3.4
   fallGravityMul: 1.55
   jumpCutMul: 0.45
-  coyoteTime: 0.1
-  jumpBuffer: 0.12
+  coyoteTime: 0.15
+  jumpBuffer: 0.15
   maxFall: 18
   groundMask:
     serializedVersion: 2
@@ -13046,10 +13046,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5dc054fe8aa2a7c4f9c1d0d98944be33, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DuskTwilight.LightPlatform
-  period: 2.6
-  onTime: 1.6
+  period: 3
+  onTime: 2.2
   phase: 0
-  warnTime: 0.4
+  warnTime: 0.45
   sr: {fileID: 1699227061}
   glow: {fileID: 152861759}
 --- !u!61 &1699227060
@@ -13512,10 +13512,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5dc054fe8aa2a7c4f9c1d0d98944be33, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DuskTwilight.LightPlatform
-  period: 2.6
-  onTime: 1.6
-  phase: 0.099999994
-  warnTime: 0.4
+  period: 3
+  onTime: 2.2
+  phase: 0.033333343
+  warnTime: 0.45
   sr: {fileID: 1871434713}
   glow: {fileID: 817233551}
 --- !u!61 &1871434712

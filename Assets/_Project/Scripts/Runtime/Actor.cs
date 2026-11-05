@@ -20,8 +20,8 @@ namespace DuskTwilight
         public float gravity = 3.4f;
         public float fallGravityMul = 1.55f;
         public float jumpCutMul = 0.45f;
-        public float coyoteTime = 0.1f;
-        public float jumpBuffer = 0.12f;
+        public float coyoteTime = 0.15f;
+        public float jumpBuffer = 0.15f;
         public float maxFall = 18f;
         public LayerMask groundMask = ~0;
 
