@@ -1,10 +1,3 @@
-# [공주 시안 3] 왕관뿔(가지뿔) 반인반수 공주 (Crown-Horned Beast Princess)
-# 노션 기획서 + 『거짓말쟁이 공주』 오마주: 멀리서 보면 검은 왕관이나 초승달 티아라 같지만 실제로는 머리에서 자라난 인외의 가지뿔/왕관뿔.
-# 아래 블록을 통째로 복사해서 NAI V5 프롬프트 창에 바로 붙여넣으시면 됩니다 ([Base Prompts] 포함됨).
-
-====================================================================
-[1] 흉상 초상화 (Bust Portrait — 바로 복사해서 사용)
-====================================================================
 1girl, solo, monster girl, horned girl, portrait, bust, straight-on, looking at viewer, {{black background, simple background}},
 1.8::crown-like branched black horns, crescent-shaped antler horns growing from head, one broken horn tip::, -2::metal crown, hat::,
 1.4::wide open eyes, big round luminous violet beast eyes, glowing irises, thick eyelashes::, -2::half-closed eyes, sleepy eyes::,
@@ -12,16 +5,3 @@ fierce lively expression, small cute fang, subtle scar near ear,
 short tousled dark violet-black hair, practical short haircut,
 {{tattered patched deep navy hooded cloak}}, {{glowing sunset-gold inner cloak lining}}, stitched fabric patches, holding a weathered broken spear shaft like a staff,
 A dark fairytale storybook portrait of the beast-kin Dusk Princess whose branched dark horns form the silhouette of a broken crescent crown. She has short practical dark hair, wide light-perceiving violet eyes, and wears a patched indigo cloak with a warm sunset-gold lining, isolated on a solid black background,
-0.8::thick outlines::, 0.7::artist:sainker::, 0.75::artist:diyokama::, 0.45::artist:toriki::, 0.5::artist:inoue kiyoshirou::, 0.45::artist:fuzuki fuuro::, 0.5::artist:tizibade::, 0.55::artist:eteru::, 0.6::artist:loongm::, -1::flat color::, 1.3::kamishibai, paper theater style::, 1.2::storybook illustration, dark fairytale::, sketchy lineart, detailed pencil hatching, vintage sepia tone, year 2025, masterpiece, absurdres, very aesthetic, amazing quality, 0.4::low lightness::, 0.4::rich colors::, -1::multiple views::, -1::artist collaboration::, 0.1::location::, cinematic illustration, fantasy
-
-
-====================================================================
-[2] 인게임 전신 스탠딩 (Full Body Sprite: Idle — 바로 복사해서 사용)
-====================================================================
-1girl, solo, monster girl, horned girl, {{full body}}, game sprite, paper cutout style, standing, {{facing right, 3/4 profile}}, {{black background, simple background}}, no shadow on ground,
-1.8::crown-like branched black horns, crescent antler horns::,
-1.3::wide open luminous violet eyes::, active confident posture, short tousled dark violet hair,
-{{tattered patched deep navy hooded cloak}}, {{warm sunset-gold inner cloak lining}}, dark fairytale tunic, {{small brass bell tied to ankle}},
-{{holding a broken wooden spear shaft as a walking staff}},
-A full-body 2D side-scrolling platformer sprite of the crown-horned Dusk Princess standing facing right, holding a broken spear shaft like a walking stick. Her branched horns form a natural crown silhouette, her patched indigo cloak shows a warm gold inner lining, and a small brass bell rests on her ankle, isolated on a solid black background,
-0.8::thick outlines::, 0.7::artist:sainker::, 0.75::artist:diyokama::, 0.45::artist:toriki::, 0.5::artist:inoue kiyoshirou::, 0.45::artist:fuzuki fuuro::, 0.5::artist:tizibade::, 0.55::artist:eteru::, 0.6::artist:loongm::, -1::flat color::, 1.3::kamishibai, paper theater style::, 1.2::storybook illustration, dark fairytale::, sketchy lineart, detailed pencil hatching, vintage sepia tone, year 2025, masterpiece, absurdres, very aesthetic, amazing quality, 0.4::low lightness::, 0.4::rich colors::, -1::multiple views::, -1::artist collaboration::, 0.1::location::, cinematic illustration, fantasy

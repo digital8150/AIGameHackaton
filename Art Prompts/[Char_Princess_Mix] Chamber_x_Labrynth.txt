@@ -1,12 +1,3 @@
-# [공주 메인 시안] 드래곤메이드 체임 × 백은성의 라뷰린스 믹스 (일반적인 깔끔한 뿔 버전)
-# 핵심 조합:
-# - [뿔] 과하게 감싸거나 특이한 뿔 대신, 머리 위로 자연스럽고 깔끔하게 솟은 일반적인 한 쌍의 뿔 (classic curved horns)
-# - [체임 & 라뷰린스 요소] 은백발 중단발 + 볼 옆 귀여운 옆머리 + 당당하고 능동적인 공주님 미소 + 고딕 프릴 & 은빛 코르셋
-# - [기획서 요소] 남색 망토(노을빛 금색 안감) + 지팡이처럼 짚은 부러진 창(할버드)
-
-====================================================================
-[1-A] 흉상 초상화 — 애니메 색감 + 동화 펜선 해칭 밸런스형 (추천! 바로 복사해서 사용)
-====================================================================
 1girl, solo, demon girl, dragon girl, portrait, bust, straight-on, looking at viewer, {{black background, simple background}},
 0.45::chamber dragonmaid::, 0.6::lovely labrynth of the silver castle::,
 1.6::horns, demon horns, pair of simple curved dark horns on head pointing upward::, -2::huge horns, sideways horns, wrap-around horns, multiple horns::,
@@ -15,32 +6,3 @@ platinum silver-white hair, medium-short hair, {{fluffy flared sidelocks framing
 black frilled gothic collar, ornate silver-and-violet corset bodice, {{deep indigo cape draped over shoulders with warm sunset-gold inner lining}},
 holding a broken ornate silver halberd shaft upright beside her like a walking staff,
 An anime-style dark fairytale portrait of a silver-haired horned princess with a clean pair of classic curved dark horns on her head. She gazes forward with a confident smile while leaning on an ornate broken silver polearm, isolated on a solid black background,
-1.1::anime coloring, clean vibrant colors::, 0.8::thick outlines::, 0.7::artist:sainker::, 0.75::artist:diyokama::, 0.45::artist:toriki::, 0.5::artist:inoue kiyoshirou::, 0.45::artist:fuzuki fuuro::, 0.5::artist:tizibade::, 0.55::artist:eteru::, 0.6::artist:loongm::, 1.1::kamishibai, paper theater style::, 1.1::storybook illustration, dark fairytale::, sketchy lineart, detailed pencil hatching, year 2025, masterpiece, absurdres, very aesthetic, amazing quality, 0.4::rich colors::, -1::multiple views::, -1::artist collaboration::, cinematic illustration, fantasy
-
-
-====================================================================
-[1-B] 흉상 초상화 — 첫 샘플(세피아/종이연극 Base 100% 고정) 버전
-====================================================================
-1girl, solo, demon girl, dragon girl, portrait, bust, straight-on, looking at viewer, {{black background, simple background}},
-0.45::chamber dragonmaid::, 0.6::lovely labrynth of the silver castle::,
-1.6::horns, demon horns, pair of simple curved dark horns on head pointing upward::, -2::huge horns, sideways horns, wrap-around horns, multiple horns::,
-silver-white hair, medium-short hair, {{fluffy flared sidelocks framing cheeks}}, blunt bangs, pointed ears,
-1.4::big expressive anime eyes, luminous violet irises, thick eyelashes::, confident slight smile, small fang,
-black frilled gothic collar, ornate silver-and-indigo corset bodice, {{deep indigo cloak over shoulders with warm sunset-gold inner lining}},
-holding a broken ornate silver halberd shaft upright like a staff,
-A storybook paper-theater portrait of a silver-haired horned princess with a pair of simple upward-curving dark horns on her head and a confident royal smile, holding a broken silver polearm on a solid black background,
-0.8::thick outlines::, 0.7::artist:sainker::, 0.75::artist:diyokama::, 0.45::artist:toriki::, 0.5::artist:inoue kiyoshirou::, 0.45::artist:fuzuki fuuro::, 0.5::artist:tizibade::, 0.55::artist:eteru::, 0.6::artist:loongm::, -1::flat color::, 1.3::kamishibai, paper theater style::, 1.2::storybook illustration, dark fairytale::, sketchy lineart, detailed pencil hatching, vintage sepia tone, year 2025, masterpiece, absurdres, very aesthetic, amazing quality, 0.4::low lightness::, 0.4::rich colors::, -1::multiple views::, -1::artist collaboration::, 0.1::location::, cinematic illustration, fantasy
-
-
-====================================================================
-[2] 인게임 전신 스탠딩 (Full Body Sprite: Idle — 바로 복사해서 사용)
-====================================================================
-1girl, solo, demon girl, dragon girl, {{full body}}, game sprite, paper cutout style, standing, {{facing right, 3/4 profile}}, {{black background, simple background}}, no shadow on ground,
-0.45::chamber dragonmaid::, 0.6::lovely labrynth of the silver castle::,
-1.6::horns, demon horns, pair of simple curved dark horns on head pointing upward::, -2::huge horns, sideways horns, wrap-around horns::,
-platinum silver-white medium-short hair, fluffy flared sidelocks, pointed ears,
-1.3::big luminous violet-blue anime eyes::, confident smile,
-black frilled collar, ornate silver corset bodice, layered gothic split skirt with X-crossed ribbon trim, {{deep indigo cape with warm sunset-gold inner lining}}, {{small brass bell tied to ankle}},
-{{holding an ornate broken silver halberd shaft upright like a walking staff}},
-A full-body 2D side-scrolling platformer character sprite of a silver-haired horned princess with simple upward-curving horns standing confidently facing right, leaning on a broken ornate silver polearm like a walking staff on a solid black background,
-1.1::anime coloring, clean vibrant colors::, 0.8::thick outlines::, 0.7::artist:sainker::, 0.75::artist:diyokama::, 0.45::artist:toriki::, 0.5::artist:inoue kiyoshirou::, 0.45::artist:fuzuki fuuro::, 0.5::artist:tizibade::, 0.55::artist:eteru::, 0.6::artist:loongm::, 1.1::kamishibai, paper theater style::, 1.1::storybook illustration, dark fairytale::, sketchy lineart, detailed pencil hatching, year 2025, masterpiece, absurdres, very aesthetic, amazing quality, 0.4::rich colors::, -1::multiple views::, -1::artist collaboration::, cinematic illustration, fantasy
