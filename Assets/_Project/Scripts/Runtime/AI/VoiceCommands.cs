@@ -27,9 +27,28 @@ namespace DuskTwilight
         {
             var duo = DuoController.I;
             if (!duo) return;
+            var altar = WordTarget.Nearest;
+            // the princess cannot speak: only meta controls (switch / hint / jump) work by voice — unless something she can
+            // actually talk to is listening (princess-listening altar)
+            bool mute = duo.Leader.sense != Sense.Dark && !(altar && altar.Listening);
+            if (mute)
+            {
+                var mk = VoiceIntent.Keywords(text, null);
+                LastDebug = $"\"{text}\" → (공주는 말하지 못함) {mk.intent} ({mk.confidence:P0})";
+                if (mk.confidence < executeThreshold) return;
+                switch (mk.intent)
+                {
+                    case Intent.Switch: if (!duo.switchLocked) duo.Switch(); break;
+                    case Intent.Jump: duo.Leader.RequestJump(); break;
+                    case Intent.Hint:
+                        if (AccessibilityDirector.I && AccessibilityDirector.I.isActiveAndEnabled) AccessibilityDirector.I.RequestHint();
+                        else GameEvents.Hint?.Invoke("…둘이 함께라면, 길은 있어.");
+                        break;
+                }
+                return;
+            }
             ShowLetters(text, duo.Leader.transform.position + Vector3.up * 1.9f);
 
-            var altar = WordTarget.Nearest;
             if (altar && altar.AcceptsAnyText)
             {
                 // blank bridges take any words: only obvious commands are treated as commands

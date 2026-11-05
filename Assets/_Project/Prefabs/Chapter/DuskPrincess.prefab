@@ -189,6 +189,7 @@ GameObject:
   - component: {fileID: 515628191674434920}
   - component: {fileID: 1807741072782149127}
   - component: {fileID: 347315144360590253}
+  - component: {fileID: 30341675345874729}
   m_Layer: 8
   m_Name: DuskPrincess
   m_TagString: Untagged
@@ -211,6 +212,7 @@ Transform:
   m_Children:
   - {fileID: 3412986085816797009}
   - {fileID: 2462572492175314951}
+  - {fileID: 4515971407366856947}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &2823600457939256061
@@ -592,6 +594,8 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 40358263f6a62474f810ff6364ac2a02, type: 3}
   stepInterval: 0.28
   stepEchoStrength: 0.32
+  followSmooth: 0.05
+  followWalkHysteresis: {x: 0.35, y: 0.8}
 --- !u!114 &347315144360590253
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -644,3 +648,123 @@ MonoBehaviour:
   respawnDelay: 0.25
   output: {fileID: 0}
   muffledCutoff: 900
+--- !u!114 &30341675345874729
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7651598771921622477}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3307e3df48da044e8fae2b246b4ae28, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DuskTwilight.SilentSpeech
+  bubble: {fileID: 4515971407366856947}
+  bubbleSprite: {fileID: 8823211090539529665}
+  bubbleText: {fileID: 7903756057031971188}
+  bubbleSense: {fileID: 7011548190593585259}
+  offset: {x: 0.6, y: 2.9, z: 0}
+  bubbleScale: 0.5
+  frames:
+  - "\xB7"
+  - "\xB7\xB7"
+  - "\xB7\xB7\xB7"
+  - "\u2026\u2026"
+  frameTime: 0.28
+  caption: "\u2026\u2026"
+  popTime: 0.16
+  popOvershoot: 1.18
+  wobbleDegrees: 3
+  wobbleSpeed: 9
+  bob: 0.04
+  lingerTime: 0.35
+  fadeTime: 0.3
+  pressCooldown: 0.9
+--- !u!1001 &2838798558187892343
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 8355121319810000089}
+    m_Modifications:
+    - target: {fileID: 1618674692319439388, guid: d5c8decebc3378344a447f124d6ce03c, type: 3}
+      propertyPath: m_Name
+      value: Silent Bubble
+      objectReference: {fileID: 0}
+    - target: {fileID: 1618674692319439388, guid: d5c8decebc3378344a447f124d6ce03c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1859569033519697540, guid: d5c8decebc3378344a447f124d6ce03c, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1859569033519697540, guid: d5c8decebc3378344a447f124d6ce03c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1859569033519697540, guid: d5c8decebc3378344a447f124d6ce03c, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1859569033519697540, guid: d5c8decebc3378344a447f124d6ce03c, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1859569033519697540, guid: d5c8decebc3378344a447f124d6ce03c, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1859569033519697540, guid: d5c8decebc3378344a447f124d6ce03c, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1859569033519697540, guid: d5c8decebc3378344a447f124d6ce03c, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1859569033519697540, guid: d5c8decebc3378344a447f124d6ce03c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1859569033519697540, guid: d5c8decebc3378344a447f124d6ce03c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1859569033519697540, guid: d5c8decebc3378344a447f124d6ce03c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d5c8decebc3378344a447f124d6ce03c, type: 3}
+--- !u!4 &4515971407366856947 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1859569033519697540, guid: d5c8decebc3378344a447f124d6ce03c, type: 3}
+  m_PrefabInstance: {fileID: 2838798558187892343}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &7011548190593585259 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5056264550256688668, guid: d5c8decebc3378344a447f124d6ce03c, type: 3}
+  m_PrefabInstance: {fileID: 2838798558187892343}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f69cce588a9c0aa47a5433e455c2ed40, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DuskTwilight.SenseText
+--- !u!102 &7903756057031971188 stripped
+TextMesh:
+  m_CorrespondingSourceObject: {fileID: 5389322753446100739, guid: d5c8decebc3378344a447f124d6ce03c, type: 3}
+  m_PrefabInstance: {fileID: 2838798558187892343}
+  m_PrefabAsset: {fileID: 0}
+--- !u!212 &8823211090539529665 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 6707873612718369718, guid: d5c8decebc3378344a447f124d6ce03c, type: 3}
+  m_PrefabInstance: {fileID: 2838798558187892343}
+  m_PrefabAsset: {fileID: 0}
