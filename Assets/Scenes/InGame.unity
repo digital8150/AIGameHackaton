@@ -550,6 +550,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DuskTwilight.CheckpointPost
   zone: gate
   glow: {fileID: 223394578}
+  reach: 0.8
+  respawnOffset: {x: 0, y: 0.1}
+  echoStrength: 0.8
 --- !u!212 &332103241
 SpriteRenderer:
   serializedVersion: 2
@@ -1177,6 +1180,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DuskTwilight.TwilightGate
   gate: {fileID: 590181733}
   gateRise: 4
+  openDuration: 1.4
   lanternLamp: {fileID: 1947628934}
   lanternGlow: {fileID: 1671465015}
   gear: {fileID: 472269664}
@@ -1185,6 +1189,14 @@ MonoBehaviour:
   goTime: 1
   waitColor: {r: 0.95, g: 0.3, b: 0.28, a: 1}
   goColor: {r: 1, g: 0.85, b: 0.35, a: 1}
+  jamDuration: 1.5
+  gearSpin: {x: 90, y: 260}
+  gearOpening: {x: 0.35, y: 1.1}
+  gearOpened: {x: 1.6, y: 0.6}
+  jammedCaption: "\uB07C\uAE31\u2014"
+  wrongLeverCaption: "\uB35C\uCEF9\u2014"
+  wrongTimingCaption: "\uCCA0\uCEE5\u2014"
+  openCaption: "\uCFE0\uB974\uB974\uB989\u2014"
   openClip: {fileID: 8300000, guid: 08b40d02237a99640ad5745d3857dc00, type: 3}
   jamClip: {fileID: 8300000, guid: f376f69d286fdcf468e3dc420c5434e4, type: 3}
   leverClip: {fileID: 8300000, guid: 51a4e1b70cb0d824ea59e14b052699bc, type: 3}
@@ -1509,12 +1521,13 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 16994333915063e41921419976f8fa29, type: 3}
   interval: 1.3
   jitter: 0.1
-  echoStrength: 0.75
   volume: 0.8
+  audibleRange: {x: 2, y: 18}
+  active: 1
+  echoStrength: 0.75
   caption: "\uB07C\uB9AD\u2026 \uB07C\uB9AD\u2026"
   glyph: {fileID: 1072890181}
   captionText: {fileID: 417462280}
-  active: 1
 --- !u!4 &472269665
 Transform:
   m_ObjectHideFlags: 0
@@ -1939,12 +1952,13 @@ MonoBehaviour:
   - {fileID: 8300000, guid: da766423c65b6744793abd5669f0035a, type: 3}
   interval: 1.9
   jitter: 0.1
-  echoStrength: 1
   volume: 0.8
+  audibleRange: {x: 2, y: 18}
+  active: 1
+  echoStrength: 1
   caption: "\uB611\u2026 \uB611\u2026"
   glyph: {fileID: 1490486542}
   captionText: {fileID: 155323767}
-  active: 1
 --- !u!82 &702385131
 AudioSource:
   m_ObjectHideFlags: 0
@@ -2288,8 +2302,10 @@ MonoBehaviour:
   sr: {fileID: 877608640}
   upSprite: {fileID: 1441482181, guid: bc661025bc712884e8cc2a37536a32c1, type: 3}
   downSprite: {fileID: 265049587, guid: bc661025bc712884e8cc2a37536a32c1, type: 3}
-  reach: 0.9
   prompt: {fileID: 1126283949}
+  promptColor: {r: 1, g: 0.95, b: 0.85, a: 1}
+  pullShowTime: 0.5
+  reach: {x: 0.9, y: 1.2}
 --- !u!212 &877608640
 SpriteRenderer:
   serializedVersion: 2
@@ -2397,6 +2413,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DuskTwilight.CheckpointPost
   zone: canyon
   glow: {fileID: 2137617730}
+  reach: 0.8
+  respawnOffset: {x: 0, y: 0.1}
+  echoStrength: 0.8
 --- !u!212 &904542121
 SpriteRenderer:
   serializedVersion: 2
@@ -3157,12 +3176,13 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 09e8521911030a140860ee40e9d3f51e, type: 3}
   interval: 2.4
   jitter: 0.1
-  echoStrength: 0.9
   volume: 0.5
+  audibleRange: {x: 2, y: 18}
+  active: 1
+  echoStrength: 0.9
   caption: 
   glyph: {fileID: 0}
   captionText: {fileID: 0}
-  active: 1
 --- !u!82 &1097615894
 AudioSource:
   m_ObjectHideFlags: 0
@@ -3311,8 +3331,10 @@ MonoBehaviour:
   sr: {fileID: 1115074026}
   upSprite: {fileID: 1441482181, guid: bc661025bc712884e8cc2a37536a32c1, type: 3}
   downSprite: {fileID: 265049587, guid: bc661025bc712884e8cc2a37536a32c1, type: 3}
-  reach: 0.9
   prompt: {fileID: 1764319797}
+  promptColor: {r: 1, g: 0.95, b: 0.85, a: 1}
+  pullShowTime: 0.5
+  reach: {x: 0.9, y: 1.2}
 --- !u!212 &1115074026
 SpriteRenderer:
   serializedVersion: 2
@@ -3825,9 +3847,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DuskTwilight.DirectorZone
   zoneId: gate
-  clueSense: timing
+  clue: 2
   minX: 62
   maxX: 80
+  hintOverride: 
 --- !u!1 &1288531718
 GameObject:
   m_ObjectHideFlags: 0
@@ -4491,8 +4514,10 @@ MonoBehaviour:
   sr: {fileID: 1639670872}
   upSprite: {fileID: 1441482181, guid: bc661025bc712884e8cc2a37536a32c1, type: 3}
   downSprite: {fileID: 265049587, guid: bc661025bc712884e8cc2a37536a32c1, type: 3}
-  reach: 0.9
   prompt: {fileID: 703967836}
+  promptColor: {r: 1, g: 0.95, b: 0.85, a: 1}
+  pullShowTime: 0.5
+  reach: {x: 0.9, y: 1.2}
 --- !u!212 &1639670872
 SpriteRenderer:
   serializedVersion: 2
@@ -16991,6 +17016,11 @@ MonoBehaviour:
   clearLine: "\uC11C\uB85C\uC758 \uAC10\uAC01\uC73C\uB85C, \uBB38\uC744 \uC5F4\uC5C8\uB2E4"
   startPoint: {fileID: 1187765859}
   killY: -3
+  introFade: 2
+  introInputLock: 0.8
+  respawnFadeOut: 0.35
+  respawnFadeIn: 0.45
+  clearHold: 2.5
   fallClip: {fileID: 8300000, guid: df0d3eac1cbd1304db85c193150a68fe, type: 3}
   checkpointClip: {fileID: 8300000, guid: 08b40d02237a99640ad5745d3857dc00, type: 3}
 --- !u!114 &1647640740
@@ -17029,6 +17059,24 @@ MonoBehaviour:
   - {fileID: 472269664}
   - {fileID: 702385130}
   lightPlatforms: []
+  tuning:
+    echoBoost: {x: 1.35, y: 1.7}
+    emitterLoudness: {x: 1.4, y: 1.8}
+    lanternGlow: {x: 1.6, y: 2.2}
+    goTimeScale: {x: 1.5, y: 1.9}
+    plankOnRatio: {x: 0.75, y: 0.85}
+  lines:
+    soundHint: "\u2026\uC655\uC790\uB77C\uBA74, \uB4E4\uC744 \uC218 \uC788\uC744\uC9C0\uB3C4."
+    visualHint: "\u2026\uACF5\uC8FC\uB77C\uBA74, \uBCFC \uC218 \uC788\uC744\uC9C0\uB3C4."
+    timingHintGate: "\u2026\uAE08\uBE5B\uC774 \uBA38\uBB34\uB294 \uADF8 \uC21C\uAC04\uC5D0."
+    timingHintPlanks: "\u2026\uBE5B\uC774 \uC228\uC744 \uC26C\uB294 \uBC15\uC790\uC5D0."
+    noZoneHint: "\u2026\uB458\uC774 \uD568\uAED8\uB77C\uBA74, \uAE38\uC740 \uC788\uC5B4."
+    soundNotice: "\u266A \uC18C\uB9AC\uB97C \uB354 \uD06C\uAC8C"
+    visualNotice: "\u2600 \uBE5B\uC744 \uB354 \uBC1D\uAC8C"
+    timingNoticeGate: "\u25C6 \uAE08\uBE5B\uC744 \uB354 \uAE38\uAC8C"
+    timingNoticePlanks: "\u25C6 \uBE5B\uC744 \uB354 \uC624\uB798"
+    assistOn: "\uBCF4\uC870 \uCF1C\uC9D0"
+    assistOff: "\uBCF4\uC870 \uAEBC\uC9D0"
 --- !u!114 &1647640742
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17762,9 +17810,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DuskTwilight.DirectorZone
   zoneId: canyon
-  clueSense: sound
+  clue: 0
   minX: 23.5
   maxX: 51
+  hintOverride: 
 --- !u!1 &1947251658
 GameObject:
   m_ObjectHideFlags: 0
@@ -18048,6 +18097,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DuskTwilight.ReunionGoal
   radius: 1.1
+  echoStrength: 2
 --- !u!1 &1964761733
 GameObject:
   m_ObjectHideFlags: 0

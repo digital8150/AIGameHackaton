@@ -17,12 +17,28 @@ namespace DuskTwilight
         public static WordAltar Nearest { get; private set; }
 
         [Header("Word")]
+        [Tooltip("The word carved on the altar. One letter per slot.")]
         public string answer = "해질녘";
+        [Tooltip("Options on the choice panel (E). Include the answer.")]
         public string[] choices = { "새벽빛", "해질녘", "별무리", "물안개" };
+        public string panelQuestion = "무엇을 부를까?";
+        [Tooltip("Caption when the wrong word crumbles.")]
+        public string wrongCaption = "……";
 
         [Header("Bridge")]
-        public Transform[] slots;          // where each letter settles (left → right)
+        [Tooltip("Where each letter settles (left → right). Gold boxes in the Scene view.")]
+        public Transform[] slots;
+        [Tooltip("Collider size of each letter plank.")]
         public Vector2 letterSize = new Vector2(1.9f, 0.6f);
+        [Tooltip("Optional: a prefab for one light letter (needs a TextMesh; SenseText optional). Empty = built in code.")]
+        public GameObject letterPrefab;
+        [Tooltip("Where the spoken letters appear, relative to the altar: x = letter spacing, y = height.")]
+        public Vector2 letterSpawn = new Vector2(1.1f, 1.6f);
+        [Tooltip("Seconds between letters flying to their slots.")]
+        public float letterStagger = 0.18f;
+        public float letterFlyTime = 0.6f;
+        [Tooltip("Plank under each letter, relative to the letter.")]
+        public float plankOffsetY = -0.25f;
         public Font letterFont;
         public Color letterColor = new Color(0.36f, 0.12f, 0.24f);   // dark glyph carved into a halo of light
         public Material glowMaterial;
@@ -30,7 +46,9 @@ namespace DuskTwilight
         public Material plankMaterial;
 
         [Header("Interaction")]
+        [Tooltip("Half-width of the area in front of the altar where E opens the choices.")]
         public float reach = 1.4f;
+        public float reachHeight = 1.6f;
         public TextMesh prompt;
         public SenseText inscription;
         public Font uiFont, uiBoldFont;
@@ -58,7 +76,7 @@ namespace DuskTwilight
             var duo = DuoController.I;
             if (!duo) return;
             bool near = !Solved && Mathf.Abs(duo.Leader.transform.position.x - transform.position.x) < reach
-                        && Mathf.Abs(duo.Leader.transform.position.y - transform.position.y) < 1.6f;
+                        && Mathf.Abs(duo.Leader.transform.position.y - transform.position.y) < reachHeight;
             if (near) Nearest = this; else if (Nearest == this) Nearest = null;
             if (prompt) prompt.color = new Color(1, 0.95f, 0.85f, near && !open ? 1 : 0);
 
@@ -87,16 +105,16 @@ namespace DuskTwilight
             for (int i = 0; i < letters.Count; i++)
             {
                 var target = slots[Mathf.Min(i, slots.Length - 1)].position;
-                StartCoroutine(Fly(letters[i], target, 0.18f * i, solid: true));
+                StartCoroutine(Fly(letters[i], target, letterStagger * i, solid: true));
             }
-            yield return new WaitForSeconds(0.18f * letters.Count + 0.7f);
+            yield return new WaitForSeconds(letterStagger * letters.Count + letterFlyTime + 0.1f);
             CameraRig.I?.Kick(0.12f);
         }
 
         IEnumerator Crumble(string word)
         {
             if (wrongClip) sfx.PlayOneShot(wrongClip, 0.8f);
-            GameEvents.Caption?.Invoke("……");
+            GameEvents.Caption?.Invoke(wrongCaption);
             var letters = Letters(word);
             for (int i = 0; i < letters.Count; i++)
                 StartCoroutine(Fall(letters[i], 0.1f * i));
@@ -106,11 +124,22 @@ namespace DuskTwilight
         List<GameObject> Letters(string word)
         {
             var list = new List<GameObject>();
-            float x0 = -(word.Length - 1) * 0.55f;
+            float x0 = -(word.Length - 1) * letterSpawn.x * 0.5f;
             for (int i = 0; i < word.Length; i++)
             {
+                var pos = transform.position + new Vector3(x0 + i * letterSpawn.x, letterSpawn.y, 0);
+                if (letterPrefab)
+                {
+                    var inst = Instantiate(letterPrefab, pos, Quaternion.identity);
+                    inst.name = "Light Letter " + word[i];
+                    var itm = inst.GetComponentInChildren<TextMesh>();
+                    if (itm) itm.text = word[i].ToString();
+                    if (!inst.GetComponent<SenseText>()) inst.AddComponent<SenseText>().SetBaseColor(itm ? itm.color : letterColor);
+                    list.Add(inst);
+                    continue;
+                }
                 var go = new GameObject("Light Letter " + word[i]);
-                go.transform.position = transform.position + new Vector3(x0 + i * 1.1f, 1.6f, 0);
+                go.transform.position = pos;
                 var tm = go.AddComponent<TextMesh>();
                 tm.font = letterFont;
                 tm.text = word[i].ToString();
@@ -144,7 +173,7 @@ namespace DuskTwilight
             yield return new WaitForSeconds(delay);
             Vector3 a = letter.transform.position;
             Vector3 mid = (a + target) * 0.5f + Vector3.up * 2f;
-            for (float t = 0; t < 1; t += Time.deltaTime / 0.6f)
+            for (float t = 0; t < 1; t += Time.deltaTime / Mathf.Max(0.01f, letterFlyTime))
             {
                 float e = Mathf.SmoothStep(0, 1, t);
                 letter.transform.position = Vector3.Lerp(Vector3.Lerp(a, mid, e), Vector3.Lerp(mid, target, e), e);
@@ -156,7 +185,7 @@ namespace DuskTwilight
             {
                 var p = new GameObject("Plank");
                 p.transform.SetParent(letter.transform, false);
-                p.transform.localPosition = new Vector3(0, -0.25f, 0);
+                p.transform.localPosition = new Vector3(0, plankOffsetY, 0);
                 p.transform.localScale = new Vector3(letterSize.x / 2f, 1f, 1f);
                 var psr = p.AddComponent<SpriteRenderer>();
                 psr.sprite = plankSprite;
@@ -165,7 +194,7 @@ namespace DuskTwilight
             }
             var col = letter.AddComponent<BoxCollider2D>();
             col.size = letterSize;
-            col.offset = new Vector2(0, -0.25f);
+            col.offset = new Vector2(0, plankOffsetY);
             SenseController.I?.EmitEcho(target, 0.35f);
         }
 
@@ -260,7 +289,7 @@ namespace DuskTwilight
             panelRect.anchoredPosition = new Vector2(0, 40);
             panelRect.sizeDelta = new Vector2(620, 104);
 
-            var q = MakeText(panelRect, "무엇을 부를까?", 20, new Color(0.86f, 0.80f, 0.92f), false);
+            var q = MakeText(panelRect, panelQuestion, 20, new Color(0.86f, 0.80f, 0.92f), false);
             q.alignment = TextAnchor.MiddleCenter;
             Set(q.rectTransform, new Vector2(0, -12), new Vector2(600, 28));
             float w = 600f / choices.Length;
@@ -289,6 +318,25 @@ namespace DuskTwilight
             sh.effectDistance = new Vector2(2, -2);
             return t;
         }
+
+#if UNITY_EDITOR
+        void OnValidate()
+        {
+            if (!string.IsNullOrEmpty(answer) && choices != null && System.Array.IndexOf(choices, answer) < 0)
+                Debug.LogWarning($"[WordAltar] '{answer}' is not among the choices — the panel cannot solve it.", this);
+            if (slots != null && !string.IsNullOrEmpty(answer) && slots.Length > 0 && slots.Length < answer.Length)
+                Debug.LogWarning($"[WordAltar] {answer.Length} letters but {slots.Length} slots.", this);
+        }
+
+        void OnDrawGizmos()
+        {
+            Gizmos.color = new Color(1f, 0.85f, 0.35f, 0.8f);
+            Gizmos.DrawWireCube(transform.position, new Vector3(reach * 2, reachHeight * 2, 0));
+            if (slots == null) return;
+            foreach (var s in slots)
+                if (s) Gizmos.DrawWireCube(s.position + new Vector3(0, plankOffsetY), letterSize);
+        }
+#endif
 
         static void Set(RectTransform r, Vector2 pos, Vector2 size)
         {

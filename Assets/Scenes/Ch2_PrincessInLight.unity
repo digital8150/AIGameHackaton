@@ -154,17 +154,25 @@ MonoBehaviour:
   - "\uD574\uC9C8\uB158"
   - "\uBCC4\uBB34\uB9AC"
   - "\uBB3C\uC548\uAC1C"
+  panelQuestion: "\uBB34\uC5C7\uC744 \uBD80\uB97C\uAE4C?"
+  wrongCaption: "\u2026\u2026"
   slots:
   - {fileID: 1117493649}
   - {fileID: 1393266014}
   - {fileID: 15210558}
   letterSize: {x: 2.6, y: 0.6}
+  letterPrefab: {fileID: 0}
+  letterSpawn: {x: 1.1, y: 1.6}
+  letterStagger: 0.18
+  letterFlyTime: 0.6
+  plankOffsetY: -0.25
   letterFont: {fileID: 12800000, guid: 848218904498e8e46a503a3978969526, type: 3}
   letterColor: {r: 0.36, g: 0.12, b: 0.24, a: 1}
   glowMaterial: {fileID: 2100000, guid: e4521f916cbaa5d419a9f0ca75f42aa6, type: 2}
   plankSprite: {fileID: 21300000, guid: d75991742c1e2e24c91925fa6a90e482, type: 3}
   plankMaterial: {fileID: 2100000, guid: e53002b4d8e5e2540b700752809415d1, type: 2}
   reach: 1.4
+  reachHeight: 1.6
   prompt: {fileID: 1126283949}
   inscription: {fileID: 1908152228}
   uiFont: {fileID: 12800000, guid: 9822a7cda4db35e4aa1ff76d275e57cd, type: 3}
@@ -641,6 +649,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DuskTwilight.CheckpointPost
   zone: climb
   glow: {fileID: 223394578}
+  reach: 0.8
+  respawnOffset: {x: 0, y: 0.1}
+  echoStrength: 0.8
 --- !u!212 &332103241
 SpriteRenderer:
   serializedVersion: 2
@@ -751,6 +762,8 @@ MonoBehaviour:
   onTime: 2.2
   phase: 0.5
   warnTime: 0.45
+  offAlpha: 0.14
+  fadeInTime: 0.12
   sr: {fileID: 359104187}
   glow: {fileID: 616760451}
 --- !u!61 &359104186
@@ -1344,6 +1357,8 @@ MonoBehaviour:
   onTime: 2.2
   phase: 0.5333333
   warnTime: 0.45
+  offAlpha: 0.14
+  fadeInTime: 0.12
   sr: {fileID: 486414547}
   glow: {fileID: 1838587029}
 --- !u!61 &486414546
@@ -1854,6 +1869,8 @@ MonoBehaviour:
   onTime: 2.2
   phase: 0.06666666
   warnTime: 0.45
+  offAlpha: 0.14
+  fadeInTime: 0.12
   sr: {fileID: 647688306}
   glow: {fileID: 1945458935}
 --- !u!61 &647688305
@@ -2193,6 +2210,8 @@ MonoBehaviour:
   onTime: 2.2
   phase: 0.3
   warnTime: 0.45
+  offAlpha: 0.14
+  fadeInTime: 0.12
   sr: {fileID: 880629789}
   glow: {fileID: 448859954}
 --- !u!61 &880629788
@@ -2348,6 +2367,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DuskTwilight.CheckpointPost
   zone: altar
   glow: {fileID: 2137617730}
+  reach: 0.8
+  respawnOffset: {x: 0, y: 0.1}
+  echoStrength: 0.8
 --- !u!212 &904542121
 SpriteRenderer:
   serializedVersion: 2
@@ -2640,6 +2662,8 @@ MonoBehaviour:
   onTime: 2.2
   phase: 0.26666668
   warnTime: 0.45
+  offAlpha: 0.14
+  fadeInTime: 0.12
   sr: {fileID: 991810813}
   glow: {fileID: 1341464640}
 --- !u!61 &991810812
@@ -3143,12 +3167,13 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 09e8521911030a140860ee40e9d3f51e, type: 3}
   interval: 2.4
   jitter: 0.1
-  echoStrength: 0.9
   volume: 0.5
+  audibleRange: {x: 2, y: 18}
+  active: 1
+  echoStrength: 0.9
   caption: 
   glyph: {fileID: 0}
   captionText: {fileID: 0}
-  active: 1
 --- !u!82 &1097615894
 AudioSource:
   m_ObjectHideFlags: 0
@@ -3457,9 +3482,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DuskTwilight.DirectorZone
   zoneId: climb
-  clueSense: timing
+  clue: 2
   minX: 62
   maxX: 82
+  hintOverride: 
 --- !u!1 &1262995274
 GameObject:
   m_ObjectHideFlags: 0
@@ -3505,9 +3531,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DuskTwilight.DirectorZone
   zoneId: altar
-  clueSense: visual
+  clue: 1
   minX: 41
   maxX: 61
+  hintOverride: 
 --- !u!1 &1288531718
 GameObject:
   m_ObjectHideFlags: 0
@@ -3774,6 +3801,8 @@ MonoBehaviour:
   onTime: 2.2
   phase: 0.76666665
   warnTime: 0.45
+  offAlpha: 0.14
+  fadeInTime: 0.12
   sr: {fileID: 1345781936}
   glow: {fileID: 240401649}
 --- !u!61 &1345781935
@@ -4088,6 +4117,8 @@ MonoBehaviour:
   onTime: 2.2
   phase: 0.8
   warnTime: 0.45
+  offAlpha: 0.14
+  fadeInTime: 0.12
   sr: {fileID: 1637003724}
   glow: {fileID: 2136727724}
 --- !u!61 &1637003723
@@ -12808,6 +12839,11 @@ MonoBehaviour:
   clearLine: "\uBD80\uB978 \uC774\uB984\uC774, \uAC74\uB110 \uAE38\uC774 \uB418\uC5C8\uB2E4"
   startPoint: {fileID: 1187765859}
   killY: -3
+  introFade: 2
+  introInputLock: 0.8
+  respawnFadeOut: 0.35
+  respawnFadeIn: 0.45
+  clearHold: 2.5
   fallClip: {fileID: 8300000, guid: df0d3eac1cbd1304db85c193150a68fe, type: 3}
   checkpointClip: {fileID: 8300000, guid: 08b40d02237a99640ad5745d3857dc00, type: 3}
 --- !u!114 &1647640740
@@ -12854,6 +12890,24 @@ MonoBehaviour:
   - {fileID: 991810811}
   - {fileID: 1871434711}
   - {fileID: 1637003722}
+  tuning:
+    echoBoost: {x: 1.35, y: 1.7}
+    emitterLoudness: {x: 1.4, y: 1.8}
+    lanternGlow: {x: 1.6, y: 2.2}
+    goTimeScale: {x: 1.5, y: 1.9}
+    plankOnRatio: {x: 0.75, y: 0.85}
+  lines:
+    soundHint: "\u2026\uC655\uC790\uB77C\uBA74, \uB4E4\uC744 \uC218 \uC788\uC744\uC9C0\uB3C4."
+    visualHint: "\u2026\uACF5\uC8FC\uB77C\uBA74, \uBCFC \uC218 \uC788\uC744\uC9C0\uB3C4."
+    timingHintGate: "\u2026\uAE08\uBE5B\uC774 \uBA38\uBB34\uB294 \uADF8 \uC21C\uAC04\uC5D0."
+    timingHintPlanks: "\u2026\uBE5B\uC774 \uC228\uC744 \uC26C\uB294 \uBC15\uC790\uC5D0."
+    noZoneHint: "\u2026\uB458\uC774 \uD568\uAED8\uB77C\uBA74, \uAE38\uC740 \uC788\uC5B4."
+    soundNotice: "\u266A \uC18C\uB9AC\uB97C \uB354 \uD06C\uAC8C"
+    visualNotice: "\u2600 \uBE5B\uC744 \uB354 \uBC1D\uAC8C"
+    timingNoticeGate: "\u25C6 \uAE08\uBE5B\uC744 \uB354 \uAE38\uAC8C"
+    timingNoticePlanks: "\u25C6 \uBE5B\uC744 \uB354 \uC624\uB798"
+    assistOn: "\uBCF4\uC870 \uCF1C\uC9D0"
+    assistOff: "\uBCF4\uC870 \uAEBC\uC9D0"
 --- !u!114 &1647640742
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12978,6 +13032,8 @@ MonoBehaviour:
   onTime: 2.2
   phase: 0
   warnTime: 0.45
+  offAlpha: 0.14
+  fadeInTime: 0.12
   sr: {fileID: 1699227061}
   glow: {fileID: 152861759}
 --- !u!61 &1699227060
@@ -13444,6 +13500,8 @@ MonoBehaviour:
   onTime: 2.2
   phase: 0.033333343
   warnTime: 0.45
+  offAlpha: 0.14
+  fadeInTime: 0.12
   sr: {fileID: 1871434713}
   glow: {fileID: 817233551}
 --- !u!61 &1871434712
@@ -13636,9 +13694,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DuskTwilight.DirectorZone
   zoneId: planks
-  clueSense: timing
+  clue: 2
   minX: 15
   maxX: 40
+  hintOverride: 
 --- !u!1 &1908152227
 GameObject:
   m_ObjectHideFlags: 0
@@ -14042,6 +14101,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DuskTwilight.ReunionGoal
   radius: 1.1
+  echoStrength: 2
 --- !u!1 &1964761733
 GameObject:
   m_ObjectHideFlags: 0

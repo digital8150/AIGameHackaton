@@ -13,6 +13,9 @@ namespace DuskTwilight
         public Renderer glow;          // optional: kept for older setups; all child renderers are used
         public AudioClip openClip;
         public float intensity = 1.1f;
+        [Tooltip("Seconds the motes take to drift away once opened.")]
+        public float fadeTime = 0.85f;
+        public float openEchoStrength = 0.6f;
 
         BoxCollider2D col;
         Renderer[] motes;
@@ -47,7 +50,7 @@ namespace DuskTwilight
             closed = false;
             col.enabled = false;
             if (openClip) AudioSource.PlayClipAtPoint(openClip, transform.position, 0.5f);
-            SenseController.I?.EmitEcho(transform.position, 0.6f);
+            SenseController.I?.EmitEcho(transform.position, openEchoStrength);
             if (gameObject.activeInHierarchy) StartCoroutine(Fade());
             else foreach (var m in motes) m.enabled = false;
         }
@@ -68,9 +71,20 @@ namespace DuskTwilight
             }
         }
 
+#if UNITY_EDITOR
+        void OnDrawGizmos()
+        {
+            var c = GetComponent<BoxCollider2D>();
+            if (!c) return;
+            Gizmos.color = new Color(1f, 0.7f, 0.5f, 0.6f);
+            Gizmos.matrix = transform.localToWorldMatrix;
+            Gizmos.DrawWireCube(c.offset, c.size);
+        }
+#endif
+
         IEnumerator Fade()
         {
-            for (fade = 1; fade > 0; fade -= Time.deltaTime * 1.2f) yield return null;
+            for (fade = 1; fade > 0; fade -= Time.deltaTime / Mathf.Max(0.01f, fadeTime)) yield return null;
             fade = 0;
             foreach (var m in motes) m.enabled = false;
         }

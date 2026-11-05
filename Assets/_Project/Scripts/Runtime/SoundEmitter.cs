@@ -9,15 +9,25 @@ namespace DuskTwilight
     /// </summary>
     public class SoundEmitter : MonoBehaviour
     {
+        [Header("Sound")]
         public AudioClip[] clips;
+        [Tooltip("Seconds between sounds (± jitter).")]
         public float interval = 1.4f;
         public float jitter = 0.1f;
+        [Range(0, 1)] public float volume = 0.8f;
+        [Tooltip("Audible range in world units: full volume inside x, silent past y. Cyan rings in the Scene view.")]
+        public Vector2 audibleRange = new Vector2(2f, 18f);
+        public bool active = true;
+
+        [Header("Prince's sense")]
+        [Tooltip("Echo wave size each time it sounds.")]
         public float echoStrength = 0.6f;
-        public float volume = 0.8f;
-        public string caption;            // e.g. "끼릭… 끼릭…"
+
+        [Header("Princess's sense")]
+        [Tooltip("What the sound looks like, e.g. 끼릭… 끼릭… — written into the Caption TextMesh.")]
+        public string caption;
         public Renderer glyph;            // SoundGlyph quad
         public TextMesh captionText;      // world-space caption, visible in light sense
-        public bool active = true;
 
         AudioSource src;
         float next;
@@ -34,8 +44,9 @@ namespace DuskTwilight
             src.playOnAwake = false;
             src.spatialBlend = 0.85f;
             src.rolloffMode = AudioRolloffMode.Linear;
-            src.minDistance = 2f;
-            src.maxDistance = 18f;
+            src.minDistance = audibleRange.x;
+            src.maxDistance = audibleRange.y;
+            if (captionText && !string.IsNullOrEmpty(caption)) captionText.text = caption;
             mpb = new MaterialPropertyBlock();
             next = Time.time + Random.Range(0f, interval);
         }
@@ -62,6 +73,16 @@ namespace DuskTwilight
                 captionText.color = c;
             }
         }
+
+#if UNITY_EDITOR
+        void OnDrawGizmosSelected()
+        {
+            Gizmos.color = new Color(0.4f, 0.9f, 1f, 0.8f);
+            Gizmos.DrawWireSphere(transform.position, audibleRange.x);
+            Gizmos.color = new Color(0.4f, 0.9f, 1f, 0.3f);
+            Gizmos.DrawWireSphere(transform.position, audibleRange.y);
+        }
+#endif
 
         public void Emit()
         {

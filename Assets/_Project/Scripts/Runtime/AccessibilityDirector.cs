@@ -30,6 +30,39 @@ namespace DuskTwilight
         public string source;
     }
 
+    /// <summary>How hard each assist pushes. x = subtle, y = strong.</summary>
+    [System.Serializable]
+    public class AssistTuning
+    {
+        [Tooltip("Echo wave size multiplier (sound missed).")]
+        public Vector2 echoBoost = new Vector2(1.35f, 1.7f);
+        [Tooltip("Sound emitter loudness (sound missed).")]
+        public Vector2 emitterLoudness = new Vector2(1.4f, 1.8f);
+        [Tooltip("Signal lantern glow multiplier (visual missed).")]
+        public Vector2 lanternGlow = new Vector2(1.6f, 2.2f);
+        [Tooltip("Gold window length multiplier (timing missed).")]
+        public Vector2 goTimeScale = new Vector2(1.5f, 1.9f);
+        [Tooltip("Light planks: lit share of the period (timing missed).")]
+        public Vector2 plankOnRatio = new Vector2(0.75f, 0.85f);
+    }
+
+    /// <summary>Everything the director says. Hints are whispered; notices are the small assist chip.</summary>
+    [System.Serializable]
+    public class AssistLines
+    {
+        public string soundHint = "…왕자라면, 들을 수 있을지도.";
+        public string visualHint = "…공주라면, 볼 수 있을지도.";
+        public string timingHintGate = "…금빛이 머무는 그 순간에.";
+        public string timingHintPlanks = "…빛이 숨을 쉬는 박자에.";
+        public string noZoneHint = "…둘이 함께라면, 길은 있어.";
+        public string soundNotice = "♪ 소리를 더 크게";
+        public string visualNotice = "☀ 빛을 더 밝게";
+        public string timingNoticeGate = "◆ 금빛을 더 길게";
+        public string timingNoticePlanks = "◆ 빛을 더 오래";
+        public string assistOn = "보조 켜짐";
+        public string assistOff = "보조 꺼짐";
+    }
+
     /// <summary>
     /// Brain interface. The design calls for Jev (judgement AI: pick-one-with-confidence).
     /// This scene ships the rule-based fallback; a Jev-backed brain implements the same two questions.
@@ -106,12 +139,23 @@ namespace DuskTwilight
     {
         public static AccessibilityDirector I { get; private set; }
 
-        public float confidenceThreshold = 0.65f;
+        [Header("Judgement")]
+        [Range(0, 1)] public float confidenceThreshold = 0.65f;
+        [Tooltip("Seconds between two interventions.")]
         public float cooldown = 18f;
+        [Tooltip("Seconds in one zone before the director checks whether the player is stuck.")]
         public float stuckSeconds = 30f;
+
+        [Header("What it can adjust (empty = collect from the scene)")]
         public TwilightGate gate;
-        public SoundEmitter[] emitters;
+        public SoundEmitter[] emitters = new SoundEmitter[0];
         public LightPlatform[] lightPlatforms = new LightPlatform[0];
+
+        [Header("Assist strength (subtle → strong)")]
+        public AssistTuning tuning = new AssistTuning();
+
+        [Header("Words (whisper = narration, notice = assist chip)")]
+        public AssistLines lines = new AssistLines();
 
         public bool Enabled { get; private set; } = true;
         public readonly List<string> Log = new List<string>();
@@ -131,6 +175,9 @@ namespace DuskTwilight
         void Start()
         {
             zones = FindObjectsByType<DirectorZone>(FindObjectsSortMode.None);
+            if (!gate) gate = FindAnyObjectByType<TwilightGate>();
+            if (emitters == null || emitters.Length == 0) emitters = FindObjectsByType<SoundEmitter>(FindObjectsSortMode.None);
+            if (lightPlatforms == null || lightPlatforms.Length == 0) lightPlatforms = FindObjectsByType<LightPlatform>(FindObjectsSortMode.None);
             if (gate) baseGoTime = gate.goTime;
             baseOnTimes = System.Array.ConvertAll(lightPlatforms, p => p ? p.onTime : 0f);
             GameEvents.Died += z => { deaths++; Evaluate("death"); };
@@ -174,7 +221,7 @@ namespace DuskTwilight
             {
                 mode = SenseController.I ? SenseController.I.Current : Sense.Light,
                 zone = current ? current.zoneId : "-",
-                clueSense = current ? current.clueSense : "-",
+                clueSense = current ? current.ClueId : "-",
                 timeInZone = t,
                 darkFraction = Mathf.Clamp01(darkTime / t),
                 deathsInZone = deaths,
@@ -204,9 +251,9 @@ namespace DuskTwilight
             var o = Observe("asked");
             var d = current ? (await jev.DecideAsync(o) ?? brain.Decide(o)) : default;
             if (!this) return;
-            if (d.missed == MissedSignal.None)
-                d.missed = !current ? MissedSignal.None : current.clueSense == "sound" ? MissedSignal.Sound : current.clueSense == "visual" ? MissedSignal.Visual : MissedSignal.Timing;
-            if (d.missed == MissedSignal.None) { GameEvents.Hint?.Invoke("…둘이 함께라면, 길은 있어."); return; }
+            if (d.missed == MissedSignal.None && current)
+                d.missed = current.clue == ClueSense.Sound ? MissedSignal.Sound : current.clue == ClueSense.Visual ? MissedSignal.Visual : MissedSignal.Timing;
+            if (d.missed == MissedSignal.None) { GameEvents.Hint?.Invoke(lines.noZoneHint); return; }
             d.intensity = Intervention.Subtle;
             d.confidence = Mathf.Max(d.confidence, confidenceThreshold);
             lastAct = -99;
@@ -235,25 +282,27 @@ namespace DuskTwilight
         string Apply(DirectorDecision d)
         {
             bool strong = d.intensity == Intervention.Strong;
+            var t = tuning;
+            string Whisper(string fallback) => current && !string.IsNullOrEmpty(current.hintOverride) ? current.hintOverride : fallback;
             switch (d.missed)
             {
                 case MissedSignal.Sound:
-                    SenseController.I.DirectorBoost = strong ? 1.7f : 1.35f;
-                    foreach (var e in emitters) if (e) e.Loudness = strong ? 1.8f : 1.4f;
-                    GameEvents.Hint?.Invoke("…왕자라면, 들을 수 있을지도.");
-                    GameEvents.Notice?.Invoke("♪ 소리를 더 크게");
+                    SenseController.I.DirectorBoost = strong ? t.echoBoost.y : t.echoBoost.x;
+                    foreach (var e in emitters) if (e) e.Loudness = strong ? t.emitterLoudness.y : t.emitterLoudness.x;
+                    GameEvents.Hint?.Invoke(Whisper(lines.soundHint));
+                    GameEvents.Notice?.Invoke(lines.soundNotice);
                     return strong ? "파동 크게 강화" : "파동 강화";
                 case MissedSignal.Visual:
-                    GameEvents.Hint?.Invoke("…공주라면, 볼 수 있을지도.");
-                    if (gate) { gate.glowBoost = strong ? 2.2f : 1.6f; GameEvents.Notice?.Invoke("☀ 빛을 더 밝게"); }
+                    GameEvents.Hint?.Invoke(Whisper(lines.visualHint));
+                    if (gate) { gate.glowBoost = strong ? t.lanternGlow.y : t.lanternGlow.x; GameEvents.Notice?.Invoke(lines.visualNotice); }
                     return "빛 신호 대비 강화";
                 case MissedSignal.Timing:
-                    GameEvents.Hint?.Invoke(gate ? "…금빛이 머무는 그 순간에." : "…빛이 숨을 쉬는 박자에.");
-                    if (gate) { gate.goTime = baseGoTime * (strong ? 1.9f : 1.5f); GameEvents.Notice?.Invoke("◆ 금빛을 더 길게"); }
+                    GameEvents.Hint?.Invoke(Whisper(gate ? lines.timingHintGate : lines.timingHintPlanks));
+                    if (gate) { gate.goTime = baseGoTime * (strong ? t.goTimeScale.y : t.goTimeScale.x); GameEvents.Notice?.Invoke(lines.timingNoticeGate); }
                     if (lightPlatforms.Length > 0)
                     {
-                        foreach (var lp in lightPlatforms) if (lp) lp.onTime = lp.period * (strong ? 0.85f : 0.75f);
-                        GameEvents.Notice?.Invoke("◆ 빛을 더 오래");
+                        foreach (var lp in lightPlatforms) if (lp) lp.onTime = lp.period * (strong ? t.plankOnRatio.y : t.plankOnRatio.x);
+                        GameEvents.Notice?.Invoke(lines.timingNoticePlanks);
                     }
                     return "금빛 신호 시간 연장";
             }
@@ -270,7 +319,7 @@ namespace DuskTwilight
                 if (gate) { gate.glowBoost = 1f; gate.goTime = baseGoTime; }
                 for (int i = 0; i < lightPlatforms.Length; i++) if (lightPlatforms[i]) lightPlatforms[i].onTime = baseOnTimes[i];
             }
-            GameEvents.Notice?.Invoke(Enabled ? "보조 켜짐" : "보조 꺼짐");
+            GameEvents.Notice?.Invoke(Enabled ? lines.assistOn : lines.assistOff);
             Push(Enabled ? "디렉터 켜짐" : "디렉터 꺼짐 — 조정 초기화");
         }
 

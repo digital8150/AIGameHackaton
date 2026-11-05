@@ -33,6 +33,7 @@ namespace DuskTwilight
         static bool fadeLock;
 
         [Header("Chapter")]
+        [Tooltip("Title card: label · name, then the line.")]
         public string chapterLabel = "제3장";
         public string chapterName = "황혼";
         public string chapterLine = "어둠 속의 왕자, 빛 속의 공주";
@@ -41,8 +42,20 @@ namespace DuskTwilight
         public string clearTitle = "황혼에서 만나다";
         public string clearLine = "서로의 감각으로, 문을 열었다";
 
+        [Header("Stage")]
         public Transform startPoint;
+        [Tooltip("Falling below this world Y respawns at the last checkpoint (red line in the Scene view).")]
         public float killY = -4f;
+
+        [Header("Pacing (seconds)")]
+        public float introFade = 2.0f;
+        public float introInputLock = 0.8f;
+        public float respawnFadeOut = 0.35f;
+        public float respawnFadeIn = 0.45f;
+        [Tooltip("How long the clear card stays before the next chapter can be started.")]
+        public float clearHold = 2.5f;
+
+        [Header("Audio")]
         public AudioClip fallClip;
         public AudioClip checkpointClip;
 
@@ -76,9 +89,9 @@ namespace DuskTwilight
         IEnumerator Intro()
         {
             fadeLock = true;
-            HUD.I?.Fade(1f, 0f, 2.0f);
+            HUD.I?.Fade(1f, 0f, introFade);
             HUD.I?.ShowTitle(chapterLabel, chapterName, chapterLine);
-            yield return new WaitForSeconds(0.8f);
+            yield return new WaitForSeconds(introInputLock);
             fadeLock = false;
         }
 
@@ -105,11 +118,11 @@ namespace DuskTwilight
             GameEvents.Died?.Invoke(CurrentZone);
             if (fallClip) sfx.PlayOneShot(fallClip, 0.7f);
             CameraRig.I?.Kick(0.3f);
-            HUD.I?.Fade(0f, 1f, 0.35f);
-            yield return new WaitForSeconds(0.4f);
+            HUD.I?.Fade(0f, 1f, respawnFadeOut);
+            yield return new WaitForSeconds(respawnFadeOut + 0.05f);
             DuoController.I.PlaceAt(Checkpoint);
             CameraRig.I?.Snap();
-            HUD.I?.Fade(1f, 0f, 0.45f);
+            HUD.I?.Fade(1f, 0f, respawnFadeIn);
             yield return new WaitForSeconds(0.2f);
             fadeLock = false;
             respawning = false;
@@ -127,7 +140,7 @@ namespace DuskTwilight
         IEnumerator Continue()
         {
             // let the clear card breathe, then any jump/interact moves on to the next chapter
-            yield return new WaitForSeconds(2.5f);
+            yield return new WaitForSeconds(clearHold);
             HUD.I?.ShowContinue(!string.IsNullOrEmpty(nextScene));
             if (string.IsNullOrEmpty(nextScene)) yield break;
             while (!(GameInput.I.Jump.WasPressedThisFrame() || GameInput.I.Interact.WasPressedThisFrame())) yield return null;
@@ -135,5 +148,18 @@ namespace DuskTwilight
             yield return new WaitForSeconds(0.9f);
             SceneManager.LoadScene(nextScene);
         }
+
+#if UNITY_EDITOR
+        void OnDrawGizmos()
+        {
+            Gizmos.color = new Color(1f, 0.25f, 0.25f, 0.8f);
+            Gizmos.DrawLine(new Vector3(-50, killY), new Vector3(400, killY));
+            if (startPoint)
+            {
+                Gizmos.color = new Color(0.5f, 1f, 0.6f);
+                Gizmos.DrawWireSphere(startPoint.position, 0.3f);
+            }
+        }
+#endif
     }
 }
