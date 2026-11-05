@@ -32,7 +32,7 @@ namespace DuskTwilight
         public string continueNext = "▶  Space";
         public string continueEnd = "— 끝 —";
         [Tooltip("{0} minutes, {1} seconds, {2} switches, {3} falls")]
-        public string clearStatsFormat = "★ {0}:{1:00}     ◆ {2}     ♥ {3}";
+        public string clearStatsFormat = "클리어 시간 {0}:{1:00}";
 
         [Header("Colours set at runtime")]
         public Color princeColor = new Color(0.80f, 0.92f, 1f);

@@ -1478,7 +1478,7 @@ MonoBehaviour:
   debugOverlay: 0
   continueNext: "\u25B6  Space"
   continueEnd: "\u2014 \uB05D \u2014"
-  clearStatsFormat: "\u2605 {0}:{1:00}     \u25C6 {2}     \u2665 {3}"
+  clearStatsFormat: "\uD074\uB9AC\uC5B4 \uC2DC\uAC04 {0}:{1:00}"
   princeColor: {r: 0.8, g: 0.92, b: 1, a: 1}
   clearWashColor: {r: 1, g: 0.72, b: 0.45, a: 0.35}
   narrationTiming:
