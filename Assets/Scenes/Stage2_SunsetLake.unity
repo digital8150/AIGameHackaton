@@ -17977,7 +17977,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5041494166128261712, guid: e6e12cb6ebabc1a488e8b102cf36652d, type: 3}
       propertyPath: chapterLabel
-      value: "2\uB2E8\uACC4"
+      value: "\uC2A4\uD14C\uC774\uC9C0 2"
       objectReference: {fileID: 0}
     - target: {fileID: 5211872291915775132, guid: e6e12cb6ebabc1a488e8b102cf36652d, type: 3}
       propertyPath: gate
