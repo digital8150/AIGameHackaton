@@ -41,3 +41,4 @@ __pycache__/
 
 # Large assets - fetched by Tools/download_assets.bat (.meta stays tracked)
 /Assets/StreamingAssets/Whisper/*.bin
+NAI_API_KEY
