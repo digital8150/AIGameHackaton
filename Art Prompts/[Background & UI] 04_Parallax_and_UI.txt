@@ -42,6 +42,16 @@ no humans, -3::1girl, 1boy, human::, game asset, {{black background, simple back
 {{flat side view}}, {{horizontal ground slab cross-section}}, fairytale cobblestone and overgrown moss ground, ancient carved stone bricks, flat walkable grassy top edge with tiny flowers, roots hanging from the underside, detailed pen cross-hatching, sepia and dark plum tones,
 A single wide rectangular 2D platformer ground slab made of ancient storybook cobblestones and roots, drawn completely flat as seen straight-on from the side with no top surface visible, isolated on a solid black background.
 
+### 2-B. 지형 단면 채움 텍스처 (Ground Fill Texture — 1:1 정방형, 반복용)
+no humans, -3::1girl, 1boy, human::, {{full frame texture}}, {{seamless pattern}}, flat orthographic view, -3::horizon, sky, grass, frame, border, single object, isometric, perspective::,
+{{cross-section of fairytale earth and old stones}}, packed soil with embedded rounded cobblestones, thin tangled roots, small pebbles, even density across the whole image, no light source, intricate pen cross-hatching, muted sepia and dark plum tones,
+A flat, evenly filled storybook texture of underground soil, stones and roots covering the entire image edge to edge, for tiling inside 2D platformer ground, drawn in a vintage kamishibai paper-theater style with dense pen hatching.
+
+### 2-C. 지면 윗선 (Ground Top Lip — 21:9 와이드, 가로 반복용)
+no humans, -3::1girl, 1boy, human::, game asset, paper cutout prop, horizontal composition, {{black background, simple background}}, -3::floating island, sky, tall plants, trees, frame::,
+{{long straight horizontal strip of mossy grass turf edge}}, short dense grass and moss growing along a straight top line, tiny pale flowers, a thin band of soil and dangling roots below the turf, uniform height along the whole width, intricate pen cross-hatching, sepia and dark plum tones with muted sage moss,
+A long, straight, uniform paper-cutout strip of grassy turf and moss that sits on top of 2D platformer ground, running across the full width of the image, drawn in a vintage kamishibai paper-theater style with dense pen hatching, isolated on a solid black background.
+
 ---
 
 ## 3. HUD 감각 메달리온 프레임 (Sense Medallion Rings — 1:1 정방형 권장)

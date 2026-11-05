@@ -19,6 +19,7 @@ Unity 6000.3 · URP 2D Renderer · Input System only · 기획서: Claude Docs "
 - `Assets/_Project/Scripts/Runtime` — 네임스페이스 `DuskTwilight`
 - `Assets/_Project/Art`, `Audio`, `Fonts` — CC0(Kenney)·OFL(Galmuri) 에셋, 라이선스는 `ThirdPartyLicenses/`
 - `Tools/gen_env_nai.py` — NovelAI V5 에셋 생성기. 프롬프트는 `Art Prompts/`의 txt 섹션을 그대로 읽는다(예: `05:2`), 검은 배경은 투명 배경으로 치환. 토큰은 환경변수 `NAI_API_KEY`. 결과는 `Tools/_nai_out/`(git 밖)에서 골라 `Assets/_Project/Art/Env`로.
+- `Tools/make_tileable.py` — 이미지 경계를 교차 블렌딩해 반복 가능하게 만든다 (`--axis x|y|xy`). 지형 채움·윗선 텍스처용.
 - `Tools/gen_characters.py` — 왕자/공주 오리지널 픽셀 스프라이트 생성기 (에디터 밖 도구)
 - `Assets/_Project/Prefabs` — `Chapter/`(Systems·MainCamera·Sky·GlobalVolume·HUD·Voice·Backdrop·TwilightPrince·DuskPrincess: 모든 챕터 공용 리그), `Gimmicks/`(Lever·TwilightGate·SoundEmitter·Checkpoint·ReunionDoor·LightPlatform·WordAltar·DirectorZone), `Tutorial/`(TutorialVeil·TutorialMarker), `UI/`(TutorialPanel), `Environment/`(Env_* 2.5D 원경·중경·전경 레이어, 텍스처마다 `M_Env_*` 머티리얼). UI 레이아웃은 코드로 만들지 않는다 — HUD는 `Chapter/HUD`의 HUD Canvas, 단어 선택 창은 `Gimmicks/WordAltar`의 Word Panel(선택지는 Option Template 복제), 튜토리얼 목표 줄은 Row Template/Key 복제, 빛 글자는 `Gimmicks/LightLetter`. 스크립트는 참조된 요소를 애니메이션만 한다. 씬에 있는 것은 전부 이 프리팹의 인스턴스이고 챕터별 차이는 오버라이드다.
 - `Docs/InGame_Decisions.md` — 닫힌 결정 사항(범위·조작·비주얼·에셋). 결정을 바꾸면 여기부터 갱신.

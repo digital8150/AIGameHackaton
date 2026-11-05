@@ -76,6 +76,7 @@
 - **2.5D 레이어 (B안: 일러스트)**: 원경(하늘·언덕, factor 0.92) → 중경(숲 줄·고목·아치·절벽, 0.15~0.6, 땅 뒤) → 플레이 층(0) → 전경(음수 factor, 캐릭터 앞, sortingOrder 40+). `Parallax` + `Prefabs/Environment/Env_*`. 화면 위/아래 가장자리에 붙는 전경(덩굴·풀 띠·근접 나무)은 yFactor 0.85로 카메라 높이를 따라가 점프 시 윗/아랫변이 드러나지 않게 한다.
 - 전경의 바람 흔들림·깊이 흐림·실루엣 음영은 그림이 아니라 `SenseSprite`의 `_WindAmp`/`_Blur`/`_Shade`로 준다 (그림은 선명한 정지 한 장).
 - 일러스트 해상도 유지를 위해 Pixel Perfect Camera는 끈다 (Orthographic size 7.5 유지).
+- **지형**: 타일맵은 충돌·레벨 구조 담당으로 유지하고 그림만 교체한다. 흙 단면은 `M_Env_GroundFill`(SenseSprite `_WorldTex`/`_WorldTile` — 월드 좌표로 이음매 없이 반복), 윗면 풀·이끼 띠는 `GroundLip` 컴포넌트가 타일의 노출된 윗면을 따라 자동 배치(씬에 저장되지 않고 타일 데이터에서 재생성). Kenney 장식 타일맵(Decoration)은 렌더러를 끈다.
 
 ## 6. 오디오
 - 왕자 모드: 발소리, 톱니, 물방울, 바람(런타임 생성 브라운 노이즈) — 풍부하게.

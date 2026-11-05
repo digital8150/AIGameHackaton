@@ -28,6 +28,10 @@ Shader "DuskTwilight/SenseSprite"
         _Blur ("Depth Blur (texels)", Range(0,12)) = 0
         _Shade ("Foreground Shade", Range(0,1)) = 0
         _ShadeColor ("Shade Color", Color) = (0.13,0.08,0.16,1)
+
+        [Header(World texture (illustrated tilemap fill))]
+        [NoScaleOffset] _WorldTex ("World Texture (Repeat wrap)", 2D) = "white" {}
+        _WorldTile ("World Tile Size (units, 0 = off)", Range(0,32)) = 0
     }
 
     SubShader
@@ -47,6 +51,7 @@ Shader "DuskTwilight/SenseSprite"
             #include "DuskSense.hlsl"
 
             TEXTURE2D(_MainTex); SAMPLER(sampler_MainTex);
+            TEXTURE2D(_WorldTex); SAMPLER(sampler_WorldTex);
             float4 _MainTex_TexelSize;
 
             CBUFFER_START(UnityPerMaterial)
@@ -56,6 +61,7 @@ Shader "DuskTwilight/SenseSprite"
                 float4 _EchoTint;
                 float _WindAmp, _WindSpeed, _WindAnchor, _Blur, _Shade;
                 float4 _ShadeColor;
+                float _WorldTile;
             CBUFFER_END
 
             struct Attributes { float4 positionOS : POSITION; float4 color : COLOR; float2 uv : TEXCOORD0; };
@@ -107,6 +113,11 @@ Shader "DuskTwilight/SenseSprite"
                     }
                     tex = acc / 9.0;
                 }
+                if (_WorldTile > 0)
+                {
+                    // the sprite/tile only supplies the shape; colour comes from one seamless world-space texture
+                    tex.rgb = SAMPLE_TEXTURE2D(_WorldTex, sampler_WorldTex, i.positionWS.xy / _WorldTile).rgb;
+                }
                 tex *= i.color;
                 if (tex.a < 0.01) discard;
                 // near-camera layers sink toward a dark silhouette (rim of light kept on bright texels)
@@ -147,6 +158,8 @@ Shader "DuskTwilight/SenseSprite"
                 float front = echo.y;
                 // Kenney art has dark outlines: invert them into bright contour lines
                 float contour = saturate((0.5 - luma) * 3.0);
+                // illustrated fill is dark overall: only its darkest ink lines (roots, stone rims) become contours
+                if (_WorldTile > 0) contour = saturate((0.22 - luma) * 4.0);
                 if (_AlphaEdges > 0.5) contour = max(contour, AlphaEdge(i.uv));
                 float texture_ = luma * 0.32 * saturate(_EdgeBoost);
                 float lit = reveal * 0.85 + front * 1.4;
