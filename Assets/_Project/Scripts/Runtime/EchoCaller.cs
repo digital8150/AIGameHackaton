@@ -9,7 +9,7 @@ namespace DuskTwilight
     public class EchoCaller : MonoBehaviour
     {
         public AudioClip callClip;
-        public float cooldown = 0.45f;
+        public float cooldown = 0.9f;
         public float micThreshold = 0.02f;
         public float micInterval = 0.22f;
 
