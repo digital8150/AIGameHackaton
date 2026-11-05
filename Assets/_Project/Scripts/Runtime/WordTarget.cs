@@ -157,7 +157,7 @@ namespace DuskTwilight
             if (score >= 0 && score < bestScore) { bestScore = score; bestTarget = this; Nearest = this; }
             else if (Nearest == this && bestTarget != this) Nearest = bestTarget;
             bool near = Nearest == this && score >= 0;
-            if (prompt) prompt.color = new Color(1, 0.95f, 0.85f, near && !open && CanSpeakNow ? 1 : 0);
+            if (prompt) prompt.color = new Color(1, 0.95f, 0.85f, near && !open && CanSpeakNow && canvas ? 1 : 0);   // voice-only targets: no E
 
             if (open) { PanelInput(); return; }
             if (near && CanSpeakNow && !GameFlow.InputLocked && GameInput.I.InteractNow) Open();
