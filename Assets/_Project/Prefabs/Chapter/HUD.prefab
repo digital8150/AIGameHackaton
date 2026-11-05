@@ -3348,6 +3348,7 @@ GameObject:
   - component: {fileID: 5555630614103880522}
   - component: {fileID: 3510128279786941039}
   - component: {fileID: 3592792388880262390}
+  - component: {fileID: 3274826250600500496}
   m_Layer: 0
   m_Name: Label
   m_TagString: Untagged
@@ -3404,11 +3405,11 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: c59c71d24207fd74cbcf00877fa6de66, type: 3}
-    m_FontSize: 38
-    m_FontStyle: 0
+    m_FontSize: 56
+    m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 10
-    m_MaxSize: 40
+    m_MaxSize: 56
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -3430,6 +3431,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Shadow
   m_EffectColor: {r: 0, g: 0, b: 0, a: 0.6}
   m_EffectDistance: {x: 1.5, y: -2}
+  m_UseGraphicAlpha: 1
+--- !u!114 &3274826250600500496
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8176747239638119670}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Outline
+  m_EffectColor: {r: 0.2, g: 0.13, b: 0.08, a: 1}
+  m_EffectDistance: {x: 0.8, y: -0.8}
   m_UseGraphicAlpha: 1
 --- !u!1 &8539563164069511618
 GameObject:
