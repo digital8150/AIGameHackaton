@@ -4,8 +4,9 @@ using UnityEngine.UI;
 namespace DuskTwilight
 {
     /// <summary>
-    /// One character's badge: portrait + procedural frame. Holds its own material instances and feeds them
-    /// time, activity, energy, the periodic glint and the switch flash. Moved around by <see cref="SenseEmblems"/>.
+    /// One character's badge: animated portrait + procedural frame. Holds its own material instances and feeds them
+    /// time, activity, energy, the periodic glint, the switch flash and the current portrait frame.
+    /// Moved around by <see cref="SenseEmblems"/>.
     /// </summary>
     public class SenseEmblem : MonoBehaviour
     {
@@ -14,10 +15,21 @@ namespace DuskTwilight
         static readonly int EnergyId = Shader.PropertyToID("_Energy");
         static readonly int FlashId = Shader.PropertyToID("_Flash");
         static readonly int GlintId = Shader.PropertyToID("_Glint");
+        static readonly int FrameRectId = Shader.PropertyToID("_FrameRect");
 
         [Header("Elements")]
         public Image frame;
-        public Image portrait;
+        [Tooltip("Carries the idle sheet as its texture; M_Emblem_Portrait_* draws the disc and picks the frame.")]
+        public RawImage portrait;
+
+        [Header("Portrait loop")]
+        [Tooltip("Sheet layout: frames run left to right, top to bottom, no gutter.")]
+        [Min(1)] public int columns = 12;
+        [Min(1)] public int rows = 12;
+        [Min(1)] public int frameCount = 144;
+        [Range(1f, 60f)] public float fps = 24f;
+        [Tooltip("Starts the loop this many frames in, so the two badges do not move in step.")]
+        [Min(0)] public int frameOffset;
 
         [Header("Glint")]
         [Tooltip("Seconds between shines. 0 = never.")]
@@ -33,6 +45,7 @@ namespace DuskTwilight
 
         Material frameMat, portraitMat;
         float flash, nextGlint, glintT = -1f;
+        int shownFrame = -1;
 
         public RectTransform Rect => (RectTransform)transform;
 
@@ -81,6 +94,16 @@ namespace DuskTwilight
             portraitMat.SetFloat(FlashId, flash);
             portraitMat.SetFloat(GlintId, glint);
             frame.color = portrait.color = tint;
+            ShowPortraitFrame((Mathf.FloorToInt(Time.unscaledTime * fps) + frameOffset) % frameCount);
+        }
+
+        void ShowPortraitFrame(int index)
+        {
+            if (index == shownFrame) return;
+            shownFrame = index;
+            float w = 1f / columns, h = 1f / rows;
+            // texture v runs bottom to top, frames top to bottom
+            portraitMat.SetVector(FrameRectId, new Vector4(index % columns * w, 1f - (index / columns + 1) * h, w, h));
         }
 
         void OnDestroy()

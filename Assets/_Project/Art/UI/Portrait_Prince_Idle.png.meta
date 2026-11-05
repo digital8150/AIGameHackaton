@@ -1,0 +1,3861 @@
+fileFormatVersion: 2
+guid: ed6c62b1ad978da42b92938aed52c09c
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 8792104951000804202
+    second: Portrait_Prince_Idle_0
+  - first:
+      213: 4205465125692061307
+    second: Portrait_Prince_Idle_1
+  - first:
+      213: 9052827216986595311
+    second: Portrait_Prince_Idle_2
+  - first:
+      213: 2916114721285395346
+    second: Portrait_Prince_Idle_3
+  - first:
+      213: 5165726687855989761
+    second: Portrait_Prince_Idle_4
+  - first:
+      213: 9187993448327418104
+    second: Portrait_Prince_Idle_5
+  - first:
+      213: -3435411748632580471
+    second: Portrait_Prince_Idle_6
+  - first:
+      213: 3468095570511494079
+    second: Portrait_Prince_Idle_7
+  - first:
+      213: -1825452390023750147
+    second: Portrait_Prince_Idle_8
+  - first:
+      213: -3915471875847575565
+    second: Portrait_Prince_Idle_9
+  - first:
+      213: -1280878257004837305
+    second: Portrait_Prince_Idle_10
+  - first:
+      213: 8905602167257960390
+    second: Portrait_Prince_Idle_11
+  - first:
+      213: 1976857833738696124
+    second: Portrait_Prince_Idle_12
+  - first:
+      213: -35632818218442054
+    second: Portrait_Prince_Idle_13
+  - first:
+      213: 5160002326195076694
+    second: Portrait_Prince_Idle_14
+  - first:
+      213: -8314726051594919781
+    second: Portrait_Prince_Idle_15
+  - first:
+      213: -232656447201904061
+    second: Portrait_Prince_Idle_16
+  - first:
+      213: 2914895756819093800
+    second: Portrait_Prince_Idle_17
+  - first:
+      213: 2104182570846148229
+    second: Portrait_Prince_Idle_18
+  - first:
+      213: -7133295362570396211
+    second: Portrait_Prince_Idle_19
+  - first:
+      213: -4864019031205489224
+    second: Portrait_Prince_Idle_20
+  - first:
+      213: -4350332417427934089
+    second: Portrait_Prince_Idle_21
+  - first:
+      213: 4473404744722568894
+    second: Portrait_Prince_Idle_22
+  - first:
+      213: -6386185044752285836
+    second: Portrait_Prince_Idle_23
+  - first:
+      213: 1384560736544648635
+    second: Portrait_Prince_Idle_24
+  - first:
+      213: 1899013530272492192
+    second: Portrait_Prince_Idle_25
+  - first:
+      213: -6903564702943600955
+    second: Portrait_Prince_Idle_26
+  - first:
+      213: 9137090158607593699
+    second: Portrait_Prince_Idle_27
+  - first:
+      213: -6566338662931548746
+    second: Portrait_Prince_Idle_28
+  - first:
+      213: 8548578779692439420
+    second: Portrait_Prince_Idle_29
+  - first:
+      213: -5388693874992174972
+    second: Portrait_Prince_Idle_30
+  - first:
+      213: 6042300823077574959
+    second: Portrait_Prince_Idle_31
+  - first:
+      213: 3919221693935918284
+    second: Portrait_Prince_Idle_32
+  - first:
+      213: -3770457972047930466
+    second: Portrait_Prince_Idle_33
+  - first:
+      213: 1446729693243180080
+    second: Portrait_Prince_Idle_34
+  - first:
+      213: 1801890975781174736
+    second: Portrait_Prince_Idle_35
+  - first:
+      213: -2509773021801427660
+    second: Portrait_Prince_Idle_36
+  - first:
+      213: -2966777204258603917
+    second: Portrait_Prince_Idle_37
+  - first:
+      213: 1213897907881313121
+    second: Portrait_Prince_Idle_38
+  - first:
+      213: -1216302609628630966
+    second: Portrait_Prince_Idle_39
+  - first:
+      213: -4587830660171786629
+    second: Portrait_Prince_Idle_40
+  - first:
+      213: 3372644852277989477
+    second: Portrait_Prince_Idle_41
+  - first:
+      213: -1733428634297553753
+    second: Portrait_Prince_Idle_42
+  - first:
+      213: 5147933205178379492
+    second: Portrait_Prince_Idle_43
+  - first:
+      213: -285328087648136681
+    second: Portrait_Prince_Idle_44
+  - first:
+      213: 3277492781805429880
+    second: Portrait_Prince_Idle_45
+  - first:
+      213: -4971078276311184061
+    second: Portrait_Prince_Idle_46
+  - first:
+      213: 5560781342402612250
+    second: Portrait_Prince_Idle_47
+  - first:
+      213: 5543519156169457765
+    second: Portrait_Prince_Idle_48
+  - first:
+      213: 1129376150154637282
+    second: Portrait_Prince_Idle_49
+  - first:
+      213: -3793803012340852366
+    second: Portrait_Prince_Idle_50
+  - first:
+      213: -3973483308804679967
+    second: Portrait_Prince_Idle_51
+  - first:
+      213: -3237518100388297835
+    second: Portrait_Prince_Idle_52
+  - first:
+      213: -5867765885253588290
+    second: Portrait_Prince_Idle_53
+  - first:
+      213: -8349126320502059289
+    second: Portrait_Prince_Idle_54
+  - first:
+      213: -2781578837400067798
+    second: Portrait_Prince_Idle_55
+  - first:
+      213: -6132904428384641799
+    second: Portrait_Prince_Idle_56
+  - first:
+      213: 8969012329138602421
+    second: Portrait_Prince_Idle_57
+  - first:
+      213: -3202933903237599153
+    second: Portrait_Prince_Idle_58
+  - first:
+      213: -782439630934796382
+    second: Portrait_Prince_Idle_59
+  - first:
+      213: -4031955552945326313
+    second: Portrait_Prince_Idle_60
+  - first:
+      213: -6137824895461563526
+    second: Portrait_Prince_Idle_61
+  - first:
+      213: -4736077675320978935
+    second: Portrait_Prince_Idle_62
+  - first:
+      213: 2610700608426035258
+    second: Portrait_Prince_Idle_63
+  - first:
+      213: 4090416464046114027
+    second: Portrait_Prince_Idle_64
+  - first:
+      213: -7070338293200103526
+    second: Portrait_Prince_Idle_65
+  - first:
+      213: -8049715779990642676
+    second: Portrait_Prince_Idle_66
+  - first:
+      213: -8677117809261218417
+    second: Portrait_Prince_Idle_67
+  - first:
+      213: 5363841529505637391
+    second: Portrait_Prince_Idle_68
+  - first:
+      213: 7121338743405190642
+    second: Portrait_Prince_Idle_69
+  - first:
+      213: 7795351049798167980
+    second: Portrait_Prince_Idle_70
+  - first:
+      213: 6850166331278048358
+    second: Portrait_Prince_Idle_71
+  - first:
+      213: -2365158485111287214
+    second: Portrait_Prince_Idle_72
+  - first:
+      213: 4597438924984052425
+    second: Portrait_Prince_Idle_73
+  - first:
+      213: -3526836905770877745
+    second: Portrait_Prince_Idle_74
+  - first:
+      213: -8997298691899391604
+    second: Portrait_Prince_Idle_75
+  - first:
+      213: 7775934576841941476
+    second: Portrait_Prince_Idle_76
+  - first:
+      213: 3099010201574171822
+    second: Portrait_Prince_Idle_77
+  - first:
+      213: 5605375905524960086
+    second: Portrait_Prince_Idle_78
+  - first:
+      213: -1676477923563726112
+    second: Portrait_Prince_Idle_79
+  - first:
+      213: 7611464979437771373
+    second: Portrait_Prince_Idle_80
+  - first:
+      213: 7794242865996663098
+    second: Portrait_Prince_Idle_81
+  - first:
+      213: 5505362922003029070
+    second: Portrait_Prince_Idle_82
+  - first:
+      213: -7113700396242079199
+    second: Portrait_Prince_Idle_83
+  - first:
+      213: 2877335627110506070
+    second: Portrait_Prince_Idle_84
+  - first:
+      213: 3229979666882399407
+    second: Portrait_Prince_Idle_85
+  - first:
+      213: -9167646956050701115
+    second: Portrait_Prince_Idle_86
+  - first:
+      213: 8757104161784589657
+    second: Portrait_Prince_Idle_87
+  - first:
+      213: -320546204177045317
+    second: Portrait_Prince_Idle_88
+  - first:
+      213: -1535822504809783938
+    second: Portrait_Prince_Idle_89
+  - first:
+      213: 5663488949306056452
+    second: Portrait_Prince_Idle_90
+  - first:
+      213: -4254905170798058162
+    second: Portrait_Prince_Idle_91
+  - first:
+      213: 7116903005126911650
+    second: Portrait_Prince_Idle_92
+  - first:
+      213: 2954497168609300185
+    second: Portrait_Prince_Idle_93
+  - first:
+      213: 8390231531967125288
+    second: Portrait_Prince_Idle_94
+  - first:
+      213: 3467131666085699668
+    second: Portrait_Prince_Idle_95
+  - first:
+      213: 6018834148569322730
+    second: Portrait_Prince_Idle_96
+  - first:
+      213: -7981365454975100278
+    second: Portrait_Prince_Idle_97
+  - first:
+      213: 1582037249734593132
+    second: Portrait_Prince_Idle_98
+  - first:
+      213: 7319733079850525992
+    second: Portrait_Prince_Idle_99
+  - first:
+      213: -6995664954679790617
+    second: Portrait_Prince_Idle_100
+  - first:
+      213: -2447075752116886760
+    second: Portrait_Prince_Idle_101
+  - first:
+      213: -8975481835905092312
+    second: Portrait_Prince_Idle_102
+  - first:
+      213: -3990751881471719522
+    second: Portrait_Prince_Idle_103
+  - first:
+      213: 7291206628649031330
+    second: Portrait_Prince_Idle_104
+  - first:
+      213: 1270702030902103503
+    second: Portrait_Prince_Idle_105
+  - first:
+      213: 3704647049909029753
+    second: Portrait_Prince_Idle_106
+  - first:
+      213: -1674902252233076646
+    second: Portrait_Prince_Idle_107
+  - first:
+      213: 7821421185733297541
+    second: Portrait_Prince_Idle_108
+  - first:
+      213: -510156257498681151
+    second: Portrait_Prince_Idle_109
+  - first:
+      213: -2244111170628609549
+    second: Portrait_Prince_Idle_110
+  - first:
+      213: 5691354351956903089
+    second: Portrait_Prince_Idle_111
+  - first:
+      213: 8541215032639988229
+    second: Portrait_Prince_Idle_112
+  - first:
+      213: -4575229527920375609
+    second: Portrait_Prince_Idle_113
+  - first:
+      213: -7843869134348398106
+    second: Portrait_Prince_Idle_114
+  - first:
+      213: -3721892030378851834
+    second: Portrait_Prince_Idle_115
+  - first:
+      213: 6429211856282613762
+    second: Portrait_Prince_Idle_116
+  - first:
+      213: -4901058844760977674
+    second: Portrait_Prince_Idle_117
+  - first:
+      213: -7776667360576524363
+    second: Portrait_Prince_Idle_118
+  - first:
+      213: -8367906392113208208
+    second: Portrait_Prince_Idle_119
+  - first:
+      213: 4218915146569277087
+    second: Portrait_Prince_Idle_120
+  - first:
+      213: -5674613819748845156
+    second: Portrait_Prince_Idle_121
+  - first:
+      213: 9004528688824792460
+    second: Portrait_Prince_Idle_122
+  - first:
+      213: -4333457594011262815
+    second: Portrait_Prince_Idle_123
+  - first:
+      213: -7174333028552760206
+    second: Portrait_Prince_Idle_124
+  - first:
+      213: -2060702479689569933
+    second: Portrait_Prince_Idle_125
+  - first:
+      213: 6277270689968824264
+    second: Portrait_Prince_Idle_126
+  - first:
+      213: 3729639219398140490
+    second: Portrait_Prince_Idle_127
+  - first:
+      213: 8691632153923962162
+    second: Portrait_Prince_Idle_128
+  - first:
+      213: -3539251596605261777
+    second: Portrait_Prince_Idle_129
+  - first:
+      213: -8762888504804070635
+    second: Portrait_Prince_Idle_130
+  - first:
+      213: -900388785291281756
+    second: Portrait_Prince_Idle_131
+  - first:
+      213: 5994639175942437416
+    second: Portrait_Prince_Idle_132
+  - first:
+      213: 5906468973207381870
+    second: Portrait_Prince_Idle_133
+  - first:
+      213: 5293714812649687360
+    second: Portrait_Prince_Idle_134
+  - first:
+      213: -8851354397759382184
+    second: Portrait_Prince_Idle_135
+  - first:
+      213: -1968364480521024045
+    second: Portrait_Prince_Idle_136
+  - first:
+      213: -6892225048776005641
+    second: Portrait_Prince_Idle_137
+  - first:
+      213: 5052401486105291989
+    second: Portrait_Prince_Idle_138
+  - first:
+      213: 2201390892581630655
+    second: Portrait_Prince_Idle_139
+  - first:
+      213: 4337268736748220494
+    second: Portrait_Prince_Idle_140
+  - first:
+      213: 9152770354724364284
+    second: Portrait_Prince_Idle_141
+  - first:
+      213: -4644647092123443931
+    second: Portrait_Prince_Idle_142
+  - first:
+      213: -8842499357069542289
+    second: Portrait_Prince_Idle_143
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 2
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 1
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 0
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Portrait_Prince_Idle_0
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 3079
+        width: 244
+        height: 239
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a6b2b50ded4d30a70800000000000000
+      internalID: 8792104951000804202
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Portrait_Prince_Idle_1
+      rect:
+        serializedVersion: 2
+        x: 299
+        y: 3079
+        width: 245
+        height: 239
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b763b241040dc5a30800000000000000
+      internalID: 4205465125692061307
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Portrait_Prince_Idle_2
+      rect:
+        serializedVersion: 2
+        x: 579
+        y: 3079
+        width: 245
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fef5971d36a12ad70800000000000000
+      internalID: 9052827216986595311
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Portrait_Prince_Idle_3
+      rect:
+        serializedVersion: 2
+        x: 859
+        y: 3079
+        width: 245
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 293d08683ee187820800000000000000
+      internalID: 2916114721285395346
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Portrait_Prince_Idle_4
+      rect:
+        serializedVersion: 2
+        x: 1139
+        y: 3079
+        width: 245
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 104596cad0950b740800000000000000
+      internalID: 5165726687855989761
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Portrait_Prince_Idle_5
+      rect:
+        serializedVersion: 2
+        x: 1419
+        y: 3079
+        width: 244
+        height: 239
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8f01c267c5f428f70800000000000000
+      internalID: 9187993448327418104
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Portrait_Prince_Idle_6
+      rect:
+        serializedVersion: 2
+        x: 1698
+        y: 3079
+        width: 245
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 98e2d895737f250d0800000000000000
+      internalID: -3435411748632580471
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Portrait_Prince_Idle_7
+      rect:
+        serializedVersion: 2
+        x: 1979
+        y: 3079
+        width: 245
+        height: 239
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fbb717feb86212030800000000000000
+      internalID: 3468095570511494079
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Portrait_Prince_Idle_8
+      rect:
+        serializedVersion: 2
+        x: 2259
+        y: 3079
+        width: 244
+        height: 239
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dfd1f3219b0baa6e0800000000000000
+      internalID: -1825452390023750147
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Portrait_Prince_Idle_9
+      rect:
+        serializedVersion: 2
+        x: 2539
+        y: 3079
+        width: 245
+        height: 239
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3f7a210f21379a9c0800000000000000
+      internalID: -3915471875847575565
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Portrait_Prince_Idle_10
+      rect:
+        serializedVersion: 2
+        x: 2819
+        y: 3079
+        width: 245
+        height: 239
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 74684baf208693ee0800000000000000
+      internalID: -1280878257004837305
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Portrait_Prince_Idle_11
+      rect:
+        serializedVersion: 2
+        x: 3099
+        y: 3079
+        width: 245
+        height: 239
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6cf0c5abcfd079b70800000000000000
+      internalID: 8905602167257960390
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Portrait_Prince_Idle_12
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 2799
+        width: 244
+        height: 239
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cb57177d9b53f6b10800000000000000
+      internalID: 1976857833738696124
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Portrait_Prince_Idle_13
+      rect:
+        serializedVersion: 2
+        x: 299
+        y: 2799
+        width: 244
+        height: 239
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ab26ebff328618ff0800000000000000
+      internalID: -35632818218442054
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Portrait_Prince_Idle_14
+      rect:
+        serializedVersion: 2
+        x: 579
+        y: 2799
+        width: 244
+        height: 239
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 65efb0dd6c20c9740800000000000000
+      internalID: 5160002326195076694
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Portrait_Prince_Idle_15
+      rect:
+        serializedVersion: 2
+        x: 859
+        y: 2799
+        width: 244
+        height: 239
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b90aff995b82c9c80800000000000000
+      internalID: -8314726051594919781
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Portrait_Prince_Idle_16
+      rect:
+        serializedVersion: 2
+        x: 1139
+        y: 2799
+        width: 244
+        height: 239
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 34a73d5a13075ccf0800000000000000
+      internalID: -232656447201904061
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Portrait_Prince_Idle_17
+      rect:
+        serializedVersion: 2
+        x: 1419
+        y: 2799
+        width: 244
+        height: 239
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 829de7e3f3ac37820800000000000000
+      internalID: 2914895756819093800
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Portrait_Prince_Idle_18
+      rect:
+        serializedVersion: 2
+        x: 1699
+        y: 2799
+        width: 245
+        height: 239
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5865ad556ee833d10800000000000000
+      internalID: 2104182570846148229
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Portrait_Prince_Idle_19
+      rect:
+        serializedVersion: 2
+        x: 1978
+        y: 2799
+        width: 245
+        height: 239
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dcddc0c59a1710d90800000000000000
+      internalID: -7133295362570396211
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Portrait_Prince_Idle_20
+      rect:
+        serializedVersion: 2
+        x: 2259
+        y: 2799
+        width: 244
+        height: 239
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8b5d14836788f7cb0800000000000000
+      internalID: -4864019031205489224
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Portrait_Prince_Idle_21
+      rect:
+        serializedVersion: 2
+        x: 2539
+        y: 2799
+        width: 245
+        height: 239
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 774775427b380a3c0800000000000000
+      internalID: -4350332417427934089
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Portrait_Prince_Idle_22
+      rect:
+        serializedVersion: 2
+        x: 2818
+        y: 2799
+        width: 246
+        height: 239
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eb65cb90ae9b41e30800000000000000
+      internalID: 4473404744722568894
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Portrait_Prince_Idle_23
+      rect:
+        serializedVersion: 2
+        x: 3098
+        y: 2799
+        width: 246
+        height: 239
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 47fb0a98986bf57a0800000000000000
+      internalID: -6386185044752285836
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Portrait_Prince_Idle_24
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 2519
+        width: 247
+        height: 239
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bbd62b777a2f63310800000000000000
+      internalID: 1384560736544648635
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Portrait_Prince_Idle_25
+      rect:
+        serializedVersion: 2
+        x: 298
+        y: 2519
+        width: 246
+        height: 239
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0aa6d8f8eb6aa5a10800000000000000
+      internalID: 1899013530272492192
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Portrait_Prince_Idle_26
+      rect:
+        serializedVersion: 2
+        x: 578
+        y: 2519
+        width: 247
+        height: 239
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5ce1f15ba7c9130a0800000000000000
+      internalID: -6903564702943600955
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Portrait_Prince_Idle_27
+      rect:
+        serializedVersion: 2
+        x: 858
+        y: 2519
+        width: 247
+        height: 239
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3e0f580c6177dce70800000000000000
+      internalID: 9137090158607593699
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Portrait_Prince_Idle_28
+      rect:
+        serializedVersion: 2
+        x: 1137
+        y: 2519
+        width: 248
+        height: 239
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6b53d09a6cdafd4a0800000000000000
+      internalID: -6566338662931548746
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Portrait_Prince_Idle_29
+      rect:
+        serializedVersion: 2
+        x: 1417
+        y: 2519
+        width: 249
+        height: 239
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c77920a9b17a2a670800000000000000
+      internalID: 8548578779692439420
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Portrait_Prince_Idle_30
+      rect:
+        serializedVersion: 2
+        x: 1696
+        y: 2519
+        width: 249
+        height: 239
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 488a4c1a8738735b0800000000000000
+      internalID: -5388693874992174972
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Portrait_Prince_Idle_31
+      rect:
+        serializedVersion: 2
+        x: 1976
+        y: 2519
+        width: 249
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f29d699c5909ad350800000000000000
+      internalID: 6042300823077574959
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Portrait_Prince_Idle_32
+      rect:
+        serializedVersion: 2
+        x: 2256
+        y: 2519
+        width: 251
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ccc1e0f9d5fd36630800000000000000
+      internalID: 3919221693935918284
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Portrait_Prince_Idle_33
+      rect:
+        serializedVersion: 2
+        x: 2536
+        y: 2519
+        width: 251
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e9b1b8f7374acabc0800000000000000
+      internalID: -3770457972047930466
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Portrait_Prince_Idle_34
+      rect:
+        serializedVersion: 2
+        x: 2816
+        y: 2519
+        width: 250
+        height: 239
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 03405cbadf0d31410800000000000000
+      internalID: 1446729693243180080
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Portrait_Prince_Idle_35
+      rect:
+        serializedVersion: 2
+        x: 3096
+        y: 2519
+        width: 251
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0dd3b6fab4a910910800000000000000
+      internalID: 1801890975781174736
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Portrait_Prince_Idle_36
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 2239
+        width: 251
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 43dcaa8ebbe7b2dd0800000000000000
+      internalID: -2509773021801427660
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Portrait_Prince_Idle_37
+      rect:
+        serializedVersion: 2
+        x: 295
+        y: 2239
+        width: 252
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 37c7074f9d3e3d6d0800000000000000
+      internalID: -2966777204258603917
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Portrait_Prince_Idle_38
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 2239
+        width: 252
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1630bd837b1a8d010800000000000000
+      internalID: 1213897907881313121
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Portrait_Prince_Idle_39
+      rect:
+        serializedVersion: 2
+        x: 856
+        y: 2239
+        width: 251
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a4074b58833de1fe0800000000000000
+      internalID: -1216302609628630966
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Portrait_Prince_Idle_40
+      rect:
+        serializedVersion: 2
+        x: 1136
+        y: 2239
+        width: 252
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b7690da6250c450c0800000000000000
+      internalID: -4587830660171786629
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Portrait_Prince_Idle_41
+      rect:
+        serializedVersion: 2
+        x: 1416
+        y: 2239
+        width: 251
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5605495cf9a0ece20800000000000000
+      internalID: 3372644852277989477
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Portrait_Prince_Idle_42
+      rect:
+        serializedVersion: 2
+        x: 1696
+        y: 2239
+        width: 251
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7ac243957df91f7e0800000000000000
+      internalID: -1733428634297553753
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Portrait_Prince_Idle_43
+      rect:
+        serializedVersion: 2
+        x: 1976
+        y: 2239
+        width: 251
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4ec6816a9f1217740800000000000000
+      internalID: 5147933205178379492
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Portrait_Prince_Idle_44
+      rect:
+        serializedVersion: 2
+        x: 2257
+        y: 2239
+        width: 250
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7129a43bd9f4a0cf0800000000000000
+      internalID: -285328087648136681
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Portrait_Prince_Idle_45
+      rect:
+        serializedVersion: 2
+        x: 2537
+        y: 2239
+        width: 250
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8746b65f15efb7d20800000000000000
+      internalID: 3277492781805429880
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Portrait_Prince_Idle_46
+      rect:
+        serializedVersion: 2
+        x: 2817
+        y: 2239
+        width: 250
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 34d8fc545ae230bb0800000000000000
+      internalID: -4971078276311184061
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Portrait_Prince_Idle_47
+      rect:
+        serializedVersion: 2
+        x: 3098
+        y: 2239
+        width: 248
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a1c078b2b2ddb2d40800000000000000
+      internalID: 5560781342402612250
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Portrait_Prince_Idle_48
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 1959
+        width: 248
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 560cd0d3d498eec40800000000000000
+      internalID: 5543519156169457765
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Portrait_Prince_Idle_49
+      rect:
+        serializedVersion: 2
+        x: 298
+        y: 1959
+        width: 247
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2efe3c7ff995caf00800000000000000
+      internalID: 1129376150154637282
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Portrait_Prince_Idle_50
+      rect:
+        serializedVersion: 2
+        x: 578
+        y: 1959
+        width: 247
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 279dd9db244b95bc0800000000000000
+      internalID: -3793803012340852366
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Portrait_Prince_Idle_51
+      rect:
+        serializedVersion: 2
+        x: 858
+        y: 1959
+        width: 247
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1e6d0c9abf95bd8c0800000000000000
+      internalID: -3973483308804679967
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Portrait_Prince_Idle_52
+      rect:
+        serializedVersion: 2
+        x: 1138
+        y: 1959
+        width: 247
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5934578d0760213d0800000000000000
+      internalID: -3237518100388297835
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Portrait_Prince_Idle_53
+      rect:
+        serializedVersion: 2
+        x: 1419
+        y: 1959
+        width: 245
+        height: 241
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ebaed402402819ea0800000000000000
+      internalID: -5867765885253588290
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Portrait_Prince_Idle_54
+      rect:
+        serializedVersion: 2
+        x: 1699
+        y: 1959
+        width: 246
+        height: 241
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7ee4c99d8d1f12c80800000000000000
+      internalID: -8349126320502059289
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Portrait_Prince_Idle_55
+      rect:
+        serializedVersion: 2
+        x: 1979
+        y: 1959
+        width: 245
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a21660ae8c8d569d0800000000000000
+      internalID: -2781578837400067798
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Portrait_Prince_Idle_56
+      rect:
+        serializedVersion: 2
+        x: 2259
+        y: 1959
+        width: 246
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9fc96b87aeb83eaa0800000000000000
+      internalID: -6132904428384641799
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Portrait_Prince_Idle_57
+      rect:
+        serializedVersion: 2
+        x: 2539
+        y: 1959
+        width: 246
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5b1c7688135587c70800000000000000
+      internalID: 8969012329138602421
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Portrait_Prince_Idle_58
+      rect:
+        serializedVersion: 2
+        x: 2819
+        y: 1959
+        width: 246
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f40b77ab594ec83d0800000000000000
+      internalID: -3202933903237599153
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Portrait_Prince_Idle_59
+      rect:
+        serializedVersion: 2
+        x: 3099
+        y: 1959
+        width: 246
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2a791fb1d473425f0800000000000000
+      internalID: -782439630934796382
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Portrait_Prince_Idle_60
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 1679
+        width: 246
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 717b78c69cd9b08c0800000000000000
+      internalID: -4031955552945326313
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Portrait_Prince_Idle_61
+      rect:
+        serializedVersion: 2
+        x: 299
+        y: 1679
+        width: 247
+        height: 241
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a73e674f6c012daa0800000000000000
+      internalID: -6137824895461563526
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Portrait_Prince_Idle_62
+      rect:
+        serializedVersion: 2
+        x: 578
+        y: 1679
+        width: 248
+        height: 241
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 902d5d57272164eb0800000000000000
+      internalID: -4736077675320978935
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Portrait_Prince_Idle_63
+      rect:
+        serializedVersion: 2
+        x: 858
+        y: 1679
+        width: 248
+        height: 241
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a38412c0f521b3420800000000000000
+      internalID: 2610700608426035258
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Portrait_Prince_Idle_64
+      rect:
+        serializedVersion: 2
+        x: 1138
+        y: 1679
+        width: 249
+        height: 241
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: be4c0e22a1414c830800000000000000
+      internalID: 4090416464046114027
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Portrait_Prince_Idle_65
+      rect:
+        serializedVersion: 2
+        x: 1418
+        y: 1679
+        width: 249
+        height: 241
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a9757f758cc11ed90800000000000000
+      internalID: -7070338293200103526
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Portrait_Prince_Idle_66
+      rect:
+        serializedVersion: 2
+        x: 1697
+        y: 1679
+        width: 251
+        height: 242
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c002dc6b52aa94090800000000000000
+      internalID: -8049715779990642676
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Portrait_Prince_Idle_67
+      rect:
+        serializedVersion: 2
+        x: 1976
+        y: 1679
+        width: 253
+        height: 242
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f85f4c8635fa49780800000000000000
+      internalID: -8677117809261218417
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Portrait_Prince_Idle_68
+      rect:
+        serializedVersion: 2
+        x: 2255
+        y: 1679
+        width: 255
+        height: 242
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f04eba5c371307a40800000000000000
+      internalID: 5363841529505637391
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Portrait_Prince_Idle_69
+      rect:
+        serializedVersion: 2
+        x: 2534
+        y: 1679
+        width: 256
+        height: 242
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2fd94ed4bd314d260800000000000000
+      internalID: 7121338743405190642
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Portrait_Prince_Idle_70
+      rect:
+        serializedVersion: 2
+        x: 2813
+        y: 1679
+        width: 259
+        height: 242
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cad20be6a76ae2c60800000000000000
+      internalID: 7795351049798167980
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Portrait_Prince_Idle_71
+      rect:
+        serializedVersion: 2
+        x: 3093
+        y: 1679
+        width: 259
+        height: 242
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 66c3b2c0cfda01f50800000000000000
+      internalID: 6850166331278048358
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Portrait_Prince_Idle_72
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 1399
+        width: 260
+        height: 242
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 252d07193e44d2fd0800000000000000
+      internalID: -2365158485111287214
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Portrait_Prince_Idle_73
+      rect:
+        serializedVersion: 2
+        x: 292
+        y: 1399
+        width: 261
+        height: 242
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9ca6a3018526dcf30800000000000000
+      internalID: 4597438924984052425
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Portrait_Prince_Idle_74
+      rect:
+        serializedVersion: 2
+        x: 571
+        y: 1399
+        width: 263
+        height: 242
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fccf9ca25882e0fc0800000000000000
+      internalID: -3526836905770877745
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Portrait_Prince_Idle_75
+      rect:
+        serializedVersion: 2
+        x: 850
+        y: 1399
+        width: 265
+        height: 242
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c81004b628c232380800000000000000
+      internalID: -8997298691899391604
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Portrait_Prince_Idle_76
+      rect:
+        serializedVersion: 2
+        x: 1130
+        y: 1399
+        width: 266
+        height: 242
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4e167598c4ba9eb60800000000000000
+      internalID: 7775934576841941476
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Portrait_Prince_Idle_77
+      rect:
+        serializedVersion: 2
+        x: 1410
+        y: 1399
+        width: 266
+        height: 242
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ea4e32ceb55e10b20800000000000000
+      internalID: 3099010201574171822
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Portrait_Prince_Idle_78
+      rect:
+        serializedVersion: 2
+        x: 1688
+        y: 1399
+        width: 269
+        height: 242
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 65b495100bb4acd40800000000000000
+      internalID: 5605375905524960086
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Portrait_Prince_Idle_79
+      rect:
+        serializedVersion: 2
+        x: 1964
+        y: 1399
+        width: 275
+        height: 242
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0ea133cf534fbb8e0800000000000000
+      internalID: -1676477923563726112
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Portrait_Prince_Idle_80
+      rect:
+        serializedVersion: 2
+        x: 2242
+        y: 1399
+        width: 279
+        height: 241
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d6ad6bf421b51a960800000000000000
+      internalID: 7611464979437771373
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Portrait_Prince_Idle_81
+      rect:
+        serializedVersion: 2
+        x: 2520
+        y: 1399
+        width: 281
+        height: 241
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a398ad84796ba2c60800000000000000
+      internalID: 7794242865996663098
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Portrait_Prince_Idle_82
+      rect:
+        serializedVersion: 2
+        x: 2800
+        y: 1399
+        width: 281
+        height: 241
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e4cd89da86af66c40800000000000000
+      internalID: 5505362922003029070
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Portrait_Prince_Idle_83
+      rect:
+        serializedVersion: 2
+        x: 3081
+        y: 1399
+        width: 279
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1227f6bfd2f074d90800000000000000
+      internalID: -7113700396242079199
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Portrait_Prince_Idle_84
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 1119
+        width: 279
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 65e5f7112895ee720800000000000000
+      internalID: 2877335627110506070
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Portrait_Prince_Idle_85
+      rect:
+        serializedVersion: 2
+        x: 283
+        y: 1119
+        width: 278
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fac8244d46133dc20800000000000000
+      internalID: 3229979666882399407
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Portrait_Prince_Idle_86
+      rect:
+        serializedVersion: 2
+        x: 564
+        y: 1119
+        width: 277
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5c4286e6aa9f5c080800000000000000
+      internalID: -9167646956050701115
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Portrait_Prince_Idle_87
+      rect:
+        serializedVersion: 2
+        x: 846
+        y: 1119
+        width: 273
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 95de34886db778970800000000000000
+      internalID: 8757104161784589657
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Portrait_Prince_Idle_88
+      rect:
+        serializedVersion: 2
+        x: 1128
+        y: 1119
+        width: 270
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bb86de5fce03d8bf0800000000000000
+      internalID: -320546204177045317
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Portrait_Prince_Idle_89
+      rect:
+        serializedVersion: 2
+        x: 1408
+        y: 1119
+        width: 270
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e7d13caa199afaae0800000000000000
+      internalID: -1535822504809783938
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Portrait_Prince_Idle_90
+      rect:
+        serializedVersion: 2
+        x: 1690
+        y: 1119
+        width: 268
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 40fdcb46131c89e40800000000000000
+      internalID: 5663488949306056452
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Portrait_Prince_Idle_91
+      rect:
+        serializedVersion: 2
+        x: 1970
+        y: 1119
+        width: 267
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e45eb956a4a83f4c0800000000000000
+      internalID: -4254905170798058162
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Portrait_Prince_Idle_92
+      rect:
+        serializedVersion: 2
+        x: 2250
+        y: 1119
+        width: 268
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2a6ef71839154c260800000000000000
+      internalID: 7116903005126911650
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Portrait_Prince_Idle_93
+      rect:
+        serializedVersion: 2
+        x: 2530
+        y: 1119
+        width: 268
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9decad0758b700920800000000000000
+      internalID: 2954497168609300185
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Portrait_Prince_Idle_94
+      rect:
+        serializedVersion: 2
+        x: 2808
+        y: 1119
+        width: 272
+        height: 241
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8279e2eff17107470800000000000000
+      internalID: 8390231531967125288
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Portrait_Prince_Idle_95
+      rect:
+        serializedVersion: 2
+        x: 3088
+        y: 1119
+        width: 272
+        height: 241
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 450eb8271e9bd1030800000000000000
+      internalID: 3467131666085699668
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Portrait_Prince_Idle_96
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 839
+        width: 272
+        height: 242
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ae4177bd4c1378350800000000000000
+      internalID: 6018834148569322730
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Portrait_Prince_Idle_97
+      rect:
+        serializedVersion: 2
+        x: 284
+        y: 839
+        width: 277
+        height: 242
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a8a92a1e76e7c3190800000000000000
+      internalID: -7981365454975100278
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Portrait_Prince_Idle_98
+      rect:
+        serializedVersion: 2
+        x: 564
+        y: 839
+        width: 277
+        height: 242
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c6acdd32f7684f510800000000000000
+      internalID: 1582037249734593132
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Portrait_Prince_Idle_99
+      rect:
+        serializedVersion: 2
+        x: 844
+        y: 839
+        width: 277
+        height: 242
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 825aa2b547ae49560800000000000000
+      internalID: 7319733079850525992
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Portrait_Prince_Idle_100
+      rect:
+        serializedVersion: 2
+        x: 1123
+        y: 839
+        width: 278
+        height: 242
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7e379a0d9c76aee90800000000000000
+      internalID: -6995664954679790617
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Portrait_Prince_Idle_101
+      rect:
+        serializedVersion: 2
+        x: 1403
+        y: 839
+        width: 278
+        height: 242
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 813e990919d3a0ed0800000000000000
+      internalID: -2447075752116886760
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Portrait_Prince_Idle_102
+      rect:
+        serializedVersion: 2
+        x: 1683
+        y: 839
+        width: 278
+        height: 242
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 825f7ea03dea07380800000000000000
+      internalID: -8975481835905092312
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Portrait_Prince_Idle_103
+      rect:
+        serializedVersion: 2
+        x: 1964
+        y: 839
+        width: 277
+        height: 242
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e970826ce400e98c0800000000000000
+      internalID: -3990751881471719522
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Portrait_Prince_Idle_104
+      rect:
+        serializedVersion: 2
+        x: 2245
+        y: 839
+        width: 276
+        height: 242
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2a6599c5cc19f2560800000000000000
+      internalID: 7291206628649031330
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Portrait_Prince_Idle_105
+      rect:
+        serializedVersion: 2
+        x: 2525
+        y: 839
+        width: 276
+        height: 242
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fcd894fb3c072a110800000000000000
+      internalID: 1270702030902103503
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Portrait_Prince_Idle_106
+      rect:
+        serializedVersion: 2
+        x: 2806
+        y: 839
+        width: 272
+        height: 242
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 97bc6042ddc896330800000000000000
+      internalID: 3704647049909029753
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Portrait_Prince_Idle_107
+      rect:
+        serializedVersion: 2
+        x: 3088
+        y: 839
+        width: 269
+        height: 242
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a50552e864d81c8e0800000000000000
+      internalID: -1674902252233076646
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Portrait_Prince_Idle_108
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 559
+        width: 266
+        height: 241
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5850956f0254b8c60800000000000000
+      internalID: 7821421185733297541
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Portrait_Prince_Idle_109
+      rect:
+        serializedVersion: 2
+        x: 290
+        y: 559
+        width: 266
+        height: 241
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1c039d3369f8be8f0800000000000000
+      internalID: -510156257498681151
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Portrait_Prince_Idle_110
+      rect:
+        serializedVersion: 2
+        x: 571
+        y: 559
+        width: 265
+        height: 241
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3f91236b7c05bd0e0800000000000000
+      internalID: -2244111170628609549
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Portrait_Prince_Idle_111
+      rect:
+        serializedVersion: 2
+        x: 852
+        y: 559
+        width: 262
+        height: 241
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1b4c34701a0cbfe40800000000000000
+      internalID: 5691354351956903089
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Portrait_Prince_Idle_112
+      rect:
+        serializedVersion: 2
+        x: 1132
+        y: 559
+        width: 262
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 502abb2a1dd788670800000000000000
+      internalID: 8541215032639988229
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Portrait_Prince_Idle_113
+      rect:
+        serializedVersion: 2
+        x: 1413
+        y: 559
+        width: 259
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7c88d662cf48180c0800000000000000
+      internalID: -4575229527920375609
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Portrait_Prince_Idle_114
+      rect:
+        serializedVersion: 2
+        x: 1693
+        y: 559
+        width: 260
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6e15386b49af42390800000000000000
+      internalID: -7843869134348398106
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Portrait_Prince_Idle_115
+      rect:
+        serializedVersion: 2
+        x: 1973
+        y: 559
+        width: 259
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 60249e4faee295cc0800000000000000
+      internalID: -3721892030378851834
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Portrait_Prince_Idle_116
+      rect:
+        serializedVersion: 2
+        x: 2253
+        y: 559
+        width: 258
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 208747fae16293950800000000000000
+      internalID: 6429211856282613762
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Portrait_Prince_Idle_117
+      rect:
+        serializedVersion: 2
+        x: 2534
+        y: 559
+        width: 255
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6fe4cb692f0fbfbb0800000000000000
+      internalID: -4901058844760977674
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Portrait_Prince_Idle_118
+      rect:
+        serializedVersion: 2
+        x: 2814
+        y: 559
+        width: 256
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5bf2674fc3ab31490800000000000000
+      internalID: -7776667360576524363
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Portrait_Prince_Idle_119
+      rect:
+        serializedVersion: 2
+        x: 3094
+        y: 559
+        width: 255
+        height: 239
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0742f50b8793fdb80800000000000000
+      internalID: -8367906392113208208
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Portrait_Prince_Idle_120
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 279
+        width: 255
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f9ed6c819f89c8a30800000000000000
+      internalID: 4218915146569277087
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Portrait_Prince_Idle_121
+      rect:
+        serializedVersion: 2
+        x: 295
+        y: 279
+        width: 253
+        height: 239
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c99f85cdbc8bf31b0800000000000000
+      internalID: -5674613819748845156
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Portrait_Prince_Idle_122
+      rect:
+        serializedVersion: 2
+        x: 575
+        y: 279
+        width: 252
+        height: 239
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c85373b622386fc70800000000000000
+      internalID: 9004528688824792460
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Portrait_Prince_Idle_123
+      rect:
+        serializedVersion: 2
+        x: 856
+        y: 279
+        width: 251
+        height: 239
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1a06db327477cd3c0800000000000000
+      internalID: -4333457594011262815
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Portrait_Prince_Idle_124
+      rect:
+        serializedVersion: 2
+        x: 1136
+        y: 279
+        width: 251
+        height: 239
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 274a2cc2f16af6c90800000000000000
+      internalID: -7174333028552760206
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Portrait_Prince_Idle_125
+      rect:
+        serializedVersion: 2
+        x: 1416
+        y: 279
+        width: 251
+        height: 239
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3792656430ae663e0800000000000000
+      internalID: -2060702479689569933
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Portrait_Prince_Idle_126
+      rect:
+        serializedVersion: 2
+        x: 1696
+        y: 279
+        width: 250
+        height: 239
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8cf10922f685d1750800000000000000
+      internalID: 6277270689968824264
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Portrait_Prince_Idle_127
+      rect:
+        serializedVersion: 2
+        x: 1976
+        y: 279
+        width: 250
+        height: 239
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a42679c0c1752c330800000000000000
+      internalID: 3729639219398140490
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Portrait_Prince_Idle_128
+      rect:
+        serializedVersion: 2
+        x: 2257
+        y: 279
+        width: 249
+        height: 239
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 235400dc461ee9870800000000000000
+      internalID: 8691632153923962162
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Portrait_Prince_Idle_129
+      rect:
+        serializedVersion: 2
+        x: 2537
+        y: 279
+        width: 249
+        height: 239
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f28fb95bc6d02eec0800000000000000
+      internalID: -3539251596605261777
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Portrait_Prince_Idle_130
+      rect:
+        serializedVersion: 2
+        x: 2817
+        y: 279
+        width: 248
+        height: 239
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 51bacc82557f36680800000000000000
+      internalID: -8762888504804070635
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Portrait_Prince_Idle_131
+      rect:
+        serializedVersion: 2
+        x: 3097
+        y: 279
+        width: 248
+        height: 239
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4aab7f49b2d2183f0800000000000000
+      internalID: -900388785291281756
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Portrait_Prince_Idle_132
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 0
+        width: 248
+        height: 238
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 82a70bec19c313350800000000000000
+      internalID: 5994639175942437416
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Portrait_Prince_Idle_133
+      rect:
+        serializedVersion: 2
+        x: 297
+        y: 0
+        width: 248
+        height: 238
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e6764e0cc3ef7f150800000000000000
+      internalID: 5906468973207381870
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Portrait_Prince_Idle_134
+      rect:
+        serializedVersion: 2
+        x: 577
+        y: 0
+        width: 248
+        height: 238
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0494536239d077940800000000000000
+      internalID: 5293714812649687360
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Portrait_Prince_Idle_135
+      rect:
+        serializedVersion: 2
+        x: 858
+        y: 0
+        width: 246
+        height: 238
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 85dd57c521ca92580800000000000000
+      internalID: -8851354397759382184
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Portrait_Prince_Idle_136
+      rect:
+        serializedVersion: 2
+        x: 1138
+        y: 0
+        width: 246
+        height: 238
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3dd4c0e0fe6fea4e0800000000000000
+      internalID: -1968364480521024045
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Portrait_Prince_Idle_137
+      rect:
+        serializedVersion: 2
+        x: 1418
+        y: 0
+        width: 246
+        height: 238
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7f728afa5d5e950a0800000000000000
+      internalID: -6892225048776005641
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Portrait_Prince_Idle_138
+      rect:
+        serializedVersion: 2
+        x: 1698
+        y: 0
+        width: 247
+        height: 238
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5dc26f1026cbd1640800000000000000
+      internalID: 5052401486105291989
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Portrait_Prince_Idle_139
+      rect:
+        serializedVersion: 2
+        x: 1978
+        y: 0
+        width: 246
+        height: 238
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fb2bb147a59ec8e10800000000000000
+      internalID: 2201390892581630655
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Portrait_Prince_Idle_140
+      rect:
+        serializedVersion: 2
+        x: 2258
+        y: 0
+        width: 246
+        height: 238
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e40f84dafe2113c30800000000000000
+      internalID: 4337268736748220494
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Portrait_Prince_Idle_141
+      rect:
+        serializedVersion: 2
+        x: 2538
+        y: 0
+        width: 245
+        height: 238
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cff5218e42c250f70800000000000000
+      internalID: 9152770354724364284
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Portrait_Prince_Idle_142
+      rect:
+        serializedVersion: 2
+        x: 2818
+        y: 0
+        width: 245
+        height: 239
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 52d5eeef316ea8fb0800000000000000
+      internalID: -4644647092123443931
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Portrait_Prince_Idle_143
+      rect:
+        serializedVersion: 2
+        x: 3098
+        y: 0
+        width: 246
+        height: 238
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f6cff3f2fa1294580800000000000000
+      internalID: -8842499357069542289
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Portrait_Prince_Idle_0: 8792104951000804202
+      Portrait_Prince_Idle_1: 4205465125692061307
+      Portrait_Prince_Idle_10: -1280878257004837305
+      Portrait_Prince_Idle_100: -6995664954679790617
+      Portrait_Prince_Idle_101: -2447075752116886760
+      Portrait_Prince_Idle_102: -8975481835905092312
+      Portrait_Prince_Idle_103: -3990751881471719522
+      Portrait_Prince_Idle_104: 7291206628649031330
+      Portrait_Prince_Idle_105: 1270702030902103503
+      Portrait_Prince_Idle_106: 3704647049909029753
+      Portrait_Prince_Idle_107: -1674902252233076646
+      Portrait_Prince_Idle_108: 7821421185733297541
+      Portrait_Prince_Idle_109: -510156257498681151
+      Portrait_Prince_Idle_11: 8905602167257960390
+      Portrait_Prince_Idle_110: -2244111170628609549
+      Portrait_Prince_Idle_111: 5691354351956903089
+      Portrait_Prince_Idle_112: 8541215032639988229
+      Portrait_Prince_Idle_113: -4575229527920375609
+      Portrait_Prince_Idle_114: -7843869134348398106
+      Portrait_Prince_Idle_115: -3721892030378851834
+      Portrait_Prince_Idle_116: 6429211856282613762
+      Portrait_Prince_Idle_117: -4901058844760977674
+      Portrait_Prince_Idle_118: -7776667360576524363
+      Portrait_Prince_Idle_119: -8367906392113208208
+      Portrait_Prince_Idle_12: 1976857833738696124
+      Portrait_Prince_Idle_120: 4218915146569277087
+      Portrait_Prince_Idle_121: -5674613819748845156
+      Portrait_Prince_Idle_122: 9004528688824792460
+      Portrait_Prince_Idle_123: -4333457594011262815
+      Portrait_Prince_Idle_124: -7174333028552760206
+      Portrait_Prince_Idle_125: -2060702479689569933
+      Portrait_Prince_Idle_126: 6277270689968824264
+      Portrait_Prince_Idle_127: 3729639219398140490
+      Portrait_Prince_Idle_128: 8691632153923962162
+      Portrait_Prince_Idle_129: -3539251596605261777
+      Portrait_Prince_Idle_13: -35632818218442054
+      Portrait_Prince_Idle_130: -8762888504804070635
+      Portrait_Prince_Idle_131: -900388785291281756
+      Portrait_Prince_Idle_132: 5994639175942437416
+      Portrait_Prince_Idle_133: 5906468973207381870
+      Portrait_Prince_Idle_134: 5293714812649687360
+      Portrait_Prince_Idle_135: -8851354397759382184
+      Portrait_Prince_Idle_136: -1968364480521024045
+      Portrait_Prince_Idle_137: -6892225048776005641
+      Portrait_Prince_Idle_138: 5052401486105291989
+      Portrait_Prince_Idle_139: 2201390892581630655
+      Portrait_Prince_Idle_14: 5160002326195076694
+      Portrait_Prince_Idle_140: 4337268736748220494
+      Portrait_Prince_Idle_141: 9152770354724364284
+      Portrait_Prince_Idle_142: -4644647092123443931
+      Portrait_Prince_Idle_143: -8842499357069542289
+      Portrait_Prince_Idle_15: -8314726051594919781
+      Portrait_Prince_Idle_16: -232656447201904061
+      Portrait_Prince_Idle_17: 2914895756819093800
+      Portrait_Prince_Idle_18: 2104182570846148229
+      Portrait_Prince_Idle_19: -7133295362570396211
+      Portrait_Prince_Idle_2: 9052827216986595311
+      Portrait_Prince_Idle_20: -4864019031205489224
+      Portrait_Prince_Idle_21: -4350332417427934089
+      Portrait_Prince_Idle_22: 4473404744722568894
+      Portrait_Prince_Idle_23: -6386185044752285836
+      Portrait_Prince_Idle_24: 1384560736544648635
+      Portrait_Prince_Idle_25: 1899013530272492192
+      Portrait_Prince_Idle_26: -6903564702943600955
+      Portrait_Prince_Idle_27: 9137090158607593699
+      Portrait_Prince_Idle_28: -6566338662931548746
+      Portrait_Prince_Idle_29: 8548578779692439420
+      Portrait_Prince_Idle_3: 2916114721285395346
+      Portrait_Prince_Idle_30: -5388693874992174972
+      Portrait_Prince_Idle_31: 6042300823077574959
+      Portrait_Prince_Idle_32: 3919221693935918284
+      Portrait_Prince_Idle_33: -3770457972047930466
+      Portrait_Prince_Idle_34: 1446729693243180080
+      Portrait_Prince_Idle_35: 1801890975781174736
+      Portrait_Prince_Idle_36: -2509773021801427660
+      Portrait_Prince_Idle_37: -2966777204258603917
+      Portrait_Prince_Idle_38: 1213897907881313121
+      Portrait_Prince_Idle_39: -1216302609628630966
+      Portrait_Prince_Idle_4: 5165726687855989761
+      Portrait_Prince_Idle_40: -4587830660171786629
+      Portrait_Prince_Idle_41: 3372644852277989477
+      Portrait_Prince_Idle_42: -1733428634297553753
+      Portrait_Prince_Idle_43: 5147933205178379492
+      Portrait_Prince_Idle_44: -285328087648136681
+      Portrait_Prince_Idle_45: 3277492781805429880
+      Portrait_Prince_Idle_46: -4971078276311184061
+      Portrait_Prince_Idle_47: 5560781342402612250
+      Portrait_Prince_Idle_48: 5543519156169457765
+      Portrait_Prince_Idle_49: 1129376150154637282
+      Portrait_Prince_Idle_5: 9187993448327418104
+      Portrait_Prince_Idle_50: -3793803012340852366
+      Portrait_Prince_Idle_51: -3973483308804679967
+      Portrait_Prince_Idle_52: -3237518100388297835
+      Portrait_Prince_Idle_53: -5867765885253588290
+      Portrait_Prince_Idle_54: -8349126320502059289
+      Portrait_Prince_Idle_55: -2781578837400067798
+      Portrait_Prince_Idle_56: -6132904428384641799
+      Portrait_Prince_Idle_57: 8969012329138602421
+      Portrait_Prince_Idle_58: -3202933903237599153
+      Portrait_Prince_Idle_59: -782439630934796382
+      Portrait_Prince_Idle_6: -3435411748632580471
+      Portrait_Prince_Idle_60: -4031955552945326313
+      Portrait_Prince_Idle_61: -6137824895461563526
+      Portrait_Prince_Idle_62: -4736077675320978935
+      Portrait_Prince_Idle_63: 2610700608426035258
+      Portrait_Prince_Idle_64: 4090416464046114027
+      Portrait_Prince_Idle_65: -7070338293200103526
+      Portrait_Prince_Idle_66: -8049715779990642676
+      Portrait_Prince_Idle_67: -8677117809261218417
+      Portrait_Prince_Idle_68: 5363841529505637391
+      Portrait_Prince_Idle_69: 7121338743405190642
+      Portrait_Prince_Idle_7: 3468095570511494079
+      Portrait_Prince_Idle_70: 7795351049798167980
+      Portrait_Prince_Idle_71: 6850166331278048358
+      Portrait_Prince_Idle_72: -2365158485111287214
+      Portrait_Prince_Idle_73: 4597438924984052425
+      Portrait_Prince_Idle_74: -3526836905770877745
+      Portrait_Prince_Idle_75: -8997298691899391604
+      Portrait_Prince_Idle_76: 7775934576841941476
+      Portrait_Prince_Idle_77: 3099010201574171822
+      Portrait_Prince_Idle_78: 5605375905524960086
+      Portrait_Prince_Idle_79: -1676477923563726112
+      Portrait_Prince_Idle_8: -1825452390023750147
+      Portrait_Prince_Idle_80: 7611464979437771373
+      Portrait_Prince_Idle_81: 7794242865996663098
+      Portrait_Prince_Idle_82: 5505362922003029070
+      Portrait_Prince_Idle_83: -7113700396242079199
+      Portrait_Prince_Idle_84: 2877335627110506070
+      Portrait_Prince_Idle_85: 3229979666882399407
+      Portrait_Prince_Idle_86: -9167646956050701115
+      Portrait_Prince_Idle_87: 8757104161784589657
+      Portrait_Prince_Idle_88: -320546204177045317
+      Portrait_Prince_Idle_89: -1535822504809783938
+      Portrait_Prince_Idle_9: -3915471875847575565
+      Portrait_Prince_Idle_90: 5663488949306056452
+      Portrait_Prince_Idle_91: -4254905170798058162
+      Portrait_Prince_Idle_92: 7116903005126911650
+      Portrait_Prince_Idle_93: 2954497168609300185
+      Portrait_Prince_Idle_94: 8390231531967125288
+      Portrait_Prince_Idle_95: 3467131666085699668
+      Portrait_Prince_Idle_96: 6018834148569322730
+      Portrait_Prince_Idle_97: -7981365454975100278
+      Portrait_Prince_Idle_98: 1582037249734593132
+      Portrait_Prince_Idle_99: 7319733079850525992
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
