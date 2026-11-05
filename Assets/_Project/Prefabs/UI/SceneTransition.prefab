@@ -208,7 +208,7 @@ CanvasGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3232172886167467285}
   m_Enabled: 1
-  m_Alpha: 0
+  m_Alpha: 1
   m_Interactable: 0
   m_BlocksRaycasts: 0
   m_IgnoreParentGroups: 0
@@ -435,8 +435,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -150, y: 78}
-  m_SizeDelta: {x: 333.07086, y: 300}
+  m_AnchoredPosition: {x: -160, y: 102}
+  m_SizeDelta: {x: 184.3821, y: 166.0746}
   m_Pivot: {x: 1, y: 0}
 --- !u!222 &8792721706845191014
 CanvasRenderer:
@@ -458,7 +458,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1344c3c82d62a2a41a3576d8abb8e3ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.RawImage
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 2100000, guid: e2482315008140c4f8d54689e095da4c, type: 2}
   m_Color: {r: 0.88, g: 0.84, b: 0.78, a: 1}
   m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
@@ -492,3 +492,4 @@ MonoBehaviour:
   fps: 24
   startFrame: 0
   pingPong: 0
+  ownFrameMaterial: 1

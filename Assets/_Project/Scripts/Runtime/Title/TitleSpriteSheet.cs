@@ -10,7 +10,7 @@ namespace DuskTwilight
     /// a transparent gutter on every side.
     /// </summary>
     [ExecuteAlways, RequireComponent(typeof(RawImage))]
-    public class TitleSpriteSheet : MonoBehaviour
+    public class TitleSpriteSheet : MonoBehaviour, IMaterialModifier
     {
         static readonly int FrameRectId = Shader.PropertyToID("_FrameRect");
 
@@ -27,15 +27,47 @@ namespace DuskTwilight
         [Tooltip("Play forward then backward (for loops whose last frame doesn't meet the first).")]
         public bool pingPong;
 
+        [Header("Material")]
+        [Tooltip("Render through a private copy of the material that carries the current _FrameRect (edit and play mode) — "
+               + "for sheets without a TitleLayer instance, e.g. the loading-screen duo with edge fades.")]
+        public bool ownFrameMaterial;
+
         RawImage image;
         int shown = -1;
         Material shownOn;
+        Material frameMat, frameMatBase;
+        Vector4 frameRect = new Vector4(0, 0, 1, 1);
 
         void OnEnable()
         {
             image = GetComponent<RawImage>();
             shown = -1;
             Show(startFrame);
+            if (ownFrameMaterial) image.SetMaterialDirty();
+        }
+
+        void OnDisable()
+        {
+            if (image) image.SetMaterialDirty();
+        }
+
+        void OnDestroy()
+        {
+            if (frameMat) DestroyImmediate(frameMat);
+        }
+
+        public Material GetModifiedMaterial(Material baseMaterial)
+        {
+            if (!ownFrameMaterial || !isActiveAndEnabled || !baseMaterial || !baseMaterial.HasProperty(FrameRectId)) return baseMaterial;
+            if (!frameMat || frameMatBase != baseMaterial)
+            {
+                if (frameMat) DestroyImmediate(frameMat);
+                frameMat = new Material(baseMaterial) { name = baseMaterial.name + " (Frame)", hideFlags = HideFlags.HideAndDontSave };
+                frameMatBase = baseMaterial;
+            }
+            else frameMat.CopyPropertiesFromMaterial(baseMaterial);   // keep inspector tweaks live
+            frameMat.SetVector(FrameRectId, frameRect);
+            return frameMat;
         }
 
         void Update()
@@ -71,6 +103,8 @@ namespace DuskTwilight
             float y = 1f - (row * ch + gutter + frameSize.y) / h;   // texture v runs bottom→top
             var r = new Rect(x, y, frameSize.x / w, frameSize.y / h);
             image.uvRect = r;
+            frameRect = new Vector4(r.x, r.y, r.width, r.height);
+            if (ownFrameMaterial) { if (frameMat) frameMat.SetVector(FrameRectId, frameRect); else image.SetMaterialDirty(); return; }
             if (mat && mat.name.EndsWith("(Instance)")) mat.SetVector(FrameRectId, new Vector4(r.x, r.y, r.width, r.height));
         }
     }

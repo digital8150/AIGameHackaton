@@ -25,6 +25,7 @@ Shader "DuskTwilight/UI/TitlePortrait"
         _FadeBottom ("Fade bottom", Range(0, 0.6)) = 0.22
         _FadeLeft ("Fade left", Range(0, 0.5)) = 0
         _FadeRight ("Fade right", Range(0, 0.5)) = 0
+        _FadeTop ("Fade top", Range(0, 0.5)) = 0
         _Shade ("Shade (dim toward dark)", Range(0, 1)) = 0.12
 
         [Header(Grade)]
@@ -64,7 +65,7 @@ Shader "DuskTwilight/UI/TitlePortrait"
             fixed4 _Color, _RimColor, _BurnColor;
             float4 _RimDir;
             float _RimWidth, _RimStrength, _Shimmer, _Reveal, _BurnWidth, _NoiseScale;
-            float _FadeBottom, _FadeLeft, _FadeRight, _Shade;
+            float _FadeBottom, _FadeLeft, _FadeRight, _FadeTop, _Shade;
             fixed4 _SepiaColor, _ShadowTint;
             float _Desaturate, _Sepia, _LowKey, _LowKeyTop;
             float4 _FrameRect;
@@ -118,6 +119,7 @@ Shader "DuskTwilight/UI/TitlePortrait"
                 c.a *= smoothstep(0.0, _FadeBottom + 1e-4, uv.y);
                 c.a *= smoothstep(0.0, _FadeLeft + 1e-4, uv.x);
                 c.a *= smoothstep(1.0, 1.0 - _FadeRight - 1e-4, uv.x);
+                c.a *= smoothstep(1.0, 1.0 - _FadeTop - 1e-4, uv.y);
 
                 c *= i.color;
                 return TitleFinish(c, i);
