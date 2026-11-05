@@ -91,10 +91,29 @@ namespace DuskTwilight
                 var best = altarWords.Select(w => (w, d: Distance(t, w))).OrderBy(x => x.d).FirstOrDefault();
                 if (best.w != null && best.d <= 1 && t.Length <= best.w.Length + 1)
                     return new IntentResult { intent = Intent.PuzzleWord, word = best.w, confidence = 0.7f, source = "키워드" };
+                // sound-alike at the jamo level (해지연 ≈ 해질녘): Whisper base often slips a final consonant
+                var jt = Jamo(t);
+                var near = altarWords.Select(w => (w, r: Distance(jt, Jamo(w)) / (float)Jamo(w).Length)).OrderBy(x => x.r).First();
+                if (t.Length <= near.w.Length + 1 && near.r <= 0.4f)
+                    return new IntentResult { intent = Intent.PuzzleWord, word = near.w, confidence = 0.65f, source = "키워드" };
             }
             foreach (var (intent, keys) in Words)
                 if (keys.Any(k => t.Contains(k))) return new IntentResult { intent = intent, confidence = 0.8f, source = "키워드" };
             return new IntentResult { intent = Intent.Unrelated, confidence = 0.5f, source = "키워드" };
+        }
+
+        /// <summary>Splits Hangul syllables into lead/vowel/tail jamo so near-homophones compare closely.</summary>
+        static string Jamo(string s)
+        {
+            var sb = new System.Text.StringBuilder();
+            foreach (char c in s)
+            {
+                int code = c - 0xAC00;
+                if (code < 0 || code > 11171) { sb.Append(c); continue; }
+                sb.Append((char)(0x1100 + code / 588)).Append((char)(0x1161 + code % 588 / 28));
+                if (code % 28 != 0) sb.Append((char)(0x11A7 + code % 28));
+            }
+            return sb.ToString();
         }
 
         static int Distance(string a, string b)
