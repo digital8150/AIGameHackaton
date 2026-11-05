@@ -86,6 +86,45 @@ namespace DuskTwilight
             StartCoroutine(Run(scene, ageFirst));
         }
 
+        /// <summary>
+        /// Turn the page in place, without a scene change: the current frame is captured onto the page,
+        /// <paramref name="swap"/> changes what is underneath (e.g. opens a menu), then the page peels away.
+        /// Runs on unscaled time, so it also works while the game is paused. False if a turn is already running.
+        /// </summary>
+        public bool Flip(System.Action swap, float time = 0.9f, float flipAngle = -12f, float age = 0f)
+        {
+            if (busy) return false;
+            StartCoroutine(RunFlip(swap, time, flipAngle, age));
+            return true;
+        }
+
+        IEnumerator RunFlip(System.Action swap, float time, float flipAngle, float age)
+        {
+            busy = true;
+            yield return new WaitForEndOfFrame();
+            var tex = ScreenCapture.CaptureScreenshotAsTexture();
+            page.texture = tex;
+            mat.SetFloat(IdProgress, 0f);
+            mat.SetFloat(IdAngle, flipAngle);
+            mat.SetFloat(IdRadius, curlRadius);
+            mat.SetFloat(IdAge, age);
+            canvas.enabled = true;
+            swap?.Invoke();
+            yield return null;   // let the new state lay itself out behind the page
+            yield return null;
+            if (turnClip) sfx.PlayOneShot(turnClip, turnVolume);
+            for (float k = 0; k < 1f; k += Time.unscaledDeltaTime / Mathf.Max(time, 0.05f))
+            {
+                mat.SetFloat(IdProgress, k);
+                yield return null;
+            }
+            mat.SetFloat(IdProgress, 1f);
+            canvas.enabled = false;
+            page.texture = null;
+            Destroy(tex);
+            busy = false;
+        }
+
         IEnumerator Run(string scene, bool ageFirst)
         {
             float ageTime = ageFirst ? this.ageTime : 0f;

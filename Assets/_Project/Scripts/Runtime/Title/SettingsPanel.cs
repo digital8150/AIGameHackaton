@@ -48,7 +48,13 @@ namespace DuskTwilight
         [Range(-5f, 5f)] public float restTilt = -0.6f;
         [Range(0.8f, 1f)] public float openScale = 0.97f;
 
-        [Header("Sound")]
+        [Header("Page turn")]
+        [Tooltip("Open/close by turning a storybook page (Prefabs/UI/PageTurn). Empty = slide in/out.")]
+        public PageTurn pageTurn;
+        [Range(0.2f, 2f)] public float flipTime = 0.75f;
+        [Range(-60f, 60f)] public float flipAngle = -12f;
+
+        [Header("Sound (slide fallback only — the page turn has its own)")]
         public AudioSource pageSfx;
         [Tooltip("Paper rustle on open/close.")]
         public AudioClip pageClip;
@@ -65,6 +71,7 @@ namespace DuskTwilight
         float level;
         GameObject returnSelection;
         Vector2 restPos;
+        bool flipPending;   // a page turn is running; the visible state switches when the page is captured
 
         void Awake()
         {
@@ -156,17 +163,22 @@ namespace DuskTwilight
             IsOpen = true;
             group.blocksRaycasts = group.interactable = true;
             if (master && EventSystem.current) EventSystem.current.SetSelectedGameObject(master.gameObject);
-            PlayPage();
+            if (TryFlip(1f)) flipPending = true; else PlayPage();
             StartMic();
         }
 
-        public void Close()
+        public void Close() => Close(true);
+
+        /// <param name="animate">False: hide at once (the caller turns its own page over everything).</param>
+        public void Close(bool animate)
         {
             if (!IsOpen) return;
             IsOpen = false;
             group.blocksRaycasts = group.interactable = false;
             StopMic();
-            PlayPage();
+            if (!animate) { openK = 0f; SetVisible(0f); }
+            else if (TryFlip(0f)) flipPending = true;
+            else PlayPage();
             if (returnSelection && EventSystem.current) EventSystem.current.SetSelectedGameObject(returnSelection);
             Closed?.Invoke();
         }
@@ -174,8 +186,11 @@ namespace DuskTwilight
         void Update()
         {
             float dt = Time.unscaledDeltaTime;
-            openK = Mathf.MoveTowards(openK, IsOpen ? 1f : 0f, dt / fadeTime);
-            SetVisible(openK);
+            if (!flipPending)
+            {
+                openK = Mathf.MoveTowards(openK, IsOpen ? 1f : 0f, dt / fadeTime);
+                SetVisible(openK);
+            }
 
             if (IsOpen)
             {
@@ -200,6 +215,13 @@ namespace DuskTwilight
             window.anchoredPosition = restPos + openOffset * (1f - b);
             window.localRotation = Quaternion.Euler(0f, 0f, Mathf.LerpUnclamped(openTilt, restTilt, b));
             window.localScale = Vector3.one * Mathf.Lerp(openScale, 1f, e);
+        }
+
+        bool TryFlip(float target)
+        {
+            var t = PageTurn.I ? PageTurn.I : PageTurn.Ensure(pageTurn);
+            if (!t || !isActiveAndEnabled) return false;
+            return t.Flip(() => { flipPending = false; openK = target; SetVisible(target); }, flipTime, flipAngle);
         }
 
         void PlayPage()

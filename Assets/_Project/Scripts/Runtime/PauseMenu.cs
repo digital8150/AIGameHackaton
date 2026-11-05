@@ -36,7 +36,13 @@ namespace DuskTwilight
         [Range(-15f, 15f)] public float openTilt = 5f;
         [Range(-5f, 5f)] public float restTilt = 1.2f;
 
-        [Header("Sound")]
+        [Header("Page turn")]
+        [Tooltip("Open/close by turning a storybook page (Prefabs/UI/PageTurn). Empty = the stage's GameFlow.pageTurn, else slide.")]
+        public PageTurn pageTurn;
+        [Range(0.2f, 2f)] public float flipTime = 0.7f;
+        [Range(-60f, 60f)] public float flipAngle = -12f;
+
+        [Header("Sound (slide fallback only — the page turn has its own)")]
         public AudioSource sfx;
         public AudioClip pageClip;
         [Range(0f, 1f)] public float pageVolume = 0.6f;
@@ -48,6 +54,7 @@ namespace DuskTwilight
         int closedFrame = -1;
         bool leaving;
         bool wasModal;   // another panel (word altar) closing on this same Esc must not open the menu
+        bool flipPending;   // a page turn is running; the visible state switches when the page is captured
 
         void Awake()
         {
@@ -76,18 +83,22 @@ namespace DuskTwilight
             bool esc = (kb != null && kb.escapeKey.wasPressedThisFrame) || (pad != null && pad.startButton.wasPressedThisFrame);
             bool back = pad != null && pad.buttonEast.wasPressedThisFrame;
 
-            if (!leaving && Time.frameCount != closedFrame && !(settings && settings.IsOpen))
+            if (!leaving && !PageTurn.Busy && Time.frameCount != closedFrame && !(settings && settings.IsOpen))
             {
                 if (IsOpen && (esc || back)) Close();
                 else if (!IsOpen && esc && !wasModal && CanOpen()) Open();
             }
 
             wasModal = GameFlow.ModalOpen && !IsOpen;
-            openK = Mathf.MoveTowards(openK, IsOpen ? 1f : 0f, Time.unscaledDeltaTime / fadeTime);
-            Apply(openK);
+            if (!flipPending)
+            {
+                openK = Mathf.MoveTowards(openK, IsOpen ? 1f : 0f, Time.unscaledDeltaTime / fadeTime);
+                Apply(openK);
+            }
         }
 
-        static bool CanOpen() => !GameFlow.ModalOpen && !SceneTransition.Busy && !PageTurn.Busy;
+        // not during fades (stage intro, respawn) or another modal panel
+        static bool CanOpen() => !GameFlow.InputLocked && !SceneTransition.Busy;
 
         public void Open()
         {
@@ -99,7 +110,7 @@ namespace DuskTwilight
             group.blocksRaycasts = true;
             SetButtons(true);
             if (resume && EventSystem.current) EventSystem.current.SetSelectedGameObject(resume.gameObject);
-            Play();
+            if (TryFlip(1f)) flipPending = true; else Play();
         }
 
         public void Close()
@@ -107,11 +118,12 @@ namespace DuskTwilight
             if (!IsOpen) return;
             IsOpen = false;
             closedFrame = Time.frameCount;
-            if (settings && settings.IsOpen) settings.Close();
             group.blocksRaycasts = group.interactable = false;
             if (EventSystem.current) EventSystem.current.SetSelectedGameObject(null);
             Resume();
-            Play();
+            bool withSettings = settings && settings.IsOpen;
+            if (TryFlip(0f, withSettings)) flipPending = true;
+            else { if (withSettings) settings.Close(false); Play(); }
         }
 
         void Resume()
@@ -148,6 +160,20 @@ namespace DuskTwilight
             float b = 1f + 2.2f * Mathf.Pow(k - 1f, 3f) + 1.2f * Mathf.Pow(k - 1f, 2f);
             note.anchoredPosition = restPos + openOffset * (1f - b);
             note.localRotation = Quaternion.Euler(0f, 0f, Mathf.LerpUnclamped(openTilt, restTilt, b));
+        }
+
+        bool TryFlip(float target, bool closeSettings = false)
+        {
+            var prefab = pageTurn ? pageTurn : (GameFlow.I ? GameFlow.I.pageTurn : null);
+            var t = PageTurn.I ? PageTurn.I : PageTurn.Ensure(prefab);
+            if (!t || !isActiveAndEnabled) return false;
+            return t.Flip(() =>
+            {
+                flipPending = false;
+                if (closeSettings) settings.Close(false);
+                openK = target;
+                Apply(target);
+            }, flipTime, flipAngle);
         }
 
         void Play()
