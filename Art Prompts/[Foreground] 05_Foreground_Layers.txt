@@ -1,0 +1,60 @@
+# [Foreground 05] 2.5D 전경 레이어 (카메라 앞을 지나가는 종이 오려내기) — NAI V5 프롬프트 모음
+# 사용법: 아래 개별 프롬프트 뒤에 [Base Prompts].txt 내용을 이어 붙여 생성하세요.
+# 주의: 03/04와 같은 규칙 — 인물이 섞이지 않도록 `no humans, -3::1girl, 1boy, human::`가 앞에 배치되어 있습니다.
+# 주의: 전경은 캐릭터보다 카메라에 가까운 층이라 어두운 실루엣 톤(dark plum / sepia)으로 통일합니다. 흔들림·흐림은 셰이더에서 처리하므로 그림은 선명한 정지 한 장.
+# 도구: Tools/gen_env_nai.py 가 이 파일을 직접 읽습니다 (예: `05:1-A`). 헤더의 비율 표기(3:2, 21:9 …)가 생성 해상도가 되고, black background는 투명 배경으로 바뀝니다.
+
+---
+
+## 1. 전경 풀 (Foreground Grass)
+### 1-A. 바람에 눕는 풀 덤불 (Windswept Grass Tuft — 3:2 가로 권장)
+no humans, -3::1girl, 1boy, human::, game asset, paper cutout prop, {{black background, simple background}},
+{{tall wild grass tuft}}, windswept reed blades leaning to one side, feathery seed heads, a few tiny wildflowers, intricate pen cross-hatching, sepia and dark plum tones with pale ivory highlights on the blade tips,
+A single clump of tall windswept meadow grass for the front parallax layer of a 2D side-scroller, drawn in a vintage kamishibai paper-theater style with dense pen hatching, isolated on a solid black background.
+
+### 1-B. 화면 하단 풀 띠 (Bottom Edge Grass Strip — 21:9 와이드 권장)
+no humans, -3::1girl, 1boy, human::, game asset, paper cutout prop, horizontal composition, {{black background, simple background}},
+{{long horizontal strip of layered paper cutout grass}}, uneven grass blades, small ferns and wildflower stems rising from the bottom edge, intricate pen cross-hatching, sepia and dark plum tones,
+A long horizontal band of paper-cutout grass and weeds for the bottom foreground edge of a 2D side-scroller, drawn in a vintage kamishibai paper-theater style with sketchy pen hatching, isolated on a solid black background.
+
+---
+
+## 2. 늘어진 덩굴 커튼 (Hanging Vine Curtain — 21:9 와이드 권장)
+no humans, -3::1girl, 1boy, human::, game asset, paper cutout prop, horizontal composition, {{black background, simple background}},
+{{hanging vines and ivy strands drooping from the top edge}}, uneven lengths, small heart-shaped leaves, thin curling tendrils, intricate pen cross-hatching, sepia and dark plum tones with a few faded amber leaves,
+A curtain of fairytale vines hanging down from the top edge for the front parallax layer of a 2D side-scroller, drawn in a vintage kamishibai paper-theater style with dense pen hatching, isolated on a solid black background.
+
+---
+
+## 3. 전경 잎가지 (Corner Leafy Branch — 3:2 가로 권장)
+no humans, -3::1girl, 1boy, human::, game asset, paper cutout prop, {{black background, simple background}},
+{{leafy tree branch reaching in from the side}}, twisted twig, small oval leaves, a few berries, intricate pen cross-hatching on bark and leaf veins, sepia and dark plum tones,
+A single fairytale tree branch with leaves for the corner of the front parallax layer of a 2D side-scroller, drawn in a vintage kamishibai paper-theater style with sketchy pen hatching, isolated on a solid black background.
+
+---
+
+## 4. 전경 고목 기둥 (Near Tree Trunk — 9:21 세로 권장)
+no humans, -3::1girl, 1boy, human::, game asset, paper cutout prop, vertical composition, {{black background, simple background}},
+{{tall twisted fairytale tree trunk}}, gnarled bark, knotholes, ivy winding around the trunk, exposed roots at the base, trunk running from the top edge to the bottom edge, intricate pen cross-hatching on tree bark, sepia and dark plum tones,
+A tall ancient tree trunk standing close to the viewer for the front parallax layer of a 2D side-scroller, drawn in a vintage kamishibai paper-theater style with dense pen hatching, isolated on a solid black background.
+
+---
+
+## 5. 이끼 바위와 뿌리 (Mossy Boulder & Roots — 3:2 가로 권장)
+no humans, -3::1girl, 1boy, human::, game asset, paper cutout prop, {{black background, simple background}},
+{{mossy boulder wrapped in old tree roots}}, weathered stone, soft moss patches, tiny ferns in the cracks, intricate pen cross-hatching, sepia and dark plum tones,
+A single moss-covered boulder entangled with twisting roots for the front parallax layer of a 2D side-scroller, drawn in a vintage kamishibai paper-theater style with dense pen hatching, isolated on a solid black background.
+
+---
+
+## 6. 고사리 덤불 (Fern Bush — 1:1 정방형 권장)
+no humans, -3::1girl, 1boy, human::, game asset, paper cutout prop, {{black background, simple background}},
+{{fern bush}}, arching fern fronds, curling fiddleheads, fine leaflets, intricate pen cross-hatching, sepia and dark plum tones with muted sage,
+A single fairytale fern bush seen from the side for the front parallax layer of a 2D side-scroller, drawn in a vintage kamishibai paper-theater style with sketchy pen hatching, isolated on a solid black background.
+
+---
+
+## 7. 들꽃 줄기 (Wildflower Stems — 2:3 세로 권장)
+no humans, -3::1girl, 1boy, human::, game asset, paper cutout prop, {{black background, simple background}},
+{{sparse cluster of wildflowers on long thin stems}}, small pale blossoms, slender leaves, intricate pen cross-hatching, sepia tones with faded ivory and dusty rose petals,
+A few delicate fairytale wildflowers on long stems for the front parallax layer of a 2D side-scroller, drawn in a vintage kamishibai paper-theater style with sketchy pen hatching, isolated on a solid black background.

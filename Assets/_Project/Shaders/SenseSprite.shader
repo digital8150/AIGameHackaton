@@ -20,6 +20,14 @@ Shader "DuskTwilight/SenseSprite"
         _SelfLit ("Self Outline (actors)", Range(0,1)) = 0
         _EchoTint ("Echo Tint", Color) = (0.82,0.92,1,1)
         _AlphaEdges ("Use Alpha Edges", Range(0,1)) = 0
+
+        [Header(2.5D layer (environment art))]
+        _WindAmp ("Wind Sway (world units)", Range(0,1)) = 0
+        _WindSpeed ("Wind Speed", Range(0,6)) = 1.3
+        _WindAnchor ("Wind Anchor (0 = rooted bottom, 1 = hanging top)", Range(0,1)) = 0
+        _Blur ("Depth Blur (texels)", Range(0,12)) = 0
+        _Shade ("Foreground Shade", Range(0,1)) = 0
+        _ShadeColor ("Shade Color", Color) = (0.13,0.08,0.16,1)
     }
 
     SubShader
@@ -46,6 +54,8 @@ Shader "DuskTwilight/SenseSprite"
                 float _LightAlpha, _Depth, _Glint, _Warmth;
                 float _DarkAlpha, _EdgeBoost, _SelfLit, _AlphaEdges;
                 float4 _EchoTint;
+                float _WindAmp, _WindSpeed, _WindAnchor, _Blur, _Shade;
+                float4 _ShadeColor;
             CBUFFER_END
 
             struct Attributes { float4 positionOS : POSITION; float4 color : COLOR; float2 uv : TEXCOORD0; };
@@ -55,6 +65,15 @@ Shader "DuskTwilight/SenseSprite"
             {
                 Varyings o;
                 o.positionWS = TransformObjectToWorld(v.positionOS.xyz);
+                if (_WindAmp > 0)
+                {
+                    // sway grows away from the anchored edge; phase varies along x so a strip ripples
+                    float bend = lerp(v.uv.y, 1.0 - v.uv.y, _WindAnchor);
+                    bend *= bend;
+                    float t = _DT_Now * _WindSpeed + o.positionWS.x * 0.35;
+                    float gust = sin(t) * 0.7 + sin(t * 2.3 + 1.7) * 0.3;
+                    o.positionWS.x += gust * _WindAmp * bend;
+                }
                 o.positionCS = TransformWorldToHClip(o.positionWS);
                 o.uv = v.uv;
                 o.color = v.color * _Color;
@@ -75,8 +94,23 @@ Shader "DuskTwilight/SenseSprite"
 
             half4 frag(Varyings i) : SV_Target
             {
-                float4 tex = SAMPLE_TEXTURE2D(_MainTex, sampler_MainTex, i.uv) * i.color;
+                float4 tex = SAMPLE_TEXTURE2D(_MainTex, sampler_MainTex, i.uv);
+                if (_Blur > 0)
+                {
+                    // cheap depth-of-field for near/far layers: 8-tap ring + centre
+                    float2 r = _MainTex_TexelSize.xy * _Blur;
+                    float4 acc = tex;
+                    [unroll] for (int k = 0; k < 8; k++)
+                    {
+                        float ang = k * 0.785398;
+                        acc += SAMPLE_TEXTURE2D(_MainTex, sampler_MainTex, i.uv + float2(cos(ang), sin(ang)) * r);
+                    }
+                    tex = acc / 9.0;
+                }
+                tex *= i.color;
                 if (tex.a < 0.01) discard;
+                // near-camera layers sink toward a dark silhouette (rim of light kept on bright texels)
+                tex.rgb = lerp(tex.rgb, _ShadeColor.rgb * (0.6 + 0.8 * DT_Luma(tex.rgb)), _Shade);
 
                 float2 wp = DT_Snap(i.positionWS.xy);
                 float2 suv = i.screenPos.xy / i.screenPos.w;
