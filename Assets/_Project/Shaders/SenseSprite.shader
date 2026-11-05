@@ -202,6 +202,8 @@ Shader "DuskTwilight/SenseSprite"
                 if (_AlphaEdges > 0.5) contour = max(contour, AlphaEdge(i.uv));
                 float texture_ = luma * 0.32 * saturate(_EdgeBoost);
                 float lit = reveal * 0.85 + front * 1.4;
+                // switching: near the torn edge the dark side is scratched in as white line art
+                lit = max(lit, DT_SwitchScratch(wp) * 1.1);
                 float3 darkCol = DT_NIGHT * (0.6 + 0.4 * luma);
                 darkCol += _EchoTint.rgb * (contour * _EdgeBoost * lit + texture_ * lit * 0.6);
                 darkCol += _EchoTint.rgb * front * 0.10;
@@ -218,7 +220,7 @@ Shader "DuskTwilight/SenseSprite"
 
                 // switch wavefront rim — the signature "world flips" moment
                 float rim = DT_SwitchRim(wp);
-                col += DT_RIM_GOLD * rim * 1.2 * tex.a;
+                col += DT_RIM_GOLD * rim * 1.8 * tex.a;
 
                 return half4(col, a);
             }

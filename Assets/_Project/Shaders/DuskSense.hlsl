@@ -17,28 +17,13 @@ float4 _DT_Echo[DT_MAX_ECHOES];   // xy = origin, z = start time, w = strength (
 float4 _DT_EchoParams;    // x = speed (u/s), y = radius per strength, z = lifetime (s), w = director boost (>=1)
 float4 _DT_Listener;      // xy = prince position, z = self-aura radius, w = unused
 float4 _DT_SunScreen;     // xy = sun in viewport uv, z = sun strength
-float4 _DT_HazeColor;     // light-mode atmospheric haze colour
+float4 _DT_HazeColor;
+float4 _DT_SwitchFx;      // x = edge tear (units), y = tear scale, z = gold rim width, w = scratchboard band width     // light-mode atmospheric haze colour
 
 // Snap a world position to the 18 ppu pixel grid so procedural effects stay pixel-true.
 float2 DT_Snap(float2 wp)
 {
     return (floor(wp * DT_PPU) + 0.5) / DT_PPU;
-}
-
-float DT_PrinceAmount(float2 wp)
-{
-    float d = distance(wp, _DT_Switch.xy);
-    float inside = 1.0 - smoothstep(_DT_Switch.z - _DT_Switch.w, _DT_Switch.z, d);
-    return lerp(_DT_ModeFrom, _DT_ModeTo, inside);
-}
-
-// Bright rim that rides the switch wavefront while a transition is in flight.
-float DT_SwitchRim(float2 wp)
-{
-    float active = step(0.001, abs(_DT_ModeTo - _DT_ModeFrom));
-    float d = distance(wp, _DT_Switch.xy);
-    float band = 1.0 - saturate(abs(d - _DT_Switch.z) * 2.2);
-    return band * band * active;
 }
 
 // x = reveal (area the sound has passed through, fading), y = wavefront line
@@ -110,6 +95,43 @@ float DT_Fbm(float2 p)
         a *= 0.5;
     }
     return v;
+}
+
+// ---------------- switch wipe: a torn-paper edge that sweeps the world from one sense to the other -----------
+// Signed distance to the wipe front, roughened with fbm so the edge looks torn / ink-bled and keeps crawling.
+float DT_SwitchEdge(float2 wp)
+{
+    float d = distance(wp, _DT_Switch.xy);
+    float tear = _DT_SwitchFx.x > 0 ? (DT_Fbm(wp * _DT_SwitchFx.y + float2(_DT_Now * 0.6, -_DT_Now * 0.4)) * 2.0 - 1.0) * _DT_SwitchFx.x : 0.0;
+    return d + tear - _DT_Switch.z;   // < 0 inside the new sense
+}
+
+float DT_PrinceAmount(float2 wp)
+{
+    float e = DT_SwitchEdge(wp);
+    float inside = 1.0 - smoothstep(-_DT_Switch.w, 0.0, e);
+    return lerp(_DT_ModeFrom, _DT_ModeTo, inside);
+}
+
+float DT_SwitchActive() { return step(0.001, abs(_DT_ModeTo - _DT_ModeFrom)); }
+
+// Gold rim riding the torn edge while a transition is in flight, with flickering embers.
+float DT_SwitchRim(float2 wp)
+{
+    float e = DT_SwitchEdge(wp);
+    float w = max(_DT_SwitchFx.z, 0.2);
+    float band = 1.0 - saturate(abs(e) / w);
+    float core = 1.0 - saturate(abs(e) / (w * 0.25));
+    float ember = step(0.975, DT_Hash(floor(wp * 18.0) + floor(_DT_Now * 16.0))) * (1.0 - saturate(abs(e) / (w * 2.2)));
+    return saturate(band * band * 0.8 + core * 0.9 + ember) * DT_SwitchActive();
+}
+
+// Band behind the front where the dark side is drawn as white scratchboard lines (everything, not just echoes).
+float DT_SwitchScratch(float2 wp)
+{
+    float e = DT_SwitchEdge(wp);
+    float bw = max(_DT_SwitchFx.w, 0.1);
+    return saturate(1.0 - abs(e) / bw) * DT_SwitchActive();
 }
 
 static const float3 DT_NIGHT = float3(0.0035, 0.005, 0.016);

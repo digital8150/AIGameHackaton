@@ -15,9 +15,26 @@ namespace DuskTwilight
         public static SenseController I { get; private set; }
 
         [Header("Switch wipe")]
-        public float switchDuration = 0.65f;
-        public float switchMaxRadius = 32f;
+        public float switchDuration = 1.0f;
+        public float switchMaxRadius = 34f;
         public float switchSoftness = 0.6f;
+
+        [Header("Switch drama")]
+        [Tooltip("How torn / ink-bled the wipe edge is (world units of wobble)")]
+        [Range(0f, 4f)] public float edgeTear = 2.2f;
+        [Tooltip("Size of the tear pattern (higher = finer)")]
+        [Range(0.05f, 1.5f)] public float edgeTearScale = 0.32f;
+        [Tooltip("Width of the gold rim on the edge")]
+        [Range(0.1f, 3f)] public float rimWidth = 1.1f;
+        [Tooltip("Band behind the edge where the dark side shows as white scratchboard line art")]
+        [Range(0f, 10f)] public float scratchBand = 4f;
+        [Tooltip("Time slows to this for a beat when the senses swap (1 = off)")]
+        [Range(0.05f, 1f)] public float hitStopScale = 0.3f;
+        [Tooltip("Real seconds of the slow beat (eases back to normal over the same time again)")]
+        [Range(0f, 0.6f)] public float hitStopTime = 0.14f;
+        [Tooltip("Camera pushes in by this share of its size, then settles")]
+        [Range(0f, 0.2f)] public float zoomPunch = 0.07f;
+        public float zoomTime = 0.7f;
 
         [Header("Echo")]
         public float echoSpeed = 11f;
@@ -59,6 +76,7 @@ namespace DuskTwilight
         static readonly int IdSun = Shader.PropertyToID("_DT_SunScreen");
         static readonly int IdHaze = Shader.PropertyToID("_DT_HazeColor");
         static readonly int IdCam = Shader.PropertyToID("_DT_Cam");
+        static readonly int IdSwitchFx = Shader.PropertyToID("_DT_SwitchFx");
 
         void Awake()
         {
@@ -81,10 +99,44 @@ namespace DuskTwilight
             switchCenter = center;
             SwitchProgress = instant ? 1f : 0f;
             if (instant) from = to;
+            else StartCoroutine(SwitchDrama());
             ModeChanged?.Invoke(s);
         }
 
         /// <summary>CPU mirror of DT_PrinceAmount (0 = light, 1 = dark) for scripts that fade UI/text.</summary>
+        float baseOrtho;
+
+        System.Collections.IEnumerator SwitchDrama()
+        {
+            var cam = Camera.main;
+            if (cam && baseOrtho <= 0f) baseOrtho = cam.orthographicSize;
+            // a held breath: time slows for a beat while the world turns over
+            if (hitStopScale < 1f && hitStopTime > 0f && !GameFlow.ModalOpen)
+            {
+                Time.timeScale = hitStopScale;
+                yield return new WaitForSecondsRealtime(hitStopTime);
+                for (float t = 0; t < 1f; t += Time.unscaledDeltaTime / hitStopTime)
+                {
+                    Time.timeScale = Mathf.Lerp(hitStopScale, 1f, t);
+                    yield return null;
+                }
+                Time.timeScale = 1f;
+            }
+        }
+
+        void LateUpdate()
+        {
+            // camera push-in that follows the wipe and settles back
+            var cam = Camera.main;
+            if (!cam || zoomPunch <= 0f) return;
+            if (baseOrtho <= 0f) baseOrtho = cam.orthographicSize;
+            float t = Mathf.Clamp01(SwitchProgress * switchDuration / Mathf.Max(0.05f, zoomTime));
+            float k = SwitchProgress >= 1f ? 0f : Mathf.Sin(t * Mathf.PI) * (1f - t * 0.3f);
+            cam.orthographicSize = baseOrtho * (1f - zoomPunch * k);
+        }
+
+        void OnDisable() { Time.timeScale = 1f; }
+
         public float SenseAt(Vector2 p)
         {
             float r = Radius;
@@ -123,6 +175,7 @@ namespace DuskTwilight
         void Push()
         {
             Shader.SetGlobalVector(IdSwitch, new Vector4(switchCenter.x, switchCenter.y, Radius, switchSoftness));
+            Shader.SetGlobalVector(IdSwitchFx, new Vector4(edgeTear, edgeTearScale, rimWidth, scratchBand));
             Shader.SetGlobalFloat(IdFrom, from);
             Shader.SetGlobalFloat(IdTo, to);
             Shader.SetGlobalFloat(IdNow, Time.time);
