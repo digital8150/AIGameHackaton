@@ -2909,10 +2909,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d4e92dec435adb408e534f51bc434be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DuskTwilight.FakeWall
-  revealByProximity: 1
+  revealByProximity: 0
   revealDistance: 3
   openOnEcho: 1
   vanishWhenFound: 1
+  vanishDelay: 1.2
   reachShare: 0.85
   answersBells: 1
   foundEcho: 0.35

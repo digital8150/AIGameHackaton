@@ -2635,14 +2635,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d4e92dec435adb408e534f51bc434be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DuskTwilight.FakeWall
-  revealByProximity: 1
+  revealByProximity: 0
   revealDistance: 3
   openOnEcho: 1
   vanishWhenFound: 1
+  vanishDelay: 1.2
   reachShare: 0.85
   answersBells: 1
   foundEcho: 0.35
   foundCaption: 
+  linkedAreas: []
 --- !u!1 &761507165
 GameObject:
   m_ObjectHideFlags: 0
@@ -2740,13 +2742,14 @@ MonoBehaviour:
   - title: "\uAC00\uC9DC \uBCBD"
     objectives:
     - text: "\uBCBD \uB108\uBA38\uB85C"
-      keys: []
+      keys:
+      - R
       goal: 5
       markerId: r4
       target: 1
       showCount: 0
-    tip: "\uC655\uC790\uB294 \uAC00\uAE4C\uC774 \uAC00\uBA74 \uAC00\uC9DC \uBCBD\uC744
-      \uC54C\uC544\uBCF8\uB2E4."
+    tip: "\uC655\uC790\uC758 \uBA54\uC544\uB9AC\uAC00 \uB2FF\uC73C\uBA74 \uAC00\uC9DC
+      \uBCBD\uC774 \uB4DC\uB7EC\uB09C\uB2E4."
     opens: []
     allowSwitch: 1
   - title: "\uC0C1\uC790 \uBC00\uAE30"

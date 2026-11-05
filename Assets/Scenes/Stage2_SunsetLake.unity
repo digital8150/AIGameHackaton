@@ -2367,7 +2367,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d4e92dec435adb408e534f51bc434be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DuskTwilight.FakeWall
-  revealByProximity: 1
+  revealByProximity: 0
   revealDistance: 3
   openOnEcho: 1
   vanishWhenFound: 1
@@ -2742,12 +2742,14 @@ MonoBehaviour:
   - title: "\uC0C1\uC790\uC640 \uB2E4\uB9AC"
     objectives:
     - text: "\uC0C1\uC790\uB97C \uBC1F\uACE0 \uB192\uC740 \uACF3\uC73C\uB85C"
-      keys: []
+      keys:
+      - R
       goal: 5
       markerId: r5
       target: 1
       showCount: 0
-    tip: "\uACF5\uC8FC\uAC00 \uBC00\uACE0, \uC655\uC790\uAC00 \uAE38\uC744 \uB0B8\uB2E4."
+    tip: "\uACF5\uC8FC\uAC00 \uBC00\uACE0, \uC655\uC790\uAC00 \uBA54\uC544\uB9AC\uB85C
+      \uAE38\uC744 \uB0B8\uB2E4."
     opens: []
     allowSwitch: 1
   - title: "\uCD9C\uAD6C"

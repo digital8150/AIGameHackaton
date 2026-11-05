@@ -14,8 +14,8 @@ namespace DuskTwilight
     public class FakeWall : MonoBehaviour
     {
         [Header("Found by")]
-        [Tooltip("The prince walking within revealDistance of it sees through it (새 1~3단계: 3m)")]
-        public bool revealByProximity = true;
+        [Tooltip("Off by default: walls are found only by the prince's echo. On = the prince walking within revealDistance also finds it.")]
+        public bool revealByProximity = false;
         public float revealDistance = 3f;
         [Tooltip("An echo (or a bell) reaching it")]
         public bool openOnEcho = true;
