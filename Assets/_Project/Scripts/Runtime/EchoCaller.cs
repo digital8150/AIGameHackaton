@@ -63,7 +63,7 @@ namespace DuskTwilight
 
             if (input.Echo.WasPressedThisFrame())
             {
-                if (duo.Leader.sense != Sense.Dark) GameEvents.Caption?.Invoke("……");   // she cannot hear her own call
+                if (duo.Leader.sense != Sense.Dark) { GameEvents.Caption?.Invoke("……"); GameEvents.SilentCall?.Invoke(); }   // she cannot hear her own call
                 else if (Time.time - last >= cooldown) { charging = true; pressTime = Time.time; chargeStep = 0; }
             }
             if (charging)

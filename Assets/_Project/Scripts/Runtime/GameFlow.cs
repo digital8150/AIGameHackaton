@@ -16,10 +16,13 @@ namespace DuskTwilight
         public static Action<string> Hint;               // the twilight voice whispering (narration)
         public static Action<string> Notice;             // the game quietly adjusted itself (assist chip)
         public static Action<string> Caption;            // what a sound looks like when you cannot hear it
+        public static Action Respawned;                  // the pair stands at the checkpoint again
+        public static Action SilentCall;                 // the princess tried to call (she cannot hear it)
 
         public static void Reset()
         {
             Switched = null; Died = null; ZoneEntered = null; PuzzleAttempt = null; Cleared = null; Jumped = null; Hint = null; Notice = null; Caption = null;
+            Respawned = null; SilentCall = null;
         }
     }
 
@@ -140,6 +143,7 @@ namespace DuskTwilight
             DuoController.I.PlaceAt(Checkpoint);
             CameraRig.I?.Snap();
             HUD.I?.Fade(1f, 0f, respawnFadeIn);
+            GameEvents.Respawned?.Invoke();
             yield return new WaitForSeconds(0.2f);
             fadeLock = false;
             respawning = false;

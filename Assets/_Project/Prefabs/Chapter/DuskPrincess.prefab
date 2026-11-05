@@ -188,6 +188,7 @@ GameObject:
   - component: {fileID: 7122283136072378857}
   - component: {fileID: 515628191674434920}
   - component: {fileID: 1807741072782149127}
+  - component: {fileID: 347315144360590253}
   m_Layer: 8
   m_Name: DuskPrincess
   m_TagString: Untagged
@@ -526,3 +527,55 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 40358263f6a62474f810ff6364ac2a02, type: 3}
   stepInterval: 0.28
   stepEchoStrength: 0.32
+--- !u!114 &347315144360590253
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7651598771921622477}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6a45945f0c1cb14684826d354d411bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DuskTwilight.CharacterVoice
+  jump:
+    clips: []
+    volume: 0.6
+    chance: 0.45
+    cooldown: 1.2
+  hardLand:
+    clips:
+    - {fileID: 8300000, guid: 28a0c7a1cac20f0428b86c5aa23e051c, type: 3}
+    volume: 0.6
+    chance: 1
+    cooldown: 0.8
+  death:
+    clips:
+    - {fileID: 8300000, guid: 0a670e32e52d3484781401f5b239ec99, type: 3}
+    volume: 0.85
+    chance: 1
+    cooldown: 0
+  respawn:
+    clips:
+    - {fileID: 8300000, guid: 544b8d8955ff3c7449611a8fe5d8e85d, type: 3}
+    volume: 0.7
+    chance: 1
+    cooldown: 0
+  switchIn:
+    clips:
+    - {fileID: 8300000, guid: 28a0c7a1cac20f0428b86c5aa23e051c, type: 3}
+    volume: 0.6
+    chance: 1
+    cooldown: 0.6
+  silentCall:
+    clips:
+    - {fileID: 8300000, guid: 56c9ebc0f822eb5438de7ad23ade8f6d, type: 3}
+    volume: 0.7
+    chance: 1
+    cooldown: 0.8
+  hardLandSpeed: 13
+  pitchJitter: 0.04
+  respawnDelay: 0.25
+  output: {fileID: 0}
+  muffledCutoff: 900
