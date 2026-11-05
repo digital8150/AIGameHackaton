@@ -37,6 +37,19 @@ namespace DuskTwilight
             MicTick();
         }
 
+        /// <summary>
+        /// The prince calling out on purpose (button or voice) — unlike footsteps, checkpoints or a bell, which also
+        /// make echoes. Echo switches and bells answer only to calls.
+        /// </summary>
+        public static event System.Action<Vector2, float> Called;
+
+        /// <summary>Emit a called echo (also used by tests and the director).</summary>
+        public static void CallAt(Vector2 p, float strength)
+        {
+            SenseController.I.EmitEcho(p, strength);
+            Called?.Invoke(p, strength);
+        }
+
         void Call(float strength)
         {
             var duo = DuoController.I;
@@ -50,7 +63,7 @@ namespace DuskTwilight
             last = Time.time;
             CallCount++;
             Vector2 p = (Vector2)duo.Leader.transform.position + Vector2.up * 0.6f;
-            SenseController.I.EmitEcho(p, strength);
+            CallAt(p, strength);
             if (callClip) sfx.PlayOneShot(callClip, 0.8f);
             GameEvents.PuzzleAttempt?.Invoke("echo", true);
         }
@@ -65,7 +78,7 @@ namespace DuskTwilight
             lastMicEcho = Time.time;
             if (DuoController.I.Leader.sense != Sense.Dark) return;
             float s = Mathf.Clamp(LastMicLevel / (micThreshold * 6f), 0.35f, 1.4f);
-            SenseController.I.EmitEcho((Vector2)DuoController.I.Leader.transform.position + Vector2.up * 0.6f, s);
+            CallAt((Vector2)DuoController.I.Leader.transform.position + Vector2.up * 0.6f, s);
             CallCount++;
             GameEvents.PuzzleAttempt?.Invoke("echo", true);
         }

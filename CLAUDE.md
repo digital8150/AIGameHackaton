@@ -12,8 +12,8 @@ Unity 6000.3 · URP 2D Renderer · Input System only · 기획서: Claude Docs "
 - 런타임 코드(`Assets/_Project/Scripts/Runtime`)와 셰이더(`Assets/_Project/Shaders`)는 파일로 작성한다. MonoBehaviour는 파일당 하나, 파일명 = 클래스명.
 
 ## 구조
-- 스테이지 씬 (빌드 순서, 기획: Notion "스테이지 기획 _ Pyorang"): `Stage1_FirstTwilight`(1단계 첫 황혼, 방 6) → `Stage2_SunsetLake`(2단계 노을이 잠긴 호수, 방 4). 다음 장은 `GameFlow.nextScene`. 구 프로토타입 `Ch0_Prologue`·`Ch1_PrinceInDark`·`Ch2_PrincessInLight`·`InGame`은 빌드 뒤쪽에 남겨 둠.
-- 말 퍼즐: `WordTarget`(공통: 선택 창·음성·빛 글자) ← `WordAltar`(정답 → 다리/문, 프리팹 WordAltar·WordDoor), `WordFillBridge`(아무 말 → 칸 채우기, 누적/교체·깜빡이). 위험 지대 `Hazard`(Lake 프리팹). 가짜 벽 = 충돌 없는 `Fake Walls` 타일맵(M_FakeWall*).
+- 스테이지 씬 (빌드 순서, 기획: Notion "스테이지 기획 _ Pyorang"): `Stage1_FirstTwilight`(1단계 첫 황혼, 방 6) → `Stage2_SunsetLake`(2단계 노을이 잠긴 호수) → `Stage3_EchoCave`(3단계 메아리가 깨우는 동굴) → `Stage4_TwilightGate`(4단계 황혼의 문). 다음 장은 `GameFlow.nextScene`. 구 프로토타입 `Ch0_Prologue`·`Ch1_PrinceInDark`·`Ch2_PrincessInLight`·`InGame`은 빌드 뒤쪽에 남겨 둠.
+- 말 퍼즐: `WordTarget`(공통: 선택 창·음성·빛 글자) ← `WordAltar`(정답 → 다리/문, 프리팹 WordAltar·WordDoor), `WordFillBridge`(아무 말 → 칸 채우기, 누적/교체·깜빡이). 위험 지대 `Hazard`(Lake 프리팹). 메아리 기믹: `EchoSwitch`/`EchoResonator`(종)는 `EchoCaller.Called`(일부러 부른 메아리)에만 반응 — 발소리·체크포인트 메아리로는 켜지지 않는다. `SwitchGate`(필요/금지 스위치 → 문 상승, 오브젝트 표시, 컴포넌트 활성). 가짜 벽 = 충돌 없는 `Fake Walls` 타일맵(M_FakeWall*).
 - `Assets/_Project/Scripts/Runtime/Tutorial` — 단계별 튜토리얼(Section/Director/Signals/View/Veil/Marker), `AI` — Whisper 음성(`VoiceInput`/`VoiceCommands`)과 Jev(`JevClient`/`JevDirectorBrain`/`VoiceIntent`)
 - Whisper 모델 `Assets/StreamingAssets/Whisper/ggml-base.bin`은 git 밖 — `Tools/download_assets.bat`. Jev 키는 환경변수 `TYPESAFE_API_KEY` (없으면 규칙/키워드 폴백).
 - `Assets/_Project/Shaders` — `DuskSense.hlsl`(공통 감각 모델) + `SenseSprite`/`Sky`/`SoundGlyph`/`Glow`
@@ -32,6 +32,7 @@ Unity 6000.3 · URP 2D Renderer · Input System only · 기획서: Claude Docs "
 - Galmuri에 없는 기호(☾ ✦ 등)는 쓰지 않는다. 사용 가능: ♪ ♫ ☀ ◆ … — ♥ ★
 
 ## 규칙
+- **씬에 놓인 프리팹 인스턴스의 값을 eval로 바꿀 때는 `SerializedObject`(또는 `PrefabUtility.RecordPrefabInstancePropertyModifications`)로 바꾼다.** 필드를 직접 대입하면 오버라이드로 기록되지 않아 저장 시 사라진다(Systems·MainCamera 등 기존 인스턴스에서 실제로 발생).
 - **스테이지 구성 요소는 하드코딩하지 않는다.** 수치·문구·타이밍은 인스펙터 필드(`[Header]`/`[Tooltip]`/`[Range]`)로 노출하고, 범위·반경·연결은 `OnDrawGizmos`로 씬 뷰에 그린다. 새 기믹/배치는 `Prefabs/`의 프리팹 인스턴스로 놓는다 (씬 전용 수치는 오버라이드, 모든 챕터 공통 변경은 프리팹 자체에). 참조는 비워 두면 자동 연결되게(예: Lever→부모 TwilightGate, 디렉터→씬의 SoundEmitter/LightPlatform).
 - 모든 월드 스프라이트는 `DuskTwilight/SenseSprite` 계열 머티리얼을 쓴다 (같은 지오메트리, 렌더 패스만 다름).
 - **SpriteRenderer는 머티리얼 하나당 텍스처 하나.** SRP Batcher가 켜진 상태에서 서로 다른 텍스처의 스프라이트가 같은 커스텀 머티리얼을 공유하면 엉뚱한 텍스처로 그려진다 (예: `M_Actor_Prince`/`M_Actor_Princess`, `M_Prop_Px`/`M_Prop_Ind`로 분리). 타일맵은 영향 없음.

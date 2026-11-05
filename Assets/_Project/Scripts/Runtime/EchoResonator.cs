@@ -35,8 +35,9 @@ namespace DuskTwilight
             sfx.playOnAwake = false;
         }
 
-        void Start() { if (SenseController.I) SenseController.I.EchoEmitted += OnEcho; }
-        void OnDestroy() { if (SenseController.I) SenseController.I.EchoEmitted -= OnEcho; }
+        // answers the prince's call only (its own ring and footsteps don't set it off)
+        void OnEnable() { EchoCaller.Called += OnEcho; }
+        void OnDisable() { EchoCaller.Called -= OnEcho; }
 
         void OnEcho(Vector2 from, float strength)
         {

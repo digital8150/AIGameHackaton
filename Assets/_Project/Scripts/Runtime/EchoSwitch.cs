@@ -42,9 +42,9 @@ namespace DuskTwilight
             Apply();
         }
 
-        void OnEnable() { if (SenseController.I) SenseController.I.EchoEmitted += OnEcho; }
-        void Start() { if (SenseController.I) { SenseController.I.EchoEmitted -= OnEcho; SenseController.I.EchoEmitted += OnEcho; } }
-        void OnDisable() { if (SenseController.I) SenseController.I.EchoEmitted -= OnEcho; }
+        // only the prince's deliberate call counts (not footsteps, checkpoints or other switches' clicks)
+        void OnEnable() { EchoCaller.Called += OnEcho; }
+        void OnDisable() { EchoCaller.Called -= OnEcho; }
 
         void OnEcho(Vector2 from, float strength)
         {

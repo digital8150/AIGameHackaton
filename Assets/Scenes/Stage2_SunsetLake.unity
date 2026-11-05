@@ -6074,11 +6074,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7061271658526074873, guid: 22bb7bbfa5a693e43b8a8d4462a6fbaa, type: 3}
       propertyPath: maxX
-      value: 73.5
+      value: 86.7
       objectReference: {fileID: 0}
     - target: {fileID: 7061271658526074873, guid: 22bb7bbfa5a693e43b8a8d4462a6fbaa, type: 3}
       propertyPath: maxY
-      value: 9
+      value: 8.4
       objectReference: {fileID: 0}
     - target: {fileID: 7061271658526074873, guid: 22bb7bbfa5a693e43b8a8d4462a6fbaa, type: 3}
       propertyPath: minX
@@ -17511,15 +17511,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5041494166128261712, guid: e6e12cb6ebabc1a488e8b102cf36652d, type: 3}
       propertyPath: clearLine
-      value: "\uC18C\uB9AC\uC640 \uBE5B\uC744 \uC11C\uB85C \uBE4C\uB824\uC8FC\uBA70"
+      value: "\uACF5\uC8FC\uC758 \uB9D0\uC774, \uB458\uC758 \uAE38\uC774 \uB418\uC5C8\uB2E4"
       objectReference: {fileID: 0}
     - target: {fileID: 5041494166128261712, guid: e6e12cb6ebabc1a488e8b102cf36652d, type: 3}
       propertyPath: nextScene
-      value: Ch1_PrinceInDark
+      value: Stage3_EchoCave
       objectReference: {fileID: 0}
     - target: {fileID: 5041494166128261712, guid: e6e12cb6ebabc1a488e8b102cf36652d, type: 3}
       propertyPath: clearTitle
-      value: "\uD568\uAED8 \uAC77\uB294 \uBC95"
+      value: "\uB178\uC744\uC744 \uAC74\uB108\uB2E4"
       objectReference: {fileID: 0}
     - target: {fileID: 5041494166128261712, guid: e6e12cb6ebabc1a488e8b102cf36652d, type: 3}
       propertyPath: startPoint
@@ -17527,16 +17527,15 @@ PrefabInstance:
       objectReference: {fileID: 1187765859}
     - target: {fileID: 5041494166128261712, guid: e6e12cb6ebabc1a488e8b102cf36652d, type: 3}
       propertyPath: chapterLine
-      value: "\uD574\uAC00 \uC9C0\uB294 \uC5B8\uB355\uC5D0\uC11C, \uB458\uC740 \uCC98\uC74C
-        \uB9CC\uB0AC\uB2E4"
+      value: "\uB9D0\uC774 \uAE38\uC774 \uB418\uB294 \uACF3"
       objectReference: {fileID: 0}
     - target: {fileID: 5041494166128261712, guid: e6e12cb6ebabc1a488e8b102cf36652d, type: 3}
       propertyPath: chapterName
-      value: "\uCCAB \uD669\uD63C"
+      value: "\uB178\uC744\uC774 \uC7A0\uAE34 \uD638\uC218"
       objectReference: {fileID: 0}
     - target: {fileID: 5041494166128261712, guid: e6e12cb6ebabc1a488e8b102cf36652d, type: 3}
       propertyPath: chapterLabel
-      value: "\uC11C\uC7A5"
+      value: "2\uB2E8\uACC4"
       objectReference: {fileID: 0}
     - target: {fileID: 5211872291915775132, guid: e6e12cb6ebabc1a488e8b102cf36652d, type: 3}
       propertyPath: gate
