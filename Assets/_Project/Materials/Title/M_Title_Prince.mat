@@ -33,8 +33,8 @@ Material:
     - _ColorMask: 15
     - _Desaturate: 0.15
     - _FadeBottom: 0.32
-    - _FadeLeft: 0
-    - _FadeRight: 0.2
+    - _FadeLeft: 0.12
+    - _FadeRight: 0
     - _LowKey: 0.6
     - _LowKeyTop: 0.55
     - _NoiseScale: 7
