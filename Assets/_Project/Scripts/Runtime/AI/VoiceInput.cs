@@ -21,6 +21,21 @@ namespace DuskTwilight
         public float maxSeconds = 6f;
         public float minSeconds = 0.3f;
 
+        [Header("Accuracy")]
+        [Tooltip("Tell Whisper which words to expect: the words of every word puzzle in the scene (nearest first) + commands. " +
+                 "Short Korean words are recognised far more reliably with this.")]
+        public bool biasToSceneWords = true;
+        [Tooltip("Always in the prompt (voice commands)")]
+        public string commandWords = "바꿔, 점프, 힌트, 열어";
+        [Tooltip("Cut silence before and after the voice (RMS below this)")]
+        [Range(0f, 0.1f)] public float silenceLevel = 0.012f;
+        [Tooltip("Silence kept around the voice after trimming (s)")]
+        public float keepPadding = 0.25f;
+        [Tooltip("Whisper misses very short clips: pad the voice with silence up to this length (s)")]
+        public float minClipSeconds = 1.2f;
+        [Tooltip("Raise quiet recordings to this peak (0 = off)")]
+        [Range(0f, 1f)] public float normalizePeak = 0.8f;
+
         public float Level { get; private set; }
         public bool Recording { get; private set; }
         public bool Transcribing { get; private set; }
@@ -93,7 +108,9 @@ namespace DuskTwilight
             {
                 if (!whisper.IsLoaded && !whisper.IsLoading) await whisper.InitModel();
                 while (whisper.IsLoading) await Task.Yield();
-                var res = await whisper.GetTextAsync(data, sampleRate, channels);
+                if (biasToSceneWords) whisper.initialPrompt = BuildPrompt();
+                var mono = Prepare(data, channels);
+                var res = await whisper.GetTextAsync(mono, sampleRate, 1);
                 text = Clean(res?.Result);
             }
             catch (Exception e) { Debug.LogWarning("[Voice] Whisper failed: " + e.Message); }
@@ -101,6 +118,55 @@ namespace DuskTwilight
             LastTranscript = text;
             Transcribing = false;
             if (!string.IsNullOrEmpty(text)) Transcribed?.Invoke(text);
+        }
+
+        /// <summary>
+        /// Prompt that primes Whisper with the words the player is likely to say: the nearest word puzzle's
+        /// choices first, then every other puzzle in the scene, then the voice commands.
+        /// </summary>
+        string BuildPrompt()
+        {
+            var words = new System.Collections.Generic.List<string>();
+            void Add(string[] ws) { if (ws != null) foreach (var w in ws) if (!string.IsNullOrEmpty(w) && !words.Contains(w)) words.Add(w); }
+            if (WordTarget.Nearest) Add(WordTarget.Nearest.choices);
+            foreach (var t in FindObjectsByType<WordTarget>(FindObjectsSortMode.None)) Add(t.choices);
+            Add(commandWords.Split(new[] { ',', ' ' }, StringSplitOptions.RemoveEmptyEntries));
+            return string.Join(", ", words) + ".";
+        }
+
+        /// <summary>Mono, silence trimmed, quiet voices raised, padded so Whisper gets at least minClipSeconds.</summary>
+        float[] Prepare(float[] data, int channels)
+        {
+            int n = data.Length / Mathf.Max(1, channels);
+            var mono = new float[n];
+            for (int i = 0; i < n; i++)
+            {
+                float sum = 0;
+                for (int c = 0; c < channels; c++) sum += data[i * channels + c];
+                mono[i] = sum / channels;
+            }
+            // trim silence (20 ms windows)
+            int win = Mathf.Max(1, sampleRate / 50), first = -1, last = -1;
+            for (int w = 0; w + win <= n; w += win)
+            {
+                float e = 0;
+                for (int i = w; i < w + win; i++) e += mono[i] * mono[i];
+                if (Mathf.Sqrt(e / win) > silenceLevel) { if (first < 0) first = w; last = w + win; }
+            }
+            if (first < 0) { first = 0; last = n; }   // nothing loud: let Whisper decide
+            int pad = Mathf.RoundToInt(keepPadding * sampleRate);
+            first = Mathf.Max(0, first - pad); last = Mathf.Min(n, last + pad);
+            int len = last - first;
+            // normalise
+            float peak = 0;
+            for (int i = first; i < last; i++) peak = Mathf.Max(peak, Mathf.Abs(mono[i]));
+            float gain = normalizePeak > 0 && peak > 1e-4f ? Mathf.Min(8f, normalizePeak / peak) : 1f;
+            // centre the voice in at least minClipSeconds of audio
+            int total = Mathf.Max(len, Mathf.RoundToInt(minClipSeconds * sampleRate));
+            var outBuf = new float[total];
+            int off = (total - len) / 2;
+            for (int i = 0; i < len; i++) outBuf[off + i] = Mathf.Clamp(mono[first + i] * gain, -1f, 1f);
+            return outBuf;
         }
 
         /// <summary>Strips Whisper's non-speech tags ([BLANK_AUDIO], (음악)) and punctuation.</summary>
