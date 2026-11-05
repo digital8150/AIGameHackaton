@@ -33,8 +33,8 @@ Material:
     - _DarkAlpha: 1
     - _Depth: 0
     - _EdgeBoost: 1.8
-    - _Glint: 1
-    - _LightAlpha: 0.1
+    - _Glint: 0.6
+    - _LightAlpha: 0
     - _SelfLit: 0
     - _Warmth: 1
     m_Colors:

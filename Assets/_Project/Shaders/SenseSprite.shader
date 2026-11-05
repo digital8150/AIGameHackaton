@@ -97,15 +97,15 @@ Shader "DuskTwilight/SenseSprite"
                 lightCol = lerp(lightCol, lightCol * float3(0.78, 0.66, 0.92), low * 0.45 * _Warmth);
                 // atmospheric depth
                 lightCol = lerp(lightCol, _DT_HazeColor.rgb, _Depth);
-                // glass glint (echo stones are nearly invisible to the eye)
+                // glass glint: echo stones are invisible to the eye — only a rare stray pixel of
+                // sunlight catches on them (never the silhouette), so the princess cannot read the path
                 float glint = 0;
                 if (_Glint > 0)
                 {
-                    float diag = frac((wp.x + wp.y) * 0.5 - _DT_Now * 0.6);
-                    glint = step(0.93, diag) * _Glint + step(0.985, DT_Hash(floor(wp * DT_PPU) + floor(_DT_Now * 6))) * 0.8 * _Glint;
-                    lightCol = lerp(float3(1.0, 0.95, 0.85), lightCol, 0.4) + glint;
+                    glint = step(0.996, DT_Hash(floor(wp * DT_PPU) + floor(_DT_Now * 3))) * _Glint;
+                    lightCol = lerp(lightCol, float3(1.0, 0.97, 0.88), glint);
                 }
-                float lightA = tex.a * saturate(_LightAlpha + glint * 0.6);
+                float lightA = tex.a * saturate(_LightAlpha + glint * 0.45);
 
                 // ---------------- DARK: the prince hears the world into being -----------------------
                 float2 echo = DT_Echo(wp);
