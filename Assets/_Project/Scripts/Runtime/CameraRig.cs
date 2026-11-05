@@ -87,6 +87,7 @@ namespace DuskTwilight
         /// <summary>A downward thump (a heavy landing): the view dips, springs back and settles. amount = dip in metres, capped.</summary>
         public void Impact(float amount)
         {
+            if (!GameSettings.ScreenShake) return;
             float a = Mathf.Min(Mathf.Abs(amount), impactMaxOffset);
             if (a < ImpactValue()) return;
             impactAmp = a; impactT = 0f;
@@ -95,7 +96,7 @@ namespace DuskTwilight
 
         public void Snap() { UpdateZone(true); aheadX = 0; basePos = Target(); transform.position = basePos; vel = Vector3.zero; init = true; }
 
-        public void Kick(float amount) { shake = Mathf.Max(shake, amount); }
+        public void Kick(float amount) { if (GameSettings.ScreenShake) shake = Mathf.Max(shake, amount); }
 
         Vector3 basePos;
         bool init;

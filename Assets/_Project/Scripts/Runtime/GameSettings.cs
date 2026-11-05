@@ -18,6 +18,23 @@ namespace DuskTwilight
         public static float MusicVolume { get => PlayerPrefs.GetFloat(KMusic, 0.7f); set => SetF(KMusic, value); }
         public static float SfxVolume { get => PlayerPrefs.GetFloat(KSfx, 0.85f); set => SetF(KSfx, value); }
 
+        // ---- accessibility
+        const string KText = "settings.textsize", KShake = "settings.shake", KColor = "settings.colorassist";
+        /// <summary>Caption / guide text size slider 0..1 (→ <see cref="TextScale"/> 100%..160%).</summary>
+        public static float TextSize { get => PlayerPrefs.GetFloat(KText, 0f); set => SetF(KText, value); }
+        public static float TextScale => 1f + TextSize * 0.6f;
+        /// <summary>Camera shake and landing thumps (off for motion-sensitive players).</summary>
+        public static bool ScreenShake { get => PlayerPrefs.GetInt(KShake, 1) == 1; set => SetB(KShake, value); }
+        /// <summary>Colour-blind assist: red-green (deuteranopia) correction filter over the whole screen.</summary>
+        public static bool ColorAssist { get => PlayerPrefs.GetInt(KColor, 0) == 1; set => SetB(KColor, value); }
+
+        static void SetB(string key, bool v)
+        {
+            PlayerPrefs.SetInt(key, v ? 1 : 0);
+            PlayerPrefs.Save();
+            Changed?.Invoke();
+        }
+
         /// <summary>Empty = first available device.</summary>
         public static string MicDevice
         {

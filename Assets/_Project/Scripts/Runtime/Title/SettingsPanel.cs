@@ -27,6 +27,13 @@ namespace DuskTwilight
         public Toggle fullscreen;
         public Dropdown resolution;
 
+        [Header("Accessibility")]
+        [Tooltip("Caption / guide text size (100%..160%)")]
+        public Slider textSize;
+        public Text textSizeValue;
+        public Toggle screenShake;
+        public Toggle colorAssist;
+
         [Header("Voice")]
         public Dropdown micDevice;
         [Tooltip("Pivot-left bar scaled on X by the live microphone level.")]
@@ -89,6 +96,16 @@ namespace DuskTwilight
                 fullscreen.SetIsOnWithoutNotify(GameSettings.Fullscreen);
                 fullscreen.onValueChanged.AddListener(v => GameSettings.Fullscreen = v);
             }
+
+            if (textSize)
+            {
+                textSize.minValue = 0; textSize.maxValue = 1;
+                textSize.SetValueWithoutNotify(GameSettings.TextSize);
+                if (textSizeValue) textSizeValue.text = Mathf.RoundToInt(GameSettings.TextScale * 100f) + "%";
+                textSize.onValueChanged.AddListener(v => { GameSettings.TextSize = v; if (textSizeValue) textSizeValue.text = Mathf.RoundToInt(GameSettings.TextScale * 100f) + "%"; });
+            }
+            if (screenShake) { screenShake.SetIsOnWithoutNotify(GameSettings.ScreenShake); screenShake.onValueChanged.AddListener(v => GameSettings.ScreenShake = v); }
+            if (colorAssist) { colorAssist.SetIsOnWithoutNotify(GameSettings.ColorAssist); colorAssist.onValueChanged.AddListener(v => GameSettings.ColorAssist = v); }
 
             if (resolution) FillResolutions();
             if (micDevice) FillMics();
