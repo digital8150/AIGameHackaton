@@ -283,7 +283,7 @@ namespace DuskTwilight
         public void Open()
         {
             if (open || Solved || !CanSpeakNow) return;
-            if (!canvas) { Debug.LogError($"[{GetType().Name}] choice panel is not assigned - use a prefab with Word Panel.", this); return; }
+            if (!canvas) return;   // voice-only targets (gold objects, floating stones) have no choice panel
             if (questionText) questionText.text = panelQuestion;
             if (options.Count != choices.Length) MakeOptions();
             open = true;

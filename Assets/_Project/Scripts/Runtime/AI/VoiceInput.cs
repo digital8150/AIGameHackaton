@@ -49,6 +49,11 @@ namespace DuskTwilight
         AudioClip clip;
         string device;
         float started;
+        // the mic stays open in a looping buffer once used: opening/closing the device on every press stalls the
+        // main thread (mashing V hitched the game). A press only marks where the recording starts and ends.
+        const int BufferSeconds = 10;
+        string openDevice;
+        int startPos;
         readonly float[] window = new float[512];
 
         void Awake()
@@ -79,18 +84,29 @@ namespace DuskTwilight
             if (!hold || Time.time - started > maxSeconds) End();
         }
 
-        void Begin()
+        void EnsureMic()
         {
             device = GameSettings.ResolveMicDevice();
-            clip = Microphone.Start(device, false, Mathf.CeilToInt(maxSeconds) + 1, sampleRate);
+            if (clip && openDevice == device && Microphone.IsRecording(device)) return;
+            if (clip && Microphone.IsRecording(openDevice)) Microphone.End(openDevice);
+            clip = Microphone.Start(device, true, BufferSeconds, sampleRate);
+            openDevice = device;
+        }
+
+        int Pos() => Mathf.Max(0, Microphone.GetPosition(device));
+
+        void Begin()
+        {
+            EnsureMic();
+            startPos = Pos();
             started = Time.time;
             Recording = true;
         }
 
         void MeasureLevel()
         {
-            int pos = Microphone.GetPosition(device) - window.Length;
-            if (pos < 0) return;
+            int pos = Pos() - window.Length;
+            if (pos < 0) pos += clip.samples;
             clip.GetData(window, pos);
             float sum = 0;
             for (int i = 0; i < window.Length; i++) sum += window[i] * window[i];
@@ -99,13 +115,12 @@ namespace DuskTwilight
 
         void End()
         {
-            int samples = Microphone.GetPosition(device);
-            Microphone.End(device);
+            int samples = (Pos() - startPos + clip.samples) % clip.samples;
             Recording = false;
             Level = 0;
             if (samples < minSeconds * sampleRate) return;
             var data = new float[samples * clip.channels];
-            clip.GetData(data, 0);
+            clip.GetData(data, startPos);   // wraps around the looping buffer
             Transcribe(data, clip.channels);
         }
 
@@ -195,7 +210,8 @@ namespace DuskTwilight
 
         void OnDisable()
         {
-            if (Recording) { Microphone.End(device); Recording = false; }
+            if (clip && Microphone.IsRecording(openDevice)) Microphone.End(openDevice);
+            Recording = false;
         }
     }
 }
