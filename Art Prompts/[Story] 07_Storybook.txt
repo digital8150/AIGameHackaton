@@ -1,10 +1,8 @@
 # [Story 07] 황혼의 그림책 — 타이틀 → 1단계 사이 프롤로그 컷신 (NAI V5, 뒤에 [Base Prompts].txt 결합)
-# v2: 단색(세피아 연필) 그림책 페이지 + 게임 스프라이트와 같은 3등신 치비 인물. 16:9, 고화질은 --size 1920x1088 (Anlas).
+# v3: 단색(세피아 연필) 그림책 페이지 + 인물은 [Char_*_Full]·[Char_*_Bust]의 외형 줄 그대로(치비 아님). 16:9, 고화질 --size 1920x1088 (Anlas).
 # 게임에서는 해진 그림책 셰이더를 한 번 더 거친다. 글자는 그림에 넣지 않는다 (문구는 게임이 류류체로 얹음).
-# 실존 게임·캐릭터 이름은 쓰지 않는다 — 인물은 아래 외형 묘사로만 고정한다.
-#   공주: small pointed black horns on forehead, short fluffy bob with blunt bangs and outward-curled sidelocks, big round eyes, small fang, high lace collar, short corset, short bell skirt, long dark cloak
-#   왕자: white cloth bandage wrapped over his eyes, fluffy messy short pale hair, high lace collar, short royal tunic, long pale cloak
-# 순서: 주제/인원 → 치비 비율 → 인물 외형 → 장면 → 단색 스타일 → 자연어 문장. 화면 위쪽 1/4은 문구 자리로 비운다.
+# 실존 게임·캐릭터 이름 줄은 옮기지 않는다 — 외형 묘사만.
+# 순서: 주제/인원 → 전신 비율 → 인물 외형 → 장면 → 단색 스타일 → 자연어 문장. 화면 위쪽 1/4은 문구 자리로 비운다.
 
 ## 1. 표지 — 황혼의 그림책 (16:9)
 no humans, -3::text, letters, title, words::, still life, {{an old closed fairytale book}}, a sun and a crescent moon embossed together on its worn cover, frayed corners, a dried flower and a ribbon bookmark, light falling from one side and shadow on the other, large blank empty area in the upper part of the picture, -2::paper sheets, flying papers, scattered pages::,
@@ -17,60 +15,67 @@ no humans, -3::text, letters::, scenery, wide shot, {{two castles at war across 
 A kingdom of light and a kingdom of darkness locked in a long war, drawn in brown pencil as a simple old picture-book page.
 
 ## 3. 쫓겨난 전장의 공주 (16:9)
-1girl, solo, wide shot, from side, full body,
-1.6::chibi, 3-head-tall chibi proportions, big chibi head, short limbs::, -2::tall, mature proportions::,
-small pointed black horns on forehead, short fluffy bob with blunt bangs and outward-curled sidelocks, big round eyes, high lace collar, short corset, short bell skirt, long dark cloak,
-{{the little horned princess walking away alone from a closed castle gate}}, one hand pressed over her ear, a broken cannon and smoke behind her, crows in the sky, large blank empty area in the upper part of the picture, -2::paper sheets, flying papers, scattered pages::,
+1girl, solo, dragon girl, demon girl, wide shot, from side, full body,
+1.6::tall slender proportions, long legs, mature elegant figure, small head::, -2::chibi, doll proportions, short stature, big head::,
+2.2::small short oni horns on forehead, tiny conical pointed black horns::, -3::large horns, crescent horns, curved horns, antlers::,
+pale platinum silver-white medium-short hair, {{fluffy outward-curled sidelocks framing cheeks, flipped hair ends}}, blunt bangs, big expressive eyes, single small fang,
+high-neck black lace frilled collar, intricate filigree metallic corset bodice, twin circular cloak clasps with chains across chest, long dark cloak, layered gothic long skirt, ornate ankle boots, small bell anklet,
+{{the horned princess walking away alone from a closed castle gate}}, one hand pressed over her ear, a broken cannon and smoke behind her, crows in the sky, large blank empty area in the upper part of the picture, -2::paper sheets, flying papers, scattered pages::,
 2.0::monochrome, sepia::, single warm brown ink on aged cream paper, graphite pencil sketch, rough expressive pencil strokes, picture book illustration, simple sparse background, soft vignette, paper texture, -2::colorful, vibrant colors, anime coloring::,
-A fierce little war princess who lost her hearing to cannon fire walks out of her kingdom's gate, exiled, drawn in brown pencil as a sad picture-book page.
+A fierce war princess who lost her hearing to cannon fire walks out of her kingdom's gate, exiled, drawn in brown pencil as a sad picture-book page.
 
 ## 4. 탑에 갇힌 왕자 (16:9)
-1boy, solo, wide shot, full body,
-1.6::chibi, 3-head-tall chibi proportions, big chibi head, short limbs::, -2::tall, mature proportions::,
-2.0::white cloth bandage wrapped over his eyes::, -3::visible eyes, horns::, fluffy messy short pale hair, high lace collar, short royal tunic, long pale cloak,
-{{the little blind prince sitting alone on the window sill of a tall stone tower}}, ivy on the tower, a locked iron door, a faraway castle on the horizon, large blank empty area in the upper part of the picture, -2::paper sheets, flying papers, scattered pages::,
+1boy, solo, bishounen, slender fragile prince, wide shot, full body,
+1.6::tall slender proportions, long legs, small head::, -2::chibi, doll proportions, short stature, big head::,
+2.2::bandaged eyes, white cloth bandage wrapped around eyes, blindfold::, -3::visible eyes, open eyes, pupils, horns::,
+soft pale blonde medium-short fluffy slightly wavy hair, soft bangs falling over the eye bandage, fragile melancholic expression,
+high-neck ivory lace frilled collar, weathered white royal tunic with tarnished filigree, torn-off royal emblem stitch marks on chest, twin circular cloak clasps with chains across chest, long faded ivory cloak with frayed hem, tall boots,
+{{the blind prince sitting alone on the window sill of a tall stone tower}}, ivy on the tower, a locked iron door, a faraway castle on the horizon, large blank empty area in the upper part of the picture, -2::paper sheets, flying papers, scattered pages::,
 2.0::monochrome, sepia::, single warm brown ink on aged cream paper, graphite pencil sketch, rough expressive pencil strokes, picture book illustration, simple sparse background, soft vignette, paper texture, -2::colorful, vibrant colors, anime coloring::,
-A gentle little prince, blinded by an assassin's blade and locked in a forgotten tower during a fight over the throne, drawn in brown pencil as a quiet picture-book page.
+A gentle prince, blinded by an assassin's blade and locked in a forgotten tower during a fight over the throne, drawn in brown pencil as a quiet picture-book page.
 
 ## 5. 무너지는 탑 (16:9)
-1boy, solo, wide shot, full body,
-1.6::chibi, 3-head-tall chibi proportions, big chibi head, short limbs::, -2::tall, mature proportions::,
-2.0::white cloth bandage wrapped over his eyes::, -3::visible eyes, horns::, fluffy messy short pale hair, high lace collar, short royal tunic, long pale cloak,
-{{the old tower crumbling into rubble}}, the little blind prince stepping out through the broken stones with one hand reaching forward to feel the way, falling stones, a long winding road into wild land, large blank empty area in the upper part of the picture, -2::paper sheets, flying papers, scattered pages::,
+1boy, solo, bishounen, slender fragile prince, wide shot, full body,
+1.6::tall slender proportions, long legs, small head::, -2::chibi, doll proportions, short stature, big head::,
+2.2::bandaged eyes, white cloth bandage wrapped around eyes, blindfold::, -3::visible eyes, open eyes, pupils, horns::,
+soft pale blonde medium-short fluffy slightly wavy hair, soft bangs falling over the eye bandage,
+high-neck ivory lace frilled collar, weathered white royal tunic with tarnished filigree, twin circular cloak clasps with chains across chest, long faded ivory cloak with frayed hem, tall boots,
+{{the old tower crumbling into rubble}}, the blind prince stepping out through the broken stones with one hand reaching forward to feel the way, falling stones, a long winding road into wild land, large blank empty area in the upper part of the picture, -2::paper sheets, flying papers, scattered pages::,
 2.0::monochrome, sepia::, single warm brown ink on aged cream paper, graphite pencil sketch, rough expressive pencil strokes, picture book illustration, simple sparse background, soft vignette, paper texture, -2::colorful, vibrant colors, anime coloring::,
 After many years the forgotten tower falls apart and the blind prince walks out and wanders with nowhere to go, drawn in brown pencil as an old picture-book page.
 
 ## 6. 깊고 어두운 숲에서의 만남 (16:9)
 1girl, 1boy, wide shot, from side, full body,
-1.6::chibi, 3-head-tall chibi proportions, big chibi heads, short limbs::, -2::tall, mature proportions::,
-the princess: small pointed black horns on forehead, short fluffy bob with blunt bangs, long dark cloak, holding a short sword,
-the prince: 2.0::white cloth bandage wrapped over his eyes::, fluffy messy short pale hair, long pale cloak,
-{{deep dark forest of huge twisted trees}}, the little horned princess points her sword at the little blind prince but the blade is starting to lower, the prince stands calmly, roots and mist, large dark empty area in the upper part of the picture, -2::paper sheets, flying papers::,
+1.6::tall slender proportions, long legs, small heads::, -2::chibi, doll proportions, short stature, big head::,
+the princess: 2.2::small short oni horns on forehead, tiny conical pointed black horns::, -3::large horns, antlers::, pale platinum medium-short hair with outward-curled sidelocks, blunt bangs, black lace frilled collar, filigree corset, long dark cloak, gothic long skirt, holding a sword,
+the prince: 2.2::white cloth bandage wrapped around eyes::, -3::visible eyes::, soft pale blonde fluffy wavy hair, ivory lace frilled collar, white royal tunic, long faded ivory cloak, tall boots,
+{{deep dark forest of huge twisted trees}}, the horned princess points her sword at the blind prince but the blade is starting to lower, the prince stands calmly, roots and mist, large dark empty area in the upper part of the picture, -2::paper sheets, flying papers::,
 2.0::monochrome, sepia::, single warm brown ink on aged cream paper, graphite and charcoal pencil sketch, rough expressive pencil strokes, picture book illustration, simple sparse background, soft vignette, paper texture, -2::colorful, vibrant colors, anime coloring::,
 In the deepest forest the exiled princess meets the prince of the enemy kingdom and points her sword at him, then hesitates, drawn in brown pencil as a tense picture-book page.
 
 ## 7. 머리를 쓰다듬는 왕자 (16:9)
-1girl, 1boy, medium shot, from side,
-1.6::chibi, 3-head-tall chibi proportions, big chibi heads, short limbs::, -2::tall, mature proportions::,
-the princess: small pointed black horns on forehead, short fluffy bob with blunt bangs and outward-curled sidelocks, big round eyes, small fang, long dark cloak,
-the prince: 2.0::white cloth bandage wrapped over his eyes::, fluffy messy short pale hair, high lace collar, long pale cloak,
-{{the little blind prince gently patting the little horned princess on the head}}, she looks up flustered with a small pout, he smiles kindly, large blank empty area in the upper part of the picture, -2::paper sheets, flying papers, scattered pages::,
+1girl, 1boy, cowboy shot, upper body, from side,
+-2::chibi, doll proportions, big head::,
+the princess: 2.2::small short oni horns on forehead, tiny conical pointed black horns::, -3::large horns, antlers::, pale platinum silver-white medium-short hair, {{fluffy outward-curled sidelocks framing cheeks, flipped hair ends}}, blunt bangs, 1.4::big expressive anime eyes, thick eyelashes::, single small fang, high-neck black lace frilled collar, intricate filigree corset bodice, twin circular cloak clasps with chains, long dark cloak,
+the prince: bishounen, slender fragile prince, 2.2::bandaged eyes, white cloth bandage wrapped around eyes::, -3::visible eyes::, soft pale blonde medium-short fluffy slightly wavy hair, soft bangs falling over the bandage, gentle faint smile, high-neck ivory lace frilled collar, weathered white royal doublet with tarnished filigree, faded ivory cloak,
+{{the blind prince gently patting the horned princess on the head}}, she looks up flustered with a small pout, he smiles kindly, large blank empty area in the upper part of the picture, -2::paper sheets, flying papers, scattered pages::,
 2.0::monochrome, sepia::, single warm brown ink on aged cream paper, graphite pencil sketch, rough expressive pencil strokes, picture book illustration, simple sparse background, soft vignette, paper texture, -2::colorful, vibrant colors, anime coloring::,
 The kind blind prince thanks the fierce princess and pats her head while she cannot believe how naive he is, drawn in brown pencil as a warm, slightly funny picture-book page.
 
 ## 8. 황혼숲의 샘 이야기 (16:9)
 1boy, 1girl, wide shot, full body,
-1.6::chibi, 3-head-tall chibi proportions, big chibi heads, short limbs::, -2::tall, mature proportions::,
-the prince: 2.0::white cloth bandage wrapped over his eyes::, fluffy messy short pale hair, long pale cloak,
-the princess: 2.0::small pointed black horns on forehead::, -3::large horns, curved horns, antlers::, short fluffy bob with blunt bangs, long dark cloak, arms crossed,
-{{the little prince pointing far ahead}}, a tiny shining spring drawn like a dream bubble far away between the trees, the princess watching his lips, a path into a forest, large blank empty area in the upper part of the picture, -2::paper sheets, flying papers, scattered pages::,
+1.6::tall slender proportions, long legs, small heads::, -2::chibi, doll proportions, short stature, big head::,
+the prince: 2.2::white cloth bandage wrapped around eyes::, -3::visible eyes::, soft pale blonde fluffy wavy hair, ivory lace frilled collar, white royal tunic, long faded ivory cloak, tall boots,
+the princess: 2.2::small short oni horns on forehead, tiny conical pointed black horns::, -3::large horns, curved horns, antlers::, pale platinum medium-short hair with outward-curled sidelocks, blunt bangs, black lace frilled collar, filigree corset, long dark cloak, gothic long skirt, arms crossed,
+{{the prince pointing far ahead}}, a tiny shining spring far away between the trees, the princess watching his lips, a path into a forest, large blank empty area in the upper part of the picture, -2::paper sheets, flying papers, scattered pages::,
 2.0::monochrome, sepia::, single warm brown ink on aged cream paper, graphite pencil sketch, rough expressive pencil strokes, picture book illustration, simple sparse background, soft vignette, paper texture, -2::colorful, vibrant colors, anime coloring::,
 The prince tells of a spring in the twilight forest said to heal eyes, while the deaf princess reads his lips, drawn in brown pencil as a hopeful picture-book page.
 
 ## 9. 함께 떠나는 길 (16:9)
 1girl, 1boy, wide shot, from behind, full body,
-1.6::chibi, 3-head-tall chibi proportions, big chibi heads, short limbs::, -2::tall, mature proportions::,
-the prince in a long pale cloak walking in front feeling his way, the princess with 2.0::small pointed black horns::, -3::large horns, antlers::, short fluffy bob and a long dark cloak following a step behind,
-{{two little figures walking side by side into a mysterious forest}}, strange stones and floating planks along the path, sun on one side and crescent moon on the other, large blank empty area in the upper part of the picture, -2::paper sheets, flying papers, scattered pages::,
+1.6::tall slender proportions, long legs, small heads::, -2::chibi, doll proportions, short stature, big head::,
+the prince: white cloth bandage around eyes, soft pale blonde fluffy hair, long faded ivory cloak, walking in front feeling his way,
+the princess: 2.2::small short oni horns on forehead, tiny pointed black horns::, -3::large horns, antlers::, pale platinum medium-short hair, long dark cloak, gothic long skirt, following a step behind,
+{{two figures walking side by side into a mysterious forest}}, strange stones and floating planks along the path, sun on one side and crescent moon on the other, large blank empty area in the upper part of the picture, -2::paper sheets, flying papers, scattered pages::,
 2.0::monochrome, sepia::, single warm brown ink on aged cream paper, graphite pencil sketch, rough expressive pencil strokes, picture book illustration, simple sparse background, soft vignette, paper texture, -2::colorful, vibrant colors, anime coloring::,
 The road to the twilight forest is full of mysterious traps, and the princess, unable to just watch, follows the blind prince, drawn in brown pencil as the last page of the prologue.
