@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1575459855874816888}
   - component: {fileID: 7082693565218095158}
   - component: {fileID: 389601435213287359}
+  - component: {fileID: 7683199386557564960}
   m_Layer: 0
   m_Name: Value
   m_TagString: Untagged
@@ -35,7 +36,7 @@ RectTransform:
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
   m_AnchoredPosition: {x: 70, y: 0}
-  m_SizeDelta: {x: 70, y: 38}
+  m_SizeDelta: {x: 70, y: 50}
   m_Pivot: {x: 1, y: 0.5}
 --- !u!222 &7082693565218095158
 CanvasRenderer:
@@ -67,11 +68,11 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: c59c71d24207fd74cbcf00877fa6de66, type: 3}
-    m_FontSize: 32
-    m_FontStyle: 0
+    m_FontSize: 44
+    m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 10
-    m_MaxSize: 40
+    m_MaxSize: 44
     m_Alignment: 5
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -79,6 +80,21 @@ MonoBehaviour:
     m_VerticalOverflow: 1
     m_LineSpacing: 1
   m_Text: 100
+--- !u!114 &7683199386557564960
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 268129723097610427}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Outline
+  m_EffectColor: {r: 0.3, g: 0.22, b: 0.15, a: 0.85}
+  m_EffectDistance: {x: 0.8, y: -0.8}
+  m_UseGraphicAlpha: 1
 --- !u!1 &320985364226760457
 GameObject:
   m_ObjectHideFlags: 0
@@ -90,6 +106,7 @@ GameObject:
   - component: {fileID: 2684675885703584523}
   - component: {fileID: 3460397386204558377}
   - component: {fileID: 9141818897397459368}
+  - component: {fileID: 5019209810081060069}
   m_Layer: 0
   m_Name: Label
   m_TagString: Untagged
@@ -146,11 +163,11 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: c59c71d24207fd74cbcf00877fa6de66, type: 3}
-    m_FontSize: 40
+    m_FontSize: 52
     m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 10
-    m_MaxSize: 40
+    m_MaxSize: 52
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -158,6 +175,21 @@ MonoBehaviour:
     m_VerticalOverflow: 1
     m_LineSpacing: 1
   m_Text: "\uB3CC\uC544\uAC00\uAE30"
+--- !u!114 &5019209810081060069
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 320985364226760457}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Outline
+  m_EffectColor: {r: 0.2, g: 0.13, b: 0.08, a: 1}
+  m_EffectDistance: {x: 0.8, y: -0.8}
+  m_UseGraphicAlpha: 1
 --- !u!1 &339709035469447188
 GameObject:
   m_ObjectHideFlags: 0
@@ -1436,6 +1468,7 @@ GameObject:
   - component: {fileID: 319134230354574462}
   - component: {fileID: 8584042318346428549}
   - component: {fileID: 2732229665673402697}
+  - component: {fileID: 7886335317839352936}
   m_Layer: 0
   m_Name: Label
   m_TagString: Untagged
@@ -1492,11 +1525,11 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: c59c71d24207fd74cbcf00877fa6de66, type: 3}
-    m_FontSize: 30
-    m_FontStyle: 0
+    m_FontSize: 42
+    m_FontStyle: 1
     m_BestFit: 1
-    m_MinSize: 18
-    m_MaxSize: 30
+    m_MinSize: 26
+    m_MaxSize: 42
     m_Alignment: 3
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -1504,6 +1537,21 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: Option A
+--- !u!114 &7886335317839352936
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2612034076709398084}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Outline
+  m_EffectColor: {r: 0.2, g: 0.13, b: 0.08, a: 1}
+  m_EffectDistance: {x: 0.8, y: -0.8}
+  m_UseGraphicAlpha: 1
 --- !u!1 &2718332897282594882
 GameObject:
   m_ObjectHideFlags: 0
@@ -1587,6 +1635,7 @@ GameObject:
   - component: {fileID: 1666957493505785623}
   - component: {fileID: 5274834215726438924}
   - component: {fileID: 1954433086471708730}
+  - component: {fileID: 1506494905450380803}
   m_Layer: 0
   m_Name: Folio Left
   m_TagString: Untagged
@@ -1611,7 +1660,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
   m_AnchoredPosition: {x: -350, y: -798}
-  m_SizeDelta: {x: 200, y: 34}
+  m_SizeDelta: {x: 200, y: 46}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5274834215726438924
 CanvasRenderer:
@@ -1643,8 +1692,8 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: c59c71d24207fd74cbcf00877fa6de66, type: 3}
-    m_FontSize: 28
-    m_FontStyle: 0
+    m_FontSize: 40
+    m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 10
     m_MaxSize: 40
@@ -1655,6 +1704,21 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: "\u2014 7 \u2014"
+--- !u!114 &1506494905450380803
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2754232197772125761}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Outline
+  m_EffectColor: {r: 0.32, g: 0.24, b: 0.17, a: 0.85}
+  m_EffectDistance: {x: 0.8, y: -0.8}
+  m_UseGraphicAlpha: 1
 --- !u!1 &2760551948390819857
 GameObject:
   m_ObjectHideFlags: 0
@@ -1791,6 +1855,7 @@ GameObject:
   - component: {fileID: 510702851510250205}
   - component: {fileID: 4896286025169534376}
   - component: {fileID: 1914582638435477544}
+  - component: {fileID: 5092966827111882669}
   m_Layer: 0
   m_Name: Item Label
   m_TagString: Untagged
@@ -1847,11 +1912,11 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: c59c71d24207fd74cbcf00877fa6de66, type: 3}
-    m_FontSize: 30
-    m_FontStyle: 0
+    m_FontSize: 42
+    m_FontStyle: 1
     m_BestFit: 1
-    m_MinSize: 14
-    m_MaxSize: 30
+    m_MinSize: 22
+    m_MaxSize: 42
     m_Alignment: 3
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -1859,6 +1924,21 @@ MonoBehaviour:
     m_VerticalOverflow: 1
     m_LineSpacing: 1
   m_Text: Option A
+--- !u!114 &5092966827111882669
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2856693143813144996}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Outline
+  m_EffectColor: {r: 0.2, g: 0.13, b: 0.08, a: 1}
+  m_EffectDistance: {x: 0.8, y: -0.8}
+  m_UseGraphicAlpha: 1
 --- !u!1 &3084039108143917790
 GameObject:
   m_ObjectHideFlags: 0
@@ -1958,6 +2038,7 @@ GameObject:
   - component: {fileID: 204631775705825183}
   - component: {fileID: 131053203447603562}
   - component: {fileID: 7889077457146094256}
+  - component: {fileID: 5594182166961642154}
   m_Layer: 0
   m_Name: "Label \uD574\uC0C1\uB3C4"
   m_TagString: Untagged
@@ -1982,7 +2063,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
   m_AnchoredPosition: {x: -590, y: -600}
-  m_SizeDelta: {x: 220, y: 46}
+  m_SizeDelta: {x: 220, y: 58}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!222 &131053203447603562
 CanvasRenderer:
@@ -2014,11 +2095,11 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: c59c71d24207fd74cbcf00877fa6de66, type: 3}
-    m_FontSize: 38
-    m_FontStyle: 0
+    m_FontSize: 50
+    m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 10
-    m_MaxSize: 40
+    m_MaxSize: 50
     m_Alignment: 3
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -2026,6 +2107,21 @@ MonoBehaviour:
     m_VerticalOverflow: 1
     m_LineSpacing: 1
   m_Text: "\uD574\uC0C1\uB3C4"
+--- !u!114 &5594182166961642154
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3101037181269043962}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Outline
+  m_EffectColor: {r: 0.2, g: 0.13, b: 0.08, a: 1}
+  m_EffectDistance: {x: 0.8, y: -0.8}
+  m_UseGraphicAlpha: 1
 --- !u!1 &3101073616797940008
 GameObject:
   m_ObjectHideFlags: 0
@@ -2037,6 +2133,7 @@ GameObject:
   - component: {fileID: 3673321127983105935}
   - component: {fileID: 2281818930953700287}
   - component: {fileID: 7711314085171167932}
+  - component: {fileID: 1846459101086555969}
   m_Layer: 0
   m_Name: "Section \uC18C\uB9AC"
   m_TagString: Untagged
@@ -2062,7 +2159,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
   m_AnchoredPosition: {x: -620, y: -214}
-  m_SizeDelta: {x: 240, y: 44}
+  m_SizeDelta: {x: 240, y: 56}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!222 &2281818930953700287
 CanvasRenderer:
@@ -2094,11 +2191,11 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: c59c71d24207fd74cbcf00877fa6de66, type: 3}
-    m_FontSize: 40
+    m_FontSize: 52
     m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 10
-    m_MaxSize: 40
+    m_MaxSize: 52
     m_Alignment: 3
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -2106,6 +2203,21 @@ MonoBehaviour:
     m_VerticalOverflow: 1
     m_LineSpacing: 1
   m_Text: "\uC18C\uB9AC"
+--- !u!114 &1846459101086555969
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3101073616797940008}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Outline
+  m_EffectColor: {r: 0.46, g: 0.13, b: 0.08, a: 1}
+  m_EffectDistance: {x: 0.8, y: -0.8}
+  m_UseGraphicAlpha: 1
 --- !u!1 &3101622384791267333
 GameObject:
   m_ObjectHideFlags: 0
@@ -2732,6 +2844,7 @@ GameObject:
   - component: {fileID: 2870586955849003552}
   - component: {fileID: 7208854241222497605}
   - component: {fileID: 455812287110960997}
+  - component: {fileID: 525953744820270177}
   m_Layer: 0
   m_Name: Header
   m_TagString: Untagged
@@ -2756,7 +2869,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
   m_AnchoredPosition: {x: -350, y: -135}
-  m_SizeDelta: {x: 400, y: 72}
+  m_SizeDelta: {x: 400, y: 84}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7208854241222497605
 CanvasRenderer:
@@ -2788,11 +2901,11 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: c59c71d24207fd74cbcf00877fa6de66, type: 3}
-    m_FontSize: 64
+    m_FontSize: 76
     m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 10
-    m_MaxSize: 64
+    m_MaxSize: 76
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -2800,6 +2913,21 @@ MonoBehaviour:
     m_VerticalOverflow: 1
     m_LineSpacing: 1
   m_Text: "\uC124\uC815"
+--- !u!114 &525953744820270177
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3698624756681953409}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Outline
+  m_EffectColor: {r: 0.2, g: 0.13, b: 0.08, a: 1}
+  m_EffectDistance: {x: 0.8, y: -0.8}
+  m_UseGraphicAlpha: 1
 --- !u!1 &3825601604007375284
 GameObject:
   m_ObjectHideFlags: 0
@@ -3025,6 +3153,7 @@ GameObject:
   - component: {fileID: 8218341162900928214}
   - component: {fileID: 919997941711551613}
   - component: {fileID: 1934533744955457691}
+  - component: {fileID: 8795059417017969560}
   m_Layer: 0
   m_Name: "Label \uBC30\uACBD \uC74C\uC545"
   m_TagString: Untagged
@@ -3049,7 +3178,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
   m_AnchoredPosition: {x: -590, y: -332}
-  m_SizeDelta: {x: 220, y: 46}
+  m_SizeDelta: {x: 220, y: 58}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!222 &919997941711551613
 CanvasRenderer:
@@ -3081,11 +3210,11 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: c59c71d24207fd74cbcf00877fa6de66, type: 3}
-    m_FontSize: 38
-    m_FontStyle: 0
+    m_FontSize: 50
+    m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 10
-    m_MaxSize: 40
+    m_MaxSize: 50
     m_Alignment: 3
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -3093,6 +3222,21 @@ MonoBehaviour:
     m_VerticalOverflow: 1
     m_LineSpacing: 1
   m_Text: "\uBC30\uACBD \uC74C\uC545"
+--- !u!114 &8795059417017969560
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3976003868378873265}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Outline
+  m_EffectColor: {r: 0.2, g: 0.13, b: 0.08, a: 1}
+  m_EffectDistance: {x: 0.8, y: -0.8}
+  m_UseGraphicAlpha: 1
 --- !u!1 &3993370351944903710
 GameObject:
   m_ObjectHideFlags: 0
@@ -3228,6 +3372,7 @@ GameObject:
   - component: {fileID: 1111296319251037966}
   - component: {fileID: 477851321869456151}
   - component: {fileID: 6216660463271363561}
+  - component: {fileID: 7074388270700499083}
   m_Layer: 0
   m_Name: Value
   m_TagString: Untagged
@@ -3252,7 +3397,7 @@ RectTransform:
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
   m_AnchoredPosition: {x: 70, y: 0}
-  m_SizeDelta: {x: 70, y: 38}
+  m_SizeDelta: {x: 70, y: 50}
   m_Pivot: {x: 1, y: 0.5}
 --- !u!222 &477851321869456151
 CanvasRenderer:
@@ -3284,11 +3429,11 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: c59c71d24207fd74cbcf00877fa6de66, type: 3}
-    m_FontSize: 32
-    m_FontStyle: 0
+    m_FontSize: 44
+    m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 10
-    m_MaxSize: 40
+    m_MaxSize: 44
     m_Alignment: 5
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -3296,6 +3441,21 @@ MonoBehaviour:
     m_VerticalOverflow: 1
     m_LineSpacing: 1
   m_Text: 100
+--- !u!114 &7074388270700499083
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4166839114401872928}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Outline
+  m_EffectColor: {r: 0.3, g: 0.22, b: 0.15, a: 0.85}
+  m_EffectDistance: {x: 0.8, y: -0.8}
+  m_UseGraphicAlpha: 1
 --- !u!1 &4183474981009832059
 GameObject:
   m_ObjectHideFlags: 0
@@ -3307,6 +3467,7 @@ GameObject:
   - component: {fileID: 2162841309906640104}
   - component: {fileID: 8037423052731027813}
   - component: {fileID: 4645962983824537133}
+  - component: {fileID: 2597702553990621201}
   m_Layer: 0
   m_Name: "Label \uB9C8\uC774\uD06C"
   m_TagString: Untagged
@@ -3331,7 +3492,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
   m_AnchoredPosition: {x: 110, y: -574}
-  m_SizeDelta: {x: 220, y: 46}
+  m_SizeDelta: {x: 220, y: 58}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!222 &8037423052731027813
 CanvasRenderer:
@@ -3363,11 +3524,11 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: c59c71d24207fd74cbcf00877fa6de66, type: 3}
-    m_FontSize: 38
-    m_FontStyle: 0
+    m_FontSize: 50
+    m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 10
-    m_MaxSize: 40
+    m_MaxSize: 50
     m_Alignment: 3
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -3375,6 +3536,21 @@ MonoBehaviour:
     m_VerticalOverflow: 1
     m_LineSpacing: 1
   m_Text: "\uB9C8\uC774\uD06C"
+--- !u!114 &2597702553990621201
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4183474981009832059}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Outline
+  m_EffectColor: {r: 0.2, g: 0.13, b: 0.08, a: 1}
+  m_EffectDistance: {x: 0.8, y: -0.8}
+  m_UseGraphicAlpha: 1
 --- !u!1 &4370076450072576960
 GameObject:
   m_ObjectHideFlags: 0
@@ -4292,6 +4468,7 @@ GameObject:
   - component: {fileID: 3537475601922522190}
   - component: {fileID: 6037266664710234181}
   - component: {fileID: 1626617940613362391}
+  - component: {fileID: 6276140640302010001}
   m_Layer: 0
   m_Name: "Section \uC74C\uC131"
   m_TagString: Untagged
@@ -4317,7 +4494,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
   m_AnchoredPosition: {x: 80, y: -516}
-  m_SizeDelta: {x: 240, y: 44}
+  m_SizeDelta: {x: 240, y: 56}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!222 &6037266664710234181
 CanvasRenderer:
@@ -4349,11 +4526,11 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: c59c71d24207fd74cbcf00877fa6de66, type: 3}
-    m_FontSize: 40
+    m_FontSize: 52
     m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 10
-    m_MaxSize: 40
+    m_MaxSize: 52
     m_Alignment: 3
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -4361,6 +4538,21 @@ MonoBehaviour:
     m_VerticalOverflow: 1
     m_LineSpacing: 1
   m_Text: "\uC74C\uC131"
+--- !u!114 &6276140640302010001
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5864905445888692607}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Outline
+  m_EffectColor: {r: 0.46, g: 0.13, b: 0.08, a: 1}
+  m_EffectDistance: {x: 0.8, y: -0.8}
+  m_UseGraphicAlpha: 1
 --- !u!1 &5981252394403674816
 GameObject:
   m_ObjectHideFlags: 0
@@ -4633,6 +4825,7 @@ GameObject:
   - component: {fileID: 3947841213955543353}
   - component: {fileID: 4147016945883923067}
   - component: {fileID: 4195571517420476983}
+  - component: {fileID: 5043961582917311953}
   m_Layer: 0
   m_Name: Folio Right
   m_TagString: Untagged
@@ -4657,7 +4850,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
   m_AnchoredPosition: {x: 350, y: -798}
-  m_SizeDelta: {x: 200, y: 34}
+  m_SizeDelta: {x: 200, y: 46}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4147016945883923067
 CanvasRenderer:
@@ -4689,8 +4882,8 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: c59c71d24207fd74cbcf00877fa6de66, type: 3}
-    m_FontSize: 28
-    m_FontStyle: 0
+    m_FontSize: 40
+    m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 10
     m_MaxSize: 40
@@ -4701,6 +4894,21 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: "\u2014 8 \u2014"
+--- !u!114 &5043961582917311953
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6251449435417812941}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Outline
+  m_EffectColor: {r: 0.32, g: 0.24, b: 0.17, a: 0.85}
+  m_EffectDistance: {x: 0.8, y: -0.8}
+  m_UseGraphicAlpha: 1
 --- !u!1 &6371560672254802288
 GameObject:
   m_ObjectHideFlags: 0
@@ -4712,6 +4920,7 @@ GameObject:
   - component: {fileID: 7028068698589127475}
   - component: {fileID: 7515990971572919062}
   - component: {fileID: 5872516657269707151}
+  - component: {fileID: 8404582047094578048}
   m_Layer: 0
   m_Name: Value
   m_TagString: Untagged
@@ -4736,7 +4945,7 @@ RectTransform:
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
   m_AnchoredPosition: {x: 70, y: 0}
-  m_SizeDelta: {x: 70, y: 38}
+  m_SizeDelta: {x: 70, y: 50}
   m_Pivot: {x: 1, y: 0.5}
 --- !u!222 &7515990971572919062
 CanvasRenderer:
@@ -4768,11 +4977,11 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: c59c71d24207fd74cbcf00877fa6de66, type: 3}
-    m_FontSize: 32
-    m_FontStyle: 0
+    m_FontSize: 44
+    m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 10
-    m_MaxSize: 40
+    m_MaxSize: 44
     m_Alignment: 5
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -4780,6 +4989,21 @@ MonoBehaviour:
     m_VerticalOverflow: 1
     m_LineSpacing: 1
   m_Text: 100
+--- !u!114 &8404582047094578048
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6371560672254802288}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Outline
+  m_EffectColor: {r: 0.3, g: 0.22, b: 0.15, a: 0.85}
+  m_EffectDistance: {x: 0.8, y: -0.8}
+  m_UseGraphicAlpha: 1
 --- !u!1 &6462529359891298018
 GameObject:
   m_ObjectHideFlags: 0
@@ -4912,6 +5136,7 @@ GameObject:
   - component: {fileID: 8920369258216725418}
   - component: {fileID: 805361420101837628}
   - component: {fileID: 1872954569055240382}
+  - component: {fileID: 3904345676118972315}
   m_Layer: 0
   m_Name: "Section \uD654\uBA74"
   m_TagString: Untagged
@@ -4937,7 +5162,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
   m_AnchoredPosition: {x: -620, y: -480}
-  m_SizeDelta: {x: 240, y: 44}
+  m_SizeDelta: {x: 240, y: 56}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!222 &805361420101837628
 CanvasRenderer:
@@ -4969,11 +5194,11 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: c59c71d24207fd74cbcf00877fa6de66, type: 3}
-    m_FontSize: 40
+    m_FontSize: 52
     m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 10
-    m_MaxSize: 40
+    m_MaxSize: 52
     m_Alignment: 3
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -4981,6 +5206,21 @@ MonoBehaviour:
     m_VerticalOverflow: 1
     m_LineSpacing: 1
   m_Text: "\uD654\uBA74"
+--- !u!114 &3904345676118972315
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6482690867301104733}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Outline
+  m_EffectColor: {r: 0.46, g: 0.13, b: 0.08, a: 1}
+  m_EffectDistance: {x: 0.8, y: -0.8}
+  m_UseGraphicAlpha: 1
 --- !u!1 &6622675714242603512
 GameObject:
   m_ObjectHideFlags: 0
@@ -5028,6 +5268,7 @@ GameObject:
   - component: {fileID: 2164004130062121666}
   - component: {fileID: 1686128950005125654}
   - component: {fileID: 442927371706823956}
+  - component: {fileID: 4007594513253054750}
   m_Layer: 0
   m_Name: Label
   m_TagString: Untagged
@@ -5084,11 +5325,11 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: c59c71d24207fd74cbcf00877fa6de66, type: 3}
-    m_FontSize: 30
-    m_FontStyle: 0
+    m_FontSize: 42
+    m_FontStyle: 1
     m_BestFit: 1
-    m_MinSize: 18
-    m_MaxSize: 30
+    m_MinSize: 26
+    m_MaxSize: 42
     m_Alignment: 3
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -5096,6 +5337,21 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: Option A
+--- !u!114 &4007594513253054750
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6889325379577764433}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Outline
+  m_EffectColor: {r: 0.2, g: 0.13, b: 0.08, a: 1}
+  m_EffectDistance: {x: 0.8, y: -0.8}
+  m_UseGraphicAlpha: 1
 --- !u!1 &6979076821515490185
 GameObject:
   m_ObjectHideFlags: 0
@@ -5218,6 +5474,7 @@ GameObject:
   - component: {fileID: 8088481954711945383}
   - component: {fileID: 1226222965889223456}
   - component: {fileID: 8594146230742937568}
+  - component: {fileID: 4413196452099928182}
   m_Layer: 0
   m_Name: "Label \uC804\uCCB4 \uD654\uBA74"
   m_TagString: Untagged
@@ -5242,7 +5499,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
   m_AnchoredPosition: {x: -590, y: -540}
-  m_SizeDelta: {x: 220, y: 46}
+  m_SizeDelta: {x: 220, y: 58}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!222 &1226222965889223456
 CanvasRenderer:
@@ -5274,11 +5531,11 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: c59c71d24207fd74cbcf00877fa6de66, type: 3}
-    m_FontSize: 38
-    m_FontStyle: 0
+    m_FontSize: 50
+    m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 10
-    m_MaxSize: 40
+    m_MaxSize: 50
     m_Alignment: 3
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -5286,6 +5543,21 @@ MonoBehaviour:
     m_VerticalOverflow: 1
     m_LineSpacing: 1
   m_Text: "\uC804\uCCB4 \uD654\uBA74"
+--- !u!114 &4413196452099928182
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7549335068002764923}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Outline
+  m_EffectColor: {r: 0.2, g: 0.13, b: 0.08, a: 1}
+  m_EffectDistance: {x: 0.8, y: -0.8}
+  m_UseGraphicAlpha: 1
 --- !u!1 &7653069980828504497
 GameObject:
   m_ObjectHideFlags: 0
@@ -5385,6 +5657,7 @@ GameObject:
   - component: {fileID: 3701787918298632509}
   - component: {fileID: 7849310579782442242}
   - component: {fileID: 2404515140915947849}
+  - component: {fileID: 2279803569754336685}
   m_Layer: 0
   m_Name: "Label \uC804\uCCB4 \uC74C\uB7C9"
   m_TagString: Untagged
@@ -5409,7 +5682,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
   m_AnchoredPosition: {x: -590, y: -272}
-  m_SizeDelta: {x: 220, y: 46}
+  m_SizeDelta: {x: 220, y: 58}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!222 &7849310579782442242
 CanvasRenderer:
@@ -5441,11 +5714,11 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: c59c71d24207fd74cbcf00877fa6de66, type: 3}
-    m_FontSize: 38
-    m_FontStyle: 0
+    m_FontSize: 50
+    m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 10
-    m_MaxSize: 40
+    m_MaxSize: 50
     m_Alignment: 3
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -5453,6 +5726,21 @@ MonoBehaviour:
     m_VerticalOverflow: 1
     m_LineSpacing: 1
   m_Text: "\uC804\uCCB4 \uC74C\uB7C9"
+--- !u!114 &2279803569754336685
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7695274791767176424}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Outline
+  m_EffectColor: {r: 0.2, g: 0.13, b: 0.08, a: 1}
+  m_EffectDistance: {x: 0.8, y: -0.8}
+  m_UseGraphicAlpha: 1
 --- !u!1 &7782941598227693052
 GameObject:
   m_ObjectHideFlags: 0
@@ -5627,6 +5915,7 @@ GameObject:
   - component: {fileID: 3905998517330621041}
   - component: {fileID: 994743884053953238}
   - component: {fileID: 3768057976780758951}
+  - component: {fileID: 1067997876408509313}
   m_Layer: 0
   m_Name: "Label \uD6A8\uACFC\uC74C"
   m_TagString: Untagged
@@ -5651,7 +5940,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
   m_AnchoredPosition: {x: -590, y: -392}
-  m_SizeDelta: {x: 220, y: 46}
+  m_SizeDelta: {x: 220, y: 58}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!222 &994743884053953238
 CanvasRenderer:
@@ -5683,11 +5972,11 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: c59c71d24207fd74cbcf00877fa6de66, type: 3}
-    m_FontSize: 38
-    m_FontStyle: 0
+    m_FontSize: 50
+    m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 10
-    m_MaxSize: 40
+    m_MaxSize: 50
     m_Alignment: 3
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -5695,6 +5984,21 @@ MonoBehaviour:
     m_VerticalOverflow: 1
     m_LineSpacing: 1
   m_Text: "\uD6A8\uACFC\uC74C"
+--- !u!114 &1067997876408509313
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8015634441227800628}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Outline
+  m_EffectColor: {r: 0.2, g: 0.13, b: 0.08, a: 1}
+  m_EffectDistance: {x: 0.8, y: -0.8}
+  m_UseGraphicAlpha: 1
 --- !u!1 &8063868894973673560
 GameObject:
   m_ObjectHideFlags: 0
@@ -5956,6 +6260,7 @@ GameObject:
   - component: {fileID: 3731019259025094502}
   - component: {fileID: 3415081822050065782}
   - component: {fileID: 2793169769442880707}
+  - component: {fileID: 6193854763730155006}
   m_Layer: 0
   m_Name: "Label \uC785\uB825 \uB808\uBCA8"
   m_TagString: Untagged
@@ -5980,7 +6285,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
   m_AnchoredPosition: {x: 110, y: -634}
-  m_SizeDelta: {x: 220, y: 46}
+  m_SizeDelta: {x: 220, y: 58}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!222 &3415081822050065782
 CanvasRenderer:
@@ -6012,11 +6317,11 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: c59c71d24207fd74cbcf00877fa6de66, type: 3}
-    m_FontSize: 38
-    m_FontStyle: 0
+    m_FontSize: 50
+    m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 10
-    m_MaxSize: 40
+    m_MaxSize: 50
     m_Alignment: 3
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -6024,6 +6329,21 @@ MonoBehaviour:
     m_VerticalOverflow: 1
     m_LineSpacing: 1
   m_Text: "\uC785\uB825 \uB808\uBCA8"
+--- !u!114 &6193854763730155006
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8269854977879060760}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Outline
+  m_EffectColor: {r: 0.2, g: 0.13, b: 0.08, a: 1}
+  m_EffectDistance: {x: 0.8, y: -0.8}
+  m_UseGraphicAlpha: 1
 --- !u!1 &8277011996502153424
 GameObject:
   m_ObjectHideFlags: 0
@@ -6199,6 +6519,7 @@ GameObject:
   - component: {fileID: 4450410902303427219}
   - component: {fileID: 8966733153100006640}
   - component: {fileID: 5286847036413030293}
+  - component: {fileID: 5020066831430309995}
   m_Layer: 0
   m_Name: Item Label
   m_TagString: Untagged
@@ -6255,11 +6576,11 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: c59c71d24207fd74cbcf00877fa6de66, type: 3}
-    m_FontSize: 30
-    m_FontStyle: 0
+    m_FontSize: 42
+    m_FontStyle: 1
     m_BestFit: 1
-    m_MinSize: 14
-    m_MaxSize: 30
+    m_MinSize: 22
+    m_MaxSize: 42
     m_Alignment: 3
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -6267,6 +6588,21 @@ MonoBehaviour:
     m_VerticalOverflow: 1
     m_LineSpacing: 1
   m_Text: Option A
+--- !u!114 &5020066831430309995
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8354525701780005277}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Outline
+  m_EffectColor: {r: 0.2, g: 0.13, b: 0.08, a: 1}
+  m_EffectDistance: {x: 0.8, y: -0.8}
+  m_UseGraphicAlpha: 1
 --- !u!1 &8514448452486898351
 GameObject:
   m_ObjectHideFlags: 0
