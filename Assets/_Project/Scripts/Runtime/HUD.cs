@@ -9,27 +9,58 @@ namespace DuskTwilight
     /// what the world sounds like when you cannot hear it (captions), and the twilight voice's
     /// occasional whisper. Developer information lives behind F1 only.
     /// Pixel UI is authored at 480x270 and drawn 2x on a 960x540 canvas.
+    /// The layout lives in the HUD prefab (HUD Canvas child) — move/restyle elements there; this script only animates them.
     /// </summary>
     public class HUD : MonoBehaviour
     {
         public static HUD I { get; private set; }
 
-        public Font font;
-        public Font boldFont;
+        /// <summary>Fade-in speed, hold seconds, fade-out speed of a pop-up element.</summary>
+        [System.Serializable]
+        public struct PopTiming
+        {
+            public float fadeIn, hold, fadeOut;
+            public PopTiming(float fadeIn, float hold, float fadeOut) { this.fadeIn = fadeIn; this.hold = hold; this.fadeOut = fadeOut; }
+        }
+
+        [Header("Sprites")]
         public Sprite princeIcon, princessIcon;
-        public Sprite medallionLight, medallionDark, panel;
+        public Sprite medallionLight, medallionDark;
         public EchoCaller echo;
+        [Tooltip("Developer overlay (F1). Off for players.")]
         public bool debugOverlay = false;
 
-        static readonly Color Gold = new Color(1f, 0.86f, 0.52f);
-        static readonly Color Ice = new Color(0.80f, 0.92f, 1f);
-        static readonly Color Cream = new Color(1f, 0.95f, 0.86f);
-        static readonly Color ShadowInk = new Color(0.10f, 0.04f, 0.12f, 0.9f);
+        [Header("Words")]
+        public string princeName = "트와일라잇 프린스";
+        public string princessName = "더스크 프린세스";
+        public string continueNext = "▶  Space";
+        public string continueEnd = "— 끝 —";
+        [Tooltip("{0} minutes, {1} seconds, {2} switches, {3} falls")]
+        public string clearStatsFormat = "★ {0}:{1:00}     ◆ {2}     ♥ {3}";
 
-        RectTransform medallionRoot, partnerRoot;
-        Image medallion, portrait, partnerMedallion, partnerPortrait, fade, clearWash;
-        Text nameCard, micNote, narration, caption, notice, debug, titleSmall, titleBig, titleLine, clearTitle, clearLine, clearStats, clearContinue;
-        CanvasGroup nameGroup, narrationGroup, captionGroup, noticeGroup, titleGroup, clearGroup, debugGroup;
+        [Header("Colours set at runtime")]
+        public Color princeColor = new Color(0.80f, 0.92f, 1f);
+        public Color princessColor = new Color(1f, 0.86f, 0.52f);
+        [Range(0, 1)] public float partnerAlpha = 0.75f;
+        public Color clearWashColor = new Color(1f, 0.72f, 0.45f, 0.35f);
+
+        [Header("Timing")]
+        public PopTiming nameCardTiming = new PopTiming(6f, 1.2f, 2f);
+        public PopTiming narrationTiming = new PopTiming(2.5f, 3.2f, 1.2f);
+        public PopTiming captionTiming = new PopTiming(10f, 1.1f, 3f);
+        public PopTiming noticeTiming = new PopTiming(5f, 2.8f, 1.5f);
+        public PopTiming titleTiming = new PopTiming(1.2f, 2.2f, 0.8f);
+        [Tooltip("Medallion grows by this much when you switch.")]
+        public float switchPop = 0.18f;
+        public float clearWashSeconds = 1.5f;
+
+        [Header("Elements (inside HUD Canvas)")]
+        public RectTransform medallionRoot;
+        public RectTransform partnerRoot;
+        public Image medallion, portrait, partnerMedallion, partnerPortrait, fade, clearWash;
+        public Text nameCard, micNote, narration, caption, notice, debug, titleSmall, titleBig, titleLine, clearTitle, clearLine, clearStats, clearContinue;
+        public CanvasGroup nameGroup, narrationGroup, captionGroup, noticeGroup, titleGroup, clearGroup, debugGroup;
+
         Coroutine nameCo, narrationCo, captionCo, noticeCo, fadeCo;
         bool lastDark;
         float pop;
@@ -37,7 +68,11 @@ namespace DuskTwilight
         void Awake()
         {
             I = this;
-            Build();
+            if (!fade) Debug.LogError("[HUD] elements are not assigned — use the HUD prefab.", this);
+            fade.color = new Color(fade.color.r, fade.color.g, fade.color.b, 1f);
+            foreach (var g in new[] { nameGroup, narrationGroup, captionGroup, noticeGroup, titleGroup, clearGroup }) g.alpha = 0;
+            clearContinue.text = "";
+            var w = clearWashColor; w.a = 0; clearWash.color = w;
         }
 
         void Start()
@@ -51,160 +86,6 @@ namespace DuskTwilight
             RefreshMedallion(lastDark);
         }
 
-        // ------------------------------------------------------------------ build
-        void Build()
-        {
-            var canvasGo = new GameObject("HUD Canvas", typeof(Canvas), typeof(CanvasScaler));
-            canvasGo.transform.SetParent(transform, false);
-            var canvas = canvasGo.GetComponent<Canvas>();
-            canvas.renderMode = RenderMode.ScreenSpaceOverlay;
-            canvas.sortingOrder = 100;
-            canvas.pixelPerfect = true;
-            var scaler = canvasGo.GetComponent<CanvasScaler>();
-            scaler.uiScaleMode = CanvasScaler.ScaleMode.ScaleWithScreenSize;
-            scaler.referenceResolution = new Vector2(960, 540);
-            scaler.matchWidthOrHeight = 1f;
-            var root = canvasGo.transform;
-
-            // --- medallion: the sense you are living in, with your partner tucked beside it
-            medallionRoot = Rect(root, "Medallion", new Vector2(0, 1), new Vector2(22, -20), new Vector2(72, 72));
-            medallion = Img(medallionRoot, "Ring", Vector2.zero, new Vector2(72, 72));
-            portrait = Img(medallionRoot, "Portrait", new Vector2(0, -2), new Vector2(48, 48));
-
-            partnerRoot = Rect(root, "Partner", new Vector2(0, 1), new Vector2(76, -66), new Vector2(36, 36));
-            partnerMedallion = Img(partnerRoot, "Ring", Vector2.zero, new Vector2(36, 36));
-            partnerPortrait = Img(partnerRoot, "Portrait", new Vector2(0, -1), new Vector2(24, 24));
-
-            micNote = Label(root, "Mic", 22, TextAnchor.MiddleCenter, Ice, false);
-            Place(micNote.rectTransform, new Vector2(0, 1), new Vector2(102, -18), new Vector2(30, 30));
-
-            // name card that slides out after a switch
-            nameCard = Label(root, "Name", 22, TextAnchor.MiddleLeft, Gold, true);
-            Place(nameCard.rectTransform, new Vector2(0, 1), new Vector2(104, -44), new Vector2(320, 30));
-            nameGroup = nameCard.gameObject.AddComponent<CanvasGroup>();
-            nameGroup.alpha = 0;
-
-            // --- the twilight voice (narration) and sound captions, bottom centre, no boxes
-            narration = Label(root, "Narration", 22, TextAnchor.MiddleCenter, Cream, false);
-            Place(narration.rectTransform, new Vector2(0.5f, 0), new Vector2(0, 44), new Vector2(800, 32));
-            narrationGroup = narration.gameObject.AddComponent<CanvasGroup>();
-            narrationGroup.alpha = 0;
-
-            caption = Label(root, "Caption", 22, TextAnchor.MiddleCenter, Ice, true);
-            Place(caption.rectTransform, new Vector2(0.5f, 0), new Vector2(0, 96), new Vector2(600, 30));
-            captionGroup = caption.gameObject.AddComponent<CanvasGroup>();
-            captionGroup.alpha = 0;
-
-            // --- small chip when the game quietly adjusts itself for the player
-            var chip = Sliced(root, "Notice", new Vector2(1, 1), new Vector2(-20, -22), new Vector2(210, 34));
-            noticeGroup = chip.gameObject.AddComponent<CanvasGroup>();
-            noticeGroup.alpha = 0;
-            notice = Label(chip.transform, "Text", 18, TextAnchor.MiddleCenter, Gold, false);
-            Stretch(notice.rectTransform, new Vector2(8, 0), new Vector2(-8, 0));
-
-            // --- chapter title card
-            var title = Rect(root, "Title Card", new Vector2(0.5f, 0.5f), new Vector2(0, 30), new Vector2(700, 200));
-            titleGroup = title.gameObject.AddComponent<CanvasGroup>();
-            titleGroup.alpha = 0;
-            titleSmall = Label(title, "Chapter", 22, TextAnchor.MiddleCenter, Gold, false);
-            Place(titleSmall.rectTransform, new Vector2(0.5f, 0.5f), new Vector2(0, 56), new Vector2(600, 30));
-            titleBig = Label(title, "Name", 66, TextAnchor.MiddleCenter, Cream, true);
-            Place(titleBig.rectTransform, new Vector2(0.5f, 0.5f), new Vector2(0, 4), new Vector2(600, 80));
-            titleLine = Label(title, "Line", 22, TextAnchor.MiddleCenter, new Color(1f, 0.8f, 0.7f), false);
-            Place(titleLine.rectTransform, new Vector2(0.5f, 0.5f), new Vector2(0, -50), new Vector2(600, 30));
-
-            // --- clear
-            clearWash = Img(root, "Clear Wash", Vector2.zero, Vector2.zero);
-            Stretch(clearWash.rectTransform, Vector2.zero, Vector2.zero);
-            clearWash.color = new Color(1f, 0.72f, 0.45f, 0f);
-            var clear = Rect(root, "Clear", new Vector2(0.5f, 0.5f), new Vector2(0, 20), new Vector2(760, 240));
-            clearGroup = clear.gameObject.AddComponent<CanvasGroup>();
-            clearGroup.alpha = 0;
-            clearTitle = Label(clear, "Title", 66, TextAnchor.MiddleCenter, Cream, true);
-            Place(clearTitle.rectTransform, new Vector2(0.5f, 0.5f), new Vector2(0, 50), new Vector2(740, 80));
-            clearLine = Label(clear, "Line", 22, TextAnchor.MiddleCenter, Cream, false);
-            Place(clearLine.rectTransform, new Vector2(0.5f, 0.5f), new Vector2(0, -8), new Vector2(740, 30));
-            clearStats = Label(clear, "Stats", 22, TextAnchor.MiddleCenter, Gold, false);
-            Place(clearStats.rectTransform, new Vector2(0.5f, 0.5f), new Vector2(0, -64), new Vector2(740, 30));
-            clearContinue = Label(clear, "Continue", 18, TextAnchor.MiddleCenter, Cream, false);
-            Place(clearContinue.rectTransform, new Vector2(0.5f, 0.5f), new Vector2(0, -116), new Vector2(740, 26));
-            clearContinue.text = "";
-
-            // --- developer overlay (F1), hidden by default
-            var dbg = Img(root, "Dev Overlay", Vector2.zero, new Vector2(420, 170));
-            Place(dbg.rectTransform, new Vector2(1, 0), new Vector2(-12, 12), new Vector2(420, 170));
-            dbg.color = new Color(0, 0, 0, 0.7f);
-            debugGroup = dbg.gameObject.AddComponent<CanvasGroup>();
-            debug = Label(dbg.transform, "Text", 13, TextAnchor.LowerLeft, new Color(0.75f, 1f, 0.85f), false);
-            Stretch(debug.rectTransform, new Vector2(8, 6), new Vector2(-8, -6));
-            debug.horizontalOverflow = HorizontalWrapMode.Wrap;
-
-            // --- fade
-            fade = Img(root, "Fade", Vector2.zero, Vector2.zero);
-            Stretch(fade.rectTransform, Vector2.zero, Vector2.zero);
-            fade.color = new Color(0.03f, 0.02f, 0.06f, 1f);
-        }
-
-        RectTransform Rect(Transform parent, string name, Vector2 anchor, Vector2 pos, Vector2 size)
-        {
-            var r = new GameObject(name, typeof(RectTransform)).GetComponent<RectTransform>();
-            r.SetParent(parent, false);
-            Place(r, anchor, pos, size);
-            return r;
-        }
-
-        Image Img(Transform parent, string name, Vector2 pos, Vector2 size)
-        {
-            var img = new GameObject(name, typeof(Image)).GetComponent<Image>();
-            img.transform.SetParent(parent, false);
-            img.rectTransform.anchoredPosition = pos;
-            img.rectTransform.sizeDelta = size;
-            img.raycastTarget = false;
-            return img;
-        }
-
-        Image Sliced(Transform parent, string name, Vector2 anchor, Vector2 pos, Vector2 size)
-        {
-            var img = Img(parent, name, pos, size);
-            Place(img.rectTransform, anchor, pos, size);
-            img.sprite = panel;
-            img.type = Image.Type.Sliced;
-            img.pixelsPerUnitMultiplier = 100f / 18f / 2f; // 1 sprite pixel = 2 canvas units
-            return img;
-        }
-
-        Text Label(Transform parent, string name, int size, TextAnchor align, Color c, bool bold)
-        {
-            var t = new GameObject(name, typeof(Text)).GetComponent<Text>();
-            t.transform.SetParent(parent, false);
-            t.font = bold && boldFont ? boldFont : font;
-            t.fontSize = size;
-            t.alignment = align;
-            t.color = c;
-            t.supportRichText = true;
-            t.horizontalOverflow = HorizontalWrapMode.Overflow;
-            t.verticalOverflow = VerticalWrapMode.Overflow;
-            t.raycastTarget = false;
-            var sh = t.gameObject.AddComponent<Shadow>();
-            sh.effectColor = ShadowInk;
-            sh.effectDistance = new Vector2(2, -2);
-            return t;
-        }
-
-        static void Place(RectTransform r, Vector2 anchor, Vector2 pos, Vector2 size)
-        {
-            r.anchorMin = r.anchorMax = anchor;
-            r.pivot = anchor;
-            r.anchoredPosition = pos;
-            r.sizeDelta = size;
-        }
-
-        static void Stretch(RectTransform r, Vector2 min, Vector2 max)
-        {
-            r.anchorMin = Vector2.zero; r.anchorMax = Vector2.one;
-            r.offsetMin = min; r.offsetMax = max;
-        }
-
         // ------------------------------------------------------------------ runtime
         void Update()
         {
@@ -214,7 +95,7 @@ namespace DuskTwilight
 
             // medallion pop on switch
             pop = Mathf.MoveTowards(pop, 0, Time.deltaTime * 4f);
-            float s = 1f + Mathf.Sin(pop * Mathf.PI) * 0.18f;
+            float s = 1f + Mathf.Sin(pop * Mathf.PI) * switchPop;
             medallionRoot.localScale = new Vector3(s, s, 1);
 
             // breathing mic note while the player is using their voice
@@ -224,7 +105,7 @@ namespace DuskTwilight
             float lvl = micOn ? Mathf.Clamp01(voice.Level * 25f) : thinking ? 0.25f + 0.25f * Mathf.Sin(Time.time * 8f) : 0f;
             micNote.text = micOn || thinking ? "♪" : "";
             micNote.rectTransform.localScale = Vector3.one * (1f + lvl * 0.6f);
-            micNote.color = new Color(Ice.r, Ice.g, Ice.b, 0.5f + lvl * 0.5f);
+            micNote.color = new Color(princeColor.r, princeColor.g, princeColor.b, 0.5f + lvl * 0.5f);
         }
 
         void OnSwitched(Sense s)
@@ -232,10 +113,10 @@ namespace DuskTwilight
             bool dark = s == Sense.Dark;
             RefreshMedallion(dark);
             pop = 1f;
-            nameCard.text = dark ? "트와일라잇 프린스" : "더스크 프린세스";
-            nameCard.color = dark ? Ice : Gold;
+            nameCard.text = dark ? princeName : princessName;
+            nameCard.color = dark ? princeColor : princessColor;
             if (nameCo != null) StopCoroutine(nameCo);
-            nameCo = StartCoroutine(Pop(nameGroup, 1.2f, 6f, 2f));
+            nameCo = StartCoroutine(Pop(nameGroup, nameCardTiming));
         }
 
         void RefreshMedallion(bool dark)
@@ -244,7 +125,7 @@ namespace DuskTwilight
             portrait.sprite = dark ? princeIcon : princessIcon;
             partnerMedallion.sprite = dark ? medallionLight : medallionDark;
             partnerPortrait.sprite = dark ? princessIcon : princeIcon;
-            partnerMedallion.color = partnerPortrait.color = new Color(1, 1, 1, 0.75f);
+            partnerMedallion.color = partnerPortrait.color = new Color(1, 1, 1, partnerAlpha);
         }
 
         string DebugText()
@@ -261,6 +142,8 @@ namespace DuskTwilight
             return sb.ToString();
         }
 
+        IEnumerator Pop(CanvasGroup g, PopTiming p) => Pop(g, p.hold, p.fadeIn, p.fadeOut);
+
         IEnumerator Pop(CanvasGroup g, float hold, float inSpeed = 5f, float outSpeed = 2.5f)
         {
             for (float t = g.alpha; t < 1; t += Time.deltaTime * inSpeed) { g.alpha = t; yield return null; }
@@ -274,21 +157,21 @@ namespace DuskTwilight
         {
             narration.text = msg;
             if (narrationCo != null) StopCoroutine(narrationCo);
-            narrationCo = StartCoroutine(Pop(narrationGroup, 3.2f, 2.5f, 1.2f));
+            narrationCo = StartCoroutine(Pop(narrationGroup, narrationTiming));
         }
 
         public void ShowCaption(string msg)
         {
             caption.text = msg;
             if (captionCo != null) StopCoroutine(captionCo);
-            captionCo = StartCoroutine(Pop(captionGroup, 1.1f, 10f, 3f));
+            captionCo = StartCoroutine(Pop(captionGroup, captionTiming));
         }
 
         public void ShowNotice(string msg)
         {
             notice.text = msg;
             if (noticeCo != null) StopCoroutine(noticeCo);
-            noticeCo = StartCoroutine(Pop(noticeGroup, 2.8f, 5f, 1.5f));
+            noticeCo = StartCoroutine(Pop(noticeGroup, noticeTiming));
         }
 
         public void ShowTitle(string chapter, string name, string line)
@@ -296,7 +179,7 @@ namespace DuskTwilight
             titleSmall.text = chapter;
             titleBig.text = name;
             titleLine.text = line;
-            StartCoroutine(Pop(titleGroup, 2.2f, 1.2f, 0.8f));
+            StartCoroutine(Pop(titleGroup, titleTiming));
         }
 
         public void Fade(float from, float to, float seconds)
@@ -318,13 +201,13 @@ namespace DuskTwilight
             float time = Time.time - flow.StartTime;
             clearTitle.text = flow.clearTitle;
             clearLine.text = flow.clearLine;
-            clearStats.text = $"★ {Mathf.FloorToInt(time / 60f)}:{time % 60f:00}     ◆ {DuoController.I.SwitchCount}     ♥ {flow.Deaths}";
+            clearStats.text = string.Format(clearStatsFormat, Mathf.FloorToInt(time / 60f), Mathf.FloorToInt(time % 60f), DuoController.I.SwitchCount, flow.Deaths);
             StartCoroutine(ClearRoutine());
         }
 
         public void ShowContinue(bool hasNext)
         {
-            StartCoroutine(ContinueBlink(hasNext ? "▶  Space" : "— 끝 —"));
+            StartCoroutine(ContinueBlink(hasNext ? continueNext : continueEnd));
         }
 
         IEnumerator ContinueBlink(string text)
@@ -341,9 +224,9 @@ namespace DuskTwilight
 
         IEnumerator ClearRoutine()
         {
-            for (float t = 0; t < 1; t += Time.deltaTime / 1.5f)
+            for (float t = 0; t < 1; t += Time.deltaTime / Mathf.Max(0.01f, clearWashSeconds))
             {
-                clearWash.color = new Color(1f, 0.72f, 0.45f, t * 0.35f);
+                var w = clearWashColor; w.a = t * clearWashColor.a; clearWash.color = w;
                 yield return null;
             }
             yield return Pop(clearGroup, 9999f, 1.5f, 1f);

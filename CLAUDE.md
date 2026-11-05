@@ -19,7 +19,7 @@ Unity 6000.3 · URP 2D Renderer · Input System only · 기획서: Claude Docs "
 - `Assets/_Project/Scripts/Runtime` — 네임스페이스 `DuskTwilight`
 - `Assets/_Project/Art`, `Audio`, `Fonts` — CC0(Kenney)·OFL(Galmuri) 에셋, 라이선스는 `ThirdPartyLicenses/`
 - `Tools/gen_characters.py` — 왕자/공주 오리지널 픽셀 스프라이트 생성기 (에디터 밖 도구)
-- `Assets/_Project/Prefabs` — `Chapter/`(Systems·MainCamera·Sky·GlobalVolume·HUD·Voice·Backdrop·TwilightPrince·DuskPrincess: 모든 챕터 공용 리그), `Gimmicks/`(Lever·TwilightGate·SoundEmitter·Checkpoint·ReunionDoor·LightPlatform·WordAltar·DirectorZone), `Tutorial/`(TutorialVeil·TutorialMarker). 씬에 있는 것은 전부 이 프리팹의 인스턴스이고 챕터별 차이는 오버라이드다.
+- `Assets/_Project/Prefabs` — `Chapter/`(Systems·MainCamera·Sky·GlobalVolume·HUD·Voice·Backdrop·TwilightPrince·DuskPrincess: 모든 챕터 공용 리그), `Gimmicks/`(Lever·TwilightGate·SoundEmitter·Checkpoint·ReunionDoor·LightPlatform·WordAltar·DirectorZone), `Tutorial/`(TutorialVeil·TutorialMarker), `UI/`(TutorialPanel). UI 레이아웃은 코드로 만들지 않는다 — HUD는 `Chapter/HUD`의 HUD Canvas, 단어 선택 창은 `Gimmicks/WordAltar`의 Word Panel(선택지는 Option Template 복제), 튜토리얼 목표 줄은 Row Template/Key 복제, 빛 글자는 `Gimmicks/LightLetter`. 스크립트는 참조된 요소를 애니메이션만 한다. 씬에 있는 것은 전부 이 프리팹의 인스턴스이고 챕터별 차이는 오버라이드다.
 - `Docs/InGame_Decisions.md` — 닫힌 결정 사항(범위·조작·비주얼·에셋). 결정을 바꾸면 여기부터 갱신.
 
 ## UI 원칙 (플레이어용)

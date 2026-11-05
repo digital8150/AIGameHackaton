@@ -30,7 +30,7 @@ namespace DuskTwilight
         public Transform[] slots;
         [Tooltip("Collider size of each letter plank.")]
         public Vector2 letterSize = new Vector2(1.9f, 0.6f);
-        [Tooltip("Optional: a prefab for one light letter (needs a TextMesh; SenseText optional). Empty = built in code.")]
+        [Tooltip("One light letter: TextMesh + SenseText, Glow child, inactive Plank child shown when it hardens.")]
         public GameObject letterPrefab;
         [Tooltip("Where the spoken letters appear, relative to the altar: x = letter spacing, y = height.")]
         public Vector2 letterSpawn = new Vector2(1.1f, 1.6f);
@@ -39,11 +39,6 @@ namespace DuskTwilight
         public float letterFlyTime = 0.6f;
         [Tooltip("Plank under each letter, relative to the letter.")]
         public float plankOffsetY = -0.25f;
-        public Font letterFont;
-        public Color letterColor = new Color(0.36f, 0.12f, 0.24f);   // dark glyph carved into a halo of light
-        public Material glowMaterial;
-        public Sprite plankSprite;                                    // the letter hardens into a plank of light
-        public Material plankMaterial;
 
         [Header("Interaction")]
         [Tooltip("Half-width of the area in front of the altar where E opens the choices.")]
@@ -51,15 +46,21 @@ namespace DuskTwilight
         public float reachHeight = 1.6f;
         public TextMesh prompt;
         public SenseText inscription;
-        public Font uiFont, uiBoldFont;
-        public Sprite panelSprite;
+
+        [Header("Choice panel (child Word Panel, laid out in the prefab)")]
+        public Canvas canvas;
+        public RectTransform panelRect;
+        public Text questionText;
+        [Tooltip("One option; cloned per choice and spread evenly across the panel.")]
+        public Text optionTemplate;
+        public Color optionColor = new Color(1f, 0.95f, 0.86f, 0.6f);
+        public Color optionSelectedColor = new Color(1f, 0.86f, 0.52f);
+        public string selectedFormat = "▶ {0}";
         public AudioClip speakClip, wrongClip, bridgeClip;
 
         public bool Solved { get; private set; }
 
         AudioSource sfx;
-        Canvas canvas;
-        RectTransform panelRect;
         readonly List<Text> options = new List<Text>();
         int selected;
         bool open;
@@ -67,6 +68,7 @@ namespace DuskTwilight
 
         void Awake()
         {
+            if (!letterPrefab) Debug.LogError("[WordAltar] letterPrefab is not assigned - use LightLetter.prefab.", this);
             sfx = gameObject.AddComponent<AudioSource>();
             sfx.playOnAwake = false;
         }
@@ -128,42 +130,11 @@ namespace DuskTwilight
             for (int i = 0; i < word.Length; i++)
             {
                 var pos = transform.position + new Vector3(x0 + i * letterSpawn.x, letterSpawn.y, 0);
-                if (letterPrefab)
-                {
-                    var inst = Instantiate(letterPrefab, pos, Quaternion.identity);
-                    inst.name = "Light Letter " + word[i];
-                    var itm = inst.GetComponentInChildren<TextMesh>();
-                    if (itm) itm.text = word[i].ToString();
-                    if (itm && !itm.GetComponent<SenseText>()) itm.gameObject.AddComponent<SenseText>().SetBaseColor(itm.color);
-                    list.Add(inst);
-                    continue;
-                }
-                var go = new GameObject("Light Letter " + word[i]);
-                go.transform.position = pos;
-                var tm = go.AddComponent<TextMesh>();
-                tm.font = letterFont;
-                tm.text = word[i].ToString();
-                tm.fontSize = 64;
-                tm.characterSize = 0.16f;
-                tm.anchor = TextAnchor.MiddleCenter;
-                tm.color = letterColor;
-                var mr = go.GetComponent<MeshRenderer>();
-                mr.sharedMaterial = letterFont.material;
-                mr.sortingOrder = 25;
-                var st = go.AddComponent<SenseText>();
-                st.lightAlpha = 1f; st.darkAlpha = 0.18f; st.shimmer = 0.1f;
-                st.SetBaseColor(letterColor);
-                if (glowMaterial)
-                {
-                    var g = GameObject.CreatePrimitive(PrimitiveType.Quad);
-                    Destroy(g.GetComponent<Collider>());
-                    g.transform.SetParent(go.transform, false);
-                    g.transform.localScale = Vector3.one * 1.7f;
-                    var gr = g.GetComponent<MeshRenderer>();
-                    gr.sharedMaterial = glowMaterial;
-                    gr.sortingOrder = 24;
-                }
-                list.Add(go);
+                var inst = Instantiate(letterPrefab, pos, Quaternion.identity);
+                inst.name = "Light Letter " + word[i];
+                var itm = inst.GetComponentInChildren<TextMesh>();
+                if (itm) itm.text = word[i].ToString();
+                list.Add(inst);
             }
             return list;
         }
@@ -181,17 +152,8 @@ namespace DuskTwilight
             }
             letter.transform.position = target;
             if (!solid) yield break;
-            if (plankSprite)
-            {
-                var p = new GameObject("Plank");
-                p.transform.SetParent(letter.transform, false);
-                p.transform.localPosition = new Vector3(0, plankOffsetY, 0);
-                p.transform.localScale = new Vector3(letterSize.x / 2f, 1f, 1f);
-                var psr = p.AddComponent<SpriteRenderer>();
-                psr.sprite = plankSprite;
-                psr.sharedMaterial = plankMaterial;
-                psr.sortingOrder = 23;
-            }
+            var plank = letter.transform.Find("Plank");
+            if (plank) plank.gameObject.SetActive(true);
             var col = letter.AddComponent<BoxCollider2D>();
             col.size = letterSize;
             col.offset = new Vector2(0, plankOffsetY);
@@ -218,7 +180,9 @@ namespace DuskTwilight
         public void Open()
         {
             if (open || Solved) return;
-            if (!canvas) BuildPanel();
+            if (questionText) questionText.text = panelQuestion;
+            if (!canvas) { Debug.LogError("[WordAltar] choice panel is not assigned - use the Word Altar prefab.", this); return; }
+            if (options.Count != choices.Length) MakeOptions();
             open = true;
             GameFlow.ModalOpen = true;
             selected = 0;
@@ -262,61 +226,27 @@ namespace DuskTwilight
             for (int i = 0; i < options.Count; i++)
             {
                 bool s = i == selected;
-                options[i].text = s ? $"▶ {choices[i]}" : choices[i];
-                options[i].color = s ? new Color(1f, 0.86f, 0.52f) : new Color(1f, 0.95f, 0.86f, 0.6f);
+                options[i].text = s ? string.Format(selectedFormat, choices[i]) : choices[i];
+                options[i].color = s ? optionSelectedColor : optionColor;
             }
         }
 
-        void BuildPanel()
+        void MakeOptions()
         {
-            var go = new GameObject("Word Panel", typeof(Canvas), typeof(CanvasScaler));
-            go.transform.SetParent(transform, false);
-            canvas = go.GetComponent<Canvas>();
-            canvas.renderMode = RenderMode.ScreenSpaceOverlay;
-            canvas.sortingOrder = 95;
-            var scaler = go.GetComponent<CanvasScaler>();
-            scaler.uiScaleMode = CanvasScaler.ScaleMode.ScaleWithScreenSize;
-            scaler.referenceResolution = new Vector2(960, 540);
-            scaler.matchWidthOrHeight = 1f;
-
-            var bg = new GameObject("Panel", typeof(Image)).GetComponent<Image>();
-            bg.transform.SetParent(go.transform, false);
-            bg.sprite = panelSprite;
-            bg.type = Image.Type.Sliced;
-            bg.pixelsPerUnitMultiplier = 100f / 18f / 2f;
-            panelRect = bg.rectTransform;
-            panelRect.anchorMin = panelRect.anchorMax = panelRect.pivot = new Vector2(0.5f, 0);
-            panelRect.anchoredPosition = new Vector2(0, 40);
-            panelRect.sizeDelta = new Vector2(620, 104);
-
-            var q = MakeText(panelRect, panelQuestion, 20, new Color(0.86f, 0.80f, 0.92f), false);
-            q.alignment = TextAnchor.MiddleCenter;
-            Set(q.rectTransform, new Vector2(0, -12), new Vector2(600, 28));
-            float w = 600f / choices.Length;
+            foreach (var o in options) if (o) Destroy(o.gameObject);
+            options.Clear();
+            optionTemplate.gameObject.SetActive(false);
+            var tr = optionTemplate.rectTransform;
+            float total = panelRect.sizeDelta.x - 20f, w = total / choices.Length;
             for (int i = 0; i < choices.Length; i++)
             {
-                var t = MakeText(panelRect, choices[i], 26, Color.white, true);
-                t.alignment = TextAnchor.MiddleCenter;
-                Set(t.rectTransform, new Vector2(-300 + w * (i + 0.5f), -56), new Vector2(w, 36));
+                var t = Instantiate(optionTemplate, optionTemplate.transform.parent);
+                t.gameObject.SetActive(true);
+                t.name = "Option " + choices[i];
+                t.rectTransform.anchoredPosition = new Vector2(-total / 2 + w * (i + 0.5f), tr.anchoredPosition.y);
+                t.rectTransform.sizeDelta = new Vector2(w, tr.sizeDelta.y);
                 options.Add(t);
             }
-        }
-
-        Text MakeText(Transform parent, string s, int size, Color c, bool bold)
-        {
-            var t = new GameObject("Text", typeof(Text)).GetComponent<Text>();
-            t.transform.SetParent(parent, false);
-            t.font = bold && uiBoldFont ? uiBoldFont : uiFont;
-            t.fontSize = size;
-            t.color = c;
-            t.text = s;
-            t.horizontalOverflow = HorizontalWrapMode.Overflow;
-            t.verticalOverflow = VerticalWrapMode.Overflow;
-            t.raycastTarget = false;
-            var sh = t.gameObject.AddComponent<Shadow>();
-            sh.effectColor = new Color(0.08f, 0.03f, 0.10f, 0.9f);
-            sh.effectDistance = new Vector2(2, -2);
-            return t;
         }
 
 #if UNITY_EDITOR
@@ -338,11 +268,5 @@ namespace DuskTwilight
         }
 #endif
 
-        static void Set(RectTransform r, Vector2 pos, Vector2 size)
-        {
-            r.anchorMin = r.anchorMax = r.pivot = new Vector2(0.5f, 1);
-            r.anchoredPosition = pos;
-            r.sizeDelta = size;
-        }
     }
 }
