@@ -21,6 +21,8 @@ namespace DuskTwilight
         public Button resume;
         public Button settingsButton;
         public Button toTitle;
+        [Tooltip("Back to the last checkpoint (boxes from there on go back too) — for when a box got stuck")]
+        public Button toCheckpoint;
         [Tooltip("Shared settings page (Prefabs/UI/SettingsPanel instance).")]
         public SettingsPanel settings;
 
@@ -62,6 +64,7 @@ namespace DuskTwilight
             if (resume) resume.onClick.AddListener(Close);
             if (settingsButton) settingsButton.onClick.AddListener(OpenSettings);
             if (toTitle) toTitle.onClick.AddListener(ToTitle);
+            if (toCheckpoint) toCheckpoint.onClick.AddListener(() => { Close(); GameFlow.I?.RestartFromCheckpoint(); });
             if (settings) settings.Closed += () =>
             {
                 closedFrame = Time.frameCount;

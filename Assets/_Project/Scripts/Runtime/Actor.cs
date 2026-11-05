@@ -48,7 +48,8 @@ namespace DuskTwilight
         public bool sheetFacesLeft;
         [Tooltip("Pushing / pulling a box (or straining against one that won't move)")]
         public Sprite[] pushFrames;
-        [Min(1)] public float pushFps = 24f;
+        [Tooltip("Push cycle fps while the box moves at full push speed (slower when straining)")]
+        [Min(1)] public float pushFps = 20f;
 
         [Header("Footsteps")]
         public AudioClip[] footsteps;
@@ -62,9 +63,9 @@ namespace DuskTwilight
         /// <summary>Run speed multiplier, set each frame by whatever slows the leader (a heavy box).</summary>
         public float SpeedScale { get; set; } = 1f;
         /// <summary>Set by a box every frame the leader is pushing against it.</summary>
-        public void MarkPushing() => pushUntil = Time.time + 0.12f;
+        public void MarkPushing() => pushUntil = Time.time + 0.25f;
         public bool Pushing => Time.time < pushUntil;
-        float pushUntil = -9f;
+        float pushUntil = -9f, pushPhase;
         /// <summary>The input direction the leader is holding (-1, 0, 1).</summary>
         public int InputDir { get; private set; }
         /// <summary>Automated tests: walk this way instead of reading the stick (NaN = off).</summary>
@@ -252,7 +253,10 @@ namespace DuskTwilight
                 }
                 else if (Pushing && pushFrames != null && pushFrames.Length > 0)
                 {
-                    s = Pick(pushFrames, (int)(animTime * pushFps) % pushFrames.Length);
+                    // the push cycle follows how fast she's actually moving: straining against something that won't
+                    // budge (the prince, a wall) is a slow lean, not running in place
+                    pushPhase += Time.deltaTime * pushFps * Mathf.Lerp(0.35f, 1f, Mathf.Clamp01(Mathf.Abs(vx) / 3f));
+                    s = Pick(pushFrames, (int)pushPhase % pushFrames.Length);
                 }
                 else if (Mathf.Abs(vx) > 0.6f)
                 {

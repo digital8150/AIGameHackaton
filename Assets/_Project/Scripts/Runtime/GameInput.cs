@@ -12,6 +12,7 @@ namespace DuskTwilight
         public InputAction Jump { get; private set; }
         public InputAction Switch { get; private set; }
         public InputAction Echo { get; private set; }
+        public InputAction Restart { get; private set; }
         public InputAction MicHold { get; private set; }
         public InputAction Interact { get; private set; }
         public InputAction DebugOverlay { get; private set; }
@@ -31,10 +32,11 @@ namespace DuskTwilight
             Echo = Button("Echo", "<Keyboard>/r", "<Gamepad>/buttonWest");
             MicHold = Button("MicHold", "<Keyboard>/v", "<Gamepad>/leftShoulder");
             Interact = Button("Interact", "<Keyboard>/e", "<Gamepad>/buttonEast");
+            Restart = Button("Restart", "<Keyboard>/backspace", "<Gamepad>/select");
             DebugOverlay = Button("Debug", "<Keyboard>/f1");
             DirectorToggle = Button("DirectorToggle", "<Keyboard>/f2");
 
-            foreach (var a in new[] { Move, Jump, Switch, Echo, MicHold, Interact, DebugOverlay, DirectorToggle }) a.Enable();
+            foreach (var a in new[] { Move, Jump, Switch, Echo, MicHold, Interact, Restart, DebugOverlay, DirectorToggle }) a.Enable();
         }
 
         static InputAction Button(string name, params string[] paths)
@@ -46,7 +48,7 @@ namespace DuskTwilight
 
         void OnDestroy()
         {
-            foreach (var a in new[] { Move, Jump, Switch, Echo, MicHold, Interact, DebugOverlay, DirectorToggle }) a?.Dispose();
+            foreach (var a in new[] { Move, Jump, Switch, Echo, MicHold, Interact, Restart, DebugOverlay, DirectorToggle }) a?.Dispose();
             if (I == this) I = null;
         }
     }

@@ -15,7 +15,7 @@ namespace DuskTwilight
         [Tooltip("Metres per second while pushed or pulled (기획 제안값 3)")]
         public float moveSpeed = 3f;
         [Tooltip("How close the princess must be to its side to push or pull")]
-        public float grabGap = 0.15f;
+        public float grabGap = 0.35f;
         [Tooltip("Stop sliding right of this x (log: stops at x 77). 0 = no limit")]
         public float maxX = 0f;
         public float minX = 0f;
@@ -33,6 +33,9 @@ namespace DuskTwilight
         Vector3 home;
         AudioSource sfx;
         public AudioClip scrapeClip;
+
+        /// <summary>Where it started (x) — the checkpoint restart puts back boxes from the checkpoint on.</summary>
+        public float HomeX => home.x;
 
         /// <summary>Being pushed or pulled this physics step.</summary>
         public bool Moving { get; private set; }
@@ -72,7 +75,9 @@ namespace DuskTwilight
                         {
                             dir = pushing ? -side : side;
                             if (Blocked(dir)) dir = 0f;
-                            a.SpeedScale = moveSpeed / Mathf.Max(0.1f, a.runSpeed);
+                            // pushing: a touch faster than the box so she stays pressed against it (no stutter);
+                            // pulling: exactly its speed so the gap doesn't open
+                            a.SpeedScale = (moveSpeed + (pushing ? 0.25f : 0f)) / Mathf.Max(0.1f, a.runSpeed);
                         }
                     }
                 }
