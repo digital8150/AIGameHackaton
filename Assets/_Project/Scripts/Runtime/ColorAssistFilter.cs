@@ -6,9 +6,8 @@ namespace DuskTwilight
 {
     /// <summary>
     /// 색약 모드. A global post-process volume (made at start-up, kept across scenes) with a channel mixer that applies a
-    /// daltonisation for red-green colour blindness (deuteranopia, the most common): the red-green difference a
-    /// colour-blind eye loses is shifted into brightness and blue, so things that differed only by red/green differ
-    /// visibly again. On/off follows <see cref="GameSettings.ColorAssist"/>.
+    /// daltonisation for the chosen type (적색약 / 녹색약 / 청황색약): the colour difference that eye loses is shifted into
+    /// channels it still tells apart. Follows <see cref="GameSettings.ColorAssistMode"/>.
     /// </summary>
     public class ColorAssistFilter : MonoBehaviour
     {
@@ -30,17 +29,34 @@ namespace DuskTwilight
             volume.isGlobal = true;
             volume.priority = 100f;
             var profile = ScriptableObject.CreateInstance<VolumeProfile>();
-            var mix = profile.Add<ChannelMixer>(true);
-            // I + shift·(I - deuteranope simulation): R' = R; G' = -0.44R + 1.44G; B' = 0.26R - 0.56G + 1.3B
-            mix.redOutRedIn.Override(100f); mix.redOutGreenIn.Override(0f); mix.redOutBlueIn.Override(0f);
-            mix.greenOutRedIn.Override(-44f); mix.greenOutGreenIn.Override(144f); mix.greenOutBlueIn.Override(0f);
-            mix.blueOutRedIn.Override(26f); mix.blueOutGreenIn.Override(-56f); mix.blueOutBlueIn.Override(130f);
+            mix = profile.Add<ChannelMixer>(true);
             volume.sharedProfile = profile;
             Apply();
         }
 
         void OnEnable() { GameSettings.Changed += Apply; }
         void OnDisable() { GameSettings.Changed -= Apply; }
-        void Apply() { if (volume) volume.weight = GameSettings.ColorAssist ? 1f : 0f; }
+        ChannelMixer mix;
+
+        // daltonisation, I + shift·(I − simulation), rows = R', G', B' out of (R, G, B) in, in percent
+        static readonly int[][,] Matrices =
+        {
+            null,
+            new int[,] { { 100, 0, 0 }, { -25, 125, 0 }, { 30, -55, 124 } },   // 적색약 (protan)
+            new int[,] { { 100, 0, 0 }, { -44, 144, 0 }, { 26, -56, 130 } },   // 녹색약 (deutan)
+            new int[,] { { 100, -33, 33 }, { 0, 67, 33 }, { 0, 0, 100 } },     // 청황색약 (tritan): blue-yellow error moved into red/green
+        };
+
+        void Apply()
+        {
+            if (!volume || mix == null) return;
+            int mode = GameSettings.ColorAssistMode;
+            volume.weight = mode > 0 ? 1f : 0f;
+            if (mode <= 0) return;
+            var m = Matrices[mode];
+            mix.redOutRedIn.Override(m[0, 0]); mix.redOutGreenIn.Override(m[0, 1]); mix.redOutBlueIn.Override(m[0, 2]);
+            mix.greenOutRedIn.Override(m[1, 0]); mix.greenOutGreenIn.Override(m[1, 1]); mix.greenOutBlueIn.Override(m[1, 2]);
+            mix.blueOutRedIn.Override(m[2, 0]); mix.blueOutGreenIn.Override(m[2, 1]); mix.blueOutBlueIn.Override(m[2, 2]);
+        }
     }
 }

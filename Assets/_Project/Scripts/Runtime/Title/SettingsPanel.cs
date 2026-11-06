@@ -32,7 +32,8 @@ namespace DuskTwilight
         public Slider textSize;
         public Text textSizeValue;
         public Toggle screenShake;
-        public Toggle colorAssist;
+        [Tooltip("끔 / 적색약 / 녹색약 / 청황색약")]
+        public Dropdown colorAssist;
         public Toggle readableFont;
 
         [Header("Voice")]
@@ -106,7 +107,14 @@ namespace DuskTwilight
                 textSize.onValueChanged.AddListener(v => { GameSettings.TextSize = v; if (textSizeValue) textSizeValue.text = Mathf.RoundToInt(GameSettings.TextScale * 100f) + "%"; });
             }
             if (screenShake) { screenShake.SetIsOnWithoutNotify(GameSettings.ScreenShake); screenShake.onValueChanged.AddListener(v => GameSettings.ScreenShake = v); }
-            if (colorAssist) { colorAssist.SetIsOnWithoutNotify(GameSettings.ColorAssist); colorAssist.onValueChanged.AddListener(v => GameSettings.ColorAssist = v); }
+            if (colorAssist)
+            {
+                colorAssist.ClearOptions();
+                colorAssist.AddOptions(new List<string> { "끔", "적색약", "녹색약", "청황색약" });
+                colorAssist.SetValueWithoutNotify(GameSettings.ColorAssistMode);
+                colorAssist.RefreshShownValue();
+                colorAssist.onValueChanged.AddListener(v => GameSettings.ColorAssistMode = v);
+            }
             if (readableFont) { readableFont.SetIsOnWithoutNotify(GameSettings.ReadableFont); readableFont.onValueChanged.AddListener(v => GameSettings.ReadableFont = v); }
 
             if (resolution) FillResolutions();
@@ -231,7 +239,7 @@ namespace DuskTwilight
                 var pad = Gamepad.current;
                 bool back = (kb != null && kb.escapeKey.wasPressedThisFrame) || (pad != null && pad.buttonEast.wasPressedThisFrame);
                 // a dropdown list open takes Esc first
-                if (back && !(resolution && resolution.transform.Find("Dropdown List")) && !(micDevice && micDevice.transform.Find("Dropdown List")))
+                if (back && !(resolution && resolution.transform.Find("Dropdown List")) && !(micDevice && micDevice.transform.Find("Dropdown List")) && !(colorAssist && colorAssist.transform.Find("Dropdown List")))
                     Close();
             }
 

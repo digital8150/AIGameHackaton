@@ -25,8 +25,13 @@ namespace DuskTwilight
         public static float TextScale => 1f + TextSize * 0.6f;
         /// <summary>Camera shake and landing thumps (off for motion-sensitive players).</summary>
         public static bool ScreenShake { get => PlayerPrefs.GetInt(KShake, 1) == 1; set => SetB(KShake, value); }
-        /// <summary>Colour-blind assist: red-green (deuteranopia) correction filter over the whole screen.</summary>
-        public static bool ColorAssist { get => PlayerPrefs.GetInt(KColor, 0) == 1; set => SetB(KColor, value); }
+        /// <summary>Colour-blind assist: 0 off, 1 적색약 (protan), 2 녹색약 (deutan), 3 청황색약 (tritan).</summary>
+        public static int ColorAssistMode
+        {
+            get => Mathf.Clamp(PlayerPrefs.GetInt(KColor, 0), 0, 3);
+            set { PlayerPrefs.SetInt(KColor, Mathf.Clamp(value, 0, 3)); PlayerPrefs.Save(); Changed?.Invoke(); }
+        }
+        public static bool ColorAssist => ColorAssistMode > 0;
         const string KFont = "settings.readablefont";
         /// <summary>Readable font: UI text drawn in the handwritten font switches to a plain book font.</summary>
         public static bool ReadableFont { get => PlayerPrefs.GetInt(KFont, 0) == 1; set => SetB(KFont, value); }
