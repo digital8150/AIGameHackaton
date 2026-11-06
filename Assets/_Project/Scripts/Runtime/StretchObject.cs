@@ -61,6 +61,9 @@ namespace DuskTwilight
             return d <= hearDistance ? d : -1f;
         }
 
+        protected override Vector3 NearestPoint(Vector3 leader) =>
+            col ? (Vector3)col.ClosestPoint(leader + Vector3.up * 0.5f) : transform.position;
+
         protected override bool Understands(string text) => !WordJudge.LooksHeavy(text);
         public override System.Collections.Generic.IEnumerable<string> ListenWords() => WordJudge.StretchListenWords;
 

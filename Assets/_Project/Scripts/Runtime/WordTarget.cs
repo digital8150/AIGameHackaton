@@ -14,7 +14,8 @@ namespace DuskTwilight
     /// </summary>
     public abstract class WordTarget : MonoBehaviour
     {
-        public static WordTarget Nearest { get; private set; }
+        /// <summary>The one target the leader is talking to this frame (E prompt, E panel and voice all use it).</summary>
+        public static WordTarget Nearest => Resolve();
 
         [Header("Words")]
         [Tooltip("Options on the choice panel (E) — the alternative to the microphone.")]
@@ -44,6 +45,10 @@ namespace DuskTwilight
         public float reachHeight = 1.6f;
         [Tooltip("Offset of the reach box from this object (e.g. a bridge that is spoken to from the ground before it)")]
         public Vector2 reachOffset = Vector2.zero;
+        [Tooltip("Extra distance (m) added when this target is behind the leader (opposite the way they face), so a bridge just crossed does not take words meant for the thing ahead. 0 = off.")]
+        public float behindPenalty = 3f;
+        [Tooltip("How far behind the leader (m) the target's nearest point must be before it counts as behind.")]
+        public float behindSlack = 0.5f;
         public TextMesh prompt;
 
         [Header("Choice panel (child Word Panel, laid out in the prefab)")]
@@ -122,7 +127,10 @@ namespace DuskTwilight
             if (!letterPrefab) Debug.LogError($"[{GetType().Name}] letterPrefab is not assigned - use LightLetter.prefab.", this);
             sfx = gameObject.AddComponent<AudioSource>();
             sfx.playOnAwake = false;
+            All.Add(this);
         }
+
+        protected virtual void OnDestroy() => All.Remove(this);
 
         protected Vector3 ReachCenter => transform.position + (Vector3)reachOffset;
 
@@ -142,28 +150,58 @@ namespace DuskTwilight
             return Mathf.Abs(leader.x - c.x) < reach && Mathf.Abs(leader.y - c.y) < reachHeight ? Mathf.Abs(leader.x - c.x) : -1f;
         }
 
-        static int bestFrame = -1;
-        static float bestScore;
-        static WordTarget bestTarget;
+        /// <summary>The point of this target nearest the leader (used to tell whether it is behind them).</summary>
+        protected virtual Vector3 NearestPoint(Vector3 leader) => ReachCenter;
+
+        /// <summary>ReachScore plus the behind-the-leader penalty. Negative = out of reach.</summary>
+        float TalkScore(Actor leader)
+        {
+            if (Solved || !isActiveAndEnabled) return -1f;
+            var p = leader.transform.position;
+            float s = ReachScore(p);
+            if (s < 0 || behindPenalty <= 0) return s;
+            float ahead = (NearestPoint(p).x - p.x) * leader.Facing;
+            return ahead < -behindSlack ? s + behindPenalty : s;
+        }
+
+        static readonly HashSet<WordTarget> All = new HashSet<WordTarget>();
+        static int resolvedFrame = -1;
+        static WordTarget resolved;
+
+        /// <summary>
+        /// Pick the target once per frame, before anyone reads it. (Each target used to update a running best in its
+        /// own Update, so whichever updated first briefly believed it was nearest and lit its E — the prompt could sit
+        /// on one object while the words went to another.)
+        /// </summary>
+        static WordTarget Resolve()
+        {
+            if (Time.frameCount == resolvedFrame) return resolved;
+            resolvedFrame = Time.frameCount;
+            resolved = null;
+            var duo = DuoController.I;
+            if (!duo || !duo.Leader) return null;
+            float best = float.MaxValue;
+            foreach (var t in All)
+            {
+                if (!t) continue;
+                float s = t.TalkScore(duo.Leader);
+                if (s >= 0 && s < best) { best = s; resolved = t; }
+            }
+            return resolved;
+        }
 
         protected virtual void Update()
         {
             var duo = DuoController.I;
             if (!duo) return;
-            var p = duo.Leader.transform.position;
-            var c = ReachCenter;
-            if (Time.frameCount != bestFrame) { bestFrame = Time.frameCount; bestScore = float.MaxValue; bestTarget = null; }
-            float score = Solved ? -1f : ReachScore(p);
-            if (score >= 0 && score < bestScore) { bestScore = score; bestTarget = this; Nearest = this; }
-            else if (Nearest == this && bestTarget != this) Nearest = bestTarget;
-            bool near = Nearest == this && score >= 0;
+            bool near = Nearest == this;
             if (prompt) prompt.color = new Color(1, 0.95f, 0.85f, near && !open && CanSpeakNow && canvas ? 1 : 0);   // voice-only targets: no E
 
             if (open) { PanelInput(); return; }
             if (near && CanSpeakNow && !GameFlow.InputLocked && GameInput.I.InteractNow) Open();
         }
 
-        protected virtual void OnDisable() { if (Nearest == this) Nearest = null; }
+        protected virtual void OnDisable() { if (resolved == this) resolvedFrame = -1; }
 
         /// <summary>Entry point for any input: the choice panel, or a voice transcript.</summary>
         public void Speak(string text)
@@ -175,12 +213,12 @@ namespace DuskTwilight
             // the words go to the nearest thing they mean something to ("무거워져" passes a bridge by for the stone)
             if (!Understands(text) && DuoController.I)
             {
-                var p = DuoController.I.Leader.transform.position;
+                var leader = DuoController.I.Leader;
                 WordTarget best = null; float bestD = float.MaxValue;
-                foreach (var t in FindObjectsByType<WordTarget>(FindObjectsSortMode.None))
+                foreach (var t in All)
                 {
-                    if (t == this || t.Solved || !t.CanSpeakNow || !t.Understands(text)) continue;
-                    float d = t.ReachScore(p);
+                    if (!t || t == this || !t.CanSpeakNow || !t.Understands(text)) continue;
+                    float d = t.TalkScore(leader);
                     if (d >= 0 && d < bestD) { bestD = d; best = t; }
                 }
                 if (best) { best.OnSpoken(text); return; }
