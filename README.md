@@ -29,6 +29,91 @@
   </tr>
 </table>
 
+## 주요 기능
+
+### 감각 전환
+
+Tab 또는 Q를 누르면 조작하는 인물이 바뀌고, 주인공을 중심으로 파동이 번지면서 세계의 모습과 소리가 함께 달라집니다. 두 감각에서 얻는 정보가 서로 다르기 때문에, 플레이어는 길이 막힐 때마다 감각을 바꿔 가며 답을 찾습니다.
+
+<img src="https://raw.githubusercontent.com/digital8150/AIGameHackaton/main/Docs/Screenshots/features/sense_switch.webp" alt="공주에서 왕자로 감각이 전환되며 어둠이 번져 나가는 장면">
+
+### 메아리와 숨은 발판
+
+왕자의 세계는 어둠에 잠겨 있으며, E를 눌러 보낸 메아리가 닿은 곳만 잠시 드러납니다. E를 오래 누를수록 메아리가 더 멀리 퍼지고, 메아리를 모으는 동안에는 왕자 옆에 금빛 고리가 나타납니다.
+
+<img src="https://raw.githubusercontent.com/digital8150/AIGameHackaton/main/Docs/Screenshots/features/echo_full_charge.webp" alt="어둠 속에서 왕자가 메아리를 모으는 장면">
+
+공주의 화면에서는 건널 길이 없어 보이는 구덩이도, 왕자가 메아리를 보내면 허공에 놓인 발판이 드러납니다.
+
+<table>
+  <tr>
+    <th width="50%">공주의 화면: 구덩이 위에 아무것도 보이지 않습니다</th>
+    <th width="50%">왕자의 화면: 메아리가 숨은 발판을 드러냅니다</th>
+  </tr>
+  <tr>
+    <td><img src="https://raw.githubusercontent.com/digital8150/AIGameHackaton/main/Docs/Screenshots/features/hidden_plank_princess.webp" alt="공주의 화면에서 본 구덩이"></td>
+    <td><img src="https://raw.githubusercontent.com/digital8150/AIGameHackaton/main/Docs/Screenshots/features/hidden_plank_prince.webp" alt="왕자의 메아리로 드러난 숨은 발판"></td>
+  </tr>
+</table>
+
+### 가짜 벽
+
+가짜 벽은 공주에게 진짜 벽과 다르지 않아서, 공주가 벽을 밀면 머리 위에 물음표만 떠오릅니다. 왕자의 메아리가 닿으면 벽의 정체가 붉게 드러나고, 그 뒤로는 두 사람 모두 지나갈 수 있습니다.
+
+<table>
+  <tr>
+    <th width="50%">공주의 화면: 막다른 벽으로 보입니다</th>
+    <th width="50%">왕자의 화면: 메아리가 가짜 벽을 찾아냅니다</th>
+  </tr>
+  <tr>
+    <td><img src="https://raw.githubusercontent.com/digital8150/AIGameHackaton/main/Docs/Screenshots/features/fake_wall_princess.webp" alt="벽 앞에서 물음표를 띄운 공주"></td>
+    <td><img src="https://raw.githubusercontent.com/digital8150/AIGameHackaton/main/Docs/Screenshots/features/fake_wall_prince.webp" alt="메아리가 닿아 붉게 드러난 가짜 벽"></td>
+  </tr>
+</table>
+
+### 공주의 힘: 상자와 압력판
+
+무거운 상자는 공주만 움직일 수 있습니다. 공주는 상자를 밀어서 높은 곳으로 올라가는 발판을 만들고, E를 누른 채 상자를 당겨서 위치를 바로잡으며, 상자를 압력판 위에 올려서 철문을 엽니다.
+
+<img src="https://raw.githubusercontent.com/digital8150/AIGameHackaton/main/Docs/Screenshots/features/crate_push.webp" alt="공주가 상자를 밀어 높은 턱 쪽으로 옮기는 장면">
+
+### 말 퍼즐: 왕자의 말이 세계를 바꿉니다
+
+왕자는 금빛 물체와 떠 있는 돌에 말을 걸 수 있습니다. V를 누른 채 자신의 말투로 말해도 되고, E를 짧게 눌러 여는 말 선택 창에서 골라도 같은 퍼즐을 풀 수 있습니다.
+
+- **다리와 통나무**는 "길어져"라는 말에 늘어나고 "짧아져"라는 말에 줄어듭니다.
+- **기둥**은 "짧아져"라는 말에 낮아져서 앞을 막던 길을 열어 줍니다.
+- **떠 있는 돌**은 "무거워져"라는 말에 떨어지며, 떨어진 돌로 압력판을 누를 수도 있습니다.
+
+말이 일으킨 소리는 공주의 화면에서 의성어 자막으로 표시됩니다. 아래 오른쪽 사진에서는 다리가 늘어나는 소리가 "쭈욱"이라는 자막으로 나타납니다.
+
+<table>
+  <tr>
+    <th width="50%">말 선택 창: 마이크 없이도 풀 수 있습니다</th>
+    <th width="50%">결과: 다리가 늘어나 건너편과 이어집니다</th>
+  </tr>
+  <tr>
+    <td><img src="https://raw.githubusercontent.com/digital8150/AIGameHackaton/main/Docs/Screenshots/features/word_panel.webp" alt="길어져, 짧아져, 안녕 가운데 하나를 고르는 말 선택 창"></td>
+    <td><img src="https://raw.githubusercontent.com/digital8150/AIGameHackaton/main/Docs/Screenshots/features/word_bridge.webp" alt="길게 늘어난 금빛 다리와 쭈욱 자막"></td>
+  </tr>
+</table>
+
+### 그림책으로 전하는 이야기
+
+프롤로그와 단계 사이의 막간, 엔딩은 모두 그림책으로 진행되며, 이야기는 문구로 전달되므로 소리 없이도 이해할 수 있습니다. 엔딩에서는 세피아 톤이던 그림에 장을 넘길수록 색이 살아납니다.
+
+<img src="https://raw.githubusercontent.com/digital8150/AIGameHackaton/main/Docs/Screenshots/features/storybook.webp" alt="두 주인공이 황혼의 마녀를 만나는 그림책 장면">
+
+### 단계 구성
+
+| 단계 | 이름 | 핵심 기믹 |
+| --- | --- | --- |
+| 1 | 서로 다른 두 사람 | 숨은 발판, 가짜 벽, 상자 밀기 |
+| 2 | 네 말이 빛이 될 때 | 늘어나는 다리, 짧아지는 기둥, 떨어지는 돌 |
+| 3 | 작은 손이 여는 길 | 상자 당기기, 압력판과 철문, 금빛 통나무 |
+| 4 | 보이지 않는 문을 두드리며 | 3층 구조의 동굴, 공주만 읽을 수 있는 해·달·별 그림 |
+| 5 | 우리가 함께 오르는 황혼 | 앞선 기믹을 엮은 퍼즐 4개, 어두운 숲에서 황혼까지 오르는 탑 |
+
 ## 해커톤 주제와의 연결
 
 「게임 안에, 모두를 담다」의 네 가지 세부 주제 가운데 다음 세 가지를 게임의 설계에 반영했습니다.
