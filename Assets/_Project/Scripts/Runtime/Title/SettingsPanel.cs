@@ -33,6 +33,7 @@ namespace DuskTwilight
         public Text textSizeValue;
         public Toggle screenShake;
         public Toggle colorAssist;
+        public Toggle readableFont;
 
         [Header("Voice")]
         public Dropdown micDevice;
@@ -106,6 +107,7 @@ namespace DuskTwilight
             }
             if (screenShake) { screenShake.SetIsOnWithoutNotify(GameSettings.ScreenShake); screenShake.onValueChanged.AddListener(v => GameSettings.ScreenShake = v); }
             if (colorAssist) { colorAssist.SetIsOnWithoutNotify(GameSettings.ColorAssist); colorAssist.onValueChanged.AddListener(v => GameSettings.ColorAssist = v); }
+            if (readableFont) { readableFont.SetIsOnWithoutNotify(GameSettings.ReadableFont); readableFont.onValueChanged.AddListener(v => GameSettings.ReadableFont = v); }
 
             if (resolution) FillResolutions();
             if (micDevice) FillMics();

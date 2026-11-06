@@ -27,6 +27,9 @@ namespace DuskTwilight
         public static bool ScreenShake { get => PlayerPrefs.GetInt(KShake, 1) == 1; set => SetB(KShake, value); }
         /// <summary>Colour-blind assist: red-green (deuteranopia) correction filter over the whole screen.</summary>
         public static bool ColorAssist { get => PlayerPrefs.GetInt(KColor, 0) == 1; set => SetB(KColor, value); }
+        const string KFont = "settings.readablefont";
+        /// <summary>Readable font: UI text drawn in the handwritten font switches to a plain book font.</summary>
+        public static bool ReadableFont { get => PlayerPrefs.GetInt(KFont, 0) == 1; set => SetB(KFont, value); }
 
         static void SetB(string key, bool v)
         {
