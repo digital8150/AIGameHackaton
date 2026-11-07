@@ -33,6 +33,11 @@ namespace DuskTwilight
         [Header("Partner")]
         public Color partnerTint = new Color(0.6f, 0.6f, 0.66f, 0.92f);
         [Range(0, 1)] public float partnerActivity = 0.4f;
+        [Tooltip("How much the partner badge swells at the top of a switch hint's breath (GuideNudges)")]
+        [Range(0, 0.6f)] public float partnerNudgeScale = 0.22f;
+
+        /// <summary>0..1, set each frame by GuideNudges while switching to the partner would help here.</summary>
+        [System.NonSerialized] public float partnerNudge;
 
         [Header("Energy")]
         [Tooltip("Voice level is multiplied by this before clamping to 0..1.")]
@@ -129,6 +134,7 @@ namespace DuskTwilight
         {
             e.Rect.anchoredPosition = pos;
             float s = Mathf.Lerp(partnerSlot.localScale.x, mainSlot.localScale.x, lead) * pop;
+            s *= 1f + partnerNudge * partnerNudgeScale * (1f - lead);
             e.Rect.localScale = new Vector3(s, s, 1f);
         }
 

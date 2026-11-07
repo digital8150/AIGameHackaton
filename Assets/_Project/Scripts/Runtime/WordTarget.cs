@@ -76,9 +76,31 @@ namespace DuskTwilight
 
         public bool Solved { get; protected set; }
 
+        /// <summary>A word has taken hold here at least once this stage (the guide stops pointing at it).</summary>
+        public bool Answered { get; protected set; }
+
+        /// <summary>Only the prince's words reach this target (gold objects), otherwise only the princess's.</summary>
+        public bool ForPrince => requirePrince || !requirePrincess;
+
+        /// <summary>
+        /// Is a target nobody has spoken to yet within talking range of <paramref name="leaderPos"/>? <paramref name="prince"/>
+        /// picks whose words it takes. Used by the guide (V key / switch hint).
+        /// </summary>
+        public static bool AnyUnansweredInReach(Vector3 leaderPos, bool prince, float extra = 0f)
+        {
+            foreach (var t in All)
+            {
+                if (!t || t.Solved || t.Answered || !t.isActiveAndEnabled || t.ForPrince != prince) continue;
+                if (t.ReachScore(leaderPos) >= 0f) return true;
+                if (extra > 0f && (t.NearestPoint(leaderPos) - leaderPos).sqrMagnitude <= extra * extra) return true;
+            }
+            return false;
+        }
+
         /// <summary>Gold burst sized to <paramref name="size"/> (m) at <paramref name="center"/>. Null-safe.</summary>
         protected void PlayWordFx(Vector3 center, Vector2 size)
         {
+            Answered = true;
             if (!wordFx) return;
             var fx = Instantiate(wordFx, center, Quaternion.identity);
             float big = Mathf.Max(size.x, size.y, 0.3f);

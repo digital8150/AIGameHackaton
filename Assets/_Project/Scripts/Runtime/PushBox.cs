@@ -49,6 +49,21 @@ namespace DuskTwilight
         /// <summary>Being pushed or pulled this physics step.</summary>
         public bool Moving { get; private set; }
 
+        /// <summary>Someone has moved it off its starting spot at least once (the guide stops pointing at it).</summary>
+        public bool EverMoved { get; private set; }
+
+        static readonly System.Collections.Generic.List<PushBox> all = new System.Collections.Generic.List<PushBox>();
+        void OnEnable() => all.Add(this);
+        void OnDisable() => all.Remove(this);
+
+        /// <summary>Is a box nobody has moved yet within <paramref name="radius"/> of this point? (grab key / switch hint)</summary>
+        public static bool AnyUnmovedWithin(Vector2 point, float radius)
+        {
+            foreach (var b in all)
+                if (b && !b.EverMoved && ((Vector2)b.transform.position - point).sqrMagnitude <= radius * radius) return true;
+            return false;
+        }
+
         void Awake()
         {
             rb = GetComponent<Rigidbody2D>();
@@ -66,6 +81,7 @@ namespace DuskTwilight
 
         void FixedUpdate()
         {
+            if (!EverMoved && Mathf.Abs(rb.position.x - home.x) > 0.4f) EverMoved = true;
             Moving = false;
             float dir = 0f;
             var duo = DuoController.I;
