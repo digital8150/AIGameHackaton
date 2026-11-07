@@ -131,14 +131,14 @@ namespace DuskTwilight
         public static event System.Action<Vector2, float> Called;
 
         /// <summary>Emit a called echo of the given strength (radius = strength × echoRadiusPerStrength).</summary>
-        public static void CallAt(Vector2 p, float strength)
+        public static void CallAt(Vector2 p, float strength, bool voice = false)
         {
-            SenseController.I.EmitEcho(p, strength);
+            SenseController.I.EmitEcho(p, strength, voice);
             Called?.Invoke(p, strength);
         }
 
         /// <summary>Emit a called echo with a visible radius in metres (tests, director).</summary>
-        public static void CallRadius(Vector2 p, float radius) => CallAt(p, StrengthFor(radius));
+        public static void CallRadius(Vector2 p, float radius, bool voice = false) => CallAt(p, StrengthFor(radius), voice);
 
         public static float StrengthFor(float radius)
         {
@@ -146,13 +146,13 @@ namespace DuskTwilight
             return radius / Mathf.Max(0.01f, sc ? sc.echoRadiusPerStrength : 10f);
         }
 
-        void Call(EchoSize size)
+        void Call(EchoSize size, bool voice = false)
         {
             if (Time.time - last < cooldown) return;
             last = Time.time;
             CallCount++;
             LastSize = size;
-            CallRadius(CallPoint, RadiusOf(size));
+            CallRadius(CallPoint, RadiusOf(size), voice);
             Released?.Invoke(CallPoint, size);
             if (callClip) sfx.PlayLimited(callClip, size == EchoSize.Large ? 1f : size == EchoSize.Medium ? 0.8f : 0.55f);
             GameEvents.PuzzleAttempt?.Invoke("echo", true);
@@ -176,7 +176,7 @@ namespace DuskTwilight
             if (DuoController.I.Leader.sense != Sense.Dark) return;
             var size = micPeak >= micThreshold * micLargeScale ? EchoSize.Large
                      : micPeak >= micThreshold * micMediumScale ? EchoSize.Medium : EchoSize.Small;
-            Call(size);
+            Call(size, true);
         }
     }
 }

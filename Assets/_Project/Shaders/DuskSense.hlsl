@@ -14,6 +14,7 @@ float  _DT_ModeFrom;      // mode outside the wipe
 float  _DT_ModeTo;        // mode inside the wipe
 float  _DT_Now;           // Time.time
 float4 _DT_Echo[DT_MAX_ECHOES];   // xy = origin, z = start time, w = strength (0 = slot unused)
+float  _DT_EchoKind[DT_MAX_ECHOES];  // 0 = echo (blue-white ring), 1 = the player's voice (golden rippling wave)
 float4 _DT_EchoParams;    // x = speed (u/s), y = radius per strength, z = lifetime (s), w = director boost (>=1)
 float4 _DT_Listener;      // xy = prince position, z = self-aura radius, w = unused
 float4 _DT_SunScreen;     // xy = sun in viewport uv, z = sun strength
@@ -26,10 +27,10 @@ float2 DT_Snap(float2 wp)
     return (floor(wp * DT_PPU) + 0.5) / DT_PPU;
 }
 
-// x = reveal (area the sound has passed through, fading), y = wavefront line
-float2 DT_Echo(float2 wp)
+// x = reveal (area the sound has passed through, fading), y = echo wavefront line, z = voice wavefront (golden ripple)
+float3 DT_Echo3(float2 wp)
 {
-    float2 acc = 0;
+    float3 acc = 0;
     float speed = _DT_EchoParams.x;
     float life = _DT_EchoParams.z;
     [unroll]
@@ -44,21 +45,40 @@ float2 DT_Echo(float2 wp)
         float d = distance(wp, e.xy);
         float fade = 1.0 - saturate(age / life);
         float falloff = 1.0 - smoothstep(maxR * 0.7, maxR, d);
-
-        float within = step(d, r) * falloff * fade * fade;
-        // wavefront: thin line, quantised to pixel width, only while still travelling
         float travelling = 1.0 - step(maxR - 0.01, age * speed);
-        float front = (1.0 - saturate(abs(d - r) * DT_PPU * 0.34)) * falloff * lerp(0.25, 1.0, travelling) * fade;
-        // soft trailing glow just behind the front
-        front = max(front, saturate(1.0 - (r - d) * 1.6) * step(d, r) * 0.35 * falloff * fade * travelling);
+        acc.x = max(acc.x, step(d, r) * falloff * fade * fade);
 
-        acc.x = max(acc.x, within);
-        acc.y = max(acc.y, front);
+        if (_DT_EchoKind[i] > 0.5)
+        {
+            // voice: a wavy front (like a drawn sound wave) with a thinner second ripple trailing behind
+            float2 dir = wp - e.xy;
+            float ang = atan2(dir.y, dir.x);
+            float wob = sin(ang * 9.0 + age * 7.0) * 0.28 + sin(ang * 4.0 - age * 3.0) * 0.12;
+            float rr = r + wob;
+            float main = 1.0 - saturate(abs(d - rr) * DT_PPU * 0.30);
+            float second = (1.0 - saturate(abs(d - (rr - 0.9)) * DT_PPU * 0.5)) * 0.55;
+            acc.z = max(acc.z, max(main, second) * falloff * lerp(0.25, 1.0, travelling) * fade);
+        }
+        else
+        {
+            // echo: thin line, quantised to pixel width, only while still travelling
+            float front = (1.0 - saturate(abs(d - r) * DT_PPU * 0.34)) * falloff * lerp(0.25, 1.0, travelling) * fade;
+            // soft trailing glow just behind the front
+            front = max(front, saturate(1.0 - (r - d) * 1.6) * step(d, r) * 0.35 * falloff * fade * travelling);
+            acc.y = max(acc.y, front);
+        }
     }
     // the prince always feels a little of the space around him (touch / own breath)
     float self = 1.0 - smoothstep(_DT_Listener.z * 0.4, _DT_Listener.z, distance(wp, _DT_Listener.xy));
     acc.x = max(acc.x, self * 0.45);
     return acc;
+}
+
+// x = reveal, y = any wavefront (echo or voice), for effects that don't tell the two apart
+float2 DT_Echo(float2 wp)
+{
+    float3 e = DT_Echo3(wp);
+    return float2(e.x, max(e.y, e.z));
 }
 
 float DT_Luma(float3 c) { return dot(c, float3(0.299, 0.587, 0.114)); }
@@ -136,6 +156,7 @@ float DT_SwitchScratch(float2 wp)
 
 static const float3 DT_NIGHT = float3(0.0035, 0.005, 0.016);
 static const float3 DT_ECHO_LINE = float3(0.82, 0.92, 1.0);
+static const float3 DT_VOICE_LINE = float3(1.0, 0.78, 0.36);   // the player's voice: warm gold, not the echo's moonlight
 static const float3 DT_RIM_GOLD = float3(1.0, 0.86, 0.55);
 
 #endif

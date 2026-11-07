@@ -99,11 +99,13 @@ Shader "DuskTwilight/Sky"
                 sky += star * 0.8;
 
                 // ---------------- DARK ---------------------------------------------------------
-                float2 echo = DT_Echo(wp);
+                float3 echo3 = DT_Echo3(wp);
+                float2 echo = echo3.xy;
                 float3 night = DT_NIGHT * lerp(0.7, 1.3, 1.0 - suv.y);
                 // dust motes in the air shimmer when sound passes through them
                 float mote = step(0.985, DT_Hash(floor(wp * DT_PPU / 2.0)));
                 night += DT_ECHO_LINE * (echo.y * 0.4 + mote * (echo.x * 0.5 + echo.y * 1.2));
+                night += DT_VOICE_LINE * echo3.z * (0.45 + mote * 1.2);
 
                 float3 col = lerp(sky, night, prince);
                 col += DT_RIM_GOLD * DT_SwitchRim(wp) * 0.9;

@@ -25,6 +25,18 @@ namespace DuskTwilight
         public bool keepMicOpen = true;
         [Tooltip("Audio from just before V was pressed is included — the first syllable of words said while pressing isn't cut")]
         [Range(0f, 1f)] public float preRollSeconds = 0.35f;
+        [Tooltip("Keep listening this long after V is let go — the last syllable of words still being said isn't cut")]
+        [Range(0f, 1f)] public float postRollSeconds = 0.3f;
+
+        [Header("Tap to talk")]
+        [Tooltip("A press shorter than this keeps listening hands-free until the player stops talking (or V again)")]
+        [Range(0.05f, 0.6f)] public float tapSeconds = 0.25f;
+        [Tooltip("Hands-free: stop after this much silence once the voice has started")]
+        [Range(0.2f, 2f)] public float tapSilenceStop = 0.7f;
+        [Tooltip("Hands-free: give up if no voice starts within this time")]
+        [Range(1f, 8f)] public float tapWaitForVoice = 4f;
+        [Tooltip("Mic level counted as voice (RMS)")]
+        [Range(0.001f, 0.1f)] public float voiceLevel = 0.015f;
 
         [Header("Accuracy")]
         [Tooltip("Tell Whisper which words to expect: the words of every word puzzle in the scene (nearest first) + commands. " +
@@ -44,6 +56,8 @@ namespace DuskTwilight
         public float Level { get; private set; }
         public bool Recording { get; private set; }
         public bool Transcribing { get; private set; }
+        /// <summary>Listening hands-free after a tap of V (stops on silence).</summary>
+        public bool HandsFree { get; private set; }
         public string LastTranscript { get; private set; } = "";
         public float LastLatency { get; private set; }
         public bool Available => Microphone.devices.Length > 0;
@@ -69,6 +83,8 @@ namespace DuskTwilight
         const int BufferSeconds = 10;
         string openDevice;
         float micOpenedAt, nextMicCheck;
+        float stopAt = -1f, voiceStarted = -1f, lastVoice = -1f;
+        bool wasHeld;
         int startPos;
         readonly float[] window = new float[512];
 
@@ -104,11 +120,32 @@ namespace DuskTwilight
                 if (Available && (!MicOpen || openDevice != GameSettings.ResolveMicDevice())) EnsureMic();
             }
             bool hold = HoldPressed() && !GameFlow.ModalOpen;
-            if (hold && !Recording && !Transcribing && Available) Begin();
+            bool pressed = hold && !wasHeld;
+            wasHeld = hold;
+            if (pressed && Recording && HandsFree) { StopAfterTail(); return; }   // second tap ends hands-free
+            if (pressed && !Recording && !Transcribing && Available) Begin();
             if (!Recording) return;
             MeasureLevel();
-            if (!hold || Time.time - started > maxSeconds) End();
+            float t = Time.time;
+            if (Level > voiceLevel) { if (voiceStarted < 0f) voiceStarted = t; lastVoice = t; }
+
+            if (t - started > maxSeconds) { End(); return; }
+            if (stopAt > 0f) { if (t >= stopAt) End(); return; }
+            if (HandsFree)
+            {
+                bool quietAfterVoice = voiceStarted >= 0f && t - lastVoice > tapSilenceStop;
+                bool nobodySpoke = voiceStarted < 0f && t - started > tapWaitForVoice;
+                if (quietAfterVoice || nobodySpoke) End();
+                return;
+            }
+            if (!hold)
+            {
+                if (t - started < tapSeconds) HandsFree = true;   // a tap: keep listening until they stop talking
+                else StopAfterTail();
+            }
         }
+
+        void StopAfterTail() => stopAt = Time.time + postRollSeconds;
 
         // in a stage the shared bindings; on the title (no GameInput yet, the voice check) the same keys directly
         static bool HoldPressed()
@@ -138,6 +175,8 @@ namespace DuskTwilight
             float pre = Mathf.Clamp(Time.unscaledTime - micOpenedAt, 0f, preRollSeconds);
             startPos = (Pos() - Mathf.RoundToInt(pre * sampleRate) + clip.samples) % clip.samples;
             started = Time.time;
+            stopAt = voiceStarted = lastVoice = -1f;
+            HandsFree = false;
             Recording = true;
         }
 
@@ -159,8 +198,12 @@ namespace DuskTwilight
         {
             int samples = (Pos() - startPos + clip.samples) % clip.samples;
             Recording = false;
+            bool handsFree = HandsFree;
+            HandsFree = false;
+            stopAt = -1f;
             Level = 0;
             if (Time.time - started < minSeconds) { TooShort?.Invoke(); return; }
+            if (handsFree && voiceStarted < 0f) { Heard?.Invoke(""); return; }   // tapped but never spoke: don't ask Whisper to guess
             var data = new float[samples * clip.channels];
             clip.GetData(data, startPos);   // wraps around the looping buffer
             Transcribe(data, clip.channels);

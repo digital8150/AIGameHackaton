@@ -16,12 +16,30 @@ namespace DuskTwilight
         public Font letterFont;
         public Color letterColor = new Color(1f, 0.9f, 0.62f);
 
+        [Tooltip("Popped over the leader when the voice wasn't understood (nothing heard / not a word anything knows) — Prefabs/FX/QuestionMark")]
+        public GameObject notUnderstoodMark;
+
         public string LastDebug { get; private set; } = "";
 
         [Tooltip("Ask Jev which command / word a transcript meant. Off = Whisper (scene-word prompt) + keyword / jamo matching only — instant, no network.")]
         public bool useJev = false;
 
-        void Start() { GetComponent<VoiceInput>().Transcribed += OnTranscribed; }
+        void Start()
+        {
+            var v = GetComponent<VoiceInput>();
+            v.Transcribed += OnTranscribed;
+            v.Heard += t => { if (string.IsNullOrEmpty(t)) NotUnderstood(); };
+        }
+
+        /// <summary>A "?" over the leader: the voice was taken in but nothing came of it (never silent failure).</summary>
+        void NotUnderstood()
+        {
+            var duo = DuoController.I;
+            if (!duo || !duo.Leader || !notUnderstoodMark) return;
+            var m = Instantiate(notUnderstoodMark, duo.Leader.transform.position, Quaternion.identity);
+            var pm = m.GetComponent<PopMark>();
+            if (pm) pm.target = duo.Leader.transform;
+        }
 
         async void OnTranscribed(string text)
         {
@@ -64,8 +82,7 @@ namespace DuskTwilight
             var r = await VoiceIntent.JudgeAsync(text, altar ? altar.choices : null, useJev);
             if (!this || !DuoController.I) return;
             LastDebug = $"\"{text}\" → {r.intent}{(r.word != null ? " " + r.word : "")} ({r.confidence:P0}, {r.source}) · {VoiceInput.I.LastLatency:0.00}s";
-            if (r.intent == Intent.Unrelated) return;
-            if (r.confidence < executeThreshold) { GameEvents.Caption?.Invoke("?"); return; }
+            if (r.intent == Intent.Unrelated || r.confidence < executeThreshold) { NotUnderstood(); return; }
 
             switch (r.intent)
             {

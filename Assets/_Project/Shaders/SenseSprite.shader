@@ -217,9 +217,10 @@ Shader "DuskTwilight/SenseSprite"
                 float lightA = tex.a * saturate(_LightAlpha + glint * 0.45);
 
                 // ---------------- DARK: the prince hears the world into being -----------------------
-                float2 echo = DT_Echo(wp);
-                float reveal = echo.x;
-                float front = echo.y;
+                float3 echo3 = DT_Echo3(wp);
+                float reveal = echo3.x;
+                float voiceFront = echo3.z;
+                float front = max(echo3.y, voiceFront);
                 // Kenney art has dark outlines: invert them into bright contour lines
                 // dark ink becomes a bright contour line. Pixel art only has dark outlines (0.5 works);
                 // hatched illustrations are dark all over, so they use a low threshold: only the heaviest ink lights up
@@ -234,6 +235,9 @@ Shader "DuskTwilight/SenseSprite"
                 // illustrated art has few pure-ink lines: let the whole shape show faintly where the sound passed
                 darkCol += _EchoTint.rgb * (0.14 + luma * 0.6) * saturate(lit * 1.5) * _EchoFill;
                 darkCol += _EchoTint.rgb * front * 0.10;
+                // where the player's voice is passing, the lines glow gold instead of moonlight
+                float voiceShare = saturate(voiceFront * 1.6 - echo3.y);
+                darkCol = lerp(darkCol, DT_Luma(darkCol) * DT_VOICE_LINE * 2.4 + DT_VOICE_LINE * voiceFront * 0.08, voiceShare);
                 // actors stay recognisable: moonlit, desaturated self + bright outline
                 float3 moon = lerp(luma.xxx, tex.rgb, 0.35) * float3(0.42, 0.52, 0.85) + DT_ECHO_LINE * AlphaEdge(i.uv) * 0.9;
                 darkCol = lerp(darkCol, moon, _SelfLit);

@@ -84,6 +84,13 @@ MonoBehaviour:
   sampleRate: 16000
   maxSeconds: 6
   minSeconds: 0.3
+  keepMicOpen: 1
+  preRollSeconds: 0.35
+  postRollSeconds: 0.3
+  tapSeconds: 0.25
+  tapSilenceStop: 0.7
+  tapWaitForVoice: 4
+  voiceLevel: 0.015
   biasToSceneWords: 1
   commandWords: "\uBC14\uAFD4, \uC810\uD504, \uD78C\uD2B8, \uC5F4\uC5B4"
   silenceLevel: 0.012
@@ -105,6 +112,7 @@ MonoBehaviour:
   executeThreshold: 0.6
   letterFont: {fileID: 12800000, guid: c59c71d24207fd74cbcf00877fa6de66, type: 3}
   letterColor: {r: 1, g: 0.9, b: 0.62, a: 1}
+  notUnderstoodMark: {fileID: 1377464429623951507, guid: f8bff6a58c738c54e9cab282e1175f34, type: 3}
   useJev: 0
 --- !u!114 &7451773715287607256
 MonoBehaviour:

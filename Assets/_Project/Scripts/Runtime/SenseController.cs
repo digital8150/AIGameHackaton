@@ -66,6 +66,8 @@ namespace DuskTwilight
 
         const int MaxEchoes = 12;
         readonly Vector4[] echoes = new Vector4[MaxEchoes];
+        readonly float[] echoKinds = new float[MaxEchoes];   // 0 = call / footstep / bell, 1 = the player's voice
+        static readonly int IdEchoKind = Shader.PropertyToID("_DT_EchoKind");
         int nextEcho;
         float from, to;
         Vector2 switchCenter;
@@ -176,8 +178,13 @@ namespace DuskTwilight
 
         static float EaseOutCubic(float t) { t = 1f - t; return 1f - t * t * t; }
 
-        public void EmitEcho(Vector2 pos, float strength)
+        public void EmitEcho(Vector2 pos, float strength) => EmitEcho(pos, strength, false);
+
+        /// <summary><paramref name="voice"/>: the player's own voice (V), drawn as a golden rippling wave instead of
+        /// the prince's blue-white ring, so a spoken word and a called echo never look alike.</summary>
+        public void EmitEcho(Vector2 pos, float strength, bool voice)
         {
+            echoKinds[nextEcho] = voice ? 1f : 0f;
             echoes[nextEcho] = new Vector4(pos.x, pos.y, Time.time, strength);
             nextEcho = (nextEcho + 1) % MaxEchoes;
             EchoEmitted?.Invoke(pos, strength);
@@ -207,6 +214,7 @@ namespace DuskTwilight
             Shader.SetGlobalFloat(IdTo, to);
             Shader.SetGlobalFloat(IdNow, Time.time);
             Shader.SetGlobalVectorArray(IdEcho, echoes);
+            Shader.SetGlobalFloatArray(IdEchoKind, echoKinds);
             Shader.SetGlobalVector(IdEchoParams, new Vector4(echoSpeed, echoRadiusPerStrength, echoLifetime, DirectorBoost));
             Vector2 l = Listener ? (Vector2)Listener.position + listenerOffset : Vector2.zero;
             Shader.SetGlobalVector(IdListener, new Vector4(l.x, l.y, listenerAura, 0));
