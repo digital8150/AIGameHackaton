@@ -35,6 +35,13 @@ namespace DuskTwilight
         public Button nextButton;
         [Tooltip("Skips the voice check and starts")]
         public Button skipButton;
+        [Tooltip("Model pages (opened in the browser); same order as linkUrls")]
+        public Button[] linkButtons;
+        public string[] linkUrls =
+        {
+            "https://github.com/openai/whisper",
+            "https://huggingface.co/kakaocorp/kanana-1.5-2.1b-instruct-2505",
+        };
 
         [Header("Page 1 — thresholds")]
         [Tooltip("Graphics memory (MB) for both models on the GPU without slowing down")]
@@ -89,6 +96,13 @@ namespace DuskTwilight
             if (skipButton) skipButton.onClick.AddListener(Finish);
             if (startButton) startButton.onClick.AddListener(Finish);
             if (voiceSkipButton) voiceSkipButton.onClick.AddListener(Finish);
+            if (linkButtons != null)
+                for (int i = 0; i < linkButtons.Length; i++)
+                {
+                    int k = i;
+                    if (linkButtons[i] && linkUrls != null && k < linkUrls.Length)
+                        linkButtons[i].onClick.AddListener(() => Application.OpenURL(linkUrls[k]));
+                }
         }
 
         void OnEnable()

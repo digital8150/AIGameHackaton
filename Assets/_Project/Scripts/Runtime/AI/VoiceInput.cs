@@ -21,6 +21,10 @@ namespace DuskTwilight
         public int sampleRate = 16000;
         public float maxSeconds = 6f;
         public float minSeconds = 0.3f;
+        [Tooltip("Keep the mic open from the start (in memory only, nothing is saved) so the first press doesn't wait for the device")]
+        public bool keepMicOpen = true;
+        [Tooltip("Audio from just before V was pressed is included — the first syllable of words said while pressing isn't cut")]
+        [Range(0f, 1f)] public float preRollSeconds = 0.35f;
 
         [Header("Accuracy")]
         [Tooltip("Tell Whisper which words to expect: the words of every word puzzle in the scene (nearest first) + commands. " +
@@ -43,6 +47,8 @@ namespace DuskTwilight
         public string LastTranscript { get; private set; } = "";
         public float LastLatency { get; private set; }
         public bool Available => Microphone.devices.Length > 0;
+        /// <summary>The mic is open in the looping buffer (others can read its level instead of opening it again).</summary>
+        public bool MicOpen => clip && Microphone.IsRecording(openDevice);
         /// <summary>Whisper's model is in memory (the first words don't wait for it).</summary>
         public bool ModelReady => whisper && whisper.IsLoaded;
         public bool ModelLoading => whisper && whisper.IsLoading;
@@ -62,6 +68,7 @@ namespace DuskTwilight
         // main thread (mashing V hitched the game). A press only marks where the recording starts and ends.
         const int BufferSeconds = 10;
         string openDevice;
+        float micOpenedAt, nextMicCheck;
         int startPos;
         readonly float[] window = new float[512];
 
@@ -83,8 +90,19 @@ namespace DuskTwilight
             }
         }
 
+        void Start()
+        {
+            if (keepMicOpen && Available) EnsureMic();
+        }
+
         void Update()
         {
+            // reopen if the device changed in settings or someone else closed it
+            if (keepMicOpen && !Recording && Time.unscaledTime >= nextMicCheck)
+            {
+                nextMicCheck = Time.unscaledTime + 1f;
+                if (Available && (!MicOpen || openDevice != GameSettings.ResolveMicDevice())) EnsureMic();
+            }
             bool hold = HoldPressed() && !GameFlow.ModalOpen;
             if (hold && !Recording && !Transcribing && Available) Begin();
             if (!Recording) return;
@@ -108,6 +126,7 @@ namespace DuskTwilight
             if (clip && Microphone.IsRecording(openDevice)) Microphone.End(openDevice);
             clip = Microphone.Start(device, true, BufferSeconds, sampleRate);
             openDevice = device;
+            micOpenedAt = Time.unscaledTime;
         }
 
         int Pos() => Mathf.Max(0, Microphone.GetPosition(device));
@@ -115,19 +134,25 @@ namespace DuskTwilight
         void Begin()
         {
             EnsureMic();
-            startPos = Pos();
+            // start a little before the press (only what the open mic has already heard)
+            float pre = Mathf.Clamp(Time.unscaledTime - micOpenedAt, 0f, preRollSeconds);
+            startPos = (Pos() - Mathf.RoundToInt(pre * sampleRate) + clip.samples) % clip.samples;
             started = Time.time;
             Recording = true;
         }
 
-        void MeasureLevel()
+        void MeasureLevel() => Level = LiveLevel();
+
+        /// <summary>Loudness of the open mic right now, held or not (settings' input meter).</summary>
+        public float LiveLevel()
         {
+            if (!MicOpen) return 0f;
             int pos = Pos() - window.Length;
             if (pos < 0) pos += clip.samples;
             clip.GetData(window, pos);
             float sum = 0;
             for (int i = 0; i < window.Length; i++) sum += window[i] * window[i];
-            Level = Mathf.Sqrt(sum / window.Length);
+            return Mathf.Sqrt(sum / window.Length);
         }
 
         void End()
@@ -135,7 +160,7 @@ namespace DuskTwilight
             int samples = (Pos() - startPos + clip.samples) % clip.samples;
             Recording = false;
             Level = 0;
-            if (samples < minSeconds * sampleRate) { TooShort?.Invoke(); return; }
+            if (Time.time - started < minSeconds) { TooShort?.Invoke(); return; }
             var data = new float[samples * clip.channels];
             clip.GetData(data, startPos);   // wraps around the looping buffer
             Transcribe(data, clip.channels);

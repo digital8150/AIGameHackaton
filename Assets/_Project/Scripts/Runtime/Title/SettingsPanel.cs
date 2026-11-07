@@ -273,6 +273,8 @@ namespace DuskTwilight
 
         void StartMic()
         {
+            // the voice input already keeps the mic open: read its level instead of restarting the device under it
+            if (VoiceInput.I && VoiceInput.I.keepMicOpen) return;
             micName = GameSettings.ResolveMicDevice();
             if (micName == null) return;
             micClip = Microphone.Start(micName, true, 1, 16000);
@@ -288,7 +290,9 @@ namespace DuskTwilight
         void MeasureMic(float dt)
         {
             float target = 0f;
-            if (micClip && micName != null)
+            var voice = VoiceInput.I;
+            if (voice && voice.keepMicOpen) target = Mathf.Clamp01(voice.LiveLevel() * micGain);
+            else if (micClip && micName != null)
             {
                 int pos = Microphone.GetPosition(micName) - window512.Length;
                 if (pos >= 0)
