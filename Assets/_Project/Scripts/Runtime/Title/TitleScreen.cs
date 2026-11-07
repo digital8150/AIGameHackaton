@@ -39,6 +39,10 @@ namespace DuskTwilight
         public string[] stageScenes = { "Stage1_FirstTwilight", "Stage2_SunsetLake", "Stage3_EchoCave", "Stage4_TwilightGate", "Stage5_TwilightBridge" };
         public Button stageBackButton;
 
+        [Header("AI check")]
+        [Tooltip("Local AI notice + voice check, shown once per run before the first scene loads (게임 시작 and 단계 선택)")]
+        public AiCheckPanel aiCheck;
+
         [Header("Scene change")]
         [Tooltip("Shared black cover (Prefabs/UI/SceneTransition): fade to black → load → hold → fade in.")]
         public SceneTransition transition;
@@ -202,7 +206,16 @@ namespace DuskTwilight
             leaving = true;
             SetMenuInteractable(false);
             if (stageMenu) { stageMenu.interactable = false; stageMenu.blocksRaycasts = false; }
-            StartCoroutine(Leave(scene));
+            CheckThenLeave(scene);
+        }
+
+        // the AI notice / voice check comes first (once per run); the lists stay hidden behind it
+        void CheckThenLeave(string scene)
+        {
+            if (!aiCheck || AiCheckPanel.Done) { StartCoroutine(Leave(scene)); return; }
+            var shown = stageMenu && stageMenu.alpha > 0.5f ? stageMenu : menu;
+            if (shown) shown.alpha = 0f;
+            aiCheck.Open(() => StartCoroutine(Leave(scene)));
         }
 
         void OpenSettings()
@@ -217,7 +230,7 @@ namespace DuskTwilight
             if (leaving) return;
             leaving = true;
             SetMenuInteractable(false);
-            StartCoroutine(Leave(firstScene));
+            CheckThenLeave(firstScene);
         }
 
         IEnumerator Leave(string scene)

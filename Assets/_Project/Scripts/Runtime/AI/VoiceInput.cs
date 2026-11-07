@@ -2,6 +2,7 @@ using System;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using Whisper;
 
 namespace DuskTwilight
@@ -42,8 +43,16 @@ namespace DuskTwilight
         public string LastTranscript { get; private set; } = "";
         public float LastLatency { get; private set; }
         public bool Available => Microphone.devices.Length > 0;
+        /// <summary>Whisper's model is in memory (the first words don't wait for it).</summary>
+        public bool ModelReady => whisper && whisper.IsLoaded;
+        public bool ModelLoading => whisper && whisper.IsLoading;
+        public string ModelName => whisper ? System.IO.Path.GetFileNameWithoutExtension(whisper.ModelPath) : "";
 
         public event Action<string> Transcribed;
+        /// <summary>Every finished attempt, also when nothing was understood (empty text) — for the voice check.</summary>
+        public event Action<string> Heard;
+        /// <summary>V was let go before minSeconds: nothing was sent to Whisper.</summary>
+        public event Action TooShort;
 
         WhisperManager whisper;
         AudioClip clip;
@@ -76,12 +85,20 @@ namespace DuskTwilight
 
         void Update()
         {
-            var input = GameInput.I;
-            bool hold = input != null && input.MicHold.IsPressed() && !GameFlow.ModalOpen;
+            bool hold = HoldPressed() && !GameFlow.ModalOpen;
             if (hold && !Recording && !Transcribing && Available) Begin();
             if (!Recording) return;
             MeasureLevel();
             if (!hold || Time.time - started > maxSeconds) End();
+        }
+
+        // in a stage the shared bindings; on the title (no GameInput yet, the voice check) the same keys directly
+        static bool HoldPressed()
+        {
+            var input = GameInput.I;
+            if (input != null) return input.MicHold.IsPressed();
+            var kb = Keyboard.current; var pad = Gamepad.current;
+            return (kb != null && kb.vKey.isPressed) || (pad != null && pad.leftShoulder.isPressed);
         }
 
         void EnsureMic()
@@ -118,7 +135,7 @@ namespace DuskTwilight
             int samples = (Pos() - startPos + clip.samples) % clip.samples;
             Recording = false;
             Level = 0;
-            if (samples < minSeconds * sampleRate) return;
+            if (samples < minSeconds * sampleRate) { TooShort?.Invoke(); return; }
             var data = new float[samples * clip.channels];
             clip.GetData(data, startPos);   // wraps around the looping buffer
             Transcribe(data, clip.channels);
@@ -142,6 +159,7 @@ namespace DuskTwilight
             LastLatency = Time.realtimeSinceStartup - t0;
             LastTranscript = text;
             Transcribing = false;
+            Heard?.Invoke(text);
             if (!string.IsNullOrEmpty(text)) Transcribed?.Invoke(text);
         }
 
