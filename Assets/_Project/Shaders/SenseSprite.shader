@@ -52,6 +52,9 @@ Shader "DuskTwilight/SenseSprite"
         _GlintOutlineSeconds ("Outline Seconds", Range(0,10)) = 1.25
         _GlintOutlineFade ("Outline Fade-out Seconds", Range(0.01,3)) = 0.5
         [HideInInspector] _GlintOutline ("Outline Strength (script)", Range(0,1)) = 0
+        _GlintRememberAlpha ("Found: Dashed Outline Strength", Range(0,1)) = 0.32
+        _GlintDashMetres ("Found: Dash Length (m)", Range(0.05,1)) = 0.22
+        [HideInInspector] _GlintRemember ("Found (script)", Range(0,1)) = 0
         [HideInInspector] _GlintProgress ("Glint Progress (script)", Range(0,1)) = 0
         [HideInInspector] _GlintDir ("Glint Direction (script)", Float) = 1
         [HideInInspector] _GlintBounds ("Glint Bounds: xMin xMax yCentre halfHeight (script)", Vector) = (0,0,0,0)
@@ -124,6 +127,7 @@ Shader "DuskTwilight/SenseSprite"
                 float _GlintWidth, _GlintThinWidth, _GlintGap, _GlintSlant, _GlintSoftness, _GlintSeconds, _GlintProgress, _GlintDir;
                 float4 _GlintOutlineColor;
                 float _GlintOutlineWidth, _GlintOutlineSeconds, _GlintOutlineFade, _GlintOutline;
+                float _GlintRememberAlpha, _GlintDashMetres, _GlintRemember;
             CBUFFER_END
 
             struct Attributes { float4 positionOS : POSITION; float4 color : COLOR; float2 uv : TEXCOORD0; };
@@ -255,7 +259,15 @@ Shader "DuskTwilight/SenseSprite"
 
                 // after an echo the plank's outline stays for a moment: the sprite's alpha edge, plus its bounds for
                 // art that fills the whole rect. Width is in metres, so short and long planks match.
-                if (_GlintOutline > 0.0)
+                // a plank the prince has already found keeps a faint dashed outline: it is still there, just unseen
+                float remembered = 0.0;
+                if (_GlintRemember > 0.0)
+                {
+                    float dash = step(0.5, frac((i.positionWS.x + i.positionWS.y) / max(_GlintDashMetres, 0.01)));
+                    remembered = dash * _GlintRememberAlpha * _GlintRemember;
+                }
+                float outlineK = max(_GlintOutline, remembered);
+                if (outlineK > 0.0)
                 {
                     float2 uvPerMetre = (abs(ddx(i.uv)) + abs(ddy(i.uv))) / max(abs(ddx(i.positionWS.xy)) + abs(ddy(i.positionWS.xy)), 1e-5);
                     float2 step_ = uvPerMetre * _GlintOutlineWidth;
@@ -265,7 +277,7 @@ Shader "DuskTwilight/SenseSprite"
                                  * SAMPLE_TEXTURE2D(_MainTex, sampler_MainTex, i.uv - float2(0, step_.y)).a;
                     float toEdge = min(min(i.positionWS.x - _GlintBounds.x, _GlintBounds.y - i.positionWS.x), _GlintBounds.w - abs(i.positionWS.y - _GlintBounds.z));
                     float edgeBand = smoothstep(_GlintOutlineWidth + 0.006, _GlintOutlineWidth - 0.006, toEdge);
-                    float outline = max(1.0 - around, edgeBand) * tex.a * prince * _GlintOutlineColor.a * _GlintOutline;
+                    float outline = max(1.0 - around, edgeBand) * tex.a * prince * _GlintOutlineColor.a * outlineK;
                     float litA = max(a, outline);
                     col = (col * a + _GlintOutlineColor.rgb * outline) / max(litA, 0.001);
                     a = litA;

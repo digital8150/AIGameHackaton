@@ -107,6 +107,22 @@ namespace DuskTwilight
             return false;
         }
 
+        /// <summary>Is a fake wall the echo can still uncover within <paramref name="radius"/> of this point? (E-key nudge)</summary>
+        public static bool AnyUnfoundWithin(Vector2 point, float radius)
+        {
+            foreach (var f in all)
+            {
+                if (!f.openOnEcho) continue;
+                foreach (var p in f.parts)
+                {
+                    if (p.open) continue;
+                    foreach (var c in p.centres)
+                        if (((Vector2)c - point).sqrMagnitude <= radius * radius) return true;
+                }
+            }
+            return false;
+        }
+
         void OnEnable() { all.Add(this); EchoCaller.Called += OnCall; EchoResonator.Rang += OnBell; }
         void OnDisable() { all.Remove(this); EchoCaller.Called -= OnCall; EchoResonator.Rang -= OnBell; }
 

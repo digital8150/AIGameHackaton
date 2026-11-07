@@ -1428,6 +1428,13 @@ MonoBehaviour:
   princeKeys: {fileID: 448653932720828520}
   princessKeys: {fileID: 5402418757904820902}
   fadeSeconds: 0.18
+  echoKey: {fileID: 5589362631649962738}
+  nudgeRadius: 6
+  nudgeQuietSeconds: 2.5
+  nudgeDelay: 0.6
+  nudgeScale: 0.18
+  nudgeSpeed: 4.5
+  nudgeColor: {r: 1, g: 0.86, b: 0.5, a: 1}
 --- !u!1 &4787630674727381779
 GameObject:
   m_ObjectHideFlags: 0

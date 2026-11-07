@@ -2640,6 +2640,11 @@ MonoBehaviour:
   openOnEcho: 1
   vanishWhenFound: 1
   vanishDelay: 1.2
+  fadeTime: 1.8
+  fadeSpread: 0.18
+  fadeGlow: {r: 1, g: 0.92, b: 0.7, a: 0.55}
+  fadeShimmer: 0.3
+  shimmerSpeed: 9
   reachShare: 0.85
   answersBells: 1
   foundEcho: 0.35
@@ -2733,14 +2738,21 @@ MonoBehaviour:
       markerId: 
       target: 1
       showCount: 0
+    - text: "\uBA54\uC544\uB9AC\uB85C \uAE38 \uCC3E\uAE30"
+      keys:
+      - E
+      goal: 4
+      markerId: 
+      target: 1
+      showCount: 0
     - text: "\uAC74\uB108\uD3B8\uC73C\uB85C"
       keys: []
       goal: 5
       markerId: r3
       target: 1
       showCount: 0
-    tip: "\uACF5\uC8FC\uC5D0\uAC8C\uB294 \uBCF4\uC774\uC9C0 \uC54A\uB294 \uAE38\uC774
-      \uC788\uB2E4. \uC655\uC790\uB77C\uBA74\u2026"
+    tip: "\uBC1C\uD310\uC740 \uC0AC\uB77C\uC9C0\uC9C0 \uC54A\uB294\uB2E4. \uBA54\uC544\uB9AC\uAC00
+      \uB2FF\uC744 \uB54C\uB9CC \uBCF4\uC77C \uBFD0, \uB298 \uAC70\uAE30 \uC788\uB2E4."
     opens: []
     allowSwitch: 1
   - title: "\uAC00\uC9DC \uBCBD"
@@ -2752,8 +2764,8 @@ MonoBehaviour:
       markerId: r4
       target: 1
       showCount: 0
-    tip: "\uC655\uC790\uC758 \uBA54\uC544\uB9AC\uAC00 \uB2FF\uC73C\uBA74 \uAC00\uC9DC
-      \uBCBD\uC774 \uB4DC\uB7EC\uB09C\uB2E4."
+    tip: "\uACF5\uC8FC\uC5D0\uAC90 \uB9C9\uD78C \uBCBD. \uBA54\uC544\uB9AC\uB85C
+      \uCC3E\uC544\uB0B4\uBA74 \uC9C0\uB098\uAC08 \uC218 \uC788\uB2E4."
     opens: []
     allowSwitch: 1
   - title: "\uC0C1\uC790 \uBC00\uAE30"
@@ -4403,6 +4415,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 711033653402900125, guid: 1d4f52ca6ca599747970cd3413887f78, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 857894929974964623, guid: 1d4f52ca6ca599747970cd3413887f78, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1910592273615493529, guid: 1d4f52ca6ca599747970cd3413887f78, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1978148316254985828, guid: 1d4f52ca6ca599747970cd3413887f78, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -4443,9 +4467,29 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4398088990812552809, guid: 1d4f52ca6ca599747970cd3413887f78, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4787630674727381779, guid: 1d4f52ca6ca599747970cd3413887f78, type: 3}
       propertyPath: m_Name
       value: HUD
+      objectReference: {fileID: 0}
+    - target: {fileID: 5879100368379311431, guid: 1d4f52ca6ca599747970cd3413887f78, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5927859785294418044, guid: 1d4f52ca6ca599747970cd3413887f78, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6321738782463277634, guid: 1d4f52ca6ca599747970cd3413887f78, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8942833575879115963, guid: 1d4f52ca6ca599747970cd3413887f78, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9039939407955679088, guid: 1d4f52ca6ca599747970cd3413887f78, type: 3}
       propertyPath: echo
