@@ -14,6 +14,8 @@ namespace DuskTwilight
         OpenGate,         // pulled the wired lever on gold
         ReachDoor,        // the chapter's door
         Speak,            // a spoken (or chosen) word took hold on a gold object / floating stone
+        Pull,             // the princess pulled a box (E held, walking away)
+        PlateBox,         // a box came to rest on a pressure plate
     }
 
     /// <summary>One objective row: which action, how many times, how it reads.</summary>

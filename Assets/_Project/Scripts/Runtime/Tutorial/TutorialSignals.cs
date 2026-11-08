@@ -22,6 +22,8 @@ namespace DuskTwilight
                 if (id == "echo") Raise(TutorialGoal.Echo);
                 if (id == "gate" && ok) Raise(TutorialGoal.OpenGate);
                 if ((id == "stretch" || id == "heavy") && ok) Raise(TutorialGoal.Speak);
+                if (id == "pull" && ok) Raise(TutorialGoal.Pull);
+                if (id == "plate-box" && ok) Raise(TutorialGoal.PlateBox);
             };
             GameEvents.Cleared += () => Raise(TutorialGoal.ReachDoor);
         }

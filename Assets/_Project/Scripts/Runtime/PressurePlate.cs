@@ -26,6 +26,7 @@ namespace DuskTwilight
         public bool Pressed { get; private set; }
 
         Vector3 gateHome, plateHome;
+        bool boxHolds;
         Collider2D[] gateCols;
 
         void Awake()
@@ -36,8 +37,10 @@ namespace DuskTwilight
 
         void Update()
         {
-            bool was = Pressed;
-            Pressed = PrincessOn() || BoxOn();
+            bool was = Pressed, boxWas = boxHolds;
+            boxHolds = BoxOn();
+            Pressed = PrincessOn() || boxHolds;
+            if (boxHolds && !boxWas) GameEvents.PuzzleAttempt?.Invoke("plate-box", true);   // tutorial: a box keeps it down
             if (Pressed && !was)
             {
                 if (!string.IsNullOrEmpty(pressCaption)) GameEvents.Caption?.Invoke(pressCaption);

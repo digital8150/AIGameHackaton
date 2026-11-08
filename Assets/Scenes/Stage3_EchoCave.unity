@@ -1945,6 +1945,11 @@ MonoBehaviour:
   openOnEcho: 1
   vanishWhenFound: 1
   vanishDelay: 1.2
+  fadeTime: 1.8
+  fadeSpread: 0.18
+  fadeGlow: {r: 1, g: 0.92, b: 0.7, a: 0.55}
+  fadeShimmer: 0.3
+  shimmerSpeed: 9
   reachShare: 0.85
   answersBells: 1
   foundEcho: 0.35
@@ -2128,26 +2133,41 @@ MonoBehaviour:
   sections:
   - title: "\uB2F9\uAE30\uAE30"
     objectives:
-    - text: "\uC0C1\uC790 \uB2F9\uAE30\uAE30"
+    - text: "\uB204\uB978 \uCC44 \uB4A4\uB85C \uAC78\uC5B4 \uC0C1\uC790 \uB2F9\uAE30\uAE30"
       keys:
       - E
+      goal: 9
+      markerId: 
+      target: 1
+      showCount: 0
+    - text: "\uC0C1\uC790\uB97C \uD131 \uC55E\uC5D0 \uB450\uACE0 \uC62C\uB77C\uC11C\uAE30"
+      keys: []
       goal: 5
       markerId: r2
       target: 1
       showCount: 0
-    tip: "\uBCBD\uC5D0 \uBD99\uC740 \uC0C1\uC790\uB294 \uB2F9\uACA8\uC11C \uAEBC\uB0B8\uB2E4."
+    tip: "\uBCBD\uC5D0 \uBD99\uC740 \uC0C1\uC790\uB294 \uBC00 \uC218 \uC5C6\uB2E4.
+      E\uB97C \uB204\uB978 \uCC44 \uBC18\uB300\uCABD\uC73C\uB85C \uAC78\uC73C\uBA74
+      \uB04C\uB824 \uB098\uC628\uB2E4."
     opens: []
     allowSwitch: 1
   - title: "\uC555\uB825\uD310\uACFC \uCCA0\uBB38"
     objectives:
+    - text: "\uC0C1\uC790\uB97C \uC555\uB825\uD310 \uC704\uB85C"
+      keys: []
+      goal: 10
+      markerId: 
+      target: 1
+      showCount: 0
     - text: "\uCCA0\uBB38 \uB108\uBA38\uB85C"
       keys: []
       goal: 5
       markerId: r3
       target: 1
       showCount: 0
-    tip: "\uACF5\uC8FC\uC758 \uBB34\uAC8C\uB85C \uBB38\uC774 \uC5F4\uB9B0\uB2E4.
-      \uC624\uB798 \uC5F4\uC5B4 \uB450\uB824\uBA74\u2026"
+    tip: "\uC555\uB825\uD310\uC740 \uBC1F\uACE0 \uC788\uB294 \uB3D9\uC548\uB9CC \uCCA0\uBB38\uC744
+      \uC5F0\uB2E4. \uC0C1\uC790\uB97C \uC62C\uB824 \uB450\uBA74 \uACC4\uC18D \uC5F4\uB824
+      \uC788\uB2E4."
     opens: []
     allowSwitch: 1
   - title: "\uB450 \uBC88\uC9F8 \uBB38"
@@ -2163,24 +2183,41 @@ MonoBehaviour:
     allowSwitch: 1
   - title: "\uB9D0\uACFC \uD1B5\uB098\uBB34"
     objectives:
-    - text: "\uAD6C\uB369\uC774 \uAC74\uB108\uAE30"
+    - text: "\uD1B5\uB098\uBB34\uC5D0\uAC8C \u300C\uAE38\uC5B4\uC838\u300D"
+      keys:
+      - V
+      goal: 8
+      markerId: 
+      target: 1
+      showCount: 0
+    - text: "\uACF5\uC8FC\uB85C \uBC14\uAFB8\uAE30"
+      keys:
+      - Tab
+      goal: 3
+      markerId: 
+      target: 1
+      showCount: 0
+    - text: "\uAE34 \uD1B5\uB098\uBB34\uB97C \uBC00\uC5B4 \uAD6C\uB369\uC774 \uAC74\uB108\uAE30"
       keys: []
       goal: 5
       markerId: r5
       target: 1
       showCount: 0
-    tip: "\uC655\uC790\uB294 \uB298\uC774\uACE0, \uACF5\uC8FC\uB294 \uBBFC\uB2E4."
+    tip: "\uC9E7\uC740 \uD1B5\uB098\uBB34\uB294 \uAD6C\uB369\uC774\uC5D0 \uBE60\uC9C4\uB2E4.
+      \uBA3C\uC800 \uAE38\uAC8C \uB298\uC774\uACE0, \uADF8\uB2E4\uC74C \uBBFC\uB2E4."
     opens: []
     allowSwitch: 1
   - title: "\uD070 \uC0C1\uC790 \uACC4\uB2E8"
     objectives:
-    - text: "\uBB38\uC73C\uB85C \uAC00\uAE30"
+    - text: "\uC0C1\uC790\uB85C \uACC4\uB2E8\uC744 \uB9CC\uB4E4\uC5B4 \uBB38\uC73C\uB85C"
       keys: []
       goal: 7
       markerId: 
       target: 1
       showCount: 0
-    tip: "\uC21C\uC11C\uAC00 \uC911\uC694\uD558\uB2E4."
+    tip: "\uD070 \uC0C1\uC790\uB97C \uBA3C\uC800 \uD131 \uC55E\uAE4C\uC9C0, \uC791\uC740
+      \uC0C1\uC790\uB294 \uADF8 \uC55E\uC5D0. \uB0AE\uC740 \uAC83\uBD80\uD130 \uBC1F\uACE0
+      \uC624\uB978\uB2E4."
     opens: []
     allowSwitch: 1
   signals: {fileID: 761507168}

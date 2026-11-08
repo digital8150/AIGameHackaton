@@ -51,6 +51,7 @@ namespace DuskTwilight
 
         /// <summary>Someone has moved it off its starting spot at least once (the guide stops pointing at it).</summary>
         public bool EverMoved { get; private set; }
+        bool pulledOnce;
 
         static readonly System.Collections.Generic.List<PushBox> all = new System.Collections.Generic.List<PushBox>();
         void OnEnable() => all.Add(this);
@@ -102,6 +103,7 @@ namespace DuskTwilight
                         {
                             dir = pushing ? -side : side;
                             if (Blocked(dir)) dir = 0f;
+                            if (pulling && dir != 0f && !pulledOnce) { pulledOnce = true; GameEvents.PuzzleAttempt?.Invoke("pull", true); }
                             // pushing: a touch faster than the box so she stays pressed against it (no stutter);
                             // pulling: exactly its speed so the gap doesn't open
                             a.SpeedScale = (moveSpeed + (pushing ? 0.25f : 0f)) / Mathf.Max(0.1f, a.runSpeed);
