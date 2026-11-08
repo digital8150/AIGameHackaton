@@ -13,6 +13,7 @@ namespace DuskTwilight
         ReachMarker,      // walked past a TutorialMarker with matching id
         OpenGate,         // pulled the wired lever on gold
         ReachDoor,        // the chapter's door
+        Speak,            // a spoken (or chosen) word took hold on a gold object / floating stone
     }
 
     /// <summary>One objective row: which action, how many times, how it reads.</summary>

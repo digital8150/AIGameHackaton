@@ -2749,22 +2749,35 @@ MonoBehaviour:
   sections:
   - title: "\uAE38\uC5B4\uC838"
     objectives:
-    - text: "\uB2E4\uB9AC\uC5D0\uAC8C \uB9D0\uD558\uAE30"
+    - text: "\uB2E4\uB9AC\uC5D0\uAC8C \u300C\uAE38\uC5B4\uC838\u300D"
       keys:
       - V
+      goal: 8
+      markerId: 
+      target: 1
+      showCount: 0
+    - text: "\uAC74\uB108\uD3B8\uC73C\uB85C"
+      keys: []
       goal: 5
       markerId: r2
       target: 1
       showCount: 0
-    tip: "\uC655\uC790\uC758 \uB9D0\uC740 \uAE08\uC0C9 \uBB3C\uCCB4\uC758 \uAE38\uC774\uB97C
-      \uBC14\uAFBC\uB2E4."
+    tip: "\uAE08\uBE5B \uBB3C\uCCB4\uB294 \uC655\uC790\uC758 \uB9D0\uC744 \uB4E3\uB294\uB2E4.
+      V\uB97C \uB204\uB978 \uCC44 \uB9D0\uD558\uAC70\uB098, \uAC00\uAE4C\uC774\uC5D0\uC11C
+      E\uB85C \uB9D0\uC744 \uACE0\uB978\uB2E4."
     opens: []
     allowSwitch: 1
   - title: "\uC9E7\uC544\uC838"
     objectives:
-    - text: "\uAE30\uB465 \uB118\uC5B4\uAC00\uAE30"
+    - text: "\uAE30\uB465\uC5D0\uAC8C \u300C\uC9E7\uC544\uC838\u300D"
       keys:
       - V
+      goal: 8
+      markerId: 
+      target: 1
+      showCount: 0
+    - text: "\uAE30\uB465 \uB108\uBA38\uB85C"
+      keys: []
       goal: 5
       markerId: r3
       target: 1
@@ -2774,27 +2787,54 @@ MonoBehaviour:
     allowSwitch: 1
   - title: "\uBB34\uAC70\uC6CC\uC838"
     objectives:
-    - text: "\uBCBD \uC704\uB85C"
+    - text: "\uB3CC\uC5D0\uAC8C \u300C\uBB34\uAC70\uC6CC\uC838\u300D"
       keys:
       - V
+      goal: 8
+      markerId: 
+      target: 1
+      showCount: 0
+    - text: "\uB3CC\uC744 \uBC1F\uACE0 \uBCBD \uC704\uB85C"
+      keys: []
       goal: 5
       markerId: r4
       target: 1
       showCount: 0
-    tip: "\uB5A0 \uC788\uB294 \uB3CC\uC740 \uBC1F\uC744 \uC218 \uC5C6\uB2E4."
+    tip: "\uB5A0 \uC788\uB294 \uB3CC\uC740 \uBC1F\uC744 \uC218 \uC5C6\uB2E4. \uBB34\uAC70\uC6CC\uC9C0\uBA74
+      \uB5A8\uC5B4\uC9C4\uB2E4."
     opens: []
     allowSwitch: 1
   - title: "\uC0C1\uC790\uC640 \uB2E4\uB9AC"
     objectives:
-    - text: "\uC0C1\uC790\uB97C \uBC1F\uACE0 \uB192\uC740 \uACF3\uC73C\uB85C"
+    - text: "\uBA54\uC544\uB9AC\uB85C \uAC00\uC9DC \uBCBD \uCC3E\uAE30"
       keys:
       - E
+      goal: 4
+      markerId: 
+      target: 1
+      showCount: 0
+    - text: "\uB2E4\uB9AC\uC5D0\uAC8C \u300C\uAE38\uC5B4\uC838\u300D"
+      keys:
+      - V
+      goal: 8
+      markerId: 
+      target: 1
+      showCount: 0
+    - text: "\uACF5\uC8FC\uB85C \uBC14\uAFB8\uAE30"
+      keys:
+      - Tab
+      goal: 3
+      markerId: 
+      target: 1
+      showCount: 0
+    - text: "\uC0C1\uC790\uB97C \uBC00\uC5B4 \uBC1F\uACE0 \uB192\uC740 \uACF3\uC73C\uB85C"
+      keys: []
       goal: 5
       markerId: r5
       target: 1
       showCount: 0
-    tip: "\uACF5\uC8FC\uAC00 \uBC00\uACE0, \uC655\uC790\uAC00 \uBA54\uC544\uB9AC\uB85C
-      \uAE38\uC744 \uB0B8\uB2E4."
+    tip: "\uC0C1\uC790\uB294 \uACF5\uC8FC\uB9CC \uBC00 \uC218 \uC788\uB2E4. \uAE38\uC740
+      \uC655\uC790\uAC00 \uC5F0\uB2E4."
     opens: []
     allowSwitch: 1
   - title: "\uCD9C\uAD6C"
@@ -2805,7 +2845,7 @@ MonoBehaviour:
       markerId: 
       target: 1
       showCount: 0
-    tip: 
+    tip: "\uB458\uC774 \uD568\uAED8, \uBB38\uC73C\uB85C."
     opens: []
     allowSwitch: 1
   signals: {fileID: 761507168}
