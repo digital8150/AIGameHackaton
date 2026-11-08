@@ -5137,6 +5137,8 @@ MonoBehaviour:
   reach: 1.4
   reachHeight: 1.6
   reachOffset: {x: 0, y: 0}
+  behindPenalty: 3
+  behindSlack: 0.5
   prompt: {fileID: 4239517867884179660}
   canvas: {fileID: 4091372965995394378}
   panelRect: {fileID: 2704106810810046453}
