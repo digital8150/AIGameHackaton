@@ -1,0 +1,29 @@
+{
+  "_doc": "Source cut list. Times are seconds in the raw capture. Each segment is a list of pieces played back to back; speed < 1 is slow motion (source is 120fps), > 1 is fast. prepare.mjs adds `handle` output-seconds of extra footage before the first piece and after the last (at those pieces' speeds) so transitions can overlap.",
+  "handle": 1.5,
+  "segments": [
+    { "id": "s12_book_to_forest", "note": "S1+S2 closed pencil book -> in-game page turn -> stage 1 title", "pieces": [{ "in": 25.0, "out": 34.0, "speed": 1 }] },
+    { "id": "s3_prince", "note": "switch to prince, echo 35.5, hidden planks, echo reveals fake wall 41.1, walks through 42.6", "pieces": [{ "in": 34.0, "out": 43.0, "speed": 1 }] },
+    { "id": "s4_princess", "note": "switch to princess 43.1, pushes crate to ledge", "pieces": [{ "in": 43.0, "out": 47.8, "speed": 1 }] },
+    { "id": "s5a_clear", "note": "stage 1 clear card", "pieces": [{ "in": 64.6, "out": 65.8, "speed": 1 }] },
+    { "id": "s5b_interlude", "note": "in-game page turn into interlude picture", "pieces": [{ "in": 67.4, "out": 68.9, "speed": 1 }] },
+    { "id": "s6a_bridge", "note": "voice wave 77.3, bridge grows 80.5", "pieces": [{ "in": 77.1, "out": 80.1, "speed": 2 }, { "in": 80.1, "out": 81.7, "speed": 1 }] },
+    { "id": "s6b_pillar", "note": "voice wave 87.0, pillar shrinks 89.6", "pieces": [{ "in": 86.9, "out": 89.3, "speed": 2 }, { "in": 89.3, "out": 91.0, "speed": 1 }] },
+    { "id": "s6c_stone", "note": "voice wave 97.75, stone falls 100.7, lands 100.9, switch to princess 101.5", "pieces": [{ "in": 97.6, "out": 100.4, "speed": 2 }, { "in": 100.4, "out": 100.75, "speed": 1 }, { "in": 100.75, "out": 101.15, "speed": 0.35 }, { "in": 101.15, "out": 103.2, "speed": 1 }] },
+    { "id": "s7_box", "note": "stage 2 princess pushes the wooden box", "pieces": [{ "in": 118.8, "out": 120.8, "speed": 1 }] },
+    { "id": "s7m1_cave_box", "note": "stage 3 purple cave, princess pushes box", "pieces": [{ "in": 143.5, "out": 144.4, "speed": 1 }] },
+    { "id": "s7m2_cave_voice", "note": "stage 3 golden voice wave", "pieces": [{ "in": 167.2, "out": 168.1, "speed": 1 }] },
+    { "id": "s7m3_fakewall", "note": "stage 4 echo reveals orange fake wall", "pieces": [{ "in": 193.2, "out": 194.1, "speed": 1 }] },
+    { "id": "s7m4_stone_reveal", "note": "stage 5 golden wave reveals floating stone", "pieces": [{ "in": 277.8, "out": 278.7, "speed": 1 }] },
+    { "id": "s7m5_impact", "note": "stage 5 stone impact flash 338.65", "pieces": [{ "in": 338.0, "out": 338.9, "speed": 1 }] },
+    { "id": "s7m6_tower_echo", "note": "tower echo reveals levels", "pieces": [{ "in": 357.9, "out": 358.8, "speed": 1 }] },
+    { "id": "s7m7_tower_warm", "note": "princess climbing the warm tower, sense switch ring 361.6", "pieces": [{ "in": 359.9, "out": 361.9, "speed": 1 }] },
+    { "id": "s8a_push", "note": "stage 5 princess pushes box in the tower", "pieces": [{ "in": 376.8, "out": 379.2, "speed": 1 }] },
+    { "id": "s8b_heavy", "note": "light letters on the stone 388.6, falls 389.95, lands 390.15, switch shows it landed 391.1", "pieces": [{ "in": 388.6, "out": 389.9, "speed": 1 }, { "in": 389.9, "out": 390.4, "speed": 0.35 }, { "in": 390.4, "out": 391.6, "speed": 1 }] },
+    { "id": "s8c_last_echo", "note": "last hops, final echo rings, clear card 'meet at twilight' 397", "pieces": [{ "in": 393.0, "out": 395.4, "speed": 1.5 }, { "in": 395.4, "out": 397.9, "speed": 1 }] },
+    { "id": "s9a_witch_meet", "note": "ending storybook: meeting the witch (sepia)", "pieces": [{ "in": 401.2, "out": 402.9, "speed": 1 }] },
+    { "id": "s9b_witch_close", "note": "witch close-up", "pieces": [{ "in": 404.3, "out": 406.0, "speed": 1 }] },
+    { "id": "s9c_hands", "note": "walking hand in hand, colour returning", "pieces": [{ "in": 416.0, "out": 418.6, "speed": 1 }] },
+    { "id": "s9d_forest", "note": "into the golden forest, full colour", "pieces": [{ "in": 419.4, "out": 421.8, "speed": 1 }] }
+  ]
+}
